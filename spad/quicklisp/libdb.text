@@ -1,7 +1,0 @@
-pQuickLisp`0`x`()->etc``QL`Quicklisp is a library manager for Common Lisp. This is an interface to the few functions provided by \spad{QL}.
-oqlApropos`1`x`(String)->SExpression`pQuickLisp``
-oqlUninstall`1`x`(String)->SExpression`pQuickLisp``
-oqlUpdateAll`0`x`()->SExpression`pQuickLisp``
-oqlUpdateClient`0`x`()->SExpression`pQuickLisp``
-oqlWhoDependsOn`1`x`(String)->SExpression`pQuickLisp``
-oquickLoad`1`x`(String)->SExpression`pQuickLisp``
