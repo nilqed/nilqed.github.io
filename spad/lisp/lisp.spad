@@ -10,7 +10,7 @@
 ++ References:
 ++
 ++ Description:
-++ Install Lisp/SPAD packages/modules.
+++ Interfacing some useful Lisp functions.
 ++
 CommonLisp() : Exports == Implementation where
   
