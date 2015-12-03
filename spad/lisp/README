@@ -91,9 +91,9 @@ Examples:
    (1)  /home/kfp/.bashrc
                                                             Type: SExpression
 
-(18) -> probeFile "~/.axiom.input"
+(2) -> probeFile "~/.axiom.input"
 
-   (18)  ()
+   (2)  ()
                                                             Type: SExpression
                                                             
 ---
