@@ -1,0 +1,11 @@
+=======================================
+spad -- SPAD code ([Open]Axiom, FriCAS)
+=======================================
+
+lisp .............. interfacing common-lisp functions
+quicklisp ......... an interface to QuickLisp
+shell ............. an interface to TrivialShell
+
+
+
+Each folder has its own README.
