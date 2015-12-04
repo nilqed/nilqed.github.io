@@ -1,0 +1,140 @@
+)abbrev package IO InputOutput
+++ Author: Kurt Pagani
+++ Date Created: Fri Dec 04 02:10:38 CET 2015
+++ License: BSD (same as Axiom)
+++ Date Last Updated:
+++ Basic Operations: 
+++ Related Domains: 
+++ Keywords: 
+++ Examples:
+++ References:
+++
+++ Description:
+++ 
+++
+InputOutput() : Exports == Implementation where
+  
+  STR ==> String
+  TXT ==> TextFile
+  
+  Exports ==  with
+
+    isComment? : STR -> Boolean
+    isContinuation? : STR -> Boolean
+    combineCont : List(STR) -> STR
+    inputToNotebook : STR -> STR
+    --coerce : % -> OutputForm
+	
+	
+  Implementation ==  add 
+    
+     
+    writeCodeCell(f:TXT,s:STR):STR ==
+      writeLine!(f,"{")
+      writeLine!(f,"_"cell_type_" : _"code_",")
+      writeLine!(f,"_"execution_count_": null,")
+      writeLine!(f,"_"metadata_" : {")
+      writeLine!(f,"    _"collapsed_" : false")
+      writeLine!(f,"},")
+      h:STR:=concat ["_"source_" : [_"" ,s, "_"],"]
+      writeLine!(f,h)
+      writeLine!(f,"_"outputs_": []")
+      writeLine!(f,"}")
+      s
+
+
+    writeMarkdownCell(f:TXT,s:STR):STR ==
+      writeLine!(f,"{")
+      writeLine!(f,"_"cell_type_" : _"markdown_",")
+      writeLine!(f,"_"metadata_" : {},")
+      h:STR:=concat ["_"source_" : [_"" ,s, "_"]"]
+      writeLine!(f,h)
+      writeLine!(f,"}")
+      s
+      
+
+    writeHeader(f:TXT,nb:STR):Boolean ==
+      writeLine!(f,"_"metadata_": {")
+      writeLine!(f," _"kernelspec_": {")
+      writeLine!(f,"  _"display_name_": _"FriCAS_",")
+      writeLine!(f,"  _"language_": _"spad_",")
+      writeLine!(f,"  _"name_": _"ifricas_"")
+      writeLine!(f," },")
+      writeLine!(f," _"language_info_": {")
+      writeLine!(f,"  _"codemirror_mode_": _"spad_",")
+      writeLine!(f,"  _"mimetype_": _"text/x-spad_",")
+      writeLine!(f,"  _"name_": _"SPAD_",")
+      writeLine!(f,"  _"pygments_lexer_": _"spad_",")
+      writeLine!(f,"  _"version_": _"1.2.6_"")
+      writeLine!(f," },")
+      h:STR:=concat[" _"name_": _"",nb,"_""]
+      writeLine!(f,h)
+      writeLine!(f,"},")
+      writeLine!(f,"_"nbformat_": 4,")
+      writeLine!(f,"_"nbformat_minor_": 0")
+      true
+      
+
+    isComment?(s) ==
+      #s < 2 => false
+      elt(s,1..2)="--" => true
+      elt(s,1..2)="++" => true
+      false
+
+
+    isContinuation?(s) ==
+      s:=rightTrim(s,char(32))
+      s="" => false
+      s(#s) = char "__" => true
+      false
+
+
+    combineCont(l) ==
+      -- combine [s1_,s2_,...,sn_,s0] -> s
+      cnt:=(x:STR):STR+->concat(rightTrim(x,char 32),"\n")
+      ll:=map(cnt,l)
+      concat(ll)
+
+
+    escapeQM(s:STR):STR ==
+      esc:=(x:Character):STR+->(if x=char "_"" then "\_"" else x::STR)
+      r:List(STR):=[esc(s.i) for i in 1..#s]
+      concat(r)
+
+
+    inputToNotebook(f) == 
+      fi:FileName:=concat(f,".input")::FileName
+      ~exists?(fi) => error "No such file."
+      f1: TextFile := open(fi,"input")
+      fo:FileName:=concat(f,".ipynb")::FileName
+      exists?(fo) => error "File already exists."
+      f2: TextFile := open(fo,"output")      
+      writeLine!(f2,"{")
+      writeLine!(f2," _"cells_": [")
+      l:List(String):=[]
+      while not endOfFile? f1 repeat
+        s := readLine! f1
+        while isContinuation?(s) and ~endOfFile?(f1) repeat
+          l:=concat(l,s)
+          s := readLine! f1
+        if l~=[] then 
+          s:=combineCont(concat(l,s))
+          l:=[]
+        s := escapeQM(s)
+        if isComment?(s) then
+          s:=elt(s,3..#s)
+          s:=writeMarkdownCell(f2,s)
+          writeLine!(f2,",")
+        else
+          if s~="" then 
+            s:=writeCodeCell(f2,s)
+            writeLine!(f2,",")
+      writeCodeCell(f2,"")
+      writeLine!(f2," ],")
+      writeHeader(f2,fo::STR)
+      writeLine!(f2,"}")
+      close! f1
+      close! f2
+      fo::STR
+      
+   
