@@ -35,7 +35,7 @@ pol := (8*b*e^2 - 4*c*d*e + d^3)*x^6 + 2*(16*a*e^2 + 2*b*d*e - _
  - 8*a^2*d + 4*a*b*c - b^3
 
 cc := 64*a^3*e^3 - 48*a^2*b*d*e^2 - 64*a^2*c^2*e^2 + 48*a^2*c*d^2*e _
- - 8*a^2*d^4 + 48*a*b^2*c*e^2 - 4*a*b^2*d^2*e - 16*a*b*c^2*d*e
+ - 8*a^2*d^4 + 48*a*b^2*c*e^2 - 4*a*b^2*d^2*e - 16*a*b*c^2*d*e _
  + 4*a*b*c*d^3 - 8*b^4*e^2 + 4*b^3*c*d*e - b^3*d^3
 
 lc1 := leadingCoefficient(univariate(pol, c))
