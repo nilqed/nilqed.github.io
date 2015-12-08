@@ -2,7 +2,7 @@
 -- convert fricas input files to notebboks (ipynb).
 --
 
-)co ../spad/io/io
+)co ../../../spad/io/io
 
 input_files:=["agcd", _
 "algaggr", _
@@ -259,4 +259,4 @@ input_files:=["agcd", _
 "zimmer"]
 
 
-for x in input_files repeat inputToNotebook x
+for x in input_files repeat output inputToIPyNB(x)
