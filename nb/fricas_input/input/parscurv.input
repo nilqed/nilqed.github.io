@@ -1,6 +1,0 @@
---Copyright The Numerical Algorithms Group Limited 1991.
-
--- test for ParametricSpaceCurve domain
-
-draw(curve(tan(cos(t)),sin(t),cos(t)),t=-12..12)
-draw(curve(sin(t),cos(t),sin(t)*cos(t)),t=-12..12)
