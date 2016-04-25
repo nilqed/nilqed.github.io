@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>13.8 Add Domain &mdash; FriCAS 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 0.1 documentation" href="index.html" />
+    <link rel="next" title="13.9 Defaults" href="section-13.9.html" />
+    <link rel="prev" title="13.7 Multiple Representations" href="section-13.7.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="section-13.9.html" title="13.9 Defaults"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="section-13.7.html" title="13.7 Multiple Representations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="add-domain">
+<h1>13.8 Add Domain<a class="headerlink" href="#add-domain" title="Permalink to this headline">¶</a></h1>
+<p>The capsule part of Implementation defines functions that implement the
+operations exported by the domain&#8212;usually only some of the operations.
+In our demo in <a class="reference external" href="section-13.4.html#ugDomainsDemo">ugDomainsDemo</a> we
+asked for the value of 3*q-q+q. Where do the operations <a href="#id1"><span class="problematic" id="id2">*</span></a>, +, and -
+come from? There is no definition for them in the capsule!</p>
+<p>The Implementation part of a definition can domain:add optionally
+specify an add-domain to the left of an add add (for QuadraticForm,
+defines SquareMatrix(n,K) is the add-domain). The meaning of an
+add-domain is simply this: if the capsule part of the Implementation
+does not supply a function for an operation, FriCAS goes to the
+add-domain to find the function. So do <a href="#id3"><span class="problematic" id="id4">*</span></a>, + and - (from QuadraticForm)
+come from SquareMatrix(n,K)?</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="section-13.7.html"
+                        title="previous chapter">13.7 Multiple Representations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="section-13.9.html"
+                        title="next chapter">13.9 Defaults</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/section-13.8.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="section-13.9.html" title="13.9 Defaults"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="section-13.7.html" title="13.7 Multiple Representations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, FriCAS.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.
+    </div>
+  </body>
+</html>
