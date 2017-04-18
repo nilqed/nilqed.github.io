@@ -1,11 +1,8 @@
 
 /* JaxEdit: online LaTeX editor with live preview
- * Copyright (c) 2011-2014 JaxEdit project
+ * Copyright (c) 2011-2017 JaxEdit project
  * License: GNU Lesser General Public License, Version 3
- *
- * Website: http://jaxedit.com
  * Source:  https://github.com/zohooo/jaxedit
- * Release: http://code.google.com/p/jaxedit/
  */
 
 window.jaxedit = (function($){
@@ -24,7 +21,7 @@ window.jaxedit = (function($){
     localDrive: false,
     trustHost: false,
     useDrive: null,
-    version: "0.30",
+    version: "0.40",
     mode: "write",
     view: "half",
     wcode: null,
@@ -552,7 +549,7 @@ window.jaxedit = (function($){
         this.onclick = function(){ that.toggleModal(false); };
       });
       helpbtn.onclick = function() {
-        window.open("http://jaxedit.com/?help", "_blank");
+        window.open("manual/help.html", "_blank");
       };
       helpbtn.style.display = "inline-block";
     },

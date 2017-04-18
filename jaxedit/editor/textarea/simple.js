@@ -1,11 +1,8 @@
 
 /* JaxEdit: online LaTeX editor with live preview
- * Copyright (c) 2011-2014 JaxEdit project
+ * Copyright (c) 2011-2017 JaxEdit project
  * License: GNU Lesser General Public License, Version 3
- *
- * Website: http://jaxedit.com
  * Source:  https://github.com/zohooo/jaxedit
- * Release: http://code.google.com/p/jaxedit/
  */
 
 jaxedit.doChange = function(event) {
@@ -137,7 +134,7 @@ jaxedit.doChange = function(event) {
   }
 
   jaxedit.setScrollers(newtextsize, delstart, codearea.scrollTop);
-  typejax.updater.putTask(delstart, delend, deltext, instext, newtextsize, showarea);
+  typejax.updater.inQueue(delstart, delend, deltext, instext, newtextsize, showarea);
 };
 
 jaxedit.addEditor = function() {

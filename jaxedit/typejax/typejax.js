@@ -1,11 +1,8 @@
 
 /* JaxEdit: online LaTeX editor with live preview
- * Copyright (c) 2011-2014 JaxEdit project
+ * Copyright (c) 2011-2017 JaxEdit project
  * License: The MIT License
- *
- * Website: http://jaxedit.com
  * Source:  https://github.com/zohooo/jaxedit
- * Release: http://code.google.com/p/jaxedit/
  */
 
 if (!window.console) console = {log : function() {}};
@@ -57,6 +54,12 @@ window.typejax = (function($){
         };
       }
       this.init(that.totaltext, that.totalsize, this.showarea);
+    },
+
+    inQueue : function(delstart, delend, deltext, instext, newsize, showarea) {
+      MathJax.Hub.Queue([typejax, function(){
+        this.updater.putTask(delstart, delend, deltext, instext, newsize, showarea);
+      }]);
     },
 
     putTask : function(delstart, delend, deltext, instext, newsize, showarea) {
@@ -2581,7 +2584,7 @@ window.typejax = (function($){
   };
 
   typejax.message = {
-    degug: "none",
+    debug: "none",
 
     log: function(type) {
       var msg = Array.prototype.slice.call(arguments, 1).join(" ");
