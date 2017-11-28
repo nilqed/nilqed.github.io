@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[nilqed.github.io]]></title>
+    <link href="http://localhost/atom.xml" ref="self"/>
+    <link href="http://localhost/"/>
+    <id>http://localhost/</id>
+    <updated>2017-11-28T21:40:31.970Z</updated>
+    <entry>
+         <title><![CDATA[Some Title 1454]]></title>
+         <link href="http://localhost/post/2017/11/28/name-8092.html"></link>
+         <updated>2017-11-28T20:40:29.000Z</updated>
+         <id>name-8092</id>
+         <summary type="html"><![CDATA[<p>Write here</p>
+]]></summary>
+    </entry>
+</feed>
