@@ -1,0 +1,16 @@
+{
+    "name": "jekyde",
+    "version": "0.3.6",
+    "private": true,
+    "main": "node_modules/jekyde/jekyde",
+    "scripts": {
+        "start": "node node_modules/jekyde/jekyde"
+    },
+    "engines": {
+        "node": ">= 0.6.0",
+        "npm": ">= 1.1.0"
+    },
+    "dependencies": {
+        "jekyde": "0.3.6"
+    }
+}
