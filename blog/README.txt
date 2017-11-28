@@ -1,1 +1,0 @@
-run jekyde here -> localhost:4040/w
