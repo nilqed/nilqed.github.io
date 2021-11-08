@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.5</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.5</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.4.xhtml">Previous Section 1.4 Numbers</a><a href="section-1.6.xhtml">Next Section 1.6 Expanding to Higher Dimensions</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.5">
+<h2 class="sectiontitle" id="data-structures">1.5 Data Structures</h2>
+<span id="ugIntroCollect" class="label"></span>
+<p>FriCAS has a large variety of data structures available. Many data structures are particularly useful for interactive computation and others are useful for building applications. The data structures of FriCAS are organized into <span style="font-style: italic;"> category hierarchies</span>.</p>
+<p>A <span class="italic">list</span>, <span class="footnote">Lists are discussed in Section <a href="section-9.1.xhtml#AssociationListXmpPage" class="ref">ListXmpPage</a></span>, is the most commonly used data structure in FriCAS for holding objects all of the same type. The name <span class="italic">list</span> is short for <span class="italic">linked-list of nodes.</span> Each node consists of a value (<span class="spadfunFrom" style="font-weight: bold;">first</span><span class="index">first</span><span id="chapter-1-38"></span><span class="index">List</span><span id="chapter-1-39"></span>) and a link (<span class="spadfunFrom" style="font-weight: bold;">rest</span><span class="index">rest</span><span id="chapter-1-40"></span><span class="index">List</span><span id="chapter-1-41"></span>) that points to the next node, or to a distinguished value denoting the empty list. To get to, say, the third element, FriCAS starts at the front of the list, then traverses across two links to the third node.</p>
+<p>Write a list of elements using square brackets with commas separating the elements.</p>
+<div id="spadComm1-72" class="spadComm">
+<span id="commSav1-72" class="commSav">u := [1,-7,11]</span>
+<div id="mathAns1-72">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,-7,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+This is the value at the third node. Alternatively, you can say
+u.3.
+<div id="spadComm1-73" class="spadComm">
+<span id="commSav1-73" class="commSav">first rest rest u</span>
+<div id="mathAns1-73">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Many operations are defined on lists, such as: <span style="font-weight: bold;"> empty?</span>, to test that a list has no elements; <span style="font-weight: bold;"> cons</span>
+(x,l), to create a new list with <span style="font-weight: bold;"> first</span> element
+x and <span style="font-weight: bold;"> rest</span>
+l; <span style="font-weight: bold;"> reverse</span>, to create a new list with elements in reverse order; and <span style="font-weight: bold;"> sort</span>, to arrange elements in order.
+<p>An important point about lists is that they are <span class="italic">mutable</span>: their constituent elements and links can be changed <span class="italic">in place.</span> To do this, use any of the operations whose names end with the character ``<span class="teletype">!</span>''.</p>
+The operation <span class="spadfunFrom" style="font-weight: bold;">concat!</span><span class="index">concat!</span><span id="chapter-1-42"></span><span class="index">List</span><span id="chapter-1-43"></span>
+(u,v) replaces the last link of the list
+u to point to some other list
+v. Since
+u refers to the original list, this change is seen by
+u.
+<div id="spadComm1-74" class="spadComm">
+<span id="commSav1-74" class="commSav">concat!(u,[9,1,3,-4]); u</span>
+<div id="mathAns1-74">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,-7,11,9,1,3,-4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>A <span class="italic">cyclic list</span> is a list with a <span class="italic">cycle</span>: <span class="index">list:cyclic</span><span id="chapter-1-44"></span> a link pointing back to an earlier node of the list. <span class="index">cyclic list</span><span id="chapter-1-45"></span> To create a cycle, first get a node somewhere down the list.</p>
+<div id="spadComm1-75" class="spadComm">
+<span id="commSav1-75" class="commSav">lastnode := rest(u,3)</span>
+<div id="mathAns1-75">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,1,3,-4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>Use <span class="spadfunFrom" style="font-weight: bold;">setrest!</span><span class="index">setrest!</span><span id="chapter-1-46"></span><span class="index">List</span><span id="chapter-1-47"></span> to change the link emanating from that node to point back to an earlier part of the list.</p>
+<div id="spadComm1-76" class="spadComm">
+<span id="commSav1-76" class="commSav">setrest!(lastnode,rest(u,2)); u</span>
+<div id="mathAns1-76">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,-7,]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>A <span class="italic">stream</span> is a structure that (potentially) has an infinite number of distinct elements. Think of a stream as an <span class="italic">infinite list</span> where elements are computed successively. <span class="footnote">Streams are discussed in Section{StreamXmpPage}.</span></p>
+<p>Create an infinite stream of factored integers. Only a certain number of initial elements are computed and displayed.</p>
+<div id="spadComm1-77" class="spadComm">
+<span id="commSav1-77" class="commSav">[factor(i) for i in 2.. by 2]</span>
+<div id="mathAns1-77">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,22,23,23,25,223,27,24,232,225,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Factored Integer
+</div>
+FriCAS represents streams by a collection of already-computed elements together with a function to compute the next element <span class="italic">on demand.</span> Asking for the
+n-th element causes elements
+1 through
+n to be evaluated.
+<div id="spadComm1-78" class="spadComm">
+<span id="commSav1-78" class="commSav">%.36</span>
+<div id="mathAns1-78">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2332</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>Streams can also be finite or cyclic. They are implemented by a linked list structure similar to lists and have many of the same operations. For example, <span style="font-weight: bold;"> first</span> and <span style="font-weight: bold;"> rest</span> are used to access elements and successive nodes of a stream.</p>
+<p>A <span class="italic">one-dimensional array</span> is another data structure used to hold objects of the same type <span class="footnote">OnedimensionalArray is discussed in Section <a href="section-9.57.xhtml#OneDimensionalArrayXmpPage" class="ref">OneDimensionalArrayXmpPage</a></span>. Unlike lists, one-dimensional arrays are inflexible---they are <span class="index">array:one-dimensional</span><span id="chapter-1-48"></span> implemented using a fixed block of storage. Their advantage is that they give quick and equal access time to any element.</p>
+<p>A simple way to create a one-dimensional array is to apply the operation <span style="font-weight: bold;"> oneDimensionalArray</span> to a list of elements.</p>
+<div id="spadComm1-79" class="spadComm">
+<span id="commSav1-79" class="commSav">a := oneDimensionalArray [1, -7, 3, 3/2]</span>
+<div id="mathAns1-79">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,-7,3,32]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray Fraction Integer
+</div>
+<p>One-dimensional arrays are also mutable: you can change their constituent elements <span class="italic">in place.</span></p>
+<div id="spadComm1-80" class="spadComm">
+<span id="commSav1-80" class="commSav">a.3 := 11; a</span>
+<div id="mathAns1-80">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,-7,11,32]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray Fraction Integer
+</div>
+<p>However, one-dimensional arrays are not flexible structures. You cannot destructively <span style="font-weight: bold;"> concat!</span> them together.</p>
+<div id="spadComm1-81" class="spadComm">
+<span id="commSav1-81" class="commSav">concat!(a,oneDimensionalArray [1,-2])</span>
+<div id="mathAns1-81">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   There are 5 exposed and 0 unexposed library operations named concat!<br />
+      having 2 argument(s) but none was determined to be applicable. <br />
+      Use HyperDoc Browse, or issue<br />
+                             )display op concat!<br />
+      to learn more about the available operations. Perhaps <br />
+      package-calling the operation or using coercions on the arguments<br />
+      will allow you to apply the operation.<br />
+ <br />
+   Cannot find a definition or applicable library operation named <br />
+      concat! with argument type(s) <br />
+                    OneDimensionalArray Fraction Integer<br />
+                         OneDimensionalArray Integer<br />
+      <br />
+      Perhaps you should use "@" to indicate the required return type, <br />
+      or "$" to specify which version of the function you need.<br />
+
+</div>
+<p>Examples of datatypes similar to <span class="teletype">OneDimensionalArray</span> are: <span class="teletype">Vector</span> (vectors are mathematical structures implemented by one-dimensional arrays), <span class="teletype">String</span> (arrays of <span class="italic">characters,</span> represented by byte vectors), and <span class="teletype">Bits</span> (represented by <span class="italic">bit vectors</span>).</p>
+A vector of 32 bits, each representing the <span style="font-weight: bold;"> Boolean</span> value
+true.
+<div id="spadComm1-82" class="spadComm">
+<span id="commSav1-82" class="commSav">bits(32,true)</span>
+<div id="mathAns1-82">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"11111111111111111111111111111111"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Bits
+</div>
+<p>A <span class="italic">flexible array</span> (<span class="footnote">FlexibleArray is discussed in Section <a href="section-9.26.xhtml#FlexibleArrayXmpPage" class="ref">FlexibleArrayXmpPage</a> </span>) is a cross between a list <span class="index">array:flexible</span><span id="chapter-1-49"></span> and a one-dimensional array. Like a one-dimensional array, a flexible array occupies a fixed block of storage. Its block of storage, however, has room to expand. When it gets full, it grows (a new, larger block of storage is allocated); when it has too much room, it contracts.</p>
+<p>Create a flexible array of three elements.</p>
+<div id="spadComm1-83" class="spadComm">
+<span id="commSav1-83" class="commSav">f := flexibleArray [2, 7, -5]</span>
+<div id="mathAns1-83">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,7,-5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Insert some elements between the second and third elements.</p>
+<div id="spadComm1-84" class="spadComm">
+<span id="commSav1-84" class="commSav">insert!(flexibleArray [11, -3],f,2)</span>
+<div id="mathAns1-84">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,11,-3,7,-5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Flexible arrays are used to implement <span class="italic">heaps.</span> A <span class="italic">heap</span> is an example of a data structure called a <span class="italic">priority queue</span>, where elements are ordered with respect to one another. A heap (<span class="footnote">Heap is discussed in Section <a href="section-9.32.xhtml#HeapXmpPage" class="ref">HeapXmpPage</a> </span>) is organized so as to optimize insertion and extraction of maximum elements. The <span style="font-weight: bold;"> extract!</span> operation returns the maximum element of the heap, after destructively removing that element and reorganizing the heap so that the next maximum element is ready to be delivered.</p>
+<p>An easy way to create a heap is to apply the operation <span class="italic">heap</span> to a list of values.</p>
+<div id="spadComm1-85" class="spadComm">
+<span id="commSav1-85" class="commSav">h := heap [-4,7,11,3,4,-7]</span>
+<div id="mathAns1-85">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[11,4,7,-4,3,-7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Heap Integer
+</div>
+This loop extracts elements one-at-a-time from
+h until the heap is exhausted, returning the elements as a list in the order they were extracted.
+<div id="spadComm1-86" class="spadComm">
+<span id="commSav1-86" class="commSav">[extract!(h) while not empty?(h)]</span>
+<div id="mathAns1-86">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[11,7,4,3,-4,-7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>A <span class="italic">binary tree</span> is a <span class="italic">tree</span> with at most two branches <span class="index">tree</span><span id="chapter-1-50"></span> per node: it is either empty, or else is a node consisting of a value, and a left and right subtree (again, binary trees). (<span class="footnote">BinarySearchTrees are discussed in Section <a href="section-9.5.xhtml#BinarySearchTreeXmpPage" class="ref">BinarySearchTreeXmpPage</a> </span>) Examples of binary tree types are <span class="teletype">BinarySearchTree</span>, <span class="teletype">PendantTree</span>, <span class="teletype">TournamentTree</span>, and <span class="teletype">BalancedBinaryTree</span>.</p>
+<p>A <span class="italic">binary search tree</span> is a binary tree such that, <span class="index">tree:binary search</span><span id="chapter-1-51"></span> for each node, the value of the node is <span class="index">binary search tree</span><span id="chapter-1-52"></span> greater than all values (if any) in the left subtree, and less than or equal all values (if any) in the right subtree.</p>
+<div id="spadComm1-87" class="spadComm">
+<span id="commSav1-87" class="commSav">binarySearchTree [5,3,2,9,4,7,11]</span>
+<div id="mathAns1-87">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[2,3,4],5,[7,9,11]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BinarySearchTree PositiveInteger
+</div>
+A <span class="italic">balanced binary tree</span> is useful for doing modular computations. <span class="index">balanced binary tree</span><span id="chapter-1-53"></span> Given a list
+lm of moduli, <span class="index">tree:balanced binary</span><span id="chapter-1-54"></span> <span style="font-weight: bold;"> modTree</span>
+(a,lm) produces a balanced binary tree with the values
+at its leaves.
+<div id="spadComm1-88" class="spadComm">
+<span id="commSav1-88" class="commSav">modTree(8,[2,3,5,7])</span>
+<div id="mathAns1-88">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,2,3,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>A <span class="italic">set</span> is a collection of elements where duplication and order is irrelevant. <span class="footnote">Sets are discussed in Section <a href="section-9.53.xhtml#MultiSetXmpPage" class="ref">SetXmpPage</a> </span> Sets are always finite and have no corresponding structure like streams for infinite collections.</p>
+<p>Create sets using braces ``{`` and ``}'' rather than brackets.</p>
+<div id="spadComm1-89" class="spadComm">
+<span id="commSav1-89" class="commSav">fs := set[1/3,4/5,-1/3,4/5]</span>
+<div id="mathAns1-89">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{-13,13,45}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Fraction Integer
+</div>
+<p>A <span class="italic">multiset</span> is a set that keeps track of the number of duplicate values. <span class="footnote">Multisets are discussed in Section <a href="section-9.53.xhtml#MultiSetXmpPage" class="ref">MultiSetXmpPage</a> </span></p>
+For all the primes
+p between 2 and 1000, find the distribution of
+pmod5.
+<div id="spadComm1-90" class="spadComm">
+<span id="commSav1-90" class="commSav">multiset [x rem 5 for x in primes(2,1000)]</span>
+<div id="mathAns1-90">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{0,42:3,40:1,38:4,47:2}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Multiset Integer
+</div>
+A <span class="italic">table</span> is conceptually a set of <span class="italic">key--value</span> pairs and is a generalization of a multiset. For examples of tables, see <span class="teletype">AssociationList</span>, <span class="teletype">HashTable</span>, <span class="teletype">KeyedAccessFile</span>, <span class="teletype">Library</span>, <span class="teletype">SparseTable</span>, <span class="teletype">StringTable</span>, and <span class="teletype">Table</span>. The domain <span class="teletype">Table(Key, Entry)</span> provides a general-purpose type for tables with <span class="italic">values</span> of type
+Entry indexed by <span class="italic">keys</span> of type
+Key.
+Compute the above distribution of primes using tables. First, let
+t denote an empty table of keys and values, each of type <span class="teletype">Integer</span>.
+<div id="spadComm1-91" class="spadComm">
+<span id="commSav1-91" class="commSav">t : Table(Integer,Integer) := empty()</span>
+<div id="mathAns1-91">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>table()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Table(Integer,Integer)
+</div>
+We define a function <span style="font-weight: bold;"> howMany</span> to return the number of values of a given modulus
+k seen so far. It calls <span style="font-weight: bold;"> search</span>
+(k,t) which returns the number of values stored under the key
+k in table
+t, or <span class="teletype"><span class="italic">failed</span></span> if no such value is yet stored in
+t under
+k.
+In English, this says ``Define
+howMany(k) as follows. First, let
+n be the value of <span class="italic">search</span>
+(k,t). Then, if
+n has the value
+"failed", return the value
+1; otherwise return
+n+1.''
+<div id="spadComm1-92" class="spadComm">
+<span id="commSav1-92" class="commSav">howMany(k) == (n:=search(k,t); n case "failed" =&gt; 1; n+1)</span>
+<div id="mathAns1-92">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Run through the primes to create the table, then print the table. The expression <span class="teletype">t.m := howMany(m)</span> updates the value in table
+t stored under key
+m.
+<div id="spadComm1-93" class="spadComm">
+<span id="commSav1-93" class="commSav">for p in primes(2,1000) repeat (m:= p rem 5; t.m:= howMany(m)); t</span>
+<div id="mathAns1-93">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function howMany with type Integer -&gt; Integer <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>table(2=47,4=38,1=40,3=42,0=1)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Table(Integer,Integer)
+</div>
+<p>A <span class="italic">record</span> is an example of an inhomogeneous collection of objects.<span class="footnote">See <a href="section-2.4.xhtml#ugTypesRecords" class="ref">ugTypesRecords</a> for details.</span> A record consists of a set of named <span class="italic">selectors</span> that can be used to access its components. <span class="index">Record@{\sf Record}</span><span id="chapter-1-55"></span></p>
+Declare that
+daniel can only be assigned a record with two prescribed fields.
+<div id="spadComm1-94" class="spadComm">
+<span id="commSav1-94" class="commSav">daniel : Record(age : Integer, salary : Float)</span>
+<div id="mathAns1-94">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Give
+daniel a value, using square brackets to enclose the values of the fields.
+<div id="spadComm1-95" class="spadComm">
+<span id="commSav1-95" class="commSav">daniel := [28, 32005.12]</span>
+<div id="mathAns1-95">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[age=28,salary=32005.12]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(age: Integer,salary: Float)
+</div>
+Give
+daniel a raise.
+<div id="spadComm1-96" class="spadComm">
+<span id="commSav1-96" class="commSav">daniel.salary := 35000; daniel</span>
+<div id="mathAns1-96">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[age=28,salary=35000.0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(age: Integer,salary: Float)
+</div>
+<p>A <span class="italic">union</span> is a data structure used when objects have multiple types.<span class="footnote">See <a href="section-2.5.xhtml#ugTypesUnions" class="ref">ugTypesUnions</a> for details.</span> <span class="index">Union@{\sf Union}</span><span id="chapter-1-56"></span></p>
+Let
+dog be either an integer or a string value.
+<div id="spadComm1-97" class="spadComm">
+<span id="commSav1-97" class="commSav">dog: Union(licenseNumber: Integer, name: String)</span>
+<div id="mathAns1-97">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Give
+dog a name.
+<div id="spadComm1-98" class="spadComm">
+<span id="commSav1-98" class="commSav">dog := "Whisper"</span>
+<div id="mathAns1-98">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"Whisper"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(name: String,...)
+</div>
+<p>All told, there are over forty different data structures in FriCAS. Using the domain constructors described in Chapter <a href="section-13.0.xhtml#ugDomains" class="ref">ugDomains</a> you can add your own data structure or extend an existing one. Choosing the right data structure for your application may be the key to obtaining good performance.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.4.xhtml">Previous Section 1.4 Numbers</a><a href="section-1.6.xhtml">Next Section 1.6 Expanding to Higher Dimensions</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

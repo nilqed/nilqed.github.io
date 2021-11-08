@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.27</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.27</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.26.xhtml">Previous Section 9.26 FlexibleArray</a><a href="section-9.28.xhtml">Next Section 9.28 Fraction</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.27">
+<h2 class="sectiontitle" id="float">9.27 Float</h2>
+<span id="FloatXmpPage" class="label"></span>
+<p>FriCAS provides two kinds of floating point numbers. The domain <span class="teletype">Float</span> (abbreviation <span class="teletype">FLOAT</span>) implements a model of arbitrary precision floating point numbers. The domain <span class="teletype">DoubleFloat</span> (abbreviation <span class="teletype">DFLOAT</span>) is intended to make available hardware floating point arithmetic in FriCAS. The actual model of floating point that <span class="teletype">DoubleFloat</span> provides is system-dependent. For example, on the IBM system 370 FriCAS uses IBM double precision which has fourteen hexadecimal digits of precision or roughly sixteen decimal digits. Arbitrary precision floats allow the user to specify the precision at which arithmetic operations are computed. Although this is an attractive facility, it comes at a cost. Arbitrary-precision floating-point arithmetic typically takes twenty to two hundred times more time than hardware floating point.</p>
+<p>For more information about FriCAS's numeric and graphic facilities, see <a href="ugGraphPage" class="ref">ugGraphPage</a> in Section <a href="ugGraphNumber" class="ref">ugGraphNumber</a> , <a href="section-8.1.xhtml#ugProblemNumeric" class="ref">ugProblemNumeric</a> , and <a href="section-9.17.xhtml#DoubleFloatXmpPage" class="ref">DoubleFloatXmpPage</a> .</p>
+<span id="subsec-9.27.1"></span>
+<div id="subsec-9.27.1" class="subsection">
+<h3 class="subsectitle" id="introduction-to-float">9.27.1 Introduction to Float</h3>
+<p>Scientific notation is supported for input and output of floating point numbers. A floating point number is written as a string of digits containing a decimal point optionally followed by the letter <span class="italic"><span class="teletype">E</span></span>, and then the exponent.</p>
+<p>We begin by doing some calculations using arbitrary precision floats. The default precision is twenty decimal digits.</p>
+<div id="spadComm9-1" class="spadComm">
+<span id="commSav9-1" class="commSav">1.234</span>
+<div id="mathAns9-1">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1.234</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+A decimal base for the exponent is assumed, so the number <span class="teletype">1.234E2</span> denotes
+.
+<div id="spadComm9-2" class="spadComm">
+<span id="commSav9-2" class="commSav">1.234E2</span>
+<div id="mathAns9-2">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>123.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>The normal arithmetic operations are available for floating point numbers.</p>
+<div id="spadComm9-3" class="spadComm">
+<span id="commSav9-3" class="commSav">sqrt(1.2 + 2.3 / 3.4 ^ 4.5)</span>
+<div id="mathAns9-3">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1.0996972790671286226</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+</div>
+<span id="subsec-9.27.2"></span>
+<div id="subsec-9.27.2" class="subsection">
+<h3 class="subsectitle" id="conversion-functions">9.27.2 Conversion Functions</h3>
+<p>You can use conversion (<a href="ugTypesConvertPage" class="ref">ugTypesConvertPage</a> in Section <a href="ugTypesConvertNumber" class="ref">ugTypesConvertNumber</a> ) to go back and forth between <span class="teletype">Integer</span>, <span class="teletype">Fraction Integer</span> and <span class="teletype">Float</span>, as appropriate.</p>
+<div id="spadComm9-4" class="spadComm">
+<span id="commSav9-4" class="commSav">i := 3 :: Float </span>
+<div id="mathAns9-4">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-5" class="spadComm">
+<span id="commSav9-5" class="commSav">i :: Integer </span>
+<div id="mathAns9-5">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<div id="spadComm9-6" class="spadComm">
+<span id="commSav9-6" class="commSav">i :: Fraction Integer </span>
+<div id="mathAns9-6">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>Since you are explicitly asking for a conversion, you must take responsibility for any loss of exactness.</p>
+<div id="spadComm9-7" class="spadComm">
+<span id="commSav9-7" class="commSav">r := 3/7 :: Float </span>
+<div id="mathAns9-7">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.42857142857142857143</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-8" class="spadComm">
+<span id="commSav9-8" class="commSav">r :: Fraction Integer </span>
+<div id="mathAns9-8">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>37</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>This conversion cannot be performed: use <span class="spadfunFrom">truncate</span><span class="index">truncate</span><span id="chapter-9-0"></span><span class="index">Float</span><span id="chapter-9-1"></span> or <span class="spadfunFrom">round</span><span class="index">round</span><span id="chapter-9-2"></span><span class="index">Float</span><span id="chapter-9-3"></span> if that is what you intend.</p>
+<div id="spadComm9-9" class="spadComm">
+<span id="commSav9-9" class="commSav">r :: Integer </span>
+<div id="mathAns9-9">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Cannot convert from type Float to Integer for value<br />
+   0.4285714285 7142857143<br />
+
+</div>
+<p>The operations <span class="spadfunFrom">truncate</span><span class="index">truncate</span><span id="chapter-9-4"></span><span class="index">Float</span><span id="chapter-9-5"></span> and <span class="spadfunFrom">round</span><span class="index">round</span><span id="chapter-9-6"></span><span class="index">Float</span><span id="chapter-9-7"></span> truncate ...</p>
+<div id="spadComm9-10" class="spadComm">
+<span id="commSav9-10" class="commSav">truncate 3.6</span>
+<div id="mathAns9-10">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>and round to the nearest integral <span class="teletype">Float</span> respectively.</p>
+<div id="spadComm9-11" class="spadComm">
+<span id="commSav9-11" class="commSav">round 3.6</span>
+<div id="mathAns9-11">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-12" class="spadComm">
+<span id="commSav9-12" class="commSav">truncate(-3.6)</span>
+<div id="mathAns9-12">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-3.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-13" class="spadComm">
+<span id="commSav9-13" class="commSav">round(-3.6)</span>
+<div id="mathAns9-13">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-4.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>The operation <span class="spadfunFrom">fractionPart</span><span class="index">fractionPart</span><span id="chapter-9-8"></span><span class="index">Float</span><span id="chapter-9-9"></span> computes the fractional part of <span class="teletype">x</span>, that is, <span class="teletype">x - truncate x</span>.</p>
+<div id="spadComm9-14" class="spadComm">
+<span id="commSav9-14" class="commSav">fractionPart 3.6</span>
+<div id="mathAns9-14">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>The operation <span class="spadfunFrom">digits</span><span class="index">digits</span><span id="chapter-9-10"></span><span class="index">Float</span><span id="chapter-9-11"></span> allows the user to set the precision. It returns the previous value it was using.</p>
+<div id="spadComm9-15" class="spadComm">
+<span id="commSav9-15" class="commSav">digits 40 </span>
+<div id="mathAns9-15">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-16" class="spadComm">
+<span id="commSav9-16" class="commSav">sqrt 0.2</span>
+<div id="mathAns9-16">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.4472135954999579392818347337462552470881</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-17" class="spadComm">
+<span id="commSav9-17" class="commSav">pi()$Float </span>
+<div id="mathAns9-17">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3.141592653589793238462643383279502884197</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>The precision is only limited by the computer memory available. Calculations at 500 or more digits of precision are not difficult.</p>
+<div id="spadComm9-18" class="spadComm">
+<span id="commSav9-18" class="commSav">digits 500 </span>
+<div id="mathAns9-18">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>40</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-19" class="spadComm">
+<span id="commSav9-19" class="commSav">pi()$Float </span>
+<div id="mathAns9-19">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266482133936072602491412737245870066063155881748815209209628292540917153643678925903600113305305488204665213841469519415116094330572703657595919530921861173819326117931051185480744623799627495673518857527248912279381830119491</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Reset <span class="spadfunFrom">digits</span><span class="index">digits</span><span id="chapter-9-12"></span><span class="index">Float</span><span id="chapter-9-13"></span> to its default value.</p>
+<div id="spadComm9-20" class="spadComm">
+<span id="commSav9-20" class="commSav">digits 20</span>
+<div id="mathAns9-20">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>500</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Numbers of type <span class="teletype">Float</span> are represented as a record of two integers, namely, the mantissa and the exponent where the base of the exponent is binary. That is, the floating point number <span class="teletype">(m,e)</span> represents the number
+. A consequence of using a binary base is that decimal numbers can not, in general, be represented exactly.
+</div>
+<span id="subsec-9.27.3"></span>
+<div id="subsec-9.27.3" class="subsection">
+<h3 class="subsectitle" id="output-functions">9.27.3 Output Functions</h3>
+<p>A number of operations exist for specifying how numbers of type <span class="teletype">Float</span> are to be displayed. By default, spaces are inserted every ten digits in the output for readability.<span class="footnote">Note that you cannot include spaces in the input form of a floating point number, though you can use underscores.</span></p>
+<p>Output spacing can be modified with the <span class="spadfunFrom">outputSpacing</span><span class="index">outputSpacing</span><span id="chapter-9-14"></span><span class="index">Float</span><span id="chapter-9-15"></span> operation. This inserts no spaces and then displays the value of <span class="teletype">x</span>.</p>
+<div id="spadComm9-21" class="spadComm">
+<span id="commSav9-21" class="commSav">outputSpacing 0; x := sqrt 0.2 </span>
+<div id="mathAns9-21">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.44721359549995793928</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Issue this to have the spaces inserted every <span class="teletype">5</span> digits.</p>
+<div id="spadComm9-22" class="spadComm">
+<span id="commSav9-22" class="commSav">outputSpacing 5; x </span>
+<div id="mathAns9-22">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.44721359549995793928</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>By default, the system displays floats in either fixed format or scientific format, depending on the magnitude of the number.</p>
+<div id="spadComm9-23" class="spadComm">
+<span id="commSav9-23" class="commSav">y := x/10^10 </span>
+<div id="mathAns9-23">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.44721359549995793928E -10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>A particular format may be requested with the operations <span class="spadfunFrom">outputFloating</span><span class="index">outputFloating</span><span id="chapter-9-16"></span><span class="index">Float</span><span id="chapter-9-17"></span> and <span class="spadfunFrom">outputFixed</span><span class="index">outputFixed</span><span id="chapter-9-18"></span><span class="index">Float</span><span id="chapter-9-19"></span>.</p>
+<div id="spadComm9-24" class="spadComm">
+<span id="commSav9-24" class="commSav">outputFloating(); x </span>
+<div id="mathAns9-24">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.44721359549995793928E 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-25" class="spadComm">
+<span id="commSav9-25" class="commSav">outputFixed(); y </span>
+<div id="mathAns9-25">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.000000000044721359549995793928</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Additionally, you can ask for <span class="teletype">n</span> digits to be displayed after the decimal point.</p>
+<div id="spadComm9-26" class="spadComm">
+<span id="commSav9-26" class="commSav">outputFloating 2; y </span>
+<div id="mathAns9-26">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.45E -10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<div id="spadComm9-27" class="spadComm">
+<span id="commSav9-27" class="commSav">outputFixed 2; x </span>
+<div id="mathAns9-27">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.45</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>This resets the output printing to the default behavior.</p>
+<div id="spadComm9-28" class="spadComm">
+<span id="commSav9-28" class="commSav">outputGeneral()</span>
+<div id="mathAns9-28">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-9.27.4"></span>
+<div id="subsec-9.27.4" class="subsection">
+<h3 class="subsectitle" id="an-example-determinant-of-a-hilbert-matrix">9.27.4 An Example: Determinant of a Hilbert Matrix</h3>
+Consider the problem of computing the determinant of a <span class="teletype">10</span> by <span class="teletype">10</span> Hilbert matrix. The
+(i,j)-th entry of a Hilbert matrix is given by <span class="teletype">1/(i+j+1)</span>.
+<p>First do the computation using rational numbers to obtain the exact result.</p>
+<div id="spadComm9-29" class="spadComm">
+<span id="commSav9-29" class="commSav">a: Matrix Fraction Integer := matrix [ [1/(i+j+1) for j in 0..9] for i in 0..9] </span>
+<div id="mathAns9-29">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[11213141516171819110121314151617181911011113141516171819110111112141516171819110111112113151617181911011111211311416171819110111112113114115171819110111112113114115116181911011111211311411511611719110111112113114115116117118110111112113114115116117118119]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+<p>This version of <span class="spadfunFrom">determinant</span><span class="index">determinant</span><span id="chapter-9-20"></span><span class="index">Matrix</span><span id="chapter-9-21"></span> uses Gaussian elimination.</p>
+<div id="spadComm9-30" class="spadComm">
+<span id="commSav9-30" class="commSav">d:= determinant a </span>
+<div id="mathAns9-30">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>146206893947914691316295628839036278726983680000000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<div id="spadComm9-31" class="spadComm">
+<span id="commSav9-31" class="commSav">d :: Float </span>
+<div id="mathAns9-31">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.21641792264314918691E -52</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Now use hardware floats. Note that a semicolon (;) is used to prevent the display of the matrix.</p>
+<div id="spadComm9-32" class="spadComm">
+<span id="commSav9-32" class="commSav">b: Matrix DoubleFloat := matrix [ [1/(i+j+1$DoubleFloat) for j in 0..9] for i in 0..9]; </span>
+<div id="mathAns9-32">
+
+</div>
+</div>
+<div class="returnType">
+Type: Matrix DoubleFloat
+</div>
+<p>The result given by hardware floats is correct only to four significant digits of precision. In the jargon of numerical analysis, the Hilbert matrix is said to be <span class="italic">ill-conditioned.</span></p>
+<div id="spadComm9-33" class="spadComm">
+<span id="commSav9-33" class="commSav">determinant b </span>
+<div id="mathAns9-33">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2.1643677945721411e-53</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DoubleFloat
+</div>
+<p>Now repeat the computation at a higher precision using <span class="teletype">Float</span>.</p>
+<div id="spadComm9-34" class="spadComm">
+<span id="commSav9-34" class="commSav">digits 40 </span>
+<div id="mathAns9-34">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-35" class="spadComm">
+<span id="commSav9-35" class="commSav">c: Matrix Float := matrix [ [1/(i+j+1$Float) for j in 0..9] for i in 0..9]; </span>
+<div id="mathAns9-35">
+
+</div>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+<div id="spadComm9-36" class="spadComm">
+<span id="commSav9-36" class="commSav">determinant c </span>
+<div id="mathAns9-36">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.2164179226431491869060594983622617436159E -52</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Reset <span class="spadfunFrom">digits</span><span class="index">digits</span><span id="chapter-9-22"></span><span class="index">Float</span><span id="chapter-9-23"></span> to its default value.</p>
+<div id="spadComm9-37" class="spadComm">
+<span id="commSav9-37" class="commSav">digits 20</span>
+<div id="mathAns9-37">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>40</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.26.xhtml">Previous Section 9.26 FlexibleArray</a><a href="section-9.28.xhtml">Next Section 9.28 Fraction</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

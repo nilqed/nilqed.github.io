@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.21</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.21</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.20.xhtml">Previous Section 6.20 Example: Testing for Palindromes</a><a href="section-7.0.xhtml">Next Section 7.0 Graphics</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.21">
+<h2 class="sectiontitle" id="rules-and-pattern-matching">6.21 Rules and Pattern Matching</h2>
+<span id="ugUserRules" class="label"></span>
+A common mathematical formula is
+log(y)+log(x)=log(xy)∀xandy The presence of ``
+∀'' indicates that
+x and
+y can stand for arbitrary mathematical expressions in the above formula. You can use such mathematical formulas in FriCAS to specify <span class="italic">rewrite rules</span>. Rewrite rules are objects in FriCAS that can be assigned to variables for later use, often for the purpose of simplification. Rewrite rules look like ordinary function definitions except that they are preceded by the reserved word
+rule. <span class="index">rule</span><span id="chapter-6-69"></span> For example, a rewrite rule for the above formula is:
+<div class="verbatim">
+<br />
+rule log(x) + log(y) == log(x * y)<br />
+
+</div>
+Like function definitions, no action is taken when a rewrite rule is issued. Think of rewrite rules as functions that take one argument. When a rewrite rule
+A=B is applied to an argument
+f, its meaning is:
+rewrite every subexpression of
+f that <span class="italic">matches</span>
+A by
+B. The left-hand side of a rewrite rule is called a <span class="italic">pattern</span>; its right-side side is called its <span class="italic">substitution</span>.
+<p>Create a rewrite rule named <span style="font-weight: bold;"> logrule</span>. The generated symbol beginning with a ``<span class="teletype">%</span>'' is a place-holder for any other terms that might occur in the sum.</p>
+<div id="spadComm6-202" class="spadComm">
+<span id="commSav6-202" class="commSav">logrule := rule log(x) + log(y) == log(x * y)</span>
+<div id="mathAns6-202">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>log(y)+log(x)+%C==log(xy)+%C</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RewriteRule(Integer,Integer,Expression Integer)
+</div>
+<p>Create an expression with logarithms.</p>
+<div id="spadComm6-203" class="spadComm">
+<span id="commSav6-203" class="commSav">f := log sin x + log x</span>
+<div id="mathAns6-203">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>log(sin(x))+log(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Apply <span style="font-weight: bold;"> logrule</span> to
+f.
+<div id="spadComm6-204" class="spadComm">
+<span id="commSav6-204" class="commSav">logrule f</span>
+<div id="mathAns6-204">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>log(xsin(x))</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+The meaning of our example rewrite rule is: ``for all expressions
+x and
+y, rewrite
+log(x)+log(y) by
+log(x*y).'' Patterns generally have both operation names (here, <span style="font-weight: bold;"> log</span> and ``<span class="teletype">+</span>'') and variables (here,
+x and
+y). By default, every operation name stands for itself. Thus <span style="font-weight: bold;"> log</span> matches only
+log and not any other operation such as <span style="font-weight: bold;"> sin</span>. On the other hand, variables do not stand for themselves. Rather, a variable denotes a <span class="italic">pattern variable</span> that is free to match any expression whatsoever. <span class="index">pattern:variables</span><span id="chapter-6-70"></span>
+<p>When a rewrite rule is applied, a process called <span class="italic">pattern matching</span> goes to work by systematically scanning <span class="index">pattern:matching</span><span id="chapter-6-71"></span> the subexpressions of the argument. When a subexpression is found that <span class="italic">matches</span> the pattern, the subexpression is replaced by the right-hand side of the rule. The details of what happens will be covered later.</p>
+<p>The customary FriCAS notation for patterns is actually a shorthand for a longer, more general notation. Pattern variables can be made explicit by using a percent ``<span class="teletype">%</span>'' as the first character of the variable name. To say that a name stands for itself, you can prefix that name with a quote operator ``<span class="teletype">'</span>''. Although the current FriCAS parser does not let you quote an operation name, this more general notation gives you an alternate way of giving the same rewrite rule:</p>
+<div class="verbatim">
+<br />
+rule log(%x) + log(%y) == log(x * y)<br />
+
+</div>
+<p>This longer notation gives you patterns that the standard notation won't handle. For example, the rule</p>
+<div class="verbatim">
+<br />
+rule %f(c * 'x) ==  c*%f(x)<br />
+
+</div>
+means
+for all
+f and
+c, replace
+f(y) by
+c*f(x) when
+y is the product of
+c and the explicit variable
+x.
+<p>Thus the pattern can have several adornments on the names that appear there. Normally, all these adornments are dropped in the substitution on the right-hand side.</p>
+<p>To summarize:</p>
+<div class="boxed2">
+<div class="boxed">
+<p>To enter a single rule in FriCAS, use the following syntax: <span class="index">rule</span><span id="chapter-6-72"></span></p>
+<div class="center" style="text-align: center;">
+<p><span class="teletype">rule <span class="italic">leftHandSide</span> == <span class="italic">rightHandSide</span></span></p>
+</div>
+<p>The <span class="italic">leftHandSide</span> is a pattern to be matched and the <span class="italic"> rightHandSide</span> is its substitution. The rule is an object of type <span class="teletype">RewriteRule</span> that can be assigned to a variable and applied to expressions to transform them.<br />
+</p>
+</div>
+</div>
+Rewrite rules can be collected into rulesets so that a set of rules can be applied at once. Here is another simplification rule for logarithms.
+y⁢log(x)=log(xy)∀xandy If instead of giving a single rule following the reserved word
+rule you give a <span class="italic">pile</span> of rules, you create what is called a <span class="italic"> ruleset.</span> <span class="index">ruleset</span><span id="chapter-6-73"></span> Like rules, rulesets are objects in FriCAS and can be assigned to variables. You will find it useful to group commonly used rules into input files, and read them in as needed.
+Create a ruleset named
+logrules.
+<div class="verbatim">
+<br />
+logrules := rule<br />
+  log(x) + log(y) == log(x * y)<br />
+  y * log x       == log(x ^ y)<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{log(y)+log(x)+%B==log(xy)+%B,ylog(x)==log(xy)}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Ruleset(Integer,Integer,Expression Integer)
+</div>
+Again, create an expression
+f containing logarithms.
+<div id="spadComm6-205" class="spadComm">
+<span id="commSav6-205" class="commSav">f := a * log(sin x) - 2 * log x</span>
+<div id="mathAns6-205">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>alog(sin(x))-2log(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Apply the ruleset <span style="font-weight: bold;"> logrules</span> to
+f.
+<div id="spadComm6-206" class="spadComm">
+<span id="commSav6-206" class="commSav">logrules f</span>
+<div id="mathAns6-206">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>log(sin(x)ax2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+We have allowed pattern variables to match arbitrary expressions in the above examples. Often you want a variable only to match expressions satisfying some predicate. For example, we may want to apply the transformation
+ylog(x)=log(xy) only when
+y is an integer.
+The way to restrict a pattern variable
+y by a predicate
+f(y) <span class="index">pattern:variable:predicate</span><span id="chapter-6-74"></span> is by using a vertical bar ``<span class="teletype">|</span>'', which means <span class="italic">such that,</span> in <span class="index">such that</span><span id="chapter-6-75"></span> much the same way it is used in function definitions. <span class="index">predicate:on a pattern variable</span><span id="chapter-6-76"></span> You do this only once, but at the earliest (meaning deepest and leftmost) part of the pattern.
+<p>This restricts the logarithmic rule to create integer exponents only.</p>
+<div class="verbatim">
+<br />
+logrules2 := rule<br />
+  log(x) + log(y)          == log(x * y)<br />
+  (y | integer? y) * log x == log(x ^ y)<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{log(y)+log(x)+%D==log(xy)+%D,ylog(x)==log(xy)}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Ruleset(Integer,Integer,Expression Integer)
+</div>
+<p>Compare this with the result of applying the previous set of rules.</p>
+<div id="spadComm6-207" class="spadComm">
+<span id="commSav6-207" class="commSav">f</span>
+<div id="mathAns6-207">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>alog(sin(x))-2log(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm6-208" class="spadComm">
+<span id="commSav6-208" class="commSav">logrules2 f</span>
+<div id="mathAns6-208">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>alog(sin(x))+log(1x2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>You should be aware that you might need to apply a function like <span class="teletype">integer</span> within your predicate expression to actually apply the test function.</p>
+Here we use <span class="teletype">integer</span> because
+n has type <span class="teletype">Expression Integer</span> but <span style="font-weight: bold;"> even?</span> is an operation defined on integers.
+<div id="spadComm6-209" class="spadComm">
+<span id="commSav6-209" class="commSav">evenRule := rule cos(x)^(n | integer? n and even? integer n)==(1-sin(x)^2)^(n/2)</span>
+<div id="mathAns6-209">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>cos(x)n==(-sin(x)2+1)n2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RewriteRule(Integer,Integer,Expression Integer)
+</div>
+<p>Here is the application of the rule.</p>
+<div id="spadComm6-210" class="spadComm">
+<span id="commSav6-210" class="commSav">evenRule( cos(x)^2 )</span>
+<div id="mathAns6-210">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-sin(x)2+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>This is an example of some of the usual identities involving products of sines and cosines.</p>
+<div class="verbatim">
+<br />
+sinCosProducts == rule<br />
+  sin(x) * sin(y) == (cos(x-y) - cos(x + y))/2<br />
+  cos(x) * cos(y) == (cos(x-y) + cos(x+y))/2<br />
+  sin(x) * cos(y) == (sin(x-y) + sin(x + y))/2<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm6-211" class="spadComm">
+<span id="commSav6-211" class="commSav">g := sin(a)*sin(b) + cos(b)*cos(a) + sin(2*a)*cos(2*a)</span>
+<div id="mathAns6-211">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(a)sin(b)+cos(2a)sin(2a)+cos(a)cos(b)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm6-212" class="spadComm">
+<span id="commSav6-212" class="commSav">sinCosProducts g</span>
+<div id="mathAns6-212">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling body of rule sinCosProducts to compute value of type <br />
+      Ruleset(Integer,Integer,Expression Integer) <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(4a)+2cos(b-a)2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Another qualification you will often want to use is to allow a pattern to match an identity element. Using the pattern
+x+y, for example, neither
+x nor
+y matches the expression
+0. Similarly, if a pattern contains a product
+x*y or an exponentiation
+x**y, then neither
+x or
+y matches
+1.
+<p>If identical elements were matched, pattern matching would generally loop. Here is an expansion rule for exponentials.</p>
+<div id="spadComm6-213" class="spadComm">
+<span id="commSav6-213" class="commSav">exprule := rule exp(a + b) == exp(a) * exp(b)</span>
+<div id="mathAns6-213">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>e(b+a)==eaeb</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RewriteRule(Integer,Integer,Expression Integer)
+</div>
+This rule would cause infinite rewriting on this if either
+a or
+b were allowed to match
+0.
+<div id="spadComm6-214" class="spadComm">
+<span id="commSav6-214" class="commSav">exprule exp x</span>
+<div id="mathAns6-214">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>ex</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+There are occasions when you do want a pattern variable in a sum or product to match
+0 or
+1. If so, prefix its name with a <span class="italic"><span class="teletype">?</span></span> whenever it appears in a left-hand side of a rule. For example, consider the following rule for the exponential integral:
+This rule is valid for
+y=0. One solution is to create a <span class="teletype">Ruleset</span> with two rules, one with and one without
+y. A better solution is to use an <span class="italic">optional</span> pattern variable.
+Define rule <span class="teletype">eirule</span> with a pattern variable
+to indicate that an expression may or may not occur.
+<div id="spadComm6-215" class="spadComm">
+<span id="commSav6-215" class="commSav">eirule := rule integral((?y + exp x)/x,x) == integral(y/x,x) + Ei x</span>
+<div id="mathAns6-215">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>∫xe%M+y%Md%M=='integral(yx,x)+'Ei(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RewriteRule(Integer,Integer,Expression Integer)
+</div>
+<p>Apply rule <span class="teletype">eirule</span> to an integral without this term.</p>
+<div id="spadComm6-216" class="spadComm">
+<span id="commSav6-216" class="commSav">eirule integral(exp u/u, u)</span>
+<div id="mathAns6-216">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>Ei(u)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Apply rule <span class="teletype">eirule</span> to an integral with this term.</p>
+<div id="spadComm6-217" class="spadComm">
+<span id="commSav6-217" class="commSav">eirule integral(sin u + exp u/u, u)</span>
+<div id="mathAns6-217">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>∫usin(%M)d%M+Ei(u)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Here is one final adornment you will find useful. When matching a pattern of the form
+x+y to an expression containing a long sum of the form
+a+…+b, there is no way to predict in advance which subset of the sum matches
+x and which matches
+y. Aside from efficiency, this is generally unimportant since the rule holds for any possible combination of matches for
+x and
+y. In some situations, however, you may want to say which pattern variable is a sum (or product) of several terms, and which should match only a single term. To do this, put a prefix colon ``<span class="teletype">:</span>'' before the pattern variable that you want to match multiple terms. <span class="index">pattern:variable:matching several terms</span><span id="chapter-6-77"></span>
+The remaining rules involve operators
+u and
+v. <span class="index">operator</span><span id="chapter-6-78"></span>
+<div id="spadComm6-218" class="spadComm">
+<span id="commSav6-218" class="commSav">u := operator 'u</span>
+<div id="mathAns6-218">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>u</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+These definitions tell FriCAS that
+u and
+v are formal operators to be used in expressions.
+<div id="spadComm6-219" class="spadComm">
+<span id="commSav6-219" class="commSav">v := operator 'v</span>
+<div id="mathAns6-219">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>v</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+First define <span class="teletype">myRule</span> with no restrictions on the pattern variables
+x and
+y.
+<div id="spadComm6-220" class="spadComm">
+<span id="commSav6-220" class="commSav">myRule := rule u(x + y) == u x + v y</span>
+<div id="mathAns6-220">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>u(y+x)=='v(y)+'u(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RewriteRule(Integer,Integer,Expression Integer)
+</div>
+<p>Apply <span class="teletype">myRule</span> to an expression.</p>
+<div id="spadComm6-221" class="spadComm">
+<span id="commSav6-221" class="commSav">myRule u(a + b + c + d)</span>
+<div id="mathAns6-221">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>v(d+c+b)+u(a)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Define <span class="teletype">myOtherRule</span> to match several terms so that the rule gets applied recursively.</p>
+<div id="spadComm6-222" class="spadComm">
+<span id="commSav6-222" class="commSav">myOtherRule := rule u(:x + y) == u x + v y</span>
+<div id="mathAns6-222">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>u(y+x)=='v(y)+'u(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RewriteRule(Integer,Integer,Expression Integer)
+</div>
+<p>Apply <span class="teletype">myOtherRule</span> to the same expression.</p>
+<div id="spadComm6-223" class="spadComm">
+<span id="commSav6-223" class="commSav">myOtherRule u(a + b + c + d)</span>
+<div id="mathAns6-223">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>v(c)+v(b)+v(a)+u(d)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div class="boxed2">
+<div class="boxed">
+<p>Summary of pattern variable adornments:</p>
+<table class="begintabular">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="teletype">(x | predicate?(x))</span></td>
+<td>means that the substutution
+s for
+x must satisfy <span class="teletype">predicate(s) = true.</span></td>
+</tr>
+<tr class="even">
+<td><span class="teletype">?x</span></td>
+<td>means that
+x can match an identity element (0 or 1).</td>
+</tr>
+<tr class="odd">
+<td><span class="teletype">:x</span></td>
+<td>means that
+x can match several terms in a sum.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Here are some final remarks on pattern matching. Pattern matching provides a very useful paradigm for solving certain classes of problems, namely, those that involve transformations of one form to another and back. However, it is important to recognize its limitations. <span class="index">pattern:matching:caveats</span><span id="chapter-6-79"></span></p>
+<p>First, pattern matching slows down as the number of rules you have to apply increases. Thus it is good practice to organize the sets of rules you use optimally so that irrelevant rules are never included.</p>
+Second, careless use of pattern matching can lead to wrong answers. You should avoid using pattern matching to handle hidden algebraic relationships that can go undetected by other programs. As a simple example, a symbol such as <span class="italic">J</span> can easily be used to represent the square root of
+-1 or some other important algebraic quantity. Many algorithms branch on whether an expression is zero or not, then divide by that expression if it is not. If you fail to simplify an expression involving powers of
+J to
+-1, algorithms may incorrectly assume an expression is non-zero, take a wrong branch, and produce a meaningless result.
+<p>Pattern matching should also not be used as a substitute for a domain. In FriCAS, objects of one domain are transformed to objects of other domains using well-defined <span style="font-weight: bold;"> coerce</span> operations. Pattern matching should be used on objects that are all the same type. Thus if your application can be handled by type <span class="teletype">Expression</span> in FriCAS and you think you need pattern matching, consider this choice carefully. <span class="index">Expression</span><span id="chapter-6-80"></span> You may well be better served by extending an existing domain or by building a new domain of objects for your application.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.20.xhtml">Previous Section 6.20 Example: Testing for Palindromes</a><a href="section-7.0.xhtml">Next Section 7.0 Graphics</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

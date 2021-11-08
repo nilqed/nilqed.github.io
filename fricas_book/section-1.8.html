@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.8</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.8</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.7.xhtml">Previous Section 1.7 Writing Your Own Functions</a><a href="section-1.9.xhtml">Next Section 1.9 Limits</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.8">
+<h2 class="sectiontitle" id="polynomials">1.8 Polynomials</h2>
+<span id="ugIntroVariables" class="label"></span>
+Polynomials are the commonly used algebraic types in symbolic computation. <span class="index">polynomial</span><span id="chapter-1-67"></span> Interactive users of FriCAS generally only see one type of polynomial: <span class="teletype">Polynomial(R)</span>. This type represents polynomials in any number of unspecified variables over a particular coefficient domain
+R. This type represents its coefficients <span style="font-style: italic;"> sparsely</span>: only terms with non-zero coefficients are represented.
+<p>In building applications, many other kinds of polynomial representations are useful. Polynomials may have one variable or multiple variables, the variables can be named or unnamed, the coefficients can be stored sparsely or densely. So-called <span class="italic">distributed multivariate polynomials</span> store polynomials as coefficients paired with vectors of exponents. This type is particularly efficient for use in algorithms for solving systems of non-linear polynomial equations.</p>
+<p>The polynomial constructor most familiar to the interactive user is <span class="teletype">Polynomial</span>.</p>
+<div id="spadComm1-127" class="spadComm">
+<span id="commSav1-127" class="commSav">(x^2 - x*y^3 +3*y)^2</span>
+<div id="mathAns1-127">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2y6-6xy4-2x3y3+9y2+6x2y+x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>If you wish to restrict the variables used, <span class="teletype">UnivariatePolynomial</span> provides polynomials in one variable.</p>
+<div id="spadComm1-128" class="spadComm">
+<span id="commSav1-128" class="commSav">p: UP(x,INT) := (3*x-1)^2 * (2*x + 8)</span>
+<div id="mathAns1-128">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>18x3+60x2-46x+8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariatePolynomial(x,Integer)
+</div>
+<p>The constructor <span class="teletype">MultivariatePolynomial</span> provides polynomials in one or more specified variables.</p>
+<div id="spadComm1-129" class="spadComm">
+<span id="commSav1-129" class="commSav">m: MPOLY([x,y],INT) := (x^2-x*y^3+3*y)^2</span>
+<div id="mathAns1-129">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x4-2y3x3+(y6+6y)x2-6y4x+9y2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([x,y],Integer)
+</div>
+<p>You can change the way the polynomial appears by modifying the variable ordering in the explicit list.</p>
+<div id="spadComm1-130" class="spadComm">
+<span id="commSav1-130" class="commSav">m :: MPOLY([y,x],INT)</span>
+<div id="mathAns1-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2y6-6xy4-2x3y3+9y2+6x2y+x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([y,x],Integer)
+</div>
+<p>The constructor <span class="teletype">DistributedMultivariatePolynomial</span> provides polynomials in one or more specified variables with the monomials ordered lexicographically.</p>
+<div id="spadComm1-131" class="spadComm">
+<span id="commSav1-131" class="commSav">m :: DMP([y,x],INT)</span>
+<div id="mathAns1-131">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y6x2-6y4x-2y3x3+9y2+6yx2+x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DistributedMultivariatePolynomial([y,x],Integer)
+</div>
+<p>The constructor <span class="teletype">HomogeneousDistributedMultivariatePolynomial</span> is similar except that the monomials are ordered by total order refined by reverse lexicographic order.</p>
+<div id="spadComm1-132" class="spadComm">
+<span id="commSav1-132" class="commSav">m :: HDMP([y,x],INT)</span>
+<div id="mathAns1-132">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y6x2-2y3x3-6y4x+x4+6yx2+9y2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: HomogeneousDistributedMultivariatePolynomial([y,x],Integer)
+</div>
+<p>More generally, the domain constructor <span class="teletype">GeneralDistributedMultivariatePolynomial</span> allows the user to provide an arbitrary predicate to define his own term ordering. These last three constructors are typically used in Gröbner basis applications and when a flat (that is, non-recursive) display is wanted and the term ordering is critical for controlling the computation.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.7.xhtml">Previous Section 1.7 Writing Your Own Functions</a><a href="section-1.9.xhtml">Next Section 1.9 Limits</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

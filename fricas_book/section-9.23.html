@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.23</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.23</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.22.xhtml">Previous Section 9.22 Factored</a><a href="section-9.24.xhtml">Next Section 9.24 File</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.23">
+<h2 class="sectiontitle" id="factoredfunctions2">9.23 FactoredFunctions2</h2>
+<span id="FactoredFunctions2XmpPage" class="label"></span>
+<p>The <span class="teletype">FactoredFunctions2</span> package implements one operation, <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-50"></span><span class="index">FactoredFunctions2</span><span id="chapter-9-51"></span>, for applying an operation to every base in a factored object and to the unit.</p>
+<div id="spadComm9-190" class="spadComm">
+<span id="commSav9-190" class="commSav">double(x) == x + x </span>
+<div id="mathAns9-190">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm9-191" class="spadComm">
+<span id="commSav9-191" class="commSav">f := factor(720) </span>
+<div id="mathAns9-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>24325</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>Actually, the <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-52"></span><span class="index">FactoredFunctions2</span><span id="chapter-9-53"></span> operation used in this example comes from <span class="teletype">Factored</span> itself, since <span class="teletype">double</span> takes an integer argument and returns an integer result.</p>
+<div id="spadComm9-192" class="spadComm">
+<span id="commSav9-192" class="commSav">map(double,f) </span>
+<div id="mathAns9-192">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2446210</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>If we want to use an operation that returns an object that has a type different from the operation's argument, the <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-54"></span><span class="index">FactoredFunctions2</span><span id="chapter-9-55"></span> in <span class="teletype">Factored</span> cannot be used and we use the one in <span class="teletype">FactoredFunctions2</span>.</p>
+<div id="spadComm9-193" class="spadComm">
+<span id="commSav9-193" class="commSav">makePoly(b) == x + b </span>
+<div id="mathAns9-193">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>In fact, the <span class="italic">2</span> in the name of the package means that we might be using factored objects of two different types.</p>
+<div id="spadComm9-194" class="spadComm">
+<span id="commSav9-194" class="commSav">g := map(makePoly,f) </span>
+<div id="mathAns9-194">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(x+1)(x+2)4(x+3)2(x+5)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Polynomial Integer
+</div>
+<p>It is important to note that both versions of <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-56"></span><span class="index">FactoredFunctions2</span><span id="chapter-9-57"></span> destroy any information known about the bases (the fact that they are prime, for instance).</p>
+<p>The flags for each base are set to <span class="italic">nil</span> in the object returned by <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-58"></span><span class="index">FactoredFunctions2</span><span id="chapter-9-59"></span>.</p>
+<div id="spadComm9-195" class="spadComm">
+<span id="commSav9-195" class="commSav">nthFlag(g,1) </span>
+<div id="mathAns9-195">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"nil"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union("nil",...)
+</div>
+<p>For more information about factored objects and their use, see <a href="section-9.22.xhtml#FactoredXmpPage" class="ref">FactoredXmpPage</a> and <a href="ugProblemGaloisPage" class="ref">ugProblemGaloisPage</a> in Section <a href="ugProblemGaloisNumber" class="ref">ugProblemGaloisNumber</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.22.xhtml">Previous Section 9.22 Factored</a><a href="section-9.24.xhtml">Next Section 9.24 File</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

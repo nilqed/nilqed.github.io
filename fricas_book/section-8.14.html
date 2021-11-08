@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section8.14</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section8.14</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.13.xhtml">Previous Section 8.13 Computation of Galois Groups</a><a href="section-9.1.xhtml">Next Section 9.1 AssociationList</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-8.14">
+<h2 class="sectiontitle" id="non-associative-algebras-and-modelling-genetic-laws">8.14 Non-Associative Algebras and Modelling Genetic Laws</h2>
+<span id="ugProblemGenetic" class="label"></span>
+Many algebraic structures of mathematics and FriCAS have a multiplication operation <span class="teletype">*</span> that satisfies the associativity law <span class="index">associativity law</span><span id="chapter-8-224"></span>
+a*(b*c)=(a*b)*c for all
+a,
+b and
+c. The octonions are a well known exception. There are many other interesting non-associative structures, such as the class of <span class="index">Lie algebra</span><span id="chapter-8-225"></span> Lie algebras.<span class="footnote">Two FriCAS implementations of Lie algebras are <span class="teletype">LieSquareMatrix</span> and <span class="teletype">FreeNilpotentLie</span>.</span> Lie algebras can be used, for example, to analyse Lie symmetry algebras of <span class="index">symmetry</span><span id="chapter-8-226"></span> partial differential <span class="index">differential equation:partial</span><span id="chapter-8-227"></span> equations. <span class="index">partial differential equation</span><span id="chapter-8-228"></span> In this section we show a different application of non-associative algebras, <span class="index">non-associative algebra</span><span id="chapter-8-229"></span> the modelling of genetic laws. <span class="index">algebra:non-associative</span><span id="chapter-8-230"></span>
+<p>The FriCAS library contains several constructors for creating non-associative structures, ranging from the categories <span class="teletype">Monad</span>, <span class="teletype">NonAssociativeRng</span>, and <span class="teletype">FramedNonAssociativeAlgebra</span>, to the domains <span class="teletype">AlgebraGivenByStructuralConstants</span> and <span class="teletype">GenericNonAssociativeAlgebra</span>. Furthermore, the package <span class="teletype">AlgebraPackage</span> provides operations for analysing the structure of such algebras.<span class="footnote"> The interested reader can learn more about these aspects of the FriCAS library from the paper <span class="italic">Computations in Algebras of Finite Rank,</span> by Johannes Grabmeier and Robert Wisbauer, Technical Report, IBM Heidelberg Scientific Center, 1992.</span></p>
+<p>Mendel's genetic laws are often written in a form like</p>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>AaxAa=14AA+12Aa+14aa</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The implementation of general algebras in FriCAS allows us to <span class="index">Mendel's genetic laws</span><span id="chapter-8-231"></span> use this as the definition for multiplication in an algebra. <span class="index">genetics</span><span id="chapter-8-232"></span> Hence, it is possible to study questions of genetic inheritance using FriCAS. To demonstrate this more precisely, we discuss one example from a monograph of A. Wörz-Busekros, where you can also find a general setting of this theory.<span class="footnote"> Wörz-Busekros, A., <span class="italic">Algebras in Genetics</span>, Springer Lectures Notes in Biomathematics 36, Berlin e.a. (1980). In particular, see example 1.3.</span></p>
+We assume that there is an infinitely large random mating population. Random mating of two gametes
+ai and
+aj gives zygotes <span class="index">zygote</span><span id="chapter-8-233"></span>
+, which produce new gametes. <span class="index">gamete</span><span id="chapter-8-234"></span> In classical Mendelian segregation we have
+aiaj=12ai+12aj. In general, we have
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>aiaj=∑k=1nγi,jkak</td>
+</tr>
+</tbody>
+</table>
+</div>
+The segregation rates
+γi,j are the structural constants of an
+n-dimensional algebra. This is provided in FriCAS by the constructor <span class="teletype">AlgebraGivenByStructuralConstants</span> (abbreviation <span class="teletype">ALGSC</span>).
+Consider two coupled autosomal loci with alleles
+A,
+a,
+B, and
+b, building four different gametes
+a1=AB,a2=Ab,a3=aB, and
+a4=ab {
+a1:=AB,a2:=Ab,a3:=aB, and
+a4:=ab}. The zygotes
+produce gametes
+ai and
+aj with classical Mendelian segregation. Zygote
+a1a4 undergoes transition to
+a2a3 and vice versa with probability
+0≤θ≤12.
+Define a list
+of four four-by-four matrices giving the segregation rates. We use the value
+1/10 for
+θ.
+<div id="spadComm8-387" class="spadComm">
+<span id="commSav8-387" class="commSav">segregationRates : List SquareMatrix(4,FRAC INT) := [matrix [ [1, 1/2, 1/2, 9/20], [1/2, 0, 1/20, 0], [1/2, 1/20, 0, 0], [9/20, 0, 0, 0] ], matrix [ [0, 1/2, 0, 1/20], [1/2, 1, 9/20, 1/2], [0, 9/20, 0, 0], [1/20, 1/2, 0, 0] ], matrix [ [0, 0, 1/2, 1/20], [0, 0, 9/20, 0], [1/2, 9/20, 1, 1/2], [1/20, 0, 1/2, 0] ], matrix [ [0, 0, 0, 9/20], [0, 0, 1/20, 1/2], [0, 1/20, 0, 1/2], [9/20, 1/2, 1/2, 1] ] ] </span>
+<div id="mathAns8-387">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[1121292012012001212000920000],[0120120121920120920001201200],[0012120009200129201121200120],[0009200012012012001292012121]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List SquareMatrix(4,Fraction Integer)
+</div>
+<p>Choose the appropriate symbols for the basis of gametes,</p>
+<div id="spadComm8-388" class="spadComm">
+<span id="commSav8-388" class="commSav">gametes := ['AB,'Ab,'aB,'ab] </span>
+<div id="mathAns8-388">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[AB,Ab,aB,ab]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List OrderedVariableList [AB,Ab,aB,ab]
+</div>
+<p>Define the algebra.</p>
+<div id="spadComm8-389" class="spadComm">
+<span id="commSav8-389" class="commSav">A := ALGSC(FRAC INT, 4, gametes, segregationRates)</span>
+<div id="mathAns8-389">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>AlgebraGivenByStructuralConstants(FractionInteger,4,[AB,Ab,aB,ab],[MATRIX,MATRIX,MATRIX,MATRIX])</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+What are the probabilities for zygote
+a1a4 to produce the different gametes?
+<div id="spadComm8-390" class="spadComm">
+<span id="commSav8-390" class="commSav">a := basis()$A</span>
+<div id="mathAns8-390">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[AB,Ab,aB,ab]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector AlgebraGivenByStructuralConstants(Fraction Integer,4,[AB,Ab,aB,ab], [MATRIX,MATRIX,MATRIX,MATRIX])
+</div>
+<div id="spadComm8-391" class="spadComm">
+<span id="commSav8-391" class="commSav">a.1*a.4</span>
+<div id="mathAns8-391">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>920ab+120aB+120Ab+920AB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraGivenByStructuralConstants(Fraction Integer,4,[AB,Ab,aB,ab], [MATRIX,MATRIX,MATRIX,MATRIX])
+</div>
+<p>Elements in this algebra whose coefficients sum to one play a distinguished role. They represent a population with the distribution of gametes reflected by the coefficients with respect to the basis of gametes.</p>
+Random mating of different populations
+x and
+y is described by their product
+x*y.
+<p>This product is commutative only if the gametes are not sex-dependent, as in our example.</p>
+<div id="spadComm8-392" class="spadComm">
+<span id="commSav8-392" class="commSav">commutative?()$A </span>
+<div id="mathAns8-392">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>In general, it is not associative.</p>
+<div id="spadComm8-393" class="spadComm">
+<span id="commSav8-393" class="commSav">associative?()$A </span>
+<div id="mathAns8-393">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+Random mating within a population
+x is described by
+x*x. The next generation is
+(x*x)*(x*x).
+<p>Use decimal numbers to compare the distributions more easily.</p>
+<div id="spadComm8-394" class="spadComm">
+<span id="commSav8-394" class="commSav">x : ALGSC(DECIMAL, 4, gametes, segregationRates) := convert [3/10, 1/5, 1/10, 2/5]</span>
+<div id="mathAns8-394">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.4ab+0.1aB+0.2Ab+0.3AB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraGivenByStructuralConstants(DecimalExpansion,4,[AB,Ab,aB,ab], [MATRIX,MATRIX,MATRIX,MATRIX])
+</div>
+<p>To compute directly the gametic distribution in the fifth generation, we use <span style="font-weight: bold;"> plenaryPower</span>.</p>
+<div id="spadComm8-395" class="spadComm">
+<span id="commSav8-395" class="commSav">plenaryPower(x,5) </span>
+<div id="mathAns8-395">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.36561ab+0.13439aB+0.23439Ab+0.26561AB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraGivenByStructuralConstants(DecimalExpansion,4,[AB,Ab,aB,ab], [MATRIX,MATRIX,MATRIX,MATRIX])
+</div>
+<p>We now ask two questions: Does this distribution converge to an equilibrium state? What are the distributions that are stable?</p>
+<p>This is an invariant of the algebra and it is used to answer the first question. The new indeterminates describe a symbolic distribution.</p>
+<div id="spadComm8-396" class="spadComm">
+<span id="commSav8-396" class="commSav">q := leftRankPolynomial()$GCNAALG(FRAC INT, 4, gametes, segregationRates) :: UP(Y, POLY FRAC INT)</span>
+<div id="mathAns8-396">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>Y3+(-2920%x4-2920%x3-2920%x2-2920%x1)Y2+((920%x42+(910%x3+910%x2+910%x1)%x4+.920%x32+(910%x2+910%x1)%x3+920%x22+.910%x1%x2+920%x12))Y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariatePolynomial(Y,Polynomial Fraction Integer)
+</div>
+Because the coefficient
+920 has absolute value less than 1, all distributions do converge, by a theorem of this theory.
+<div id="spadComm8-397" class="spadComm">
+<span id="commSav8-397" class="commSav">factor(q :: POLY FRAC INT) </span>
+<div id="mathAns8-397">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(Y-%x4-%x3-%x2-%x1)*(Y-920%x4-920%x3-920%x2-920%x1)Y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Polynomial Fraction Integer
+</div>
+<p>The second question is answered by searching for idempotents in the algebra.</p>
+<div id="spadComm8-398" class="spadComm">
+<span id="commSav8-398" class="commSav">cI := conditionsForIdempotents()$GCNAALG(FRAC INT, 4, gametes, segregationRates) </span>
+<div id="mathAns8-398">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[910%x1%x4+(110%x2+%x1)%x3+%x1%x2+%x12-%x1,(%x2+110%x1)%x4+910%x2%x3+%x22+(%x1-1)%x2,(%x3+110%x1)%x4+%x32+(910%x2+%x1-1)%x3,%x42+(%x3+%x2+910%x1-1)%x4+110%x2%x3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Polynomial Fraction Integer
+</div>
+<p>Solve these equations and look at the first solution.</p>
+<div id="spadComm8-399" class="spadComm">
+<span id="commSav8-399" class="commSav">gbs:= groebnerFactorize cI</span>
+<div id="mathAns8-399">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Polynomial Fraction Integer
+</div>
+<div id="spadComm8-400" class="spadComm">
+<span id="commSav8-400" class="commSav">gbs.1</span>
+<div id="mathAns8-400">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[%x4+%x3+%x2+%x1-1,(%x2+%x1)%x3+%x1%x2+%x12-%x1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Polynomial Fraction Integer
+</div>
+<p>Further analysis using the package <span class="teletype">PolynomialIdeals</span> shows that there is a two-dimensional variety of equilibrium states and all other solutions are contained in it.</p>
+<p>Choose one equilibrium state by setting two indeterminates to concrete values.</p>
+<div id="spadComm8-401" class="spadComm">
+<span id="commSav8-401" class="commSav">sol := solve concat(gbs.1,[%x1-1/10,%x2-1/10]) </span>
+<div id="mathAns8-401">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[%x4=25,%x3=25,%x2=110,%x1=110]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Fraction Polynomial Integer
+</div>
+<div id="spadComm8-402" class="spadComm">
+<span id="commSav8-402" class="commSav">e : A := represents reverse (map(rhs, sol.1) :: List FRAC INT) </span>
+<div id="mathAns8-402">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>25ab+25aB+110Ab+110AB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraGivenByStructuralConstants(Fraction Integer,4,[AB,Ab,aB,ab], [MATRIX,MATRIX,MATRIX,MATRIX])
+</div>
+<p>Verify the result.</p>
+<div id="spadComm8-403" class="spadComm">
+<span id="commSav8-403" class="commSav">e*e-e </span>
+<div id="mathAns8-403">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraGivenByStructuralConstants(Fraction Integer,4,[AB,Ab,aB,ab], [MATRIX,MATRIX,MATRIX,MATRIX])
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-8.13.xhtml">Previous Section 8.13 Computation of Galois Groups</a><a href="section-9.1.xhtml">Next Section 9.1 AssociationList</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

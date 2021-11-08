@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.16</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.16</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.15.xhtml">Previous Section 6.15 Functions Defined with Blocks</a><a href="section-6.17.xhtml">Next Section 6.17 Anonymous Functions</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.16">
+<h2 class="sectiontitle" id="free-and-local-variables">6.16 Free and Local Variables</h2>
+<span id="ugUserFreeLocal" class="label"></span>
+<p>When you want to refer to a variable that is not local to your function, use a <span class="italic"><span class="teletype">free</span></span> declaration. <span class="index">free</span><span id="chapter-6-44"></span> Variables declared to be <span class="teletype">free</span> <span class="index">free variable</span><span id="chapter-6-45"></span> are assumed to be defined globally <span class="index">variable:free</span><span id="chapter-6-46"></span> in the <span class="index">variable:global</span><span id="chapter-6-47"></span> workspace. <span class="index">global variable</span><span id="chapter-6-48"></span></p>
+<p>This is a global workspace variable.</p>
+<div id="spadComm6-134" class="spadComm">
+<span id="commSav6-134" class="commSav">counter := 0</span>
+<div id="mathAns6-134">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+This function refers to the global
+counter.
+<div class="verbatim">
+<br />
+f() ==<br />
+  free counter<br />
+  counter := counter + 1<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+The global
+counter is incremented by
+1.
+<div id="spadComm6-135" class="spadComm">
+<span id="commSav6-135" class="commSav">f()</span>
+<div id="mathAns6-135">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function f with type () -&gt; NonNegativeInteger <br />
+<br />
++++ |*0;f;1;G82322| redefined<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm6-136" class="spadComm">
+<span id="commSav6-136" class="commSav">counter</span>
+<div id="mathAns6-136">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>Usually FriCAS can tell that you mean to refer to a global variable and so <span class="teletype">free</span> isn't always necessary. However, for clarity and the sake of self-documentation, we encourage you to use it.</p>
+<p>Declare a variable to be <span class="italic"><span class="teletype">local</span></span> when you do not want to refer to <span class="index">variable:local</span><span id="chapter-6-49"></span> a global variable by the same name. <span class="index">local variable</span><span id="chapter-6-50"></span></p>
+This function uses
+counter as a local variable.
+<div class="verbatim">
+<br />
+g() ==<br />
+  local counter<br />
+  counter := 7<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Apply the function.</p>
+<div id="spadComm6-137" class="spadComm">
+<span id="commSav6-137" class="commSav">g()</span>
+<div id="mathAns6-137">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Check that the global value of
+counter is unchanged.
+<div id="spadComm6-138" class="spadComm">
+<span id="commSav6-138" class="commSav">counter</span>
+<div id="mathAns6-138">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>Parameters to a function are local variables in the function. Even if you issue a <span class="teletype">free</span> declaration for a parameter, it is still local.</p>
+What happens if you do not declare that a variable
+x in the body of your function is <span class="teletype">local</span> or <span class="teletype">free</span>? Well, FriCAS decides on this basis:
+<ol>
+<li>FriCAS scans your function line-by-line, from top-to-bottom. The right-hand side of an assignment is looked at before the left-hand side.</li>
+<li>If
+x is referenced before it is assigned a value, it is a <span class="teletype">free</span> (global) variable.</li>
+<li>If
+x is assigned a value before it is referenced, it is a <span class="teletype">local</span> variable.</li>
+</ol>
+<p>Set two global variables to 1.</p>
+<div id="spadComm6-139" class="spadComm">
+<span id="commSav6-139" class="commSav">a := b := 1</span>
+<div id="mathAns6-139">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Refer to
+a before it is assigned a value, but assign a value to
+b before it is referenced.
+<div class="verbatim">
+<br />
+h() ==<br />
+  b := a + 1<br />
+  a := b + a<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Can you predict this result?</p>
+<div id="spadComm6-140" class="spadComm">
+<span id="commSav6-140" class="commSav">h()</span>
+<div id="mathAns6-140">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function h with type () -&gt; PositiveInteger <br />
+<br />
++++ |*0;h;1;G82322| redefined<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>How about this one?</p>
+<div id="spadComm6-141" class="spadComm">
+<span id="commSav6-141" class="commSav">[a, b]</span>
+<div id="mathAns6-141">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+What happened? In the first line of the function body for
+h,
+a is referenced on the right-hand side of the assignment. Thus
+a is a free variable. The variable
+b is not referenced in that line, but it is assigned a value. Thus
+b is a local variable and is given the value
+a+1=2. In the second line, the free variable
+a is assigned the value
+b+a which equals
+2+1=3. This is the value returned by the function. Since
+a was free in <span style="font-weight: bold;"> h</span>, the global variable
+a has value
+3. Since
+b was local in <span style="font-weight: bold;"> h</span>, the global variable
+b is unchanged---it still has the value
+1.
+<p>It is good programming practice always to declare global variables. However, by far the most common situation is to have local variables in your functions. No declaration is needed for this situation, but be sure to initialize their values.</p>
+<p>Be careful if you use free variables and you cache the value of your function (see <a href="section-6.12.xhtml#ugUserCache" class="ref">ugUserCache</a> ). Caching <span class="italic">only</span> checks if the values of the function arguments are the same as in a function call previously seen. It does not check if any of the free variables on which the function depends have changed between function calls.</p>
+<p>Turn on caching for <span style="font-weight: bold;"> p</span>.</p>
+<div id="spadComm6-142" class="spadComm">
+<span id="commSav6-142" class="commSav">)set fun cache all p</span>
+<div id="mathAns6-142">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   function p will cache all values.<br />
+
+</div>
+Define <span style="font-weight: bold;"> p</span> to depend on the free variable
+N.
+<div id="spadComm6-143" class="spadComm">
+<span id="commSav6-143" class="commSav">p(i,x) == ( free N; reduce( + , [ (x-i)^n for n in 1..N ] ) )</span>
+<div id="mathAns6-143">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Set the value of
+N.
+<div id="spadComm6-144" class="spadComm">
+<span id="commSav6-144" class="commSav">N := 1</span>
+<div id="mathAns6-144">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Evaluate <span style="font-weight: bold;"> p</span> the first time.</p>
+<div id="spadComm6-145" class="spadComm">
+<span id="commSav6-145" class="commSav">p(0, x)</span>
+<div id="mathAns6-145">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+Change the value of
+N.
+<div id="spadComm6-146" class="spadComm">
+<span id="commSav6-146" class="commSav">N := 2</span>
+<div id="mathAns6-146">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Evaluate <span style="font-weight: bold;"> p</span> the second time.</p>
+<div id="spadComm6-147" class="spadComm">
+<span id="commSav6-147" class="commSav">p(0, x)</span>
+<div id="mathAns6-147">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+If caching had been turned off, the second evaluation would have reflected the changed value of
+N.
+<p>Turn off caching for <span style="font-weight: bold;"> p</span>.</p>
+<div id="spadComm6-148" class="spadComm">
+<span id="commSav6-148" class="commSav">)set fun cache 0 p</span>
+<div id="mathAns6-148">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Caching for function p is turned off<br />
+
+</div>
+FriCAS does not allow <span class="italic">fluid variables</span>, that is, variables <span class="index">variable:fluid</span><span id="chapter-6-51"></span> bound by a function
+f that can be referenced by functions called by
+f. <span class="index">fluid variable</span><span id="chapter-6-52"></span>
+<p>Values are passed to functions by <span class="italic">reference</span>: a pointer to the value is passed rather than a copy of the value or a pointer to a copy.</p>
+<p>This is a global variable that is bound to a record object.</p>
+<div id="spadComm6-149" class="spadComm">
+<span id="commSav6-149" class="commSav">r : Record(i : Integer) := [1]</span>
+<div id="mathAns6-149">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[i=1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(i: Integer)
+</div>
+<p>This function first modifies the one component of its record argument and then rebinds the parameter to another record.</p>
+<div class="verbatim">
+<br />
+resetRecord rr ==<br />
+  rr.i := 2<br />
+  rr := [10]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Pass
+r as an argument to <span style="font-weight: bold;"> resetRecord</span>.
+<div id="spadComm6-150" class="spadComm">
+<span id="commSav6-150" class="commSav">resetRecord r</span>
+<div id="mathAns6-150">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[i=10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(i: Integer)
+</div>
+The value of
+r was changed by the expression
+rr.i:=2 but not by
+rr:=[10].
+<div id="spadComm6-151" class="spadComm">
+<span id="commSav6-151" class="commSav">r</span>
+<div id="mathAns6-151">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[i=2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(i: Integer)
+</div>
+<p>To conclude this section, we give an iterative definition of <span class="index">Fibonacci numbers</span><span id="chapter-6-53"></span> a function that computes Fibonacci numbers. This definition approximates the definition into which FriCAS transforms the recurrence relation definition of <span style="font-weight: bold;"> fib</span> in <a href="section-6.13.xhtml#ugUserRecur" class="ref">ugUserRecur</a> .</p>
+<p>Global variables <span class="teletype">past</span> and <span class="teletype">present</span> are used to hold the last computed Fibonacci numbers.</p>
+<div id="spadComm6-152" class="spadComm">
+<span id="commSav6-152" class="commSav">past := present := 1</span>
+<div id="mathAns6-152">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Global variable
+index gives the current index of
+present.
+<div id="spadComm6-153" class="spadComm">
+<span id="commSav6-153" class="commSav">index := 2</span>
+<div id="mathAns6-153">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Here is a recurrence relation defined in terms of these three global variables.</p>
+<div class="verbatim">
+<br />
+fib(n) ==<br />
+  free past, present, index<br />
+  n &lt; 3 =&gt; 1<br />
+  n = index - 1 =&gt; past<br />
+  if n &lt; index-1 then<br />
+    (past,present) := (1,1)<br />
+    index := 2<br />
+  while (index &lt; n) repeat<br />
+    (past,present) := (present, past+present)<br />
+    index := index + 1<br />
+  present<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Compute the infinite stream of Fibonacci numbers.</p>
+<div id="spadComm6-154" class="spadComm">
+<span id="commSav6-154" class="commSav">fibs := [fib(n) for n in 1..]</span>
+<div id="mathAns6-154">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,2,3,5,8,13,21,34,55,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream PositiveInteger
+</div>
+<p>What is the 1000th Fibonacci number?</p>
+<div id="spadComm6-155" class="spadComm">
+<span id="commSav6-155" class="commSav">fibs 1000</span>
+<div id="mathAns6-155">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+  434665576869374564356885276750406258025646605173717804024_<br />
+    8172908953655541794905189040387984007925516929592259308_<br />
+    0322634775209689623239873322471161642996440906533187938_<br />
+    298969649928516003704476137795166849228875<br />
+
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+As an exercise, we suggest you write a function in an iterative style that computes the value of the recurrence relation
+having the initial values
+. How would you write the function using an element <span class="teletype">OneDimensionalArray</span> or <span class="teletype">Vector</span> to hold the previously computed values?
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.15.xhtml">Previous Section 6.15 Functions Defined with Blocks</a><a href="section-6.17.xhtml">Next Section 6.17 Anonymous Functions</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

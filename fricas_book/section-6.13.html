@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.13</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.13</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.12.xhtml">Previous Section 6.12 Caching Previously Computed Results</a><a href="section-6.14.xhtml">Next Section 6.14 Making Functions from Objects</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.13">
+<h2 class="sectiontitle" id="recurrence-relations">6.13 Recurrence Relations</h2>
+<span id="ugUserRecur" class="label"></span>
+<p>One of the most useful classes of function are those defined via a <span class="italic">recurrence relation.</span> A <span class="italic">recurrence relation</span> makes each successive <span class="index">recurrence relation</span><span id="chapter-6-33"></span> value depend on some or all of the previous values. A simple example is the ordinary <span class="italic">factorial</span> function:</p>
+<div class="verbatim">
+<br />
+fact(0) == 1<br />
+fact(n | n &gt; 0) == n * fact(n-1)<br />
+
+</div>
+The value of
+fact(10) depends on the value of
+fact(9),
+fact(9) on
+fact(8), and so on. Because it depends on only one previous value, it is usually called a <span class="italic">first order recurrence relation.</span> You can easily imagine a function based on two, three or more previous values. The Fibonacci numbers are probably the most famous function defined by a <span class="index">Fibonacci numbers</span><span id="chapter-6-34"></span> second order recurrence relation.
+<p>The library function <span style="font-weight: bold;"> fibonacci</span> computes Fibonacci numbers. It is obviously optimized for speed.</p>
+<div id="spadComm6-98" class="spadComm">
+<span id="commSav6-98" class="commSav">[fibonacci(i) for i in 0..]</span>
+<div id="mathAns6-98">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,1,1,2,3,5,8,13,21,34,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+<p>Define the Fibonacci numbers ourselves using a piece-wise definition.</p>
+<div id="spadComm6-99" class="spadComm">
+<span id="commSav6-99" class="commSav">fib(1) == 1</span>
+<div id="mathAns6-99">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm6-100" class="spadComm">
+<span id="commSav6-100" class="commSav">fib(2) == 1</span>
+<div id="mathAns6-100">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm6-101" class="spadComm">
+<span id="commSav6-101" class="commSav">fib(n) == fib(n-1) + fib(n-2)</span>
+<div id="mathAns6-101">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+As defined, this recurrence relation is obviously doubly-recursive. To compute
+fib(10), we need to compute
+fib(9) and
+fib(8). And to
+fib(9), we need to compute
+fib(8) and
+fib(7). And so on. It seems that to compute
+fib(10) we need to compute
+fib(9) once,
+fib(8) twice,
+fib(7) three times. Look familiar? The number of function calls needed to compute <span class="italic">any</span> second order recurrence relation in the obvious way is exactly
+fib(n). These numbers grow! For example, if FriCAS actually did this, then
+fib(500) requires more than
+10104 function calls. And, given all this, our definition of <span style="font-weight: bold;"> fib</span> obviously could not be used to calculate the five-hundredth Fibonacci number.
+<p>Let's try it anyway.</p>
+<div id="spadComm6-102" class="spadComm">
+<span id="commSav6-102" class="commSav">fib(500)</span>
+<div id="mathAns6-102">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function fib with type Integer -&gt; PositiveInteger <br />
+   Compiling function fib as a recurrence relation.<br />
+<br />
+13942322456169788013972438287040728395007025658769730726410_<br />
+8962948325571622863290691557658876222521294125<br />
+
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Since this takes a short time to compute, it obviously didn't do as many as
+10104 operations! By default, FriCAS transforms any recurrence relation it recognizes into an iteration. Iterations are efficient. To compute the value of the
+n-th term of a recurrence relation using an iteration requires only
+n function calls. Note that if you compare the speed of our <span style="font-weight: bold;"> fib</span> function to the library function, our version is still slower. This is because the library <span class="spadfunFrom">fibonacci</span><span class="index">fibonacci</span><span id="chapter-6-35"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-6-36"></span> uses a <span class="italic">powering algorithm</span> with a computing time proportional to
+log3(n) to compute <span class="teletype">fibonacci(n)</span>.
+<p>To turn off this special recurrence relation compilation, issue <span class="index">set function recurrence</span><span id="chapter-6-37"></span></p>
+<div class="verbatim">
+<br />
+)set functions recurrence off<br />
+
+</div>
+<p>To turn it back on, substitute <span class="italic"><span class="teletype">on</span></span> for <span class="italic"><span class="teletype">off</span></span>.</p>
+The transformations that FriCAS uses for <span style="font-weight: bold;"> fib</span> caches the last two values. For a more general
+k-th order recurrence relation, FriCAS caches the last
+k values. If, after computing a value for <span style="font-weight: bold;"> fib</span>, you ask for some larger value, FriCAS picks up the cached values and continues computing from there. See <a href="section-6.16.xhtml#ugUserFreeLocal" class="ref">ugUserFreeLocal</a> for an example of a function definition that has this same behavior. Also see <a href="section-6.12.xhtml#ugUserCache" class="ref">ugUserCache</a> for a more general discussion of how you can cache function values.
+<p>Recurrence relations can be used for defining recurrence relations involving polynomials, rational functions, or anything you like. Here we compute the infinite stream of Legendre polynomials.</p>
+The Legendre polynomial of degree
+0.
+<div id="spadComm6-103" class="spadComm">
+<span id="commSav6-103" class="commSav">p(0) == 1</span>
+<div id="mathAns6-103">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+The Legendre polynomial of degree
+1.
+<div id="spadComm6-104" class="spadComm">
+<span id="commSav6-104" class="commSav">p(1) == x</span>
+<div id="mathAns6-104">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+The Legendre polynomial of degree
+n.
+<div id="spadComm6-105" class="spadComm">
+<span id="commSav6-105" class="commSav">p(n) == ((2*n-1)*x*p(n-1) - (n-1)*p(n-2))/n</span>
+<div id="mathAns6-105">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Compute the Legendre polynomial of degree
+6.
+<div id="spadComm6-106" class="spadComm">
+<span id="commSav6-106" class="commSav">p(6)</span>
+<div id="mathAns6-106">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function p with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function p as a recurrence relation.<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>23116x6-31516x4+10516x2-516</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Fraction Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.12.xhtml">Previous Section 6.12 Caching Previously Computed Results</a><a href="section-6.14.xhtml">Next Section 6.14 Making Functions from Objects</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

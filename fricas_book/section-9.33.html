@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.33</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.33</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.32.xhtml">Previous Section 9.32 Heap</a><a href="section-9.34.xhtml">Next Section 9.34 Integer</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.33">
+<h2 class="sectiontitle" id="hexadecimalexpansion">9.33 HexadecimalExpansion</h2>
+<span id="HexadecimalExpansionXmpPage" class="label"></span>
+<p>All rationals have repeating hexadecimal expansions. The operation <span class="spadfunFrom">hex</span><span class="index">hex</span><span id="chapter-9-54"></span><span class="index">HexadecimalExpansion</span><span id="chapter-9-55"></span> returns these expansions of type <span class="teletype">HexadecimalExpansion</span>. Operations to access the individual numerals of a hexadecimal expansion can be obtained by converting the value to <span class="teletype">RadixExpansion(16)</span>. More examples of expansions are available in the <a href="section-9.15.xhtml#DecimalExpansionXmpPage" class="ref">DecimalExpansionXmpPage</a> , <a href="section-9.4.xhtml#BinaryExpansionXmpPage" class="ref">BinaryExpansionXmpPage</a> , and <a href="section-9.65.xhtml#RadixExpansionXmpPage" class="ref">RadixExpansionXmpPage</a> .</p>
+<p>This is a hexadecimal expansion of a rational number.</p>
+<div id="spadComm9-84" class="spadComm">
+<span id="commSav9-84" class="commSav">r := hex(22/7) </span>
+<div id="mathAns9-84">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3.249‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: HexadecimalExpansion
+</div>
+<p>Arithmetic is exact.</p>
+<div id="spadComm9-85" class="spadComm">
+<span id="commSav9-85" class="commSav">r + hex(6/7) </span>
+<div id="mathAns9-85">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: HexadecimalExpansion
+</div>
+<p>The period of the expansion can be short or long ...</p>
+<div id="spadComm9-86" class="spadComm">
+<span id="commSav9-86" class="commSav">[hex(1/i) for i in 350..354] </span>
+<div id="mathAns9-86">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0.00BB3EE721A54D88‾,0.00BAB6561‾,0.00BA2E8‾,0.00B9A7862A0FF465879D5F‾,0.00B92143FA36F5E02E4850FE8DBD78‾]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List HexadecimalExpansion
+</div>
+<p>or very long!</p>
+<div id="spadComm9-87" class="spadComm">
+<span id="commSav9-87" class="commSav">hex(1/1007) </span>
+<div id="mathAns9-87">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.0041149783F0BF2C7D13933192AF6980619EE345E91EC2BB9D5CC‾A5C071E40926E54E8DDAE24196C0B2F8A0AAD60DBA57F5D4C8‾536262210C74F1‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: HexadecimalExpansion
+</div>
+<p>These numbers are bona fide algebraic objects.</p>
+<div id="spadComm9-88" class="spadComm">
+<span id="commSav9-88" class="commSav">p := hex(1/4)*x^2 + hex(2/3)*x + hex(4/9) </span>
+<div id="mathAns9-88">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.4x2+0.A‾x+0.71C‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial HexadecimalExpansion
+</div>
+<div id="spadComm9-89" class="spadComm">
+<span id="commSav9-89" class="commSav">q := D(p, x) </span>
+<div id="mathAns9-89">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.8x+0.A‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial HexadecimalExpansion
+</div>
+<div id="spadComm9-90" class="spadComm">
+<span id="commSav9-90" class="commSav">g := gcd(p, q)</span>
+<div id="mathAns9-90">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x+1.5‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial HexadecimalExpansion
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.32.xhtml">Previous Section 9.32 Heap</a><a href="section-9.34.xhtml">Next Section 9.34 Integer</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

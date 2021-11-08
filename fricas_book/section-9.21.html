@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.21</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.21</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.20.xhtml">Previous Section 9.20 Exit</a><a href="section-9.22.xhtml">Next Section 9.22 Factored</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.21">
+<h2 class="sectiontitle" id="expression">9.21 Expression</h2>
+<span id="ExpressionXmpPage" class="label"></span>
+<p><span class="teletype">Expression</span> is a constructor that creates domains whose objects can have very general symbolic forms. Here are some examples:</p>
+<p>This is an object of type <span class="teletype">Expression Integer</span>.</p>
+<div id="spadComm9-129" class="spadComm">
+<span id="commSav9-129" class="commSav">sin(x) + 3*cos(x)^2</span>
+<div id="mathAns9-129">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(x)+3cos(x)2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>This is an object of type <span class="teletype">Expression Float</span>.</p>
+<div id="spadComm9-130" class="spadComm">
+<span id="commSav9-130" class="commSav">tan(x) - 3.45*x</span>
+<div id="mathAns9-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>tan(x)-3.45x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Float
+</div>
+<p>This object contains symbolic function applications, sums, products, square roots, and a quotient.</p>
+<div id="spadComm9-131" class="spadComm">
+<span id="commSav9-131" class="commSav">(tan sqrt 7 - sin sqrt 11)^2 / (4 - cos(x - y))</span>
+<div id="mathAns9-131">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-tan(7)2+2sin(11)tan(7)-sin(11)2cos(y-x)-4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>As you can see, <span class="teletype">Expression</span> actually takes an argument domain. The <span class="italic">coefficients</span> of the terms within the expression belong to the argument domain. <span class="teletype">Integer</span> and <span class="teletype">Float</span>, along with <span class="teletype">Complex Integer</span> and <span class="teletype">Complex Float</span> are the most common coefficient domains.</p>
+<p>The choice of whether to use a <span class="teletype">Complex</span> coefficient domain or not is important since FriCAS can perform some simplifications on real-valued objects</p>
+<div id="spadComm9-132" class="spadComm">
+<span id="commSav9-132" class="commSav">log(exp x)@Expression(Integer)</span>
+<div id="mathAns9-132">
+
+</div>
+</div>
+x
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>... which are not valid on complex ones.</p>
+<div id="spadComm9-133" class="spadComm">
+<span id="commSav9-133" class="commSav">log(exp x)@Expression(Complex Integer)</span>
+<div id="mathAns9-133">
+
+</div>
+</div>
+log(ex)
+<div class="returnType">
+Type: Expression Complex Integer
+</div>
+<p>Many potential coefficient domains, such as <span class="teletype">AlgebraicNumber</span>, are not usually used because <span class="teletype">Expression</span> can subsume them.</p>
+<div id="spadComm9-134" class="spadComm">
+<span id="commSav9-134" class="commSav">sqrt 3 + sqrt(2 + sqrt(-5)) </span>
+<div id="mathAns9-134">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-5+2+3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraicNumber
+</div>
+<div id="spadComm9-135" class="spadComm">
+<span id="commSav9-135" class="commSav">% :: Expression Integer </span>
+<div id="mathAns9-135">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-5+2+3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Note that we sometimes talk about <span class="italic">an object of type <span class="teletype">Expression</span>.</span> This is not really correct because we should say, for example, <span class="italic">an object of type <span class="teletype">Expression Integer</span></span> or <span class="italic">an object of type <span class="teletype">Expression Float</span>.</span> By a similar abuse of language, when we refer to an <span class="italic">expression</span> in this section we will mean an object of type <span class="teletype">Expression R</span> for some domain <span class="teletype">R</span>.</p>
+<p>The FriCAS documentation contains many examples of the use of <span class="teletype">Expression</span>. For the rest of this section, we'll give you some pointers to those examples plus give you some idea of how to manipulate expressions.</p>
+<p>It is important for you to know that <span class="teletype">Expression</span> creates domains that have category <span class="teletype">Field</span>. Thus you can invert any non-zero expression and you shouldn't expect an operation like <span class="teletype">factor</span> to give you much information. You can imagine expressions as being represented as quotients of <span class="italic">multivariate</span> polynomials where the <span class="italic">variables</span> are kernels (see <a href="section-9.37.xhtml#KernelXmpPage" class="ref">KernelXmpPage</a> ). A kernel can either be a symbol such as <span class="teletype">x</span> or a symbolic function application like <span class="teletype">sin(x + 4)</span>. The second example is actually a nested kernel since the argument to <span class="teletype">sin</span> contains the kernel <span class="teletype">x</span>.</p>
+<div id="spadComm9-136" class="spadComm">
+<span id="commSav9-136" class="commSav">height mainKernel sin(x + 4)</span>
+<div id="mathAns9-136">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Actually, the argument to <span class="teletype">sin</span> is an expression, and so the structure of <span class="teletype">Expression</span> is recursive. <a href="section-9.37.xhtml#KernelXmpPage" class="ref">KernelXmpPage</a> demonstrates how to extract the kernels in an expression.</p>
+<p>Use the HyperDoc Browse facility to see what operations are applicable to expression. At the time of this writing, there were 262 operations with 147 distinct name in <span class="teletype">Expression Integer</span>. For example, <span class="spadfunFrom">numer</span><span class="index">numer</span><span id="chapter-9-20"></span><span class="index">Expression</span><span id="chapter-9-21"></span> and <span class="spadfunFrom">denom</span><span class="index">denom</span><span id="chapter-9-22"></span><span class="index">Expression</span><span id="chapter-9-23"></span> extract the numerator and denominator of an expression.</p>
+<div id="spadComm9-137" class="spadComm">
+<span id="commSav9-137" class="commSav">e := (sin(x) - 4)^2 / ( 1 - 2*y*sqrt(- y) ) </span>
+<div id="mathAns9-137">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-sin(x)2+8sin(x)-162y-y-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm9-138" class="spadComm">
+<span id="commSav9-138" class="commSav">numer e </span>
+<div id="mathAns9-138">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-sin(x)2+8sin(x)-16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SparseMultivariatePolynomial(Integer,Kernel Expression Integer)
+</div>
+<div id="spadComm9-139" class="spadComm">
+<span id="commSav9-139" class="commSav">denom e </span>
+<div id="mathAns9-139">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2y-y-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SparseMultivariatePolynomial(Integer,Kernel Expression Integer)
+</div>
+<p>Use <span class="spadfunFrom">D</span><span class="index">D</span><span id="chapter-9-24"></span><span class="index">Expression</span><span id="chapter-9-25"></span> to compute partial derivatives.</p>
+<div id="spadComm9-140" class="spadComm">
+<span id="commSav9-140" class="commSav">D(e, x) </span>
+<div id="mathAns9-140">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(4ycos(x)sin(x)-16ycos(x))-y-2cos(x)sin(x)+8cos(x)4y-y+4y3-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>See <a href="ugIntroCalcDerivPage" class="ref">ugIntroCalcDerivPage</a> in Section <a href="ugIntroCalcDerivNumber" class="ref">ugIntroCalcDerivNumber</a> for more examples of expressions and derivatives.</p>
+<div id="spadComm9-141" class="spadComm">
+<span id="commSav9-141" class="commSav">D(e, [x, y], [1, 2]) </span>
+<div id="mathAns9-141">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(((-2304y7+960y4)cos(x)sin(x)+(9216y7-3840y4)cos(x))-y+(-960y9+2160y6-180y3-3)cos(x)sin(x)+(3840y9-8640y6+720y3+12)cos(x))((256y12-1792y9+1120y6-112y3+1)-y-1024y11+1792y8-448y5+16y2)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>See <a href="ugIntroCalcLimitsPage" class="ref">ugIntroCalcLimitsPage</a> in Section <a href="ugIntroCalcLimitsNumber" class="ref">ugIntroCalcLimitsNumber</a> and <a href="ugIntroSeriesPage" class="ref">ugIntroSeriesPage</a> in Section <a href="ugIntroSeriesNumber" class="ref">ugIntroSeriesNumber</a> for more examples of expressions and calculus. Differential equations involving expressions are discussed in <a href="ugProblemDEQPage" class="ref">ugProblemDEQPage</a> in Section <a href="ugProblemDEQNumber" class="ref">ugProblemDEQNumber</a> . Chapter 8 has many advanced examples: see <a href="ugProblemIntegrationPage" class="ref">ugProblemIntegrationPage</a> in Section <a href="ugProblemIntegrationNumber" class="ref">ugProblemIntegrationNumber</a> for a discussion of FriCAS's integration facilities.</p>
+<p>When an expression involves no <span class="italic">symbol kernels</span> (for example, <span class="teletype">x</span>), it may be possible to numerically evaluate the expression.</p>
+<p>If you suspect the evaluation will create a complex number, use <span class="teletype">complexNumeric</span>.</p>
+<div id="spadComm9-142" class="spadComm">
+<span id="commSav9-142" class="commSav">complexNumeric(cos(2 - 3*%i))</span>
+<div id="mathAns9-142">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-4.1896256909688072301+9.109227893755336598i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Float
+</div>
+<p>If you know it will be real, use <span class="teletype">numeric</span>.</p>
+<div id="spadComm9-143" class="spadComm">
+<span id="commSav9-143" class="commSav">numeric(tan 3.8)</span>
+<div id="mathAns9-143">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.77355609050312607286</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>The <span class="teletype">numeric</span> operation will display an error message if the evaluation yields a calue with an non-zero imaginary part. Both of these operations have an optional second argument <span class="teletype">n</span> which specifies that the accuracy of the approximation be up to <span class="teletype">n</span> decimal places.</p>
+<p>When an expression involves no <span class="italic">symbolic application</span> kernels, it may be possible to convert it a polynomial or rational function in the variables that are present.</p>
+<div id="spadComm9-144" class="spadComm">
+<span id="commSav9-144" class="commSav">e2 := cos(x^2 - y + 3) </span>
+<div id="mathAns9-144">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>cos(y-x2-3)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm9-145" class="spadComm">
+<span id="commSav9-145" class="commSav">e3 := asin(e2) - %pi/2 </span>
+<div id="mathAns9-145">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-y+x2+3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm9-146" class="spadComm">
+<span id="commSav9-146" class="commSav">e3 :: Polynomial Integer </span>
+<div id="mathAns9-146">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-y+x2+3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>This also works for the polynomial types where specific variables and their ordering are given.</p>
+<div id="spadComm9-147" class="spadComm">
+<span id="commSav9-147" class="commSav">e3 :: DMP([x, y], Integer) </span>
+<div id="mathAns9-147">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2-y+3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DistributedMultivariatePolynomial([x,y],Integer)
+</div>
+<p>Finally, a certain amount of simplication takes place as expressions are constructed.</p>
+<div id="spadComm9-148" class="spadComm">
+<span id="commSav9-148" class="commSav">sin %pi</span>
+<div id="mathAns9-148">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm9-149" class="spadComm">
+<span id="commSav9-149" class="commSav">cos(%pi / 4)</span>
+<div id="mathAns9-149">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>For simplications that involve multiple terms of the expression, use <span class="teletype">simplify</span>.</p>
+<div id="spadComm9-150" class="spadComm">
+<span id="commSav9-150" class="commSav">tan(x)^6 + 3*tan(x)^4 + 3*tan(x)^2 + 1 </span>
+<div id="mathAns9-150">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>tan(x)6+3tan(x)4+3tan(x)2+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm9-151" class="spadComm">
+<span id="commSav9-151" class="commSav">simplify % </span>
+<div id="mathAns9-151">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1cos(x)6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>See <a href="ugUserRulesPage" class="ref">ugUserRulesPage</a> in Section <a href="ugUserRulesNumber" class="ref">ugUserRulesNumber</a> for examples of how to write your own rewrite rules for expressions.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.20.xhtml">Previous Section 9.20 Exit</a><a href="section-9.22.xhtml">Next Section 9.22 Factored</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

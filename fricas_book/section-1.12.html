@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.12</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.12</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.11.xhtml">Previous Section 1.11 Derivatives</a><a href="section-1.13.xhtml">Next Section 1.13 Differential Equations</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.12">
+<h2 class="sectiontitle" id="integration">1.12 Integration</h2>
+<span id="ugIntroIntegrate" class="label"></span>
+<p>FriCAS has extensive library facilities for integration. <span class="index">integration</span><span id="chapter-1-79"></span></p>
+<p>The first example is the integration of a fraction with denominator that factors into a quadratic and a quartic irreducible polynomial. The usual partial fraction approach used by most other computer algebra systems either fails or introduces expensive unneeded algebraic numbers.</p>
+<p>We use a factorization-free algorithm.</p>
+<div id="spadComm1-163" class="spadComm">
+<span id="commSav1-163" class="commSav">integrate((x^2+2*x+1)/((x+1)^6+1),x)</span>
+<div id="mathAns1-163">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>arctan(x3+3x2+3x+1)3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>When real parameters are present, the form of the integral can depend on the signs of some expressions.</p>
+<p>Rather than query the user or make sign assumptions, FriCAS returns all possible answers.</p>
+<div id="spadComm1-164" class="spadComm">
+<span id="commSav1-164" class="commSav">integrate(1/(x^2 + a),x)</span>
+<div id="mathAns1-164">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[log((x2-a)-a+2axx2+a)2-a,arctan(xaa)a]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(List Expression Integer,...)
+</div>
+<p>The <span style="font-weight: bold;"> integrate</span> operation generally assumes that all parameters are real. The only exception is when the integrand has complex valued quantities.</p>
+<p>If the parameter is complex instead of real, then the notion of sign is undefined and there is a unique answer. You can request this answer by <span class="italic">prepending</span> the word <span class="italic">complex</span> to the command name:</p>
+<div id="spadComm1-165" class="spadComm">
+<span id="commSav1-165" class="commSav">complexIntegrate(1/(x^2 + a),x)</span>
+<div id="mathAns1-165">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>log(x-a+a-a)-log(x-a-a-a)2-a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>The following two examples illustrate the limitations of table-based approaches. The two integrands are very similar, but the answer to one of them requires the addition of two new algebraic numbers.</p>
+<p>This one is the easy one. The next one looks very similar but the answer is much more complicated.</p>
+<div id="spadComm1-166" class="spadComm">
+<span id="commSav1-166" class="commSav">integrate(x^3 / (a+b*x)^(1/3),x)</span>
+<div id="mathAns1-166">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(120b3x3-135ab2x2+162a2bx-243a3)bx+a32440b4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>Only an algorithmic approach is guaranteed to find what new constants must be added in order to find a solution.</p>
+<div id="spadComm1-167" class="spadComm">
+<span id="commSav1-167" class="commSav">integrate(1 / (x^3 * (a+b*x)^(1/3)),x)</span>
+<div id="mathAns1-167">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(-2b2x23log(a3bx+a32+a32bx+a3+a)+4b2x23log(a32bx+a3-a)+12b2x2arctan(23a32bx+a3+a33a)+(12bx-9a)3a3bx+a32)18a2x23a3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>Some computer algebra systems use heuristics or table-driven approaches to integration. When these systems cannot determine the answer to an integration problem, they reply ``I don't know.'' FriCAS uses an algorithm which is a <span style="font-style: italic;"> decision procedure</span> for integration. If FriCAS returns the original integral that conclusively proves that an integral cannot be expressed in terms of elementary functions.</p>
+<p>When FriCAS returns an integral sign, it has proved that no answer exists as an elementary function.</p>
+<div id="spadComm1-168" class="spadComm">
+<span id="commSav1-168" class="commSav">integrate(log(1 + sqrt(a*x + b)) / x,x)</span>
+<div id="mathAns1-168">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>∫xlog(b+%Qa+1)%Qd%Q</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>FriCAS can handle complicated mixed functions much beyond what you can find in tables.</p>
+<p>Whenever possible, FriCAS tries to express the answer using the functions present in the integrand.</p>
+<div id="spadComm1-169" class="spadComm">
+<span id="commSav1-169" class="commSav">integrate((sinh(1+sqrt(x+b))+2*sqrt(x+b)) / (sqrt(x+b) * (x + cosh(1+sqrt(x + b)))), x)</span>
+<div id="mathAns1-169">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2log(-2cosh(x+b+1)-2xsinh(x+b+1)-cosh(x+b+1))-2x+b</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>A strong structure-checking algorithm in FriCAS finds hidden algebraic relationships between functions.</p>
+<div id="spadComm1-170" class="spadComm">
+<span id="commSav1-170" class="commSav">integrate(tan(atan(x)/3),x)</span>
+<div id="mathAns1-170">
+
+</div>
+</div>
+(8log(3tan(arctan(x)3)2-1)-3tan(arctan(x)3)2+18xtan(arctan(x)3))18
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>The discovery of this algebraic relationship is necessary for correct integration of this function. Here are the details:</p>
+<ol>
+<li>If
+x=tant and
+g=tan(t/3) then the following algebraic relation is true:
+g3-3xg2-3g+x=0</li>
+<li>Integrate
+g using this algebraic relation; this produces:
+(24g2-8)log(3g2-1)+(81x2+24)g2+72xg-27x2-1654g2-18</li>
+<li>Rationalize the denominator, producing:
+8log(3g2-1)-3g2+18xg+1618 Replace
+g by the initial definition
+g=tan(arctan(x)/3) to produce the final result.</li>
+</ol>
+<p>This is an example of a mixed function where the algebraic layer is over the transcendental one.</p>
+<div id="spadComm1-171" class="spadComm">
+<span id="commSav1-171" class="commSav">integrate((x + 1) / (x*(x + log x) ^ (3/2)), x)</span>
+<div id="mathAns1-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-2log(x)+xlog(x)+x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>While incomplete for non-elementary functions, FriCAS can handle some of them.</p>
+<div id="spadComm1-172" class="spadComm">
+<span id="commSav1-172" class="commSav">integrate(exp(-x^2) * erf(x) / (erf(x)^3 - erf(x)^2 - erf(x) + 1),x)</span>
+<div id="mathAns1-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(erf(x)-1)πlog(erf(x)-1erf(x)+1)-2π8erf(x)-8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>More examples of FriCAS's integration capabilities are discussed in Section <a href="section-8.8.xhtml#ugProblemIntegration" class="ref">ugProblemIntegration</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.11.xhtml">Previous Section 1.11 Derivatives</a><a href="section-1.13.xhtml">Next Section 1.13 Differential Equations</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

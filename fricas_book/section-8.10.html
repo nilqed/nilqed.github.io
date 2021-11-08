@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section8.10</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section8.10</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.9.xhtml">Previous Section 8.9 Working with Power Series</a><a href="section-8.11.xhtml">Next Section 8.11 Finite Fields</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-8.10">
+<h2 class="sectiontitle" id="solution-of-differential-equations">8.10 Solution of Differential Equations</h2>
+<span id="ugProblemDEQ" class="label"></span>
+<p>In this section we discuss FriCAS's facilities for <span class="index">equation:differential:solving</span><span id="chapter-8-150"></span> solving <span class="index">differential equation</span><span id="chapter-8-151"></span> differential equations in closed-form and in series.</p>
+<p>FriCAS provides facilities for closed-form solution of <span class="index">equation:differential:solving in closed-form</span><span id="chapter-8-152"></span> single differential equations of the following kinds:</p>
+<ul>
+<li>linear ordinary differential equations, and</li>
+<li>non-linear first order ordinary differential equations when integrating factors can be found just by integration.</li>
+</ul>
+<p>For a discussion of the solution of systems of linear and polynomial equations, see <a href="section-8.5.xhtml#ugProblemLinPolEqn" class="ref">ugProblemLinPolEqn</a> .</p>
+<span id="subsec-8.10.1"></span>
+<div id="subsec-8.10.1" class="subsection">
+<h3 class="subsectitle" id="closed-form-solutions-of-linear-differential-equations">8.10.1 Closed-Form Solutions of Linear Differential Equations</h3>
+<span id="ugxProblemLDEQClosed" class="label"></span>
+<p>A <span class="italic">differential equation</span> is an equation involving an unknown <span class="italic">function</span> and one or more of its derivatives. <span class="index">differential equation</span><span id="chapter-8-153"></span> The equation is called <span class="italic">ordinary</span> if derivatives with respect to <span class="index">equation:differential</span><span id="chapter-8-154"></span> only one dependent variable appear in the equation (it is called <span class="italic">partial</span> otherwise). The package <span class="teletype">ElementaryFunctionODESolver</span> provides the top-level operation <span style="font-weight: bold;"> solve</span> for finding closed-form solutions of ordinary differential equations. <span class="index">ElementaryFunctionODESolver</span><span id="chapter-8-155"></span></p>
+<p>To solve a differential equation, you must first create an operator for <span class="index">operator</span><span id="chapter-8-156"></span> the unknown function.</p>
+We let
+y be the unknown function in terms of
+x.
+<div id="spadComm8-190" class="spadComm">
+<span id="commSav8-190" class="commSav">y := operator 'y </span>
+<div id="mathAns8-190">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+You then type the equation using <span class="teletype">D</span> to create the derivatives of the unknown function
+y(x) where
+x is any symbol you choose (the so-called <span class="italic">dependent variable</span>).
+This is how you enter the equation
+y′′+y′+y=0.
+<div id="spadComm8-191" class="spadComm">
+<span id="commSav8-191" class="commSav">deq := D(y x, x, 2) + D(y x, x) + y x = 0</span>
+<div id="mathAns8-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y′′(x)+y′(x)+y(x)=0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+<p>The simplest way to invoke the <span style="font-weight: bold;"> solve</span> command is with three arguments.</p>
+<ul>
+<li>the differential equation,</li>
+<li>the operator representing the unknown function,</li>
+<li>the dependent variable.</li>
+</ul>
+<p>So, to solve the above equation, we enter this.</p>
+<div id="spadComm8-192" class="spadComm">
+<span id="commSav8-192" class="commSav">solve(deq, y, x) </span>
+<div id="mathAns8-192">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=0,basis=[cos(x32)e(-x2),e(-x2)sin(x32)]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+Since linear ordinary differential equations have infinitely many solutions, <span style="font-weight: bold;"> solve</span> returns a <span class="italic">particular solution</span>
+fp and a basis
+for the solutions of the corresponding homogenuous equation. Any expression of the form
+where the
+ci do not involve the dependent variable is also a solution. This is similar to what you get when you solve systems of linear algebraic equations.
+A way to select a unique solution is to specify <span class="italic">initial conditions</span>: choose a value
+a for the dependent variable and specify the values of the unknown function and its derivatives at
+a. If the number of initial conditions is equal to the order of the equation, then the solution is unique (if it exists in closed form!) and <span style="font-weight: bold;"> solve</span> tries to find it. To specify initial conditions to <span style="font-weight: bold;"> solve</span>, use an <span class="teletype">Equation</span> of the form
+x=a for the third parameter instead of the dependent variable, and add a fourth parameter consisting of the list of values
+y(a),y′(a),....
+To find the solution of
+y′′+y=0 satisfying
+y(0)=y′(0)=1, do this.
+<div id="spadComm8-193" class="spadComm">
+<span id="commSav8-193" class="commSav">deq := D(y x, x, 2) + y x </span>
+<div id="mathAns8-193">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y′′(x)+y(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+You can omit the
+=0 when you enter the equation to be solved.
+<div id="spadComm8-194" class="spadComm">
+<span id="commSav8-194" class="commSav">solve(deq, y, x = 0, [1, 1]) </span>
+<div id="mathAns8-194">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(x)+cos(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>FriCAS is not limited to linear differential equations with constant coefficients. It can also find solutions when the coefficients are rational or algebraic functions of the dependent variable. Furthermore, FriCAS is not limited by the order of the equation.</p>
+<p>FriCAS can solve the following third order equations with polynomial coefficients.</p>
+<div id="spadComm8-195" class="spadComm">
+<span id="commSav8-195" class="commSav">deq := x^3 * D(y x, x, 3) + x^2 * D(y x, x, 2) - 2 * x * D(y x, x) + 2 * y x = 2 * x^4 </span>
+<div id="mathAns8-195">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x3y′′′(x)+x2y′′(x)-2xy′(x)+2y(x)=2x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+<div id="spadComm8-196" class="spadComm">
+<span id="commSav8-196" class="commSav">solve(deq, y, x) </span>
+<div id="mathAns8-196">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=x5-10x3+20x2+415x,basis=[2x3-3x2+1x,x3-1x,x3-3x2-1x]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+<p>Here we are solving a homogeneous equation.</p>
+<div id="spadComm8-197" class="spadComm">
+<span id="commSav8-197" class="commSav">deq := (x^9+x^3) * D(y x, x, 3) + 18 * x^8 * D(y x, x, 2) - 90 * x * D(y x, x) - 30 * (11 * x^6 - 3) * y x </span>
+<div id="mathAns8-197">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(x9+x3)y′′′(x)+18x8y′′(x)-90xy′(x)+(-330x6+90)y(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm8-198" class="spadComm">
+<span id="commSav8-198" class="commSav">solve(deq, y, x) </span>
+<div id="mathAns8-198">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=0,basis=[xx6+1,xe(-91log(x))x6+1,xe(91log(x))x6+1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+<p>On the other hand, and in contrast with the operation <span style="font-weight: bold;"> integrate</span>, it can happen that FriCAS finds no solution and that some closed-form solution still exists. While it is mathematically complicated to describe exactly when the solutions are guaranteed to be found, the following statements are correct and form good guidelines for linear ordinary differential equations:</p>
+<ul>
+<li>If the coefficients are constants, FriCAS finds a complete basis of solutions (i,e, all solutions).</li>
+<li>If the coefficients are rational functions in the dependent variable, FriCAS at least finds all solutions that do not involve algebraic functions.</li>
+</ul>
+<p>Note that this last statement does not mean that FriCAS does not find the solutions that are algebraic functions. It means that it is not guaranteed that the algebraic function solutions will be found.</p>
+<p>This is an example where all the algebraic solutions are found.</p>
+<div id="spadComm8-199" class="spadComm">
+<span id="commSav8-199" class="commSav">deq := (x^2 + 1) * D(y x, x, 2) + 3 * x * D(y x, x) + y x = 0 </span>
+<div id="mathAns8-199">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(x2+1)y′′(x)+3xy′(x)+y(x)=0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+<div id="spadComm8-200" class="spadComm">
+<span id="commSav8-200" class="commSav">solve(deq, y, x) </span>
+<div id="mathAns8-200">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=0,basis=[1x2+1,log(x2+1-x)x2+1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+</div>
+<span id="subsec-8.10.2"></span>
+<div id="subsec-8.10.2" class="subsection">
+<h3 class="subsectitle" id="closed-form-solutions-of-non-linear-differential-equations">8.10.2 Closed-Form Solutions of Non-Linear Differential Equations</h3>
+<span id="ugxProblemNLDEQClosed" class="label"></span>
+<p>This is an example that shows how to solve a non-linear first order ordinary differential equation manually when an integrating factor can be found just by integration. At the end, we show you how to solve it directly.</p>
+Let's solve the differential equation
+y′=y/(x+ylogy).
+Using the notation
+m(x,y)+n(x,y)y′=0, we have
+m=-y and
+n=x+ylogy.
+<div id="spadComm8-201" class="spadComm">
+<span id="commSav8-201" class="commSav">m := -y </span>
+<div id="mathAns8-201">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<div id="spadComm8-202" class="spadComm">
+<span id="commSav8-202" class="commSav">n := x + y * log y </span>
+<div id="mathAns8-202">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>ylog(y)+x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+We first check for exactness, that is, does
+dm/dy=dn/dx?
+<div id="spadComm8-203" class="spadComm">
+<span id="commSav8-203" class="commSav">D(m, y) - D(n, x) </span>
+<div id="mathAns8-203">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+This is not zero, so the equation is not exact. Therefore we must look for an integrating factor: a function
+mu(x,y) such that
+d(mum)/dy=d(mun)/dx. Normally, we first search for
+mu(x,y) depending only on
+x or only on
+y.
+Let's search for such a
+mu(x) first.
+<div id="spadComm8-204" class="spadComm">
+<span id="commSav8-204" class="commSav">mu := operator 'mu </span>
+<div id="mathAns8-204">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>mu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+<div id="spadComm8-205" class="spadComm">
+<span id="commSav8-205" class="commSav">a := D(mu(x) * m, y) - D(mu(x) * n, x) </span>
+<div id="mathAns8-205">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(-ylog(y)-x)mu′(x)-2mu(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+If the above is zero for a function
+mu that does <span class="italic">not</span> depend on
+y, then
+mu(x) is an integrating factor.
+<div id="spadComm8-206" class="spadComm">
+<span id="commSav8-206" class="commSav">solve(a = 0, mu, x) </span>
+<div id="mathAns8-206">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=0,basis=[1y2log(y)2+2xylog(y)+x2]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+The solution depends on
+y, so there is no integrating factor that depends on
+x only.
+Let's look for one that depends on
+y only.
+<div id="spadComm8-207" class="spadComm">
+<span id="commSav8-207" class="commSav">b := D(mu(y) * m, y) - D(mu(y) * n, x) </span>
+<div id="mathAns8-207">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-ymu′(y)-2mu(y)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm8-208" class="spadComm">
+<span id="commSav8-208" class="commSav">sb := solve(b = 0, mu, y) </span>
+<div id="mathAns8-208">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=0,basis=[1y2]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+<p>We've found one!</p>
+The above
+mu(y) is an integrating factor. We must multiply our initial equation (that is,
+m and
+n) by the integrating factor.
+<div id="spadComm8-209" class="spadComm">
+<span id="commSav8-209" class="commSav">intFactor := sb.basis.1 </span>
+<div id="mathAns8-209">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1y2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm8-210" class="spadComm">
+<span id="commSav8-210" class="commSav">m := intFactor * m </span>
+<div id="mathAns8-210">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm8-211" class="spadComm">
+<span id="commSav8-211" class="commSav">n := intFactor * n </span>
+<div id="mathAns8-211">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>ylog(y)+xy2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Let's check for exactness.</p>
+<div id="spadComm8-212" class="spadComm">
+<span id="commSav8-212" class="commSav">D(m, y) - D(n, x) </span>
+<div id="mathAns8-212">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+We must solve the exact equation, that is, find a function
+s(x,y) such that
+ds/dx=m and
+ds/dy=n.
+We start by writing
+s(x,y)=h(y)+integrate(m,x) where
+h(y) is an unknown function of
+y. This guarantees that
+ds/dx=m.
+<div id="spadComm8-213" class="spadComm">
+<span id="commSav8-213" class="commSav">h := operator 'h </span>
+<div id="mathAns8-213">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>h</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+<div id="spadComm8-214" class="spadComm">
+<span id="commSav8-214" class="commSav">sol := h y + integrate(m, x) </span>
+<div id="mathAns8-214">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>yh(y)-xy</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+All we want is to find
+h(y) such that
+ds/dy=n.
+<div id="spadComm8-215" class="spadComm">
+<span id="commSav8-215" class="commSav">dsol := D(sol, y) </span>
+<div id="mathAns8-215">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y2h′(y)+xy2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<div id="spadComm8-216" class="spadComm">
+<span id="commSav8-216" class="commSav">nsol := solve(dsol = n, h, y) </span>
+<div id="mathAns8-216">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=log(y)22,basis=[1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Record(particular: Expression Integer,basis: List Expression Integer),...)
+</div>
+The above particular solution is the
+h(y) we want, so we just replace
+h(y) by it in the implicit solution.
+<div id="spadComm8-217" class="spadComm">
+<span id="commSav8-217" class="commSav">eval(sol, h y = nsol.particular) </span>
+<div id="mathAns8-217">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>ylog(y)2-2x2y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>A first integral of the initial equation is obtained by setting this result equal to an arbitrary constant.</p>
+<p>Now that we've seen how to solve the equation <span class="italic">by hand,</span> we show you how to do it with the <span style="font-weight: bold;"> solve</span> operation.</p>
+First define
+y to be an operator.
+<div id="spadComm8-218" class="spadComm">
+<span id="commSav8-218" class="commSav">y := operator 'y </span>
+<div id="mathAns8-218">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+<p>Next we create the differential equation.</p>
+<div id="spadComm8-219" class="spadComm">
+<span id="commSav8-219" class="commSav">deq := D(y x, x) = y(x) / (x + y(x) * log y x) </span>
+<div id="mathAns8-219">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y′(x)=y(x)y(x)log(y(x))+x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+<p>Finally, we solve it.</p>
+<div id="spadComm8-220" class="spadComm">
+<span id="commSav8-220" class="commSav">solve(deq, y, x) </span>
+<div id="mathAns8-220">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y(x)log(y(x))2-2x2y(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+</div>
+<span id="subsec-8.10.3"></span>
+<div id="subsec-8.10.3" class="subsection">
+<h3 class="subsectitle" id="power-series-solutions-of-differential-equations">8.10.3 Power Series Solutions of Differential Equations</h3>
+<span id="ugxProblemDEQSeries" class="label"></span>
+<p>The command to solve differential equations in power <span class="index">equation:differential:solving in power series</span><span id="chapter-8-157"></span> series <span class="index">power series</span><span id="chapter-8-158"></span> around <span class="index">series:power</span><span id="chapter-8-159"></span> a particular initial point with specific initial conditions is called <span style="font-weight: bold;"> seriesSolve</span>. It can take a variety of parameters, so we illustrate its use with some examples.</p>
+<p>Since the coefficients of some solutions are quite large, we reset the default to compute only seven terms.</p>
+<div id="spadComm8-221" class="spadComm">
+<span id="commSav8-221" class="commSav">)set streams calculate 7 </span>
+<div id="mathAns8-221">
+
+</div>
+</div>
+You can solve a single nonlinear equation of any order. For example, we solve
+y′′′=sin(y′′)*exp(y)+cos(x) subject to
+y(0)=1,y′(0)=0,y′′(0)=0
+We first tell FriCAS that the symbol
+'y denotes a new operator.
+<div id="spadComm8-222" class="spadComm">
+<span id="commSav8-222" class="commSav">y := operator 'y </span>
+<div id="mathAns8-222">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+Enter the differential equation using
+y like any system function.
+<div id="spadComm8-223" class="spadComm">
+<span id="commSav8-223" class="commSav">eq := D(y(x), x, 3) - sin(D(y(x), x, 2))*exp(y(x)) = cos(x)</span>
+<div id="mathAns8-223">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y′′′(x)-ey(x)sin(y′′(x))=cos(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+Solve it around
+x=0 with the initial conditions
+y(0)=1,y′(0)=y′′(0)=0.
+<div id="spadComm8-224" class="spadComm">
+<span id="commSav8-224" class="commSav">seriesSolve(eq, y, x = 0, [1, 0, 0])</span>
+<div id="mathAns8-224">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1+16x3+e24x4+e2-1120x5+e3-2e720x6+e4-8e2+4e+15040x7+O(x8)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariateTaylorSeries(Expression Integer,x,0)
+</div>
+You can also solve a system of nonlinear first order equations. For example, we solve a system that has
+tan(t) and
+sec(t) as solutions.
+We tell FriCAS that
+x is also an operator.
+<div id="spadComm8-225" class="spadComm">
+<span id="commSav8-225" class="commSav">x := operator 'x</span>
+<div id="mathAns8-225">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+<p>Enter the two equations forming our system.</p>
+<div id="spadComm8-226" class="spadComm">
+<span id="commSav8-226" class="commSav">eq1 := D(x(t), t) = 1 + x(t)^2</span>
+<div id="mathAns8-226">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x′(t)=x(t)2+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+<div id="spadComm8-227" class="spadComm">
+<span id="commSav8-227" class="commSav">eq2 := D(y(t), t) = x(t) * y(t)</span>
+<div id="mathAns8-227">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y′(t)=x(t)y(t)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Expression Integer
+</div>
+Solve the system around
+t=0 with the initial conditions
+x(0)=0 and
+y(0)=1. Notice that since we give the unknowns in the order
+[x,y], the answer is a list of two series in the order
+[series for x(t), series for y(t)]
+<div id="spadComm8-228" class="spadComm">
+<span id="commSav8-228" class="commSav">seriesSolve([eq2, eq1], [x, y], t = 0, [y(0) = 1, x(0) = 0])</span>
+<div id="mathAns8-228">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function %BZ with type List UnivariateTaylorSeries(<br />
+      Expression Integer,t,0) -&gt; UnivariateTaylorSeries(Expression <br />
+      Integer,t,0) <br />
+   Compiling function %CA with type List UnivariateTaylorSeries(<br />
+      Expression Integer,t,0) -&gt; UnivariateTaylorSeries(Expression <br />
+      Integer,t,0) <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[t+13t3+215t5+17315t7+O(t8),1+12t2+524t4+61720t6+O(t8)]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List UnivariateTaylorSeries(Expression Integer,t,0)
+</div>
+<p>The order in which we give the equations and the initial conditions has no effect on the order of the solution.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-8.9.xhtml">Previous Section 8.9 Working with Power Series</a><a href="section-8.11.xhtml">Next Section 8.11 Finite Fields</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

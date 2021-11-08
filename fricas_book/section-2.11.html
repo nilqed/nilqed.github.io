@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section2.11</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section2.11</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-2.10.xhtml">Previous Section 2.10 Resolving Types</a><a href="section-2.12.xhtml">Next Section 2.12 Commands for Snooping</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-2.11">
+<h2 class="sectiontitle" id="exposing-domains-and-packages">2.11 Exposing Domains and Packages</h2>
+<span id="ugTypesExpose" class="label"></span>
+<p>In this section we discuss how FriCAS makes some operations available to you while hiding others that are meant to be used by developers or only in rare cases. If you are a new user of FriCAS, it is likely that everything you need is available by default and you may want to skip over this section on first reading.</p>
+<p>Every <span class="index">constructor:exposed</span><span id="chapter-2-61"></span> domain and package in the FriCAS library <span class="index">constructor:hidden</span><span id="chapter-2-62"></span> is <span class="index">exposed:constructor</span><span id="chapter-2-63"></span> either exposed (meaning that you can use its operations without doing anything special) or it is <span class="italic">hidden</span> (meaning you have to either package call (see <a href="section-2.9.xhtml#ugTypesPkgCall" class="ref">ugTypesPkgCall</a>) the operations it contains or explicitly expose it to use the operations). The initial exposure status for a constructor is set in the file <span style="font-weight: bold;"> exposed.lsp</span> (see the <span class="italic">Installer's Note</span> <span class="index">exposed.lsp @<span style="font-weight: bold;"> exposed.lsp</span><span id="chapter-2-64"></span></span> for FriCAS <span class="index">file:exposed.lsp @<span style="font-weight: bold;"> exposed.lsp</span></span><span id="chapter-2-65"></span> if you need to know the location of this file). Constructors are collected together in <span class="index">group:exposure</span><span id="chapter-2-66"></span> <span class="italic">exposure groups</span>. <span class="index">exposure:group</span><span id="chapter-2-67"></span> Categories are all in the exposure group <span class="italic">categories</span> and the bulk of the basic set of packages and domains that are exposed are in the exposure group <span class="italic">basic.</span> Here is an abbreviated sample of the file (without the Lisp parentheses):</p>
+<div class="verbatim">
+<br />
+basic<br />
+        AlgebraicNumber                          AN<br />
+        AlgebraGivenByStructuralConstants        ALGSC<br />
+        Any                                      ANY<br />
+        AnyFunctions1                            ANY1<br />
+        BinaryExpansion                          BINARY<br />
+        Boolean                                  BOOLEAN<br />
+        CardinalNumber                           CARD<br />
+        CartesianTensor                          CARTEN<br />
+        Character                                CHAR<br />
+        CharacterClass                           CCLASS<br />
+        CliffordAlgebra                          CLIF<br />
+        Color                                    COLOR<br />
+        Complex                                  COMPLEX<br />
+        ContinuedFraction                        CONTFRAC<br />
+        DecimalExpansion                         DECIMAL<br />
+        ...<br />
+
+</div>
+<div class="verbatim">
+<br />
+categories<br />
+        AbelianGroup                             ABELGRP<br />
+        AbelianMonoid                            ABELMON<br />
+        AbelianMonoidRing                        AMR<br />
+        AbelianSemiGroup                         ABELSG<br />
+        Aggregate                                AGG<br />
+        Algebra                                  ALGEBRA<br />
+        AlgebraicallyClosedField                 ACF<br />
+        AlgebraicallyClosedFunctionSpace         ACFS<br />
+        ArcHyperbolicFunctionCategory            AHYP<br />
+        ...<br />
+
+</div>
+<p>For each constructor in a group, the full name and the abbreviation is given. There are other groups in <span style="font-weight: bold;"> exposed.lsp</span> but initially only the constructors in exposure groups <span class="italic">basic</span> <span class="italic">categories</span> <span class="italic">naglink</span> and <span class="italic">anna</span> are exposed.</p>
+<p>As an interactive user of FriCAS, you do not need to modify this file. Instead, use <span class="teletype">)set expose</span> to expose, hide or query the exposure status of an individual constructor or exposure group. <span class="index">set expose</span><span id="chapter-2-68"></span> The reason for having exposure groups is to be able to expose or hide multiple constructors with a single command. For example, you might group together into exposure group <span class="italic">quantum</span> a number of domains and packages useful for quantum mechanical computations. These probably should not be available to every user, but you want an easy way to make the whole collection visible to FriCAS when it is looking for operations to apply.</p>
+<p>If you wanted to hide all the basic constructors available by default, you would issue <span class="teletype">)set expose drop group basic</span>. <span class="index">set expose drop group</span><span id="chapter-2-69"></span> We do not recommend that you do this. If, however, you discover that you have hidden all the basic constructors, you should issue <span class="teletype">)set expose add group basic</span> to restore your default environment. <span class="index">set expose add group</span><span id="chapter-2-70"></span></p>
+<p>It is more likely that you would want to expose or hide individual constructors. In <a href="section-6.19.xhtml#ugUserTriangle" class="ref">ugUserTriangle</a> we use several operations from <span class="teletype">OutputForm</span>, a domain usually hidden. To avoid package calling every operation from <span class="teletype">OutputForm</span>, we expose the domain and let FriCAS conclude that those operations should be used. Use <span class="teletype">)set expose add constructor</span> and <span class="teletype">)set expose drop constructor</span> to expose and hide a constructor, respectively. <span class="index">set expose drop constructor</span><span id="chapter-2-71"></span> You should use the constructor name, not the abbreviation. The <span class="teletype">)set expose</span> command guides you through these options. <span class="index">set expose add constructor</span><span id="chapter-2-72"></span></p>
+<p>If you expose a previously hidden constructor, FriCAS exhibits new behavior (that was your intention) though you might not expect the results that you get. <span class="teletype">OutputForm</span> is, in fact, one of the worst offenders in this regard. <span class="index">OutputForm</span><span id="chapter-2-73"></span> This domain is meant to be used by other domains for creating a structure that FriCAS knows how to display. It has functions like <span class="spadopFrom" title="OutputForm">+</span> that form output representations rather than do mathematical calculations. Because of the order in which FriCAS looks at constructors when it is deciding what operation to apply, <span class="teletype">OutputForm</span> might be used instead of what you expect.</p>
+<p>This is a polynomial.</p>
+<div id="spadComm2-130" class="spadComm">
+<span id="commSav2-130" class="commSav">x + x</span>
+<div id="mathAns2-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Expose <span class="teletype">OutputForm</span>.</p>
+<div id="spadComm2-131" class="spadComm">
+<span id="commSav2-131" class="commSav">)set expose add constructor OutputForm </span>
+<div id="mathAns2-131">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   OutputForm is now explicitly exposed in frame G82322 <br />
+
+</div>
+<p>This is what we get when <span class="teletype">OutputForm</span> is automatically available.</p>
+<div id="spadComm2-132" class="spadComm">
+<span id="commSav2-132" class="commSav">x + x</span>
+<div id="mathAns2-132">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x+x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OutputForm
+</div>
+<p>Hide <span class="teletype">OutputForm</span> so we don't run into problems with any later examples!</p>
+<div id="spadComm2-133" class="spadComm">
+<span id="commSav2-133" class="commSav">)set expose drop constructor OutputForm </span>
+<div id="mathAns2-133">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   OutputForm is now explicitly hidden in frame G82322 <br />
+
+</div>
+<p>Finally, exposure is done on a frame-by-frame basis. A <span class="italic">frame</span> (see <a href="section-16.11.xhtml#ugSysCmdframe" class="ref">ugSysCmdframe</a> ) <span class="index">frame:exposure and</span><span id="chapter-2-74"></span> is one of possibly several logical FriCAS workspaces within a physical one, each having its own environment (for example, variables and function definitions). If you have several FriCAS workspace windows on your screen, they are all different frames, automatically created for you by HyperDoc. Frames can be manually created, made active and destroyed by the <span class="teletype">)frame</span> system command. <span class="index">frame</span><span id="chapter-2-75"></span> They do not share exposure information, so you need to use <span class="teletype">)set expose</span> in each one to add or drop constructors from view.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-2.10.xhtml">Previous Section 2.10 Resolving Types</a><a href="section-2.12.xhtml">Next Section 2.12 Commands for Snooping</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

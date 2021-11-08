@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.85</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.85</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.84.xhtml">Previous Section 9.84 UniversalSegment</a><a href="section-9.86.xhtml">Next Section 9.86 Void</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.85">
+<h2 class="sectiontitle" id="vector">9.85 Vector</h2>
+<span id="VectorXmpPage" class="label"></span>
+<p>The <span class="teletype">Vector</span> domain is used for storing data in a one-dimensional indexed data structure. A vector is a homogeneous data structure in that all the components of the vector must belong to the same FriCAS domain. Each vector has a fixed length specified by the user; vectors are not extensible. This domain is similar to the <span class="teletype">OneDimensionalArray</span> domain, except that when the components of a <span class="teletype">Vector</span> belong to a <span class="teletype">Ring</span>, arithmetic operations are provided. For more examples of operations that are defined for both <span class="teletype">Vector</span> and <span class="teletype">OneDimensionalArray</span>, see <a href="section-9.57.xhtml#OneDimensionalArrayXmpPage" class="ref">OneDimensionalArrayXmpPage</a> .</p>
+<p>As with the <span class="teletype">OneDimensionalArray</span> domain, a <span class="teletype">Vector</span> can be created by calling the operation <span class="spadfunFrom">new</span><span class="index">new</span><span id="chapter-9-36"></span><span class="index">Vector</span><span id="chapter-9-37"></span>, its components can be accessed by calling the operations <span class="spadfunFrom">elt</span><span class="index">elt</span><span id="chapter-9-38"></span><span class="index">Vector</span><span id="chapter-9-39"></span> and <span class="spadfunFrom">qelt</span><span class="index">qelt</span><span id="chapter-9-40"></span><span class="index">Vector</span><span id="chapter-9-41"></span>, and its components can be reset by calling the operations <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-42"></span><span class="index">Vector</span><span id="chapter-9-43"></span> and <span class="spadfunFrom">qsetelt</span><span class="index">qsetelt</span><span id="chapter-9-44"></span><span class="index">Vector</span><span id="chapter-9-45"></span>.</p>
+<p>This creates a vector of integers of length <span class="teletype">5</span> all of whose components are <span class="teletype">12</span>.</p>
+<div id="spadComm9-45" class="spadComm">
+<span id="commSav9-45" class="commSav">u : VECTOR INT := new(5,12) </span>
+<div id="mathAns9-45">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[12,12,12,12,12]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>This is how you create a vector from a list of its components.</p>
+<div id="spadComm9-46" class="spadComm">
+<span id="commSav9-46" class="commSav">v : VECTOR INT := vector([1,2,3,4,5]) </span>
+<div id="mathAns9-46">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>Indexing for vectors begins at <span class="teletype">1</span>. The last element has index equal to the length of the vector, which is computed by <span class="spadopFrom" title="Vector"> #</span>.</p>
+<div id="spadComm9-47" class="spadComm">
+<span id="commSav9-47" class="commSav"> #(v) </span>
+<div id="mathAns9-47">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This is the standard way to use <span class="spadfunFrom">elt</span><span class="index">elt</span><span id="chapter-9-46"></span><span class="index">Vector</span><span id="chapter-9-47"></span> to extract an element. Functionally, it is the same as if you had typed <span class="teletype">elt(v,2)</span>.</p>
+<div id="spadComm9-48" class="spadComm">
+<span id="commSav9-48" class="commSav">v.2 </span>
+<div id="mathAns9-48">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This is the standard way to use <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-48"></span><span class="index">Vector</span><span id="chapter-9-49"></span> to change an element. It is the same as if you had typed <span class="teletype">setelt(v,3,99)</span>.</p>
+<div id="spadComm9-49" class="spadComm">
+<span id="commSav9-49" class="commSav">v.3 := 99 </span>
+<div id="mathAns9-49">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>99</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Now look at <span class="teletype">v</span> to see the change. You can use <span class="spadfunFrom">qelt</span><span class="index">qelt</span><span id="chapter-9-50"></span><span class="index">Vector</span><span id="chapter-9-51"></span> and <span class="spadfunFrom">qsetelt</span><span class="index">qsetelt</span><span id="chapter-9-52"></span><span class="index">Vector</span><span id="chapter-9-53"></span> (instead of <span class="spadfunFrom">elt</span><span class="index">elt</span><span id="chapter-9-54"></span><span class="index">Vector</span><span id="chapter-9-55"></span> and <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-56"></span><span class="index">Vector</span><span id="chapter-9-57"></span>, respectively) but <span class="italic">only</span> when you know that the index is within the valid range.</p>
+<div id="spadComm9-50" class="spadComm">
+<span id="commSav9-50" class="commSav">v </span>
+<div id="mathAns9-50">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,99,4,5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>When the components belong to a <span class="teletype">Ring</span>, FriCAS provides arithmetic operations for <span class="teletype">Vector</span>. These include left and right scalar multiplication.</p>
+<div id="spadComm9-51" class="spadComm">
+<span id="commSav9-51" class="commSav">5 * v </span>
+<div id="mathAns9-51">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[5,10,495,20,25]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<div id="spadComm9-52" class="spadComm">
+<span id="commSav9-52" class="commSav">v * 7 </span>
+<div id="mathAns9-52">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,14,693,28,35]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<div id="spadComm9-53" class="spadComm">
+<span id="commSav9-53" class="commSav">w : VECTOR INT := vector([2,3,4,5,6]) </span>
+<div id="mathAns9-53">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,4,5,6]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>Addition and subtraction are also available.</p>
+<div id="spadComm9-54" class="spadComm">
+<span id="commSav9-54" class="commSav">v + w </span>
+<div id="mathAns9-54">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,5,103,9,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>Of course, when adding or subtracting, the two vectors must have the same length or an error message is displayed.</p>
+<div id="spadComm9-55" class="spadComm">
+<span id="commSav9-55" class="commSav">v - w </span>
+<div id="mathAns9-55">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1,-1,95,-1,-1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>For more information about other aggregate domains, see the following: <a href="section-9.1.xhtml#AssociationListXmpPage" class="ref">ListXmpPage</a> , <a href="section-9.52.xhtml#MatrixXmpPage" class="ref">MatrixXmpPage</a> , <a href="section-9.57.xhtml#OneDimensionalArrayXmpPage" class="ref">OneDimensionalArrayXmpPage</a> , <a href="section-9.53.xhtml#MultiSetXmpPage" class="ref">SetXmpPage</a> , <a href="section-9.18.xhtml#EqTableXmpPage" class="ref">TableXmpPage</a> , and <a href="section-9.82.xhtml#TwoDimensionalArrayXmpPage" class="ref">TwoDimensionalArrayXmpPage</a> . Issue the system command <span class="teletype">)show Vector</span> to display the full list of operations defined by <span class="teletype">Vector</span>.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.84.xhtml">Previous Section 9.84 UniversalSegment</a><a href="section-9.86.xhtml">Next Section 9.86 Void</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

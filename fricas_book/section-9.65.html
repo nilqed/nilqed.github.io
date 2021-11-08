@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.65</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.65</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.64.xhtml">Previous Section 9.64 Quaternion</a><a href="section-9.66.xhtml">Next Section 9.66 RealClosure</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.65">
+<h2 class="sectiontitle" id="radixexpansion">9.65 RadixExpansion</h2>
+<span id="RadixExpansionXmpPage" class="label"></span>
+<p>It possible to expand numbers in general bases.</p>
+Here we expand <span class="teletype">111</span> in base <span class="teletype">5</span>. This means
+<div id="spadComm9-131" class="spadComm">
+<span id="commSav9-131" class="commSav">111::RadixExpansion(5)</span>
+<div id="mathAns9-131">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>421</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 5
+</div>
+<p>You can expand fractions to form repeating expansions.</p>
+<div id="spadComm9-132" class="spadComm">
+<span id="commSav9-132" class="commSav">(5/24)::RadixExpansion(2)</span>
+<div id="mathAns9-132">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.00110‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 2
+</div>
+<div id="spadComm9-133" class="spadComm">
+<span id="commSav9-133" class="commSav">(5/24)::RadixExpansion(3)</span>
+<div id="mathAns9-133">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.012‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 3
+</div>
+<div id="spadComm9-134" class="spadComm">
+<span id="commSav9-134" class="commSav">(5/24)::RadixExpansion(8)</span>
+<div id="mathAns9-134">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.152‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 8
+</div>
+<div id="spadComm9-135" class="spadComm">
+<span id="commSav9-135" class="commSav">(5/24)::RadixExpansion(10)</span>
+<div id="mathAns9-135">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.2083‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 10
+</div>
+<p>For bases from 11 to 36 the letters A through Z are used.</p>
+<div id="spadComm9-136" class="spadComm">
+<span id="commSav9-136" class="commSav">(5/24)::RadixExpansion(12)</span>
+<div id="mathAns9-136">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.26</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 12
+</div>
+<div id="spadComm9-137" class="spadComm">
+<span id="commSav9-137" class="commSav">(5/24)::RadixExpansion(16)</span>
+<div id="mathAns9-137">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.35‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 16
+</div>
+<div id="spadComm9-138" class="spadComm">
+<span id="commSav9-138" class="commSav">(5/24)::RadixExpansion(36)</span>
+<div id="mathAns9-138">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.7I</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 36
+</div>
+<p>For bases greater than 36, the ragits are separated by blanks.</p>
+<div id="spadComm9-139" class="spadComm">
+<span id="commSav9-139" class="commSav">(5/24)::RadixExpansion(38)</span>
+<div id="mathAns9-139">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.734312512‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 38
+</div>
+<p>The <span class="teletype">RadixExpansion</span> type provides operations to obtain the individual ragits. Here is a rational number in base <span class="teletype">8</span>.</p>
+<div id="spadComm9-140" class="spadComm">
+<span id="commSav9-140" class="commSav">a := (76543/210)::RadixExpansion(8) </span>
+<div id="mathAns9-140">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>554.37307‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 8
+</div>
+<p>The operation <span class="spadfunFrom">wholeRagits</span><span class="index">wholeRagits</span><span id="chapter-9-91"></span><span class="index">RadixExpansion</span><span id="chapter-9-92"></span> returns a list of the ragits for the integral part of the number.</p>
+<div id="spadComm9-141" class="spadComm">
+<span id="commSav9-141" class="commSav">w := wholeRagits a </span>
+<div id="mathAns9-141">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[5,5,4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>The operations <span class="spadfunFrom">prefixRagits</span><span class="index">prefixRagits</span><span id="chapter-9-93"></span><span class="index">RadixExpansion</span><span id="chapter-9-94"></span> and <span class="spadfunFrom">cycleRagits</span><span class="index">cycleRagits</span><span id="chapter-9-95"></span><span class="index">RadixExpansion</span><span id="chapter-9-96"></span> return lists of the initial and repeating ragits in the fractional part of the number.</p>
+<div id="spadComm9-142" class="spadComm">
+<span id="commSav9-142" class="commSav">f0 := prefixRagits a </span>
+<div id="mathAns9-142">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-143" class="spadComm">
+<span id="commSav9-143" class="commSav">f1 := cycleRagits a </span>
+<div id="mathAns9-143">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,3,0,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>You can construct any radix expansion by giving the whole, prefix and cycle parts. The declaration is necessary to let FriCAS know the base of the ragits.</p>
+<div id="spadComm9-144" class="spadComm">
+<span id="commSav9-144" class="commSav">u:RadixExpansion(8):=wholeRadix(w)+fractRadix(f0,f1) </span>
+<div id="mathAns9-144">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>554.37307‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 8
+</div>
+<p>If there is no repeating part, then the list <span class="teletype">[0]</span> should be used.</p>
+<div id="spadComm9-145" class="spadComm">
+<span id="commSav9-145" class="commSav">v: RadixExpansion(12) := fractRadix([1,2,3,11], [0]) </span>
+<div id="mathAns9-145">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.123B0‾</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 12
+</div>
+<p>If you are not interested in the repeating nature of the expansion, an infinite stream of ragits can be obtained using <span class="spadfunFrom">fractRagits</span><span class="index">fractRagits</span><span id="chapter-9-97"></span><span class="index">RadixExpansion</span><span id="chapter-9-98"></span>.</p>
+<div id="spadComm9-146" class="spadComm">
+<span id="commSav9-146" class="commSav">fractRagits(u) </span>
+<div id="mathAns9-146">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,7,3,0,7,7‾]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+<p>Of course, it's possible to recover the fraction representation:</p>
+<div id="spadComm9-147" class="spadComm">
+<span id="commSav9-147" class="commSav">a :: Fraction(Integer) </span>
+<div id="mathAns9-147">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>76543210</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>More examples of expansions are available in <a href="section-9.15.xhtml#DecimalExpansionXmpPage" class="ref">DecimalExpansionXmpPage</a> , <a href="section-9.4.xhtml#BinaryExpansionXmpPage" class="ref">BinaryExpansionXmpPage</a> , and <a href="section-9.33.xhtml#HexadecimalExpansionXmpPage" class="ref">HexadecimalExpansionXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.64.xhtml">Previous Section 9.64 Quaternion</a><a href="section-9.66.xhtml">Next Section 9.66 RealClosure</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

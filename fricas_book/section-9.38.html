@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.38</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.38</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.37.xhtml">Previous Section 9.37 Kernel</a><a href="section-9.39.xhtml">Next Section 9.39 LexTriangularPackage</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.38">
+<h2 class="sectiontitle" id="keyedaccessfile">9.38 KeyedAccessFile</h2>
+<span id="KeyedAccessFileXmpPage" class="label"></span>
+<p>The domain <span class="teletype">KeyedAccessFile(S)</span> provides files which can be used as associative tables. Data values are stored in these files and can be retrieved according to their keys. The keys must be strings so this type behaves very much like the <span class="teletype">StringTable(S)</span> domain. The difference is that keyed access files reside in secondary storage while string tables are kept in memory. For more information on table-oriented operations, see the description of <span class="teletype">Table</span>.</p>
+<p>Before a keyed access file can be used, it must first be opened. A new file can be created by opening it for output.</p>
+<div id="spadComm9-1" class="spadComm">
+<span id="commSav9-1" class="commSav">ey: KeyedAccessFile(Integer) := open("/tmp/editor.year", "output") </span>
+<div id="mathAns9-1">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/editor.year"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: KeyedAccessFile Integer
+</div>
+<p>Just as for vectors, tables or lists, values are saved in a keyed access file by setting elements.</p>
+<div id="spadComm9-2" class="spadComm">
+<span id="commSav9-2" class="commSav">ey."Char" := 1986 </span>
+<div id="mathAns9-2">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-3" class="spadComm">
+<span id="commSav9-3" class="commSav">ey."Caviness" := 1985 </span>
+<div id="mathAns9-3">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1985</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-4" class="spadComm">
+<span id="commSav9-4" class="commSav">ey."Fitch" := 1984 </span>
+<div id="mathAns9-4">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1984</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Values are retrieved using application, in any of its syntactic forms.</p>
+<div id="spadComm9-5" class="spadComm">
+<span id="commSav9-5" class="commSav">ey."Char"</span>
+<div id="mathAns9-5">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-6" class="spadComm">
+<span id="commSav9-6" class="commSav">ey("Char")</span>
+<div id="mathAns9-6">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-7" class="spadComm">
+<span id="commSav9-7" class="commSav">ey "Char"</span>
+<div id="mathAns9-7">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Attempting to retrieve a non-existent element in this way causes an error. If it is not known whether a key exists, you should use the <span class="spadfunFrom">search</span><span class="index">search</span><span id="chapter-9-0"></span><span class="index">KeyedAccessFile</span><span id="chapter-9-1"></span> operation.</p>
+<div id="spadComm9-8" class="spadComm">
+<span id="commSav9-8" class="commSav">search("Char", ey) </span>
+<div id="mathAns9-8">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Integer,...)
+</div>
+<div id="spadComm9-9" class="spadComm">
+<span id="commSav9-9" class="commSav">search("Smith", ey)</span>
+<div id="mathAns9-9">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"failed"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union("failed",...)
+</div>
+<p>When an entry is no longer needed, it can be removed from the file.</p>
+<div id="spadComm9-10" class="spadComm">
+<span id="commSav9-10" class="commSav">remove!("Char", ey) </span>
+<div id="mathAns9-10">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Integer,...)
+</div>
+<p>The <span class="spadfunFrom">keys</span><span class="index">keys</span><span id="chapter-9-2"></span><span class="index">KeyedAccessFile</span><span id="chapter-9-3"></span> operation returns a list of all the keys for a given file.</p>
+<div id="spadComm9-11" class="spadComm">
+<span id="commSav9-11" class="commSav">keys ey </span>
+<div id="mathAns9-11">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>["Fitch","Caviness"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List String
+</div>
+<p>The <span class="spadfunFrom"> #</span><span class="index"> #</span><span id="chapter-9-4"></span><span class="index">KeyedAccessFile</span><span id="chapter-9-5"></span> operation gives the number of entries.</p>
+<div id="spadComm9-12" class="spadComm">
+<span id="commSav9-12" class="commSav"> #ey</span>
+<div id="mathAns9-12">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The table view of keyed access files provides safe operations. That is, if the FriCAS program is terminated between file operations, the file is left in a consistent, current state. This means, however, that the operations are somewhat costly. For example, after each update the file is closed.</p>
+<p>Here we add several more items to the file, then check its contents.</p>
+<div id="spadComm9-13" class="spadComm">
+<span id="commSav9-13" class="commSav">KE := Record(key: String, entry: Integer) </span>
+<div id="mathAns9-13">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>Record(key:String,entry:Integer)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<div id="spadComm9-14" class="spadComm">
+<span id="commSav9-14" class="commSav">reopen!(ey, "output") </span>
+<div id="mathAns9-14">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/editor.year"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: KeyedAccessFile Integer
+</div>
+<p>If many items are to be added to a file at the same time, then it is more efficient to use the <span class="spadfunFrom">write</span><span class="index">write</span><span id="chapter-9-6"></span><span class="index">KeyedAccessFile</span><span id="chapter-9-7"></span> operation.</p>
+<div id="spadComm9-15" class="spadComm">
+<span id="commSav9-15" class="commSav">write!(ey, ["van Hulzen", 1983]$KE) </span>
+<div id="mathAns9-15">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[key="vanHulzen",entry=1983]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(key: String,entry: Integer)
+</div>
+<div id="spadComm9-16" class="spadComm">
+<span id="commSav9-16" class="commSav">write!(ey, ["Calmet", 1982]$KE)</span>
+<div id="mathAns9-16">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[key="Calmet",entry=1982]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(key: String,entry: Integer)
+</div>
+<div id="spadComm9-17" class="spadComm">
+<span id="commSav9-17" class="commSav">write!(ey, ["Wang", 1981]$KE)</span>
+<div id="mathAns9-17">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[key="Wang",entry=1981]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(key: String,entry: Integer)
+</div>
+<div id="spadComm9-18" class="spadComm">
+<span id="commSav9-18" class="commSav">close! ey</span>
+<div id="mathAns9-18">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/editor.year"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: KeyedAccessFile Integer
+</div>
+<p>The <span class="spadfunFrom">read</span><span class="index">read</span><span id="chapter-9-8"></span><span class="index">KeyedAccessFile</span><span id="chapter-9-9"></span> operation is also available from the file view, but it returns elements in a random order. It is generally clearer and more efficient to use the <span class="spadfunFrom">keys</span><span class="index">keys</span><span id="chapter-9-10"></span><span class="index">KeyedAccessFile</span><span id="chapter-9-11"></span> operation and to extract elements by key.</p>
+<div id="spadComm9-19" class="spadComm">
+<span id="commSav9-19" class="commSav">keys ey</span>
+<div id="mathAns9-19">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>["Wang","Calmet","vanHulzen","Fitch","Caviness"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List String
+</div>
+<div id="spadComm9-20" class="spadComm">
+<span id="commSav9-20" class="commSav">members ey</span>
+<div id="mathAns9-20">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1981,1982,1983,1984,1985]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-21" class="spadComm">
+<span id="commSav9-21" class="commSav">)system rm -r /tmp/editor.year</span>
+<div id="mathAns9-21">
+
+</div>
+</div>
+<p>For more information on related topics, see <a href="section-9.24.xhtml#FileXmpPage" class="ref">FileXmpPage</a> , <a href="section-9.81.xhtml#TextFileXmpPage" class="ref">TextFileXmpPage</a> , and <a href="section-9.41.xhtml#LibraryXmpPage" class="ref">LibraryXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.37.xhtml">Previous Section 9.37 Kernel</a><a href="section-9.39.xhtml">Next Section 9.39 LexTriangularPackage</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

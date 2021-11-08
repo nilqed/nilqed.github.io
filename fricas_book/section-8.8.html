@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section8.8</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section8.8</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.7.xhtml">Previous Section 8.7 Laplace Transforms</a><a href="section-8.9.xhtml">Next Section 8.9 Working with Power Series</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-8.8">
+<h2 class="sectiontitle" id="integration">8.8 Integration</h2>
+<span id="ugProblemIntegration" class="label"></span>
+Integration is the reverse process of differentiation, that is, <span class="index">integration</span><span id="chapter-8-98"></span> an <span class="italic">integral</span> of a function
+f with respect to a variable
+x is any function
+g such that
+D(g,x) is equal to
+f.
+<p>The package <span class="teletype">FunctionSpaceIntegration</span> provides the top-level integration operation, <span class="spadfunFrom">integrate</span><span class="index">integrate</span><span id="chapter-8-99"></span><span class="index">FunctionSpaceIntegration</span><span id="chapter-8-100"></span>, for integrating real-valued elementary functions. <span class="index">FunctionSpaceIntegration</span><span id="chapter-8-101"></span></p>
+<div id="spadComm8-117" class="spadComm">
+<span id="commSav8-117" class="commSav">integrate(cosh(a*x)*sinh(a*x), x)</span>
+<div id="mathAns8-117">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sinh(ax)2+cosh(ax)24a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>Unfortunately, antiderivatives of most functions cannot be expressed in terms of elementary functions.</p>
+<div id="spadComm8-118" class="spadComm">
+<span id="commSav8-118" class="commSav">integrate(log(1 + sqrt(a * x + b)) / x, x)</span>
+<div id="mathAns8-118">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>∫xlog(b+%Ma+1)%Md%M</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>Given an elementary function to integrate, FriCAS returns a formal integral as above only when it can prove that the integral is not elementary and not when it cannot determine the integral. In this rare case it prints a message that it cannot determine if an elementary integral exists.</p>
+<p>Similar functions may have antiderivatives <span class="index">antiderivative</span><span id="chapter-8-102"></span> that look quite different because the form of the antiderivative depends on the sign of a constant that appears in the function.</p>
+<div id="spadComm8-119" class="spadComm">
+<span id="commSav8-119" class="commSav">integrate(1/(x^2 - 2),x)</span>
+<div id="mathAns8-119">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>log((x2+2)2-4xx2-2)22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<div id="spadComm8-120" class="spadComm">
+<span id="commSav8-120" class="commSav">integrate(1/(x^2 + 2),x)</span>
+<div id="mathAns8-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>arctan(x22)2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Expression Integer,...)
+</div>
+<p>If the integrand contains parameters, then there may be several possible antiderivatives, depending on the signs of expressions of the parameters.</p>
+In this case FriCAS returns a list of answers that cover all the possible cases. Here you use the answer involving the square root of
+a when
+a&gt;0 and <span class="index">integration:result as list of real functions</span><span id="chapter-8-103"></span> the answer involving the square root of
+-a when
+a&lt;0.
+<div id="spadComm8-121" class="spadComm">
+<span id="commSav8-121" class="commSav">integrate(x^2 / (x^4 - a^2), x)</span>
+<div id="mathAns8-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[log((x2+a)a-2axx2-a)+2arctan(xaa)4a,log((x2-a)-a+2axx2+a)-2arctan(x-aa)4-a]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(List Expression Integer,...)
+</div>
+<p>If the parameters and the variables of integration can be complex numbers rather than real, then the notion of sign is not defined. In this case all the possible answers can be expressed as one complex function. To get that function, rather than a list of real functions, use <span class="spadfunFrom">complexIntegrate</span><span class="index">complexIntegrate</span><span id="chapter-8-104"></span><span class="index">FunctionSpaceComplexIntegration</span><span id="chapter-8-105"></span>, which is provided by the package <span class="index">integration:result as a complex functions</span><span id="chapter-8-106"></span> <span class="teletype">FunctionSpaceComplexIntegration</span>. <span class="index">FunctionSpaceComplexIntegration</span><span id="chapter-8-107"></span></p>
+<p>This operation is used for integrating complex-valued elementary functions.</p>
+<div id="spadComm8-122" class="spadComm">
+<span id="commSav8-122" class="commSav">complexIntegrate(x^2 / (x^4 - a^2), x)</span>
+<div id="mathAns8-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(4alog(x-4a+2a-4a)--4alog(x4a+2a4a)+-4alog(x4a-2a4a)-4alog(x-4a-2a-4a))2-4a4a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>As with the real case, antiderivatives for most complex-valued functions cannot be expressed in terms of elementary functions.</p>
+<div id="spadComm8-123" class="spadComm">
+<span id="commSav8-123" class="commSav">complexIntegrate(log(1 + sqrt(a * x + b)) / x, x)</span>
+<div id="mathAns8-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>∫xlog(b+%Ma+1)%Md%M</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Sometimes <span style="font-weight: bold;"> integrate</span> can involve symbolic algebraic numbers such as those returned by <span class="spadfunFrom">rootOf</span><span class="index">rootOf</span><span id="chapter-8-108"></span><span class="index">Expression</span><span id="chapter-8-109"></span>. To see how to work with these strange generated symbols (such as
+%%a0), see <a href="section-8.3.xhtml#ugxProblemSymRootAll" class="ref">ugxProblemSymRootAll</a> .
+Definite integration is the process of computing the area between <span class="index">integration:definite</span><span id="chapter-8-110"></span> the
+x-axis and the curve of a function
+f(x). The fundamental theorem of calculus states that if
+f is continuous on an interval
+a..b and if there exists a function
+g that is differentiable on
+a..b and such that
+D(g,x) is equal to
+f, then the definite integral of
+f for
+x in the interval
+a..b is equal to
+g(b)-g(a).
+<p>The package <span class="teletype">RationalFunctionDefiniteIntegration</span> provides the top-level definite integration operation, <span class="spadfunFrom">integrate</span><span class="index">integrate</span><span id="chapter-8-111"></span><span class="index">RationalFunctionDefiniteIntegration</span><span id="chapter-8-112"></span>, for integrating real-valued rational functions.</p>
+<div id="spadComm8-124" class="spadComm">
+<span id="commSav8-124" class="commSav">integrate((x^4 - 3*x^2 + 6)/(x^6-5*x^4+5*x^2+4), x = 1..2)</span>
+<div id="mathAns8-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2arctan(8)+2arctan(5)+2arctan(2)+2arctan(12)-π2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(f1: OrderedCompletion Expression Integer,...)
+</div>
+FriCAS checks beforehand that the function you are integrating is defined on the interval
+a..b, and prints an error message if it finds that this is not case, as in the following example:
+<div class="verbatim">
+<br />
+integrate(1/(x^2-2), x = 1..2)<br />
+<br />
+    &gt;&gt; Error detected within library code:<br />
+       Pole in path of integration<br />
+       You are being returned to the top level<br />
+       of the interpreter.<br />
+
+</div>
+<p>When parameters are present in the function, the function may or may not be defined on the interval of integration.</p>
+<p>If this is the case, FriCAS issues a warning that a pole might lie in the path of integration, and does not compute the integral.</p>
+<div id="spadComm8-125" class="spadComm">
+<span id="commSav8-125" class="commSav">integrate(1/(x^2-a), x = 1..2)</span>
+<div id="mathAns8-125">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>potentialPole</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(pole: potentialPole,...)
+</div>
+<p>If you know that you are using values of the parameter for which the function has no pole in the interval of integration, use the string <span class="teletype"><span class="italic">noPole</span></span> as a third argument to <span class="spadfunFrom">integrate</span><span class="index">integrate</span><span id="chapter-8-113"></span><span class="index">RationalFunctionDefiniteIntegration</span><span id="chapter-8-114"></span>:</p>
+The value here is, of course, incorrect if
+sqrt(a) is between
+1 and
+2.
+<div id="spadComm8-126" class="spadComm">
+<span id="commSav8-126" class="commSav">integrate(1/(x^2-a), x = 1..2, "noPole")</span>
+<div id="mathAns8-126">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(-log((-4a2-4a)a+a3+6a2+aa2-2a+1)+log((-8a2-32a)a+a3+24a2+16aa2-8a+16)-arctan(2-aa)+arctan(-aa)-a)4a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(f2: List OrderedCompletion Expression Integer,...)
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-8.7.xhtml">Previous Section 8.7 Laplace Transforms</a><a href="section-8.9.xhtml">Next Section 8.9 Working with Power Series</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

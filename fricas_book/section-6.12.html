@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.12</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.12</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.11.xhtml">Previous Section 6.11 Piece-Wise Function Definitions</a><a href="section-6.13.xhtml">Next Section 6.13 Recurrence Relations</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.12">
+<h2 class="sectiontitle" id="caching-previously-computed-results">6.12 Caching Previously Computed Results</h2>
+<span id="ugUserCache" class="label"></span>
+By default, FriCAS does not save the values of any function. <span class="index">function:caching values</span><span id="chapter-6-30"></span> You can cause it to save values and not to recompute unnecessarily <span class="index">remembering function values</span><span id="chapter-6-31"></span> by using <span class="teletype">)set functions cache</span>. <span class="index">set functions cache</span><span id="chapter-6-32"></span> This should be used before the functions are defined or, at least, before they are executed. The word following <span class="italic">cache</span> should be
+0 to turn off caching, a positive integer
+n to save the last
+n computed values or <span class="italic">all</span> to save all computed values. If you then give a list of names of functions, the caching only affects those functions. Use no list of names or <span class="italic">all</span> when you want to define the default behavior for functions not specifically mentioned in other <span class="teletype">)set functions cache</span> statements. If you give no list of names, all functions will have the caching behavior. If you explicitly turn on caching for one or more names, you must explicitly turn off caching for those names when you want to stop saving their values.
+<p>This causes the functions <span style="font-weight: bold;"> f</span> and <span style="font-weight: bold;"> g</span> to have the last three computed values saved.</p>
+<div id="spadComm6-92" class="spadComm">
+<span id="commSav6-92" class="commSav">)set functions cache 3 f g</span>
+<div id="mathAns6-92">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   function f will cache the last 3 values.<br />
+   function g will cache the last 3 values.<br />
+
+</div>
+<p>This is a sample definition for <span style="font-weight: bold;"> f</span>.</p>
+<div id="spadComm6-93" class="spadComm">
+<span id="commSav6-93" class="commSav">f x == factorial(2^x)</span>
+<div id="mathAns6-93">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>A message is displayed stating what <span style="font-weight: bold;"> f</span> will cache.</p>
+<div id="spadComm6-94" class="spadComm">
+<span id="commSav6-94" class="commSav">f(4)</span>
+<div id="mathAns6-94">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function f with type PositiveInteger -&gt; Integer <br />
+   f will cache 3 most recently computed value(s).<br />
+<br />
++++ |*1;f;1;G82322| redefined<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>20922789888000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This causes all other functions to have all computed values saved by default.</p>
+<div id="spadComm6-95" class="spadComm">
+<span id="commSav6-95" class="commSav">)set functions cache all</span>
+<div id="mathAns6-95">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   In general, interpreter functions will cache all values.<br />
+
+</div>
+<p>This causes all functions that have not been specifically cached in some way to have no computed values saved.</p>
+<div id="spadComm6-96" class="spadComm">
+<span id="commSav6-96" class="commSav">)set functions cache 0</span>
+<div id="mathAns6-96">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+ In general, functions will cache no returned values.<br />
+
+</div>
+<p>We also make <span style="font-weight: bold;"> f</span> and <span style="font-weight: bold;"> g</span> uncached.</p>
+<div id="spadComm6-97" class="spadComm">
+<span id="commSav6-97" class="commSav">)set functions cache 0 f g</span>
+<div id="mathAns6-97">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Caching for function f is turned off<br />
+   Caching for function g is turned off<br />
+
+</div>
+<div class="boxed2">
+<div class="boxed">
+<p>Be careful about caching functions that have side effects. Such a function might destructively modify the elements of an array or issue a <span style="font-weight: bold;"> draw</span> command, for example. A function that you expect to execute every time it is called should not be cached. Also, it is highly unlikely that a function with no arguments should be cached.<br />
+</p>
+</div>
+</div>
+<p>You should also be careful about caching functions that depend on free variables. See <a href="section-6.16.xhtml#ugUserFreeLocal" class="ref">ugUserFreeLocal</a> for an example.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.11.xhtml">Previous Section 6.11 Piece-Wise Function Definitions</a><a href="section-6.13.xhtml">Next Section 6.13 Recurrence Relations</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

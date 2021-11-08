@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section12.11</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section12.11</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-12.10.xhtml">Previous Section 12.10 Parameters</a><a href="section-12.12.xhtml">Next Section 12.12 Anonymous Categories</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-12.11">
+<h2 class="sectiontitle" id="conditionals">12.11 Conditionals</h2>
+<span id="ugCategoriesConditionals" class="label"></span>
+As categories have parameters, the actual operations exported by a <span class="index">conditional</span><span id="chapter-12-23"></span> category can depend on these parameters. As an example, the operation <span class="spadfunFrom">determinant</span><span class="index">determinant</span><span id="chapter-12-24"></span><span class="index">MatrixCategory</span><span id="chapter-12-25"></span> from category <span class="teletype">MatrixCategory</span> is only exported when the underlying domain
+R has commutative multiplication:
+<div class="verbatim">
+<br />
+if R has commutative("*") then<br />
+   determinant: $ -&gt; R<br />
+
+</div>
+<p>Conditionals can also define conditional extensions of a category. Here is a portion of the definition of <span class="teletype">QuotientFieldCategory</span>: <span class="index">QuotientFieldCategory</span><span id="chapter-12-26"></span></p>
+<div class="verbatim">
+<br />
+QuotientFieldCategory(R) : Category == ... with ...<br />
+     if R has OrderedSet then OrderedSet<br />
+     if R has IntegerNumberSystem then<br />
+       ceiling: $ -&gt; R<br />
+         ...<br />
+
+</div>
+Think of category <span class="teletype">QuotientFieldCategory(R)</span> as denoting the domain <span class="teletype">Fraction(R)</span>, the class of all fractions of the form
+a/b for elements of
+R. The first conditional means in English:
+If the elements of
+R are totally ordered (
+R is an <span class="teletype">OrderedSet</span>), then so are the fractions
+a/b. <span class="index">Fraction</span><span id="chapter-12-27"></span>
+<p>The second conditional is used to conditionally export an operation <span style="font-weight: bold;"> ceiling</span> which returns the smallest integer greater than or equal to its argument. Clearly, <span class="italic">ceiling</span> makes sense for integers but not for polynomials and other algebraic structures. Because of this conditional, the domain <span class="teletype">Fraction(Integer)</span> exports an operation <span style="font-weight: bold;"> ceiling</span>: Fraction Integer-&gt;Integer, but <span class="teletype">Fraction Polynomial Integer</span> does not.</p>
+Conditionals can also appear in the default definitions for the operations of a category. For example, a default definition for <span class="spadfunFrom">ceiling</span><span class="index">ceiling</span><span id="chapter-12-28"></span><span class="index">Field</span><span id="chapter-12-29"></span> within the part following the
+add reads:
+<div class="verbatim">
+<br />
+if R has IntegerNumberSystem then<br />
+    ceiling x == ...<br />
+
+</div>
+<p>Here the predicate used is identical to the predicate in the <span class="teletype">Exports</span> part. This need not be the case. See <a href="section-11.8.xhtml#ugPackagesConds" class="ref">ugPackagesConds</a> for a more complicated example.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-12.10.xhtml">Previous Section 12.10 Parameters</a><a href="section-12.12.xhtml">Next Section 12.12 Anonymous Categories</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

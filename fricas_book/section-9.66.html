@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.66</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.66</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.65.xhtml">Previous Section 9.65 RadixExpansion</a><a href="section-9.67.xhtml">Next Section 9.67 RegularTriangularSet</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.66">
+<h2 class="sectiontitle" id="realclosure">9.66 RealClosure</h2>
+<span id="RealClosureXmpPage" class="label"></span>
+<p>The Real Closure 1.0 package provided by Renaud Rioboo (Renaud.Rioboo@lip6.fr) consists of different packages, categories and domains :</p>
+<div class="beginlist">
+<div class="item">
+The package <span class="teletype">RealPolynomialUtilitiesPackage</span> which needs a <span class="teletype">Field</span> <span class="em">F</span> and a <span class="teletype">UnivariatePolynomialCategory</span> domain with coefficients in <span class="em">F</span>. It computes some simple functions such as Sturm and Sylvester sequences (<span class="spadfunFrom">sturmSequence</span><span class="index">sturmSequence</span><span id="chapter-9-99"></span><span class="index">RealPolynomialUtilitiesPackage</span><span id="chapter-9-100"></span>, <span class="spadfunFrom">sylvesterSequence</span><span class="index">sylvesterSequence</span><span id="chapter-9-101"></span><span class="index">RealPolynomialUtilitiesPackage</span><span id="chapter-9-102"></span>).
+</div>
+<div class="item">
+The category <span class="teletype">RealRootCharacterizationCategory</span> provides abstract functions to work with <span class="italic">real roots</span> of univariate polynomials. These resemble variables with some functionality needed to compute important operations.
+</div>
+<div class="item">
+The category <span class="teletype">RealClosedField</span> provides common operations available over real closed fiels. These include finding all the roots of a univariate polynomial, taking square (and higher) roots, ...
+</div>
+<div class="item">
+The domain <span class="teletype">RightOpenIntervalRootCharacterization</span> is the main code that provides the functionality of <span class="teletype">RealRootCharacterizationCategory</span> for the case of archimedean fields. Abstract roots are encoded with a left closed right open interval containing the root together with a defining polynomial for the root.
+</div>
+<div class="item">
+The <span class="teletype">RealClosure</span> domain is the end-user code. It provides usual arithmetic with real algebraic numbers, along with the functionality of a real closed field. It also provides functions to approximate a real algebraic number by an element of the base field. This approximation may either be absolute (<span class="spadfunFrom">approximate</span><span class="index">approximate</span><span id="chapter-9-103"></span><span class="index">RealClosure</span><span id="chapter-9-104"></span>) or relative (<span class="spadfunFrom">relativeApprox</span><span class="index">relativeApprox</span><span id="chapter-9-105"></span><span class="index">RealClosure</span><span id="chapter-9-106"></span>).
+</div>
+</div>
+<div class="centerline">
+CAVEATS
+</div>
+<p>Since real algebraic expressions are stored as depending on <span class="italic">real roots</span> which are managed like variables, there is an ordering on these. This ordering is dynamical in the sense that any new algebraic takes precedence over older ones. In particular every creation function raises a new <span class="italic">real root</span>. This has the effect that when you type something like <span class="teletype">sqrt(2) + sqrt(2)</span> you have two new variables which happen to be equal. To avoid this name the expression such as in <span class="teletype">s2 := sqrt(2) ; s2 + s2</span></p>
+<p>Also note that computing times depend strongly on the ordering you implicitly provide. Please provide algebraics in the order which seems most natural to you.</p>
+<div class="centerline">
+LIMITATIONS
+</div>
+<p>These packages use algorithms which are published in [1] and [2] which are based on field arithmetics, in particular for polynomial gcd related algorithms. This can be quite slow for high degree polynomials and subresultants methods usually work best. Beta versions of the package try to use these techniques in a better way and work significantly faster. These are mostly based on unpublished algorithms and cannot be distributed. Please contact the author if you have a particular problem to solve or want to use these versions.</p>
+<p>Be aware that approximations behave as post-processing and that all computations are done exactly. They can thus be quite time consuming when depending on several <span class="italic">real roots</span>.</p>
+<div class="centerline">
+REFERENCES
+</div>
+<p>[1] R. Rioboo : Real Algebraic Closure of an ordered Field : Implementation in FriCAS. In proceedings of the ISSAC'92 Conference, Berkeley 1992 pp. 206-215.</p>
+<p>[2] Z. Ligatsikas, R. Rioboo, M. F. Roy : Generic computation of the real closure of an ordered field. In Mathematics and Computers in Simulation Volume 42, Issue 4-6, November 1996.</p>
+<div class="centerline">
+EXAMPLES
+</div>
+<p>We shall work with the real closure of the ordered field of rational numbers.</p>
+<div id="spadComm9-148" class="spadComm">
+<span id="commSav9-148" class="commSav">Ran := RECLOS(FRAC INT) </span>
+<div id="mathAns9-148">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>RealClosureFractionInteger</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<p>Some simple signs for square roots, these correspond to an extension of degree 16 of the rational numbers. Examples provided by J. Abbot.</p>
+<div id="spadComm9-149" class="spadComm">
+<span id="commSav9-149" class="commSav">fourSquares(a:Ran,b:Ran,c:Ran,d:Ran):Ran == sqrt(a)+sqrt(b) - sqrt(c)-sqrt(d) </span>
+<div id="mathAns9-149">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Function declaration fourSquares : (RealClosure Fraction Integer,<br />
+   RealClosure Fraction Integer,RealClosure Fraction Integer,<br />
+   RealClosure Fraction Integer) -&gt; RealClosure Fraction Integer has<br />
+   been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+<p>These produce values very close to zero.</p>
+<div id="spadComm9-150" class="spadComm">
+<span id="commSav9-150" class="commSav">squareDiff1 := fourSquares(73,548,60,586) </span>
+<div id="mathAns9-150">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-586-60+548+73</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-151" class="spadComm">
+<span id="commSav9-151" class="commSav">recip(squareDiff1)</span>
+<div id="mathAns9-151">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((54602548+14960273)60+4950273548+9900895)586+(15470273548+30941947)60+10238421548+2805187173</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-152" class="spadComm">
+<span id="commSav9-152" class="commSav">sign(squareDiff1)</span>
+<div id="mathAns9-152">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-153" class="spadComm">
+<span id="commSav9-153" class="commSav">squareDiff2 := fourSquares(165,778,86,990) </span>
+<div id="mathAns9-153">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-990-86+778+165</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-154" class="spadComm">
+<span id="commSav9-154" class="commSav">recip(squareDiff2)</span>
+<div id="mathAns9-154">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((556778778+1209010165)86+401966165778+144019431)990+(1363822165778+488640503)86+162460913778+352774119165</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-155" class="spadComm">
+<span id="commSav9-155" class="commSav">sign(squareDiff2)</span>
+<div id="mathAns9-155">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-156" class="spadComm">
+<span id="commSav9-156" class="commSav">squareDiff3 := fourSquares(217,708,226,692) </span>
+<div id="mathAns9-156">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-692-226+708+217</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-157" class="spadComm">
+<span id="commSav9-157" class="commSav">recip(squareDiff3)</span>
+<div id="mathAns9-157">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((-34102708-61598217)226-34802217708-13641141)692+(-60898217708-23869841)226-13486123708-24359809217</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-158" class="spadComm">
+<span id="commSav9-158" class="commSav">sign(squareDiff3)</span>
+<div id="mathAns9-158">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<div id="spadComm9-159" class="spadComm">
+<span id="commSav9-159" class="commSav">squareDiff4 := fourSquares(155,836,162,820) </span>
+<div id="mathAns9-159">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-820-162+836+155</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-160" class="spadComm">
+<span id="commSav9-160" class="commSav">recip(squareDiff4)</span>
+<div id="mathAns9-160">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((-37078836-86110155)162-37906155836-13645107)820+(-85282155836-30699151)162-13513901836-31384703155</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-161" class="spadComm">
+<span id="commSav9-161" class="commSav">sign(squareDiff4)</span>
+<div id="mathAns9-161">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<div id="spadComm9-162" class="spadComm">
+<span id="commSav9-162" class="commSav">squareDiff5 := fourSquares(591,772,552,818) </span>
+<div id="mathAns9-162">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-818-552+772+591</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-163" class="spadComm">
+<span id="commSav9-163" class="commSav">recip(squareDiff5)</span>
+<div id="mathAns9-163">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((70922772+81058591)552+68542591772+46297673)818+(83438591772+56359389)552+47657051772+54468081591</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-164" class="spadComm">
+<span id="commSav9-164" class="commSav">sign(squareDiff5)</span>
+<div id="mathAns9-164">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-165" class="spadComm">
+<span id="commSav9-165" class="commSav">squareDiff6 := fourSquares(434,1053,412,1088) </span>
+<div id="mathAns9-165">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1088-412+1053+434</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-166" class="spadComm">
+<span id="commSav9-166" class="commSav">recip(squareDiff6)</span>
+<div id="mathAns9-166">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((1154421053+179818434)412+1124784341053+76037291)1088+(1827824341053+123564147)412+772906391053+120391609434</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-167" class="spadComm">
+<span id="commSav9-167" class="commSav">sign(squareDiff6)</span>
+<div id="mathAns9-167">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-168" class="spadComm">
+<span id="commSav9-168" class="commSav">squareDiff7 := fourSquares(514,1049,446,1152) </span>
+<div id="mathAns9-168">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1152-446+1049+514</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-169" class="spadComm">
+<span id="commSav9-169" class="commSav">recip(squareDiff7)</span>
+<div id="mathAns9-169">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((3495221049+499322514)446+3255825141049+239072537)1152+(5232625141049+384227549)446+2505348731049+357910443514</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-170" class="spadComm">
+<span id="commSav9-170" class="commSav">sign(squareDiff7)</span>
+<div id="mathAns9-170">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-171" class="spadComm">
+<span id="commSav9-171" class="commSav">squareDiff8 := fourSquares(190,1751,208,1698) </span>
+<div id="mathAns9-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1698-208+1751+190</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-172" class="spadComm">
+<span id="commSav9-172" class="commSav">recip(squareDiff8)</span>
+<div id="mathAns9-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((-2147021751-651782190)208-2246421901751-129571901)1698+(-6418421901751-370209881)208-1275958651751-387349387190</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(RealClosure Fraction Integer,...)
+</div>
+<div id="spadComm9-173" class="spadComm">
+<span id="commSav9-173" class="commSav">sign(squareDiff8)</span>
+<div id="mathAns9-173">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<p>This should give three digits of precision</p>
+<div id="spadComm9-174" class="spadComm">
+<span id="commSav9-174" class="commSav">relativeApprox(squareDiff8,10^(-3))::Float </span>
+<div id="mathAns9-174">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-0.23405277715937700123E-10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>The sum of these 4 roots is 0</p>
+<div id="spadComm9-175" class="spadComm">
+<span id="commSav9-175" class="commSav">l := allRootsOf((x^2-2)^2-2)$Ran </span>
+<div id="mathAns9-175">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[%A33,%A34,%A35,%A36]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List RealClosure Fraction Integer
+</div>
+<p>Check that they are all roots of the same polynomial</p>
+<div id="spadComm9-176" class="spadComm">
+<span id="commSav9-176" class="commSav">removeDuplicates map(mainDefiningPolynomial,l) </span>
+<div id="mathAns9-176">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[?4-4?2+2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Union(SparseUnivariatePolynomial RealClosure Fraction Integer,"failed")
+</div>
+<p>We can see at a glance that they are separate roots</p>
+<div id="spadComm9-177" class="spadComm">
+<span id="commSav9-177" class="commSav">map(mainCharacterization,l) </span>
+<div id="mathAns9-177">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[-2,-1[,[-1,0[,[0,1[,[1,2[]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Union( RightOpenIntervalRootCharacterization( RealClosure Fraction Integer, SparseUnivariatePolynomial RealClosure Fraction Integer), "failed")
+</div>
+<p>Check the sum and product</p>
+<div id="spadComm9-178" class="spadComm">
+<span id="commSav9-178" class="commSav">[reduce(+,l),reduce(*,l)-2] </span>
+<div id="mathAns9-178">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List RealClosure Fraction Integer
+</div>
+<p>A more complicated test that involve an extension of degree 256. This is a way of checking nested radical identities.</p>
+<div id="spadComm9-179" class="spadComm">
+<span id="commSav9-179" class="commSav">(s2, s5, s10) := (sqrt(2)$Ran, sqrt(5)$Ran, sqrt(10)$Ran) </span>
+<div id="mathAns9-179">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-180" class="spadComm">
+<span id="commSav9-180" class="commSav">eq1:=sqrt(s10+3)*sqrt(s5+2) - sqrt(s10-3)*sqrt(s5-2) = sqrt(10*s2+10) </span>
+<div id="mathAns9-180">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-10-35-2+10+35+2=102+10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-181" class="spadComm">
+<span id="commSav9-181" class="commSav">eq1::Boolean </span>
+<div id="mathAns9-181">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-182" class="spadComm">
+<span id="commSav9-182" class="commSav">eq2:=sqrt(s5+2)*sqrt(s2+1) - sqrt(s5-2)*sqrt(s2-1) = sqrt(2*s10+2)</span>
+<div id="mathAns9-182">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-5-22-1+5+22+1=210+2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-183" class="spadComm">
+<span id="commSav9-183" class="commSav">eq2::Boolean </span>
+<div id="mathAns9-183">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>Some more examples from J. M. Arnaudies</p>
+<div id="spadComm9-184" class="spadComm">
+<span id="commSav9-184" class="commSav">s3 := sqrt(3)$Ran </span>
+<div id="mathAns9-184">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-185" class="spadComm">
+<span id="commSav9-185" class="commSav">s7:= sqrt(7)$Ran </span>
+<div id="mathAns9-185">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-186" class="spadComm">
+<span id="commSav9-186" class="commSav">e1 := sqrt(2*s7-3*s3,3) </span>
+<div id="mathAns9-186">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>27-333</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-187" class="spadComm">
+<span id="commSav9-187" class="commSav">e2 := sqrt(2*s7+3*s3,3) </span>
+<div id="mathAns9-187">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>27+333</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<p>This should be null</p>
+<div id="spadComm9-188" class="spadComm">
+<span id="commSav9-188" class="commSav">e2-e1-s3 </span>
+<div id="mathAns9-188">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<p>A quartic polynomial</p>
+<div id="spadComm9-189" class="spadComm">
+<span id="commSav9-189" class="commSav">pol : UP(x,Ran) := x^4+(7/3)*x^2+30*x-(100/3) </span>
+<div id="mathAns9-189">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x4+73x2+30x-1003</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariatePolynomial(x,RealClosure Fraction Integer)
+</div>
+<p>Add some cubic roots</p>
+<div id="spadComm9-190" class="spadComm">
+<span id="commSav9-190" class="commSav">r1 := sqrt(7633)$Ran </span>
+<div id="mathAns9-190">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7633</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-191" class="spadComm">
+<span id="commSav9-191" class="commSav">alpha := sqrt(5*r1-436,3)/3 </span>
+<div id="mathAns9-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1357633-4363</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-192" class="spadComm">
+<span id="commSav9-192" class="commSav">beta := -sqrt(5*r1+436,3)/3 </span>
+<div id="mathAns9-192">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1357633+4363</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<p>this should be null</p>
+<div id="spadComm9-193" class="spadComm">
+<span id="commSav9-193" class="commSav">pol.(alpha+beta-1/3) </span>
+<div id="mathAns9-193">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<p>A quintic polynomial</p>
+<div id="spadComm9-194" class="spadComm">
+<span id="commSav9-194" class="commSav">qol : UP(x,Ran) := x^5+10*x^3+20*x+22 </span>
+<div id="mathAns9-194">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x5+10x3+20x+22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariatePolynomial(x,RealClosure Fraction Integer)
+</div>
+<p>Add some cubic roots</p>
+<div id="spadComm9-195" class="spadComm">
+<span id="commSav9-195" class="commSav">r2 := sqrt(153)$Ran </span>
+<div id="mathAns9-195">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>153</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-196" class="spadComm">
+<span id="commSav9-196" class="commSav">alpha2 := sqrt(r2-11,5) </span>
+<div id="mathAns9-196">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>153-115</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-197" class="spadComm">
+<span id="commSav9-197" class="commSav">beta2 := -sqrt(r2+11,5) </span>
+<div id="mathAns9-197">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-153+115</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<p>this should be null</p>
+<div id="spadComm9-198" class="spadComm">
+<span id="commSav9-198" class="commSav">qol(alpha2+beta2) </span>
+<div id="mathAns9-198">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<p>Finally, some examples from the book Computer Algebra by Davenport, Siret and Tournier (page 77). The last one is due to Ramanujan.</p>
+<div id="spadComm9-199" class="spadComm">
+<span id="commSav9-199" class="commSav">dst1:=sqrt(9+4*s2)=1+2*s2 </span>
+<div id="mathAns9-199">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>42+9=22+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-200" class="spadComm">
+<span id="commSav9-200" class="commSav">dst1::Boolean </span>
+<div id="mathAns9-200">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-201" class="spadComm">
+<span id="commSav9-201" class="commSav">s6:Ran:=sqrt 6 </span>
+<div id="mathAns9-201">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-202" class="spadComm">
+<span id="commSav9-202" class="commSav">dst2:=sqrt(5+2*s6)+sqrt(5-2*s6) = 2*s3 </span>
+<div id="mathAns9-202">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-26+5+26+5=23</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-203" class="spadComm">
+<span id="commSav9-203" class="commSav">dst2::Boolean </span>
+<div id="mathAns9-203">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-204" class="spadComm">
+<span id="commSav9-204" class="commSav">s29:Ran:=sqrt 29 </span>
+<div id="mathAns9-204">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>29</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-205" class="spadComm">
+<span id="commSav9-205" class="commSav">dst4:=sqrt(16-2*s29+2*sqrt(55-10*s29)) = sqrt(22+2*s5)-sqrt(11+2*s29)+s5 </span>
+<div id="mathAns9-205">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2-1029+55-229+16=-229+11+25+22+5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-206" class="spadComm">
+<span id="commSav9-206" class="commSav">dst4::Boolean </span>
+<div id="mathAns9-206">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-207" class="spadComm">
+<span id="commSav9-207" class="commSav">dst6:=sqrt((112+70*s2)+(46+34*s2)*s5) = (5+4*s2)+(3+s2)*s5 </span>
+<div id="mathAns9-207">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(342+46)5+702+112=(2+3)5+42+5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-208" class="spadComm">
+<span id="commSav9-208" class="commSav">dst6::Boolean </span>
+<div id="mathAns9-208">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-209" class="spadComm">
+<span id="commSav9-209" class="commSav">f3:Ran:=sqrt(3,5) </span>
+<div id="mathAns9-209">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>35</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-210" class="spadComm">
+<span id="commSav9-210" class="commSav">f25:Ran:=sqrt(1/25,5) </span>
+<div id="mathAns9-210">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1255</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-211" class="spadComm">
+<span id="commSav9-211" class="commSav">f32:Ran:=sqrt(32/5,5) </span>
+<div id="mathAns9-211">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3255</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-212" class="spadComm">
+<span id="commSav9-212" class="commSav">f27:Ran:=sqrt(27/5,5) </span>
+<div id="mathAns9-212">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2755</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RealClosure Fraction Integer
+</div>
+<div id="spadComm9-213" class="spadComm">
+<span id="commSav9-213" class="commSav">dst5:=sqrt((f32-f27,3)) = f25*(1+f3-f3^2)</span>
+<div id="mathAns9-213">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-2755+32553=(-352+35+1)1255</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation RealClosure Fraction Integer
+</div>
+<div id="spadComm9-214" class="spadComm">
+<span id="commSav9-214" class="commSav">dst5::Boolean </span>
+<div id="mathAns9-214">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.65.xhtml">Previous Section 9.65 RadixExpansion</a><a href="section-9.67.xhtml">Next Section 9.67 RegularTriangularSet</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.17</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.17</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.16.xhtml">Previous Section 6.16 Free and Local Variables</a><a href="section-6.18.xhtml">Next Section 6.18 Example: A Database</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.17">
+<h2 class="sectiontitle" id="anonymous-functions">6.17 Anonymous Functions</h2>
+<span id="ugUserAnon" class="label"></span>
+<div class="boxed2">
+<div class="boxed">
+An <span class="italic">anonymous function</span> is a function that is <span class="index">function:anonymous</span><span id="chapter-6-54"></span> defined <span class="index">anonymous function</span><span id="chapter-6-55"></span> by giving a list of parameters, the <span class="italic">maps-to</span> compound <span class="index">+-&gt; @<span class="teletype">+-&gt;</span></span><span id="chapter-6-56"></span> symbol ``<span class="teletype">+-&gt;</span>'' (from the mathematical symbol
+↦), and by an expression involving the parameters, the evaluation of which determines the return value of the function.
+<div class="center" style="text-align: center;">
+(
+parm1,
+parm2, ...,
+parmN ) <span class="teletype">+-&gt;</span> <span class="italic">expression</span>
+</div>
+</div>
+</div>
+<p>You can apply an anonymous function in several ways.</p>
+<ol>
+<li>Place the anonymous function definition in parentheses directly followed by a list of arguments.</li>
+<li>Assign the anonymous function to a variable and then use the variable name when you would normally use a function name.</li>
+<li>Use <span class="italic"><span class="teletype">==</span></span> to use the anonymous function definition as the arguments and body of a regular function definition.</li>
+<li>Have a named function contain a declared anonymous function and use the result returned by the named function.</li>
+</ol>
+<span id="subsec-6.17.1"></span>
+<div id="subsec-6.17.1" class="subsection">
+<h3 class="subsectitle" id="some-examples">6.17.1 Some Examples</h3>
+<span id="ugUserAnonExamp" class="label"></span>
+<p>Anonymous functions are particularly useful for defining functions <span class="italic">on the fly.</span> That is, they are handy for simple functions that are used only in one place. In the following examples, we show how to write some simple anonymous functions.</p>
+<p>This is a simple absolute value function.</p>
+<div id="spadComm6-156" class="spadComm">
+<span id="commSav6-156" class="commSav">x +-&gt; if x &lt; 0 then -x else x</span>
+<div id="mathAns6-156">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x↦ifx&lt;0then-xelsex</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AnonymousFunction
+</div>
+<div id="spadComm6-157" class="spadComm">
+<span id="commSav6-157" class="commSav">abs1 := %</span>
+<div id="mathAns6-157">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x↦ifx&lt;0then-xelsex</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AnonymousFunction
+</div>
+<p>This function returns <span class="teletype">true</span> if the absolute value of the first argument is greater than the absolute value of the second, <span class="teletype">false</span> otherwise.</p>
+<div id="spadComm6-158" class="spadComm">
+<span id="commSav6-158" class="commSav">(x,y) +-&gt; abs1(x) &gt; abs1(y)</span>
+<div id="mathAns6-158">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(x,y)↦abs1(y)&lt;abs1(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AnonymousFunction
+</div>
+<p>We use the above function to <span class="italic">sort</span> a list of integers.</p>
+<div id="spadComm6-159" class="spadComm">
+<span id="commSav6-159" class="commSav">sort(%,[3,9,-4,10,-3,-1,-9,5])</span>
+<div id="mathAns6-159">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,-9,9,5,-4,-3,3,-1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+This function returns
+1 if
+i+j is even,
+-1 otherwise.
+<div id="spadComm6-160" class="spadComm">
+<span id="commSav6-160" class="commSav">ev := ( (i,j) +-&gt; if even?(i+j) then 1 else -1)</span>
+<div id="mathAns6-160">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AnonymousFunction
+</div>
+We create a four-by-four matrix containing
+1 or
+-1 depending on whether the row plus the column index is even or not.
+<div id="spadComm6-161" class="spadComm">
+<span id="commSav6-161" class="commSav">matrix([ [ev(row,col) for row in 1..4] for col in 1..4])</span>
+<div id="mathAns6-161">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1-11-1-11-111-11-1-11-11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+This function returns <span class="teletype">true</span> if a polynomial in
+x has multiple roots, <span class="teletype">false</span> otherwise. It is defined and applied in the same expression.
+<div id="spadComm6-162" class="spadComm">
+<span id="commSav6-162" class="commSav">( p +-&gt; not one?(gcd(p,D(p,x))) )(x^2+4*x+4)</span>
+<div id="mathAns6-162">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>This and the next expression are equivalent.</p>
+<div id="spadComm6-163" class="spadComm">
+<span id="commSav6-163" class="commSav">g(x,y,z) == cos(x + sin(y + tan(z)))</span>
+<div id="mathAns6-163">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>The one you use is a matter of taste.</p>
+<div id="spadComm6-164" class="spadComm">
+<span id="commSav6-164" class="commSav">g == (x,y,z) +-&gt; cos(x + sin(y + tan(z)))</span>
+<div id="mathAns6-164">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   1 old definition(s) deleted for function or rule g <br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-6.17.2"></span>
+<div id="subsec-6.17.2" class="subsection">
+<h3 class="subsectitle" id="declaring-anonymous-functions">6.17.2 Declaring Anonymous Functions</h3>
+<span id="ugUserAnonDeclare" class="label"></span>
+<p>If you declare any of the arguments you must declare all of them. Thus,</p>
+<div class="verbatim">
+<br />
+(x: INT,y): FRAC INT +-&gt; (x + 2*y)/(y - 1)<br />
+
+</div>
+<p>is not legal.</p>
+<p>This is an example of a fully declared anonymous function. <span class="index">function:declaring</span><span id="chapter-6-57"></span> <span class="index">function:anonymous:declaring</span><span id="chapter-6-58"></span> The output shown just indicates that the object you created is a particular kind of map, that is, function.</p>
+<div id="spadComm6-165" class="spadComm">
+<span id="commSav6-165" class="commSav">(x: INT,y: INT): FRAC INT +-&gt; (x + 2*y)/(y - 1)</span>
+<div id="mathAns6-165">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ((Integer,Integer) <span class="teletype">-&gt;</span> Fraction Integer)
+</div>
+<p>FriCAS allows you to declare the arguments and not declare the return type.</p>
+<div id="spadComm6-166" class="spadComm">
+<span id="commSav6-166" class="commSav">(x: INT,y: INT) +-&gt; (x + 2*y)/(y - 1)</span>
+<div id="mathAns6-166">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ((Integer,Integer) <span class="teletype">-&gt;</span> Fraction Integer)
+</div>
+<p>The return type is computed from the types of the arguments and the body of the function. You cannot declare the return type if you do not declare the arguments. Therefore,</p>
+<div class="verbatim">
+<br />
+(x,y): FRAC INT +-&gt; (x + 2*y)/(y - 1)<br />
+
+</div>
+<p>is not legal. This and the next expression are equivalent.</p>
+<div id="spadComm6-167" class="spadComm">
+<span id="commSav6-167" class="commSav">h(x: INT,y: INT): FRAC INT == (x + 2*y)/(y - 1)</span>
+<div id="mathAns6-167">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Function declaration h : (Integer,Integer) -&gt; Fraction Integer<br />
+      has been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>The one you use is a matter of taste.</p>
+<div id="spadComm6-168" class="spadComm">
+<span id="commSav6-168" class="commSav">h == (x: INT,y: INT): FRAC INT +-&gt; (x + 2*y)/(y - 1)</span>
+<div id="mathAns6-168">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Function declaration h : (Integer,Integer) -&gt; Fraction Integer<br />
+      has been added to workspace.<br />
+   1 old definition(s) deleted for function or rule h <br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>When should you declare an anonymous function?</p>
+<ol>
+<li>If you use an anonymous function and FriCAS can't figure out what you are trying to do, declare the function.</li>
+<li>If the function has nontrivial argument types or a nontrivial return type that FriCAS may be able to determine eventually, but you are not willing to wait that long, declare the function.</li>
+<li>If the function will only be used for arguments of specific types and it is not too much trouble to declare the function, do so.</li>
+<li>If you are using the anonymous function as an argument to another function (such as <span style="font-weight: bold;"> map</span> or <span style="font-weight: bold;"> sort</span>), consider declaring the function.</li>
+<li>If you define an anonymous function inside a named function, you <span class="italic">must</span> declare the anonymous function.</li>
+</ol>
+<p>This is an example of a named function for integers that returns a function.</p>
+<div id="spadComm6-169" class="spadComm">
+<span id="commSav6-169" class="commSav">addx x == ((y: Integer): Integer +-&gt; x + y)</span>
+<div id="mathAns6-169">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+We define <span style="font-weight: bold;"> g</span> to be a function that adds
+10 to its argument.
+<div id="spadComm6-170" class="spadComm">
+<span id="commSav6-170" class="commSav">g := addx 10</span>
+<div id="mathAns6-170">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function addx with type <br />
+     PositiveInteger -&gt; (Integer -&gt; Integer) <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: (Integer <span class="teletype">-&gt;</span> Integer)
+</div>
+<p>Try it out.</p>
+<div id="spadComm6-171" class="spadComm">
+<span id="commSav6-171" class="commSav">g 3</span>
+<div id="mathAns6-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>13</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm6-172" class="spadComm">
+<span id="commSav6-172" class="commSav">g(-4)</span>
+<div id="mathAns6-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p><span class="index">function:anonymous:restrictions</span><span id="chapter-6-59"></span> An anonymous function cannot be recursive: since it does not have a name, you cannot even call it within itself! If you place an anonymous function inside a named function, the anonymous function must be declared.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.16.xhtml">Previous Section 6.16 Free and Local Variables</a><a href="section-6.18.xhtml">Next Section 6.18 Example: A Database</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

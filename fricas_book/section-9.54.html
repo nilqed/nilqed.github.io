@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.54</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.54</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.53.xhtml">Previous Section 9.53 MultiSet</a><a href="section-9.55.xhtml">Next Section 9.55 None</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.54">
+<h2 class="sectiontitle" id="multivariatepolynomial">9.54 MultivariatePolynomial</h2>
+<span id="MultivariatePolynomialXmpPage" class="label"></span>
+<p>The domain constructor <span class="teletype">MultivariatePolynomial</span> is similar to <span class="teletype">Polynomial</span> except that it specifies the variables to be used. <span class="teletype">Polynomial</span> are available for <span class="teletype">MultivariatePolynomial</span>. The abbreviation for <span class="teletype">MultivariatePolynomial</span> is <span class="teletype">MPOLY</span>. The type expressions</p>
+<div class="centerline">
+<span class="teletype">MultivariatePolynomial([x,y],Integer)</span>
+</div>
+<p>and</p>
+<div class="centerline">
+<span class="teletype">MPOLY([x,y],INT)</span>
+</div>
+<p>refer to the domain of multivariate polynomials in the variables <span class="teletype">x</span> and <span class="teletype">y</span> where the coefficients are restricted to be integers. The first variable specified is the main variable and the display of the polynomial reflects this.</p>
+<p>This polynomial appears with terms in descending powers of the variable <span class="teletype">x</span>.</p>
+<div id="spadComm9-207" class="spadComm">
+<span id="commSav9-207" class="commSav">m : MPOLY([x,y],INT) := (x^2 - x*y^3 +3*y)^2 </span>
+<div id="mathAns9-207">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x4-2y3x3+(y6+6y)x2-6y4x+9y2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([x,y],Integer)
+</div>
+<p>It is easy to see a different variable ordering by doing a conversion.</p>
+<div id="spadComm9-208" class="spadComm">
+<span id="commSav9-208" class="commSav">m :: MPOLY([y,x],INT) </span>
+<div id="mathAns9-208">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2y6-6xy4-2x3y3+9y2+6x2y+x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([y,x],Integer)
+</div>
+<p>You can use other, unspecified variables, by using <span class="teletype">Polynomial</span> in the coefficient type of <span class="teletype">MPOLY</span>.</p>
+<div id="spadComm9-209" class="spadComm">
+<span id="commSav9-209" class="commSav">p : MPOLY([x,y],POLY INT) </span>
+<div id="mathAns9-209">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-210" class="spadComm">
+<span id="commSav9-210" class="commSav">p := (a^2*x - b*y^2 + 1)^2 </span>
+<div id="mathAns9-210">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>a4x2+(-2a2by2+2a2)x+b2y4-2by2+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([x,y],Polynomial Integer)
+</div>
+<p>Conversions can be used to re-express such polynomials in terms of the other variables. For example, you can first push all the variables into a polynomial with integer coefficients.</p>
+<div id="spadComm9-211" class="spadComm">
+<span id="commSav9-211" class="commSav">p :: POLY INT </span>
+<div id="mathAns9-211">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>b2y4+(-2a2bx-2b)y2+a4x2+2a2x+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Now pull out the variables of interest.</p>
+<div id="spadComm9-212" class="spadComm">
+<span id="commSav9-212" class="commSav">% :: MPOLY([a,b],POLY INT) </span>
+<div id="mathAns9-212">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2a4+(-2xy2b+2x)a2+y4b2-2y2b+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([a,b],Polynomial Integer)
+</div>
+<div class="boxed2">
+<div class="boxed">
+<p><span style="font-weight: bold;"> Restriction:</span></p>
+<div class="quotation">
+<p>FriCAS does not allow you to create types where <span class="teletype">MultivariatePolynomial</span> is contained in the coefficient type of <span class="teletype">Polynomial</span>. Therefore, <span class="teletype">MPOLY([x,y],POLY INT)</span> is legal but <span class="teletype">POLY MPOLY([x,y],INT)</span> is not.</p>
+</div>
+<p>.</p>
+</div>
+</div>
+<p>Multivariate polynomials may be combined with univariate polynomials to create types with special structures.</p>
+<div id="spadComm9-213" class="spadComm">
+<span id="commSav9-213" class="commSav">q : UP(x, FRAC MPOLY([y,z],INT)) </span>
+<div id="mathAns9-213">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<p>This is a polynomial in <span class="teletype">x</span> whose coefficients are quotients of polynomials in <span class="teletype">y</span> and <span class="teletype">z</span>.</p>
+<div id="spadComm9-214" class="spadComm">
+<span id="commSav9-214" class="commSav">q := (x^2 - x*(z+1)/y +2)^2 </span>
+<div id="mathAns9-214">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x4+-2z-2yx3+4y2+z2+2z+1y2x2+-4z-4yx+4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariatePolynomial(x,Fraction MultivariatePolynomial([y,z],Integer))
+</div>
+<p>Use conversions for structural rearrangements. <span class="teletype">z</span> does not appear in a denominator and so it can be made the main variable.</p>
+<div id="spadComm9-215" class="spadComm">
+<span id="commSav9-215" class="commSav">q :: UP(z, FRAC MPOLY([x,y],INT)) </span>
+<div id="mathAns9-215">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2y2z2+-2yx3+2x2-4yxy2z+y2x4-2yx3+(4y2+1)x2-4yx+4y2y2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: UnivariatePolynomial(z,Fraction MultivariatePolynomial([x,y],Integer))
+</div>
+<p>Or you can make a multivariate polynomial in <span class="teletype">x</span> and <span class="teletype">z</span> whose coefficients are fractions in polynomials in <span class="teletype">y</span>.</p>
+<div id="spadComm9-216" class="spadComm">
+<span id="commSav9-216" class="commSav">q :: MPOLY([x,z], FRAC UP(y,INT)) </span>
+<div id="mathAns9-216">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x4+(-2yz-2y)x3+(1y2z2+2y2z+4y2+1y2)x2+(-4yz-4y)x+4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: MultivariatePolynomial([x,z],Fraction UnivariatePolynomial(y,Integer))
+</div>
+<p>A conversion like <span class="teletype">q :: MPOLY([x,y], FRAC UP(z,INT))</span> is not possible in this example because <span class="teletype">y</span> appears in the denominator of a fraction. As you can see, FriCAS provides extraordinary flexibility in the manipulation and display of expressions via its conversion facility.</p>
+<p>For more information on related topics, see <a href="section-9.16.xhtml#DistributedMultivariatePolynomialXmpPage" class="ref">PolynomialXmpPage</a> , <a href="section-9.83.xhtml#UnivariatePolynomialXmpPage" class="ref">UnivariatePolynomialXmpPage</a> , and <a href="section-9.16.xhtml#DistributedMultivariatePolynomialXmpPage" class="ref">DistributedMultivariatePolynomialXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.53.xhtml">Previous Section 9.53 MultiSet</a><a href="section-9.55.xhtml">Next Section 9.55 None</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

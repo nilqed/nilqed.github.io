@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.11</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.11</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.10.xhtml">Previous Section 9.10 CliffordAlgebra</a><a href="section-9.12.xhtml">Next Section 9.12 ContinuedFraction</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.11">
+<h2 class="sectiontitle" id="complex">9.11 Complex</h2>
+<span id="ComplexXmpPage" class="label"></span>
+<p>The <span class="teletype">Complex</span> constructor implements complex objects over a commutative ring <span class="teletype">R</span>. Typically, the ring <span class="teletype">R</span> is <span class="teletype">Integer</span>, <span class="teletype">Fraction Integer</span>, <span class="teletype">Float</span> or <span class="teletype">DoubleFloat</span>. <span class="teletype">R</span> can also be a symbolic type, like <span class="teletype">Polynomial Integer</span>. For more information about the numerical and graphical aspects of complex numbers, see <a href="section-8.1.xhtml#ugProblemNumeric" class="ref">ugProblemNumeric</a> .</p>
+<p>Complex objects are created by the <span class="spadfunFrom">complex</span><span class="index">complex</span><span id="chapter-9-53"></span><span class="index">Complex</span><span id="chapter-9-54"></span> operation.</p>
+<div id="spadComm9-190" class="spadComm">
+<span id="commSav9-190" class="commSav">a := complex(4/3,5/2) </span>
+<div id="mathAns9-190">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>43+52i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<div id="spadComm9-191" class="spadComm">
+<span id="commSav9-191" class="commSav">b := complex(4/3,-5/2) </span>
+<div id="mathAns9-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>43-52i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>The standard arithmetic operations are available.</p>
+<div id="spadComm9-192" class="spadComm">
+<span id="commSav9-192" class="commSav">a + b </span>
+<div id="mathAns9-192">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>83</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<div id="spadComm9-193" class="spadComm">
+<span id="commSav9-193" class="commSav">a - b </span>
+<div id="mathAns9-193">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<div id="spadComm9-194" class="spadComm">
+<span id="commSav9-194" class="commSav">a * b </span>
+<div id="mathAns9-194">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>28936</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>If <span class="teletype">R</span> is a field, you can also divide the complex objects.</p>
+<div id="spadComm9-195" class="spadComm">
+<span id="commSav9-195" class="commSav">a / b </span>
+<div id="mathAns9-195">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-161289+240289i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>Use a conversion (<a href="ugTypesConvertPage" class="ref">ugTypesConvertPage</a> in Section <a href="ugTypesConvertNumber" class="ref">ugTypesConvertNumber</a> ) to view the last object as a fraction of complex integers.</p>
+<div id="spadComm9-196" class="spadComm">
+<span id="commSav9-196" class="commSav">% :: Fraction Complex Integer </span>
+<div id="mathAns9-196">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-15+8i15+8i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Complex Integer
+</div>
+<p>The predefined macro <span class="teletype">%i</span> is defined to be <span class="teletype">complex(0,1)</span>.</p>
+<div id="spadComm9-197" class="spadComm">
+<span id="commSav9-197" class="commSav">3.4 + 6.7 * %i</span>
+<div id="mathAns9-197">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3.4+6.7i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Float
+</div>
+<p>You can also compute the <span class="spadfunFrom">conjugate</span><span class="index">conjugate</span><span id="chapter-9-55"></span><span class="index">Complex</span><span id="chapter-9-56"></span> and <span class="spadfunFrom">norm</span><span class="index">norm</span><span id="chapter-9-57"></span><span class="index">Complex</span><span id="chapter-9-58"></span> of a complex number.</p>
+<div id="spadComm9-198" class="spadComm">
+<span id="commSav9-198" class="commSav">conjugate a </span>
+<div id="mathAns9-198">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>43-52i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<div id="spadComm9-199" class="spadComm">
+<span id="commSav9-199" class="commSav">norm a </span>
+<div id="mathAns9-199">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>28936</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The <span class="spadfunFrom">real</span><span class="index">real</span><span id="chapter-9-59"></span><span class="index">Complex</span><span id="chapter-9-60"></span> and <span class="spadfunFrom">imag</span><span class="index">imag</span><span id="chapter-9-61"></span><span class="index">Complex</span><span id="chapter-9-62"></span> operations are provided to extract the real and imaginary parts, respectively.</p>
+<div id="spadComm9-200" class="spadComm">
+<span id="commSav9-200" class="commSav">real a </span>
+<div id="mathAns9-200">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>43</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<div id="spadComm9-201" class="spadComm">
+<span id="commSav9-201" class="commSav">imag a </span>
+<div id="mathAns9-201">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>52</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The domain <span class="teletype">Complex Integer</span> is also called the Gaussian integers. If <span class="teletype">R</span> is the integers (or, more generally, a <span class="teletype">EuclideanDomain</span>), you can compute greatest common divisors.</p>
+<div id="spadComm9-202" class="spadComm">
+<span id="commSav9-202" class="commSav">gcd(13 - 13*%i,31 + 27*%i)</span>
+<div id="mathAns9-202">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5+i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Integer
+</div>
+<p>You can also compute least common multiples.</p>
+<div id="spadComm9-203" class="spadComm">
+<span id="commSav9-203" class="commSav">lcm(13 - 13*%i,31 + 27*%i)</span>
+<div id="mathAns9-203">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>143-39i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Integer
+</div>
+<p>You can <span class="spadfunFrom">factor</span><span class="index">factor</span><span id="chapter-9-63"></span><span class="index">Complex</span><span id="chapter-9-64"></span> Gaussian integers.</p>
+<div id="spadComm9-204" class="spadComm">
+<span id="commSav9-204" class="commSav">factor(13 - 13*%i)</span>
+<div id="mathAns9-204">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-(1+i)(2+3i)(3+2i)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Complex Integer
+</div>
+<div id="spadComm9-205" class="spadComm">
+<span id="commSav9-205" class="commSav">factor complex(2,0)</span>
+<div id="mathAns9-205">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-i(1+i)2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Complex Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.10.xhtml">Previous Section 9.10 CliffordAlgebra</a><a href="section-9.12.xhtml">Next Section 9.12 ContinuedFraction</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

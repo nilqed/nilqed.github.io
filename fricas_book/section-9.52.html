@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.52</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.52</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.51.xhtml">Previous Section 9.51 MappingPackage1</a><a href="section-9.53.xhtml">Next Section 9.53 MultiSet</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.52">
+<h2 class="sectiontitle" id="matrix">9.52 Matrix</h2>
+<span id="MatrixXmpPage" class="label"></span>
+<p>The <span class="teletype">Matrix</span> domain provides arithmetic operations on matrices and standard functions from linear algebra. This domain is similar to the <span class="teletype">TwoDimensionalArray</span> domain, except that the entries for <span class="teletype">Matrix</span> must belong to a <span class="teletype">Ring</span>.</p>
+<span id="subsec-9.52.1"></span>
+<div id="subsec-9.52.1" class="subsection">
+<h3 class="subsectitle" id="creating-matrices">9.52.1 Creating Matrices</h3>
+<p>There are many ways to create a matrix from a collection of values or from existing matrices.</p>
+<p>If the matrix has almost all items equal to the same value, use <span class="spadfunFrom">new</span><span class="index">new</span><span id="chapter-9-76"></span><span class="index">Matrix</span><span id="chapter-9-77"></span> to create a matrix filled with that value and then reset the entries that are different.</p>
+<div id="spadComm9-157" class="spadComm">
+<span id="commSav9-157" class="commSav">m : Matrix(Integer) := new(3,3,0) </span>
+<div id="mathAns9-157">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>To change the entry in the second row, third column to <span class="teletype">5</span>, use <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-78"></span><span class="index">Matrix</span><span id="chapter-9-79"></span>.</p>
+<div id="spadComm9-158" class="spadComm">
+<span id="commSav9-158" class="commSav">setelt(m,2,3,5) </span>
+<div id="mathAns9-158">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>An alternative syntax is to use assignment.</p>
+<div id="spadComm9-159" class="spadComm">
+<span id="commSav9-159" class="commSav">m(1,2) := 10 </span>
+<div id="mathAns9-159">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The matrix was <span class="italic">destructively modified</span>.</p>
+<div id="spadComm9-160" class="spadComm">
+<span id="commSav9-160" class="commSav">m </span>
+<div id="mathAns9-160">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0100005000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>If you already have the matrix entries as a list of lists, use <span class="spadfunFrom">matrix</span><span class="index">matrix</span><span id="chapter-9-80"></span><span class="index">Matrix</span><span id="chapter-9-81"></span>.</p>
+<div id="spadComm9-161" class="spadComm">
+<span id="commSav9-161" class="commSav">matrix [ [1,2,3,4],[0,9,8,7] ]</span>
+<div id="mathAns9-161">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[12340987]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>If the matrix is diagonal, use <span class="spadfunFrom">diagonalMatrix</span><span class="index">diagonalMatrix</span><span id="chapter-9-82"></span><span class="index">Matrix</span><span id="chapter-9-83"></span>.</p>
+<div id="spadComm9-162" class="spadComm">
+<span id="commSav9-162" class="commSav">dm := diagonalMatrix [1,x^2,x^3,x^4,x^5] </span>
+<div id="mathAns9-162">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[100000x200000x300000x400000x5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Polynomial Integer
+</div>
+<p>Use <span class="spadfunFrom">setRow</span><span class="index">setRow</span><span id="chapter-9-84"></span><span class="index">Matrix</span><span id="chapter-9-85"></span> and <span class="spadfunFrom">setColumn</span><span class="index">setColumn</span><span id="chapter-9-86"></span><span class="index">Matrix</span><span id="chapter-9-87"></span> to change a row or column of a matrix.</p>
+<div id="spadComm9-163" class="spadComm">
+<span id="commSav9-163" class="commSav">setRow!(dm,5,vector [1,1,1,1,1]) </span>
+<div id="mathAns9-163">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[100000x200000x300000x4011111]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Polynomial Integer
+</div>
+<div id="spadComm9-164" class="spadComm">
+<span id="commSav9-164" class="commSav">setColumn!(dm,2,vector [y,y,y,y,y]) </span>
+<div id="mathAns9-164">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1y0000y0000yx3000y0x401y111]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Polynomial Integer
+</div>
+<p>Use <span class="spadfunFrom">copy</span><span class="index">copy</span><span id="chapter-9-88"></span><span class="index">Matrix</span><span id="chapter-9-89"></span> to make a copy of a matrix.</p>
+<div id="spadComm9-165" class="spadComm">
+<span id="commSav9-165" class="commSav">cdm := copy(dm) </span>
+<div id="mathAns9-165">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1y0000y0000yx3000y0x401y111]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Polynomial Integer
+</div>
+<p>This is useful if you intend to modify a matrix destructively but want a copy of the original.</p>
+<div id="spadComm9-166" class="spadComm">
+<span id="commSav9-166" class="commSav">setelt(dm,4,1,1-x^7) </span>
+<div id="mathAns9-166">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-x7+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<div id="spadComm9-167" class="spadComm">
+<span id="commSav9-167" class="commSav">[dm,cdm] </span>
+<div id="mathAns9-167">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[1y0000y0000yx300-x7+1y0x401y111],[1y0000y0000yx3000y0x401y111]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Matrix Polynomial Integer
+</div>
+<p>Use <span class="spadfunFrom">subMatrix</span><span class="index">subMatrix</span><span id="chapter-9-90"></span><span class="index">Matrix</span><span id="chapter-9-91"></span> to extract part of an existing matrix. The syntax is <span class="teletype">subMatrix(<span class="italic">m, firstrow, lastrow, firstcol, lastcol</span>)</span>.</p>
+<div id="spadComm9-168" class="spadComm">
+<span id="commSav9-168" class="commSav">subMatrix(dm,2,3,2,4) </span>
+<div id="mathAns9-168">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[y00yx30]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Polynomial Integer
+</div>
+<p>To change a submatrix, use <span class="spadfunFrom">setsubMatrix</span><span class="index">setsubMatrix</span><span id="chapter-9-92"></span><span class="index">Matrix</span><span id="chapter-9-93"></span>.</p>
+<div id="spadComm9-169" class="spadComm">
+<span id="commSav9-169" class="commSav">d := diagonalMatrix [1.2,-1.3,1.4,-1.5] </span>
+<div id="mathAns9-169">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1.20.00.00.00.0-1.30.00.00.00.01.40.00.00.00.0-1.5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+<p>If <span class="teletype">e</span> is too big to fit where you specify, an error message is displayed. Use <span class="spadfunFrom">subMatrix</span><span class="index">subMatrix</span><span id="chapter-9-94"></span><span class="index">Matrix</span><span id="chapter-9-95"></span> to extract part of <span class="teletype">e</span>, if necessary.</p>
+<div id="spadComm9-170" class="spadComm">
+<span id="commSav9-170" class="commSav">e := matrix [ [6.7,9.11],[-31.33,67.19] ] </span>
+<div id="mathAns9-170">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[6.79.11-31.3367.19]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+<p>This changes the submatrix of <span class="teletype">d</span> whose upper left corner is at the first row and second column and whose size is that of <span class="teletype">e</span>.</p>
+<div id="spadComm9-171" class="spadComm">
+<span id="commSav9-171" class="commSav">setsubMatrix!(d,1,2,e) </span>
+<div id="mathAns9-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1.26.79.110.00.0-31.3367.190.00.00.01.40.00.00.00.0-1.5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+<div id="spadComm9-172" class="spadComm">
+<span id="commSav9-172" class="commSav">d </span>
+<div id="mathAns9-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1.26.79.110.00.0-31.3367.190.00.00.01.40.00.00.00.0-1.5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+<p>Matrices can be joined either horizontally or vertically to make new matrices.</p>
+<div id="spadComm9-173" class="spadComm">
+<span id="commSav9-173" class="commSav">a := matrix [ [1/2,1/3,1/4],[1/5,1/6,1/7] ] </span>
+<div id="mathAns9-173">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[121314151617]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+<div id="spadComm9-174" class="spadComm">
+<span id="commSav9-174" class="commSav">b := matrix [ [3/5,3/7,3/11],[3/13,3/17,3/19] ] </span>
+<div id="mathAns9-174">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3537311313317319]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+<p>Use <span class="spadfunFrom">horizConcat</span><span class="index">horizConcat</span><span id="chapter-9-96"></span><span class="index">Matrix</span><span id="chapter-9-97"></span> to append them side to side. The two matrices must have the same number of rows.</p>
+<div id="spadComm9-175" class="spadComm">
+<span id="commSav9-175" class="commSav">horizConcat(a,b) </span>
+<div id="mathAns9-175">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1213143537311151617313317319]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+<p>Use <span class="spadfunFrom">vertConcat</span><span class="index">vertConcat</span><span id="chapter-9-98"></span><span class="index">Matrix</span><span id="chapter-9-99"></span> to stack one upon the other. The two matrices must have the same number of columns.</p>
+<div id="spadComm9-176" class="spadComm">
+<span id="commSav9-176" class="commSav">vab := vertConcat(a,b) </span>
+<div id="mathAns9-176">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1213141516173537311313317319]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+<p>The operation <span class="spadfunFrom">transpose</span><span class="index">transpose</span><span id="chapter-9-100"></span><span class="index">Matrix</span><span id="chapter-9-101"></span> is used to create a new matrix by reflection across the main diagonal.</p>
+<div id="spadComm9-177" class="spadComm">
+<span id="commSav9-177" class="commSav">transpose vab </span>
+<div id="mathAns9-177">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1215353131316373171417311319]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+</div>
+<span id="subsec-9.52.2"></span>
+<div id="subsec-9.52.2" class="subsection">
+<h3 class="subsectitle" id="operations-on-matrices">9.52.2 Operations on Matrices</h3>
+<p>FriCAS provides both left and right scalar multiplication.</p>
+<div id="spadComm9-178" class="spadComm">
+<span id="commSav9-178" class="commSav">m := matrix [ [1,2],[3,4] ] </span>
+<div id="mathAns9-178">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1234]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<div id="spadComm9-179" class="spadComm">
+<span id="commSav9-179" class="commSav">4 * m * (-5)</span>
+<div id="mathAns9-179">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-20-40-60-80]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>You can add, subtract, and multiply matrices provided, of course, that the matrices have compatible dimensions. If not, an error message is displayed.</p>
+<div id="spadComm9-180" class="spadComm">
+<span id="commSav9-180" class="commSav">n := matrix([ [1,0,-2],[-3,5,1] ]) </span>
+<div id="mathAns9-180">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10-2-351]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>This following product is defined but <span class="teletype">n * m</span> is not.</p>
+<div id="spadComm9-181" class="spadComm">
+<span id="commSav9-181" class="commSav">m * n </span>
+<div id="mathAns9-181">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-5100-920-2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>The operations <span class="spadfunFrom">nrows</span><span class="index">nrows</span><span id="chapter-9-102"></span><span class="index">Matrix</span><span id="chapter-9-103"></span> and <span class="spadfunFrom">ncols</span><span class="index">ncols</span><span id="chapter-9-104"></span><span class="index">Matrix</span><span id="chapter-9-105"></span> return the number of rows and columns of a matrix. You can extract a row or a column of a matrix using the operations <span class="spadfunFrom">row</span><span class="index">row</span><span id="chapter-9-106"></span><span class="index">Matrix</span><span id="chapter-9-107"></span> and <span class="spadfunFrom">column</span><span class="index">column</span><span id="chapter-9-108"></span><span class="index">Matrix</span><span id="chapter-9-109"></span>. The object returned is a <span class="teletype">Vector</span>.</p>
+<p>Here is the third column of the matrix <span class="teletype">n</span>.</p>
+<div id="spadComm9-182" class="spadComm">
+<span id="commSav9-182" class="commSav">vec := column(n,3) </span>
+<div id="mathAns9-182">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-2,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>You can multiply a matrix on the left by a <span class="italic">row vector</span> and on the right by a <span class="italic">column vector.</span></p>
+<div id="spadComm9-183" class="spadComm">
+<span id="commSav9-183" class="commSav">vec * m </span>
+<div id="mathAns9-183">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>Of course, the dimensions of the vector and the matrix must be compatible or an error message is returned.</p>
+<div id="spadComm9-184" class="spadComm">
+<span id="commSav9-184" class="commSav">m * vec </span>
+<div id="mathAns9-184">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,-2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Integer
+</div>
+<p>The operation <span class="spadfunFrom">inverse</span><span class="index">inverse</span><span id="chapter-9-110"></span><span class="index">Matrix</span><span id="chapter-9-111"></span> computes the inverse of a matrix if the matrix is invertible, and returns <span class="teletype">"failed"</span> if not.</p>
+<p>This Hilbert matrix is invertible.</p>
+<div id="spadComm9-185" class="spadComm">
+<span id="commSav9-185" class="commSav">hilb := matrix([ [1/(i + j) for i in 1..3] for j in 1..3]) </span>
+<div id="mathAns9-185">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[121314131415141516]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Fraction Integer
+</div>
+<div id="spadComm9-186" class="spadComm">
+<span id="commSav9-186" class="commSav">inverse(hilb) </span>
+<div id="mathAns9-186">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[72-240180-240900-720180-720600]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Matrix Fraction Integer,...)
+</div>
+<p>This matrix is not invertible.</p>
+<div id="spadComm9-187" class="spadComm">
+<span id="commSav9-187" class="commSav">mm := matrix([ [1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16] ]) </span>
+<div id="mathAns9-187">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[12345678910111213141516]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<div id="spadComm9-188" class="spadComm">
+<span id="commSav9-188" class="commSav">inverse(mm) </span>
+<div id="mathAns9-188">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"failed"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union("failed",...)
+</div>
+<p>The operation <span class="spadfunFrom">determinant</span><span class="index">determinant</span><span id="chapter-9-112"></span><span class="index">Matrix</span><span id="chapter-9-113"></span> computes the determinant of a matrix provided that the entries of the matrix belong to a <span class="teletype">CommutativeRing</span>.</p>
+<p>The above matrix <span class="teletype">mm</span> is not invertible and, hence, must have determinant <span class="teletype">0</span>.</p>
+<div id="spadComm9-189" class="spadComm">
+<span id="commSav9-189" class="commSav">determinant(mm) </span>
+<div id="mathAns9-189">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>The operation <span class="spadfunFrom">trace</span><span class="index">trace</span><span id="chapter-9-114"></span><span class="index">SquareMatrix</span><span id="chapter-9-115"></span> computes the trace of a <span class="em">square</span> matrix.</p>
+<div id="spadComm9-190" class="spadComm">
+<span id="commSav9-190" class="commSav">trace(mm) </span>
+<div id="mathAns9-190">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>34</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The operation <span class="spadfunFrom">rank</span><span class="index">rank</span><span id="chapter-9-116"></span><span class="index">Matrix</span><span id="chapter-9-117"></span> computes the <span class="italic">rank</span> of a matrix: the maximal number of linearly independent rows or columns.</p>
+<div id="spadComm9-191" class="spadComm">
+<span id="commSav9-191" class="commSav">rank(mm) </span>
+<div id="mathAns9-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The operation <span class="spadfunFrom">nullity</span><span class="index">nullity</span><span id="chapter-9-118"></span><span class="index">Matrix</span><span id="chapter-9-119"></span> computes the <span class="italic">nullity</span> of a matrix: the dimension of its null space.</p>
+<div id="spadComm9-192" class="spadComm">
+<span id="commSav9-192" class="commSav">nullity(mm) </span>
+<div id="mathAns9-192">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The operation <span class="spadfunFrom">nullSpace</span><span class="index">nullSpace</span><span id="chapter-9-120"></span><span class="index">Matrix</span><span id="chapter-9-121"></span> returns a list containing a basis for the null space of a matrix. Note that the nullity is the number of elements in a basis for the null space.</p>
+<div id="spadComm9-193" class="spadComm">
+<span id="commSav9-193" class="commSav">nullSpace(mm) </span>
+<div id="mathAns9-193">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[1,-2,1,0],[2,-3,0,1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Vector Integer
+</div>
+<p>The operation <span class="spadfunFrom">rowEchelon</span><span class="index">rowEchelon</span><span id="chapter-9-122"></span><span class="index">Matrix</span><span id="chapter-9-123"></span> returns the row echelon form of a matrix. It is easy to see that the rank of this matrix is two and that its nullity is also two.</p>
+<div id="spadComm9-194" class="spadComm">
+<span id="commSav9-194" class="commSav">rowEchelon(mm) </span>
+<div id="mathAns9-194">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[12340481200000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>For more information on related topics, see <a href="ugIntroTwoDimPage" class="ref">ugIntroTwoDimPage</a> in Section <a href="ugIntroTwoDimNumber" class="ref">ugIntroTwoDimNumber</a> , <a href="ugProblemEigenPage" class="ref">ugProblemEigenPage</a> in Section <a href="ugProblemEigenNumber" class="ref">ugProblemEigenNumber</a> , <a href="ugxFloatHilbertPage" class="ref">ugxFloatHilbertPage</a> in Section <a href="ugxFloatHilbertNumber" class="ref">ugxFloatHilbertNumber</a> , <a href="section-9.62.xhtml#PermanentXmpPage" class="ref">PermanentXmpPage</a> , <a href="section-9.85.xhtml#VectorXmpPage" class="ref">VectorXmpPage</a> , <a href="section-9.57.xhtml#OneDimensionalArrayXmpPage" class="ref">OneDimensionalArrayXmpPage</a> , and <a href="section-9.82.xhtml#TwoDimensionalArrayXmpPage" class="ref">TwoDimensionalArrayXmpPage</a> .</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.51.xhtml">Previous Section 9.51 MappingPackage1</a><a href="section-9.53.xhtml">Next Section 9.53 MultiSet</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

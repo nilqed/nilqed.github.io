@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.26</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.26</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.25.xhtml">Previous Section 9.25 FileName</a><a href="section-9.27.xhtml">Next Section 9.27 Float</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.26">
+<h2 class="sectiontitle" id="flexiblearray">9.26 FlexibleArray</h2>
+<span id="FlexibleArrayXmpPage" class="label"></span>
+<p>The <span class="teletype">FlexibleArray</span> domain constructor creates one-dimensional arrays of elements of the same type. Flexible arrays are an attempt to provide a data type that has the best features of both one-dimensional arrays (fast, random access to elements) and lists (flexibility). They are implemented by a fixed block of storage. When necessary for expansion, a new, larger block of storage is allocated and the elements from the old storage area are copied into the new block.</p>
+<p>Flexible arrays have available most of the operations provided by <span class="teletype">OneDimensionalArray</span> (see <a href="section-9.57.xhtml#OneDimensionalArrayXmpPage" class="ref">OneDimensionalArrayXmpPage</a> and <a href="section-9.85.xhtml#VectorXmpPage" class="ref">VectorXmpPage</a> ). Since flexible arrays are also of category <span class="teletype">ExtensibleLinearAggregate</span>, they have operations <span class="teletype">concat!</span>, <span class="teletype">delete!</span>, <span class="teletype">insert!</span>, <span class="teletype">merge!</span>, <span class="teletype">remove!</span>, <span class="teletype">removeDuplicates!</span>, and <span class="teletype">select!</span>. In addition, the operations <span class="teletype">physicalLength</span> and <span class="teletype">physicalLength!</span> provide user-control over expansion and contraction.</p>
+<p>A convenient way to create a flexible array is to apply the operation <span class="teletype">flexibleArray</span> to a list of values.</p>
+<div id="spadComm9-227" class="spadComm">
+<span id="commSav9-227" class="commSav">flexibleArray [i for i in 1..6]</span>
+<div id="mathAns9-227">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray PositiveInteger
+</div>
+<p>Create a flexible array of six zeroes.</p>
+<div id="spadComm9-228" class="spadComm">
+<span id="commSav9-228" class="commSav">f : FARRAY INT := new(6,0)</span>
+<div id="mathAns9-228">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,0,0,0,0,0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+For
+i=1…6 set the
+i-th element to
+i. Display <span class="teletype">f</span>.
+<div id="spadComm9-229" class="spadComm">
+<span id="commSav9-229" class="commSav">for i in 1..6 repeat f.i := i; f</span>
+<div id="mathAns9-229">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Initially, the physical length is the same as the number of elements.</p>
+<div id="spadComm9-230" class="spadComm">
+<span id="commSav9-230" class="commSav">physicalLength f</span>
+<div id="mathAns9-230">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Add an element to the end of <span class="teletype">f</span>.</p>
+<div id="spadComm9-231" class="spadComm">
+<span id="commSav9-231" class="commSav">concat!(f,11)</span>
+<div id="mathAns9-231">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>See that its physical length has grown.</p>
+<div id="spadComm9-232" class="spadComm">
+<span id="commSav9-232" class="commSav">physicalLength f</span>
+<div id="mathAns9-232">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Make <span class="teletype">f</span> grow to have room for <span class="teletype">15</span> elements.</p>
+<div id="spadComm9-233" class="spadComm">
+<span id="commSav9-233" class="commSav">physicalLength!(f,15)</span>
+<div id="mathAns9-233">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Concatenate the elements of <span class="teletype">f</span> to itself. The physical length allows room for three more values at the end.</p>
+<div id="spadComm9-234" class="spadComm">
+<span id="commSav9-234" class="commSav">concat!(f,f)</span>
+<div id="mathAns9-234">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,11,1,2,3,4,5,6,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Use <span class="teletype">insert!</span> to add an element to the front of a flexible array.</p>
+<div id="spadComm9-235" class="spadComm">
+<span id="commSav9-235" class="commSav">insert!(22,f,1)</span>
+<div id="mathAns9-235">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[22,1,2,3,4,5,6,11,1,2,3,4,5,6,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Create a second flexible array from <span class="teletype">f</span> consisting of the elements from index 10 forward.</p>
+<div id="spadComm9-236" class="spadComm">
+<span id="commSav9-236" class="commSav">g := f(10..)</span>
+<div id="mathAns9-236">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,4,5,6,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Insert this array at the front of <span class="teletype">f</span>.</p>
+<div id="spadComm9-237" class="spadComm">
+<span id="commSav9-237" class="commSav">insert!(g,f,1)</span>
+<div id="mathAns9-237">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,4,5,6,11,22,1,2,3,4,5,6,11,1,2,3,4,5,6,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Merge the flexible array <span class="teletype">f</span> into <span class="teletype">g</span> after sorting each in place.</p>
+<div id="spadComm9-238" class="spadComm">
+<span id="commSav9-238" class="commSav">merge!(sort! f, sort! g)</span>
+<div id="mathAns9-238">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,11,11,11,11,22]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Remove duplicates in place.</p>
+<div id="spadComm9-239" class="spadComm">
+<span id="commSav9-239" class="commSav">removeDuplicates! f</span>
+<div id="mathAns9-239">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,11,22]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>Remove all odd integers.</p>
+<div id="spadComm9-240" class="spadComm">
+<span id="commSav9-240" class="commSav">select!(i +-&gt; even? i,f)</span>
+<div id="mathAns9-240">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,4,6,22]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<p>All these operations have shrunk the physical length of <span class="teletype">f</span>.</p>
+<div id="spadComm9-241" class="spadComm">
+<span id="commSav9-241" class="commSav">physicalLength f</span>
+<div id="mathAns9-241">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>To force FriCAS not to shrink flexible arrays call the <span class="teletype">shrinkable</span> operation with the argument <span class="teletype">false</span>. You must package call this operation. The previous value is returned.</p>
+<div id="spadComm9-242" class="spadComm">
+<span id="commSav9-242" class="commSav">shrinkable(false)$FlexibleArray(Integer)</span>
+<div id="mathAns9-242">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.25.xhtml">Previous Section 9.25 FileName</a><a href="section-9.27.xhtml">Next Section 9.27 Float</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

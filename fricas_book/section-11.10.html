@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section11.10</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section11.10</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-11.9.xhtml">Previous Section 11.9 Testing</a><a href="section-12.0.xhtml">Next Section 12.0 Categories</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-11.10">
+<h2 class="sectiontitle" id="how-packages-work">11.10 How Packages Work</h2>
+<span id="ugPackagesHow" class="label"></span>
+<p>Recall that packages as abstract datatypes are compiled independently and put into the library. The curious reader may ask: ``How is the interpreter able to find an operation such as <span style="font-weight: bold;"> bubbleSort!</span>? Also, how is a single compiled function such as <span style="font-weight: bold;"> bubbleSort!</span> able to sort data of different types?''</p>
+<p>After the interpreter loads the package <span class="teletype">SortPackage</span>, the four operations from the package become known to the interpreter. Each of these operations is expressed as a <span class="italic">modemap</span> in which the type <span class="index">modemap</span><span id="chapter-11-23"></span> of the operation is written in terms of symbolic domains.</p>
+<p>See the modemaps for <span style="font-weight: bold;"> bubbleSort!</span>.</p>
+<p>)display op bubbleSort!</p>
+<div class="verbatim">
+<br />
+There are 2 exposed functions called bubbleSort! :<br />
+<br />
+   [1] D1 -&gt; D1 from SortPackage(D2,D1)<br />
+         if D2 has ORDSET and D2 has OBJECT and D1 has<br />
+         IndexedAggregate(Integer, D2) with<br />
+              finiteAggregate<br />
+              shallowlyMutable<br />
+<br />
+   [2] (D1,((D3,D3) -&gt; Boolean)) -&gt; D1 from SortPackage(D3,D1)<br />
+         if D3 has OBJECT and D1 has<br />
+         IndexedAggregate(Integer,D3) with<br />
+              finiteAggregate<br />
+              shallowlyMutable<br />
+
+</div>
+What happens if you ask for <span class="teletype">bubbleSort!([1,-5,3])</span>? There is a unique modemap for an operation named <span style="font-weight: bold;"> bubbleSort!</span> with one argument. Since
+[1,-5,3] is a list of integers, the symbolic domain
+D1 is defined as <span class="teletype">List(Integer)</span>. For some operation to apply, it must satisfy the predicate for some
+D2. What
+D2? The third expression of the <span class="teletype">and</span> requires <span class="teletype">D1 has IndexedAggregate(Integer, D2) with</span> two attributes. So the interpreter searches for an <span class="teletype">IndexedAggregate</span> among the ancestors of <span class="teletype">List (Integer)</span> (see <a href="section-12.4.xhtml#ugCategoriesHier" class="ref">ugCategoriesHier</a> ). It finds one: <span class="teletype">IndexedAggregate(Integer, Integer)</span>. The interpreter tries defining
+D2 as <span class="teletype">Integer</span>. After substituting for
+D1 and
+D2, the predicate evaluates to <span class="teletype">true</span>. An applicable operation has been found!
+Now FriCAS builds the package <span class="teletype">SortPackage(List(Integer), Integer)</span>. According to its definition, this package exports the required operation: <span style="font-weight: bold;"> bubbleSort!</span>: List Integer-&gt;List Integer. The interpreter then asks the package for a function implementing this operation. The package gets all the functions it needs (for example, <span style="font-weight: bold;"> rest</span> and <span style="font-weight: bold;"> swap</span>) from the appropriate domains and then it returns a <span style="font-weight: bold;"> bubbleSort!</span> to the interpreter together with the local environment for <span style="font-weight: bold;"> bubbleSort!</span>. The interpreter applies the function to the argument
+[1,-5,3]. The <span style="font-weight: bold;"> bubbleSort!</span> function is executed in its local environment and produces the result.
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-11.9.xhtml">Previous Section 11.9 Testing</a><a href="section-12.0.xhtml">Next Section 12.0 Categories</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

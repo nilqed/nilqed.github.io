@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section4.7</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section4.7</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-4.6.xhtml">Previous Section 4.6 IBM Script Formula Format</a><a href="section-5.0.xhtml">Next Section 5.0 Interactive Language</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-4.7">
+<h2 class="sectiontitle" id="fortran-format">4.7 FORTRAN Format</h2>
+<span id="ugInOutFortran" class="label"></span>
+<p>In addition to turning FORTRAN output on and off and stating where the <span class="index">output formats:FORTRAN</span><span id="chapter-4-35"></span> output should be placed, there are many options that control the <span class="index">FORTRAN output format</span><span id="chapter-4-36"></span> appearance of the generated code. In this section we describe some of the basic options. Issue <span class="teletype">)set fortran</span> to see a full list with their current settings.</p>
+<p>The output FORTRAN expression usually begins in column 7. If the expression needs more than one line, the ampersand character <span class="teletype">&amp;</span> is used in column 6. Since some versions of FORTRAN have restrictions on the number of lines per statement, FriCAS breaks long expressions into segments with a maximum of 1320 characters (20 lines of 66 characters) per segment. <span class="index">set fortran</span><span id="chapter-4-37"></span> If you want to change this, say, to 660 characters, issue the system command <span class="index">set fortran explength</span><span id="chapter-4-38"></span> <span class="teletype">)set fortran explength 660</span>. <span class="index">FORTRAN output format:breaking into multiple statements</span><span id="chapter-4-39"></span> You can turn off the line breaking by issuing <span class="teletype">)set fortran segment off</span>. <span class="index">set fortran segment</span><span id="chapter-4-40"></span> Various code optimization levels are available.</p>
+<p>FORTRAN output is produced after you issue this. <span class="index">set output fortran</span><span id="chapter-4-41"></span></p>
+<div id="spadComm4-14" class="spadComm">
+<span id="commSav4-14" class="commSav">)set output fortran on</span>
+<div id="mathAns4-14">
+
+</div>
+</div>
+<p>For the initial examples, we set the optimization level to 0, which is the lowest level. <span class="index">set fortran optlevel</span><span id="chapter-4-42"></span></p>
+<div id="spadComm4-15" class="spadComm">
+<span id="commSav4-15" class="commSav">)set fortran optlevel 0</span>
+<div id="mathAns4-15">
+
+</div>
+</div>
+<p>The output is usually in columns 7 through 72, although fewer columns are used in the following examples so that the output <span class="index">FORTRAN output format:line length</span><span id="chapter-4-43"></span> fits nicely on the page.</p>
+<div id="spadComm4-16" class="spadComm">
+<span id="commSav4-16" class="commSav">)set fortran fortlength 60</span>
+<div id="mathAns4-16">
+
+</div>
+</div>
+By default, the output goes to the screen and is displayed before the standard FriCAS two-dimensional output. In this example, an assignment to the variable
+R1 was generated because this is the result of step 1.
+<div id="spadComm4-17" class="spadComm">
+<span id="commSav4-17" class="commSav">(x+y)^3</span>
+<div id="mathAns4-17">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R1=y^3+3*x*y*y+3*x*x*y+x^3<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y3+3xy2+3x2y+x3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Here is an example that illustrates the line breaking.</p>
+<div id="spadComm4-18" class="spadComm">
+<span id="commSav4-18" class="commSav">(x+y+z)^3</span>
+<div id="mathAns4-18">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R2=z^3+(3*y+3*x)*z*z+(3*y*y+6*x*y+3*x*x)*z+y^3+3*x*y<br />
+     &amp;*y+3*x*x*y+x^3<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>z3+(3y+3x)z2+(3y2+6xy+3x2)z+y3+3xy2+3x2y+x3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Note in the above examples that integers are generally converted to <span class="index">FORTRAN output format:integers vs. floats</span><span id="chapter-4-44"></span> floating point numbers, except in exponents. This is the default behavior but can be turned off by issuing <span class="teletype">)set fortran ints2floats off</span>. <span class="index">set fortran ints2floats</span><span id="chapter-4-45"></span> The rules governing when the conversion is done are:</p>
+<ol>
+<li>If an integer is an exponent, convert it to a floating point number if it is greater than 32767 in absolute value, otherwise leave it as an integer.</li>
+<li>Convert all other integers in an expression to floating point numbers.</li>
+</ol>
+These rules only govern integers in expressions. Numbers generated by FriCAS for
+DIMENSION statements are also integers.
+<p>To set the type of generated FORTRAN data, <span class="index">FORTRAN output format:data types</span><span id="chapter-4-46"></span> use one of the following:</p>
+<div class="verbatim">
+<br />
+)set fortran defaulttype REAL<br />
+)set fortran defaulttype INTEGER<br />
+)set fortran defaulttype COMPLEX<br />
+)set fortran defaulttype LOGICAL<br />
+)set fortran defaulttype CHARACTER<br />
+
+</div>
+<p>When temporaries are created, they are given a default type of <span class="teletype">REAL.</span> Also, the <span class="teletype">REAL</span> versions of functions are used by default.</p>
+<div id="spadComm4-19" class="spadComm">
+<span id="commSav4-19" class="commSav">sin(x)</span>
+<div id="mathAns4-19">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R3=DSIN(x)<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>At optimization level 1, FriCAS removes common subexpressions. <span class="index">FORTRAN output format:optimization level</span><span id="chapter-4-47"></span> <span class="index">set fortran optlevel</span><span id="chapter-4-48"></span></p>
+<div id="spadComm4-20" class="spadComm">
+<span id="commSav4-20" class="commSav">)set fortran optlevel 1</span>
+<div id="mathAns4-20">
+
+</div>
+</div>
+<div id="spadComm4-21" class="spadComm">
+<span id="commSav4-21" class="commSav">(x+y+z)^3</span>
+<div id="mathAns4-21">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      T2=y*y<br />
+      T3=x*x<br />
+      R4=z^3+(3*y+3*x)*z*z+(3*T2+6*x*y+3*T3)*z+y^3+3*x*T2+<br />
+     &amp;3*T3*y+x^3<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>z3+(3y+3x)z2+(3y2+6xy+3x2)z+y3+3xy2+3x2y+x3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>This changes the precision to <span class="teletype">DOUBLE</span>. <span class="index">set fortran precision double</span><span id="chapter-4-49"></span> Substitute <span class="teletype">single</span> for <span class="teletype">double</span> <span class="index">FORTRAN output format:precision</span><span id="chapter-4-50"></span> to return to single precision. <span class="index">set fortran precision single</span><span id="chapter-4-51"></span></p>
+<div id="spadComm4-22" class="spadComm">
+<span id="commSav4-22" class="commSav">)set fortran precision double</span>
+<div id="mathAns4-22">
+
+</div>
+</div>
+<p>Complex constants display the precision.</p>
+<div id="spadComm4-23" class="spadComm">
+<span id="commSav4-23" class="commSav">2.3 + 5.6*%i </span>
+<div id="mathAns4-23">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R5=(2.3D0,5.6D0)<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2.3+5.6i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Float
+</div>
+<p>The function names that FriCAS generates depend on the chosen precision.</p>
+<div id="spadComm4-24" class="spadComm">
+<span id="commSav4-24" class="commSav">sin %e</span>
+<div id="mathAns4-24">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R6=DSIN(DEXP(1))<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(e)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Reset the precision to <span class="teletype">single</span> and look at these two examples again.</p>
+<div id="spadComm4-25" class="spadComm">
+<span id="commSav4-25" class="commSav">)set fortran precision single</span>
+<div id="mathAns4-25">
+
+</div>
+</div>
+<div id="spadComm4-26" class="spadComm">
+<span id="commSav4-26" class="commSav">2.3 + 5.6*%i</span>
+<div id="mathAns4-26">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R7=(2.3,5.6)<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2.3+5.6i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Float
+</div>
+<div id="spadComm4-27" class="spadComm">
+<span id="commSav4-27" class="commSav">sin %e</span>
+<div id="mathAns4-27">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      R8=SIN(EXP(1))<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(e)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Expressions that look like lists, streams, sets or matrices cause array code to be generated.</p>
+<div id="spadComm4-28" class="spadComm">
+<span id="commSav4-28" class="commSav">[x+1,y+1,z+1]</span>
+<div id="mathAns4-28">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      T1(1)=x+1<br />
+      T1(2)=y+1<br />
+      T1(3)=z+1<br />
+      R9=T1<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x+1,y+1,z+1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Polynomial Integer
+</div>
+<p>A temporary variable is generated to be the name of the array. <span class="index">FORTRAN output format:arrays</span><span id="chapter-4-52"></span> This may have to be changed in your particular application.</p>
+<div id="spadComm4-29" class="spadComm">
+<span id="commSav4-29" class="commSav">set[2,3,4,3,5]</span>
+<div id="mathAns4-29">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      T1(1)=2<br />
+      T1(2)=3<br />
+      T1(3)=4<br />
+      T1(4)=5<br />
+      R10=T1<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{2,3,4,5}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+By default, the starting index for generated FORTRAN arrays is
+0.
+<div id="spadComm4-30" class="spadComm">
+<span id="commSav4-30" class="commSav">matrix [ [2.3,9.7],[0.0,18.778] ]</span>
+<div id="mathAns4-30">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      T1(0,0)=2.3<br />
+      T1(0,1)=9.7<br />
+      T1(1,0)=0.0<br />
+      T1(1,1)=18.778<br />
+      T1<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2.39.70.018.778]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+To change the starting index for generated FORTRAN arrays to be
+1, <span class="index">set fortran startindex</span><span id="chapter-4-53"></span> issue this. This value can only be
+0 or
+1.
+<div id="spadComm4-31" class="spadComm">
+<span id="commSav4-31" class="commSav">)set fortran startindex 1</span>
+<div id="mathAns4-31">
+
+</div>
+</div>
+<p>Look at the code generated for the matrix again.</p>
+<div id="spadComm4-32" class="spadComm">
+<span id="commSav4-32" class="commSav">matrix [ [2.3,9.7],[0.0,18.778] ]</span>
+<div id="mathAns4-32">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+      T1(1,1)=2.3<br />
+      T1(1,2)=9.7<br />
+      T1(2,1)=0.0<br />
+      T1(2,2)=18.778<br />
+      T1<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2.39.70.018.778]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Float
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-4.6.xhtml">Previous Section 4.6 IBM Script Formula Format</a><a href="section-5.0.xhtml">Next Section 5.0 Interactive Language</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

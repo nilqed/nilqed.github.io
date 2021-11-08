@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.36</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.36</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.35.xhtml">Previous Section 9.35 IntegerLinearDependence</a><a href="section-9.37.xhtml">Next Section 9.37 Kernel</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.36">
+<h2 class="sectiontitle" id="integernumbertheoryfunctions">9.36 IntegerNumberTheoryFunctions</h2>
+<span id="IntegerNumberTheoryFunctionsXmpPage" class="label"></span>
+<p>The <span class="teletype">IntegerNumberTheoryFunctions</span> package contains a variety of operations of interest to number theorists. Many of these operations deal with divisibility properties of integers. (Recall that an integer <span class="teletype">a</span> divides an integer <span class="teletype">b</span> if there is an integer <span class="teletype">c</span> such that <span class="teletype">b = a * c</span>.)</p>
+<p>The operation <span class="spadfunFrom">divisors</span><span class="index">divisors</span><span id="chapter-9-104"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-105"></span> returns a list of the divisors of an integer.</p>
+<div id="spadComm9-146" class="spadComm">
+<span id="commSav9-146" class="commSav">div144 := divisors(144) </span>
+<div id="mathAns9-146">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,6,8,9,12,16,18,24,36,48,72,144]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>You can now compute the number of divisors of <span class="teletype">144</span> and the sum of the divisors of <span class="teletype">144</span> by counting and summing the elements of the list we just created.</p>
+<div id="spadComm9-147" class="spadComm">
+<span id="commSav9-147" class="commSav"> #(div144) </span>
+<div id="mathAns9-147">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-148" class="spadComm">
+<span id="commSav9-148" class="commSav">reduce(+,div144) </span>
+<div id="mathAns9-148">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>403</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Of course, you can compute the number of divisors of an integer <span class="teletype">n</span>, usually denoted <span class="teletype">d(n)</span>, and the sum of the divisors of an integer <span class="teletype">n</span>, usually denoted
+(n), without ever listing the divisors of <span class="teletype">n</span>.
+<p>In FriCAS, you can simply call the operations <span class="spadfunFrom">numberOfDivisors</span><span class="index">numberOfDivisors</span><span id="chapter-9-106"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-107"></span> and <span class="spadfunFrom">sumOfDivisors</span><span class="index">sumOfDivisors</span><span id="chapter-9-108"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-109"></span>.</p>
+<div id="spadComm9-149" class="spadComm">
+<span id="commSav9-149" class="commSav">numberOfDivisors(144)</span>
+<div id="mathAns9-149">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-150" class="spadComm">
+<span id="commSav9-150" class="commSav">sumOfDivisors(144)</span>
+<div id="mathAns9-150">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>403</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+The key is that <span class="teletype">d(n)</span> and
+(n) are <span class="italic">multiplicative functions.</span> This means that when <span class="teletype">n</span> and <span class="teletype">m</span> are relatively prime, that is, when <span class="teletype">n</span> and <span class="teletype">m</span> have no prime factor in common, then <span class="teletype">d(nm) = d(n) d(m)</span> and
+(nm) =
+(n)
+(m). Note that these functions are trivial to compute when <span class="teletype">n</span> is a prime power and are computed for general <span class="teletype">n</span> from the prime factorization of <span class="teletype">n</span>. Other examples of multiplicative functions are
+(n), the sum of the
+k-th powers of the divisors of <span class="teletype">n</span> and
+, the number of integers between 1 and <span class="teletype">n</span> which are prime to <span class="teletype">n</span>. The corresponding FriCAS operations are called <span class="spadfunFrom">sumOfKthPowerDivisors</span><span class="index">sumOfKthPowerDivisors</span><span id="chapter-9-110"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-111"></span> and <span class="spadfunFrom">eulerPhi</span><span class="index">eulerPhi</span><span id="chapter-9-112"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-113"></span>.
+An interesting function is
+λ(n), the Möbius
+λ function, defined as follows:
+λ(1) = 1,
+λ(n) = 0, when <span class="teletype">n</span> is divisible by a square, and
+λ=(-1)k, when <span class="teletype">n</span> is the product of <span class="teletype">k</span> distinct primes. The corresponding FriCAS operation is <span class="spadfunFrom">moebiusMu</span><span class="index">moebiusMu</span><span id="chapter-9-114"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-115"></span>. This function occurs in the following theorem:
+<span style="font-weight: bold;"> Theorem</span> (Möbius Inversion Formula):<br />
+Let <span class="teletype">f(n)</span> be a function on the positive integers and let <span class="teletype">F(n)</span> be defined by
+F(n)=∑d|nf(n) sum of <span class="teletype">f(n)</span> over <span class="teletype">d | n</span> where the sum is taken over the positive divisors of <span class="teletype">n</span>. Then the values of <span class="teletype">f(n)</span> can be recovered from the values of <span class="teletype">F(n)</span>:
+f(n)=∑d|nλ(n)F(nd) where again the sum is taken over the positive divisors of <span class="teletype">n</span>.
+When <span class="teletype">f(n) = 1</span>, then <span class="teletype">F(n) = d(n)</span>. Thus, if you sum
+over the positive divisors <span class="teletype">d</span> of <span class="teletype">n</span>, you should always get <span class="teletype">1</span>.
+<div id="spadComm9-151" class="spadComm">
+<span id="commSav9-151" class="commSav">f1(n) == reduce(+,[moebiusMu(d) * numberOfDivisors(quo(n,d)) for d in divisors(n)]) </span>
+<div id="mathAns9-151">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-152" class="spadComm">
+<span id="commSav9-152" class="commSav">f1(200) </span>
+<div id="mathAns9-152">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-153" class="spadComm">
+<span id="commSav9-153" class="commSav">f1(846) </span>
+<div id="mathAns9-153">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Similarly, when <span class="teletype">f(n) = n</span>, then
+F(n) =
+(n). Thus, if you sum
+λ(d)
+(n/d) over the positive divisors <span class="teletype">d</span> of <span class="teletype">n</span>, you should always get <span class="teletype">n</span>.
+<div id="spadComm9-154" class="spadComm">
+<span id="commSav9-154" class="commSav">f2(n) == reduce(+,[moebiusMu(d) * sumOfDivisors(quo(n,d)) for d in divisors(n)]) </span>
+<div id="mathAns9-154">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-155" class="spadComm">
+<span id="commSav9-155" class="commSav">f2(200) </span>
+<div id="mathAns9-155">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>200</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-156" class="spadComm">
+<span id="commSav9-156" class="commSav">f2(846) </span>
+<div id="mathAns9-156">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>846</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+The Fibonacci numbers are defined by
+F(1)=F(2)=1 and
+F(n)=F(n-1)+F(n-2) for
+n=3,4,….
+The operation <span class="spadfunFrom">fibonacci</span><span class="index">fibonacci</span><span id="chapter-9-116"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-117"></span> computes the
+n-th Fibonacci number.
+<div id="spadComm9-157" class="spadComm">
+<span id="commSav9-157" class="commSav">fibonacci(25)</span>
+<div id="mathAns9-157">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>75025</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-158" class="spadComm">
+<span id="commSav9-158" class="commSav">[fibonacci(n) for n in 1..15]</span>
+<div id="mathAns9-158">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,2,3,5,8,13,21,34,55,89,144,233,377,610]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>Fibonacci numbers can also be expressed as sums of binomial coefficients.</p>
+<div id="spadComm9-159" class="spadComm">
+<span id="commSav9-159" class="commSav">fib(n) == reduce(+,[binomial(n-1-k,k) for k in 0..quo(n-1,2)]) </span>
+<div id="mathAns9-159">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-160" class="spadComm">
+<span id="commSav9-160" class="commSav">fib(25) </span>
+<div id="mathAns9-160">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>75025</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-161" class="spadComm">
+<span id="commSav9-161" class="commSav">[fib(n) for n in 1..15] </span>
+<div id="mathAns9-161">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,2,3,5,8,13,21,34,55,89,144,233,377,610]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+Quadratic symbols can be computed with the operations <span class="spadfunFrom">legendre</span><span class="index">legendre</span><span id="chapter-9-118"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-119"></span> and <span class="spadfunFrom">jacobi</span><span class="index">jacobi</span><span id="chapter-9-120"></span><span class="index">IntegerNumberTheoryFunctions</span><span id="chapter-9-121"></span>. The Legendre symbol
+(ap) is defined for integers
+a and
+p with
+p an odd prime number. By definition,
+(ap) = +1, when
+a is a square
+(mod p),
+(ap) = -1, when
+a is not a square
+(mod p), and
+(ap) = 0, when
+a is divisible by
+p.
+You compute
+(ap) via the command <span class="teletype">legendre(a,p)</span>.
+<div id="spadComm9-162" class="spadComm">
+<span id="commSav9-162" class="commSav">legendre(3,5)</span>
+<div id="mathAns9-162">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<div id="spadComm9-163" class="spadComm">
+<span id="commSav9-163" class="commSav">legendre(23,691)</span>
+<div id="mathAns9-163">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+The Jacobi symbol
+(an) is the usual extension of the Legendre symbol, where <span class="teletype">n</span> is an arbitrary integer. The most important property of the Jacobi symbol is the following: if <span class="teletype">K</span> is a quadratic field with discriminant <span class="teletype">d</span> and quadratic character
+χ, then
+χ(n)=(d/n). Thus, you can use the Jacobi symbol to compute, say, the class numbers of imaginary quadratic fields from a standard class number formula.
+<p>This function computes the class number of the imaginary quadratic field with discriminant <span class="teletype">d</span>.</p>
+<div id="spadComm9-164" class="spadComm">
+<span id="commSav9-164" class="commSav">h(d) == quo(reduce(+, [jacobi(d,k) for k in 1..quo(-d, 2)]), 2 - jacobi(d,2)) </span>
+<div id="mathAns9-164">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-165" class="spadComm">
+<span id="commSav9-165" class="commSav">h(-163) </span>
+<div id="mathAns9-165">
+
+</div>
+</div>
+1
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-166" class="spadComm">
+<span id="commSav9-166" class="commSav">h(-499) </span>
+<div id="mathAns9-166">
+
+</div>
+</div>
+3
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-167" class="spadComm">
+<span id="commSav9-167" class="commSav">h(-1832) </span>
+<div id="mathAns9-167">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>26</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.35.xhtml">Previous Section 9.35 IntegerLinearDependence</a><a href="section-9.37.xhtml">Next Section 9.37 Kernel</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

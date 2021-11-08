@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.15</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.15</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.14.xhtml">Previous Section 6.14 Making Functions from Objects</a><a href="section-6.16.xhtml">Next Section 6.16 Free and Local Variables</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.15">
+<h2 class="sectiontitle" id="functions-defined-with-blocks">6.15 Functions Defined with Blocks</h2>
+<span id="ugUserBlocks" class="label"></span>
+<p>You need not restrict yourself to functions that only fit on one line or are written in a piece-wise manner. The body of the function can be a block, as discussed in <a href="section-5.2.xhtml#ugLangBlocks" class="ref">ugLangBlocks</a> .</p>
+<p>Here is a short function that swaps two elements of a list, array or vector.</p>
+<div class="verbatim">
+<br />
+swap(m,i,j) ==<br />
+  temp := m.i<br />
+  m.i := m.j<br />
+  m.j := temp<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>The significance of <span style="font-weight: bold;"> swap</span> is that it has a destructive effect on its first argument.</p>
+<div id="spadComm6-124" class="spadComm">
+<span id="commSav6-124" class="commSav">k := [1,2,3,4,5]</span>
+<div id="mathAns6-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm6-125" class="spadComm">
+<span id="commSav6-125" class="commSav">swap(k,2,4)</span>
+<div id="mathAns6-125">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function swap with type (List PositiveInteger,<br />
+      PositiveInteger,PositiveInteger) -&gt; PositiveInteger <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>You see that the second and fourth elements are interchanged.</p>
+<div id="spadComm6-126" class="spadComm">
+<span id="commSav6-126" class="commSav">k</span>
+<div id="mathAns6-126">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,4,3,2,5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Using this, we write a couple of different sort functions. First, a simple bubble sort. <span class="index">sort:bubble</span><span id="chapter-6-42"></span> The operation <span class="spadopFrom" title="List">#</span> returns the number of elements in an aggregate.</p>
+<div class="verbatim">
+<br />
+bubbleSort(m) ==<br />
+  n := #m<br />
+  for i in 1..(n-1) repeat<br />
+    for j in n..(i+1) by -1 repeat<br />
+      if m.j &lt; m.(j-1) then swap(m,j,j-1)<br />
+  m<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Let this be the list we want to sort.</p>
+<div id="spadComm6-127" class="spadComm">
+<span id="commSav6-127" class="commSav">m := [8,4,-3,9]</span>
+<div id="mathAns6-127">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[8,4,-3,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>This is the result of sorting.</p>
+<div id="spadComm6-128" class="spadComm">
+<span id="commSav6-128" class="commSav">bubbleSort(m)</span>
+<div id="mathAns6-128">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function swap with type (List Integer,Integer,Integer) -&gt; <br />
+      Integer <br />
+<br />
++++ |*3;swap;1;G82322| redefined<br />
+   Compiling function bubbleSort with type List Integer -&gt; List Integer<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-3,4,8,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+Moreover,
+m is destructively changed to be the sorted version.
+<div id="spadComm6-129" class="spadComm">
+<span id="commSav6-129" class="commSav">m</span>
+<div id="mathAns6-129">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-3,4,8,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+This function implements an insertion sort. <span class="index">sort:insertion</span><span id="chapter-6-43"></span> The basic idea is to traverse the list and insert the
+i-th element in its correct position among the
+i-1 previous elements. Since we start at the beginning of the list, the list elements before the
+i-th element have already been placed in ascending order.
+<div class="verbatim">
+<br />
+insertionSort(m) ==<br />
+  for i in 2..#m repeat<br />
+    j := i<br />
+    while j &gt; 1 and m.j &lt; m.(j-1) repeat<br />
+      swap(m,j,j-1)<br />
+      j := j - 1<br />
+  m<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>As with our bubble sort, this is a destructive function.</p>
+<div id="spadComm6-130" class="spadComm">
+<span id="commSav6-130" class="commSav">m := [8,4,-3,9]</span>
+<div id="mathAns6-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[8,4,-3,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm6-131" class="spadComm">
+<span id="commSav6-131" class="commSav">insertionSort(m)</span>
+<div id="mathAns6-131">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function insertionSort with type List Integer -&gt; List <br />
+      Integer <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-3,4,8,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm6-132" class="spadComm">
+<span id="commSav6-132" class="commSav">m</span>
+<div id="mathAns6-132">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-3,4,8,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+Neither of the above functions is efficient for sorting large lists since they reference elements by asking for the
+j-th element of the structure
+m.
+<p>Here is a more efficient bubble sort for lists.</p>
+<div class="verbatim">
+<br />
+bubbleSort2(m: List Integer): List Integer ==<br />
+  null m =&gt; m<br />
+  l := m<br />
+  while not null (r := l.rest) repeat<br />
+     r := bubbleSort2 r<br />
+     x := l.first<br />
+     if x &lt; r.first then<br />
+       l.first := r.first<br />
+       r.first := x<br />
+     l.rest := r<br />
+     l := l.rest<br />
+  m<br />
+<br />
+   Function declaration bubbleSort2 : List Integer -&gt; List Integer has <br />
+      been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Try it out.</p>
+<div id="spadComm6-133" class="spadComm">
+<span id="commSav6-133" class="commSav">bubbleSort2 [3,7,2]</span>
+<div id="mathAns6-133">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,3,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>This definition is both recursive and iterative, and is tricky! Unless you are <span class="italic">really</span> curious about this definition, we suggest you skip immediately to the next section.</p>
+<p>Here are the key points in the definition. First notice that if you are sorting a list with less than two elements, there is nothing to do: just return the list. This definition returns immediately if there are zero elements, and skips the entire <span class="teletype">while</span> loop if there is just one element.</p>
+<p>The second point to realize is that on each outer iteration, the bubble sort ensures that the minimum element is propagated leftmost. Each iteration of the <span class="teletype">while</span> loop calls <span style="font-weight: bold;"> bubbleSort2</span> recursively to sort all but the first element. When finished, the minimum element is either in the first or second position. The conditional expression ensures that it comes first. If it is in the second, then a swap occurs. In any case, the <span style="font-weight: bold;"> rest</span> of the original list must be updated to hold the result of the recursive call.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.14.xhtml">Previous Section 6.14 Making Functions from Objects</a><a href="section-6.16.xhtml">Next Section 6.16 Free and Local Variables</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

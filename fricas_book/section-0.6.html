@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section0.6</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section0.6</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-0.5.xhtml">Previous Section 0.5 General Points about FriCAS</a><a href="section-0.7.xhtml">Next Section 0.7 Functions, Choices, and Loops</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-0.6">
+<h2 class="sectiontitle" id="data-structures-in-fricas">0.6 Data Structures in FriCAS</h2>
+<p>This chapter is an overview of <span class="slant">some</span> of the data structures provided by FriCAS.</p>
+<span id="subsec-0.6.1"></span>
+<div id="subsec-0.6.1" class="subsection">
+<h3 class="subsectitle" id="lists">0.6.1 Lists</h3>
+<p>The FriCAS <span class="teletype">List</span> type constructor is used to create homogenous lists of finite size. The notation for lists and the names of the functions that operate over them are similar to those found in functional languages such as ML.</p>
+<p>Lists can be created by placing a comma separated list of values inside square brackets or if a list with just one element is desired then the function <span style="font-weight: bold;"> list</span> is available:</p>
+<div id="spadComm0-96" class="spadComm">
+<span id="commSav0-96" class="commSav">[4]</span>
+<div id="mathAns0-96">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-97" class="spadComm">
+<span id="commSav0-97" class="commSav">list(4)</span>
+<div id="mathAns0-97">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-98" class="spadComm">
+<span id="commSav0-98" class="commSav">[1,2,3,5,7,11]</span>
+<div id="mathAns0-98">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,5,7,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>The function <span style="font-weight: bold;"> append</span> takes two lists as arguments and returns the list consisting of the second argument appended to the first. A single element can be added to the front of a list using <span style="font-weight: bold;"> cons</span>:</p>
+<div id="spadComm0-99" class="spadComm">
+<span id="commSav0-99" class="commSav">append([1,2,3,5],[7,11])</span>
+<div id="mathAns0-99">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,5,7,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-100" class="spadComm">
+<span id="commSav0-100" class="commSav">cons(23,[65,42,19])</span>
+<div id="mathAns0-100">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[23,65,42,19]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Lists are accessed sequentially so if FriCAS is asked for the value of the twentieth element in the list it will move from the start of the list over nineteen elements before it reaches the desired element. Each element of a list is stored as a node consisting of the value of the element and a pointer to the rest of the list. As a result the two main operations on a list are called <span style="font-weight: bold;"> first</span> and <span style="font-weight: bold;"> rest</span>. Both of these functions take a second optional argument which specifies the length of the first part of the list:</p>
+<div id="spadComm0-101" class="spadComm">
+<span id="commSav0-101" class="commSav">first([1,5,6,2,3])</span>
+<div id="mathAns0-101">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-102" class="spadComm">
+<span id="commSav0-102" class="commSav">first([1,5,6,2,3],2)</span>
+<div id="mathAns0-102">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-103" class="spadComm">
+<span id="commSav0-103" class="commSav">rest([1,5,6,2,3])</span>
+<div id="mathAns0-103">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[5,6,2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-104" class="spadComm">
+<span id="commSav0-104" class="commSav">rest([1,5,6,2,3],2)</span>
+<div id="mathAns0-104">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[6,2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Other functions are <span style="font-weight: bold;"> empty?</span> which tests to see if a list contains no elements, <span style="font-weight: bold;"> member?</span> which tests to see if the first argument is a member of the second, <span style="font-weight: bold;"> reverse</span> which reverses the order of the list, <span style="font-weight: bold;"> sort</span> which sorts a list, and <span style="font-weight: bold;"> removeDuplicates</span> which removes any duplicates. The length of a list can be obtained using the `` #'' operator.</p>
+<div id="spadComm0-105" class="spadComm">
+<span id="commSav0-105" class="commSav">empty?([7,2,-1,2])</span>
+<div id="mathAns0-105">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm0-106" class="spadComm">
+<span id="commSav0-106" class="commSav">member?(-1,[7,2,-1,2])</span>
+<div id="mathAns0-106">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm0-107" class="spadComm">
+<span id="commSav0-107" class="commSav">reverse([7,2,-1,2])</span>
+<div id="mathAns0-107">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,-1,2,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm0-108" class="spadComm">
+<span id="commSav0-108" class="commSav">sort([7,2,-1,2])</span>
+<div id="mathAns0-108">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1,2,2,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm0-109" class="spadComm">
+<span id="commSav0-109" class="commSav">removeDuplicates([1,5,3,5,1,1,2])</span>
+<div id="mathAns0-109">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,5,3,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-110" class="spadComm">
+<span id="commSav0-110" class="commSav"> #[7,2,-1,2]</span>
+<div id="mathAns0-110">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Lists in FriCAS are mutable and so their contents (the elements and the links) can be modified in place. Functions that operator over lists in this way have names ending in the symbol ``!''. For example, <span style="font-weight: bold;"> concat!</span> takes two lists as arguments and appends the second argument to the first (except when the first argument is an empty list) and <span style="font-weight: bold;"> setrest!</span> changes the link emanating from the first argument to point to the second argument:</p>
+<div id="spadComm0-111" class="spadComm">
+<span id="commSav0-111" class="commSav">u := [9,2,4,7]</span>
+<div id="mathAns0-111">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,2,4,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-112" class="spadComm">
+<span id="commSav0-112" class="commSav">concat!(u,[1,5,42]); u</span>
+<div id="mathAns0-112">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,2,4,7,1,5,42]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-113" class="spadComm">
+<span id="commSav0-113" class="commSav">endOfu := rest(u,4)</span>
+<div id="mathAns0-113">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,5,42]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-114" class="spadComm">
+<span id="commSav0-114" class="commSav">partOfu := rest(u,2)</span>
+<div id="mathAns0-114">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,7,1,5,42]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-115" class="spadComm">
+<span id="commSav0-115" class="commSav">setrest!(endOfu,partOfu); u</span>
+<div id="mathAns0-115">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math display">$$\left\lbrack 9,2,\bar{4,7,1} \right\rbrack$$</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>From this it can be seen that the lists returned by <span style="font-weight: bold;"> first</span> and <span style="font-weight: bold;"> rest</span> are pointers to the original list and <span class="slant">not</span> a copy. Thus great care must be taken when dealing with lists in FriCAS.</p>
+Although the <span class="slant">n</span>th element of the list <span class="slant">l</span> can be obtained by applying the <span style="font-weight: bold;"> first</span> function to
+n-1 applications of <span style="font-weight: bold;"> rest</span> to <span class="slant">l</span>, FriCAS provides a more useful access method in the form of the <span class="italic">.</span> operator:
+<div id="spadComm0-116" class="spadComm">
+<span id="commSav0-116" class="commSav">u.3</span>
+<div id="mathAns0-116">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-117" class="spadComm">
+<span id="commSav0-117" class="commSav">u.5</span>
+<div id="mathAns0-117">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-118" class="spadComm">
+<span id="commSav0-118" class="commSav">u.6</span>
+<div id="mathAns0-118">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-119" class="spadComm">
+<span id="commSav0-119" class="commSav">first rest rest u -- Same as u.3</span>
+<div id="mathAns0-119">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-120" class="spadComm">
+<span id="commSav0-120" class="commSav">u.first</span>
+<div id="mathAns0-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-121" class="spadComm">
+<span id="commSav0-121" class="commSav">u(3)</span>
+<div id="mathAns0-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+The operation <span class="slant">u.i</span> is referred to as <span class="slant">indexing into u</span> or <span class="slant">elting into u</span>. The latter term comes from the <span style="font-weight: bold;"> elt</span> function which is used to extract elements (the first element of the list is at index
+1).
+<div id="spadComm0-122" class="spadComm">
+<span id="commSav0-122" class="commSav">elt(u,4)</span>
+<div id="mathAns0-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>If a list has no cycles then any attempt to access an element beyond the end of the list will generate an error. However, in the example above there was a cycle starting at the third element so the access to the sixth element wrapped around to give the third element. Since lists are mutable it is possible to modify elements directly:</p>
+<div id="spadComm0-123" class="spadComm">
+<span id="commSav0-123" class="commSav">u.3 := 42; u</span>
+<div id="mathAns0-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math display">$$\left\lbrack 9,2,\bar{42,7,1} \right\rbrack$$</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Other list operations are:</p>
+<div id="spadComm0-124" class="spadComm">
+<span id="commSav0-124" class="commSav">L := [9,3,4,7]; #L</span>
+<div id="mathAns0-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-125" class="spadComm">
+<span id="commSav0-125" class="commSav">last(L)</span>
+<div id="mathAns0-125">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-126" class="spadComm">
+<span id="commSav0-126" class="commSav">L.last</span>
+<div id="mathAns0-126">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-127" class="spadComm">
+<span id="commSav0-127" class="commSav">L.( #L - 1)</span>
+<div id="mathAns0-127">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Note that using the `` #'' operator on a list with cycles causes FriCAS to enter an infinite loop.</p>
+Note that any operation on a list <span class="slant">L</span> that returns a list
+LL′ will, in general, be such that any changes to
+LL′ will have the side-effect of altering <span class="slant">L</span>. For example:
+<div id="spadComm0-128" class="spadComm">
+<span id="commSav0-128" class="commSav">m := rest(L,2)</span>
+<div id="mathAns0-128">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-129" class="spadComm">
+<span id="commSav0-129" class="commSav">m.1 := 20; L</span>
+<div id="mathAns0-129">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,3,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-130" class="spadComm">
+<span id="commSav0-130" class="commSav">n := L</span>
+<div id="mathAns0-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,3,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-131" class="spadComm">
+<span id="commSav0-131" class="commSav">n.2 := 99; L</span>
+<div id="mathAns0-131">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,99,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-132" class="spadComm">
+<span id="commSav0-132" class="commSav">n</span>
+<div id="mathAns0-132">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,99,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Thus the only save way of copying lists is to copy each element from one to another and not use the assignment operator:</p>
+<div id="spadComm0-133" class="spadComm">
+<span id="commSav0-133" class="commSav">p := [i for i in n] -- Same as `p := copy(n)'</span>
+<div id="mathAns0-133">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,99,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-134" class="spadComm">
+<span id="commSav0-134" class="commSav">p.2 := 5; p</span>
+<div id="mathAns0-134">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,5,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm0-135" class="spadComm">
+<span id="commSav0-135" class="commSav">n</span>
+<div id="mathAns0-135">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[9,99,20,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>In the previous example a new way of constructing lists was given. This is a powerful method which gives the reader more information about the contents of the list than before and which is extremely flexible. The example</p>
+<div id="spadComm0-136" class="spadComm">
+<span id="commSav0-136" class="commSav">[i for i in 1..10]</span>
+<div id="mathAns0-136">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,7,8,9,10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>should be read as</p>
+<div class="center" style="text-align: center;">
+<p>``Using the expression <span class="slant">i</span>, generate each element of the list by iterating the symbol <span class="slant">i</span> over the range of integers [1,10]''</p>
+</div>
+<p>To generate the list of the squares of the first ten elements we just use:</p>
+<div id="spadComm0-137" class="spadComm">
+<span id="commSav0-137" class="commSav">[i^2 for i in 1..10]</span>
+<div id="mathAns0-137">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,4,9,16,25,36,49,64,81,100]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>For more complex lists we can apply a condition to the elements that are to be placed into the list to obtain a list of even numbers between 0 and 11:</p>
+<div id="spadComm0-138" class="spadComm">
+<span id="commSav0-138" class="commSav">[i for i in 1..10 | even?(i)]</span>
+<div id="mathAns0-138">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,4,6,8,10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>This example should be read as:</p>
+<div class="center" style="text-align: center;">
+<p>``Using the expression <span class="slant">i</span>, generate each element of the list by iterating the symbol <span class="slant">i</span> over the range of integers [1,10] such that <span class="slant">i</span> is even''</p>
+</div>
+<p>The following achieves the same result:</p>
+<div id="spadComm0-139" class="spadComm">
+<span id="commSav0-139" class="commSav">[i for i in 2..10 by 2]</span>
+<div id="mathAns0-139">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,4,6,8,10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+</div>
+<span id="subsec-0.6.2"></span>
+<div id="subsec-0.6.2" class="subsection">
+<h3 class="subsectitle" id="segmented-lists">0.6.2 Segmented Lists</h3>
+<p>A segmented list is one in which some of the elements are ranges of values. The <span style="font-weight: bold;"> expand</span> function converts lists of this type into ordinary lists:</p>
+<div id="spadComm0-140" class="spadComm">
+<span id="commSav0-140" class="commSav">[1..10]</span>
+<div id="mathAns0-140">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1..10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Segment PositiveInteger
+</div>
+<div id="spadComm0-141" class="spadComm">
+<span id="commSav0-141" class="commSav">[1..3,5,6,8..10]</span>
+<div id="mathAns0-141">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1..3,5..5,6..6,8..10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Segment PositiveInteger
+</div>
+<div id="spadComm0-142" class="spadComm">
+<span id="commSav0-142" class="commSav">expand(%)</span>
+<div id="mathAns0-142">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,5,6,8,9,10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>If the upper bound of a segment is omitted then a different type of segmented list is obtained and expanding it will produce a stream (which will be considered in the next section):</p>
+<div id="spadComm0-143" class="spadComm">
+<span id="commSav0-143" class="commSav">[1..]</span>
+<div id="mathAns0-143">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1..]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List UniversalSegment PositiveInteger
+</div>
+<div id="spadComm0-144" class="spadComm">
+<span id="commSav0-144" class="commSav">expand(%)</span>
+<div id="mathAns0-144">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,7,8,9,10,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+</div>
+<span id="subsec-0.6.3"></span>
+<div id="subsec-0.6.3" class="subsection">
+<h3 class="subsectitle" id="streams">0.6.3 Streams</h3>
+<p>Streams are infinite lists which have the ability to calculate the next element should it be required. For example, a stream of positive integers and a list of prime numbers can be generated by:</p>
+<div id="spadComm0-145" class="spadComm">
+<span id="commSav0-145" class="commSav">[i for i in 1..]</span>
+<div id="mathAns0-145">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,7,8,9,10,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream PositiveInteger
+</div>
+<div id="spadComm0-146" class="spadComm">
+<span id="commSav0-146" class="commSav">[i for i in 1.. | prime?(i)]</span>
+<div id="mathAns0-146">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,5,7,11,13,17,19,23,29,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream PositiveInteger
+</div>
+<p>In each case the first few elements of the stream are calculated for display purposes but the rest of the stream remains unevaluated. The value of items in a stream are only calculated when they are needed which gives rise to their alternative name of <span class="italic">lazy lists</span>.</p>
+Another method of creating streams is to use the <span style="font-weight: bold;"> generate(f,a)</span> function. This applies its first argument repeatedly onto its second to produce the stream
+[a,f(a),f(f(a)),f(f(f(a)))…]. Given that the function <span style="font-weight: bold;"> nextPrime</span> returns the lowest prime number greater than its argument we can generate a stream of primes as follows:
+<div id="spadComm0-147" class="spadComm">
+<span id="commSav0-147" class="commSav">generate(nextPrime,2)$Stream Integer</span>
+<div id="mathAns0-147">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,5,7,11,13,17,19,23,29,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+As a longer example a stream of Fibonacci numbers will be computed. The Fibonacci numbers start at
+1 and each following number is the addition of the two numbers that precede it so the Fibonacci sequence is:
+1,1,2,3,5,8,….
+Since the generation of any Fibonacci number only relies on knowing the previous two numbers we can look at the series through a window of two elements. To create the series the window is placed at the start over the values
+[1,1] and their sum obtained. The window is now shifted to the right by one position and the sum placed into the empty slot of the window; the process is then repeated. To implement this we require a function that takes a list of two elements (the current view of the window), adds them, and outputs the new window. The result is the function
+[a,b]→b,a+b]:
+<div id="spadComm0-148" class="spadComm">
+<span id="commSav0-148" class="commSav">win : List Integer -&gt; List Integer</span>
+<div id="mathAns0-148">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm0-149" class="spadComm">
+<span id="commSav0-149" class="commSav">win(x) == [x.2, x.1 + x.2]</span>
+<div id="mathAns0-149">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm0-150" class="spadComm">
+<span id="commSav0-150" class="commSav">win([1,1])</span>
+<div id="mathAns0-150">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm0-151" class="spadComm">
+<span id="commSav0-151" class="commSav">win(%)</span>
+<div id="mathAns0-151">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>Thus it can be seen that repeatedly applying <span style="font-weight: bold;"> win</span> to the <span class="slant">results</span> of the previous invocation each element of the series is obtained. Clearly <span style="font-weight: bold;"> win</span> is an ideal function to construct streams using the <span style="font-weight: bold;"> generate</span> function:</p>
+<div id="spadComm0-152" class="spadComm">
+<span id="commSav0-152" class="commSav">fibs := [generate(win,[1,1])]</span>
+<div id="mathAns0-152">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[1,1],[1,2],[2,3],[3,5],[5,8],[8,13],[13,21],[21,34],[34,55],[55,89],…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream List Integer
+</div>
+<p>This isn't quite what is wanted -- we need to extract the first element of each list and place that in our series:</p>
+<div id="spadComm0-153" class="spadComm">
+<span id="commSav0-153" class="commSav">fibs := [i.1 for i in [generate(win,[1,1])] ]</span>
+<div id="mathAns0-153">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,2,3,5,8,13,21,34,55,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+<p>Obtaining the 200th Fibonacci number is trivial:</p>
+<div id="spadComm0-154" class="spadComm">
+<span id="commSav0-154" class="commSav">fibs.200</span>
+<div id="mathAns0-154">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>280571172992510140037611932413038677189525</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>One other function of interest is <span style="font-weight: bold;"> complete</span> which expands a finite stream derived from an infinite one (and thus was still stored as an infinite stream) to form a finite stream.</p>
+</div>
+<span id="subsec-0.6.4"></span>
+<div id="subsec-0.6.4" class="subsection">
+<h3 class="subsectitle" id="arrays-vectors-strings-and-bits">0.6.4 Arrays, Vectors, Strings, and Bits</h3>
+<p>The simplest array data structure is the <span class="slant">one-dimensional array</span> which can be obtained by applying the <span style="font-weight: bold;"> oneDimensionalArray</span> function to a list:</p>
+<div id="spadComm0-155" class="spadComm">
+<span id="commSav0-155" class="commSav">oneDimensionalArray([7,2,5,4,1,9])</span>
+<div id="mathAns0-155">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,2,5,4,1,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<p>One-dimensional array are homogenous (all elements must have the same type) and mutable (elements can be changed) like lists but unlike lists they are constant in size and have uniform access times (it is just as quick to read the last element of a one-dimensional array as it is to read the first; this is not true for lists).</p>
+<p>Since these arrays are mutable all the warnings that apply to lists apply to arrays. That is, it is possible to modify an element in a copy of an array and change the original:</p>
+<div id="spadComm0-156" class="spadComm">
+<span id="commSav0-156" class="commSav">x := oneDimensionalArray([7,2,5,4,1,9])</span>
+<div id="mathAns0-156">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,2,5,4,1,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-157" class="spadComm">
+<span id="commSav0-157" class="commSav">y := x</span>
+<div id="mathAns0-157">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,2,5,4,1,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-158" class="spadComm">
+<span id="commSav0-158" class="commSav">y.3 := 20 ; x</span>
+<div id="mathAns0-158">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7,2,20,4,1,9]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<p>Note that because these arrays are of fixed size the <span style="font-weight: bold;"> concat!</span> function cannot be applied to them without generating an error. If arrays of this type are required use the <span style="font-weight: bold;"> FlexibleArray</span> constructor.</p>
+<p>One-dimensional arrays can be created using <span style="font-weight: bold;"> new</span> which specifies the size of the array and the initial value for each of the elements. Other operations that can be applied to one-dimensional arrays are <span style="font-weight: bold;"> map!</span> which applies a mapping onto each element, <span style="font-weight: bold;"> swap!</span> which swaps two elements and <span style="font-weight: bold;"> copyInto!(a,b,c)</span> which copies the array <span class="slant">b</span> onto <span class="slant">a</span> starting at position <span class="slant">c</span>.</p>
+<div id="spadComm0-159" class="spadComm">
+<span id="commSav0-159" class="commSav">a : ARRAY1 PositiveInteger := new(10,3)</span>
+<div id="mathAns0-159">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,3,3,3,3,3,3,3,3,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<p>(note that <span class="teletype">ARRAY1</span> is an abbreviation for the type <span class="teletype">OneDimensionalArray</span>.) Other types based on one-dimensional arrays are <span class="teletype">Vector</span>, <span class="teletype">String</span>, and <span class="teletype">Bits</span>.</p>
+<div id="spadComm0-160" class="spadComm">
+<span id="commSav0-160" class="commSav">map!(i +-&gt; i+1,a); a</span>
+<div id="mathAns0-160">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,4,4,4,4,4,4,4,4,4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-161" class="spadComm">
+<span id="commSav0-161" class="commSav">b := oneDimensionalArray([2,3,4,5,6])</span>
+<div id="mathAns0-161">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,4,5,6]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-162" class="spadComm">
+<span id="commSav0-162" class="commSav">swap!(b,2,3); b</span>
+<div id="mathAns0-162">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,4,3,5,6]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-163" class="spadComm">
+<span id="commSav0-163" class="commSav">copyInto!(a,b,3)</span>
+<div id="mathAns0-163">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,4,2,4,3,5,6,4,4,4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-164" class="spadComm">
+<span id="commSav0-164" class="commSav">a</span>
+<div id="mathAns0-164">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,4,2,4,3,5,6,4,4,4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray PositiveInteger
+</div>
+<div id="spadComm0-165" class="spadComm">
+<span id="commSav0-165" class="commSav">vector([1/2,1/3,1/14])</span>
+<div id="mathAns0-165">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[12,13,114]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Vector Fraction Integer
+</div>
+<div id="spadComm0-166" class="spadComm">
+<span id="commSav0-166" class="commSav">"Hello, World"</span>
+<div id="mathAns0-166">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"Hello,World"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<div id="spadComm0-167" class="spadComm">
+<span id="commSav0-167" class="commSav">bits(8,true)</span>
+<div id="mathAns0-167">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"11111111"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Bits
+</div>
+<p>A vector is similar to a one-dimensional array except that if its components belong to a ring then arithmetic operations are provided.</p>
+</div>
+<span id="subsec-0.6.5"></span>
+<div id="subsec-0.6.5" class="subsection">
+<h3 class="subsectitle" id="flexible-arrays">0.6.5 Flexible Arrays</h3>
+<p>Flexible arrays are designed to provide the efficiency of one-dimensional arrays while retaining the flexibility of lists. They are implemented by allocating a fixed block of storage for the array. If the array needs to be expanded then a larger block of storage is allocated and the contents of the old block are copied into the new one.</p>
+<p>There are several operations that can be applied to this type, most of which modify the array in place. As a result these functions all have names ending in ``!''. The <span style="font-weight: bold;"> physicalLength</span> returns the actual length of the array as stored in memory while the <span style="font-weight: bold;"> physicalLength!</span> allows this value to be changed by the user.</p>
+<div id="spadComm0-168" class="spadComm">
+<span id="commSav0-168" class="commSav">f : FARRAY INT := new(6,1)</span>
+<div id="mathAns0-168">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,1,1,1,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-169" class="spadComm">
+<span id="commSav0-169" class="commSav">f.1:=4; f.2:=3 ; f.3:=8 ; f.5:=2 ; f</span>
+<div id="mathAns0-169">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,8,1,2,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-170" class="spadComm">
+<span id="commSav0-170" class="commSav">insert!(42,f,3); f</span>
+<div id="mathAns0-170">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,42,8,1,2,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-171" class="spadComm">
+<span id="commSav0-171" class="commSav">insert!(28,f,8); f</span>
+<div id="mathAns0-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,42,8,1,2,1,28]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-172" class="spadComm">
+<span id="commSav0-172" class="commSav">removeDuplicates!(f)</span>
+<div id="mathAns0-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,42,8,1,2,28]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-173" class="spadComm">
+<span id="commSav0-173" class="commSav">delete!(f,5)</span>
+<div id="mathAns0-173">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,42,8,2,28]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-174" class="spadComm">
+<span id="commSav0-174" class="commSav">g:=f(3..5)</span>
+<div id="mathAns0-174">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[42,8,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-175" class="spadComm">
+<span id="commSav0-175" class="commSav">g.2:=7; f</span>
+<div id="mathAns0-175">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,42,8,2,28]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-176" class="spadComm">
+<span id="commSav0-176" class="commSav">insert!(g,f,1)</span>
+<div id="mathAns0-176">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[42,7,2,4,3,42,8,2,28]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-177" class="spadComm">
+<span id="commSav0-177" class="commSav">physicalLength(f)</span>
+<div id="mathAns0-177">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm0-178" class="spadComm">
+<span id="commSav0-178" class="commSav">physicalLength!(f,20)</span>
+<div id="mathAns0-178">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[42,7,2,4,3,42,8,2,28]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-179" class="spadComm">
+<span id="commSav0-179" class="commSav">merge!(sort!(f),sort!(g))</span>
+<div id="mathAns0-179">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,2,2,3,4,7,7,8,28,42,42,42]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FlexibleArray Integer
+</div>
+<div id="spadComm0-180" class="spadComm">
+<span id="commSav0-180" class="commSav">shrinkable(false)$FlexibleArray(Integer)</span>
+<div id="mathAns0-180">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>There are several things to point out concerning these examples. First, although flexible arrays are mutable, making copies of these arrays creates separate entities. This can be seen by the fact that the modification of element <span class="slant">b.2</span> above did not alter <span class="slant">a</span>. Second, the <span style="font-weight: bold;"> merge!</span> function can take an extra argument before the two arrays are merged. The argument is a comparison function and defaults to <span class="italic"><span class="teletype">&lt;=</span></span> if omitted. Lastly, <span style="font-weight: bold;"> shrinkable</span> tells the system whether or not to let flexible arrays contract when elements are deleted from them. An explicit package reference must be given as in the example above.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-0.5.xhtml">Previous Section 0.5 General Points about FriCAS</a><a href="section-0.7.xhtml">Next Section 0.7 Functions, Choices, and Loops</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section13.2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section13.2</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-13.1.xhtml">Previous Section 13.1 Domains vs. Packages</a><a href="section-13.3.xhtml">Next Section 13.3 Category Assertions</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-13.2">
+<h2 class="sectiontitle" id="definitions">13.2 Definitions</h2>
+<span id="ugDomainsDefs" class="label"></span>
+<p>The syntax for defining a domain constructor is the same as for any function in FriCAS:</p>
+<div class="center" style="text-align: center;">
+<span class="teletype"> <span class="italic"> DomainForm</span> : <span class="italic"> Exports</span> == <span class="italic"> Implementation</span></span>
+</div>
+As this definition usually extends over many lines, a
+where expression is generally used instead. <span class="index">where</span><span id="chapter-13-0"></span>
+<p>A recommended format for the definition of a domain is:<br />
+</p>
+<p><span class="teletype"> <span class="italic"> DomainForm</span> : Exports == Implementation where<br />
+<span class="hspace75pc"><span class="italic"> optional type declarations</span></span><br />
+<span class="hspace75pc">Exports == [<span class="italic"> Category Assertions</span>] with</span><br />
+<span class="hspace200pc"><span class="italic"> list of exported operations</span></span><br />
+<span class="hspace75pc">Implementation == [<span class="italic"> Add Domain</span>] add</span><br />
+<span class="hspace200pc">[Rep := <span class="italic"> Representation</span>]</span><br />
+<span class="hspace200pc"><span class="italic"> list of function definitions for exported operations</span></span><br />
+</span></p>
+<p>Note: The brackets <span class="teletype"> [ ]</span> here denote optionality.</p>
+<p>A complete domain constructor definition for <span class="teletype"> QuadraticForm</span> is shown below. Interestingly, this little domain illustrates all the new concepts you need to learn.</p>
+<span id="figquadform" class="label"></span>
+<div class="verbatim">
+<br />
+)abbrev domain QFORM QuadraticForm<br />
+<br />
+++ Description:<br />
+++   This domain provides modest support for<br />
+++   quadratic forms.<br />
+QuadraticForm(n, K): Exports == Implementation where<br />
+    n: PositiveInteger<br />
+    K: Field<br />
+<br />
+    Exports == AbelianGroup with                --The exports<br />
+      quadraticForm: SquareMatrix(n,K) -&gt; $     --export this<br />
+        ++ \bs{}axiom\{quadraticForm(m)\} creates a quadratic<br />
+        ++ quadratic form from a symmetric,<br />
+        ++ square matrix \bs{}axiom\{m\}.<br />
+      matrix:  $ -&gt; SquareMatrix(n,K)           -- export matrix<br />
+        ++ \bs{}axiom\{matrix(qf)\} creates a square matrix<br />
+        ++ from the quadratic form \bs{}axiom\{qf\}.<br />
+      elt: ( $, DirectProduct(n,K)) -&gt; K        -- export elt<br />
+        ++ \bs{}axiom\{qf(v)\} evaluates the quadratic form<br />
+        ++ \bs{}axiom\{qf\} on the vector \bs{}axiom\{v\},<br />
+        ++ producing a scalar.<br />
+<br />
+    Implementation == SquareMatrix(n,K) add     --The exports<br />
+      Rep := SquareMatrix(n,K)                  --representation<br />
+      quadraticForm m ==                        --definition <br />
+        not symmetric? m =&gt; error                      <br />
+          "quadraticForm requires a symmetric matrix"<br />
+        m :: $<br />
+      matrix q == q :: Rep                      --definition <br />
+      elt(q,v) == dot(v, (matrix q * v))        --definition <br />
+<br />
+
+</div>
+<div class="caption">
+The <span class="teletype"> QuadraticForm</span> domain.
+</div>
+A domain constructor can take any number and type of parameters. <span class="teletype"> QuadraticForm</span> takes a positive integer
+n and a field
+K as arguments. Like a package, a domain has a set of explicit exports and an implementation described by a capsule. Domain constructors are documented in the same way as package constructors.
+Domain <span class="teletype"> QuadraticForm(n, K)</span>, for a given positive integer
+n and domain
+K, explicitly exports three operations:
+<ul>
+<li>quadraticForm(A) creates a quadratic form from a matrix
+A.</li>
+<li>matrix(q) returns the matrix
+A used to create the quadratic form
+q.</li>
+<li>q.v computes the scalar
+vTAv for a given vector
+v.</li>
+</ul>
+<p>Compared with the corresponding syntax given for the definition of a package, you see that a domain constructor has three optional parts to its definition: <span class="italic"> Category Assertions</span>, <span class="italic"> Add Domain</span>, and <span class="italic"> Representation</span>.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-13.1.xhtml">Previous Section 13.1 Domains vs. Packages</a><a href="section-13.3.xhtml">Next Section 13.3 Category Assertions</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

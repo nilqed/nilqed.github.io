@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section13.13</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section13.13</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-13.12.xhtml">Previous Section 13.12 Example 1: Clifford Algebra</a><a href="section-14.0.xhtml">Next Section 14.0 Browse</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-13.13">
+<h2 class="sectiontitle" id="example-2-building-a-query-facility">13.13 Example 2: Building A Query Facility</h2>
+<span id="ugDomsinsDatabase" class="label"></span>
+<p>We now turn to an entirely different kind of application, building a query language for a database.</p>
+<p>Here is the practical problem to solve. The Browse facility of FriCAS has a database for all operations and constructors which is stored on disk and accessed by HyperDoc. For our purposes here, we regard each line of this file as having eight fields: <span class="teletype"> class, name, type, nargs, exposed, kind, origin,</span> and <span class="teletype"> condition.</span> Here is an example entry:</p>
+<div class="verbatim">
+<br />
+o`determinant`$-&gt;R`1`x`d`Matrix(R)`has(R,commutative("*"))<br />
+
+</div>
+<p>In English, the entry means:</p>
+<div class="quotation">
+The operation <span style="font-weight: bold;"> determinant</span>: $-&gt;R with <span class="italic"> 1</span> argument, is <span class="italic"> exposed</span> and is exported by <span class="italic"> domain</span> <span class="teletype"> Matrix(R)</span> if <span class="teletype"> R has commutative("*")</span>.
+</div>
+<p>Our task is to create a little query language that allows us to get useful information from this database.</p>
+<span id="subsec-13.13.1"></span>
+<div id="subsec-13.13.1" class="subsection">
+<h3 class="subsectitle" id="a-little-query-language">13.13.1 A Little Query Language</h3>
+<span id="ugDomainsQueryLanguage" class="label"></span>
+<p>First we design a simple language for accessing information from the database. We have the following simple model in mind for its design. Think of the database as a box of index cards. There is only one search operation---it takes the name of a field and a predicate <span class="index">predicate</span><span id="chapter-13-16"></span> (a boolean-valued function) defined on the fields of the index cards. When applied, the search operation goes through the entire box selecting only those index cards for which the predicate is <span class="teletype"> true</span>. The result of a search is a new box of index cards. This process can be repeated again and again.</p>
+<p>The predicates all have a particularly simple form: <span class="italic"> symbol</span> <span class="teletype"> =</span> <span class="italic"> pattern</span>, where <span class="italic"> symbol</span> designates one of the fields, and <span class="italic"> pattern</span> is a <span class="italic">search string</span>---a string that may contain a <span class="italic"><span class="teletype"> *</span></span> as a wildcard. Wildcards match any substring, including the empty string. Thus the pattern <span class="italic"><span class="teletype"> "*ma*t</span></span> matches <span class="italic"><span class="teletype"> "mat"</span>,</span><span class="teletype"> doormat</span>'' and <span class="italic"><span class="teletype"> smart</span></span>.</p>
+<p>To illustrate how queries are given, we give you a sneak preview of the facility we are about to create.</p>
+<p>Extract the database of all FriCAS operations.</p>
+<div id="spadComm13-8">
+<div id="mathAns13-8">
+
+</div>
+</div>
+<p>How many exposed three-argument <span style="font-weight: bold;"> map</span> operations involving streams?</p>
+<div id="spadComm13-9">
+<div id="mathAns13-9">
+
+</div>
+</div>
+<p>As usual, the arguments of <span style="font-weight: bold;"> elt</span> (<span class="teletype"> .</span>) associate to the left. The first <span style="font-weight: bold;"> elt</span> produces the set of all operations with name <span class="teletype"> map</span>. The second <span style="font-weight: bold;"> elt</span> produces the set of all map operations with three arguments. The third <span style="font-weight: bold;"> elt</span> produces the set of all three-argument map operations having a type mentioning <span class="teletype"> Stream</span>.</p>
+<p>Another thing we'd like to do is to extract one field from each of the index cards in the box and look at the result. Here is an example of that kind of request.</p>
+<p>What constructors explicitly export a <span style="font-weight: bold;"> determinant</span> operation?</p>
+<div id="spadComm13-10">
+<div id="mathAns13-10">
+
+</div>
+</div>
+<p>The first <span style="font-weight: bold;"> elt</span> produces the set of all index cards with name <span class="teletype"> determinant</span>. The second <span style="font-weight: bold;"> elt</span> extracts the <span class="teletype"> origin</span> component from each index card. Each origin component is the name of a constructor which directly exports the operation represented by the index card. Extracting a component from each index card produces what we call a <span class="italic"> datalist</span>. The third <span style="font-weight: bold;"> elt</span>, <span class="teletype"> sort</span>, causes the datalist of origins to be sorted in alphabetic order. The fourth, <span class="teletype"> unique</span>, causes duplicates to be removed.</p>
+<p>Before giving you a more extensive demo of this facility, we now build the necessary domains and packages to implement it. We will introduce a few of our minor conveniences.</p>
+</div>
+<span id="subsec-13.13.2"></span>
+<div id="subsec-13.13.2" class="subsection">
+<h3 class="subsectitle" id="the-database-constructor">13.13.2 The Database Constructor</h3>
+<span id="ugDomainsDatabaseConstructor" class="label"></span>
+We work from the top down. First, we define a database, our box of index cards, as an abstract datatype. For sake of illustration and generality, we assume that an index card is some type
+S, and that a database is a box of objects of type
+S. Here is the FriCAS program defining the <span class="teletype"> Database</span> domain.
+<div class="verbatim">
+<br />
+PI ==&gt; PositiveInteger<br />
+Database(S): Exports == Implementation where<br />
+  S: Object with <br />
+    elt: ( $, Symbol) -&gt; String<br />
+    display:  $ -&gt; Void<br />
+    fullDisplay:  $ -&gt; Void<br />
+<br />
+  Exports == with<br />
+    elt: ( $,QueryEquation) -&gt;  $                   Select by an equation<br />
+    elt: ( $, Symbol) -&gt; DataList String            Select by a field name<br />
+    "+": ( $, $) -&gt;  $                              Combine two databases<br />
+    "-": ( $, $) -&gt;  $                              Subtract one from another<br />
+    display:  $ -&gt; Void                             A brief database display<br />
+    fullDisplay:  $ -&gt; Void                         A full database display<br />
+    fullDisplay: ( $,PI,PI) -&gt; Void                 A selective display<br />
+    coerce:  $ -&gt; OutputForm                        Display a database<br />
+  Implementation == add<br />
+      ...<br />
+
+</div>
+The domain constructor takes a parameter
+S, which stands for the class of index cards. We describe an index card later. Here think of an index card as a string which has the eight fields mentioned above.
+First we tell FriCAS what operations we are going to require from index cards. We need an <span style="font-weight: bold;"> elt</span> to extract the contents of a field (such as <span class="teletype"> name</span> and <span class="teletype"> type</span>) as a string. For example,
+c.name returns a string that is the content of the
+name field on the index card
+c. We need to display an index card in two ways: <span style="font-weight: bold;"> display</span> shows only the name and type of an operation; <span style="font-weight: bold;"> fullDisplay</span> displays all fields. The display operations return no useful information and thus have return type <span class="teletype"> Void</span>.
+Next we tell FriCAS what operations the user can apply to the database. This part defines our little query language. The most important operation is <span class="teletype"> db . field = pattern</span> which returns a new database, consisting of all index cards of <span class="teletype"> db</span> such that the
+field part of the index card is matched by the string pattern called
+pattern. The expression <span class="teletype"> field = pattern</span> is an object of type <span class="teletype"> QueryEquation</span> (defined in the next section).
+<p>Another <span style="font-weight: bold;"> elt</span> is needed to produce a <span class="teletype"> DataList</span> object. Operation <span class="teletype"> +</span> is to merge two databases together; <span class="teletype"> -</span> is used to subtract away common entries in a second database from an initial database. There are three display functions. The <span style="font-weight: bold;"> fullDisplay</span> function has two versions: one that prints all the records, the other that prints only a fixed number of records. A <span style="font-weight: bold;"> coerce</span> to <span class="teletype"> OutputForm</span> creates a display object.</p>
+<p>The <span class="teletype"> Implementation</span> part of <span class="teletype"> Database</span> is straightforward.</p>
+<div class="verbatim">
+<br />
+  Implementation == add<br />
+    s: Symbol<br />
+    Rep := List S<br />
+    elt(db,equation) == ...<br />
+    elt(db,key) == [x.key for x in db]::DataList(String)<br />
+    display(db) ==  for x in db repeat display x<br />
+    fullDisplay(db) == for x in db repeat fullDisplay x<br />
+    fullDisplay(db, n, m) == for x in db for i in 1..m<br />
+      repeat<br />
+        if i &gt;= n then fullDisplay x<br />
+    x+y == removeDuplicates! merge(x,y)<br />
+    x-y == mergeDifference(copy(x::Rep),<br />
+                           y::Rep)$MergeThing(S)<br />
+    coerce(db): OutputForm == (#db):: OutputForm<br />
+
+</div>
+The database is represented by a list of elements of
+S (index cards). We leave the definition of the first <span style="font-weight: bold;"> elt</span> operation (on line 4) until the next section. The second <span style="font-weight: bold;"> elt</span> collects all the strings with field name <span class="italic"> key</span> into a list. The <span style="font-weight: bold;"> display</span> function and first <span style="font-weight: bold;"> fullDisplay</span> function simply call the corresponding functions from
+S. The second <span style="font-weight: bold;"> fullDisplay</span> function provides an efficient way of printing out a portion of a large list. The <span class="teletype"> +</span> is defined by using the existing <span class="spadfunFrom" style="font-weight: bold;">merge</span><span class="index">merge</span><span id="chapter-13-17"></span><span class="index">List</span><span id="chapter-13-18"></span> operation defined on lists, then removing duplicates from the result. The <span class="teletype"> -</span> operation requires writing a corresponding subtraction operation. A package <span class="teletype"> MergeThing</span> (not shown) provides this.
+<p>The <span style="font-weight: bold;"> coerce</span> function converts the database to an <span class="teletype"> OutputForm</span> by computing the number of index cards. This is a good example of the independence of the representation of an FriCAS object from how it presents itself to the user. We usually do not want to look at a database---but do care how many <span class="italic">hits</span> we get for a given query. So we define the output representation of a database to be simply the number of index cards our query finds.</p>
+</div>
+<span id="subsec-13.13.3"></span>
+<div id="subsec-13.13.3" class="subsection">
+<h3 class="subsectitle" id="query-equations">13.13.3 Query Equations</h3>
+<span id="ugDomainsQueryEquations" class="label"></span>
+<p>The predicate for our search is given by an object of type <span class="teletype"> QueryEquation</span>. FriCAS does not have such an object yet so we have to invent it.</p>
+<div class="verbatim">
+<br />
+QueryEquation(): Exports == Implementation where<br />
+  Exports == with<br />
+    equation: (Symbol, String) -&gt;  $<br />
+    variable:  $ -&gt; Symbol<br />
+    value:     $ -&gt; String<br />
+<br />
+  Implementation == add<br />
+    Rep := Record(var:Symbol, val:String)<br />
+    equation(x, s) == [x, s]<br />
+    variable q == q.var<br />
+    value    q == q.val<br />
+
+</div>
+FriCAS converts an input expression of the form
+a=b to
+equation(a,b). Our equations always have a symbol on the left and a string on the right. The <span class="teletype"> Exports</span> part thus specifies an operation <span style="font-weight: bold;"> equation</span> to create a query equation, and <span style="font-weight: bold;"> variable</span> and <span style="font-weight: bold;"> value</span> to select the left- and right-hand sides. The <span class="teletype"> Implementation</span> part uses <span class="teletype"> Record</span> for a space-efficient representation of an equation.
+<p>Here is the missing definition for the <span style="font-weight: bold;"> elt</span> function of <span class="teletype"> Database</span> in the last section:</p>
+<div class="verbatim">
+<br />
+    elt(db,eq) ==<br />
+      field  := variable eq<br />
+      value := value eq<br />
+      [x for x in db | matches?(value,x.field)]<br />
+
+</div>
+Recall that a database is represented by a list. Line 4 simply runs over that list collecting all elements such that the pattern (that is,
+value) matches the selected field of the element.
+</div>
+<span id="subsec-13.13.4"></span>
+<div id="subsec-13.13.4" class="subsection">
+<h3 class="subsectitle" id="datalists">13.13.4 DataLists</h3>
+<span id="ugDomainsDataLists" class="label"></span>
+<p>Type <span class="teletype"> DataList</span> is a new type invented to hold the result of selecting one field from each of the index cards in the box. It is useful to make datalists extensions of lists---lists that have special <span style="font-weight: bold;"> elt</span> operations defined on them for sorting and removing duplicates.</p>
+<div class="verbatim">
+<br />
+DataList(S:OrderedSet) : Exports == Implementation where<br />
+  Exports == ListAggregate(S) with<br />
+    elt: ($,"unique") -&gt; $<br />
+    elt: ($,"sort") -&gt; $<br />
+    elt: ($,"count") -&gt; NonNegativeInteger<br />
+    coerce: List S -&gt; $<br />
+<br />
+  Implementation ==  List(S) add<br />
+    Rep := List S<br />
+    elt(x,"unique") == removeDuplicates(x)<br />
+    elt(x,"sort") == sort(x)<br />
+    elt(x,"count") == #x<br />
+    coerce(x:List S) == x :: $<br />
+
+</div>
+<p>The <span class="teletype"> Exports</span> part asserts that datalists belong to the category <span class="teletype"> ListAggregate</span>. Therefore, you can use all the usual list operations on datalists, such as <span class="spadfunFrom" style="font-weight: bold;">first</span><span class="index">first</span><span id="chapter-13-19"></span><span class="index">List</span><span id="chapter-13-20"></span>, <span class="spadfunFrom" style="font-weight: bold;">rest</span><span class="index">rest</span><span id="chapter-13-21"></span><span class="index">List</span><span id="chapter-13-22"></span>, and <span class="spadfunFrom" style="font-weight: bold;">concat</span><span class="index">concat</span><span id="chapter-13-23"></span><span class="index">List</span><span id="chapter-13-24"></span>. In addition, datalists have four explicit operations. Besides the three <span style="font-weight: bold;"> elt</span> operations, there is a <span style="font-weight: bold;"> coerce</span> operation that creates datalists from lists.</p>
+<p>The <span class="teletype"> Implementation</span> part needs only to define four functions. All the rest are obtained from <span class="teletype"> List(S)</span>.</p>
+</div>
+<span id="subsec-13.13.5"></span>
+<div id="subsec-13.13.5" class="subsection">
+<h3 class="subsectitle" id="index-cards">13.13.5 Index Cards</h3>
+<span id="ugDomainsDatabase" class="label"></span>
+<p>An index card comes from a file as one long string. We define functions that extract substrings from the long string. Each field has a name that is passed as a second argument to <span style="font-weight: bold;"> elt</span>.</p>
+<div class="verbatim">
+<br />
+IndexCard() == Implementation where<br />
+  Exports == with<br />
+    elt: ($, Symbol) -&gt; String<br />
+    display: $ -&gt; Void<br />
+    fullDisplay: $ -&gt; Void<br />
+    coerce: String -&gt; $<br />
+  Implementation == String add ...<br />
+
+</div>
+<p>We leave the <span class="teletype"> Implementation</span> part to the reader. All operations involve straightforward string manipulations.</p>
+</div>
+<span id="subsec-13.13.6"></span>
+<div id="subsec-13.13.6" class="subsection">
+<h3 class="subsectitle" id="creating-a-database">13.13.6 Creating a Database</h3>
+<span id="ugDomainsCreating" class="label"></span>
+We must not forget one important operation: one that builds the database in the first place! We'll name it <span style="font-weight: bold;"> getDatabase</span> and put it in a package. This function is implemented by calling the Common Lisp function
+getBrowseDatabase(s) to get appropriate information from Browse. This operation takes a string indicating which lines you want from the database: <span class="italic"><span class="teletype"> o</span></span> gives you all operation lines, and <span class="italic"><span class="teletype"> k</span></span>, all constructor lines. Similarly, <span class="italic"><span class="teletype"> c</span></span>, <span class="italic"><span class="teletype"> d</span></span>, and <span class="italic"><span class="teletype"> p</span></span> give you all category, domain and package lines respectively.
+<div class="verbatim">
+<br />
+OperationsQuery(): Exports == Implementation where<br />
+  Exports == with<br />
+    getDatabase: String -&gt; Database(IndexCard)<br />
+<br />
+  Implementation == add<br />
+    getDatabase(s) == getBrowseDatabase(s)$Lisp<br />
+
+</div>
+<p>We do not bother creating a special name for databases of index cards. <span class="teletype"> Database (IndexCard)</span> will do. Notice that we used the package <span class="teletype"> OperationsQuery</span> to create, in effect, a new kind of domain: <span class="teletype"> Database(IndexCard)</span>.</p>
+</div>
+<span id="subsec-13.13.7"></span>
+<div id="subsec-13.13.7" class="subsection">
+<h3 class="subsectitle" id="putting-it-all-together">13.13.7 Putting It All Together</h3>
+<span id="ugDomainsPutting" class="label"></span>
+<p>To create the database facility, you put all these constructors into one file.<span class="footnote">You could use separate files, but we are putting them all together because, organizationally, that is the logical thing to do.</span> At the top of the file put <span class="teletype"> )abbrev</span> commands, giving the constructor abbreviations you created.</p>
+<div class="verbatim">
+<br />
+)abbrev domain  ICARD   IndexCard<br />
+)abbrev domain  QEQUAT  QueryEquation<br />
+)abbrev domain  MTHING  MergeThing<br />
+)abbrev domain  DLIST   DataList<br />
+)abbrev domain  DBASE   Database<br />
+)abbrev package OPQUERY OperationsQuery<br />
+
+</div>
+<p>With all this in <span style="font-weight: bold;"> alql.spad</span>, for example, compile it using <span class="index">compile</span><span id="chapter-13-25"></span></p>
+<div class="verbatim">
+<br />
+)compile alql<br />
+
+</div>
+<p>and then load each of the constructors:</p>
+<div class="verbatim">
+<br />
+)load ICARD QEQUAT MTHING DLIST DBASE OPQUERY<br />
+
+</div>
+<p><span class="index">load</span><span id="chapter-13-26"></span> You are ready to try some sample queries.</p>
+</div>
+<span id="subsec-13.13.8"></span>
+<div id="subsec-13.13.8" class="subsection">
+<h3 class="subsectitle" id="example-queries">13.13.8 Example Queries</h3>
+<span id="ugDomainsExamples" class="label"></span>
+<p>Our first set of queries give some statistics on constructors in the current FriCAS system.</p>
+<p>How many constructors does FriCAS have?</p>
+<div id="spadComm13-11">
+<div id="mathAns13-11">
+
+</div>
+</div>
+<p>Break this down into the number of categories, domains, and packages.</p>
+<div id="spadComm13-12">
+<div id="mathAns13-12">
+
+</div>
+</div>
+<p>What are all the domain constructors that take no parameters?</p>
+<div id="spadComm13-13">
+<div id="mathAns13-13">
+
+</div>
+</div>
+<p>How many constructors have <span class="italic">Matrix</span> in their name?</p>
+<div id="spadComm13-14">
+<div id="mathAns13-14">
+
+</div>
+</div>
+<p>What are the names of those that are domains?</p>
+<div id="spadComm13-15">
+<div id="mathAns13-15">
+
+</div>
+</div>
+<p>How many operations are there in the library?</p>
+<div id="spadComm13-16">
+<div id="mathAns13-16">
+
+</div>
+</div>
+<p>Break this down into categories, domains, and packages.</p>
+<div id="spadComm13-17">
+<div id="mathAns13-17">
+
+</div>
+</div>
+<p>The query language is helpful in getting information about a particular operation you might like to apply. While this information can be obtained with Browse, the use of the query database gives you data that you can manipulate in the workspace.</p>
+<p>How many operations have <span class="italic">eigen</span> in the name?</p>
+<div id="spadComm13-18">
+<div id="mathAns13-18">
+
+</div>
+</div>
+<p>What are their names?</p>
+<div id="spadComm13-19">
+<div id="mathAns13-19">
+
+</div>
+</div>
+<p>Where do they come from?</p>
+<div id="spadComm13-20">
+<div id="mathAns13-20">
+
+</div>
+</div>
+<p>The operations <span class="teletype"> +</span> and <span class="teletype"> -</span> are useful for constructing small databases and combining them. However, remember that the only matching you can do is string matching. Thus a pattern such as <span class="teletype"> "*Matrix*"</span> on the type field matches any type containing <span class="teletype"> Matrix</span>, <span class="teletype"> MatrixCategory</span>, <span class="teletype"> SquareMatrix</span>, and so on.</p>
+<p>How many operations mention <span class="italic">Matrix</span> in their type?</p>
+<div id="spadComm13-21">
+<div id="mathAns13-21">
+
+</div>
+</div>
+<p>How many operations come from constructors with <span class="italic">Matrix</span> in their name?</p>
+<div id="spadComm13-22">
+<div id="mathAns13-22">
+
+</div>
+</div>
+How many operations are in
+fm but not in
+tm?
+<div id="spadComm13-23">
+<div id="mathAns13-23">
+
+</div>
+</div>
+<p>Display the operations that both mention <span class="italic">Matrix</span> in their type and come from a constructor having <span class="italic">Matrix</span> in their name.</p>
+<div id="spadComm13-24">
+<div id="mathAns13-24">
+
+</div>
+</div>
+<p>How many operations involve matrices?</p>
+<div id="spadComm13-25">
+<div id="mathAns13-25">
+
+</div>
+</div>
+<p>Display 4 of them.</p>
+<div id="spadComm13-26">
+<div id="mathAns13-26">
+
+</div>
+</div>
+<p>How many distinct names of operations involving matrices are there?</p>
+<div id="spadComm13-27">
+<div id="mathAns13-27">
+
+</div>
+</div>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-13.12.xhtml">Previous Section 13.12 Example 1: Clifford Algebra</a><a href="section-14.0.xhtml">Next Section 14.0 Browse</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>
