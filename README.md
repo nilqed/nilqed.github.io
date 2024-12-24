@@ -1,3 +1,11 @@
+nilqed.github.io
+================
+
+Using ...
+
+Pelican is a static site generator that requires no database or server-side logic. 
+(supports Markdown and reST syntax. Powered by Python.) 
+
 https://getpelican.com/
 
 https://docs.getpelican.com/en/latest/index.html
@@ -8,6 +16,13 @@ https://pelicanthemes.com/
 
 https://github.com/getpelican/pelican
 
+`make html`
+
+
+`make serve`
+
 `pelican -o .`
+
+`push`
 
 
