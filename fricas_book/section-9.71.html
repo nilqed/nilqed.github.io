@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.71</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.71</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.70.xhtml">Previous Section 9.70 SegmentBinding</a><a href="section-9.72.xhtml">Next Section 9.72 SingleInteger</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.71">
+<h2 class="sectiontitle" id="set">9.71 Set</h2>
+<span id="SetXmpPage" class="label"></span>
+<p>The <span class="teletype">Set</span> domain allows one to represent explicit finite sets of values. These are similar to lists, but duplicate elements are not allowed.</p>
+<p>Sets can be created by giving a fixed set of values ...</p>
+<div id="spadComm9-17" class="spadComm">
+<span id="commSav9-17" class="commSav">s := set [x^2-1, y^2-1, z^2-1] </span>
+<div id="mathAns9-17">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{x2-1,y2-1,z2-1}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Polynomial Integer
+</div>
+<p>or by using a collect form, just as for lists. In either case, the set is formed from a finite collection of values.</p>
+<div id="spadComm9-18" class="spadComm">
+<span id="commSav9-18" class="commSav">t := set [x^i - i+1 for i in 2..10 | prime? i] </span>
+<div id="mathAns9-18">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{x2-1,x3-2,x5-4,x7-6}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Polynomial Integer
+</div>
+<p>The basic operations on sets are <span class="spadfunFrom">intersect</span><span class="index">intersect</span><span id="chapter-9-12"></span><span class="index">Set</span><span id="chapter-9-13"></span>, <span class="spadfunFrom">union</span><span class="index">union</span><span id="chapter-9-14"></span><span class="index">Set</span><span id="chapter-9-15"></span>, <span class="spadfunFrom">difference</span><span class="index">difference</span><span id="chapter-9-16"></span><span class="index">Set</span><span id="chapter-9-17"></span>, and <span class="spadfunFrom">symmetricDifference</span><span class="index">symmetricDifference</span><span id="chapter-9-18"></span><span class="index">Set</span><span id="chapter-9-19"></span>.</p>
+<div id="spadComm9-19" class="spadComm">
+<span id="commSav9-19" class="commSav">i := intersect(s,t)</span>
+<div id="mathAns9-19">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{x2-1}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Polynomial Integer
+</div>
+<div id="spadComm9-20" class="spadComm">
+<span id="commSav9-20" class="commSav">u := union(s,t)</span>
+<div id="mathAns9-20">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{x2-1,x3-2,x5-4,x7-6,y2-1,z2-1}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Polynomial Integer
+</div>
+<p>The set <span class="teletype">difference(s,t)</span> contains those members of <span class="teletype">s</span> which are not in <span class="teletype">t</span>.</p>
+<div id="spadComm9-21" class="spadComm">
+<span id="commSav9-21" class="commSav">difference(s,t)</span>
+<div id="mathAns9-21">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{y2-1,z2-1}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Polynomial Integer
+</div>
+<p>The set <span class="teletype">symmetricDifference(s,t)</span> contains those elements which are in <span class="teletype">s</span> or <span class="teletype">t</span> but not in both.</p>
+<div id="spadComm9-22" class="spadComm">
+<span id="commSav9-22" class="commSav">symmetricDifference(s,t)</span>
+<div id="mathAns9-22">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{x3-2,x5-4,x7-6,y2-1,z2-1}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set Polynomial Integer
+</div>
+<p>Set membership is tested using the <span class="spadfunFrom">member?</span><span class="index">member?</span><span id="chapter-9-20"></span><span class="index">Set</span><span id="chapter-9-21"></span> operation.</p>
+<div id="spadComm9-23" class="spadComm">
+<span id="commSav9-23" class="commSav">member?(y, s)</span>
+<div id="mathAns9-23">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-24" class="spadComm">
+<span id="commSav9-24" class="commSav">member?((y+1)*(y-1), s)</span>
+<div id="mathAns9-24">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>The <span class="spadfunFrom">subset?</span><span class="index">subset?</span><span id="chapter-9-22"></span><span class="index">Set</span><span id="chapter-9-23"></span> function determines whether one set is a subset of another.</p>
+<div id="spadComm9-25" class="spadComm">
+<span id="commSav9-25" class="commSav">subset?(i, s)</span>
+<div id="mathAns9-25">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-26" class="spadComm">
+<span id="commSav9-26" class="commSav">subset?(u, s)</span>
+<div id="mathAns9-26">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>When the base type is finite, the absolute complement of a set is defined. This finds the set of all multiplicative generators of <span class="teletype">PrimeField 11</span>---the integers mod <span class="teletype">11.</span></p>
+<div id="spadComm9-27" class="spadComm">
+<span id="commSav9-27" class="commSav">gs := set [g for i in 1..11 | primitive?(g := i::PF 11)] </span>
+<div id="mathAns9-27">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{2,6,7,8}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PrimeField 11
+</div>
+<p>The following values are not generators.</p>
+<div id="spadComm9-28" class="spadComm">
+<span id="commSav9-28" class="commSav">complement gs </span>
+<div id="mathAns9-28">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,3,4,5,9,10,0}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PrimeField 11
+</div>
+<p>Often the members of a set are computed individually; in addition, values can be inserted or removed from a set over the course of a computation.</p>
+<p>There are two ways to do this:</p>
+<div id="spadComm9-29" class="spadComm">
+<span id="commSav9-29" class="commSav">a := set [i^2 for i in 1..5] </span>
+<div id="mathAns9-29">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,25}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<p>One is to view a set as a data structure and to apply updating operations.</p>
+<div id="spadComm9-30" class="spadComm">
+<span id="commSav9-30" class="commSav">insert!(32, a) </span>
+<div id="mathAns9-30">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,25,32}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<div id="spadComm9-31" class="spadComm">
+<span id="commSav9-31" class="commSav">remove!(25, a) </span>
+<div id="mathAns9-31">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,32}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<div id="spadComm9-32" class="spadComm">
+<span id="commSav9-32" class="commSav">a </span>
+<div id="mathAns9-32">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,32}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<p>The other way is to view a set as a mathematical entity and to create new sets from old.</p>
+<div id="spadComm9-33" class="spadComm">
+<span id="commSav9-33" class="commSav">b := b0 := set [i^2 for i in 1..5] </span>
+<div id="mathAns9-33">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,25}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<div id="spadComm9-34" class="spadComm">
+<span id="commSav9-34" class="commSav">b := union(b, {32})</span>
+<div id="mathAns9-34">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,25,32}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<div id="spadComm9-35" class="spadComm">
+<span id="commSav9-35" class="commSav">b := difference(b, {25})</span>
+<div id="mathAns9-35">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,32}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<div id="spadComm9-36" class="spadComm">
+<span id="commSav9-36" class="commSav">b0 </span>
+<div id="mathAns9-36">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>{1,4,9,16,25}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Set PositiveInteger
+</div>
+<p>For more information about lists, see <a href="section-9.1.xhtml#AssociationListXmpPage" class="ref">ListXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.70.xhtml">Previous Section 9.70 SegmentBinding</a><a href="section-9.72.xhtml">Next Section 9.72 SingleInteger</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

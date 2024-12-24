@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.7</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.7</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.6.xhtml">Previous Section 9.6 CardinalNumber</a><a href="section-9.8.xhtml">Next Section 9.8 Character</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.7">
+<h2 class="sectiontitle" id="cartesiantensor">9.7 CartesianTensor</h2>
+<span id="CartesianTensorXmpPage" class="label"></span>
+<p><span class="teletype">CartesianTensor(i0,dim,R)</span> provides Cartesian tensors with components belonging to a commutative ring <span class="teletype">R</span>. Tensors can be described as a generalization of vectors and matrices. This gives a concise <span class="italic">tensor algebra</span> for multilinear objects supported by the <span class="teletype">CartesianTensor</span> domain. You can form the inner or outer product of any two tensors and you can add or subtract tensors with the same number of components. Additionally, various forms of traces and transpositions are useful.</p>
+<p>The <span class="teletype">CartesianTensor</span> constructor allows you to specify the minimum index for subscripting. In what follows we discuss in detail how to manipulate tensors.</p>
+<p>Here we construct the domain of Cartesian tensors of dimension 2 over the integers, with indices starting at 1.</p>
+<div id="spadComm9-77" class="spadComm">
+<span id="commSav9-77" class="commSav">CT := CARTEN(i0 := 1, 2, Integer)</span>
+<div id="mathAns9-77">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>CartesianTensor(1,2,Integer)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<span id="subsec-7.1"></span>
+<div id="subsec-7.1" class="subsection">
+<h3 class="subsectitle" id="forming-tensors">7.1 Forming tensors</h3>
+<p>Scalars can be converted to tensors of rank zero.</p>
+<div id="spadComm9-78" class="spadComm">
+<span id="commSav9-78" class="commSav">t0: CT := 8</span>
+<div id="mathAns9-78">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-79" class="spadComm">
+<span id="commSav9-79" class="commSav">rank t0</span>
+<div id="mathAns9-79">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>Vectors (mathematical direct products, rather than one dimensional array structures) can be converted to tensors of rank one.</p>
+<div id="spadComm9-80" class="spadComm">
+<span id="commSav9-80" class="commSav">v: DirectProduct(2, Integer) := directProduct [3,4]</span>
+<div id="mathAns9-80">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DirectProduct(2,Integer)
+</div>
+<div id="spadComm9-81" class="spadComm">
+<span id="commSav9-81" class="commSav">Tv: CT := v</span>
+<div id="mathAns9-81">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>Matrices can be converted to tensors of rank two.</p>
+<div id="spadComm9-82" class="spadComm">
+<span id="commSav9-82" class="commSav">m: SquareMatrix(2, Integer) := matrix [ [1,2],[4,5] ]</span>
+<div id="mathAns9-82">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1245]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<div id="spadComm9-83" class="spadComm">
+<span id="commSav9-83" class="commSav">Tm: CT := m</span>
+<div id="mathAns9-83">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1245]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-84" class="spadComm">
+<span id="commSav9-84" class="commSav">n: SquareMatrix(2, Integer) := matrix [ [2,3],[0,1] ]</span>
+<div id="mathAns9-84">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2301]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<div id="spadComm9-85" class="spadComm">
+<span id="commSav9-85" class="commSav">Tn: CT := n</span>
+<div id="mathAns9-85">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2301]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>In general, a tensor of rank <span class="teletype">k</span> can be formed by making a list of rank <span class="teletype">k-1</span> tensors or, alternatively, a <span class="teletype">k</span>-deep nested list of lists.</p>
+<div id="spadComm9-86" class="spadComm">
+<span id="commSav9-86" class="commSav">t1: CT := [2, 3]</span>
+<div id="mathAns9-86">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-87" class="spadComm">
+<span id="commSav9-87" class="commSav">rank t1</span>
+<div id="mathAns9-87">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-88" class="spadComm">
+<span id="commSav9-88" class="commSav">t2: CT := [t1, t1]</span>
+<div id="mathAns9-88">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2323]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-89" class="spadComm">
+<span id="commSav9-89" class="commSav">t3: CT := [t2, t2]</span>
+<div id="mathAns9-89">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[2323],[2323]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-90" class="spadComm">
+<span id="commSav9-90" class="commSav">tt: CT := [t3, t3]; tt := [tt, tt]</span>
+<div id="mathAns9-90">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[[2323][2323][2323][2323]],[[2323][2323][2323][2323]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-91" class="spadComm">
+<span id="commSav9-91" class="commSav">rank tt</span>
+<div id="mathAns9-91">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+<span id="subsec-7.2"></span>
+<div id="subsec-7.2" class="subsection">
+<h3 class="subsectitle" id="multiplication">7.2 Multiplication</h3>
+<p>Given two tensors of rank <span class="teletype">k1</span> and <span class="teletype">k2</span>, the outer <span class="spadfunFrom">product</span><span class="index">product</span><span id="chapter-9-29"></span><span class="index">CartesianTensor</span><span id="chapter-9-30"></span> forms a new tensor of rank <span class="teletype">k1+k2</span>. Here</p>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>Tmn(i,j,k,l)=Tm(i,j)Tn(k,l)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="spadComm9-92" class="spadComm">
+<span id="commSav9-92" class="commSav">Tmn := product(Tm, Tn)</span>
+<div id="mathAns9-92">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[2301][4602][81204][101505]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>The inner product (<span class="spadfunFrom">contract</span><span class="index">contract</span><span id="chapter-9-31"></span><span class="index">CartesianTensor</span><span id="chapter-9-32"></span>) forms a tensor of rank <span class="teletype">k1+k2-2</span>. This product generalizes the vector dot product and matrix-vector product by summing component products along two indices.</p>
+Here we sum along the second index of
+Tm and the first index of
+Tv. Here
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="spadComm9-93" class="spadComm">
+<span id="commSav9-93" class="commSav">Tmv := contract(Tm,2,Tv,1)</span>
+<div id="mathAns9-93">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[11,32]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>The multiplication operator <span class="spadopFrom" title="CartesianTensor">*</span> is scalar multiplication or an inner product depending on the ranks of the arguments.</p>
+<p>If either argument is rank zero it is treated as scalar multiplication. Otherwise, <span class="teletype">a*b</span> is the inner product summing the last index of <span class="teletype">a</span> with the first index of <span class="teletype">b</span>.</p>
+<div id="spadComm9-94" class="spadComm">
+<span id="commSav9-94" class="commSav">Tm*Tv</span>
+<div id="mathAns9-94">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[11,32]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>This definition is consistent with the inner product on matrices and vectors.</p>
+<div id="spadComm9-95" class="spadComm">
+<span id="commSav9-95" class="commSav">Tmv = m * v</span>
+<div id="mathAns9-95">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[11,32]=[11,32]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+</div>
+<span id="subsec-7.3"></span>
+<div id="subsec-7.3" class="subsection">
+<h3 class="subsectitle" id="selecting-components">7.3 Selecting Components</h3>
+<p>For tensors of low rank (that is, four or less), components can be selected by applying the tensor to its indices.</p>
+<div id="spadComm9-96" class="spadComm">
+<span id="commSav9-96" class="commSav">t0()</span>
+<div id="mathAns9-96">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-97" class="spadComm">
+<span id="commSav9-97" class="commSav">t1(1+1)</span>
+<div id="mathAns9-97">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-98" class="spadComm">
+<span id="commSav9-98" class="commSav">t2(2,1)</span>
+<div id="mathAns9-98">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-99" class="spadComm">
+<span id="commSav9-99" class="commSav">t3(2,1,2)</span>
+<div id="mathAns9-99">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-100" class="spadComm">
+<span id="commSav9-100" class="commSav">Tmn(2,1,2,1)</span>
+<div id="mathAns9-100">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>A general indexing mechanism is provided for a list of indices.</p>
+<div id="spadComm9-101" class="spadComm">
+<span id="commSav9-101" class="commSav">t0[]</span>
+<div id="mathAns9-101">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-102" class="spadComm">
+<span id="commSav9-102" class="commSav">t1[2]</span>
+<div id="mathAns9-102">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-103" class="spadComm">
+<span id="commSav9-103" class="commSav">t2[2,1]</span>
+<div id="mathAns9-103">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The general mechanism works for tensors of arbitrary rank, but is somewhat less efficient since the intermediate index list must be created.</p>
+<div id="spadComm9-104" class="spadComm">
+<span id="commSav9-104" class="commSav">t3[2,1,2]</span>
+<div id="mathAns9-104">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-105" class="spadComm">
+<span id="commSav9-105" class="commSav">Tmn[2,1,2,1]</span>
+<div id="mathAns9-105">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+</div>
+<span id="subsec-7.4"></span>
+<div id="subsec-7.4" class="subsection">
+<h3 class="subsectitle" id="contraction">7.4 Contraction</h3>
+<p>A <span class="italic">contraction</span> between two tensors is an inner product, as we have seen above. You can also contract a pair of indices of a single tensor. This corresponds to a <span class="italic">trace</span> in linear algebra. The expression <span class="teletype">contract(t,k1,k2)</span> forms a new tensor by summing the diagonal given by indices in position <span class="teletype">k1</span> and <span class="teletype">k2</span>.</p>
+This is the tensor given by
+<div id="spadComm9-106" class="spadComm">
+<span id="commSav9-106" class="commSav">cTmn := contract(Tmn,1,2)</span>
+<div id="mathAns9-106">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[121806]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>Since <span class="teletype">Tmn</span> is the outer product of matrix <span class="teletype">m</span> and matrix <span class="teletype">n</span>, the above is equivalent to this.</p>
+<div id="spadComm9-107" class="spadComm">
+<span id="commSav9-107" class="commSav">trace(m) * n</span>
+<div id="mathAns9-107">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[121806]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<p>In this and the next few examples, we show all possible contractions of <span class="teletype">Tmn</span> and their matrix algebra equivalents.</p>
+<div id="spadComm9-108" class="spadComm">
+<span id="commSav9-108" class="commSav">contract(Tmn,1,2) = trace(m) * n</span>
+<div id="mathAns9-108">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[121806]=[121806]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-109" class="spadComm">
+<span id="commSav9-109" class="commSav">contract(Tmn,1,3) = transpose(m) * n</span>
+<div id="mathAns9-109">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[27411]=[27411]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-110" class="spadComm">
+<span id="commSav9-110" class="commSav">contract(Tmn,1,4) = transpose(m) * transpose(n)</span>
+<div id="mathAns9-110">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[144195]=[144195]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-111" class="spadComm">
+<span id="commSav9-111" class="commSav">contract(Tmn,2,3) = m * n</span>
+<div id="mathAns9-111">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[25817]=[25817]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-112" class="spadComm">
+<span id="commSav9-112" class="commSav">contract(Tmn,2,4) = m * transpose(n)</span>
+<div id="mathAns9-112">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[82235]=[82235]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-113" class="spadComm">
+<span id="commSav9-113" class="commSav">contract(Tmn,3,4) = trace(n) * m</span>
+<div id="mathAns9-113">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[361215]=[361215]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+</div>
+<span id="subsec-7.5"></span>
+<div id="subsec-7.5" class="subsection">
+<h3 class="subsectitle" id="transpositions">7.5 Transpositions</h3>
+<p>You can exchange any desired pair of indices using the <span class="spadfunFrom">transpose</span><span class="index">transpose</span><span id="chapter-9-33"></span><span class="index">CartesianTensor</span><span id="chapter-9-34"></span> operation.</p>
+Here the indices in positions one and three are exchanged, that is,
+tTmn(i,j,k,l)=Tmn(k,j,i,l).
+<div id="spadComm9-114" class="spadComm">
+<span id="commSav9-114" class="commSav">tTmn := transpose(Tmn,1,3)</span>
+<div id="mathAns9-114">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[23812][461015][0104][0205]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>If no indices are specified, the first and last index are exchanged.</p>
+<div id="spadComm9-115" class="spadComm">
+<span id="commSav9-115" class="commSav">transpose Tmn</span>
+<div id="mathAns9-115">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[2800][41000][31214][61525]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>This is consistent with the matrix transpose.</p>
+<div id="spadComm9-116" class="spadComm">
+<span id="commSav9-116" class="commSav">transpose Tm = transpose m</span>
+<div id="mathAns9-116">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1425]=[1425]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<p>If a more complicated reordering of the indices is required, then the <span class="spadfunFrom">reindex</span><span class="index">reindex</span><span id="chapter-9-35"></span><span class="index">CartesianTensor</span><span id="chapter-9-36"></span> operation can be used. This operation allows the indices to be arbitrarily permuted.</p>
+This defines
+<div id="spadComm9-117" class="spadComm">
+<span id="commSav9-117" class="commSav">rTmn := reindex(Tmn, [1,4,2,3])</span>
+<div id="mathAns9-117">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[2040][3162][80100][124155]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+</div>
+<span id="subsec-7.6"></span>
+<div id="subsec-7.6" class="subsection">
+<h3 class="subsectitle" id="arithmetic">7.6 Arithmetic</h3>
+<p>Tensors of equal rank can be added or subtracted so arithmetic expressions can be used to produce new tensors.</p>
+<div id="spadComm9-118" class="spadComm">
+<span id="commSav9-118" class="commSav">tt := transpose(Tm)*Tn - Tn*transpose(Tm)</span>
+<div id="mathAns9-118">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-6-1626]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-119" class="spadComm">
+<span id="commSav9-119" class="commSav">Tv*(tt+Tn)</span>
+<div id="mathAns9-119">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-4,-11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<div id="spadComm9-120" class="spadComm">
+<span id="commSav9-120" class="commSav">reindex(product(Tn,Tn),[4,3,2,1])+3*Tn*product(Tm,Tm)</span>
+<div id="mathAns9-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[4684174212][57114228285][18245763][17306376]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+</div>
+<span id="subsec-7.7"></span>
+<div id="subsec-7.7" class="subsection">
+<h3 class="subsectitle" id="specific-tensors">7.7 Specific Tensors</h3>
+<p>Two specific tensors have properties which depend only on the dimension.</p>
+<p>The Kronecker delta satisfies</p>
+<div class="verbatim">
+<br />
+             +-<br />
+             |   1  if i  = j<br />
+delta(i,j) = |<br />
+             |   0  if i ^= j<br />
+             +-<br />
+
+</div>
+<div id="spadComm9-121" class="spadComm">
+<span id="commSav9-121" class="commSav">delta: CT := kroneckerDelta()</span>
+<div id="mathAns9-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1001]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>This can be used to reindex via contraction.</p>
+<div id="spadComm9-122" class="spadComm">
+<span id="commSav9-122" class="commSav">contract(Tmn, 2, delta, 1) = reindex(Tmn, [1,3,4,2])</span>
+<div id="mathAns9-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[2436][0012][8101215][0045]]=[[2436][0012][8101215][0045]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+<p>The Levi Civita symbol determines the sign of a permutation of indices.</p>
+<div id="spadComm9-123" class="spadComm">
+<span id="commSav9-123" class="commSav">epsilon:CT := leviCivitaSymbol()</span>
+<div id="mathAns9-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[01-10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: CartesianTensor(1,2,Integer)
+</div>
+<p>Here we have:</p>
+<div class="verbatim">
+<br />
+epsilon(i1,...,idim)<br />
+     = +1  if i1,...,idim is an even permutation of i0,...,i0+dim-1<br />
+     = -1  if i1,...,idim is an  odd permutation of i0,...,i0+dim-1<br />
+     =  0  if i1,...,idim is not   a permutation of i0,...,i0+dim-1<br />
+
+</div>
+<p>This property can be used to form determinants.</p>
+<div id="spadComm9-124" class="spadComm">
+<span id="commSav9-124" class="commSav">contract(epsilon*Tm*epsilon, 1,2) = 2 * determinant m</span>
+<div id="mathAns9-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-6=-6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation CartesianTensor(1,2,Integer)
+</div>
+</div>
+<span id="subsec-7.8"></span>
+<div id="subsec-7.8" class="subsection">
+<h3 class="subsectitle" id="properties-of-the-cartesiantensor-domain">7.8 Properties of the CartesianTensor domain</h3>
+<p><span class="teletype">GradedModule(R,E)</span> denotes <span class="italic"><span class="teletype">E</span>-graded <span class="teletype">R</span>-module</span>, that is, a collection of <span class="teletype">R</span>-modules indexed by an abelian monoid <span class="teletype">E.</span> An element <span class="teletype">g</span> of <span class="teletype">G[s]</span> for some specific <span class="teletype">s</span> in <span class="teletype">E</span> is said to be an element of <span class="teletype">G</span> with <span class="spadfunFrom">degree</span><span class="index">degree</span><span id="chapter-9-37"></span><span class="index">GradedModule</span><span id="chapter-9-38"></span> <span class="teletype">s</span>. Sums are defined in each module <span class="teletype">G[s]</span> so two elements of <span class="teletype">G</span> can be added if they have the same degree. Morphisms can be defined and composed by degree to give the mathematical category of graded modules.</p>
+<p><span class="teletype">GradedAlgebra(R,E)</span> denotes <span class="italic"><span class="teletype">E</span>-graded <span class="teletype">R</span>-algebra.</span> A graded algebra is a graded module together with a degree preserving <span class="teletype">R</span>-bilinear map, called the <span class="spadfunFrom">product</span><span class="index">product</span><span id="chapter-9-39"></span><span class="index">GradedAlgebra</span><span id="chapter-9-40"></span>.</p>
+<div class="verbatim">
+<br />
+degree(product(a,b))    = degree(a) + degree(b)<br />
+<br />
+product(r*a,b)          = product(a,r*b) = r*product(a,b)<br />
+product(a1+a2,b)        = product(a1,b) + product(a2,b)<br />
+product(a,b1+b2)        = product(a,b1) + product(a,b2)<br />
+product(a,product(b,c)) = product(product(a,b),c)<br />
+
+</div>
+<p>The domain <span class="teletype">CartesianTensor(i0, dim, R)</span> belongs to the category <span class="teletype">GradedAlgebra(R, NonNegativeInteger)</span>. The non-negative integer <span class="spadfunFrom">degree</span><span class="index">degree</span><span id="chapter-9-41"></span><span class="index">GradedAlgebra</span><span id="chapter-9-42"></span> is the tensor rank and the graded algebra <span class="spadfunFrom">product</span><span class="index">product</span><span id="chapter-9-43"></span><span class="index">GradedAlgebra</span><span id="chapter-9-44"></span> is the tensor outer product. The graded module addition captures the notion that only tensors of equal rank can be added.</p>
+<p>If <span class="teletype">V</span> is a vector space of dimension <span class="teletype">dim</span> over <span class="teletype">R</span>, then the tensor module <span class="teletype">T[k](V)</span> is defined as</p>
+<div class="verbatim">
+<br />
+T[0](V) = R<br />
+T[k](V) = T[k-1](V) * V<br />
+
+</div>
+<p>where <span class="teletype">*</span> denotes the <span class="teletype">R</span>-module tensor <span class="spadfunFrom">product</span><span class="index">product</span><span id="chapter-9-45"></span><span class="index">GradedAlgebra</span><span id="chapter-9-46"></span>. <span class="teletype">CartesianTensor(i0,dim,R)</span> is the graded algebra in which the degree <span class="teletype">k</span> module is <span class="teletype">T[k](V)</span>.</p>
+</div>
+<span id="subsec-7.9"></span>
+<div id="subsec-7.9" class="subsection">
+<h3 class="subsectitle" id="tensor-calculus">7.9 Tensor Calculus</h3>
+<p>It should be noted here that often tensors are used in the context of tensor-valued manifold maps. This leads to the notion of covariant and contravariant bases with tensor component functions transforming in specific ways under a change of coordinates on the manifold. This is no more directly supported by the <span class="teletype">CartesianTensor</span> domain than it is by the <span class="teletype">Vector</span> domain. However, it is possible to have the components implicitly represent component maps by choosing a polynomial or expression type for the components. In this case, it is up to the user to satisfy any constraints which arise on the basis of this interpretation.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.6.xhtml">Previous Section 9.6 CardinalNumber</a><a href="section-9.8.xhtml">Next Section 9.8 Character</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

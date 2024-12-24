@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section8.4</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section8.4</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.3.xhtml">Previous Section 8.3 Manipulating Symbolic Roots of a Polynomial</a><a href="section-8.5.xhtml">Next Section 8.5 Solution of Linear and Polynomial Equations</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-8.4">
+<h2 class="sectiontitle" id="computation-of-eigenvalues-and-eigenvectors">8.4 Computation of Eigenvalues and Eigenvectors</h2>
+<span id="ugProblemEigen" class="label"></span>
+<p>In this section we show you some of FriCAS's facilities for computing and <span class="index">eigenvalue</span><span id="chapter-8-66"></span> manipulating eigenvalues and eigenvectors, also called <span class="index">eigenvector</span><span id="chapter-8-67"></span> characteristic values and characteristic vectors, <span class="index">characteristic:value</span><span id="chapter-8-68"></span> respectively. <span class="index">characteristic:vector</span><span id="chapter-8-69"></span></p>
+<p>Let's first create a matrix with integer entries.</p>
+<div id="spadComm8-63" class="spadComm">
+<span id="commSav8-63" class="commSav">m1 := matrix [ [1,2,1],[2,1,-2],[1,-2,4] ] </span>
+<div id="mathAns8-63">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[12121-21-24]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<p>To get a list of the <span class="italic">rational</span> eigenvalues, use the operation <span style="font-weight: bold;"> eigenvalues</span>.</p>
+<div id="spadComm8-64" class="spadComm">
+<span id="commSav8-64" class="commSav">leig := eigenvalues(m1) </span>
+<div id="mathAns8-64">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[5,(%K|%K2-%K-5)]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Union(Fraction Polynomial Integer,SuchThat(Symbol,Polynomial Integer))
+</div>
+<p>Given an explicit eigenvalue, <span style="font-weight: bold;"> eigenvector</span> computes the eigenvectors corresponding to it.</p>
+<div id="spadComm8-65" class="spadComm">
+<span id="commSav8-65" class="commSav">eigenvector(first(leig),m1) </span>
+<div id="mathAns8-65">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[0-121]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Matrix Fraction Polynomial Fraction Integer
+</div>
+<p>The operation <span style="font-weight: bold;"> eigenvectors</span> returns a list of pairs of values and vectors. When an eigenvalue is rational, FriCAS gives you the value explicitly; otherwise, its minimal polynomial is given, (the polynomial of lowest degree with the eigenvalues as roots), together with a parametric representation of the eigenvector using the eigenvalue. This means that if you ask FriCAS to <span style="font-weight: bold;"> solve</span> the minimal polynomial, then you can substitute these roots <span class="index">polynomial:minimal</span><span id="chapter-8-70"></span> into the parametric form of the corresponding eigenvectors. <span class="index">minimal polynomial</span><span id="chapter-8-71"></span></p>
+<p>You must be aware that unless an exact eigenvalue has been computed, the eigenvector may be badly in error.</p>
+<div id="spadComm8-66" class="spadComm">
+<span id="commSav8-66" class="commSav">eigenvectors(m1) </span>
+<div id="mathAns8-66">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[eigval=5,eigmult=1,eigvec=[[0-121]]],[eigval=(%L|%L2-%L-5),eigmult=1,eigvec=[[%L21]]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Record(eigval: Union(Fraction Polynomial Integer,SuchThat(Symbol,Polynomial Integer)),eigmult: NonNegativeInteger,eigvec: List Matrix Fraction Polynomial Integer)
+</div>
+<p>Another possibility is to use the operation <span style="font-weight: bold;"> radicalEigenvectors</span> tries to compute explicitly the eigenvectors in terms of radicals. <span class="index">radical</span><span id="chapter-8-72"></span></p>
+<div id="spadComm8-67" class="spadComm">
+<span id="commSav8-67" class="commSav">radicalEigenvectors(m1) </span>
+<div id="mathAns8-67">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[radval=21+12,radmult=1,radvect=[[21+1221]]],[radval=-21+12,radmult=1,radvect=[[-21+1221]]],[radval=5,radmult=1,radvect=[[0-121]]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Record(radval: Expression Integer,radmult: Integer,radvect: List Matrix Expression Integer)
+</div>
+Alternatively, FriCAS can compute real or complex approximations to the <span class="index">approximation</span><span id="chapter-8-73"></span> eigenvectors and eigenvalues using the operations <span style="font-weight: bold;"> realEigenvectors</span> or <span style="font-weight: bold;"> complexEigenvectors</span>. They each take an additional argument
+to specify the <span class="italic">precision</span> required. <span class="index">precision</span><span id="chapter-8-74"></span> In the real case, this means that each approximation will be within
+of the actual result. In the complex case, this means that each approximation will be within
+of the actual result in each of the real and imaginary parts.
+<p>The precision can be specified as a <span class="teletype">Float</span> if the results are desired in floating-point notation, or as <span class="teletype">Fraction Integer</span> if the results are to be expressed using rational (or complex rational) numbers.</p>
+<div id="spadComm8-68" class="spadComm">
+<span id="commSav8-68" class="commSav">realEigenvectors(m1,1/1000) </span>
+<div id="mathAns8-68">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[outval=5,outmult=1,outvect=[[0-121]]],[outval=57172048,outmult=1,outvect=[[5717204821]]],[outval=-36692048,outmult=1,outvect=[[-3669204821]]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Record(outval: Fraction Integer,outmult: Integer,outvect: List Matrix Fraction Integer)
+</div>
+If an
+n by
+n matrix has
+n distinct eigenvalues (and therefore
+n eigenvectors) the operation <span style="font-weight: bold;"> eigenMatrix</span> gives you a matrix of the eigenvectors.
+<div id="spadComm8-69" class="spadComm">
+<span id="commSav8-69" class="commSav">eigenMatrix(m1) </span>
+<div id="mathAns8-69">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[21+12-21+12022-12111]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Matrix Expression Integer,...)
+</div>
+<div id="spadComm8-70" class="spadComm">
+<span id="commSav8-70" class="commSav">m2 := matrix [ [-5,-2],[18,7] ] </span>
+<div id="mathAns8-70">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-5-2187]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<div id="spadComm8-71" class="spadComm">
+<span id="commSav8-71" class="commSav">eigenMatrix(m2) </span>
+<div id="mathAns8-71">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"failed"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union("failed",...)
+</div>
+<p>If a symmetric matrix <span class="index">matrix:symmetric</span><span id="chapter-8-75"></span> has a basis of orthonormal eigenvectors, then <span class="index">basis:orthonormal</span><span id="chapter-8-76"></span> <span style="font-weight: bold;"> orthonormalBasis</span> computes a list of these vectors. <span class="index">orthonormal basis</span><span id="chapter-8-77"></span></p>
+<div id="spadComm8-72" class="spadComm">
+<span id="commSav8-72" class="commSav">m3 := matrix [ [1,2],[2,1] ] </span>
+<div id="mathAns8-72">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1221]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+<div id="spadComm8-73" class="spadComm">
+<span id="commSav8-73" class="commSav">orthonormalBasis(m3) </span>
+<div id="mathAns8-73">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[-1212],[1212]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Matrix Expression Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-8.3.xhtml">Previous Section 8.3 Manipulating Symbolic Roots of a Polynomial</a><a href="section-8.5.xhtml">Next Section 8.5 Solution of Linear and Polynomial Equations</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

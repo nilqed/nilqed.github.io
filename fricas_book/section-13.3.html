@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section13.3</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section13.3</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-13.2.xhtml">Previous Section 13.2 Definitions</a><a href="section-13.4.xhtml">Next Section 13.4 A Demo</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-13.3">
+<h2 class="sectiontitle" id="category-assertions">13.3 Category Assertions</h2>
+<span id="ugDomainsAssertions" class="label"></span>
+<p>The <span class="italic"> Category Assertions</span> part of your domain constructor definition lists those categories of which all domains created by the constructor are unconditionally members. The word <span class="italic">unconditionally</span> means that membership in a category does not depend on the values of the parameters to the domain constructor. This part thus defines the link between the domains and the category hierarchies given on the inside covers of this book. As described in <a href="section-12.8.xhtml#ugCategoriesCorrectness" class="ref">ugCategoriesCorrectness</a> it is this link that makes it possible for you to pass objects of the domains as arguments to other operations in FriCAS.</p>
+Every <span class="teletype"> QuadraticForm</span> domain is declared to be unconditionally a member of category <span class="teletype"> AbelianGroup</span>. An abelian group is a collection of elements closed under addition. Every object <span class="italic"> x</span> of an abelian group has an additive inverse <span class="italic"> y</span> such that
+x+y=0. The exports of an abelian group include
+0, <span class="teletype"> +</span>, <span class="teletype"> -</span>, and scalar multiplication by an integer. After asserting that <span class="teletype"> QuadraticForm</span> domains are abelian groups, it is possible to pass quadratic forms to algorithms that only assume arguments to have these abelian group properties.
+In <a href="section-12.11.xhtml#ugCategoriesConditionals" class="ref">ugCategoriesConditionals</a> you saw that <span class="teletype"> Fraction(R)</span>, a member of <span class="teletype"> QuotientFieldCategory(R)</span>, is a member of <span class="teletype"> OrderedSet</span> if
+R is a member of <span class="teletype"> OrderedSet</span>. Likewise, from the <span class="teletype"> Exports</span> part of the definition of <span class="teletype"> ModMonic(R, S)</span>,
+<div class="verbatim">
+<br />
+UnivariatePolynomialCategory(R) with<br />
+  if R has Finite then Finite<br />
+     ...<br />
+
+</div>
+you see that <span class="teletype"> ModMonic(R, S)</span> is a member of <span class="teletype"> Finite</span> if
+R is.
+The <span class="teletype"> Exports</span> part of a domain definition is the same kind of expression that can appear to the right of an <span class="teletype"> ==</span> in a category definition. If a domain constructor is unconditionally a member of two or more categories, a
+Join form is used. <span class="index">Join</span><span id="chapter-13-1"></span> The <span class="teletype"> Exports</span> part of the definition of <span class="teletype"> FlexibleArray(S)</span> reads, for example:
+<div class="verbatim">
+<br />
+Join(ExtensibleLinearAggregate(S), OneDimensionalArrayAggregate(S)) with...<br />
+
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-13.2.xhtml">Previous Section 13.2 Definitions</a><a href="section-13.4.xhtml">Next Section 13.4 A Demo</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

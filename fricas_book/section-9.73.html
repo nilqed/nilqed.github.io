@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.73</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.73</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.72.xhtml">Previous Section 9.72 SingleInteger</a><a href="section-9.74.xhtml">Next Section 9.74 SquareMatrix</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.73">
+<h2 class="sectiontitle" id="sparsetable">9.73 SparseTable</h2>
+<span id="SparseTableXmpPage" class="label"></span>
+<p>The <span class="teletype">SparseTable</span> domain provides a general purpose table type with default entries.</p>
+<p>Here we create a table to save strings under integer keys. The value <span class="teletype">"Try again!"</span> is returned if no other value has been stored for a key.</p>
+<div id="spadComm9-48" class="spadComm">
+<span id="commSav9-48" class="commSav">t: SparseTable(Integer, String, "Try again!") := table() </span>
+<div id="mathAns9-48">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>table()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SparseTable(Integer,String,Try again!)
+</div>
+<p>Entries can be stored in the table.</p>
+<div id="spadComm9-49" class="spadComm">
+<span id="commSav9-49" class="commSav">t.3 := "Number three" </span>
+<div id="mathAns9-49">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"Numberthree"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<div id="spadComm9-50" class="spadComm">
+<span id="commSav9-50" class="commSav">t.4 := "Number four" </span>
+<div id="mathAns9-50">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"Numberfour"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<p>These values can be retrieved as usual, but if a look up fails the default entry will be returned.</p>
+<div id="spadComm9-51" class="spadComm">
+<span id="commSav9-51" class="commSav">t.3 </span>
+<div id="mathAns9-51">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"Numberthree"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<div id="spadComm9-52" class="spadComm">
+<span id="commSav9-52" class="commSav">t.2 </span>
+<div id="mathAns9-52">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"Tryagain!"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<p>To see which values are explicitly stored, the <span class="spadfunFrom">keys</span><span class="index">keys</span><span id="chapter-9-46"></span><span class="index">SparseTable</span><span id="chapter-9-47"></span> and <span class="spadfunFrom">entries</span><span class="index">entries</span><span id="chapter-9-48"></span><span class="index">SparseTable</span><span id="chapter-9-49"></span> functions can be used.</p>
+<div id="spadComm9-53" class="spadComm">
+<span id="commSav9-53" class="commSav">keys t </span>
+<div id="mathAns9-53">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-54" class="spadComm">
+<span id="commSav9-54" class="commSav">entries t </span>
+<div id="mathAns9-54">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>["Numberfour","Numberthree"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List String
+</div>
+<p>If a specific table representation is required, the <span class="teletype">GeneralSparseTable</span> constructor should be used. The domain <span class="teletype">SparseTable(K, E, dflt)</span> is equivalent to <span class="teletype">GeneralSparseTable(K,E,Table(K,E), dflt)</span>. For more information, see <a href="section-9.18.xhtml#EqTableXmpPage" class="ref">TableXmpPage</a> and <a href="section-9.30.xhtml#GeneralSparseTableXmpPage" class="ref">GeneralSparseTableXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.72.xhtml">Previous Section 9.72 SingleInteger</a><a href="section-9.74.xhtml">Next Section 9.74 SquareMatrix</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

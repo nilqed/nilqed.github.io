@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.2</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.1.xhtml">Previous Section 6.1 Functions vs. Macros</a><a href="section-6.3.xhtml">Next Section 6.3 Introduction to Functions</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.2">
+<h2 class="sectiontitle" id="macros">6.2 Macros</h2>
+<span id="ugUserMacros" class="label"></span>
+<p>A <span class="italic">macro</span> provides general textual substitution of <span class="index">macro</span><span id="chapter-6-7"></span> an FriCAS expression for a name. You can think of a macro as being a generalized abbreviation. You can only have one macro in your workspace with a given name, no matter how many arguments it has.</p>
+<div class="boxed2">
+<div class="boxed">
+<p>The two general forms for macros are</p>
+<div class="center" style="text-align: center;">
+<p><span class="teletype">macro</span> <span class="italic">name</span> <span class="teletype">==</span> <span class="italic">body</span><br />
+<span class="teletype">macro</span> <span class="italic">name(arg1,...)</span> <span class="teletype">==</span> <span class="italic">body</span></p>
+</div>
+<p>where the body of the macro can be any FriCAS expression.<br />
+</p>
+</div>
+</div>
+<p>For example, suppose you decided that you like to use <span class="teletype">df</span> for <span class="teletype">D</span>. You define the macro <span class="teletype">df</span> like this.</p>
+<div id="spadComm6-3" class="spadComm">
+<span id="commSav6-3" class="commSav">macro df == D</span>
+<div id="mathAns6-3">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Whenever you type <span class="teletype">df</span>, the system expands it to <span class="teletype">D</span>.</p>
+<div id="spadComm6-4" class="spadComm">
+<span id="commSav6-4" class="commSav">df(x^2 + x + 1,x)</span>
+<div id="mathAns6-4">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2x+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Macros can be parameterized and so can be used for many different kinds of objects.</p>
+<div id="spadComm6-5" class="spadComm">
+<span id="commSav6-5" class="commSav">macro ff(x) == x^2 + 1</span>
+<div id="mathAns6-5">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Apply it to a number, a symbol, or an expression.</p>
+<div id="spadComm6-6" class="spadComm">
+<span id="commSav6-6" class="commSav">ff z</span>
+<div id="mathAns6-6">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>z2+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Macros can also be nested, but you get an error message if you run out of space because of an infinite nesting loop.</p>
+<div id="spadComm6-7" class="spadComm">
+<span id="commSav6-7" class="commSav">macro gg(x) == ff(2*x - 2/3)</span>
+<div id="mathAns6-7">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>This new macro is fine as it does not produce a loop.</p>
+<div id="spadComm6-8" class="spadComm">
+<span id="commSav6-8" class="commSav">gg(1/w)</span>
+<div id="mathAns6-8">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>13w2-24w+369w2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Polynomial Integer
+</div>
+<p>This, however, loops since <span class="teletype">gg</span> is defined in terms of <span class="teletype">ff</span>.</p>
+<div id="spadComm6-9" class="spadComm">
+<span id="commSav6-9" class="commSav">macro ff(x) == gg(-x)</span>
+<div id="mathAns6-9">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>The body of a macro can be a block.</p>
+<div id="spadComm6-10" class="spadComm">
+<span id="commSav6-10" class="commSav">macro next == (past := present; present := future; future := past + present)</span>
+<div id="mathAns6-10">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Before entering <span class="teletype">next</span>, we need values for <span class="teletype">present</span> and <span class="teletype">future</span>.</p>
+<div id="spadComm6-11" class="spadComm">
+<span id="commSav6-11" class="commSav">present : Integer := 0</span>
+<div id="mathAns6-11">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<div id="spadComm6-12" class="spadComm">
+<span id="commSav6-12" class="commSav">future : Integer := 1</span>
+<div id="mathAns6-12">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<p>Repeatedly evaluating <span class="teletype">next</span> produces the next Fibonacci number.</p>
+<div id="spadComm6-13" class="spadComm">
+<span id="commSav6-13" class="commSav">next</span>
+<div id="mathAns6-13">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<p>And the next one.</p>
+<div id="spadComm6-14" class="spadComm">
+<span id="commSav6-14" class="commSav">next</span>
+<div id="mathAns6-14">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<p>Here is the infinite stream of the rest of the Fibonacci numbers.</p>
+<div id="spadComm6-15" class="spadComm">
+<span id="commSav6-15" class="commSav">[next for i in 1..]</span>
+<div id="mathAns6-15">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,5,8,13,21,34,55,89,144,233,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+<p>Bundle all the above lines into a single macro.</p>
+<div class="verbatim">
+<br />
+macro fibStream ==<br />
+  present : Integer := 1<br />
+  future : Integer := 1<br />
+  [next for i in 1..] where<br />
+    macro next ==<br />
+      past := present<br />
+      present := future<br />
+      future := past + present<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Use <span class="spadfunFrom">concat</span><span class="index">concat</span><span id="chapter-6-8"></span><span class="index">Stream</span><span id="chapter-6-9"></span> to start with the first two <span class="index">Fibonacci numbers</span><span id="chapter-6-10"></span> Fibonacci numbers.</p>
+<div id="spadComm6-16" class="spadComm">
+<span id="commSav6-16" class="commSav">concat([0,1],fibStream)</span>
+<div id="mathAns6-16">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,1,2,3,5,8,13,21,34,55,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+<p>The library operation <span style="font-weight: bold;"> fibonacci</span> is an easier way to compute these numbers.</p>
+<div id="spadComm6-17" class="spadComm">
+<span id="commSav6-17" class="commSav">[fibonacci i for i in 1..]</span>
+<div id="mathAns6-17">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,1,2,3,5,8,13,21,34,55,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.1.xhtml">Previous Section 6.1 Functions vs. Macros</a><a href="section-6.3.xhtml">Next Section 6.3 Introduction to Functions</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

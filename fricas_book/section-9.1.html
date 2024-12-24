@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.1</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.14.xhtml">Previous Section 8.14 Non-Associative Algebras and Modelling Genetic Laws</a><a href="section-9.2.xhtml">Next Section 9.2 BalancedBinaryTree</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.1">
+<h2 class="sectiontitle" id="associationlist">9.1 AssociationList</h2>
+<span id="AssociationListXmpPage" class="label"></span>
+<p>The <span class="teletype">AssociationList</span> constructor provides a general structure for associative storage. This type provides association lists in which data objects can be saved according to keys of any type. For a given association list, specific types must be chosen for the keys and entries. You can think of the representation of an association list as a list of records with key and entry fields.</p>
+<p>Association lists are a form of table and so most of the operations available for <span class="teletype">Table</span> are also available for <span class="teletype">AssociationList</span>. They can also be viewed as lists and can be manipulated accordingly.</p>
+<p>This is a <span class="teletype">Record</span> type with age and gender fields.</p>
+<div id="spadComm9-1" class="spadComm">
+<span id="commSav9-1" class="commSav">Data := Record(monthsOld : Integer, gender : String)</span>
+<div id="mathAns9-1">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>Record(monthsOld:Integer,gender:String)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<p>In this expression, <span class="teletype">al</span> is declared to be an association list whose keys are strings and whose entries are the above records.</p>
+<div id="spadComm9-2" class="spadComm">
+<span id="commSav9-2" class="commSav">al : AssociationList(String,Data)</span>
+<div id="mathAns9-2">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>The <span class="spadfunFrom">table</span><span class="index">table</span><span id="chapter-9-0"></span><span class="index">AssociationList</span><span id="chapter-9-1"></span> operation is used to create an empty association list.</p>
+<div id="spadComm9-3" class="spadComm">
+<span id="commSav9-3" class="commSav">al := table()</span>
+<div id="mathAns9-3">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>table()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AssociationList(String,Record(monthsOld: Integer,gender: String))
+</div>
+<p>You can use assignment syntax to add things to the association list.</p>
+<div id="spadComm9-4" class="spadComm">
+<span id="commSav9-4" class="commSav">al."bob" := [407,"male"]$Data</span>
+<div id="mathAns9-4">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[monthsOld=407,gender="male"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(monthsOld: Integer,gender: String)
+</div>
+<div id="spadComm9-5" class="spadComm">
+<span id="commSav9-5" class="commSav">al."judith" := [366,"female"]$Data</span>
+<div id="mathAns9-5">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[monthsOld=366,gender="female"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(monthsOld: Integer,gender: String)
+</div>
+<div id="spadComm9-6" class="spadComm">
+<span id="commSav9-6" class="commSav">al."katie" := [24,"female"]$Data</span>
+<div id="mathAns9-6">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[monthsOld=24,gender="female"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(monthsOld: Integer,gender: String)
+</div>
+<p>Perhaps we should have included a species field.</p>
+<div id="spadComm9-7" class="spadComm">
+<span id="commSav9-7" class="commSav">al."smokie" := [200,"female"]$Data</span>
+<div id="mathAns9-7">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[monthsOld=200,gender="female"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(monthsOld: Integer,gender: String)
+</div>
+<p>Now look at what is in the association list. Note that the last-added (key, entry) pair is at the beginning of the list.</p>
+<div id="spadComm9-8" class="spadComm">
+<span id="commSav9-8" class="commSav">al</span>
+<div id="mathAns9-8">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>table("smokie"=[monthsOld=200,gender="female"],"katie"=[monthsOld=24,gender="female"],"judith"=[monthsOld=366,gender="female"],"bob"=[monthsOld=407,gender="male"])</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AssociationList(String,Record(monthsOld: Integer,gender: String))
+</div>
+<p>You can reset the entry for an existing key.</p>
+<div id="spadComm9-9" class="spadComm">
+<span id="commSav9-9" class="commSav">al."katie" := [23,"female"]$Data</span>
+<div id="mathAns9-9">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[monthsOld=23,gender="female"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(monthsOld: Integer,gender: String)
+</div>
+<p>Use <span class="spadfunFrom">delete</span><span class="index">delete</span><span id="chapter-9-2"></span><span class="index">AssociationList</span><span id="chapter-9-3"></span> to destructively remove an element of the association list. Use <span class="spadfunFrom">delete</span><span class="index">delete</span><span id="chapter-9-4"></span><span class="index">AssociationList</span><span id="chapter-9-5"></span> to return a copy of the association list with the element deleted. The second argument is the index of the element to delete.</p>
+<div id="spadComm9-10" class="spadComm">
+<span id="commSav9-10" class="commSav">delete!(al,1)</span>
+<div id="mathAns9-10">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>table("katie"=[monthsOld=23,gender="female"],"judith"=[monthsOld=366,gender="female"],"bob"=[monthsOld=407,gender="male"])</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AssociationList(String,Record(monthsOld: Integer,gender: String))
+</div>
+<p>For more information about tables, see <a href="section-9.18.xhtml#EqTableXmpPage" class="ref">TableXmpPage</a> . For more information about lists, see <a href="section-9.1.xhtml#AssociationListXmpPage" class="ref">ListXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.14.xhtml">Previous Section 8.14 Non-Associative Algebras and Modelling Genetic Laws</a><a href="section-9.2.xhtml">Next Section 9.2 BalancedBinaryTree</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

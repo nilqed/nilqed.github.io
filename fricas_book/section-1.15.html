@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.15</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.15</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.14.xhtml">Previous Section 1.14 Solution of Equations</a><a href="section-1.16.xhtml">Next Section 1.16 Graphics</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.15">
+<h2 class="sectiontitle" id="system-commands">1.15 System Commands</h2>
+<span id="ugIntroSysCmmands" class="label"></span>
+<p>We conclude our tour of FriCAS with a brief discussion of <span class="italic">system commands</span>. System commands are special statements that start with a closing parenthesis (<span class="teletype">)</span>). They are used to control or display your FriCAS environment, start the HyperDoc system, issue operating system commands and leave FriCAS. For example, <span class="teletype">)system</span> is used to issue commands to the operating system from FriCAS. Here is a brief description of some of these commands. For more information on specific commands, see Appendix A .</p>
+Perhaps the most important user command is the <span class="teletype">)clear all</span> command that initializes your environment. Every section and subsection in this document has an invisible <span class="teletype">)clear all</span> that is read prior to the examples given in the section. <span class="teletype">)clear all</span> gives you a fresh, empty environment with no user variables defined and the step number reset to
+1. The <span class="teletype">)clear</span> command can also be used to selectively clear values and properties of system variables.
+<p>Another useful system command is <span class="teletype">)read</span>. A preferred way to develop an application in FriCAS is to put your interactive commands into a file, say <span style="font-weight: bold;"> my.input</span> file. To get FriCAS to read this file, you use the system command <span class="teletype">)read my.input</span>. If you need to make changes to your approach or definitions, go into your favorite editor, change <span style="font-weight: bold;"> my.input</span>, then <span class="teletype">)read my.input</span> again.</p>
+<p>Other system commands include: <span class="teletype">)history</span>, to display previous input and/or output lines; <span class="teletype">)display</span>, to display properties and values of workspace variables; and <span class="teletype">)what</span>.</p>
+<p>Issue <span class="teletype">)what</span> to get a list of FriCAS objects that contain a given substring in their name.</p>
+<div id="spadComm1-192" class="spadComm">
+<span id="commSav1-192" class="commSav">)what operations integrate</span>
+<div id="mathAns1-192">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Operations whose names satisfy the above pattern(s):<br />
+<br />
+HermiteIntegrate       algintegrate           complexIntegrate       <br />
+expintegrate           extendedIntegrate      fintegrate             <br />
+infieldIntegrate       integrate              internalIntegrate      <br />
+internalIntegrate0     lazyGintegrate         lazyIntegrate          <br />
+lfintegrate            limitedIntegrate       monomialIntegrate      <br />
+nagPolygonIntegrate    palgintegrate          pmComplexintegrate     <br />
+pmintegrate            primintegrate          tanintegrate           <br />
+   <br />
+To get more information about an operation such as <br />
+limitedIntegrate , issue the command )display op limitedIntegrate<br />
+
+</div>
+<span id="subsec-1.15.1"></span>
+<div id="subsec-1.15.1" class="subsection">
+<h3 class="subsectitle" id="undo">1.15.1 Undo</h3>
+<span id="ugIntroUndo" class="label"></span>
+<p>A useful system command is <span class="teletype">)undo</span>. Sometimes while computing interactively with FriCAS, you make a mistake and enter an incorrect definition or assignment. Or perhaps you need to try one of several alternative approaches, one after another, to find the best way to approach an application. For this, you will find the <span class="italic">undo</span> facility of FriCAS helpful.</p>
+System command <span class="teletype">)undo n</span> means
+undo back to step
+n; it restores the values of user variables to those that existed immediately after input expression
+n was evaluated. Similarly, <span class="teletype">)undo -n</span> undoes changes caused by the last
+n input expressions. Once you have done an <span class="teletype">)undo</span>, you can continue on from there, or make a change and <span style="font-weight: bold;"> redo</span> all your input expressions from the point of the <span class="teletype">)undo</span> forward. The <span class="teletype">)undo</span> is completely general: it changes the environment like any user expression. Thus you can <span class="teletype">)undo</span> any previous undo.
+<p>Here is a sample dialogue between user and FriCAS.</p>
+Let me define two mutually dependent functions
+f and
+g piece-wise.
+<div id="spadComm1-193" class="spadComm">
+<span id="commSav1-193" class="commSav">f(0) == 1; g(0) == 1</span>
+<div id="mathAns1-193">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Here is the general term for
+f.
+<div id="spadComm1-194" class="spadComm">
+<span id="commSav1-194" class="commSav">f(n) == e/2*f(n-1) - x*g(n-1)</span>
+<div id="mathAns1-194">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+And here is the general term for
+g.
+<div id="spadComm1-195" class="spadComm">
+<span id="commSav1-195" class="commSav">g(n) == -x*f(n-1) + d/3*g(n-1)</span>
+<div id="mathAns1-195">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+What is value of
+f(3)?
+<div id="spadComm1-196" class="spadComm">
+<span id="commSav1-196" class="commSav">f(3)</span>
+<div id="mathAns1-196">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-x3+(e+13d)x2+(-14e2-16de-19d2)x+18e3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Fraction Integer
+</div>
+Hmm, I think I want to define
+f differently. Undo to the environment right after I defined
+f.
+<div id="spadComm1-197" class="spadComm">
+<span id="commSav1-197" class="commSav">)undo 2</span>
+<div id="mathAns1-197">
+
+</div>
+</div>
+Here is how I think I want
+f to be defined instead.
+<div id="spadComm1-198" class="spadComm">
+<span id="commSav1-198" class="commSav">f(n) == d/3*f(n-1) - x*g(n-1)</span>
+<div id="mathAns1-198">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   1 old definition(s) deleted for function or rule f <br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Redo the computation from expression
+3 forward.
+<div id="spadComm1-199" class="spadComm">
+<span id="commSav1-199" class="commSav">)undo )redo</span>
+<div id="mathAns1-199">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+g(n) == -x*f(n-1) + d/3*g(n-1)<br />
+ <br />
+                                                                   Type: Void<br />
+f(3)<br />
+ <br />
+   Compiling function g with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function g as a recurrence relation.<br />
+<br />
++++ |*1;g;1;G82322;AUX| redefined<br />
+<br />
++++ |*1;g;1;G82322| redefined<br />
+   Compiling function g with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function g as a recurrence relation.<br />
+<br />
++++ |*1;g;1;G82322;AUX| redefined<br />
+<br />
++++ |*1;g;1;G82322| redefined<br />
+   Compiling function f with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function f as a recurrence relation.<br />
+<br />
++++ |*1;f;1;G82322;AUX| redefined<br />
+<br />
++++ |*1;f;1;G82322| redefined<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-x3+dx2-13d2x+127d3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Fraction Integer
+</div>
+I want my old definition of
+f after all. Undo the undo and restore the environment to that immediately after
+(4).
+<div id="spadComm1-200" class="spadComm">
+<span id="commSav1-200" class="commSav">)undo 4</span>
+<div id="mathAns1-200">
+
+</div>
+</div>
+Check that the value of
+f(3) is restored.
+<div id="spadComm1-201" class="spadComm">
+<span id="commSav1-201" class="commSav">f(3)</span>
+<div id="mathAns1-201">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function g with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function g as a recurrence relation.<br />
+<br />
++++ |*1;g;1;G82322;AUX| redefined<br />
+<br />
++++ |*1;g;1;G82322| redefined<br />
+   Compiling function g with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function g as a recurrence relation.<br />
+<br />
++++ |*1;g;1;G82322;AUX| redefined<br />
+<br />
++++ |*1;g;1;G82322| redefined<br />
+   Compiling function f with type Integer -&gt; Polynomial Fraction <br />
+      Integer <br />
+   Compiling function f as a recurrence relation.<br />
+<br />
++++ |*1;f;1;G82322;AUX| redefined<br />
+<br />
++++ |*1;f;1;G82322| redefined<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-x3+(e+13d)x2+(-14e2-16de-19d2)x+18e3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Fraction Integer
+</div>
+<p>After you have gone off on several tangents, then backtracked to previous points in your conversation using <span class="teletype">)undo</span>, you might want to save all the <span class="italic">correct</span> input commands you issued, disregarding those undone. The system command <span class="teletype">)history )write mynew.input</span> writes a clean straight-line program onto the file <span style="font-weight: bold;"> mynew.input</span> on your disk.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.14.xhtml">Previous Section 1.14 Solution of Equations</a><a href="section-1.16.xhtml">Next Section 1.16 Graphics</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

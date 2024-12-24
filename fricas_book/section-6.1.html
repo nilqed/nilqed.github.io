@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section6.1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section6.1</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-6.0.xhtml">Previous Section 6.0 Functions, Macros and Rules</a><a href="section-6.2.xhtml">Next Section 6.2 Macros</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-6.1">
+<h2 class="sectiontitle" id="functions-vs.-macros">6.1 Functions vs. Macros</h2>
+<span id="ugUserFunMac" class="label"></span>
+<p>A function is a program to perform some <span class="index">function:vs. macro</span><span id="chapter-6-0"></span> computation. <span class="index">macro:vs. function</span><span id="chapter-6-1"></span> Most functions have names so that it is easy to refer to them. A simple example of a function is one named <span class="spadfunFrom">abs</span><span class="index">abs</span><span id="chapter-6-2"></span><span class="index">Integer</span><span id="chapter-6-3"></span> which computes the absolute value of an integer.</p>
+<p>This is a use of the <span class="italic">absolute value</span> library function for integers.</p>
+<div id="spadComm6-1" class="spadComm">
+<span id="commSav6-1" class="commSav">abs(-8)</span>
+<div id="mathAns6-1">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This is an unnamed function that does the same thing, using the <span class="italic">maps-to</span> syntax <span class="teletype">+-&gt;</span> that we discuss in section <a href="section-6.17.xhtml#ugUserAnon" class="ref">ugUserAnon</a> .</p>
+<div id="spadComm6-2" class="spadComm">
+<span id="commSav6-2" class="commSav">(x +-&gt; if x &lt; 0 then -x else x)(-8)</span>
+<div id="mathAns6-2">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Functions can be used alone or serve as the building blocks for larger programs. Usually they return a value that you might want to use in the next stage of a computation, but not always (for example, see <a href="chapter-9.13-26.xhtml#ExitXmpPage" class="ref">ExitXmpPage</a> and <a href="section-9.86.xhtml#VoidXmpPage" class="ref">VoidXmpPage</a> ). They may also read data from your keyboard, move information from one place to another, or format and display results on your screen.</p>
+<p>In FriCAS, as in mathematics, functions <span class="index">function:parameters</span><span id="chapter-6-4"></span> are usually parameterized. Each time you <span class="italic">call</span> (some people say <span class="italic">apply</span> or invoke) a function, you give <span class="index">parameters to a function</span><span id="chapter-6-5"></span> values to the parameters (variables). Such a value is called an <span class="italic">argument</span> of <span class="index">function:arguments</span><span id="chapter-6-6"></span> the function. FriCAS uses the arguments for the computation. In this way you get different results depending on what you <span class="italic">feed</span> the function.</p>
+<p>Functions can have local variables or refer to global variables in the workspace. FriCAS can often compile functions so that they execute very efficiently. Functions can be passed as arguments to other functions.</p>
+<p>Macros are textual substitutions. They are used to clarify the meaning of constants or expressions and to be templates for frequently used expressions. Macros can be parameterized but they are not objects that can be passed as arguments to functions. In effect, macros are extensions to the FriCAS expression parser.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-6.0.xhtml">Previous Section 6.0 Functions, Macros and Rules</a><a href="section-6.2.xhtml">Next Section 6.2 Macros</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

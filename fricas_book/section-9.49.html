@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.49</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.49</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.48.xhtml">Previous Section 9.48 LyndonWord</a><a href="section-9.50.xhtml">Next Section 9.50 MakeFunction</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.49">
+<h2 class="sectiontitle" id="magma">9.49 Magma</h2>
+<span id="MagmaXmpPage" class="label"></span>
+<p>Initialisations</p>
+<div id="spadComm9-102" class="spadComm">
+<span id="commSav9-102" class="commSav">x:Symbol :='x </span>
+<div id="mathAns9-102">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-103" class="spadComm">
+<span id="commSav9-103" class="commSav">y:Symbol :='y </span>
+<div id="mathAns9-103">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-104" class="spadComm">
+<span id="commSav9-104" class="commSav">z:Symbol :='z </span>
+<div id="mathAns9-104">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-105" class="spadComm">
+<span id="commSav9-105" class="commSav">word := OrderedFreeMonoid(Symbol) </span>
+<div id="mathAns9-105">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>OrderedFreeMonoidSymbol</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<div id="spadComm9-106" class="spadComm">
+<span id="commSav9-106" class="commSav">tree := Magma(Symbol) </span>
+<div id="mathAns9-106">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>MagmaSymbol</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<p>Let's make some trees</p>
+<div id="spadComm9-107" class="spadComm">
+<span id="commSav9-107" class="commSav">a:tree := x*x </span>
+<div id="mathAns9-107">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,x]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-108" class="spadComm">
+<span id="commSav9-108" class="commSav">b:tree := y*y </span>
+<div id="mathAns9-108">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[y,y]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-109" class="spadComm">
+<span id="commSav9-109" class="commSav">c:tree := a*b </span>
+<div id="mathAns9-109">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x,x],[y,y]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<p>Query the trees</p>
+<div id="spadComm9-110" class="spadComm">
+<span id="commSav9-110" class="commSav">left c </span>
+<div id="mathAns9-110">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,x]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-111" class="spadComm">
+<span id="commSav9-111" class="commSav">right c </span>
+<div id="mathAns9-111">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[y,y]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-112" class="spadComm">
+<span id="commSav9-112" class="commSav">length c </span>
+<div id="mathAns9-112">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Coerce to the monoid</p>
+<div id="spadComm9-113" class="spadComm">
+<span id="commSav9-113" class="commSav">c::word </span>
+<div id="mathAns9-113">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2y2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OrderedFreeMonoid Symbol
+</div>
+<p>Check ordering</p>
+<div id="spadComm9-114" class="spadComm">
+<span id="commSav9-114" class="commSav">a &lt; b </span>
+<div id="mathAns9-114">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-115" class="spadComm">
+<span id="commSav9-115" class="commSav">a &lt; c </span>
+<div id="mathAns9-115">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-116" class="spadComm">
+<span id="commSav9-116" class="commSav">b &lt; c </span>
+<div id="mathAns9-116">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>Navigate the tree</p>
+<div id="spadComm9-117" class="spadComm">
+<span id="commSav9-117" class="commSav">first c </span>
+<div id="mathAns9-117">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-118" class="spadComm">
+<span id="commSav9-118" class="commSav">rest c </span>
+<div id="mathAns9-118">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,[y,y]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-119" class="spadComm">
+<span id="commSav9-119" class="commSav">rest rest c </span>
+<div id="mathAns9-119">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[y,y]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<p>Check ordering</p>
+<div id="spadComm9-120" class="spadComm">
+<span id="commSav9-120" class="commSav">ax:tree := a*x </span>
+<div id="mathAns9-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x,x],x]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-121" class="spadComm">
+<span id="commSav9-121" class="commSav">xa:tree := x*a </span>
+<div id="mathAns9-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,[x,x]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Magma Symbol
+</div>
+<div id="spadComm9-122" class="spadComm">
+<span id="commSav9-122" class="commSav">xa &lt; ax </span>
+<div id="mathAns9-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-123" class="spadComm">
+<span id="commSav9-123" class="commSav">lexico(xa,ax) </span>
+<div id="mathAns9-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.48.xhtml">Previous Section 9.48 LyndonWord</a><a href="section-9.50.xhtml">Next Section 9.50 MakeFunction</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

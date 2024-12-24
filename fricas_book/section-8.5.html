@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section8.5</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section8.5</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.4.xhtml">Previous Section 8.4 Computation of Eigenvalues and Eigenvectors</a><a href="section-8.6.xhtml">Next Section 8.6 Limits</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-8.5">
+<h2 class="sectiontitle" id="solution-of-linear-and-polynomial-equations">8.5 Solution of Linear and Polynomial Equations</h2>
+<span id="ugProblemLinPolEqn" class="label"></span>
+<p>In this section we discuss the FriCAS facilities for solving systems of linear equations, finding the roots of polynomials and <span class="index">linear equation</span><span id="chapter-8-78"></span> solving systems of polynomial equations. For a discussion of the solution of differential equations, see <a href="section-8.10.xhtml#ugProblemDEQ" class="ref">ugProblemDEQ</a> .</p>
+<span id="subsec-8.5.1"></span>
+<div id="subsec-8.5.1" class="subsection">
+<h3 class="subsectitle" id="solution-of-systems-of-linear-equations">8.5.1 Solution of Systems of Linear Equations</h3>
+<span id="ugxProblemLinSys" class="label"></span>
+<p>You can use the operation <span style="font-weight: bold;"> solve</span> to solve systems of linear equations. <span class="index">equation:linear:solving</span><span id="chapter-8-79"></span></p>
+<p>The operation <span style="font-weight: bold;"> solve</span> takes two arguments, the list of equations and the list of the unknowns to be solved for. A system of linear equations need not have a unique solution.</p>
+To solve the linear system:
+x+y+z=83x-2y+z=0x+2y+2z=17 evaluate this expression.
+<div id="spadComm8-74" class="spadComm">
+<span id="commSav8-74" class="commSav">solve([x+y+z=8,3*x-2*y+z=0,x+2*y+2*z=17],[x,y,z])</span>
+<div id="mathAns8-74">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=-1,y=2,z=7]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Fraction Polynomial Integer
+</div>
+<p>Parameters are given as new variables starting with a percent sign and <span class="teletype">%</span> and the variables are expressed in terms of the parameters. If the system has no solutions then the empty list is returned.</p>
+When you solve the linear system
+x+2y+3z=22x+3y+4z=23x+4y+5z=2 with this expression you get a solution involving a parameter.
+<div id="spadComm8-75" class="spadComm">
+<span id="commSav8-75" class="commSav">solve([x+2*y+3*z=2,2*x+3*y+4*z=2,3*x+4*y+5*z=2],[x,y,z])</span>
+<div id="mathAns8-75">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=%Q-2,y=-2%Q+2,z=%Q]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Fraction Polynomial Integer
+</div>
+<p>The system can also be presented as a matrix and a vector. The matrix contains the coefficients of the linear equations and the vector contains the numbers appearing on the right-hand sides of the equations. You may input the matrix as a list of rows and the vector as a list of its elements.</p>
+To solve the system:
+x+y+z=83x-2y+z=0x+2y+2z=17 in matrix form you would evaluate this expression.
+<div id="spadComm8-76" class="spadComm">
+<span id="commSav8-76" class="commSav">solve([ [1,1,1],[3,-2,1],[1,2,2] ],[8,0,17])</span>
+<div id="mathAns8-76">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=[-1,2,7],basis=[[0,0,0]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(particular: Union(Vector Fraction Integer,"failed"), basis: List Vector Fraction Integer)
+</div>
+<p>The solutions are presented as a <span class="teletype">Record</span> with two components: the component <span class="italic">particular</span> contains a particular solution of the given system or the item <span class="teletype">"failed"</span> if there are no solutions, the component <span class="italic">basis</span> contains a list of vectors that are a basis for the space of solutions of the corresponding homogeneous system. If the system of linear equations does not have a unique solution, then the <span class="italic">basis</span> component contains non-trivial vectors.</p>
+This happens when you solve the linear system
+x+2y+3z=22x+3y+4z=23x+4y+5z=2 with this command.
+<div id="spadComm8-77" class="spadComm">
+<span id="commSav8-77" class="commSav">solve([ [1,2,3],[2,3,4],[3,4,5] ],[2,2,2])</span>
+<div id="mathAns8-77">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular=[-2,2,0],basis=[[1,-2,1]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(particular: Union(Vector Fraction Integer,"failed"), basis: List Vector Fraction Integer)
+</div>
+<p>All solutions of this system are obtained by adding the particular solution with a linear combination of the <span class="italic">basis</span> vectors.</p>
+<p>When no solution exists then <span class="teletype">"failed"</span> is returned as the <span class="italic">particular</span> component, as follows:</p>
+<div id="spadComm8-78" class="spadComm">
+<span id="commSav8-78" class="commSav">solve([ [1,2,3],[2,3,4],[3,4,5] ],[2,3,2])</span>
+<div id="mathAns8-78">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[particular="failed",basis=[[1,-2,1]]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(particular: Union(Vector Fraction Integer,"failed"), basis: List Vector Fraction Integer)
+</div>
+<p>When you want to solve a system of homogeneous equations (that is, a system where the numbers on the right-hand sides of the <span class="index">nullspace</span><span id="chapter-8-80"></span> equations are all zero) in the matrix form you can omit the second argument and use the <span style="font-weight: bold;"> nullSpace</span> operation.</p>
+This computes the solutions of the following system of equations:
+x+2y+3z=02x+3y+4z=03x+4y+5z=0 The result is given as a list of vectors and these vectors form a basis for the solution space.
+<div id="spadComm8-79" class="spadComm">
+<span id="commSav8-79" class="commSav">nullSpace([ [1,2,3],[2,3,4],[3,4,5] ])</span>
+<div id="mathAns8-79">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[1,-2,1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Vector Integer
+</div>
+</div>
+<span id="subsec-8.5.2"></span>
+<div id="subsec-8.5.2" class="subsection">
+<h3 class="subsectitle" id="solution-of-a-single-polynomial-equation">8.5.2 Solution of a Single Polynomial Equation</h3>
+<span id="ugxProblemOnePol" class="label"></span>
+<p>FriCAS can solve polynomial equations producing either approximate <span class="index">polynomial:root finding</span><span id="chapter-8-81"></span> or exact solutions. <span class="index">equation:polynomial:solving</span><span id="chapter-8-82"></span> Exact solutions are either members of the ground field or can be presented symbolically as roots of irreducible polynomials.</p>
+<p>This returns the one rational root along with an irreducible polynomial describing the other solutions.</p>
+<div id="spadComm8-80" class="spadComm">
+<span id="commSav8-80" class="commSav">solve(x^3 = 8,x)</span>
+<div id="mathAns8-80">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=2,x2+2x+4=0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Fraction Polynomial Integer
+</div>
+<p>If you want solutions expressed in terms of radicals you would use this instead. <span class="index">radical</span><span id="chapter-8-83"></span></p>
+<div id="spadComm8-81" class="spadComm">
+<span id="commSav8-81" class="commSav">radicalSolve(x^3 = 8,x)</span>
+<div id="mathAns8-81">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=--3-1,x=-3-1,x=2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Expression Integer
+</div>
+<p>The <span style="font-weight: bold;"> solve</span> command always returns a value but <span style="font-weight: bold;"> radicalSolve</span> returns only the solutions that it is able to express in terms of radicals. <span class="index">radical</span><span id="chapter-8-84"></span></p>
+If the polynomial equation has rational coefficients you can ask for approximations to its real roots by calling solve with a second argument that specifies the <span class="italic">precision</span> <span class="index">precision</span><span id="chapter-8-85"></span>
+. This means that each approximation will be within
+of the actual result.
+<p>Notice that the type of second argument controls the type of the result.</p>
+<div id="spadComm8-82" class="spadComm">
+<span id="commSav8-82" class="commSav">solve(x^4 - 10*x^3 + 35*x^2 - 50*x + 25,.0001)</span>
+<div id="mathAns8-82">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=3.618011474609375,x=1.381988525390625]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Polynomial Float
+</div>
+<p>If you give a floating-point precision you get a floating-point result; if you give the precision as a rational number you get a rational result.</p>
+<div id="spadComm8-83" class="spadComm">
+<span id="commSav8-83" class="commSav">solve(x^3-2,1/1000)</span>
+<div id="mathAns8-83">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=25812048]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Polynomial Fraction Integer
+</div>
+If you want approximate complex results you should use the <span class="index">approximation</span><span id="chapter-8-86"></span> command <span style="font-weight: bold;"> complexSolve</span> that takes the same precision argument
+.
+<div id="spadComm8-84" class="spadComm">
+<span id="commSav8-84" class="commSav">complexSolve(x^3-2,.0001)</span>
+<div id="mathAns8-84">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=1.259918212890625,x=-0.62989432795395613131-1.091094970703125i,x=-0.62989432795395613131+1.091094970703125i]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Polynomial Complex Float
+</div>
+Each approximation will be within
+of the actual result in each of the real and imaginary parts.
+<div id="spadComm8-85" class="spadComm">
+<span id="commSav8-85" class="commSav">complexSolve(x^2-2*%i+1,1/100)</span>
+<div id="mathAns8-85">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=-1302892516777216-325256i,x=1302892516777216+325256i]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Polynomial Complex Fraction Integer
+</div>
+<p>Note that if you omit the <span class="teletype">=</span> from the first argument FriCAS generates an equation by equating the first argument to zero. Also, when only one variable is present in the equation, you do not need to specify the variable to be solved for, that is, you can omit the second argument.</p>
+<p>FriCAS can also solve equations involving rational functions. Solutions where the denominator vanishes are discarded.</p>
+<div id="spadComm8-86" class="spadComm">
+<span id="commSav8-86" class="commSav">radicalSolve(1/x^3 + 1/x^2 + 1/x = 0,x)</span>
+<div id="mathAns8-86">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x=--3-12,x=-3-12]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Equation Expression Integer
+</div>
+</div>
+<span id="subsec-8.5.3"></span>
+<div id="subsec-8.5.3" class="subsection">
+<h3 class="subsectitle" id="solution-of-systems-of-polynomial-equations">8.5.3 Solution of Systems of Polynomial Equations</h3>
+<span id="ugxProblemPolSys" class="label"></span>
+<p>Given a system of equations of rational functions with exact coefficients: <span class="index">equation:polynomial:solving</span><span id="chapter-8-87"></span></p>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>p1(x1,…,xn)⋮pm(x1,…,xn)</td>
+</tr>
+</tbody>
+</table>
+</div>
+FriCAS can find numeric or symbolic solutions. The system is first split into irreducible components, then for each component, a triangular system of equations is found that reduces the problem to sequential solution of univariate polynomials resulting from substitution of partial solutions from the previous stage.
+q1(x1,…,xn)⋮qm(xn)
+<p>Symbolic solutions can be presented using <span class="italic">implicit</span> algebraic numbers defined as roots of irreducible polynomials or in terms of radicals. FriCAS can also find approximations to the real or complex roots of a system of polynomial equations to any user-specified accuracy.</p>
+<p>The operation <span style="font-weight: bold;"> solve</span> for systems is used in a way similar to <span style="font-weight: bold;"> solve</span> for single equations. Instead of a polynomial equation, one has to give a list of equations and instead of a single variable to solve for, a list of variables. For solutions of single equations see <a href="section-8.5.xhtml#ugxProblemOnePol" class="ref">ugxProblemOnePol</a> .</p>
+<p>Use the operation <span style="font-weight: bold;"> solve</span> if you want implicitly presented solutions.</p>
+<div id="spadComm8-87" class="spadComm">
+<span id="commSav8-87" class="commSav">solve([3*x^3 + y + 1,y^2 -4],[x,y])</span>
+<div id="mathAns8-87">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=-1,y=2],[x2-x+1=0,y=2],[3x3-1=0,y=-2]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Fraction Polynomial Integer
+</div>
+<div id="spadComm8-88" class="spadComm">
+<span id="commSav8-88" class="commSav">solve([x = y^2-19,y = z^2+x+3,z = 3*x],[x,y,z])</span>
+<div id="mathAns8-88">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=z3,y=3z2+z+93,9z4+6z3+55z2+15z-90=0]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Fraction Polynomial Integer
+</div>
+<p>Use <span style="font-weight: bold;"> radicalSolve</span> if you want your solutions expressed in terms of radicals.</p>
+<div id="spadComm8-89" class="spadComm">
+<span id="commSav8-89" class="commSav">radicalSolve([3*x^3 + y + 1,y^2 -4],[x,y])</span>
+<div id="mathAns8-89">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=-3+12,y=2],[x=--3+12,y=2],[x=--13-1233,y=-2],[x=-13-1233,y=-2],[x=133,y=-2],[x=-1,y=2]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Expression Integer
+</div>
+<p>To get numeric solutions you only need to give the list of equations and the precision desired. The list of variables would be redundant information since there can be no parameters for the numerical solver.</p>
+<p>If the precision is expressed as a floating-point number you get results expressed as floats.</p>
+<div id="spadComm8-90" class="spadComm">
+<span id="commSav8-90" class="commSav">solve([x^2*y - 1,x*y^2 - 2],.01)</span>
+<div id="mathAns8-90">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[y=1.5859375,x=0.79296875]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Polynomial Float
+</div>
+<p>To get complex numeric solutions, use the operation <span style="font-weight: bold;"> complexSolve</span>, which takes the same arguments as in the real case.</p>
+<div id="spadComm8-91" class="spadComm">
+<span id="commSav8-91" class="commSav">complexSolve([x^2*y - 1,x*y^2 - 2],1/1000)</span>
+<div id="mathAns8-91">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[y=16251024,x=16252048],[y=-435445573689549755813888-14071024i,x=-4354455736891099511627776-14072048i],[y=-435445573689549755813888+14071024i,x=-4354455736891099511627776+14072048i]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Polynomial Complex Fraction Integer
+</div>
+It is also possible to solve systems of equations in rational functions over the rational numbers. Note that
+[x=0.0,a=0.0] is not returned as a solution since the denominator vanishes there.
+<div id="spadComm8-92" class="spadComm">
+<span id="commSav8-92" class="commSav">solve([x^2/a = a,a = a*x],.001)</span>
+<div id="mathAns8-92">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=1.0,a=-1.0],[x=1.0,a=1.0]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Polynomial Float
+</div>
+<p>When solving equations with denominators, all solutions where the denominator vanishes are discarded.</p>
+<div id="spadComm8-93" class="spadComm">
+<span id="commSav8-93" class="commSav">radicalSolve([x^2/a + a + y^3 - 1,a*y + a + 1],[x,y])</span>
+<div id="mathAns8-93">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=--a4+2a3+3a2+3a+1a2,y=-a-1a],[x=-a4+2a3+3a2+3a+1a2,y=-a-1a]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Expression Integer
+</div>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-8.4.xhtml">Previous Section 8.4 Computation of Eigenvalues and Eigenvectors</a><a href="section-8.6.xhtml">Next Section 8.6 Limits</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

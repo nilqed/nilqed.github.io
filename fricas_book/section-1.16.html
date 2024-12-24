@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.16</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.16</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.15.xhtml">Previous Section 1.15 System Commands</a><a href="section-2.0.xhtml">Next Section 2.0 Using Types and Modes</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.16">
+<h2 class="sectiontitle" id="graphics">1.16 Graphics</h2>
+<span id="ugIntroGraphics" class="label"></span>
+<p>FriCAS has a two- and three-dimensional drawing and rendering <span class="index">graphics</span><span id="chapter-1-80"></span> package that allows you to draw, shade, color, rotate, translate, map, clip, scale and combine graphic output of FriCAS computations. The graphics interface is capable of plotting functions of one or more variables and plotting parametric surfaces. Once the graphics figure appears in a window, move your mouse to the window and click. A control panel appears immediately and allows you to interactively transform the object.</p>
+<p>This is an example of FriCAS's two-dimensional plotting. From the 2D Control Panel you can rescale the plot, turn axes and units on and off and save the image, among other things. This PostScript image was produced by clicking on the <span style="font-weight: bold;"> PS</span> 2D Control Panel button.</p>
+<div class="spadgraph" style="width: 25em">
+draw(cos(5*t/8), t=0..16*%pi, coordinates==polar)
+</div>
+<table class="image">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="ps/P28a.png" /></td>
+</tr>
+<tr class="even">
+<td><div class="figcaption">
+J0(x2+y2) for
+-20≤x,y≤20
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>This is an example of FriCAS's three-dimensional plotting. It is a monochrome graph of the complex arctangent function. The image displayed was rotated and had the <span class="italic">shade</span> and <span class="italic">outline</span> display options set from the 3D Control Panel. The PostScript output was produced by clicking on the <span style="font-weight: bold;"> save</span> 3D Control Panel button and then clicking on the <span style="font-weight: bold;"> PS</span> button. See Section <a href="section-8.1.xhtml#ugProblemNumeric" class="ref">ugProblemNumeric</a> for more details and examples of FriCAS's numeric and graphics capabilities.</p>
+<div class="spadgraph" style="width: 60em">
+draw((x,y) +-&gt; real atan complex(x,y), -%pi..%pi, -%pi..%pi, colorFunction == (x,y) +-&gt; argument atan complex(x,y))
+</div>
+<table class="image">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="ps/P28b.png" /></td>
+</tr>
+<tr class="even">
+<td><div class="figcaption">
+atan
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>An exhibit of FriCAS images is given later. For a description of the commands and programs that produced these figures, see <a href="section-21.0.xhtml#ugAppGraphics" class="ref">ugAppGraphics</a> . PostScript <span class="index">PostScript</span><span id="chapter-1-81"></span> output is available so that FriCAS images can be printed.<span class="footnote">PostScript is a trademark of Adobe Systems Incorporated, registered in the United States.</span> See <a href="section-7.0.xhtml#ugGraph" class="ref">ugGraph</a> for more examples and details about using FriCAS's graphics facilities.</p>
+<p>This concludes your tour of FriCAS. To disembark, issue the system command <span class="teletype">)quit</span> to leave FriCAS and return to the operating system.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.15.xhtml">Previous Section 1.15 System Commands</a><a href="section-2.0.xhtml">Next Section 2.0 Using Types and Modes</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

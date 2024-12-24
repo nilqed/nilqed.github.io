@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.47</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.47</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.46.xhtml">Previous Section 9.46 LinearOrdinaryDifferentialOperator2</a><a href="section-9.48.xhtml">Next Section 9.48 LyndonWord</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.47">
+<h2 class="sectiontitle" id="list">9.47 List</h2>
+<span id="ListXmpPage" class="label"></span>
+<p>A <span class="index">list</span><span id="chapter-9-28"></span> is a finite collection of elements in a specified order that can contain duplicates. A list is a convenient structure to work with because it is easy to add or remove elements and the length need not be constant. There are many different kinds of lists in FriCAS, but the default types (and those used most often) are created by the <span class="teletype">List</span> constructor. For example, there are objects of type <span class="teletype">List Integer</span>, <span class="teletype">List Float</span> and <span class="teletype">List Polynomial Fraction Integer</span>. Indeed, you can even have <span class="teletype">List List List Boolean</span> (that is, lists of lists of lists of Boolean values). You can have lists of any type of FriCAS object.</p>
+<span id="subsec-9.47.1"></span>
+<div id="subsec-9.47.1" class="subsection">
+<h3 class="subsectitle" id="creating-lists">9.47.1 Creating Lists</h3>
+<p>The easiest way to create a list with, for example, the elements <span class="teletype">2, 4, 5, 6</span> is to enclose the elements with square brackets and separate the elements with commas.</p>
+<p>The spaces after the commas are optional, but they do improve the readability.</p>
+<div id="spadComm9-47" class="spadComm">
+<span id="commSav9-47" class="commSav">[2, 4, 5, 6]</span>
+<div id="mathAns9-47">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,4,5,6]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>To create a list with the single element <span class="teletype">1</span>, you can use either <span class="teletype">[1]</span> or the operation <span class="spadfunFrom">list</span><span class="index">list</span><span id="chapter-9-29"></span><span class="index">List</span><span id="chapter-9-30"></span>.</p>
+<div id="spadComm9-48" class="spadComm">
+<span id="commSav9-48" class="commSav">[1]</span>
+<div id="mathAns9-48">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm9-49" class="spadComm">
+<span id="commSav9-49" class="commSav">list(1)</span>
+<div id="mathAns9-49">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Once created, two lists <span class="teletype">k</span> and <span class="teletype">m</span> can be concatenated by issuing <span class="teletype">append(k,m)</span>. <span class="spadfunFrom">append</span><span class="index">append</span><span id="chapter-9-31"></span><span class="index">List</span><span id="chapter-9-32"></span> does <span class="italic">not</span> physically join the lists, but rather produces a new list with the elements coming from the two arguments.</p>
+<div id="spadComm9-50" class="spadComm">
+<span id="commSav9-50" class="commSav">append([1,2,3],[5,6,7])</span>
+<div id="mathAns9-50">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,5,6,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Use <span class="spadfunFrom">cons</span><span class="index">cons</span><span id="chapter-9-33"></span><span class="index">List</span><span id="chapter-9-34"></span> to append an element onto the front of a list.</p>
+<div id="spadComm9-51" class="spadComm">
+<span id="commSav9-51" class="commSav">cons(10,[9,8,7])</span>
+<div id="mathAns9-51">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,9,8,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+</div>
+<span id="subsec-9.47.2"></span>
+<div id="subsec-9.47.2" class="subsection">
+<h3 class="subsectitle" id="accessing-list-elements">9.47.2 Accessing List Elements</h3>
+<p>To determine whether a list has any elements, use the operation <span class="spadfunFrom">empty?</span><span class="index">empty?</span><span id="chapter-9-35"></span><span class="index">List</span><span id="chapter-9-36"></span>.</p>
+<div id="spadComm9-52" class="spadComm">
+<span id="commSav9-52" class="commSav">empty? [x+1]</span>
+<div id="mathAns9-52">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>Alternatively, equality with the list constant <span class="spadfunFrom">nil</span><span class="index">nil</span><span id="chapter-9-37"></span><span class="index">List</span><span id="chapter-9-38"></span> can be tested.</p>
+<div id="spadComm9-53" class="spadComm">
+<span id="commSav9-53" class="commSav">([] = nil)@Boolean</span>
+<div id="mathAns9-53">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>We'll use this in some of the following examples.</p>
+<div id="spadComm9-54" class="spadComm">
+<span id="commSav9-54" class="commSav">k := [4,3,7,3,8,5,9,2] </span>
+<div id="mathAns9-54">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,7,3,8,5,9,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Each of the next four expressions extracts the <span class="spadfunFrom">first</span><span class="index">first</span><span id="chapter-9-39"></span><span class="index">List</span><span id="chapter-9-40"></span> element of <span class="teletype">k</span>.</p>
+<div id="spadComm9-55" class="spadComm">
+<span id="commSav9-55" class="commSav">first k </span>
+<div id="mathAns9-55">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-56" class="spadComm">
+<span id="commSav9-56" class="commSav">k.first </span>
+<div id="mathAns9-56">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-57" class="spadComm">
+<span id="commSav9-57" class="commSav">k.1 </span>
+<div id="mathAns9-57">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-58" class="spadComm">
+<span id="commSav9-58" class="commSav">k(1) </span>
+<div id="mathAns9-58">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+The last two forms generalize to <span class="teletype">k.i</span> and <span class="teletype">k(i)</span>, respectively, where
+1≤i≤n and <span class="teletype">n</span> equals the length of <span class="teletype">k</span>.
+<p>This length is calculated by <span class="spadopFrom" title="List"> #</span>.</p>
+<div id="spadComm9-59" class="spadComm">
+<span id="commSav9-59" class="commSav">n := #k </span>
+<div id="mathAns9-59">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Performing an operation such as <span class="teletype">k.i</span> is sometimes referred to as <span class="italic">indexing into k</span> or <span class="italic">elting into k</span>. The latter phrase comes about because the name of the operation that extracts elements is called <span class="spadfunFrom">elt</span><span class="index">elt</span><span id="chapter-9-41"></span><span class="index">List</span><span id="chapter-9-42"></span>. That is, <span class="teletype">k.3</span> is just alternative syntax for <span class="teletype">elt(k,3)</span>. It is important to remember that list indices begin with 1. If we issue <span class="teletype">k := [1,3,2,9,5]</span> then <span class="teletype">k.4</span> returns <span class="teletype">9</span>. It is an error to use an index that is not in the range from <span class="teletype">1</span> to the length of the list.</p>
+<p>The last element of a list is extracted by any of the following three expressions.</p>
+<div id="spadComm9-60" class="spadComm">
+<span id="commSav9-60" class="commSav">last k </span>
+<div id="mathAns9-60">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-61" class="spadComm">
+<span id="commSav9-61" class="commSav">k.last </span>
+<div id="mathAns9-61">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This form computes the index of the last element and then extracts the element from the list.</p>
+<div id="spadComm9-62" class="spadComm">
+<span id="commSav9-62" class="commSav">k.( #k) </span>
+<div id="mathAns9-62">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+<span id="subsec-9.47.3"></span>
+<div id="subsec-9.47.3" class="subsection">
+<h3 class="subsectitle" id="changing-list-elements">9.47.3 Changing List Elements</h3>
+<p>We'll use this in some of the following examples.</p>
+<div id="spadComm9-63" class="spadComm">
+<span id="commSav9-63" class="commSav">k := [4,3,7,3,8,5,9,2] </span>
+<div id="mathAns9-63">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,7,3,8,5,9,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>List elements are reset by using the <span class="teletype">k.i</span> form on the left-hand side of an assignment. This expression resets the first element of <span class="teletype">k</span> to <span class="teletype">999</span>.</p>
+<div id="spadComm9-64" class="spadComm">
+<span id="commSav9-64" class="commSav">k.1 := 999 </span>
+<div id="mathAns9-64">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>999</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>As with indexing into a list, it is an error to use an index that is not within the proper bounds. Here you see that <span class="teletype">k</span> was modified.</p>
+<div id="spadComm9-65" class="spadComm">
+<span id="commSav9-65" class="commSav">k </span>
+<div id="mathAns9-65">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[999,3,7,3,8,5,9,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>The operation that performs the assignment of an element to a particular position in a list is called <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-43"></span><span class="index">List</span><span id="chapter-9-44"></span>. This operation is <span class="italic">destructive</span> in that it changes the list. In the above example, the assignment returned the value <span class="teletype">999</span> and <span class="teletype">k</span> was modified. For this reason, lists are called <span class="index">mutable</span><span id="chapter-9-45"></span> objects: it is possible to change part of a list (mutate it) rather than always returning a new list reflecting the intended modifications.</p>
+<p>Moreover, since lists can share structure, changes to one list can sometimes affect others.</p>
+<div id="spadComm9-66" class="spadComm">
+<span id="commSav9-66" class="commSav">k := [1,2] </span>
+<div id="mathAns9-66">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<div id="spadComm9-67" class="spadComm">
+<span id="commSav9-67" class="commSav">m := cons(0,k) </span>
+<div id="mathAns9-67">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,1,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>Change the second element of <span class="teletype">m</span>.</p>
+<div id="spadComm9-68" class="spadComm">
+<span id="commSav9-68" class="commSav">m.2 := 99 </span>
+<div id="mathAns9-68">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>99</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>See, <span class="teletype">m</span> was altered.</p>
+<div id="spadComm9-69" class="spadComm">
+<span id="commSav9-69" class="commSav">m </span>
+<div id="mathAns9-69">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,99,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>But what about <span class="teletype">k</span>? It changed too!</p>
+<div id="spadComm9-70" class="spadComm">
+<span id="commSav9-70" class="commSav">k </span>
+<div id="mathAns9-70">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[99,2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+</div>
+<span id="subsec-9.47.4"></span>
+<div id="subsec-9.47.4" class="subsection">
+<h3 class="subsectitle" id="other-functions">9.47.4 Other Functions</h3>
+<p>An operation that is used frequently in list processing is that which returns all elements in a list after the first element.</p>
+<div id="spadComm9-71" class="spadComm">
+<span id="commSav9-71" class="commSav">k := [1,2,3] </span>
+<div id="mathAns9-71">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Use the <span class="spadfunFrom">rest</span><span class="index">rest</span><span id="chapter-9-46"></span><span class="index">List</span><span id="chapter-9-47"></span> operation to do this.</p>
+<div id="spadComm9-72" class="spadComm">
+<span id="commSav9-72" class="commSav">rest k </span>
+<div id="mathAns9-72">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>To remove duplicate elements in a list <span class="teletype">k</span>, use <span class="spadfunFrom">removeDuplicates</span><span class="index">removeDuplicates</span><span id="chapter-9-48"></span><span class="index">List</span><span id="chapter-9-49"></span>.</p>
+<div id="spadComm9-73" class="spadComm">
+<span id="commSav9-73" class="commSav">removeDuplicates [4,3,4,3,5,3,4]</span>
+<div id="mathAns9-73">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,3,5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>To get a list with elements in the order opposite to those in a list <span class="teletype">k</span>, use <span class="spadfunFrom">reverse</span><span class="index">reverse</span><span id="chapter-9-50"></span><span class="index">List</span><span id="chapter-9-51"></span>.</p>
+<div id="spadComm9-74" class="spadComm">
+<span id="commSav9-74" class="commSav">reverse [1,2,3,4,5,6]</span>
+<div id="mathAns9-74">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[6,5,4,3,2,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>To test whether an element is in a list, use <span class="spadfunFrom">member?</span><span class="index">member?</span><span id="chapter-9-52"></span><span class="index">List</span><span id="chapter-9-53"></span>: <span class="teletype">member?(a,k)</span> returns <span class="teletype">true</span> or <span class="teletype">false</span> depending on whether <span class="teletype">a</span> is in <span class="teletype">k</span> or not.</p>
+<div id="spadComm9-75" class="spadComm">
+<span id="commSav9-75" class="commSav">member?(1/2,[3/4,5/6,1/2])</span>
+<div id="mathAns9-75">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-76" class="spadComm">
+<span id="commSav9-76" class="commSav">member?(1/12,[3/4,5/6,1/2])</span>
+<div id="mathAns9-76">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>As an exercise, the reader should determine how to get a list containing all but the last of the elements in a given non-empty list <span class="teletype">k</span>.<span class="footnote"><span class="teletype">reverse(rest(reverse(k)))</span> works.</span></p>
+</div>
+<span id="subsec-9.47.5"></span>
+<div id="subsec-9.47.5" class="subsection">
+<h3 class="subsectitle" id="dot-dot">9.47.5 Dot, Dot</h3>
+<p>Certain lists are used so often that FriCAS provides an easy way of constructing them. If <span class="teletype">n</span> and <span class="teletype">m</span> are integers, then <span class="teletype">expand [n..m]</span> creates a list containing <span class="teletype">n, n+1, ... m</span>. If <span class="teletype">n &gt; m</span> then the list is empty. It is actually permissible to leave off the <span class="teletype">m</span> in the dot-dot construction (see below).</p>
+<p>The dot-dot notation can be used more than once in a list construction and with specific elements being given. Items separated by dots are called <span class="italic">segments.</span></p>
+<div id="spadComm9-77" class="spadComm">
+<span id="commSav9-77" class="commSav">[1..3,10,20..23]</span>
+<div id="mathAns9-77">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1..3,10..10,20..23]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Segment PositiveInteger
+</div>
+<p>Segments can be expanded into the range of items between the endpoints by using <span class="spadfunFrom">expand</span><span class="index">expand</span><span id="chapter-9-54"></span><span class="index">Segment</span><span id="chapter-9-55"></span>.</p>
+<div id="spadComm9-78" class="spadComm">
+<span id="commSav9-78" class="commSav">expand [1..3,10,20..23]</span>
+<div id="mathAns9-78">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,10,20,21,22,23]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>What happens if we leave off a number on the right-hand side of <span class="spadopFrom" title="UniversalSegment">..</span>?</p>
+<div id="spadComm9-79" class="spadComm">
+<span id="commSav9-79" class="commSav">expand [1..]</span>
+<div id="mathAns9-79">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3,4,5,6,7,8,9,10,…]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Stream Integer
+</div>
+<p>What is created in this case is a <span class="teletype">Stream</span> which is a generalization of a list. See <a href="section-9.76.xhtml#StreamXmpPage" class="ref">StreamXmpPage</a> for more information.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.46.xhtml">Previous Section 9.46 LinearOrdinaryDifferentialOperator2</a><a href="section-9.48.xhtml">Next Section 9.48 LyndonWord</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

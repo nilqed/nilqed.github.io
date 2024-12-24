@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section5.4</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section5.4</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-5.3.xhtml">Previous Section 5.3 if-then-else</a><a href="section-5.5.xhtml">Next Section 5.5 Creating Lists and Streams with Iterators</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-5.4">
+<h2 class="sectiontitle" id="loops">5.4 Loops</h2>
+<span id="ugLangLoops" class="label"></span>
+<p>A <span class="italic">loop</span> is an expression that contains another expression, <span class="index">loop</span><span id="chapter-5-25"></span> called the <span class="italic">loop body</span>, which is to be evaluated zero or more <span class="index">loop:body</span><span id="chapter-5-26"></span> times. All loops contain the <span class="teletype">repeat</span> keyword and return the unique value of <span class="teletype">Void</span>. Loops can contain inner loops to any depth.</p>
+<div class="boxed2">
+<div class="boxed">
+<p>The most basic loop is of the form</p>
+<div class="center" style="text-align: center;">
+<p><span class="teletype">repeat </span><span class="italic">loopBody</span></p>
+</div>
+<p>Unless <span class="italic">loopBody</span> contains a <span class="teletype">break</span> or <span class="teletype">return</span> expression, the loop repeats forever. The value returned by the loop is the unique value of <span class="teletype">Void</span>.<br />
+</p>
+</div>
+</div>
+<span id="subsec-5.4.1"></span>
+<div id="subsec-5.4.1" class="subsection">
+<h3 class="subsectitle" id="compiling-vs.-interpreting-loops">5.4.1 Compiling vs. Interpreting Loops</h3>
+<span id="ugLangLoopsCompInt" class="label"></span>
+<p>FriCAS tries to determine completely the type of every object in a loop and then to translate the loop body to LISP or even to machine code. This translation is called compilation.</p>
+<p>If FriCAS decides that it cannot compile the loop, it issues a <span class="index">loop:compilation</span><span id="chapter-5-27"></span> message stating the problem and then the following message:</p>
+<div class="center" style="text-align: center;">
+<p><span style="font-weight: bold;">We will attempt to step through and interpret the code.</span></p>
+</div>
+<p>It is still possible that FriCAS can evaluate the loop but in <span class="italic">interpret-code mode</span>. See section <a href="section-6.10.xhtml#ugUserCompInt" class="ref">ugUserCompInt</a> where this is discussed in terms <span class="index">panic:avoiding</span><span id="chapter-5-28"></span> of compiling versus interpreting functions.</p>
+</div>
+<span id="subsec-5.4.2"></span>
+<div id="subsec-5.4.2" class="subsection">
+<h3 class="subsectitle" id="return-in-loops">5.4.2 return in Loops</h3>
+<span id="ugLangLoopsReturn" class="label"></span>
+<p>A <span class="teletype">return</span> expression is used to exit a function with <span class="index">loop:leaving via return</span><span id="chapter-5-29"></span> a particular value. In particular, if a <span class="teletype">return</span> is in a loop within the <span class="index">return</span><span id="chapter-5-30"></span> function, the loop is terminated whenever the <span class="teletype">return</span> is evaluated.</p>
+<p>Suppose we start with this.</p>
+<div class="verbatim">
+<br />
+f() ==<br />
+  i := 1<br />
+  repeat<br />
+    if factorial(i) &gt; 1000 then return i<br />
+    i := i + 1<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+When <span class="teletype">factorial(i)</span> is big enough, control passes from inside the loop all the way outside the function, returning the value of
+i (or so we think).
+<div id="spadComm5-21" class="spadComm">
+<span id="commSav5-21" class="commSav">f()</span>
+<div id="mathAns5-21">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>What went wrong? Isn't it obvious that this function should return an integer? Well, FriCAS makes no attempt to analyze the structure of a loop to determine if it always returns a value because, in general, this is impossible. So FriCAS has this simple rule: the type of the function is determined by the type of its body, in this case a block. The normal value of a block is the value of its last expression, in this case, a loop. And the value of every loop is the unique value of <span class="teletype">Void</span>.! So the return type of <span style="font-weight: bold;">f</span> is <span class="teletype">Void</span>.</p>
+There are two ways to fix this. The best way is for you to tell FriCAS what the return type of
+f is. You do this by giving
+f a declaration <span class="teletype">f:()-&gt;Integer</span> prior to calling for its value. This tells FriCAS: <span class="italic">trust me---an integer is returned.</span> We'll explain more about this in the next chapter. Another clumsy way is to add a dummy expression as follows.
+<p>Since we want an integer, let's stick in a dummy final expression that is an integer and will never be evaluated.</p>
+<div class="verbatim">
+<br />
+f() ==<br />
+  i := 1<br />
+  repeat<br />
+    if factorial(i) &gt; 1000 then return i<br />
+    i := i + 1<br />
+  0<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>When we try <span style="font-weight: bold;">f</span> again we get what we wanted. See <a href="section-6.15.xhtml#ugUserBlocks" class="ref">ugUserBlocks</a> for more information.</p>
+<div id="spadComm5-22" class="spadComm">
+<span id="commSav5-22" class="commSav">f()</span>
+<div id="mathAns5-22">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function f with type () -&gt; NonNegativeInteger <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+<span id="subsec-5.4.3"></span>
+<div id="subsec-5.4.3" class="subsection">
+<h3 class="subsectitle" id="break-in-loops">5.4.3 break in Loops</h3>
+<span id="ugLangLoopsBreak" class="label"></span>
+<p>The <span class="teletype">break</span> keyword is often more useful <span class="index">break</span><span id="chapter-5-31"></span> in terminating <span class="index">loop:leaving via break</span><span id="chapter-5-32"></span> a loop. A <span class="teletype">break</span> causes control to transfer to the expression immediately following the loop. As loops always return the unique value of <span class="teletype">Void</span>., you cannot return a value with <span class="teletype">break</span>. That is, <span class="teletype">break</span> takes no argument.</p>
+<p>This example is a modification of the last example in the previous section <a href="section-5.4.xhtml#ugLangLoopsReturn" class="ref">ugLangLoopsReturn</a> . Instead of using <span class="teletype">return</span>, we'll use <span class="teletype">break</span>.</p>
+<div class="verbatim">
+<br />
+f() ==<br />
+  i := 1<br />
+  repeat<br />
+    if factorial(i) &gt; 1000 then break<br />
+    i := i + 1<br />
+  i<br />
+
+</div>
+<div class="verbatim">
+<br />
+   Compiled code for f has been cleared.<br />
+   1 old definition(s) deleted for function or rule f <br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+The loop terminates when <span class="teletype">factorial(i)</span> gets big enough, the last line of the function evaluates to the corresponding <span class="italic">good</span> value of
+i, and the function terminates, returning that value.
+<div id="spadComm5-23" class="spadComm">
+<span id="commSav5-23" class="commSav">f()</span>
+<div id="mathAns5-23">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function f with type () -&gt; PositiveInteger <br />
+<br />
++++ |*0;f;1;G82322| redefined<br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>You can only use <span class="teletype">break</span> to terminate the evaluation of one loop. Let's consider a loop within a loop, that is, a loop with a nested loop. First, we initialize two counter variables.</p>
+<div id="spadComm5-24" class="spadComm">
+<span id="commSav5-24" class="commSav">(i,j) := (1, 1)</span>
+<div id="mathAns5-24">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Nested loops must have multiple <span class="teletype">break</span> <span class="index">loop:nested</span><span id="chapter-5-33"></span> expressions at the appropriate nesting level. How would you rewrite this so <span class="teletype">(i + j) &gt; 10</span> is only evaluated once?</p>
+<div class="verbatim">
+<br />
+repeat<br />
+  repeat<br />
+    if (i + j) &gt; 10 then break<br />
+    j := j + 1<br />
+  if (i + j) &gt; 10 then break<br />
+  i := i + 1<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.4"></span>
+<div id="subsec-5.4.4" class="subsection">
+<h3 class="subsectitle" id="break-vs.-in-loop-bodies">5.4.4 break vs. <span class="teletype">=&gt;</span> in Loop Bodies</h3>
+<span id="ugLangLoopsBreakVs" class="label"></span>
+<p>Compare the following two loops:</p>
+<div class="verbatim">
+<br />
+i := 1                            i := 1<br />
+repeat                            repeat<br />
+  i := i + 1                        i := i + 1<br />
+  i &gt; 3 =&gt; i                        if i &gt; 3 then break<br />
+  output(i)                         output(i)<br />
+
+</div>
+In the example on the left, the values
+2 and
+3 for
+i are displayed but then the <span class="italic"><span class="teletype">=&gt;</span></span> does not allow control to reach the call to <span class="spadfunFrom">output</span><span class="index">output</span><span id="chapter-5-34"></span><span class="index">OutputForm</span><span id="chapter-5-35"></span> again. The loop will not terminate until you run out of space or interrupt the execution. The variable
+i will continue to be incremented because the <span class="italic"><span class="teletype">=&gt;</span></span> only means to leave the <span class="italic">block</span>, not the loop.
+In the example on the right, upon reaching
+4, the <span class="teletype">break</span> will be executed, and both the block and the loop will terminate. This is one of the reasons why both <span class="italic"><span class="teletype">=&gt;</span></span> and <span class="teletype">break</span> are provided. Using a <span class="teletype">while</span> clause (see below) with the <span class="italic"><span class="teletype">=&gt;</span></span> <span class="index">while</span><span id="chapter-5-36"></span> lets you simulate the action of <span class="teletype">break</span>.
+</div>
+<span id="subsec-5.4.5"></span>
+<div id="subsec-5.4.5" class="subsection">
+<h3 class="subsectitle" id="more-examples-of-break">5.4.5 More Examples of break</h3>
+<span id="ugLangLoopsBreakMore" class="label"></span>
+<p>Here we give four examples of <span class="teletype">repeat</span> loops that terminate when a value exceeds a given bound.</p>
+First, initialize
+i as the loop counter.
+<div id="spadComm5-25" class="spadComm">
+<span id="commSav5-25" class="commSav">i := 0</span>
+<div id="mathAns5-25">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+Here is the first loop. When the square of
+i exceeds
+100, the loop terminates.
+<div class="verbatim">
+<br />
+repeat<br />
+  i := i + 1<br />
+  if i^2 &gt; 100 then break<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Upon completion,
+i should have the value
+11.
+<div id="spadComm5-26" class="spadComm">
+<span id="commSav5-26" class="commSav">i</span>
+<div id="mathAns5-26">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>Do the same thing except use <span class="italic"><span class="teletype">=&gt;</span></span> instead an <span class="teletype">if-then</span> expression.</p>
+<div id="spadComm5-27" class="spadComm">
+<span id="commSav5-27" class="commSav">i := 0</span>
+<div id="mathAns5-27">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<div class="verbatim">
+<br />
+repeat<br />
+  i := i + 1<br />
+  i^2 &gt; 100 =&gt; break<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm5-28" class="spadComm">
+<span id="commSav5-28" class="commSav">i</span>
+<div id="mathAns5-28">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+As a third example, we use a simple loop to compute
+n!.
+<div id="spadComm5-29" class="spadComm">
+<span id="commSav5-29" class="commSav">(n, i, f) := (100, 1, 1)</span>
+<div id="mathAns5-29">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+Use
+i as the iteration variable and
+f to compute the factorial.
+<div class="verbatim">
+<br />
+repeat<br />
+  if i &gt; n then break<br />
+  f := f * i<br />
+  i := i + 1<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Look at the value of
+f.
+<div id="spadComm5-30" class="spadComm">
+<span id="commSav5-30" class="commSav">f</span>
+<div id="mathAns5-30">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+ 93326215443944152681699238856266700490715968264381621468_<br />
+ 59296389521759999322991560894146397615651828625369792082_<br />
+ 7223758251185210916864000000000000000000000000<br />
+
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Finally, we show an example of nested loops. First define a four by four matrix.</p>
+<div id="spadComm5-31" class="spadComm">
+<span id="commSav5-31" class="commSav">m := matrix [ [21,37,53,14], [8,-24,22,-16], [2,10,15,14], [26,33,55,-13] ]</span>
+<div id="mathAns5-31">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[213753148-2422-162101514263355-13]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+Next, set row counter
+r and column counter
+c to
+1. Note: if we were writing a function, these would all be local variables rather than global workspace variables.
+<div id="spadComm5-32" class="spadComm">
+<span id="commSav5-32" class="commSav">(r, c) := (1, 1)</span>
+<div id="mathAns5-32">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Also, let <span class="teletype">lastrow</span> and <span class="teletype">lastcol</span> be the final row and column index.</p>
+<div id="spadComm5-33" class="spadComm">
+<span id="commSav5-33" class="commSav">(lastrow, lastcol) := (nrows(m), ncols(m))</span>
+<div id="mathAns5-33">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Scan the rows looking for the first negative element. We remark that you can reformulate this example in a better, more concise form by using a <span class="teletype">for</span> clause with <span class="teletype">repeat</span>. See <a href="section-5.4.xhtml#ugLangLoopsForIn" class="ref">ugLangLoopsForIn</a> for more information.</p>
+<div class="verbatim">
+<br />
+repeat<br />
+  if r &gt; lastrow then break<br />
+  c := 1<br />
+  repeat<br />
+    if c &gt; lastcol then break<br />
+    if elt(m,r,c) &lt; 0 then<br />
+      output [r, c, elt(m,r,c)]<br />
+      r := lastrow<br />
+      break     -- don't look any further<br />
+    c := c + 1<br />
+  r := r + 1<br />
+ <br />
+   [2,2,- 24]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.6"></span>
+<div id="subsec-5.4.6" class="subsection">
+<h3 class="subsectitle" id="iterate-in-loops">5.4.6 iterate in Loops</h3>
+<span id="ugLangLoopsIterate" class="label"></span>
+<p>FriCAS provides an <span class="teletype">iterate</span> expression that <span class="index">iterate</span><span id="chapter-5-37"></span> skips over the remainder of a loop body and starts the next loop iteration.</p>
+<p>We first initialize a counter.</p>
+<div id="spadComm5-34" class="spadComm">
+<span id="commSav5-34" class="commSav">i := 0</span>
+<div id="mathAns5-34">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+Display the even integers from
+2 to
+5.
+<div class="verbatim">
+<br />
+repeat<br />
+  i := i + 1<br />
+  if i &gt; 5 then break<br />
+  if odd?(i) then iterate<br />
+  output(i)<br />
+ <br />
+   2<br />
+   4<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.7"></span>
+<div id="subsec-5.4.7" class="subsection">
+<h3 class="subsectitle" id="while-loops">5.4.7 while Loops</h3>
+<span id="ugLangLoopsWhile" class="label"></span>
+<p>The <span class="teletype">repeat</span> in a loop can be modified by adding one or more <span class="teletype">while</span> clauses. <span class="index">while</span><span id="chapter-5-38"></span> Each clause contains a <span class="italic">predicate</span> immediately following the <span class="teletype">while</span> keyword. The predicate is tested <span class="italic">before</span> the evaluation of the body of the loop. The loop body is evaluated whenever the predicates in a <span class="teletype">while</span> clause are all <span class="teletype">true</span>.</p>
+<div class="boxed2">
+<div class="boxed">
+<p>The syntax for a simple loop using <span class="teletype">while</span> is</p>
+<div class="center" style="text-align: center;">
+<p><span class="teletype">while</span> <span class="italic">predicate</span> <span class="teletype">repeat</span> <span class="italic">loopBody</span></p>
+</div>
+<p>The <span class="italic">predicate</span> is evaluated before <span class="italic">loopBody</span> is evaluated. A <span class="teletype">while</span> loop terminates immediately when <span class="italic">predicate</span> evaluates to <span class="teletype">false</span> or when a <span class="teletype">break</span> or <span class="teletype">return</span> expression is evaluated in <span class="italic">loopBody</span>. The value returned by the loop is the unique value of <span class="teletype">Void</span>.<br />
+</p>
+</div>
+</div>
+<p>Here is a simple example of using <span class="teletype">while</span> in a loop. We first initialize the counter.</p>
+<div id="spadComm5-35" class="spadComm">
+<span id="commSav5-35" class="commSav">i := 1</span>
+<div id="mathAns5-35">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+The steps involved in computing this example are<br />
+(1) set
+i to
+1,<br />
+(2) test the condition
+i&lt;1 and determine that it is not <span class="teletype">true</span>, and<br />
+(3) do not evaluate the loop body and therefore do not display
+"hello".
+<div class="verbatim">
+<br />
+while i &lt; 1 repeat<br />
+  output "hello"<br />
+  i := i + 1<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>If you have multiple predicates to be tested use the logical <span class="teletype">and</span> operation to separate them. FriCAS evaluates these predicates from left to right.</p>
+<div id="spadComm5-36" class="spadComm">
+<span id="commSav5-36" class="commSav">(x, y) := (1, 1)</span>
+<div id="mathAns5-36">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div class="verbatim">
+<br />
+while x &lt; 4 and y &lt; 10 repeat<br />
+  output [x,y]<br />
+  x := x + 1<br />
+  y := y + 2<br />
+ <br />
+   [1,1]<br />
+   [2,3]<br />
+   [3,5]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>A <span class="teletype">break</span> expression can be included in a loop body to terminate a loop even if the predicate in any <span class="teletype">while</span> clauses are not <span class="teletype">false</span>.</p>
+<div id="spadComm5-37" class="spadComm">
+<span id="commSav5-37" class="commSav">(x, y) := (1, 1)</span>
+<div id="mathAns5-37">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This loop has multiple <span class="teletype">while</span> clauses and the loop terminates before any one of their conditions evaluates to <span class="teletype">false</span>.</p>
+<div class="verbatim">
+<br />
+while x &lt; 4 while y &lt; 10 repeat<br />
+  if x + y &gt; 7 then break<br />
+  output [x,y]<br />
+  x := x + 1<br />
+  y := y + 2<br />
+ <br />
+   [1,1]<br />
+   [2,3]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Here's a different version of the nested loops that looked for the first negative element in a matrix.</p>
+<div id="spadComm5-38" class="spadComm">
+<span id="commSav5-38" class="commSav">m := matrix [ [21,37,53,14], [8,-24,22,-16], [2,10,15,14], [26,33,55,-13] ]</span>
+<div id="mathAns5-38">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[213753148-2422-162101514263355-13]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+Initialized the row index to
+1 and get the number of rows and columns. If we were writing a function, these would all be local variables.
+<div id="spadComm5-39" class="spadComm">
+<span id="commSav5-39" class="commSav">r := 1</span>
+<div id="mathAns5-39">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm5-40" class="spadComm">
+<span id="commSav5-40" class="commSav">(lastrow, lastcol) := (nrows(m), ncols(m))</span>
+<div id="mathAns5-40">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Scan the rows looking for the first negative element.</p>
+<div class="verbatim">
+<br />
+while r &lt;= lastrow repeat<br />
+  c := 1  -- index of first column<br />
+  while c &lt;= lastcol repeat<br />
+    if elt(m,r,c) &lt; 0 then<br />
+      output [r, c, elt(m,r,c)]<br />
+      r := lastrow<br />
+      break     -- don't look any further<br />
+    c := c + 1<br />
+  r := r + 1<br />
+ <br />
+   [2,2,- 24]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.8"></span>
+<div id="subsec-5.4.8" class="subsection">
+<h3 class="subsectitle" id="for-loops">5.4.8 for Loops</h3>
+<span id="ugLangLoopsForIn" class="label"></span>
+<p>FriCAS provides the <span class="teletype">for</span> <span class="index">for</span><span id="chapter-5-39"></span> and <span class="teletype">in </span> <span class="index">in</span><span id="chapter-5-40"></span> keywords in <span class="teletype">repeat</span> loops, allowing you to iterate across all <span class="index">iteration</span><span id="chapter-5-41"></span> elements of a list, or to have a variable take on integral values from a lower bound to an upper bound. We shall refer to these modifying clauses of <span class="teletype">repeat</span> loops as <span class="teletype">for</span> clauses. These clauses can be present in addition to <span class="teletype">while</span> clauses. As with all other types of <span class="teletype">repeat</span> loops, <span class="teletype">break</span> can <span class="index">break</span><span id="chapter-5-42"></span> be used to prematurely terminate the evaluation of the loop.</p>
+<div class="boxed2">
+<div class="boxed">
+<p>The syntax for a simple loop using <span class="teletype">for</span> is</p>
+<div class="center" style="text-align: center;">
+<p><span class="teletype">for</span> <span class="italic">iterator</span> <span class="teletype">repeat</span> <span class="italic">loopBody</span></p>
+</div>
+<p>The <span class="italic">iterator</span> has several forms. Each form has an end test which is evaluated before <span class="italic">loopBody</span> is evaluated. A <span class="teletype">for</span> loop terminates immediately when the end test succeeds (evaluates to <span class="teletype">true</span>) or when a <span class="teletype">break</span> or <span class="teletype">return</span> expression is evaluated in <span class="italic">loopBody</span>. The value returned by the loop is the unique value of <span class="teletype">Void</span>.\ </p>
+</div>
+</div>
+</div>
+<span id="subsec-5.4.9"></span>
+<div id="subsec-5.4.9" class="subsection">
+<h3 class="subsectitle" id="for-i-in-n..m-repeat">5.4.9 for i in n..m repeat</h3>
+<span id="ugLangLoopsForInNM" class="label"></span>
+If <span class="teletype">for</span> <span class="index">for</span><span id="chapter-5-43"></span> is followed by a variable name, the <span class="teletype">in </span> <span class="index">in</span><span id="chapter-5-44"></span> keyword and then an integer segment of the form
+n..m, <span class="index">segment</span><span id="chapter-5-45"></span> the end test for this loop is the predicate
+i&gt;m. The body of the loop is evaluated
+m-n+1 times if this number is greater than 0. If this number is less than or equal to 0, the loop body is not evaluated at all.
+The variable
+i has the value
+n,n+1,...,m for successive iterations of the loop body.The loop variable is a <span class="italic">local variable</span> within the loop body: its value is not available outside the loop body and its value and type within the loop body completely mask any outer definition of a variable with the same name.
+This loop prints the values of
+103,
+113, and
+123:
+<div id="spadComm5-41" class="spadComm">
+<span id="commSav5-41" class="commSav">for i in 10..12 repeat output(i^3)</span>
+<div id="mathAns5-41">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   1000<br />
+   1331<br />
+   1728<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Here is a sample list.</p>
+<div id="spadComm5-42" class="spadComm">
+<span id="commSav5-42" class="commSav">a := [1,2,3]</span>
+<div id="mathAns5-42">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Iterate across this list, using <span class="italic"><span class="teletype">.</span></span> to access the elements of a list and the ``<span style="font-weight: bold;">#</span>'' operation to count its elements.</p>
+<div id="spadComm5-43" class="spadComm">
+<span id="commSav5-43" class="commSav">for i in 1.. #a repeat output(a.i)</span>
+<div id="mathAns5-43">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   1<br />
+   2<br />
+   3<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>This type of iteration is applicable to anything that uses <span class="italic"><span class="teletype">.</span></span>. You can also use it with functions that use indices to extract elements.</p>
+Define
+m to be a matrix.
+<div id="spadComm5-44" class="spadComm">
+<span id="commSav5-44" class="commSav">m := matrix [ [1,2],[4,3],[9,0] ]</span>
+<div id="mathAns5-44">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[124390]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Integer
+</div>
+Display the rows of
+m.
+<div id="spadComm5-45" class="spadComm">
+<span id="commSav5-45" class="commSav">for i in 1..nrows(m) repeat output row(m,i)</span>
+<div id="mathAns5-45">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   [1,2]<br />
+   [4,3]<br />
+   [9,0]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>You can use <span class="teletype">iterate</span> with <span class="teletype">for</span>-loops.<span class="index">iterate</span><span id="chapter-5-46"></span></p>
+<p>Display the even integers in a segment.</p>
+<div class="verbatim">
+<br />
+for i in 1..5 repeat<br />
+  if odd?(i) then iterate<br />
+  output(i)<br />
+ <br />
+   2<br />
+   4<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>See section <a href="section-9.69.xhtml#SegmentXmpPage" class="ref">SegmentXmpPage</a> for more information about segments.</p>
+</div>
+<span id="subsec-5.4.10"></span>
+<div id="subsec-5.4.10" class="subsection">
+<h3 class="subsectitle" id="for-i-in-n..m-by-s-repeat">5.4.10 for i in n..m by s repeat</h3>
+<span id="ugLangLoopsForInNMS" class="label"></span>
+By default, the difference between values taken on by a variable in loops such as <span class="teletype">for i in n..m repeat ...</span> is
+1. It is possible to supply another, possibly negative, step value by using the <span class="teletype">by</span> <span class="index">by</span><span id="chapter-5-47"></span> keyword along with <span class="teletype">for</span> and <span class="teletype">in </span>. Like the upper and lower bounds, the step value following the <span class="teletype">by</span> keyword must be an integer. Note that the loop <span class="teletype">for i in 1..2 by 0 repeat output(i)</span> will not terminate by itself, as the step value does not change the index from its initial value of
+1.
+<p>This expression displays the odd integers between two bounds.</p>
+<div id="spadComm5-46" class="spadComm">
+<span id="commSav5-46" class="commSav">for i in 1..5 by 2 repeat output(i)</span>
+<div id="mathAns5-46">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   1<br />
+   3<br />
+   5<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Use this to display the numbers in reverse order.</p>
+<div id="spadComm5-47" class="spadComm">
+<span id="commSav5-47" class="commSav">for i in 5..1 by -2 repeat output(i)</span>
+<div id="mathAns5-47">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   5<br />
+   3<br />
+   1<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.11"></span>
+<div id="subsec-5.4.11" class="subsection">
+<h3 class="subsectitle" id="for-i-in-n..-repeat">5.4.11 for i in n.. repeat</h3>
+<span id="ugLangLoopsForInN" class="label"></span>
+If the value after the <span class="italic"><span class="teletype">..</span></span> is omitted, the loop has no end test. A potentially infinite loop is thus created. The variable is given the successive values
+n,n+1,n+2,... and the loop is terminated only if a <span class="teletype">break</span> or <span class="teletype">return</span> expression is evaluated in the loop body. However you may also add some other modifying clause on the <span class="teletype">repeat</span> (for example, a <span class="teletype">while</span> clause) to stop the loop.
+This loop displays the integers greater than or equal to
+15 and less than the first prime greater than
+15.
+<div id="spadComm5-48" class="spadComm">
+<span id="commSav5-48" class="commSav">for i in 15.. while not prime?(i) repeat output(i)</span>
+<div id="mathAns5-48">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   15<br />
+   16<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.12"></span>
+<div id="subsec-5.4.12" class="subsection">
+<h3 class="subsectitle" id="for-x-in-l-repeat">5.4.12 for x in l repeat</h3>
+<span id="ugLangLoopsForInXL" class="label"></span>
+<p>Another variant of the <span class="teletype">for</span> loop has the form:</p>
+<div class="center" style="text-align: center;">
+<p><span class="italic"><span class="teletype">for</span> x <span class="teletype">in </span> list <span class="teletype">repeat</span> loopBody</span></p>
+</div>
+<p>This form is used when you want to iterate directly over the elements of a list. In this form of the <span class="teletype">for</span> loop, the variable <span class="teletype">x</span> takes on the value of each successive element in <span class="teletype">l</span>. The end test is most simply stated in English: <span class="italic">are there no more <span class="teletype">x</span> in <span class="teletype">l</span>?</span></p>
+<p>If <span class="teletype">l</span> is this list,</p>
+<div id="spadComm5-49" class="spadComm">
+<span id="commSav5-49" class="commSav">l := [0,-5,3]</span>
+<div id="mathAns5-49">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,-5,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>display all elements of <span class="teletype">l</span>, one per line.</p>
+<div id="spadComm5-50" class="spadComm">
+<span id="commSav5-50" class="commSav">for x in l repeat output(x)</span>
+<div id="mathAns5-50">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   0<br />
+   - 5<br />
+   3<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Since the list constructing expression <span style="font-weight: bold;">expand</span><span class="teletype">[n..m]</span> creates the list
+[n,n+1,...,m]. Note that this list is empty if
+n&gt;m. You might be tempted to think that the loops
+<div class="verbatim">
+<br />
+for i in n..m repeat output(i)<br />
+
+</div>
+<p>and</p>
+<div class="verbatim">
+<br />
+for x in expand [n..m] repeat output(x)<br />
+
+</div>
+are equivalent. The second form first creates the list <span style="font-weight: bold;"> expand</span><span class="teletype">[n..m]</span> (no matter how large it might be) and then does the iteration. The first form potentially runs in much less space, as the index variable
+i is simply incremented once per loop and the list is not actually created. Using the first form is much more efficient.
+Of course, sometimes you really want to iterate across a specific list. This displays each of the factors of
+2400000.
+<div id="spadComm5-51" class="spadComm">
+<span id="commSav5-51" class="commSav">for f in factors(factor(2400000)) repeat output(f)</span>
+<div id="mathAns5-51">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   [factor= 2,exponent= 8]<br />
+   [factor= 3,exponent= 1]<br />
+   [factor= 5,exponent= 5]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.13"></span>
+<div id="subsec-5.4.13" class="subsection">
+<h3 class="subsectitle" id="such-that-predicates">5.4.13 <span class="italic">Such that</span> Predicates</h3>
+<span id="ugLangLoopsForInPred" class="label"></span>
+<p>A <span class="teletype">for</span> loop can be followed by a ``<span class="teletype">|</span>'' and then a predicate. The predicate qualifies the use of the values from the iterator following the <span class="teletype">for</span>. Think of the vertical bar ``<span class="teletype">|</span>'' as the phrase <span class="italic">such that.</span></p>
+This loop expression prints out the integers
+n in the given segment such that
+n is odd.
+<div id="spadComm5-52" class="spadComm">
+<span id="commSav5-52" class="commSav">for n in 0..4 | odd? n repeat output n</span>
+<div id="mathAns5-52">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   1<br />
+   3<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div class="boxed2">
+<div class="boxed">
+A <span class="teletype">for</span> loop can also be written
+foriterator|predicaterepeatloopBody
+which is equivalent to:
+for iterator repeat if predicate then loopBody else iterate
+</div>
+</div>
+<p>The predicate need not refer only to the variable in the <span class="teletype">for</span> clause: any variable in an outer scope can be part of the predicate.</p>
+In this example, the predicate on the inner <span class="teletype">for</span> loop uses
+i from the outer loop and the
+j from the <span class="teletype">for</span> <span class="index">iteration:nested</span><span id="chapter-5-48"></span> clause that it directly modifies.
+<div class="verbatim">
+<br />
+for i in 1..50 repeat<br />
+  for j in 1..50 | factorial(i+j) &lt; 25 repeat<br />
+    output [i,j]<br />
+ <br />
+   [1,1]<br />
+   [1,2]<br />
+   [1,3]<br />
+   [2,1]<br />
+   [2,2]<br />
+   [3,1]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+</div>
+<span id="subsec-5.4.14"></span>
+<div id="subsec-5.4.14" class="subsection">
+<h3 class="subsectitle" id="parallel-iteration">5.4.14 Parallel Iteration</h3>
+<span id="ugLangLoopsPar" class="label"></span>
+<p>The last example of the previous section <a href="section-5.4.xhtml#ugLangLoopsForInPred" class="ref">ugLangLoopsForInPred</a> gives an example of <span class="italic">nested iteration</span>: a loop is contained <span class="index">iteration:nested</span><span id="chapter-5-49"></span> in another loop. <span class="index">iteration:parallel</span><span id="chapter-5-50"></span> Sometimes you want to iterate across two lists in parallel, or perhaps you want to traverse a list while incrementing a variable.</p>
+<div class="boxed2">
+<div class="boxed">
+The general syntax of a repeat loop is
+iterator1iterator2…iteratorN repeat loopBody where each <span class="italic">iterator</span> is either a <span class="teletype">for</span> or a <span class="teletype">while</span> clause. The loop terminates immediately when the end test of any <span class="italic">iterator</span> succeeds or when a <span class="teletype">break</span> or <span class="teletype">return</span> expression is evaluated in <span class="italic">loopBody</span>. The value returned by the loop is the unique value of <span class="teletype">Void</span>.<br />
+
+</div>
+</div>
+<p>Here we write a loop to iterate across two lists, computing the sum of the pairwise product of elements. Here is the first list.</p>
+<div id="spadComm5-53" class="spadComm">
+<span id="commSav5-53" class="commSav">l := [1,3,5,7]</span>
+<div id="mathAns5-53">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1,3,5,7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>And the second.</p>
+<div id="spadComm5-54" class="spadComm">
+<span id="commSav5-54" class="commSav">m := [100,200]</span>
+<div id="mathAns5-54">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[100,200]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>The initial value of the sum counter.</p>
+<div id="spadComm5-55" class="spadComm">
+<span id="commSav5-55" class="commSav">sum := 0</span>
+<div id="mathAns5-55">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+The last two elements of
+l are not used in the calculation because
+m has two fewer elements than
+l.
+<div class="verbatim">
+<br />
+for x in l for y in m repeat<br />
+    sum := sum + x*y<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Display the <span class="italic">dot product.</span></p>
+<div id="spadComm5-56" class="spadComm">
+<span id="commSav5-56" class="commSav">sum</span>
+<div id="mathAns5-56">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>700</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>Next, we write a loop to compute the sum of the products of the loop elements with their positions in the loop.</p>
+<div id="spadComm5-57" class="spadComm">
+<span id="commSav5-57" class="commSav">l := [2,3,5,7,11,13,17,19,23,29,31,37]</span>
+<div id="mathAns5-57">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,3,5,7,11,13,17,19,23,29,31,37]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>The initial sum.</p>
+<div id="spadComm5-58" class="spadComm">
+<span id="commSav5-58" class="commSav">sum := 0</span>
+<div id="mathAns5-58">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+Here looping stops when the list
+l is exhausted, even though the
+foriin0.. specifies no terminating condition.
+<div id="spadComm5-59" class="spadComm">
+<span id="commSav5-59" class="commSav">for i in 0.. for x in l repeat sum := i * x</span>
+<div id="mathAns5-59">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Display this weighted sum.</p>
+<div id="spadComm5-60" class="spadComm">
+<span id="commSav5-60" class="commSav">sum</span>
+<div id="mathAns5-60">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>407</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>When ``<span class="teletype">|</span>'' is used to qualify any of the <span class="teletype">for</span> clauses in a parallel iteration, the variables in the predicates can be from an outer scope or from a <span class="teletype">for</span> clause in or to the left of a modified clause.</p>
+<p>This is correct:</p>
+<div class="verbatim">
+<br />
+for i in 1..10 repeat<br />
+  for j in 200..300 | odd? (i+j) repeat<br />
+    output [i,j]<br />
+
+</div>
+This is not correct since the variable
+j has not been defined outside the inner loop.
+<div class="verbatim">
+<br />
+for i in 1..10 | odd? (i+j) repeat  -- wrong, j not defined<br />
+  for j in 200..300 repeat<br />
+    output [i,j]<br />
+
+</div>
+</div>
+<span id="subsec-5.4.15"></span>
+<div id="subsec-5.4.15" class="subsection">
+<h3 class="subsectitle" id="mixing-loop-modifiers">5.4.15 Mixing Loop Modifiers</h3>
+<span id="ugLangLoopsMix" class="label"></span>
+<p>This example shows that it is possible to mix several of the <span class="index">loop:mixing modifiers</span><span id="chapter-5-51"></span> forms of <span class="teletype">repeat</span> modifying clauses on a loop.</p>
+<div class="verbatim">
+<br />
+for i in 1..10<br />
+    for j in 151..160 | odd? j<br />
+      while i + j &lt; 160 repeat<br />
+        output [i,j]<br />
+ <br />
+   [1,151]<br />
+   [3,153]<br />
+
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<p>Here are useful rules for composing loop expressions:</p>
+<ol>
+<li><span class="teletype">while</span> predicates can only refer to variables that are global (or in an outer scope) or that are defined in <span class="teletype">for</span> clauses to the left of the predicate.</li>
+<li>A <span class="italic">such that</span> predicate (something following ``<span class="teletype">|</span>'') must directly follow a <span class="teletype">for</span> clause and can only refer to variables that are global (or in an outer scope) or defined in the modified <span class="teletype">for</span> clause or any <span class="teletype">for</span> clause to the left.</li>
+</ol>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-5.3.xhtml">Previous Section 5.3 if-then-else</a><a href="section-5.5.xhtml">Next Section 5.5 Creating Lists and Streams with Iterators</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

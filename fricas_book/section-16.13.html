@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section16.13</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section16.13</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-16.12.xhtml">Previous Section 16.12 )help</a><a href="section-16.14.xhtml">Next Section 16.14 )library</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-16.13">
+<h2 class="sectiontitle" id="history">16.13 )history</h2>
+<p><span class="index">ugSysCmdhistory</span><span id="chapter-16-88"></span></p>
+<p><span class="index">history</span><span id="chapter-16-89"></span></p>
+<p><span style="font-weight: bold;"> User Level Required:</span> interpreter</p>
+<p><span style="font-weight: bold;"> Command Syntax:</span></p>
+<div class="beginlist">
+<div class="item">
+<span class="teletype">)history )on</span>
+</div>
+<div class="item">
+<span class="teletype">)history )off</span>
+</div>
+<div class="item">
+<span class="teletype">)history )write</span> <span class="italic">historyInputFileName</span>
+</div>
+<div class="item">
+<span class="teletype">)history )show [<span class="italic">n</span>] [both]</span>
+</div>
+<div class="item">
+<span class="teletype">)history )save</span> <span class="italic">savedHistoryName</span>
+</div>
+<div class="item">
+<span class="teletype">)history )restore</span> [<span class="italic">savedHistoryName</span>]
+</div>
+<div class="item">
+<span class="teletype">)history )reset</span>
+</div>
+<div class="item">
+<span class="teletype">)history )change</span> <span class="italic">n</span>
+</div>
+<div class="item">
+<span class="teletype">)history )memory</span>
+</div>
+<div class="item">
+<span class="teletype">)history )file</span>
+</div>
+<div class="item">
+<span class="teletype">%</span>
+</div>
+<div class="item">
+<span class="teletype">%%(<span class="italic">n</span>)</span>
+</div>
+<div class="item">
+<span class="teletype">)set history on | off</span>
+</div>
+</div>
+<p><span style="font-weight: bold;"> Command Description:</span></p>
+<p>The <span class="italic">history</span> facility within FriCAS allows you to restore your environment to that of another session and recall previous computational results. Additional commands allow you to review previous input lines and to create an <span style="font-weight: bold;"> .input</span> file of the lines typed to <span class="index">file:input</span><span id="chapter-16-90"></span> FriCAS.</p>
+<p>FriCAS saves your input and output if the history facility is turned on (which is the default). This information is saved if either of</p>
+<div class="verbatim">
+<br />
+)set history on<br />
+)history )on<br />
+
+</div>
+<p>has been issued. Issuing either</p>
+<div class="verbatim">
+<br />
+)set history off<br />
+)history )off<br />
+
+</div>
+<p>will discontinue the recording of information. <span class="index">history )on</span><span id="chapter-16-91"></span> <span class="index">set history on</span><span id="chapter-16-92"></span> <span class="index">set history off</span><span id="chapter-16-93"></span> <span class="index">history )off</span><span id="chapter-16-94"></span></p>
+<p>Whether the facility is disabled or not, the value of <span class="teletype">%</span> in FriCAS always refers to the result of the last computation. If you have not yet entered anything, <span class="teletype">%</span> evaluates to an object of type <span class="teletype">Variable('%)</span>. The function <span class="teletype">%%</span> may be used to refer to other previous results if the history facility is enabled. In that case, <span class="teletype">%%(n)</span> is the output from step <span class="teletype">n</span> if <span class="teletype">n &gt; 0</span>. If <span class="teletype">n &lt; 0</span>, the step is computed relative to the current step. Thus <span class="teletype">%%(-1)</span> is also the previous step, <span class="teletype">%%(-2)</span>, is the step before that, and so on. If an invalid step number is given, FriCAS will signal an error.</p>
+<p>The <span class="italic">environment</span> information can either be saved in a file or entirely in memory (the default). Each frame (<a href="section-16.11.xhtml#ugSysCmdframe" class="ref">ugSysCmdframe</a> ) has its own history database. When it is kept in a file, some of it may also be kept in memory for efficiency. When the information is saved in a file, the name of the file is of the form <span style="font-weight: bold;"> FRAME.axh</span> where ``<span style="font-weight: bold;"> FRAME</span>'' is the name of the current frame. The history file is placed in the current working directory (see <a href="ugSysCmdcd" class="ref">ugSysCmdcd</a> ). Note that these history database files are not text files (in fact, they are directories themselves), and so are not in human-readable format.</p>
+<p>The options to the <span class="teletype">)history</span> command are as follows:</p>
+<dl>
+<dt><span class="teletype">)change</span> <span class="italic">n</span></dt>
+<dd>will set the number of steps that are saved in memory to <span class="italic">n</span>. This option only has effect when the history data is maintained in a file. If you have issued <span class="teletype">)history )memory</span> (or not changed the default) there is no need to use <span class="teletype">)history )change</span>. <span class="index">history )change</span><span id="chapter-16-95"></span>
+</dd>
+<dt><span class="teletype">)on</span></dt>
+<dd>will start the recording of information. If the workspace is not empty, you will be asked to confirm this request. If you do so, the workspace will be cleared and history data will begin being saved. You can also turn the facility on by issuing <span class="teletype">)set history on</span>.
+</dd>
+<dt><span class="teletype">)off</span></dt>
+<dd>will stop the recording of information. The <span class="teletype">)history )show</span> command will not work after issuing this command. Note that this command may be issued to save time, as there is some performance penalty paid for saving the environment data. You can also turn the facility off by issuing <span class="teletype">)set history off</span>.
+</dd>
+<dt><span class="teletype">)file</span></dt>
+<dd>indicates that history data should be saved in an external file on disk.
+</dd>
+<dt><span class="teletype">)memory</span></dt>
+<dd>indicates that all history data should be kept in memory rather than saved in a file. Note that if you are computing with very large objects it may not be practical to kept this data in memory.
+</dd>
+<dt><span class="teletype">)reset</span></dt>
+<dd>will flush the internal list of the most recent workspace calculations so that the data structures may be garbage collected by the underlying Common Lisp system. Like <span class="teletype">)history )change</span>, this option only has real effect when history data is being saved in a file.
+</dd>
+<dt><span class="teletype">)restore</span> [<span class="italic">savedHistoryName</span>]</dt>
+<dd>completely clears the environment and restores it to a saved session, if possible. The <span class="teletype">)save</span> option below allows you to save a session to a file with a given name. If you had issued <span class="teletype">)history )save jacobi</span> the command <span class="teletype">)history )restore jacobi</span> would clear the current workspace and load the contents of the named saved session. If no saved session name is specified, the system looks for a file called <span style="font-weight: bold;"> last.axh</span>.
+</dd>
+<dt><span class="teletype">)save</span> <span class="italic">savedHistoryName</span></dt>
+<dd>is used to save a snapshot of the environment in a file. This file is placed in the current working directory (see <a href="ugSysCmdcd" class="ref">ugSysCmdcd</a> ). Use <span class="teletype">)history )restore</span> to restore the environment to the state preserved in the file. This option also creates an input file containing all the lines of input since you created the workspace frame (for example, by starting your FriCAS session) or last did a <span class="teletype">)clear all</span> or <span class="teletype">)clear completely</span>.
+</dd>
+<dt><span class="teletype">)show</span> [<span class="italic">n</span>] [<span class="teletype">both</span>]</dt>
+<dd>can show previous input lines and output results. <span class="teletype">)show</span> will display up to twenty of the last input lines (fewer if you haven't typed in twenty lines). <span class="teletype">)show</span> <span class="italic">n</span> will display up to <span class="italic">n</span> of the last input lines. <span class="teletype">)show both</span> will display up to five of the last input lines and output results. <span class="teletype">)show</span> <span class="italic">n</span> <span class="teletype">both</span> will display up to <span class="italic">n</span> of the last input lines and output results.
+</dd>
+<dt><span class="teletype">)write</span> <span class="italic">historyInputFile</span></dt>
+<dd>creates an <span style="font-weight: bold;"> .input</span> file with the input lines typed since the start of the session/frame or the last <span class="teletype">)clear all</span> or <span class="teletype">)clear completely</span>. If <span class="italic">historyInputFileName</span> does not contain a period (<span class="italic">.</span>) in the filename, <span style="font-weight: bold;"> .input</span> is appended to it. For example, <span class="teletype">)history )write chaos</span> and <span class="teletype">)history )write chaos.input</span> both write the input lines to a file called <span style="font-weight: bold;"> chaos.input</span> in your current working directory. If you issued one or more <span class="teletype">)undo</span> commands, <span class="teletype">)history )write</span> eliminates all input lines backtracked over as a result of <span class="teletype">)undo</span>. You can edit this file and then use <span class="teletype">)read</span> to have FriCAS process the contents.
+</dd>
+</dl>
+<p><span style="font-weight: bold;"> Also See:</span> <span class="teletype">)frame</span> <span class="index">ugSysCmdframe</span><span id="chapter-16-96"></span>, <span class="teletype">)read</span> <span class="index">ugSysCmdread</span><span id="chapter-16-97"></span>, <span class="teletype">)set</span> <span class="index">ugSysCmdset</span><span id="chapter-16-98"></span>, and <span class="teletype">)undo</span> <span class="index">ugSysCmdundo</span><span id="chapter-16-99"></span>.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-16.12.xhtml">Previous Section 16.12 )help</a><a href="section-16.14.xhtml">Next Section 16.14 )library</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

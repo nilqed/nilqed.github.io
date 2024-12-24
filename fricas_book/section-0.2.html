@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section0.2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section0.2</h1>
+</header>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-0.1.xhtml">Previous Section 0.1 Introduction to FriCAS</a><a href="section-0.3.xhtml">Next Section 0.3 Using FriCAS as a Pocket Calculator</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-0.2">
+<h2 class="sectiontitle" id="a-technical-introduction">0.2 A Technical Introduction</h2>
+<span class="label"></span>
+<p>FriCAS has both an <span class="italic">interactive language</span> for user interactions and a <span class="italic">programming language</span> for building library modules. Like Modula 2, <span class="index">Modula 2</span><span></span>PASCAL, <span class="index">PASCAL</span><span></span> FORTRAN, <span class="index">FORTRAN</span><span></span> and Ada, <span class="index">Ada</span><span></span> the programming language emphasizes strict type-checking. Unlike these languages, types in FriCAS are dynamic objects: they are created at run-time in response to user commands.</p>
+<p>Here is the idea of the FriCAS programming language in a nutshell. FriCAS types range from algebraic ones (like polynomials, matrices, and power series) to data structures (like lists, dictionaries, and input files). Types combine in any meaningful way. You can build polynomials of matrices, matrices of polynomials of power series, hash tables with symbolic keys and rational function entries, and so on.</p>
+<p><span class="italic">Categories</span> define algebraic properties to ensure mathematical correctness. They ensure, for example, that matrices of polynomials are OK, but matrices of input files are not. Through categories, programs can discover that polynomials of continued fractions have a commutative multiplication whereas polynomials of matrices do not.</p>
+<p>Categories allow algorithms to be defined in their most natural setting. For example, an algorithm can be defined to solve polynomial equations over <span class="italic">any</span> field. Likewise a greatest common divisor can compute the <em>gcd</em> of two elements from <span class="italic">any</span> Euclidean domain. Categories foil attempts to compute meaningless <em>gcds</em>, for example, of two hashtables. Categories also enable algorithms to be compiled into machine code that can be run with arbitrary types.</p>
+<p>The FriCAS interactive language is oriented towards ease-of-use. The FriCAS interpreter uses type-inferencing to deduce the type of an object from user input. Type declarations can generally be omitted for common types in the interactive language.</p>
+<p>So much for the nutshell. Here are these basic ideas described by ten design principles:</p>
+<span></span>
+<div id="subsec-0.2.1" class="subsection">
+<h3 class="subsectitle" id="types-are-defined-by-abstract-datatype-programs">0.2.1 Types are Defined by Abstract Datatype Programs</h3>
+<p>Basic types are called <span class="italic">domains of computation</span>, or, simply, <span class="italic">domains.</span> <span class="index">domain</span><span></span> Domains are defined by FriCAS programs of the form:</p>
+<div class="verbatim">
+<br />
+Name(...): Exports == Implementation<br />
+
+</div>
+<p>Each domain has a capitalized <span class="teletype">Name</span> that is used to refer to the class of its members. For example, <span class="teletype">Integer</span> denotes t<em>he class of integers</em>, <span class="teletype">Float</span>, <em>the class of floating point numbers</em>, and <span class="teletype">String</span>, <em>the class of strings</em>.</p>
+<p>The <span class="teletype">...</span> part following <span class="teletype">Name</span> lists zero or more parameters to the constructor. Some basic ones like <span class="teletype">Integer</span> take no parameters. Others, like <span class="teletype">Matrix</span>, <span class="teletype">Polynomial</span> and <span class="teletype">List</span>, take a single parameter that again must be a domain. For example, <span class="teletype">Matrix(Integer)</span> denotes <em>matrices over the integers</em>, <span class="teletype">Polynomial (Float)</span> denotes <em>polynomial with floating point coefficients</em>, and <span class="teletype">List (Matrix (Polynomial (Integer)))</span> denotes <em>lists of matrices of polynomials over the integers</em>. There is no restriction on the number or type of parameters of a domain constructor.</p>
+<p><code>SquareMatrix(2,Integer)</code> is an example of a domain constructor that accepts both a particular data value as well as an integer. In this case the number 2 specifies the number of rows and columns the square matrix will contain. Elements of the matricies are integers.</p>
+<p>The <span class="teletype">Exports</span> part specifies operations for creating and manipulating objects of the domain. For example, type <span class="teletype">Integer</span> exports constants <span class="math inline">0</span> and <span class="math inline">1</span>, and operations <span class="spadopFrom" title="Integer"><code>+</code></span>, <span class="spadopFrom" title="Integer">-</span>, and <span class="spadopFrom" title="Integer">*</span>. While these operations are common, others such as <span class="spadfunFrom"><code>odd?</code></span><span class="index">odd?</span><span></span><span class="index">Integer</span><span></span> and <span class="spadfunFrom">bit?</span><code></code><span class="index">Integer</span><span></span> are not. In addition the Exports section can contain symbols that represent properties that can be tested. For example, the Category <span class="teletype">EntireRing</span> has the symbol <span class="teletype">noZeroDivisors</span> which asserts that if a product is zero then one of the factors must be zero.</p>
+<p>The <span class="teletype">Implementation</span> part defines functions that implement the exported operations of the domain. These functions are frequently described in terms of another lower-level domain used to represent the objects of the domain. Thus the operation of adding two vectors of real numbers can be described and implemented using the addition operation from <span class="teletype">Float</span>.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.2" class="subsection">
+<h3 class="subsectitle" id="the-type-of-basic-objects-is-a-domain-or-subdomain">0.2.2 The Type of Basic Objects is a Domain or Subdomain</h3>
+<p>Every FriCAS object belongs to a <span class="italic">unique</span> domain. The domain of an object is also called its <span class="italic">type.</span> Thus the integer <span class="math inline">7</span> has type <span class="teletype">Integer</span> and the string <span class="teletype">"daniel"</span> has type <span class="teletype">String</span>.</p>
+<p>The type of an object, however, is not unique. The type of integer <span class="math inline">7</span> is not only <span class="teletype">Integer</span> but <span class="teletype">NonNegativeInteger</span>, <span class="teletype">PositiveInteger</span>, and possibly, in general, any other <em>subdomain</em> of the domain <span class="teletype">Integer</span>. A <span class="italic">subdomain</span> <span class="index">subdomain</span><span></span> is a domain with a <em>membership predicate</em>. <span class="teletype">PositiveInteger</span> is a subdomain of <span class="teletype">Integer</span> with the predicate <em>is the integer</em> <span class="math inline"> &gt; 0</span>?.</p>
+<p>Subdomains with names are defined by abstract datatype programs similar to those for domains. The <span class="italic">Export</span> part of a subdomain, however, must list a subset of the exports of the domain. The <span class="teletype">Implementation</span> part optionally gives special definitions for subdomain objects.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.3" class="subsection">
+<h3 class="subsectitle" id="domains-have-types-called-categories">0.2.3 Domains Have Types Called Categories</h3>
+<p>Domain and subdomains in FriCAS are themselves objects that have types. The type of a domain or subdomain is called a <span class="italic">category</span>. <span class="index">category</span><span></span> Categories are described by programs of the form:</p>
+<div class="verbatim">
+<br />
+Name(...): Category == Exports<br />
+
+</div>
+<p>The type of every category is the distinguished symbol <span class="teletype">Category.</span> The category <span class="teletype">Name</span> is used to designate the class of domains of that type. For example, category <span class="teletype">Ring</span> designates the class of all rings. Like domains, categories can take zero or more parameters as indicated by the <span class="teletype">...</span> part following <span class="teletype">Name.</span> Two examples are <span class="teletype">Module(R)</span> and <span class="teletype">MatrixCategory(R,Row,Col)</span>.</p>
+<p>The <span class="teletype">Exports</span> part defines a set of operations. For example, <span class="teletype">Ring</span> exports the operations <span class="spadopFrom" title="Ring">0</span>, <span class="spadopFrom" title="Ring">1</span>, <span class="spadopFrom" title="Ring">+</span>, <span class="spadopFrom" title="Ring">-</span>, and <span class="spadopFrom" title="Ring">*</span>. Many algebraic domains such as <span class="teletype">Integer</span> and <span class="teletype">Polynomial (Float)</span> are rings. <span class="teletype">String</span> and <span class="teletype">List (R)</span> (for any domain <span class="math inline"><em>R</em></span>) are not.</p>
+<p>Categories serve to ensure the type-correctness. The definition of matrices states <span class="teletype">Matrix(R: Ring)</span> requiring its single parameter <span class="math inline"><em>R</em></span> to be a ring. Thus a <em>matrix of polynomials</em> is allowed, but <em>matrix of lists</em> is not.</p>
+<p>Categories say nothing about representation. Domains, which are instances of category types, specify representations.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.4" class="subsection">
+<h3 class="subsectitle" id="operations-can-refer-to-abstract-types">0.2.4 Operations Can Refer To Abstract Types</h3>
+<p>All operations have prescribed source and target types. Types can be denoted by symbols that stand for domains, called <em>symbolic domains</em>. The following lines of FriCAS code use a symbolic domain <span class="math inline"><em>R</em></span>:</p>
+<div class="verbatim">
+<br />
+R: Ring<br />
+power: (R, NonNegativeInteger): R -&gt; R<br />
+power(x, n) == x ^ n<br />
+
+</div>
+<p>Line 1 declares the symbol <span class="math inline"><em>R</em></span> to be a ring. Line 2 declares the type of <span class="math inline"><em>p</em><em>o</em><em>w</em><em>e</em><em>r</em></span> in terms of <span class="math inline"><em>R</em></span>. From the definition on line 3, <span class="math inline"><em>p</em><em>o</em><em>w</em><em>e</em><em>r</em>(3,2)</span> produces 9 for <span class="math inline"><em>x</em> = 3</span> and <span class="math inline"><em>R</em>=</span> <span class="teletype">Integer</span>. Also, <span class="math inline"><em>p</em><em>o</em><em>w</em><em>e</em><em>r</em>(3.0,2)</span> produces <span class="math inline">9.0</span> for <span class="math inline"><em>x</em> = 3.0</span> and <span class="math inline"><em>R</em>=</span> <span class="teletype">Float</span>. <span class="math inline">${power}\left( "{oxford}",2 \right)$</span> however fails since <span class="math inline">$"{oxford}"$</span> has type <span class="teletype">String</span> which is not a ring.</p>
+<p>Using symbolic domains, algorithms can be defined in their most natural or general setting.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.5" class="subsection">
+<h3 class="subsectitle" id="categories-form-hierarchies">0.2.5 Categories Form Hierarchies</h3>
+<p>Categories form hierarchies (technically, directed-acyclic graphs). A simplified hierarchical world of algebraic categories is shown below. At the top of this world is <span class="teletype">SetCategory</span>, the class of algebraic sets. The notions of parents, ancestors, and descendants is clear. Thus ordered sets (domains of category <span class="teletype">OrderedSet</span>) and rings are also algebraic sets. Likewise, fields and integral domains are rings and algebraic sets. However fields and integral domains are not ordered sets.</p>
+<div class="verbatim">
+<br />
+SetCategory +---- Ring       ---- IntegralDomain ---- Field<br />
+            |<br />
+            +---- Finite     ---+<br />
+            |                    \<br />
+            +---- OrderedSet -----+ OrderedFinite<br />
+
+</div>
+<div class="center" style="text-align: center;">
+<p>Figure 1. A simplified category hierarchy.</p>
+</div>
+</div>
+<span></span>
+<div id="subsec-0.2.6" class="subsection">
+<h3 class="subsectitle" id="domains-belong-to-categories-by-assertion">0.2.6 Domains Belong to Categories by Assertion</h3>
+<p>A category designates a class of domains. Which domains? You might think that <span class="teletype">Ring</span> designates the class of all domains that export <span class="math inline">0</span>, <span class="math inline">1</span>, <span class="spadopFrom" title="Integer">+</span>, <span class="spadopFrom" title="Integer">-</span>, and <span class="spadopFrom" title="Integer">*</span>. But this is not so. Each domain must <span class="italic">assert</span> which categories it belongs to.</p>
+<p>The <span class="teletype">Export</span> part of the definition for <span class="teletype">Integer</span> reads, for example:</p>
+<div class="verbatim">
+<br />
+Join(OrderedSet, IntegralDomain,  ...) with ...<br />
+
+</div>
+<p>This definition asserts that <span class="teletype">Integer</span> is both an ordered set and an integral domain. In fact, <span class="teletype">Integer</span> does not explicitly export constants <span class="math inline">0</span> and <span class="math inline">1</span> and operations <span class="spadopFrom" title="Ring">+</span>, <span class="spadopFrom" title="Ring">-</span> and <span class="spadopFrom" title="Ring">*</span> at all: it inherits them all from <span class="math inline"><em>R</em><em>i</em><em>n</em><em>g</em></span>! Since <span class="teletype">IntegralDomain</span> is a descendant of <span class="math inline"><em>R</em><em>i</em><em>n</em><em>g</em></span>, <span class="teletype">Integer</span> is therefore also a ring.</p>
+<p>Assertions can be conditional. For example, <span class="teletype">Complex(R)</span> defines its exports by:</p>
+<div class="verbatim">
+<br />
+Ring with ... if R has Field then Field ...<br />
+
+</div>
+<p>Thus <span class="teletype">Complex(Float)</span> is a field but <span class="teletype">Complex(Integer)</span> is not since <span class="teletype">Integer</span> is not a field.</p>
+<p>You may wonder: <em>Why not simply let the set of operations determine whether a domain belongs to a given category?</em>. FriCAS allows operation names (for example, <span style="font-weight: bold;">norm</span>) to have very different meanings in different contexts. The meaning of an operation in FriCAS is determined by context. By associating operations with categories, operation names can be reused whenever appropriate or convenient to do so. As a simple example, the operation <span class="teletype">&lt;</span> might be used to denote lexicographic-comparison in an algorithm. However, it is wrong to use the same <span class="teletype">&lt;</span> with this definition of absolute-value: <code>abs(x) = if x&lt;0 then -x else x</code></p>
+<p>Such a definition for <span class="teletype">abs</span> in FriCAS is protected by context: argument <span class="math inline"><em>x</em></span> is required to be a member of a domain of category <span class="teletype">OrderedSet</span>.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.7" class="subsection">
+<h3 class="subsectitle" id="packages-are-clusters-of-polymorphic-operations">0.2.7 Packages Are Clusters of Polymorphic Operations</h3>
+<p>In FriCAS, facilities for symbolic integration, solution of equations, and the like are placed in <em>packages</em>. A <span class="italic">package</span> <span class="index">package</span><span></span> is a special kind of domain: one whose exported operations depend solely on the parameters of the constructor and/or explicit domains. Packages, unlike Domains, do not specify the representation.</p>
+<p>If you want to use FriCAS, for example, to define some algorithms for solving equations of polynomials over an arbitrary field <span class="math inline"><em>F</em></span>, you can do so with a package of the form:</p>
+<div class="verbatim">
+<br />
+MySolve(F: Field): Exports == Implementation<br />
+
+</div>
+<p>where <span class="teletype">Exports</span> specifies the <span style="font-weight: bold;">solve</span> operations you wish to export from the domain and the <span class="teletype">Implementation</span> defines functions for implementing your algorithms. Once FriCAS has compiled your package, your algorithms can then be used for any <span class="teletype">F</span>: floating-point numbers, rational numbers, complex rational functions, and power series, to name a few.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.8" class="subsection">
+<h3 class="subsectitle" id="the-interpreter-builds-domains-dynamically">0.2.8 The Interpreter Builds Domains Dynamically</h3>
+<p>The FriCAS interpreter reads user input then builds whatever types it needs to perform the indicated computations. For example, to create the matrix using the command:</p>
+<div id="spadComm0-21" class="spadComm">
+<span id="commSav0-21" class="commSav">M = [ [x^2+1,0],[0,x / 2] ]::Matrix(POLY(FRAC(INT)))</span>
+<div id="mathAns0-21">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math display">$$M = \begin{bmatrix}
+{x^{2} + 1} &amp; 0 \\
+0 &amp; {x/2} \\
+\end{bmatrix}$$</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Matrix Polynomial Fraction Integer
+</div>
+<p>the interpreter first loads the modules <span class="teletype">Matrix</span>, <span class="teletype">Polynomial</span>, <span class="teletype">Fraction</span>, and <span class="teletype">Integer</span> from the library, then builds the <span class="italic">domain tower</span> <span class="italic">matrices of polynomials of rational numbers (i.e. fractions of integers)</span>.</p>
+<p>You can watch the loading process by first typing</p>
+<div id="spadComm0-22" class="spadComm">
+<span id="commSav0-22" class="commSav">)set message autoload on</span>
+<div id="mathAns0-22">
+
+</div>
+</div>
+<p>In addition to the named domains above many additional domains and categories are loaded. Most systems are preloaded with such common types. For efficiency reasons the most common domains are preloaded but most (there are more than 1100 domains, categories, and packages) are not. Once these domains are loaded they are immediately available to the interpreter.</p>
+<p>Once a domain tower is built, it contains all the operations specific to the type. Computation proceeds by calling operations that exist in the tower. For example, suppose that the user asks to square the above matrix. To do this, the function <span class="spadopFrom" title="Matrix">*</span> from <span class="teletype">Matrix</span> is passed the matrix <span class="math inline"><em>M</em></span> to compute <span class="math inline"><em>M</em> * <em>M</em></span>. The function is also passed an environment containing <span class="math inline"><em>R</em></span> that, in this case, is <span class="teletype">Polynomial (Fraction (Integer))</span>. This results in the successive calling of the <span class="spadopFrom" title="Fraction">*</span> operations from <span class="teletype">Polynomial</span>, then from <span class="teletype">Fraction</span>, and then finally from <span class="teletype">Integer</span>.</p>
+<p>Categories play a policing role in the building of domains. Because the argument of <span class="teletype">Matrix</span> is required to be a <span class="teletype">Ring</span>, FriCAS will not build nonsensical types such as <span class="italic">matrices of input files</span>.</p>
+</div>
+<span></span>
+<div id="subsec-0.2.9" class="subsection">
+<h3 class="subsectitle" id="fricas-code-is-compiled">0.2.9 FriCAS Code is Compiled</h3>
+<p>FriCAS programs are statically compiled to machine code, then placed into library modules. Categories provide an important role in obtaining efficient object code by enabling:</p>
+<ul>
+<li>static type-checking at compile time;</li>
+<li>fast linkage to operations in domain-valued parameters;</li>
+<li>optimization techniques to be used for partially specified types (operations for <em>vectors of</em> <span class="math inline"><em>R</em></span>, for instance, can be open-coded even though <span class="teletype">R</span> is unknown).</li>
+</ul>
+</div>
+<span></span>
+<div id="subsec-0.2.10" class="subsection">
+<h3 class="subsectitle" id="fricas-is-extensible">0.2.10 FriCAS is Extensible</h3>
+<p>Users and system implementers alike use the FriCAS language to add facilities to the FriCAS library. The entire FriCAS library is in fact written in the FriCAS source code and available for user modification and/or extension.</p>
+<p>FriCAS's use of abstract datatypes clearly separates the exports of a domain (what operations are defined) from its implementation (how the objects are represented and operations are defined). Users of a domain can thus only create and manipulate objects through these exported operations. This allows implementers to <span class="italic">remove and replace</span> parts of the library safely by newly upgraded (and, we hope, correct) implementations without consequence to its users.</p>
+<p>Categories protect names by context, making the same names available for use in other contexts. Categories also provide for code-economy. Algorithms can be parameterized categorically to characterize their correct and most general context. Once compiled, the same machine code is applicable in all such contexts.</p>
+<p>Finally, FriCAS provides an automatic, guaranteed interaction between new and old code. For example:</p>
+<ul>
+<li>if you write a new algorithm that requires a parameter to be a field, then your algorithm will work automatically with every field defined in the system; past, present, or future.</li>
+<li>if you introduce a new domain constructor that produces a field, then the objects of that domain can be used as parameters to any algorithm using field objects defined in the system; past, present, or future.</li>
+</ul>
+<p>These are the key ideas. For further information, we particularly recommend your reading chapters 11, 12, and 13, where these ideas are explained in greater detail.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-0.1.xhtml">Previous Section 0.1 Introduction to FriCAS</a><a href="section-0.3.xhtml">Next Section 0.3 Using FriCAS as a Pocket Calculator</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

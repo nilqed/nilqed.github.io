@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.1</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.0.xhtml">Previous Section 1.0 An Overview of FriCAS</a><a href="section-1.2.xhtml">Next Section 1.2 Typographic Conventions</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.1">
+<h2 class="sectiontitle" id="starting-up-and-winding-down">1.1 Starting Up and Winding Down</h2>
+<span id="ugIntroStart" class="label"></span>
+<p>You need to know how to start the FriCAS system and how to stop it. We assume that FriCAS has been correctly installed on your machine (as described in another FriCAS document).</p>
+<p>To begin using FriCAS, issue the command <span style="font-weight: bold;"> axiom</span> to the FriCAS operating system shell. <span class="index">axiom @<span style="font-weight: bold;"> axiom</span><span id="chapter-1-0"></span></span> There is a brief pause, some start-up messages, and then one or more windows appear.</p>
+<p>If you are not running FriCAS under the X Window System, there is only one window (the console). At the lower left of the screen there is a prompt that <span class="index">prompt</span><span id="chapter-1-1"></span> looks like</p>
+<div class="verbatim">
+<br />
+(1) -&gt;<br />
+
+</div>
+<p>When you want to enter input to FriCAS, you do so on the same line after the prompt. The <span class="italic">1</span> in <span class="italic">(1)</span>, also called the equation number, is the computation step number and is incremented <span class="index">step number</span><span id="chapter-1-2"></span> after you enter FriCAS statements. Note, however, that a system command such as <span class="teletype">)clear all</span> may change the step number in other ways. We talk about step numbers more when we discuss system commands and the workspace history facility.</p>
+<p>If you are running FriCAS under the X Window System, there may be two <span class="index">X Window System</span><span id="chapter-1-3"></span> windows: the console window (as just described) and the HyperDoc main menu. <span class="index">Hyper@{HyperDoc}</span><span id="chapter-1-4"></span> HyperDoc is a multiple-window hypertext system that lets you <span class="index">window</span><span id="chapter-1-5"></span> view FriCAS documentation and examples on-line, execute FriCAS expressions, and generate graphics. If you are in a graphical windowing environment, it is usually started automatically when FriCAS begins. If it is not running, issue <span class="teletype">)hd</span> to start it. We discuss the basics of HyperDoc in Chapter <a href="section-3.0.xhtml#ugHyper" class="ref">ugHyper</a> .</p>
+<p>To interrupt an FriCAS computation, hold down the <span class="index">interrupt</span><span id="chapter-1-6"></span> <span style="font-weight: bold;"> Ctrl</span> (control) key and press <span style="font-weight: bold;"> c</span>. This brings you back to the FriCAS prompt.</p>
+<div class="boxed2">
+<div class="boxed">
+<p>To exit from FriCAS, move to the console window, <span class="index">stopping @{stopping FriCAS}</span><span id="chapter-1-7"></span> type <span class="teletype">)quit</span> <span class="index">exiting @{exiting FriCAS}</span><span id="chapter-1-8"></span> at the input prompt and press the <span style="font-weight: bold;"> Enter</span> key. You will probably be prompted with the following message:</p>
+<div class="center" style="text-align: center;">
+<p>Please enter <span style="font-weight: bold;"> y</span> or <span style="font-weight: bold;"> yes</span> if you really want to leave the<br />
+interactive environment and return to the operating system</p>
+</div>
+<p>You should respond <span style="font-weight: bold;"> yes</span>, for example, to exit FriCAS.<br />
+</p>
+</div>
+</div>
+<p>We are purposely vague in describing exactly what your screen looks like or what messages FriCAS displays. FriCAS runs on a number of different machines, operating systems and window environments, and these differences all affect the physical look of the system. You can also change the way that FriCAS behaves via <span class="italic">system commands</span> described later in this chapter and in Appendix A. System commands are special commands, like <span class="teletype">)set</span>, that begin with a closing parenthesis and are used to change your environment. For example, you can set a system variable so that you are not prompted for confirmation when you want to leave FriCAS.</p>
+<span id="subsec-1.1.1"></span>
+<div id="subsec-1.1.1" class="subsection">
+<h3 class="subsectitle" id="clef">1.1.1 Clef</h3>
+<span id="ugAvailCLEF" class="label"></span>
+<p>If you are using FriCAS under the X Window System, the <span class="index">Clef</span><span id="chapter-1-9"></span> <span class="index">command line editor</span><span id="chapter-1-10"></span> Clef command line editor is probably available and installed. With this editor you can recall previous lines with the up and down arrow keys. To move forward and backward on a line, use the right and left arrows. You can use the <span style="font-weight: bold;"> Insert</span> key to toggle insert mode on or off. When you are in insert mode, the cursor appears as a large block and if you type anything, the characters are inserted into the line without deleting the previous ones.</p>
+<p>If you press the <span style="font-weight: bold;"> Home</span> key, the cursor moves to the beginning of the line and if you press the <span style="font-weight: bold;"> End</span> key, the cursor moves to the end of the line. Pressing <span style="font-weight: bold;"> Ctrl-End</span> deletes all the text from the cursor to the end of the line.</p>
+<p>Clef also provides FriCAS operation name completion for <span class="index">operation name completion</span><span id="chapter-1-11"></span> a limited set of operations. If you enter a few letters and then press the <span style="font-weight: bold;"> Tab</span> key, Clef tries to use those letters as the prefix of an FriCAS operation name. If a name appears and it is not what you want, press <span style="font-weight: bold;"> Tab</span> again to see another name.</p>
+<p>You are ready to begin your journey into the world of FriCAS.</p>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.0.xhtml">Previous Section 1.0 An Overview of FriCAS</a><a href="section-1.2.xhtml">Next Section 1.2 Typographic Conventions</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

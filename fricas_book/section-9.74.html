@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.74</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.74</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.73.xhtml">Previous Section 9.73 SparseTable</a><a href="section-9.75.xhtml">Next Section 9.75 SquareFreeRegularTriangularSet</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.74">
+<h2 class="sectiontitle" id="squarematrix">9.74 SquareMatrix</h2>
+<span id="SquareMatrixXmpPage" class="label"></span>
+<p>The top level matrix type in FriCAS is <span class="teletype">Matrix</span> (see <a href="section-9.52.xhtml#MatrixXmpPage" class="ref">MatrixXmpPage</a> ), which provides basic arithmetic and linear algebra functions. However, since the matrices can be of any size it is not true that any pair can be added or multiplied. Thus <span class="teletype">Matrix</span> has little algebraic structure. Sometimes you want to use matrices as coefficients for polynomials or in other algebraic contexts. In this case, <span class="teletype">SquareMatrix</span> should be used. The domain <span class="teletype">SquareMatrix(n,R)</span> gives the ring of <span class="teletype">n</span> by <span class="teletype">n</span> square matrices over <span class="teletype">R</span>. Since <span class="teletype">SquareMatrix</span> is not normally exposed at the top level, you must expose it before it can be used.</p>
+<div id="spadComm9-55" class="spadComm">
+<span id="commSav9-55" class="commSav">)set expose add constructor SquareMatrix </span>
+<div id="mathAns9-55">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   SquareMatrix is now explicitly exposed in frame G82322 <br />
+
+</div>
+<p>Once <span class="teletype">SQMATRIX</span> has been exposed, values can be created using the <span class="spadfunFrom">squareMatrix</span><span class="index">squareMatrix</span><span id="chapter-9-50"></span><span class="index">SquareMatrix</span><span id="chapter-9-51"></span> function.</p>
+<div id="spadComm9-56" class="spadComm">
+<span id="commSav9-56" class="commSav">m := squareMatrix [ [1,-%i],[%i,4] ] </span>
+<div id="mathAns9-56">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1-ii4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Complex Integer)
+</div>
+<p>The usual arithmetic operations are available.</p>
+<div id="spadComm9-57" class="spadComm">
+<span id="commSav9-57" class="commSav">m*m - m </span>
+<div id="mathAns9-57">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1-4i4i13]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Complex Integer)
+</div>
+<p>Square matrices can be used where ring elements are required. For example, here is a matrix with matrix entries.</p>
+<div id="spadComm9-58" class="spadComm">
+<span id="commSav9-58" class="commSav">mm := squareMatrix [ [m, 1], [1-m, m^2] ] </span>
+<div id="mathAns9-58">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[1-ii4][1001][0i-i-3][2-5i5i17]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,SquareMatrix(2,Complex Integer))
+</div>
+<p>Or you can construct a polynomial with square matrix coefficients.</p>
+<div id="spadComm9-59" class="spadComm">
+<span id="commSav9-59" class="commSav">p := (x + m)^2 </span>
+<div id="mathAns9-59">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2+[2-2i2i8]x+[2-5i5i17]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial SquareMatrix(2,Complex Integer)
+</div>
+<p>This value can be converted to a square matrix with polynomial coefficients.</p>
+<div id="spadComm9-60" class="spadComm">
+<span id="commSav9-60" class="commSav">p::SquareMatrix(2, ?) </span>
+<div id="mathAns9-60">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x2+2x+2-2ix-5i2ix+5ix2+8x+17]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Polynomial Complex Integer)
+</div>
+<p>For more information on related topics, see <a href="ugTypesWritingModesPage" class="ref">ugTypesWritingModesPage</a> in Section <a href="ugTypesWritingModesNumber" class="ref">ugTypesWritingModesNumber</a> , <a href="ugTypesExposePage" class="ref">ugTypesExposePage</a> in Section <a href="ugTypesExposeNumber" class="ref">ugTypesExposeNumber</a> , and <a href="section-9.52.xhtml#MatrixXmpPage" class="ref">MatrixXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.73.xhtml">Previous Section 9.73 SparseTable</a><a href="section-9.75.xhtml">Next Section 9.75 SquareFreeRegularTriangularSet</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

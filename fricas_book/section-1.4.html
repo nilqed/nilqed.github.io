@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.4</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.4</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.3.xhtml">Previous Section 1.3 The FriCAS Language</a><a href="section-1.5.xhtml">Next Section 1.5 Data Structures</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.4">
+<h2 class="sectiontitle" id="numbers">1.4 Numbers</h2>
+<span id="ugIntroNumbers" class="label"></span>
+<p>FriCAS distinguishes very carefully between different kinds of numbers, how they are represented and what their properties are. Here are a sampling of some of these kinds of numbers and some things you can do with them.</p>
+<p>Integer arithmetic is always exact.</p>
+<div id="spadComm1-32" class="spadComm">
+<span id="commSav1-32" class="commSav">11^13 * 13^11 * 17^7 - 19^5 * 23^3</span>
+<div id="mathAns1-32">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>25387751112538918594666224484237298</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Integers can be represented in factored form.</p>
+<div id="spadComm1-33" class="spadComm">
+<span id="commSav1-33" class="commSav">factor 643238070748569023720594412551704344145570763243</span>
+<div id="mathAns1-33">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>11131311177195233292</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+Results stay factored when you do arithmetic. Note that the
+12 is automatically factored for you.
+<div id="spadComm1-34" class="spadComm">
+<span id="commSav1-34" class="commSav">% * 12</span>
+<div id="mathAns1-34">
+
+</div>
+</div>
+<span class="index">radix</span><span id="chapter-1-29"></span>
+22311131311177195233292
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>Integers can also be displayed to bases other than 10. This is an integer in base 11.</p>
+<div id="spadComm1-35" class="spadComm">
+<span id="commSav1-35" class="commSav">radix(25937424601,11)</span>
+<div id="mathAns1-35">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10000000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 11
+</div>
+<p>Roman numerals are also available for those special occasions. <span class="index">Roman numerals</span><span id="chapter-1-30"></span></p>
+<div id="spadComm1-36" class="spadComm">
+<span id="commSav1-36" class="commSav">roman(1992)</span>
+<div id="mathAns1-36">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>MCMXCII</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RomanNumeral
+</div>
+<p>Rational number arithmetic is also exact.</p>
+<div id="spadComm1-37" class="spadComm">
+<span id="commSav1-37" class="commSav">r := 10 + 9/2 + 8/3 + 7/4 + 6/5 + 5/6 + 4/7 + 3/8 + 2/9</span>
+<div id="mathAns1-37">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>557392520</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>To factor fractions, you have to pmap <span style="font-weight: bold;"> factor</span> onto the numerator and denominator.</p>
+<div id="spadComm1-38" class="spadComm">
+<span id="commSav1-38" class="commSav">map(factor,r)</span>
+<div id="mathAns1-38">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>139401233257</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Factored Integer
+</div>
+<p><span class="teletype">SingleInteger</span> refers to machine word-length integers.</p>
+In English, this expression means
+11 as a small integer.
+<div id="spadComm1-39" class="spadComm">
+<span id="commSav1-39" class="commSav">11@SingleInteger</span>
+<div id="mathAns1-39">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SingleInteger
+</div>
+<p>Machine double-precision floating-point numbers are also available for numeric and graphical applications.</p>
+<div id="spadComm1-40" class="spadComm">
+<span id="commSav1-40" class="commSav">123.21@DoubleFloat</span>
+<div id="mathAns1-40">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>123.21000000000001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DoubleFloat
+</div>
+<p>The normal floating-point type in FriCAS, <span class="teletype">Float</span>, is a software implementation of floating-point numbers in which the exponent and the mantissa may have any number of digits. The types <span class="teletype">Complex(Float)</span> and <span class="teletype">Complex(DoubleFloat)</span> are the corresponding software implementations of complex floating-point numbers.</p>
+<p>This is a floating-point approximation to about twenty digits. <span class="index">floating point</span><span id="chapter-1-31"></span> The ``<span class="teletype">::</span>'' is used here to change from one kind of object (here, a rational number) to another (a floating-point number).</p>
+<div id="spadComm1-41" class="spadComm">
+<span id="commSav1-41" class="commSav">r :: Float</span>
+<div id="mathAns1-41">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>22.118650793650793651</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Use <span class="spadfunFrom" style="font-weight: bold;">digits</span><span class="index">digits</span><span id="chapter-1-32"></span><span class="index">Float</span><span id="chapter-1-33"></span> to change the number of digits in the representation. This operation returns the previous value so you can reset it later.</p>
+<div id="spadComm1-42" class="spadComm">
+<span id="commSav1-42" class="commSav">digits(22)</span>
+<div id="mathAns1-42">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+To
+22 digits of precision, the number
+eπ163.0 appears to be an integer.
+<div id="spadComm1-43" class="spadComm">
+<span id="commSav1-43" class="commSav">exp(%pi * sqrt 163.0)</span>
+<div id="mathAns1-43">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>262537412640768744.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Increase the precision to forty digits and try again.</p>
+<div id="spadComm1-44" class="spadComm">
+<span id="commSav1-44" class="commSav">digits(40); exp(%pi * sqrt 163.0)</span>
+<div id="mathAns1-44">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>262537412640768743.9999999999992500725976</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Float
+</div>
+<p>Here are complex numbers with rational numbers as real and <span class="index">complex numbers</span><span id="chapter-1-34"></span> imaginary parts.</p>
+<div id="spadComm1-45" class="spadComm">
+<span id="commSav1-45" class="commSav">(2/3 + %i)^3</span>
+<div id="mathAns1-45">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-4627+13i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>The standard operations on complex numbers are available.</p>
+<div id="spadComm1-46" class="spadComm">
+<span id="commSav1-46" class="commSav">conjugate % </span>
+<div id="mathAns1-46">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-4627-13i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>You can factor complex integers.</p>
+<div id="spadComm1-47" class="spadComm">
+<span id="commSav1-47" class="commSav">factor(89 - 23 * %i)</span>
+<div id="mathAns1-47">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-(1+i)(2+i)2(3+2i)2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Complex Integer
+</div>
+<p>Complex numbers with floating point parts are also available.</p>
+<div id="spadComm1-48" class="spadComm">
+<span id="commSav1-48" class="commSav">exp(%pi/4.0 * %i)</span>
+<div id="mathAns1-48">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.7071067811865475244008443621048490392849+</td>
+</tr>
+</tbody>
+</table>
+</div>
+0.7071067811865475244008443621048490392848i
+<div class="returnType">
+Type: Complex Float
+</div>
+<p>The real and imaginary parts can be symbolic.</p>
+<div id="spadComm1-49" class="spadComm">
+<span id="commSav1-49" class="commSav">complex(u,v)</span>
+<div id="mathAns1-49">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>u+vi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Polynomial Integer
+</div>
+<p>Of course, you can do complex arithmetic with these also.</p>
+<div id="spadComm1-50" class="spadComm">
+<span id="commSav1-50" class="commSav">% ^ 2</span>
+<div id="mathAns1-50">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-v2+u2+2uvi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Polynomial Integer
+</div>
+<p>Every rational number has an exact representation as a repeating decimal expansion</p>
+<div id="spadComm1-51" class="spadComm">
+<span id="commSav1-51" class="commSav">decimal(1/352)</span>
+<div id="mathAns1-51">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.00284</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DecimalExpansion
+</div>
+<p>A rational number can also be expressed as a continued fraction.</p>
+<div id="spadComm1-52" class="spadComm">
+<span id="commSav1-52" class="commSav">continuedFraction(6543/210)</span>
+<div id="mathAns1-52">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>31</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ContinuedFraction Integer
+</div>
+<p>Also, partial fractions can be used and can be displayed in a <span class="index">partial fraction</span><span id="chapter-1-35"></span> compact format <span class="index">fraction:partial</span><span id="chapter-1-36"></span></p>
+<div id="spadComm1-53" class="spadComm">
+<span id="commSav1-53" class="commSav">partialFraction(1,factorial(10))</span>
+<div id="mathAns1-53">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15928-2334-1252+17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PartialFraction Integer
+</div>
+<p>or expanded format.</p>
+<div id="spadComm1-54" class="spadComm">
+<span id="commSav1-54" class="commSav">padicFraction(%)</span>
+<div id="mathAns1-54">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>12+124+125+126+127+128-232-133-234-25-252+17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PartialFraction Integer
+</div>
+<p>Like integers, bases (radices) other than ten can be used for rational numbers. Here we use base eight.</p>
+<div id="spadComm1-55" class="spadComm">
+<span id="commSav1-55" class="commSav">radix(4/7, 8)</span>
+<div id="mathAns1-55">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: RadixExpansion 8
+</div>
+<p>Of course, there are complex versions of these as well. FriCAS decides to make the result a complex rational number.</p>
+<div id="spadComm1-56" class="spadComm">
+<span id="commSav1-56" class="commSav">% + 2/3*%i</span>
+<div id="mathAns1-56">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>47+23i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>You can also use FriCAS to manipulate fractional powers. <span class="index">radical</span><span id="chapter-1-37"></span></p>
+<div id="spadComm1-57" class="spadComm">
+<span id="commSav1-57" class="commSav">(5 + sqrt 63 + sqrt 847)^(1/3)</span>
+<div id="mathAns1-57">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>147+53</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: AlgebraicNumber
+</div>
+<p>You can also compute with integers modulo a prime.</p>
+<div id="spadComm1-58" class="spadComm">
+<span id="commSav1-58" class="commSav">x : PrimeField 7 := 5</span>
+<div id="mathAns1-58">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PrimeField 7
+</div>
+Arithmetic is then done modulo
+7.
+<div id="spadComm1-59" class="spadComm">
+<span id="commSav1-59" class="commSav">x^3</span>
+<div id="mathAns1-59">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PrimeField 7
+</div>
+Since
+7 is prime, you can invert nonzero values.
+<div id="spadComm1-60" class="spadComm">
+<span id="commSav1-60" class="commSav">1/x</span>
+<div id="mathAns1-60">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PrimeField 7
+</div>
+<p>You can also compute modulo an integer that is not a prime.</p>
+<div id="spadComm1-61" class="spadComm">
+<span id="commSav1-61" class="commSav">y : IntegerMod 6 := 5</span>
+<div id="mathAns1-61">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: IntegerMod 6
+</div>
+<p>All of the usual arithmetic operations are available.</p>
+<div id="spadComm1-62" class="spadComm">
+<span id="commSav1-62" class="commSav">y^3</span>
+<div id="mathAns1-62">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: IntegerMod 6
+</div>
+<p>Inversion is not available if the modulus is not a prime number. Modular arithmetic and prime fields are discussed in Section <a href="section-8.11.xhtml#ugxProblemFinitePrime" class="ref">ugxProblemFinitePrime</a> .</p>
+<div id="spadComm1-63" class="spadComm">
+<span id="commSav1-63" class="commSav">1/y</span>
+<div id="mathAns1-63">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   There are 12 exposed and 13 unexposed library operations named / <br />
+      having 2 argument(s) but none was determined to be applicable. <br />
+      Use HyperDoc Browse, or issue<br />
+                                )display op /<br />
+      to learn more about the available operations. Perhaps <br />
+      package-calling the operation or using coercions on the arguments<br />
+      will allow you to apply the operation.<br />
+ <br />
+   Cannot find a definition or applicable library operation named / <br />
+      with argument type(s) <br />
+                               PositiveInteger<br />
+                                IntegerMod 6<br />
+      <br />
+      Perhaps you should use "@" to indicate the required return type, <br />
+      or "$" to specify which version of the function you need.<br />
+
+</div>
+This defines
+a to be an algebraic number, that is, a root of a polynomial equation.
+<div id="spadComm1-64" class="spadComm">
+<span id="commSav1-64" class="commSav">a := rootOf(a^5 + a^3 + a^2 + 3,a)</span>
+<div id="mathAns1-64">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Computations with
+a are reduced according to the polynomial equation.
+<div id="spadComm1-65" class="spadComm">
+<span id="commSav1-65" class="commSav">(a + 1)^10</span>
+<div id="mathAns1-65">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-85a4-264a3-378a2-458a-287</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+Define
+b to be an algebraic number involving
+a.
+<div id="spadComm1-66" class="spadComm">
+<span id="commSav1-66" class="commSav">b := rootOf(b^4 + a,b)</span>
+<div id="mathAns1-66">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>b</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Do some arithmetic.</p>
+<div id="spadComm1-67" class="spadComm">
+<span id="commSav1-67" class="commSav">2/(b - 1)</span>
+<div id="mathAns1-67">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2b-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>To expand and simplify this, call <span class="italic">ratDenom</span> to rationalize the denominator.</p>
+<div id="spadComm1-68" class="spadComm">
+<span id="commSav1-68" class="commSav">ratDenom(%)</span>
+<div id="mathAns1-68">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(a4-a3+2a2-a+1)b3+(a4-a3+2a2-a+1)b2+(a4-a3+2a2-a+1)b+a4-a3+2a2-a+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+If we do this, we should get
+b.
+<div id="spadComm1-69" class="spadComm">
+<span id="commSav1-69" class="commSav">2/%+1</span>
+<div id="mathAns1-69">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>((a4-a3+2a2-a+1)b3+(a4-a3+2a2-a+1)b2+(a4-a3+2a2-a+1)b+a4-a3+2a2-a+3)((a4-a3+2a2-a+1)b3+(a4-a3+2a2-a+1)b2+(a4-a3+2a2-a+1)b+a4-a3+2a2-a+1)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>But we need to rationalize the denominator again.</p>
+<div id="spadComm1-70" class="spadComm">
+<span id="commSav1-70" class="commSav">ratDenom(%)</span>
+<div id="mathAns1-70">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>b</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Types <span class="teletype">Quaternion</span> and <span class="teletype">Octonion</span> are also available. Multiplication of quaternions is non-commutative, as expected.</p>
+<div id="spadComm1-71" class="spadComm">
+<span id="commSav1-71" class="commSav">q:=quatern(1,2,3,4)*quatern(5,6,7,8) - quatern(5,6,7,8)*quatern(1,2,3,4)</span>
+<div id="mathAns1-71">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-8i+16j-8k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.3.xhtml">Previous Section 1.3 The FriCAS Language</a><a href="section-1.5.xhtml">Next Section 1.5 Data Structures</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

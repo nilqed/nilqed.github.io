@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.51</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.51</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.50.xhtml">Previous Section 9.50 MakeFunction</a><a href="section-9.52.xhtml">Next Section 9.52 Matrix</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.51">
+<h2 class="sectiontitle" id="mappingpackage1">9.51 MappingPackage1</h2>
+<span id="MappingPackage1XmpPage" class="label"></span>
+<p>Function are objects of type <span class="teletype">Mapping</span>. In this section we demonstrate some library operations from the packages <span class="teletype">MappingPackage1</span>, <span class="teletype">MappingPackage2</span>, and <span class="teletype">MappingPackage3</span> that manipulate and create functions. Some terminology: a <span class="italic">nullary</span> function takes no arguments, a <span class="italic">unary</span> function takes one argument, and a <span class="italic">binary</span> function takes two arguments.</p>
+<p>We begin by creating an example function that raises a rational number to an integer exponent.</p>
+<div id="spadComm9-133" class="spadComm">
+<span id="commSav9-133" class="commSav">power(q: FRAC INT, n: INT): FRAC INT == q^n </span>
+<div id="mathAns9-133">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Function declaration power : (Fraction Integer,Integer) -&gt; <br />
+   Fraction Integer has been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-134" class="spadComm">
+<span id="commSav9-134" class="commSav">power(2,3) </span>
+<div id="mathAns9-134">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Compiling function power with type (Fraction Integer,Integer) -&gt; <br />
+   Fraction Integer <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The <span class="spadfunFrom">twist</span><span class="index">twist</span><span id="chapter-9-64"></span><span class="index">MappingPackage3</span><span id="chapter-9-65"></span> operation transposes the arguments of a binary function. Here <span class="teletype">rewop(a, b)</span> is <span class="teletype">power(b, a)</span>.</p>
+<div id="spadComm9-135" class="spadComm">
+<span id="commSav9-135" class="commSav">rewop := twist power </span>
+<div id="mathAns9-135">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ((Integer,Fraction Integer) -&gt; Fraction Integer)
+</div>
+This is
+23.
+<div id="spadComm9-136" class="spadComm">
+<span id="commSav9-136" class="commSav">rewop(3, 2) </span>
+<div id="mathAns9-136">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>Now we define <span class="teletype">square</span> in terms of <span class="teletype">power</span>.</p>
+<div id="spadComm9-137" class="spadComm">
+<span id="commSav9-137" class="commSav">square: FRAC INT -&gt; FRAC INT </span>
+<div id="mathAns9-137">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<p>The <span class="spadfunFrom">curryRight</span><span class="index">curryRight</span><span id="chapter-9-66"></span><span class="index">MappingPackage3</span><span id="chapter-9-67"></span> operation creates a unary function from a binary one by providing a constant argument on the right.</p>
+<div id="spadComm9-138" class="spadComm">
+<span id="commSav9-138" class="commSav">square:= curryRight(power, 2) </span>
+<div id="mathAns9-138">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: (Fraction Integer -&gt; Fraction Integer)
+</div>
+<p>Likewise, the <span class="spadfunFrom">curryLeft</span><span class="index">curryLeft</span><span id="chapter-9-68"></span><span class="index">MappingPackage3</span><span id="chapter-9-69"></span> operation provides a constant argument on the left.</p>
+<div id="spadComm9-139" class="spadComm">
+<span id="commSav9-139" class="commSav">square 4 </span>
+<div id="mathAns9-139">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The <span class="spadfunFrom">constantRight</span><span class="index">constantRight</span><span id="chapter-9-70"></span><span class="index">MappingPackage3</span><span id="chapter-9-71"></span> operation creates (in a trivial way) a binary function from a unary one: <span class="teletype">constantRight(f)</span> is the function <span class="teletype">g</span> such that <span class="teletype">g(a,b)= f(a).</span></p>
+<div id="spadComm9-140" class="spadComm">
+<span id="commSav9-140" class="commSav">squirrel:= constantRight(square)$MAPPKG3(FRAC INT,FRAC INT,FRAC INT) </span>
+<div id="mathAns9-140">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ((Fraction Integer,Fraction Integer) -&gt; Fraction Integer)
+</div>
+<p>Likewise, <span class="teletype">constantLeft(f)</span> is the function <span class="teletype">g</span> such that <span class="teletype">g(a,b)= f(b).</span></p>
+<div id="spadComm9-141" class="spadComm">
+<span id="commSav9-141" class="commSav">squirrel(1/2, 1/3) </span>
+<div id="mathAns9-141">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>14</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The <span class="spadfunFrom">curry</span><span class="index">curry</span><span id="chapter-9-72"></span><span class="index">MappingPackage2</span><span id="chapter-9-73"></span> operation makes a unary function nullary.</p>
+<div id="spadComm9-142" class="spadComm">
+<span id="commSav9-142" class="commSav">sixteen := curry(square, 4/1) </span>
+<div id="mathAns9-142">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: (() -&gt; Fraction Integer)
+</div>
+<div id="spadComm9-143" class="spadComm">
+<span id="commSav9-143" class="commSav">sixteen() </span>
+<div id="mathAns9-143">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>16</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The <span class="spadopFrom" title="MappingPackage3">*</span> operation constructs composed functions.</p>
+<div id="spadComm9-144" class="spadComm">
+<span id="commSav9-144" class="commSav">square2:=square*square </span>
+<div id="mathAns9-144">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: (Fraction Integer -&gt; Fraction Integer)
+</div>
+<div id="spadComm9-145" class="spadComm">
+<span id="commSav9-145" class="commSav">square2 3 </span>
+<div id="mathAns9-145">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>81</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>Use the <span class="spadopFrom" title="MappingPackage1">^</span> operation to create functions that are <span class="teletype">n</span>-fold iterations of other functions.</p>
+<div id="spadComm9-146" class="spadComm">
+<span id="commSav9-146" class="commSav">sc(x: FRAC INT): FRAC INT == x + 1 </span>
+<div id="mathAns9-146">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Function declaration sc : Fraction Integer -&gt; <br />
+   Fraction Integer has been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+<p>This is a list of <span class="teletype">Mapping</span> objects.</p>
+<div id="spadComm9-147" class="spadComm">
+<span id="commSav9-147" class="commSav">incfns := [sc^i for i in 0..10] </span>
+<div id="mathAns9-147">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[theMap(...),theMap(...),theMap(...),theMap(...),theMap(...),theMap(...),theMap(...),theMap(...),theMap(...),theMap(...),theMap(...)]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List (Fraction Integer -&gt; Fraction Integer)
+</div>
+<p>This is a list of applications of those functions.</p>
+<div id="spadComm9-148" class="spadComm">
+<span id="commSav9-148" class="commSav">[f 4 for f in incfns] </span>
+<div id="mathAns9-148">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4,5,6,7,8,9,10,11,12,13,14]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Fraction Integer
+</div>
+<p>Use the <span class="spadfunFrom">recur</span><span class="index">recur</span><span id="chapter-9-74"></span><span class="index">MappingPackage1</span><span id="chapter-9-75"></span> operation for recursion:</p>
+<p><span class="teletype">g := recur f</span> means <span class="teletype">g(n,x) == f(n,f(n-1,...f(1,x))).</span></p>
+<div id="spadComm9-149" class="spadComm">
+<span id="commSav9-149" class="commSav">times(n:NNI, i:INT):INT == n*i </span>
+<div id="mathAns9-149">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Function declaration times : (NonNegativeInteger,Integer) -&gt; <br />
+   Integer has been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+<div id="spadComm9-150" class="spadComm">
+<span id="commSav9-150" class="commSav">r := recur(times) </span>
+<div id="mathAns9-150">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ((NonNegativeInteger,Integer) -&gt; Integer)
+</div>
+<p>This is a factorial function.</p>
+<div id="spadComm9-151" class="spadComm">
+<span id="commSav9-151" class="commSav">fact := curryRight(r, 1) </span>
+<div id="mathAns9-151">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: (NonNegativeInteger -&gt; Integer)
+</div>
+<div id="spadComm9-152" class="spadComm">
+<span id="commSav9-152" class="commSav">fact 4 </span>
+<div id="mathAns9-152">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>24</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Constructed functions can be used within other functions.</p>
+<div class="verbatim">
+<br />
+mto2ton(m, n) ==<br />
+  raiser := square^n<br />
+  raiser m<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+This is
+323.
+<div id="spadComm9-153" class="spadComm">
+<span id="commSav9-153" class="commSav">mto2ton(3, 3) </span>
+<div id="mathAns9-153">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Compiling function mto2ton with type (PositiveInteger,<br />
+      PositiveInteger) -&gt; Fraction Integer <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>6561</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>Here <span class="teletype">shiftfib</span> is a unary function that modifies its argument.</p>
+<div class="verbatim">
+<br />
+shiftfib(r: List INT) : INT ==<br />
+  t := r.1<br />
+  r.1 := r.2<br />
+  r.2 := r.2 + t<br />
+  t<br />
+<br />
+Function declaration shiftfib : List Integer -&gt; Integer <br />
+   has been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+<p>By currying over the argument we get a function with private state.</p>
+<div id="spadComm9-154" class="spadComm">
+<span id="commSav9-154" class="commSav">fibinit: List INT := [0, 1] </span>
+<div id="mathAns9-154">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-155" class="spadComm">
+<span id="commSav9-155" class="commSav">fibs := curry(shiftfib, fibinit) </span>
+<div id="mathAns9-155">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>theMap(...)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: (() -&gt; Integer)
+</div>
+<div id="spadComm9-156" class="spadComm">
+<span id="commSav9-156" class="commSav">[fibs() for i in 0..30] </span>
+<div id="mathAns9-156">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765,10946,17711,28657,46368,75025,121393,196418,317811,514229,832040]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.50.xhtml">Previous Section 9.50 MakeFunction</a><a href="section-9.52.xhtml">Next Section 9.52 Matrix</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.45</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.45</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.44.xhtml">Previous Section 9.44 LinearOrdinaryDifferentialOperator</a><a href="section-9.46.xhtml">Next Section 9.46 LinearOrdinaryDifferentialOperator2</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.45">
+<h2 class="sectiontitle" id="linearordinarydifferentialoperator1">9.45 LinearOrdinaryDifferentialOperator1</h2>
+<span id="LinearOrdinaryDifferentialOperator1XmpPage" class="label"></span>
+<p><span class="teletype">LinearOrdinaryDifferentialOperator1(A)</span> is the domain of linear ordinary differential operators with coefficients in the differential ring <span class="teletype">A</span>.</p>
+<span id="subsec-9.45.1"></span>
+<div id="subsec-9.45.1" class="subsection">
+<h3 class="subsectitle" id="differential-operators-with-rational-function-coefficients">9.45.1 Differential Operators with Rational Function Coefficients</h3>
+<p>This example shows differential operators with rational function coefficients. In this case operator multiplication is non-commutative and, since the coefficients form a field, an operator division algorithm exists.</p>
+<p>We begin by defining <span class="teletype">RFZ</span> to be the rational functions in <span class="teletype">x</span> with integer coefficients and <span class="teletype">Dx</span> to be the differential operator for <span class="teletype">d/dx</span>.</p>
+<div id="spadComm9-1" class="spadComm">
+<span id="commSav9-1" class="commSav">RFZ := Fraction UnivariatePolynomial('x, Integer) </span>
+<div id="mathAns9-1">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>FractionUnivariatePolynomial(x,Integer)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<div id="spadComm9-2" class="spadComm">
+<span id="commSav9-2" class="commSav">x : RFZ := 'x </span>
+<div id="mathAns9-2">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction UnivariatePolynomial(x,Integer)
+</div>
+<div id="spadComm9-3" class="spadComm">
+<span id="commSav9-3" class="commSav">Dx : LODO1 RFZ := D()</span>
+<div id="mathAns9-3">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>D</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>Operators are created using the usual arithmetic operations.</p>
+<div id="spadComm9-4" class="spadComm">
+<span id="commSav9-4" class="commSav">b : LODO1 RFZ := 3*x^2*Dx^2 + 2*Dx + 1/x </span>
+<div id="mathAns9-4">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3x2D2+2D+1x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<div id="spadComm9-5" class="spadComm">
+<span id="commSav9-5" class="commSav">a : LODO1 RFZ := b*(5*x*Dx + 7)</span>
+<div id="mathAns9-5">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15x3D3+(51x2+10x)D2+29D+7x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>Operator multiplication corresponds to functional composition.</p>
+<div id="spadComm9-6" class="spadComm">
+<span id="commSav9-6" class="commSav">p := x^2 + 1/x^2 </span>
+<div id="mathAns9-6">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x4+1x2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>Since operator coefficients depend on <span class="teletype">x</span>, the multiplication is not commutative.</p>
+<div id="spadComm9-7" class="spadComm">
+<span id="commSav9-7" class="commSav">(a*b - b*a) p </span>
+<div id="mathAns9-7">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-75x4+540x-75x4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>When the coefficients of operator polynomials come from a field, as in this case, it is possible to define operator division. Division on the left and division on the right yield different results when the multiplication is non-commutative.</p>
+<p>The results of <span class="spadfunFrom">leftDivide</span><span class="index">leftDivide</span><span id="chapter-9-0"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-1"></span> and <span class="spadfunFrom">rightDivide</span><span class="index">rightDivide</span><span id="chapter-9-2"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-3"></span> are quotient-remainder pairs satisfying:<br />
+</p>
+<p><span class="teletype">leftDivide(a,b) = [q, r]</span> such that <span class="teletype">a = b*q + r</span><br />
+<span class="teletype">rightDivide(a,b) = [q, r]</span> such that <span class="teletype">a = q*b + r</span><br />
+</p>
+<p>In both cases, the <span class="spadfunFrom">degree</span><span class="index">degree</span><span id="chapter-9-4"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-5"></span> of the remainder, <span class="teletype">r</span>, is less than the degree of <span class="teletype">b</span>.</p>
+<div id="spadComm9-8" class="spadComm">
+<span id="commSav9-8" class="commSav">ld := leftDivide(a,b) </span>
+<div id="mathAns9-8">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[quotient=5xD+7,remainder=0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(quotient: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer), remainder: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer))
+</div>
+<div id="spadComm9-9" class="spadComm">
+<span id="commSav9-9" class="commSav">a = b * ld.quotient + ld.remainder </span>
+<div id="mathAns9-9">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15x3D3+(51x2+10x)D2+29D+7x=15x3D3+(51x2+10x)D2+29D+7x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>The operations of left and right division are so-called because the quotient is obtained by dividing <span class="teletype">a</span> on that side by <span class="teletype">b</span>.</p>
+<div id="spadComm9-10" class="spadComm">
+<span id="commSav9-10" class="commSav">rd := rightDivide(a,b) </span>
+<div id="mathAns9-10">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[quotient=5xD+7,remainder=10D+5x]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Record(quotient: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer), remainder: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer))
+</div>
+<div id="spadComm9-11" class="spadComm">
+<span id="commSav9-11" class="commSav">a = rd.quotient * b + rd.remainder </span>
+<div id="mathAns9-11">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15x3D3+(51x2+10x)D2+29D+7x=15x3D3+(51x2+10x)D2+29D+7x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>Operations <span class="spadfunFrom">rightQuotient</span><span class="index">rightQuotient</span><span id="chapter-9-6"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-7"></span> and <span class="spadfunFrom">rightRemainder</span><span class="index">rightRemainder</span><span id="chapter-9-8"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-9"></span> are available if only one of the quotient or remainder are of interest to you. This is the quotient from right division.</p>
+<div id="spadComm9-12" class="spadComm">
+<span id="commSav9-12" class="commSav">rightQuotient(a,b) </span>
+<div id="mathAns9-12">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5xD+7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>This is the remainder from right division. The corresponding <span class="italic">left</span> functions <span class="spadfunFrom">leftQuotient</span><span class="index">leftQuotient</span><span id="chapter-9-10"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-11"></span> and <span class="spadfunFrom">leftRemainder</span><span class="index">leftRemainder</span><span id="chapter-9-12"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-13"></span> are also available.</p>
+<div id="spadComm9-13" class="spadComm">
+<span id="commSav9-13" class="commSav">rightRemainder(a,b) </span>
+<div id="mathAns9-13">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10D+5x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>For exact division, the operations <span class="spadfunFrom">leftExactQuotient</span><span class="index">leftExactQuotient</span><span id="chapter-9-14"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-15"></span> and <span class="spadfunFrom">rightExactQuotient</span><span class="index">rightExactQuotient</span><span id="chapter-9-16"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-17"></span> are supplied. These return the quotient but only if the remainder is zero. The call <span class="teletype">rightExactQuotient(a,b)</span> would yield an error.</p>
+<div id="spadComm9-14" class="spadComm">
+<span id="commSav9-14" class="commSav">leftExactQuotient(a,b) </span>
+<div id="mathAns9-14">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5xD+7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer),...)
+</div>
+<p>The division operations allow the computation of left and right greatest common divisors (<span class="spadfunFrom">leftGcd</span><span class="index">leftGcd</span><span id="chapter-9-18"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-19"></span> and <span class="spadfunFrom">rightGcd</span><span class="index">rightGcd</span><span id="chapter-9-20"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-21"></span>) via remainder sequences, and consequently the computation of left and right least common multiples (<span class="spadfunFrom">rightLcm</span><span class="index">rightLcm</span><span id="chapter-9-22"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-23"></span> and <span class="spadfunFrom">leftLcm</span><span class="index">leftLcm</span><span id="chapter-9-24"></span><span class="index">LinearOrdinaryDifferentialOperator1</span><span id="chapter-9-25"></span>).</p>
+<div id="spadComm9-15" class="spadComm">
+<span id="commSav9-15" class="commSav">e := leftGcd(a,b) </span>
+<div id="mathAns9-15">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3x2D2+2D+1x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>Note that a greatest common divisor doesn't necessarily divide <span class="teletype">a</span> and <span class="teletype">b</span> on both sides. Here the left greatest common divisor does not divide <span class="teletype">a</span> on the right.</p>
+<div id="spadComm9-16" class="spadComm">
+<span id="commSav9-16" class="commSav">leftRemainder(a, e) </span>
+<div id="mathAns9-16">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<div id="spadComm9-17" class="spadComm">
+<span id="commSav9-17" class="commSav">rightRemainder(a, e) </span>
+<div id="mathAns9-17">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10D+5x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<p>Similarly, a least common multiple is not necessarily divisible from both sides.</p>
+<div id="spadComm9-18" class="spadComm">
+<span id="commSav9-18" class="commSav">f := rightLcm(a,b) </span>
+<div id="mathAns9-18">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15x3D3+(51x2+10x)D2+29D+7x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<div id="spadComm9-19" class="spadComm">
+<span id="commSav9-19" class="commSav">rightRemainder(f, b) </span>
+<div id="mathAns9-19">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10D+5x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+<div id="spadComm9-20" class="spadComm">
+<span id="commSav9-20" class="commSav">leftRemainder(f, b) </span>
+<div id="mathAns9-20">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LinearOrdinaryDifferentialOperator1 Fraction UnivariatePolynomial(x,Integer)
+</div>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.44.xhtml">Previous Section 9.44 LinearOrdinaryDifferentialOperator</a><a href="section-9.46.xhtml">Next Section 9.46 LinearOrdinaryDifferentialOperator2</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.19</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.19</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.18.xhtml">Previous Section 9.18 EqTable</a><a href="section-9.20.xhtml">Next Section 9.20 Exit</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.19">
+<h2 class="sectiontitle" id="equation">9.19 Equation</h2>
+<span id="EquationXmpPage" class="label"></span>
+<p>The <span class="teletype">Equation</span> domain provides equations as mathematical objects. These are used, for example, as the input to various <span class="spadfunFrom">solve</span><span class="index">solve</span><span id="chapter-9-14"></span><span class="index">TransSolvePackage</span><span id="chapter-9-15"></span> operations.</p>
+<p>Equations are created using the equals symbol, <span class="spadopFrom" title="Equation">=</span>.</p>
+<div id="spadComm9-113" class="spadComm">
+<span id="commSav9-113" class="commSav">eq1 := 3*x + 4*y = 5 </span>
+<div id="mathAns9-113">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4y+3x=5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<div id="spadComm9-114" class="spadComm">
+<span id="commSav9-114" class="commSav">eq2 := 2*x + 2*y = 3 </span>
+<div id="mathAns9-114">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2y+2x=3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<p>The left- and right-hand sides of an equation are accessible using the operations <span class="spadfunFrom">lhs</span><span class="index">lhs</span><span id="chapter-9-16"></span><span class="index">Equation</span><span id="chapter-9-17"></span> and <span class="spadfunFrom">rhs</span><span class="index">rhs</span><span id="chapter-9-18"></span><span class="index">Equation</span><span id="chapter-9-19"></span>.</p>
+<div id="spadComm9-115" class="spadComm">
+<span id="commSav9-115" class="commSav">lhs eq1 </span>
+<div id="mathAns9-115">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4y+3x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<div id="spadComm9-116" class="spadComm">
+<span id="commSav9-116" class="commSav">rhs eq1 </span>
+<div id="mathAns9-116">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<p>Arithmetic operations are supported and operate on both sides of the equation.</p>
+<div id="spadComm9-117" class="spadComm">
+<span id="commSav9-117" class="commSav">eq1 + eq2 </span>
+<div id="mathAns9-117">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>6y+5x=8</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<div id="spadComm9-118" class="spadComm">
+<span id="commSav9-118" class="commSav">eq1 * eq2 </span>
+<div id="mathAns9-118">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>8y2+14xy+6x2=15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<div id="spadComm9-119" class="spadComm">
+<span id="commSav9-119" class="commSav">2*eq2 - eq1 </span>
+<div id="mathAns9-119">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x=1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<p>Equations may be created for any type so the arithmetic operations will be defined only when they make sense. For example, exponentiation is not defined for equations involving non-square matrices.</p>
+<div id="spadComm9-120" class="spadComm">
+<span id="commSav9-120" class="commSav">eq1^2 </span>
+<div id="mathAns9-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>16y2+24xy+9x2=25</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<p>Note that an equals symbol is also used to <span class="italic">test</span> for equality of values in certain contexts. For example, <span class="teletype">x+1</span> and <span class="teletype">y</span> are unequal as polynomials.</p>
+<div id="spadComm9-121" class="spadComm">
+<span id="commSav9-121" class="commSav">if x+1 = y then "equal" else "unequal"</span>
+<div id="mathAns9-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"unequal"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<div id="spadComm9-122" class="spadComm">
+<span id="commSav9-122" class="commSav">eqpol := x+1 = y </span>
+<div id="mathAns9-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x+1=y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Equation Polynomial Integer
+</div>
+<p>If an equation is used where a <span class="teletype">Boolean</span> value is required, then it is evaluated using the equality test from the operand type.</p>
+<div id="spadComm9-123" class="spadComm">
+<span id="commSav9-123" class="commSav">if eqpol then "equal" else "unequal" </span>
+<div id="mathAns9-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"unequal"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<p>If one wants a <span class="teletype">Boolean</span> value rather than an equation, all one has to do is ask!</p>
+<div id="spadComm9-124" class="spadComm">
+<span id="commSav9-124" class="commSav">eqpol::Boolean </span>
+<div id="mathAns9-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.18.xhtml">Previous Section 9.18 EqTable</a><a href="section-9.20.xhtml">Next Section 9.20 Exit</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

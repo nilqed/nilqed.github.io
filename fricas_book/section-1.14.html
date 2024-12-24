@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section1.14</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section1.14</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-1.13.xhtml">Previous Section 1.13 Differential Equations</a><a href="section-1.15.xhtml">Next Section 1.15 System Commands</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-1.14">
+<h2 class="sectiontitle" id="solution-of-equations">1.14 Solution of Equations</h2>
+<span id="ugIntroSolution" class="label"></span>
+<p>FriCAS also has state-of-the-art algorithms for the solution of systems of polynomial equations. When the number of equations and unknowns is the same, and you have no symbolic coefficients, you can use <span style="font-weight: bold;"> solve</span> for real roots and <span style="font-weight: bold;"> complexSolve</span> for complex roots. In each case, you tell FriCAS how accurate you want your result to be. All operations in the <span class="italic">solve</span> family return answers in the form of a list of solution sets, where each solution set is a list of equations.</p>
+A system of two equations involving a symbolic parameter
+t.
+<div id="spadComm1-186" class="spadComm">
+<span id="commSav1-186" class="commSav">S(t) == [x^2-2*y^2 - t,x*y-y-5*x + 5]</span>
+<div id="mathAns1-186">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+Find the real roots of
+S(19) with rational arithmetic, correct to within
+1/1020.
+<div id="spadComm1-187" class="spadComm">
+<span id="commSav1-187" class="commSav">solve(S(19),1/10^20)</span>
+<div id="mathAns1-187">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[y=5,x=-2451682632253093442511295147905179352825856],[y=5,x=2451682632253093442511295147905179352825856]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Polynomial Fraction Integer
+</div>
+Find the complex roots of
+S(19) with floating point coefficients to
+20 digits accuracy in the mantissa.
+<div id="spadComm1-188" class="spadComm">
+<span id="commSav1-188" class="commSav">complexSolve(S(19),10.e-20)</span>
+<div id="mathAns1-188">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[y=5.0,x=8.3066238629180748526],[y=5.0,x=-8.3066238629180748526],[y=-3.0i,x=1.0],[y=3.0i,x=1.0]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Polynomial Complex Float
+</div>
+<p>If a system of equations has symbolic coefficients and you want a solution in radicals, try <span style="font-weight: bold;"> radicalSolve</span>.</p>
+<div id="spadComm1-189" class="spadComm">
+<span id="commSav1-189" class="commSav">radicalSolve(S(a),[x,y])</span>
+<div id="mathAns1-189">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=-a+50,y=5],[x=a+50,y=5],[x=1,y=-a+12],[x=1,y=--a+12]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Expression Integer
+</div>
+<p>For systems of equations with symbolic coefficients, you can apply <span style="font-weight: bold;"> solve</span>, listing the variables that you want FriCAS to solve for. For polynomial equations, a solution cannot usually be expressed solely in terms of the other variables. Instead, the solution is presented as a <span class="italic">triangular</span> system of equations, where each polynomial has coefficients involving only the succeeding variables. This is analogous to converting a linear system of equations to <span class="italic">triangular form</span>.</p>
+<p>A system of three equations in five variables.</p>
+<div id="spadComm1-190" class="spadComm">
+<span id="commSav1-190" class="commSav">eqns := [x^2 - y + z,x^2*z + x^4 - b*y, y^2 *z - a - b*x]</span>
+<div id="mathAns1-190">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[z-y+x2,x2z-by+x4,y2z-bx-a]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Polynomial Integer
+</div>
+Solve the system for unknowns
+[x,y,z], reducing the solution to triangular form.
+<div id="spadComm1-191" class="spadComm">
+<span id="commSav1-191" class="commSav">solve(eqns,[x,y,z])</span>
+<div id="mathAns1-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x=-ab,y=0,z=-a2b2],[x=z3+2bz2+b2z-ab,y=z+b,z6+4bz5+6b2z4+(4b3-2a)z3+(b4-4ab)z2-.2ab2z-b3+a2=0]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List List Equation Fraction Polynomial Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-1.13.xhtml">Previous Section 1.13 Differential Equations</a><a href="section-1.15.xhtml">Next Section 1.15 System Commands</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

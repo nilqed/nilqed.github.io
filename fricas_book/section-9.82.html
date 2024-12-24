@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.82</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.82</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.81.xhtml">Previous Section 9.81 TextFile</a><a href="section-9.83.xhtml">Next Section 9.83 UnivariatePolynomial</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.82">
+<h2 class="sectiontitle" id="twodimensionalarray">9.82 TwoDimensionalArray</h2>
+<span id="TwoDimensionalArrayXmpPage" class="label"></span>
+<p>The <span class="teletype">TwoDimensionalArray</span> domain is used for storing data in a two dimensional data structure indexed by row and by column. Such an array is a homogeneous data structure in that all the entries of the array must belong to the same FriCAS domain (although see <a href="ugTypesAnyNonePage" class="ref">ugTypesAnyNonePage</a> in Section <a href="ugTypesAnyNoneNumber" class="ref">ugTypesAnyNoneNumber</a> ). Each array has a fixed number of rows and columns specified by the user and arrays are not extensible. In FriCAS, the indexing of two-dimensional arrays is one-based. This means that both the <span class="italic">first</span> row of an array and the <span class="italic">first</span> column of an array are given the index <span class="teletype">1</span>. Thus, the entry in the upper left corner of an array is in position <span class="teletype">(1,1)</span>.</p>
+<p>The operation <span class="spadfunFrom">new</span><span class="index">new</span><span id="chapter-9-120"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-121"></span> creates an array with a specified number of rows and columns and fills the components of that array with a specified entry. The arguments of this operation specify the number of rows, the number of columns, and the entry.</p>
+<p>This creates a five-by-four array of integers, all of whose entries are zero.</p>
+<div id="spadComm9-185" class="spadComm">
+<span id="commSav9-185" class="commSav">arr : ARRAY2 INT := new(5,4,0) </span>
+<div id="mathAns9-185">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[00000000000000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<p>The entries of this array can be set to other integers using the operation <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-122"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-123"></span>.</p>
+<p>Issue this to set the element in the upper left corner of this array to <span class="teletype">17</span>.</p>
+<div id="spadComm9-186" class="spadComm">
+<span id="commSav9-186" class="commSav">setelt(arr,1,1,17) </span>
+<div id="mathAns9-186">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Now the first element of the array is <span class="teletype">17.</span></p>
+<div id="spadComm9-187" class="spadComm">
+<span id="commSav9-187" class="commSav">arr </span>
+<div id="mathAns9-187">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[170000000000000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<p>Likewise, elements of an array are extracted using the operation <span class="spadfunFrom">elt</span><span class="index">elt</span><span id="chapter-9-124"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-125"></span>.</p>
+<div id="spadComm9-188" class="spadComm">
+<span id="commSav9-188" class="commSav">elt(arr,1,1) </span>
+<div id="mathAns9-188">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Another way to use these two operations is as follows. This sets the element in position <span class="teletype">(3,2)</span> of the array to <span class="teletype">15</span>.</p>
+<div id="spadComm9-189" class="spadComm">
+<span id="commSav9-189" class="commSav">arr(3,2) := 15 </span>
+<div id="mathAns9-189">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This extracts the element in position <span class="teletype">(3,2)</span> of the array.</p>
+<div id="spadComm9-190" class="spadComm">
+<span id="commSav9-190" class="commSav">arr(3,2) </span>
+<div id="mathAns9-190">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>The operations <span class="spadfunFrom">elt</span><span class="index">elt</span><span id="chapter-9-126"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-127"></span> and <span class="spadfunFrom">setelt</span><span class="index">setelt</span><span id="chapter-9-128"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-129"></span> come equipped with an error check which verifies that the indices are in the proper ranges. For example, the above array has five rows and four columns, so if you ask for the entry in position <span class="teletype">(6,2)</span> with <span class="teletype">arr(6,2)</span> FriCAS displays an error message. If there is no need for an error check, you can call the operations <span class="spadfunFrom">qelt</span><span class="index">qelt</span><span id="chapter-9-130"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-131"></span> and <span class="spadfunFrom">qsetelt</span><span class="index">qsetelt</span><span id="chapter-9-132"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-133"></span> which provide the same functionality but without the error check. Typically, these operations are called in well-tested programs.</p>
+<p>The operations <span class="spadfunFrom">row</span><span class="index">row</span><span id="chapter-9-134"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-135"></span> and <span class="spadfunFrom">column</span><span class="index">column</span><span id="chapter-9-136"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-137"></span> extract rows and columns, respectively, and return objects of <span class="teletype">OneDimensionalArray</span> with the same underlying element type.</p>
+<div id="spadComm9-191" class="spadComm">
+<span id="commSav9-191" class="commSav">row(arr,1) </span>
+<div id="mathAns9-191">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[17,0,0,0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray Integer
+</div>
+<div id="spadComm9-192" class="spadComm">
+<span id="commSav9-192" class="commSav">column(arr,1) </span>
+<div id="mathAns9-192">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[17,0,0,0,0]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: OneDimensionalArray Integer
+</div>
+<p>You can determine the dimensions of an array by calling the operations <span class="spadfunFrom">nrows</span><span class="index">nrows</span><span id="chapter-9-138"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-139"></span> and <span class="spadfunFrom">ncols</span><span class="index">ncols</span><span id="chapter-9-140"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-141"></span>, which return the number of rows and columns, respectively.</p>
+<div id="spadComm9-193" class="spadComm">
+<span id="commSav9-193" class="commSav">nrows(arr) </span>
+<div id="mathAns9-193">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-194" class="spadComm">
+<span id="commSav9-194" class="commSav">ncols(arr) </span>
+<div id="mathAns9-194">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>To apply an operation to every element of an array, use <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-142"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-143"></span>. This creates a new array. This expression negates every element.</p>
+<div id="spadComm9-195" class="spadComm">
+<span id="commSav9-195" class="commSav">map(-,arr) </span>
+<div id="mathAns9-195">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1700000000-150000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<p>This creates an array where all the elements are doubled.</p>
+<div id="spadComm9-196" class="spadComm">
+<span id="commSav9-196" class="commSav">map((x +-&gt; x + x),arr) </span>
+<div id="mathAns9-196">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3400000000300000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<p>To change the array destructively, use <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-144"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-145"></span> instead of <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-146"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-147"></span>. If you need to make a copy of any array, use <span class="spadfunFrom">copy</span><span class="index">copy</span><span id="chapter-9-148"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-149"></span>.</p>
+<div id="spadComm9-197" class="spadComm">
+<span id="commSav9-197" class="commSav">arrc := copy(arr) </span>
+<div id="mathAns9-197">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1700000000150000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<div id="spadComm9-198" class="spadComm">
+<span id="commSav9-198" class="commSav">map!(-,arrc) </span>
+<div id="mathAns9-198">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1700000000-150000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<div id="spadComm9-199" class="spadComm">
+<span id="commSav9-199" class="commSav">arrc </span>
+<div id="mathAns9-199">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1700000000-150000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<div id="spadComm9-200" class="spadComm">
+<span id="commSav9-200" class="commSav">arr </span>
+<div id="mathAns9-200">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1700000000150000000000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: TwoDimensionalArray Integer
+</div>
+<p>Use <span class="spadfunFrom">member?</span><span class="index">member?</span><span id="chapter-9-150"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-151"></span> to see if a given element is in an array.</p>
+<div id="spadComm9-201" class="spadComm">
+<span id="commSav9-201" class="commSav">member?(17,arr) </span>
+<div id="mathAns9-201">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-202" class="spadComm">
+<span id="commSav9-202" class="commSav">member?(10317,arr) </span>
+<div id="mathAns9-202">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>To see how many times an element appears in an array, use <span class="spadfunFrom">count</span><span class="index">count</span><span id="chapter-9-152"></span><span class="index">TwoDimensionalArray</span><span id="chapter-9-153"></span>.</p>
+<div id="spadComm9-203" class="spadComm">
+<span id="commSav9-203" class="commSav">count(17,arr) </span>
+<div id="mathAns9-203">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-204" class="spadComm">
+<span id="commSav9-204" class="commSav">count(0,arr) </span>
+<div id="mathAns9-204">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>18</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>For more information about the operations available for <span class="teletype">TwoDimensionalArray</span>, issue <span class="teletype">)show TwoDimensionalArray</span>. For information on related topics, see <a href="section-9.52.xhtml#MatrixXmpPage" class="ref">MatrixXmpPage</a> and <a href="section-9.57.xhtml#OneDimensionalArrayXmpPage" class="ref">OneDimensionalArrayXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.81.xhtml">Previous Section 9.81 TextFile</a><a href="section-9.83.xhtml">Next Section 9.83 UnivariatePolynomial</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

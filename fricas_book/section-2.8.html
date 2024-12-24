@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section2.8</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section2.8</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-2.7.xhtml">Previous Section 2.7 Conversion</a><a href="section-2.9.xhtml">Next Section 2.9 Package Calling and Target Types</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-2.8">
+<h2 class="sectiontitle" id="subdomains-again">2.8 Subdomains Again</h2>
+<span id="ugTypesSubdomains" class="label"></span>
+<p>A <span class="italic">subdomain</span> S of a domain D is a domain consisting of</p>
+<ol>
+<li>those elements of D that satisfy some <span class="italic">predicate</span> (that is, a test that returns <span class="teletype">true</span> or <span class="teletype">false</span>) and</li>
+<li>a subset of the operations of D.</li>
+</ol>
+<p>Every domain is a subdomain of itself, trivially satisfying the membership test: <span class="teletype">true</span>.</p>
+Currently, there are only two system-defined subdomains in FriCAS that receive substantial use. <span class="teletype">PositiveInteger</span> and <span class="teletype">NonNegativeInteger</span> are subdomains of <span class="teletype">Integer</span>. An element
+x of <span class="teletype">NonNegativeInteger</span> is an integer that is greater than or equal to zero, that is, satisfies
+x&gt;=0. An element
+x of <span class="teletype">PositiveInteger</span> is a nonnegative integer that is, in fact, greater than zero, that is, satisfies
+x&gt;0. Not all operations from <span class="teletype">Integer</span> are available for these subdomains. For example, negation and subtraction are not provided since the subdomains are not closed under those operations. When you use an integer in an expression, FriCAS assigns to it the type that is the most specific subdomain whose predicate is satisfied.
+<p>This is a positive integer.</p>
+<div id="spadComm2-98" class="spadComm">
+<span id="commSav2-98" class="commSav">5</span>
+<div id="mathAns2-98">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This is a nonnegative integer.</p>
+<div id="spadComm2-99" class="spadComm">
+<span id="commSav2-99" class="commSav">0</span>
+<div id="mathAns2-99">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+<p>This is neither of the above.</p>
+<div id="spadComm2-100" class="spadComm">
+<span id="commSav2-100" class="commSav">-5</span>
+<div id="mathAns2-100">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<p>Furthermore, unless you are assigning an integer to a declared variable or using a conversion, any integer result has as type the most specific subdomain.</p>
+<div id="spadComm2-101" class="spadComm">
+<span id="commSav2-101" class="commSav">(-2) - (-3)</span>
+<div id="mathAns2-101">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm2-102" class="spadComm">
+<span id="commSav2-102" class="commSav">0 :: Integer</span>
+<div id="mathAns2-102">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Integer
+</div>
+<div id="spadComm2-103" class="spadComm">
+<span id="commSav2-103" class="commSav">x : NonNegativeInteger := 5</span>
+<div id="mathAns2-103">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: NonNegativeInteger
+</div>
+When necessary, FriCAS converts an integer object into one belonging to a less specific subdomain. For example, in
+3-2, the arguments to "<span class="spadopFrom" title="Integer">-</span>" are both elements of <span class="teletype">PositiveInteger</span>, but this type does not provide a subtraction operation. Neither does <span class="teletype">NonNegativeInteger</span>, so
+3 and
+2 are viewed as elements of <span class="teletype">Integer</span>, where their difference can be calculated. The result is
+1, which FriCAS then automatically assigns the type <span class="teletype">PositiveInteger</span>.
+<p>Certain operations are very sensitive to the subdomains to which their arguments belong. This is an element of <span class="teletype">PositiveInteger</span>.</p>
+<div id="spadComm2-104" class="spadComm">
+<span id="commSav2-104" class="commSav">2 ^ 2</span>
+<div id="mathAns2-104">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This is an element of <span class="teletype">Fraction Integer</span>.</p>
+<div id="spadComm2-105" class="spadComm">
+<span id="commSav2-105" class="commSav">2 ^ (-2)</span>
+<div id="mathAns2-105">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>14</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>It makes sense then that this is a list of elements of <span class="teletype">PositiveInteger</span>.</p>
+<div id="spadComm2-106" class="spadComm">
+<span id="commSav2-106" class="commSav">[10^i for i in 2..5]</span>
+<div id="mathAns2-106">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[100,1000,10000,100000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+What should the type of <span class="teletype">[10^(i-1) for i in 2..5]</span> be? On one hand,
+i-1 is always an integer greater than zero as
+i ranges from
+2 to
+5 and so
+10**i is also always a positive integer. On the other,
+i-1 is a very simple function of
+i. FriCAS does not try to analyze every such function over the index's range of values to determine whether it is always positive or nowhere negative. For an arbitrary FriCAS function, this analysis is not possible.
+<p>So, to be consistent no such analysis is done and we get this.</p>
+<div id="spadComm2-107" class="spadComm">
+<span id="commSav2-107" class="commSav">[10^(i-1) for i in 2..5]</span>
+<div id="mathAns2-107">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,100,1000,10000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Fraction Integer
+</div>
+<p>To get a list of elements of <span class="teletype">PositiveInteger</span> instead, you have two choices. You can use a conversion.</p>
+<div id="spadComm2-108" class="spadComm">
+<span id="commSav2-108" class="commSav">[10^((i-1) :: PI) for i in 2..5]</span>
+<div id="mathAns2-108">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Compiling function G82696 with type Integer -&gt; Boolean <br />
+Compiling function G82708 with type NonNegativeInteger -&gt; Boolean <br />
+
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,100,1000,10000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>Or you can use <span class="teletype">pretend</span>. <span class="index">pretend</span><span id="chapter-2-50"></span></p>
+<div id="spadComm2-109" class="spadComm">
+<span id="commSav2-109" class="commSav">[10^((i-1) pretend PI) for i in 2..5]</span>
+<div id="mathAns2-109">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,100,1000,10000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PositiveInteger
+</div>
+<p>The operation <span class="teletype">pretend</span> is used to defeat the FriCAS type system. The expression <span class="teletype">object pretend D</span> means <span class="italic">make a new object (without copying) of type <span class="teletype">D</span> from <span class="teletype">object</span>.</span> If <span class="teletype">object</span> were an integer and you told FriCAS to pretend it was a list, you would probably see a message about a fatal error being caught and memory possibly being damaged. Lists do not have the same internal representation as integers!</p>
+<p>You use <span class="teletype">pretend</span> at your peril. <span class="index">peril</span><span id="chapter-2-51"></span></p>
+Use
+pretend with great care! FriCAS trusts you that the value is of the specified type.
+<div id="spadComm2-110" class="spadComm">
+<span id="commSav2-110" class="commSav">(2/3) pretend Complex Integer</span>
+<div id="mathAns2-110">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2+3i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-2.7.xhtml">Previous Section 2.7 Conversion</a><a href="section-2.9.xhtml">Next Section 2.9 Package Calling and Target Types</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.22</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.22</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.21.xhtml">Previous Section 9.21 Expression</a><a href="section-9.23.xhtml">Next Section 9.23 FactoredFunctions2</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.22">
+<h2 class="sectiontitle" id="factored">9.22 Factored</h2>
+<span id="FactoredXmpPage" class="label"></span>
+<p><span class="teletype">Factored</span> creates a domain whose objects are kept in factored form as long as possible. Thus certain operations like <span class="spadopFrom" title="Factored">*</span> (multiplication) and <span class="spadfunFrom">gcd</span><span class="index">gcd</span><span id="chapter-9-26"></span><span class="index">Factored</span><span id="chapter-9-27"></span> are relatively easy to do. Others, such as addition, require somewhat more work, and the result may not be completely factored unless the argument domain <span class="teletype">R</span> provides a <span class="spadfunFrom">factor</span><span class="index">factor</span><span id="chapter-9-28"></span><span class="index">Factored</span><span id="chapter-9-29"></span> operation. Each object consists of a unit and a list of factors, where each factor consists of a member of <span class="teletype">R</span> (the <span class="em">base</span>), an exponent, and a flag indicating what is known about the base. A flag may be one of <span class="italic"><span class="teletype">nil</span></span>, <span class="italic"><span class="teletype">sqfr</span></span>, <span class="italic"><span class="teletype">irred</span></span> or <span class="italic"><span class="teletype">prime</span></span>, which mean that nothing is known about the base, it is square-free, it is irreducible, or it is prime, respectively. The current restriction to factored objects of integral domains allows simplification to be performed without worrying about multiplication order.</p>
+<span id="subsec-9.22.1"></span>
+<div id="subsec-9.22.1" class="subsection">
+<h3 class="subsectitle" id="decomposing-factored-objects">9.22.1 Decomposing Factored Objects</h3>
+<p>In this section we will work with a factored integer.</p>
+<div id="spadComm9-152" class="spadComm">
+<span id="commSav9-152" class="commSav">g := factor(4312) </span>
+<div id="mathAns9-152">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>237211</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>Let's begin by decomposing <span class="teletype">g</span> into pieces. The only possible units for integers are <span class="teletype">1</span> and <span class="teletype">-1</span>.</p>
+<div id="spadComm9-153" class="spadComm">
+<span id="commSav9-153" class="commSav">unit(g) </span>
+<div id="mathAns9-153">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>There are three factors.</p>
+<div id="spadComm9-154" class="spadComm">
+<span id="commSav9-154" class="commSav">numberOfFactors(g) </span>
+<div id="mathAns9-154">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>We can make a list of the bases, ...</p>
+<div id="spadComm9-155" class="spadComm">
+<span id="commSav9-155" class="commSav">[nthFactor(g,i) for i in 1..numberOfFactors(g)] </span>
+<div id="mathAns9-155">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2,7,11]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>and the exponents, ...</p>
+<div id="spadComm9-156" class="spadComm">
+<span id="commSav9-156" class="commSav">[nthExponent(g,i) for i in 1..numberOfFactors(g)] </span>
+<div id="mathAns9-156">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3,2,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>and the flags. You can see that all the bases (factors) are prime.</p>
+<div id="spadComm9-157" class="spadComm">
+<span id="commSav9-157" class="commSav">[nthFlag(g,i) for i in 1..numberOfFactors(g)] </span>
+<div id="mathAns9-157">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>["prime","prime","prime"]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Union("nil","sqfr","irred","prime")
+</div>
+<p>A useful operation for pulling apart a factored object into a list of records of the components is <span class="spadfunFrom">factorList</span><span class="index">factorList</span><span id="chapter-9-30"></span><span class="index">Factored</span><span id="chapter-9-31"></span>.</p>
+<div id="spadComm9-158" class="spadComm">
+<span id="commSav9-158" class="commSav">factorList(g) </span>
+<div id="mathAns9-158">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[flg="prime",fctr=2,xpnt=3],[flg="prime",fctr=7,xpnt=2],[flg="prime",fctr=11,xpnt=1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Record(flg: Union("nil","sqfr","irred","prime"), fctr: Integer,xpnt: Integer)
+</div>
+<p>If you don't care about the flags, use <span class="spadfunFrom">factors</span><span class="index">factors</span><span id="chapter-9-32"></span><span class="index">Factored</span><span id="chapter-9-33"></span>.</p>
+<div id="spadComm9-159" class="spadComm">
+<span id="commSav9-159" class="commSav">factors(g) </span>
+<div id="mathAns9-159">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[factor=2,exponent=3],[factor=7,exponent=2],[factor=11,exponent=1]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Record(factor: Integer,exponent: Integer)
+</div>
+<p>Neither of these operations returns the unit.</p>
+<div id="spadComm9-160" class="spadComm">
+<span id="commSav9-160" class="commSav">first(%).factor </span>
+<div id="mathAns9-160">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+<span id="subsec-9.22.2"></span>
+<div id="subsec-9.22.2" class="subsection">
+<h3 class="subsectitle" id="expanding-factored-objects">9.22.2 Expanding Factored Objects</h3>
+<p>Recall that we are working with this factored integer.</p>
+<div id="spadComm9-161" class="spadComm">
+<span id="commSav9-161" class="commSav">g := factor(4312) </span>
+<div id="mathAns9-161">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>237211</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>To multiply out the factors with their multiplicities, use <span class="spadfunFrom">expand</span><span class="index">expand</span><span id="chapter-9-34"></span><span class="index">Factored</span><span id="chapter-9-35"></span>.</p>
+<div id="spadComm9-162" class="spadComm">
+<span id="commSav9-162" class="commSav">expand(g) </span>
+<div id="mathAns9-162">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4312</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>If you would like, say, the distinct factors multiplied together but with multiplicity one, you could do it this way.</p>
+<div id="spadComm9-163" class="spadComm">
+<span id="commSav9-163" class="commSav">reduce(*,[t.factor for t in factors(g)]) </span>
+<div id="mathAns9-163">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>154</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+<span id="subsec-9.22.3"></span>
+<div id="subsec-9.22.3" class="subsection">
+<h3 class="subsectitle" id="arithmetic-with-factored-objects">9.22.3 Arithmetic with Factored Objects</h3>
+<p>We're still working with this factored integer.</p>
+<div id="spadComm9-164" class="spadComm">
+<span id="commSav9-164" class="commSav">g := factor(4312) </span>
+<div id="mathAns9-164">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>237211</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>We'll also define this factored integer.</p>
+<div id="spadComm9-165" class="spadComm">
+<span id="commSav9-165" class="commSav">f := factor(246960) </span>
+<div id="mathAns9-165">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2432573</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>Operations involving multiplication and division are particularly easy with factored objects.</p>
+<div id="spadComm9-166" class="spadComm">
+<span id="commSav9-166" class="commSav">f * g </span>
+<div id="mathAns9-166">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>273257511</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<div id="spadComm9-167" class="spadComm">
+<span id="commSav9-167" class="commSav">f^500 </span>
+<div id="mathAns9-167">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2200031000550071500</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<div id="spadComm9-168" class="spadComm">
+<span id="commSav9-168" class="commSav">gcd(f,g) </span>
+<div id="mathAns9-168">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2372</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<div id="spadComm9-169" class="spadComm">
+<span id="commSav9-169" class="commSav">lcm(f,g) </span>
+<div id="mathAns9-169">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>243257311</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>If we use addition and subtraction things can slow down because we may need to compute greatest common divisors.</p>
+<div id="spadComm9-170" class="spadComm">
+<span id="commSav9-170" class="commSav">f + g </span>
+<div id="mathAns9-170">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2372641</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<div id="spadComm9-171" class="spadComm">
+<span id="commSav9-171" class="commSav">f - g </span>
+<div id="mathAns9-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2372619</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>Test for equality with <span class="teletype">0</span> and <span class="teletype">1</span> by using <span class="spadfunFrom">zero?</span><span class="index">zero?</span><span id="chapter-9-36"></span><span class="index">Factored</span><span id="chapter-9-37"></span> and <span class="spadfunFrom">one?</span><span class="index">one?</span><span id="chapter-9-38"></span><span class="index">Factored</span><span id="chapter-9-39"></span>, respectively.</p>
+<div id="spadComm9-172" class="spadComm">
+<span id="commSav9-172" class="commSav">zero?(factor(0))</span>
+<div id="mathAns9-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-173" class="spadComm">
+<span id="commSav9-173" class="commSav">zero?(g) </span>
+<div id="mathAns9-173">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-174" class="spadComm">
+<span id="commSav9-174" class="commSav">one?(factor(1))</span>
+<div id="mathAns9-174">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm9-175" class="spadComm">
+<span id="commSav9-175" class="commSav">one?(f) </span>
+<div id="mathAns9-175">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>Another way to get the zero and one factored objects is to use package calling (see <a href="ugTypesPkgCallPage" class="ref">ugTypesPkgCallPage</a> in Section <a href="ugTypesPkgCallNumber" class="ref">ugTypesPkgCallNumber</a> ).</p>
+<div id="spadComm9-176" class="spadComm">
+<span id="commSav9-176" class="commSav">0$Factored(Integer)</span>
+<div id="mathAns9-176">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<div id="spadComm9-177" class="spadComm">
+<span id="commSav9-177" class="commSav">1$Factored(Integer)</span>
+<div id="mathAns9-177">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+</div>
+<span id="subsec-9.22.4"></span>
+<div id="subsec-9.22.4" class="subsection">
+<h3 class="subsectitle" id="creating-new-factored-objects">9.22.4 Creating New Factored Objects</h3>
+<p>The <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-40"></span><span class="index">Factored</span><span id="chapter-9-41"></span> operation is used to iterate across the unit and bases of a factored object. See <a href="FactoredFunctionsTwoXmpPage" class="ref">FactoredFunctionsTwoXmpPage</a> for a discussion of <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-42"></span><span class="index">Factored</span><span id="chapter-9-43"></span>.</p>
+<p>The following four operations take a base and an exponent and create a factored object. They differ in handling the flag component.</p>
+<div id="spadComm9-178" class="spadComm">
+<span id="commSav9-178" class="commSav">nilFactor(24,2) </span>
+<div id="mathAns9-178">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>242</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>This factor has no associated information.</p>
+<div id="spadComm9-179" class="spadComm">
+<span id="commSav9-179" class="commSav">nthFlag(%,1) </span>
+<div id="mathAns9-179">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"nil"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union("nil",...)
+</div>
+<p>This factor is asserted to be square-free.</p>
+<div id="spadComm9-180" class="spadComm">
+<span id="commSav9-180" class="commSav">sqfrFactor(30,2) </span>
+<div id="mathAns9-180">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>302</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>This factor is asserted to be irreducible.</p>
+<div id="spadComm9-181" class="spadComm">
+<span id="commSav9-181" class="commSav">irreducibleFactor(13,10) </span>
+<div id="mathAns9-181">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1310</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>This factor is asserted to be prime.</p>
+<div id="spadComm9-182" class="spadComm">
+<span id="commSav9-182" class="commSav">primeFactor(11,5) </span>
+<div id="mathAns9-182">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>115</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>A partial inverse to <span class="spadfunFrom">factorList</span><span class="index">factorList</span><span id="chapter-9-44"></span><span class="index">Factored</span><span id="chapter-9-45"></span> is <span class="spadfunFrom">makeFR</span><span class="index">makeFR</span><span id="chapter-9-46"></span><span class="index">Factored</span><span id="chapter-9-47"></span>.</p>
+<div id="spadComm9-183" class="spadComm">
+<span id="commSav9-183" class="commSav">h := factor(-720) </span>
+<div id="mathAns9-183">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-24325</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+<p>The first argument is the unit and the second is a list of records as returned by <span class="spadfunFrom">factorList</span><span class="index">factorList</span><span id="chapter-9-48"></span><span class="index">Factored</span><span id="chapter-9-49"></span>.</p>
+<div id="spadComm9-184" class="spadComm">
+<span id="commSav9-184" class="commSav">h - makeFR(unit(h),factorList(h)) </span>
+<div id="mathAns9-184">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Integer
+</div>
+</div>
+<span id="subsec-9.22.5"></span>
+<div id="subsec-9.22.5" class="subsection">
+<h3 class="subsectitle" id="factored-objects-with-variables">9.22.5 Factored Objects with Variables</h3>
+<p>Some of the operations available for polynomials are also available for factored polynomials.</p>
+<div id="spadComm9-185" class="spadComm">
+<span id="commSav9-185" class="commSav">p := (4*x*x-12*x+9)*y*y + (4*x*x-12*x+9)*y + 28*x*x - 84*x + 63 </span>
+<div id="mathAns9-185">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(4x2-12x+9)y2+(4x2-12x+9)y+28x2-84x+63</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<div id="spadComm9-186" class="spadComm">
+<span id="commSav9-186" class="commSav">fp := factor(p) </span>
+<div id="mathAns9-186">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(2x-3)2(y2+y+7)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Polynomial Integer
+</div>
+<p>You can differentiate with respect to a variable.</p>
+<div id="spadComm9-187" class="spadComm">
+<span id="commSav9-187" class="commSav">D(p,x) </span>
+<div id="mathAns9-187">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(8x-12)y2+(8x-12)y+56x-84</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Integer
+</div>
+<div id="spadComm9-188" class="spadComm">
+<span id="commSav9-188" class="commSav">D(fp,x) </span>
+<div id="mathAns9-188">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4(2x-3)(y2+y+7)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Polynomial Integer
+</div>
+<div id="spadComm9-189" class="spadComm">
+<span id="commSav9-189" class="commSav">numberOfFactors(%) </span>
+<div id="mathAns9-189">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.21.xhtml">Previous Section 9.21 Expression</a><a href="section-9.23.xhtml">Next Section 9.23 FactoredFunctions2</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

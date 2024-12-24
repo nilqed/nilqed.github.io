@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.58</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.58</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.57.xhtml">Previous Section 9.57 OneDimensionalArray</a><a href="section-9.59.xhtml">Next Section 9.59 OrderedVariableList</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.58">
+<h2 class="sectiontitle" id="operator">9.58 Operator</h2>
+<span id="OperatorXmpPage" class="label"></span>
+<p>Given any ring <span class="teletype">R</span>, the ring of the <span class="teletype">Integer</span>-linear operators over <span class="teletype">R</span> is called <span class="teletype">Operator(R)</span>. To create an operator over <span class="teletype">R</span>, first create a basic operator using the operation <span class="teletype">operator</span>, and then convert it to <span class="teletype">Operator(R)</span> for the <span class="teletype">R</span> you want.</p>
+<p>We choose <span class="teletype">R</span> to be the two by two matrices over the integers.</p>
+<div id="spadComm9-1" class="spadComm">
+<span id="commSav9-1" class="commSav">R := SQMATRIX(2, INT)</span>
+<div id="mathAns9-1">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>SquareMatrix(2,Integer)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<p>Create the operator <span class="teletype">tilde</span> on <span class="teletype">R</span>.</p>
+<div id="spadComm9-2" class="spadComm">
+<span id="commSav9-2" class="commSav">t := operator("tilde") :: OP(R) </span>
+<div id="mathAns9-2">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>tilde</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator SquareMatrix(2,Integer)
+</div>
+<p>Since <span class="teletype">Operator</span> is unexposed we must either package-call operations from it, or expose it explicitly. For convenience we will do the latter.</p>
+<p>Expose <span class="teletype">Operator</span>.</p>
+<div id="spadComm9-3" class="spadComm">
+<span id="commSav9-3" class="commSav">)set expose add constructor Operator </span>
+<div id="mathAns9-3">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+   Operator is now explicitly exposed in frame G82322 <br />
+
+</div>
+<p>To attach an evaluation function (from <span class="teletype">R</span> to <span class="teletype">R</span>) to an operator over <span class="teletype">R</span>, use <span class="teletype">evaluate(op, f)</span> where <span class="teletype">op</span> is an operator over <span class="teletype">R</span> and <span class="teletype">f</span> is a function <span class="teletype">R -&gt; R</span>. This needs to be done only once when the operator is defined. Note that <span class="teletype">f</span> must be <span class="teletype">Integer</span>-linear (that is, <span class="teletype">f(ax+y) = a f(x) + f(y)</span> for any integer <span class="teletype">a</span>, and any <span class="teletype">x</span> and <span class="teletype">y</span> in <span class="teletype">R</span>).</p>
+<p>We now attach the transpose map to the above operator <span class="teletype">t</span>.</p>
+<div id="spadComm9-4" class="spadComm">
+<span id="commSav9-4" class="commSav">evaluate(t, m +-&gt; transpose m)</span>
+<div id="mathAns9-4">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>tilde</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator SquareMatrix(2,Integer)
+</div>
+Operators can be manipulated formally as in any ring: <span class="teletype">+</span> is the pointwise addition and <span class="teletype">*</span> is composition. Any element <span class="teletype">x</span> of <span class="teletype">R</span> can be converted to an operator
+opx over <span class="teletype">R</span>, and the evaluation function of
+opx is left-multiplication by <span class="teletype">x</span>.
+<p>Multiplying on the left by this matrix swaps the two rows.</p>
+<div id="spadComm9-5" class="spadComm">
+<span id="commSav9-5" class="commSav">s : R := matrix [ [0, 1], [1, 0] ]</span>
+<div id="mathAns9-5">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0110]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<p>Can you guess what is the action of the following operator?</p>
+<div id="spadComm9-6" class="spadComm">
+<span id="commSav9-6" class="commSav">rho := t * s</span>
+<div id="mathAns9-6">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>tilde[0110]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator SquareMatrix(2,Integer)
+</div>
+<p>Hint: applying <span class="teletype">rho</span> four times gives the identity, so <span class="teletype">rho^4-1</span> should return 0 when applied to any two by two matrix.</p>
+<div id="spadComm9-7" class="spadComm">
+<span id="commSav9-7" class="commSav">z := rho^4 - 1</span>
+<div id="mathAns9-7">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-1+tilde[0110]tilde[0110]tilde[0110]tilde[0110]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator SquareMatrix(2,Integer)
+</div>
+<p>Now check with this matrix.</p>
+<div id="spadComm9-8" class="spadComm">
+<span id="commSav9-8" class="commSav">m:R := matrix [ [1, 2], [3, 4] ]</span>
+<div id="mathAns9-8">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1234]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<div id="spadComm9-9" class="spadComm">
+<span id="commSav9-9" class="commSav">z m</span>
+<div id="mathAns9-9">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[0000]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<p>As you have probably guessed by now, <span class="teletype">rho</span> acts on matrices by rotating the elements clockwise.</p>
+<div id="spadComm9-10" class="spadComm">
+<span id="commSav9-10" class="commSav">rho m</span>
+<div id="mathAns9-10">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[3142]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<div id="spadComm9-11" class="spadComm">
+<span id="commSav9-11" class="commSav">rho rho m</span>
+<div id="mathAns9-11">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[4321]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<div id="spadComm9-12" class="spadComm">
+<span id="commSav9-12" class="commSav">(rho^3) m</span>
+<div id="mathAns9-12">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[2413]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<p>Do the swapping of rows and transposition commute? We can check by computing their bracket.</p>
+<div id="spadComm9-13" class="spadComm">
+<span id="commSav9-13" class="commSav">b := t * s - s * t</span>
+<div id="mathAns9-13">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-[0110]tilde+tilde[0110]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator SquareMatrix(2,Integer)
+</div>
+<p>Now apply it to <span class="teletype">m</span>.</p>
+<div id="spadComm9-14" class="spadComm">
+<span id="commSav9-14" class="commSav">b m </span>
+<div id="mathAns9-14">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[1-33-1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SquareMatrix(2,Integer)
+</div>
+<p>Next we demonstrate how to define a differential operator on a polynomial ring.</p>
+<p>This is the recursive definition of the <span class="teletype">n</span>-th Legendre polynomial.</p>
+<div class="verbatim">
+<br />
+L n ==<br />
+  n = 0 =&gt; 1<br />
+  n = 1 =&gt; x<br />
+  (2*n-1)/n * x * L(n-1) - (n-1)/n * L(n-2)<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+Create the differential operator
+ddx on polynomials in <span class="teletype">x</span> over the rational numbers.
+<div id="spadComm9-15" class="spadComm">
+<span id="commSav9-15" class="commSav">dx := operator("D") :: OP(POLY FRAC INT) </span>
+<div id="mathAns9-15">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>D</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator Polynomial Fraction Integer
+</div>
+<p>Now attach the map to it.</p>
+<div id="spadComm9-16" class="spadComm">
+<span id="commSav9-16" class="commSav">evaluate(dx, p +-&gt; D(p, 'x)) </span>
+<div id="mathAns9-16">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>D</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator Polynomial Fraction Integer
+</div>
+<p>This is the differential equation satisfied by the <span class="teletype">n</span>-th Legendre polynomial.</p>
+<div id="spadComm9-17" class="spadComm">
+<span id="commSav9-17" class="commSav">E n == (1 - x^2) * dx^2 - 2 * x * dx + n*(n+1) </span>
+<div id="mathAns9-17">
+
+</div>
+</div>
+<div class="returnType">
+Void
+</div>
+<p>Now we verify this for <span class="teletype">n = 15</span>. Here is the polynomial.</p>
+<div id="spadComm9-18" class="spadComm">
+<span id="commSav9-18" class="commSav">L 15 </span>
+<div id="mathAns9-18">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>96948452048x15-351020252048x13+507029252048x11-371821452048x9+145495352048x7-29099072048x5+2552552048x3-64352048x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Fraction Integer
+</div>
+<p>Here is the operator.</p>
+<div id="spadComm9-19" class="spadComm">
+<span id="commSav9-19" class="commSav">E 15 </span>
+<div id="mathAns9-19">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>240-2xD-(x2-1)D2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Operator Polynomial Fraction Integer
+</div>
+<p>Here is the evaluation.</p>
+<div id="spadComm9-20" class="spadComm">
+<span id="commSav9-20" class="commSav">(E 15)(L 15) </span>
+<div id="mathAns9-20">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Polynomial Fraction Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.57.xhtml">Previous Section 9.57 OneDimensionalArray</a><a href="section-9.59.xhtml">Next Section 9.59 OrderedVariableList</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

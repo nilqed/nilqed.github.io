@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section8.12</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section8.12</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-8.11.xhtml">Previous Section 8.11 Finite Fields</a><a href="section-8.13.xhtml">Next Section 8.13 Computation of Galois Groups</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-8.12">
+<h2 class="sectiontitle" id="primary-decomposition-of-ideals">8.12 Primary Decomposition of Ideals</h2>
+<span id="ugProblemIdeal" class="label"></span>
+<p>FriCAS provides a facility for the primary decomposition <span class="index">ideal:primary decomposition</span><span id="chapter-8-209"></span> of <span class="index">primary decomposition of ideal</span><span id="chapter-8-210"></span> polynomial ideals over fields of characteristic zero. The algorithm is discussed in \cite{gtz:gbpdpi} and works in essentially two steps:</p>
+<ol>
+<li>the problem is solved for 0-dimensional ideals by <span class="italic">generic</span> projection on the last coordinate</li>
+<li>a <span class="italic">reduction process</span> uses localization and ideal quotients to reduce the general case to the 0-dimensional one.</li>
+</ol>
+<p>The FriCAS constructor <span class="teletype">PolynomialIdeals</span> represents ideals with coefficients in any field and supports the basic ideal operations, including intersection, sum and quotient. <span class="teletype">IdealDecompositionPackage</span> contains the specific operations for the primary decomposition and the computation of the radical of an ideal with polynomial coefficients in a field of characteristic 0 with an effective algorithm for factoring polynomials.</p>
+<p>The following examples illustrate the capabilities of this facility.</p>
+First consider the ideal generated by
+x2+y2-1 (which defines a circle in the
+(x,y)-plane) and the ideal generated by
+x2-y2 (corresponding to the straight lines
+x=y and
+x=-y.
+<div id="spadComm8-342" class="spadComm">
+<span id="commSav8-342" class="commSav">(n,m) : List DMP([x,y],FRAC INT) </span>
+<div id="mathAns8-342">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm8-343" class="spadComm">
+<span id="commSav8-343" class="commSav">m := [x^2+y^2-1] </span>
+<div id="mathAns8-343">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x2+y2-1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List DistributedMultivariatePolynomial([x,y],Fraction Integer)
+</div>
+<div id="spadComm8-344" class="spadComm">
+<span id="commSav8-344" class="commSav">n := [x^2-y^2] </span>
+<div id="mathAns8-344">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x2-y2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List DistributedMultivariatePolynomial([x,y],Fraction Integer)
+</div>
+<p>We find the equations defining the intersection of the two loci. This correspond to the sum of the associated ideals.</p>
+<div id="spadComm8-345" class="spadComm">
+<span id="commSav8-345" class="commSav">id := ideal m + ideal n </span>
+<div id="mathAns8-345">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x2-12,y2-12]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PolynomialIdeals(Fraction Integer, DirectProduct(2,NonNegativeInteger),OrderedVariableList [x,y], DistributedMultivariatePolynomial([x,y],Fraction Integer))
+</div>
+<p>We can check if the locus contains only a finite number of points, that is, if the ideal is zero-dimensional.</p>
+<div id="spadComm8-346" class="spadComm">
+<span id="commSav8-346" class="commSav">zeroDim? id </span>
+<div id="mathAns8-346">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm8-347" class="spadComm">
+<span id="commSav8-347" class="commSav">zeroDim?(ideal m) </span>
+<div id="mathAns8-347">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<div id="spadComm8-348" class="spadComm">
+<span id="commSav8-348" class="commSav">dimension ideal m </span>
+<div id="mathAns8-348">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+We can find polynomial relations among the generators (
+f and
+g are the parametric equations of the knot).
+<div id="spadComm8-349" class="spadComm">
+<span id="commSav8-349" class="commSav">(f,g):DMP([x,y],FRAC INT) </span>
+<div id="mathAns8-349">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm8-350" class="spadComm">
+<span id="commSav8-350" class="commSav">f := x^2-1 </span>
+<div id="mathAns8-350">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DistributedMultivariatePolynomial([x,y],Fraction Integer)
+</div>
+<div id="spadComm8-351" class="spadComm">
+<span id="commSav8-351" class="commSav">g := x*(x^2-1) </span>
+<div id="mathAns8-351">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x3-x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: DistributedMultivariatePolynomial([x,y],Fraction Integer)
+</div>
+<div id="spadComm8-352" class="spadComm">
+<span id="commSav8-352" class="commSav">relationsIdeal [f,g] </span>
+<div id="mathAns8-352">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-%B2+%A3+%A2]|[%A=x2-1,%B=x3-x]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: SuchThat(List Polynomial Fraction Integer, List Equation Polynomial Fraction Integer)
+</div>
+<p>We can compute the primary decomposition of an ideal.</p>
+<div id="spadComm8-353" class="spadComm">
+<span id="commSav8-353" class="commSav">l: List DMP([x,y,z],FRAC INT) </span>
+<div id="mathAns8-353">
+
+</div>
+</div>
+<div class="returnType">
+Type: Void
+</div>
+<div id="spadComm8-354" class="spadComm">
+<span id="commSav8-354" class="commSav">l:=[x^2+2*y^2,x*z^2-y*z,z^2-4] </span>
+<div id="mathAns8-354">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x2+2y2,xz2-yz,z2-4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List DistributedMultivariatePolynomial([x,y,z],Fraction Integer)
+</div>
+<div id="spadComm8-355" class="spadComm">
+<span id="commSav8-355" class="commSav">ld:=primaryDecomp ideal l </span>
+<div id="mathAns8-355">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[x+12y,y2,z+2],[x-12y,y2,z-2]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List PolynomialIdeals(Fraction Integer, DirectProduct(3,NonNegativeInteger), OrderedVariableList [x,y,z], DistributedMultivariatePolynomial([x,y,z],Fraction Integer))
+</div>
+<p>We can intersect back.</p>
+<div id="spadComm8-356" class="spadComm">
+<span id="commSav8-356" class="commSav">reduce(intersect,ld) </span>
+<div id="mathAns8-356">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x-14yz,y2,z2-4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PolynomialIdeals(Fraction Integer, DirectProduct(3,NonNegativeInteger), OrderedVariableList [x,y,z], DistributedMultivariatePolynomial([x,y,z],Fraction Integer))
+</div>
+<p>We can compute the radical of every primary component.</p>
+<div id="spadComm8-357" class="spadComm">
+<span id="commSav8-357" class="commSav">reduce(intersect,[radical ld.i for i in 1..2]) </span>
+<div id="mathAns8-357">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,y,z2-4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PolynomialIdeals(Fraction Integer, DirectProduct(3,NonNegativeInteger), OrderedVariableList [x,y,z], DistributedMultivariatePolynomial([x,y,z],Fraction Integer))
+</div>
+Their intersection is equal to the radical of the ideal of
+l.
+<div id="spadComm8-358" class="spadComm">
+<span id="commSav8-358" class="commSav">radical ideal l </span>
+<div id="mathAns8-358">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,y,z2-4]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PolynomialIdeals(Fraction Integer, DirectProduct(3,NonNegativeInteger), OrderedVariableList [x,y,z], DistributedMultivariatePolynomial([x,y,z],Fraction Integer))
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-8.11.xhtml">Previous Section 8.11 Finite Fields</a><a href="section-8.13.xhtml">Next Section 8.13 Computation of Galois Groups</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

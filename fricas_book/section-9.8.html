@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.8</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.8</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.7.xhtml">Previous Section 9.7 CartesianTensor</a><a href="section-9.9.xhtml">Next Section 9.9 CharacterClass</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.8">
+<h2 class="sectiontitle" id="character">9.8 Character</h2>
+<span id="CharacterXmpPage" class="label"></span>
+<p>The members of the domain <span class="teletype">Character</span> are values representing letters, numerals and other text elements. For more information on related topics, see <a href="section-9.9.xhtml#CharacterClassXmpPage" class="ref">CharacterClassXmpPage</a> and <a href="section-9.77.xhtml#StringXmpPage" class="ref">StringXmpPage</a> .</p>
+<p>Characters can be obtained using <span class="teletype">String</span> notation.</p>
+<div id="spadComm9-125" class="spadComm">
+<span id="commSav9-125" class="commSav">chars := [char "a", char "A", char "X", char "8", char "+"]</span>
+<div id="mathAns9-125">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[a,A,X,8,+]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Character
+</div>
+<p>Certain characters are available by name. This is the blank character.</p>
+<div id="spadComm9-126" class="spadComm">
+<span id="commSav9-126" class="commSav">space()</span>
+<div id="mathAns9-126">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Character
+</div>
+<p>This is the quote that is used in strings.</p>
+<div id="spadComm9-127" class="spadComm">
+<span id="commSav9-127" class="commSav">quote()</span>
+<div id="mathAns9-127">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Character
+</div>
+<p>This is the escape character that allows quotes and other characters within strings.</p>
+<div id="spadComm9-128" class="spadComm">
+<span id="commSav9-128" class="commSav">escape()</span>
+<div id="mathAns9-128">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>_</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Character
+</div>
+<p>Characters are represented as integers in a machine-dependent way. The integer value can be obtained using the <span class="spadfunFrom">ord</span><span class="index">ord</span><span id="chapter-9-47"></span><span class="index">Character</span><span id="chapter-9-48"></span> operation. It is always true that <span class="teletype">char(ord c) = c</span> and <span class="teletype">ord(char i) = i</span>, provided that <span class="teletype">i</span> is in the range <span class="teletype">0..size()$Character-1</span>.</p>
+<div id="spadComm9-129" class="spadComm">
+<span id="commSav9-129" class="commSav">[ord c for c in chars]</span>
+<div id="mathAns9-129">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[97,65,88,56,43]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>The <span class="spadfunFrom">lowerCase</span><span class="index">lowerCase</span><span id="chapter-9-49"></span><span class="index">Character</span><span id="chapter-9-50"></span> operation converts an upper case letter to the corresponding lower case letter. If the argument is not an upper case letter, then it is returned unchanged.</p>
+<div id="spadComm9-130" class="spadComm">
+<span id="commSav9-130" class="commSav">[upperCase c for c in chars]</span>
+<div id="mathAns9-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[A,A,X,8,+]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Character
+</div>
+<p>Likewise, the <span class="spadfunFrom">upperCase</span><span class="index">upperCase</span><span id="chapter-9-51"></span><span class="index">Character</span><span id="chapter-9-52"></span> operation converts lower case letters to upper case.</p>
+<div id="spadComm9-131" class="spadComm">
+<span id="commSav9-131" class="commSav">[lowerCase c for c in chars] </span>
+<div id="mathAns9-131">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[a,a,x,8,+]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Character
+</div>
+<p>A number of tests are available to determine whether characters belong to certain families.</p>
+<div id="spadComm9-132" class="spadComm">
+<span id="commSav9-132" class="commSav">[alphabetic? c for c in chars] </span>
+<div id="mathAns9-132">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[true,true,true,false,false]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Boolean
+</div>
+<div id="spadComm9-133" class="spadComm">
+<span id="commSav9-133" class="commSav">[upperCase? c for c in chars] </span>
+<div id="mathAns9-133">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[false,true,true,false,false]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Boolean
+</div>
+<div id="spadComm9-134" class="spadComm">
+<span id="commSav9-134" class="commSav">[lowerCase? c for c in chars] </span>
+<div id="mathAns9-134">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[true,false,false,false,false]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Boolean
+</div>
+<div id="spadComm9-135" class="spadComm">
+<span id="commSav9-135" class="commSav">[digit? c for c in chars] </span>
+<div id="mathAns9-135">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[false,false,false,true,false]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Boolean
+</div>
+<div id="spadComm9-136" class="spadComm">
+<span id="commSav9-136" class="commSav">[hexDigit? c for c in chars] </span>
+<div id="mathAns9-136">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[true,true,false,true,false]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Boolean
+</div>
+<div id="spadComm9-137" class="spadComm">
+<span id="commSav9-137" class="commSav">[alphanumeric? c for c in chars] </span>
+<div id="mathAns9-137">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[true,true,true,true,false]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Boolean
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.7.xhtml">Previous Section 9.7 CartesianTensor</a><a href="section-9.9.xhtml">Next Section 9.9 CharacterClass</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

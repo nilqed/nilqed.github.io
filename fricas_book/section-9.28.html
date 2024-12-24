@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.28</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.28</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.27.xhtml">Previous Section 9.27 Float</a><a href="section-9.29.xhtml">Next Section 9.29 FullPartialFractionExpansion</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.28">
+<h2 class="sectiontitle" id="fraction">9.28 Fraction</h2>
+<span id="FractionXmpPage" class="label"></span>
+<p>The <span class="teletype">Fraction</span> domain implements quotients. The elements must belong to a domain of category <span class="teletype">IntegralDomain</span>: multiplication must be commutative and the product of two non-zero elements must not be zero. This allows you to make fractions of most things you would think of, but don't expect to create a fraction of two matrices! The abbreviation for <span class="teletype">Fraction</span> is <span class="teletype">FRAC</span>.</p>
+<p>Use <span class="spadopFrom" title="Fraction">/</span> to create a fraction.</p>
+<div id="spadComm9-38" class="spadComm">
+<span id="commSav9-38" class="commSav">a := 11/12 </span>
+<div id="mathAns9-38">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1112</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<div id="spadComm9-39" class="spadComm">
+<span id="commSav9-39" class="commSav">b := 23/24 </span>
+<div id="mathAns9-39">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2324</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>The standard arithmetic operations are available.</p>
+<div id="spadComm9-40" class="spadComm">
+<span id="commSav9-40" class="commSav">3 - a*b^2 + a + b/a </span>
+<div id="mathAns9-40">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>31327176032</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<p>Extract the numerator and denominator by using <span class="spadfunFrom">numer</span><span class="index">numer</span><span id="chapter-9-24"></span><span class="index">Fraction</span><span id="chapter-9-25"></span> and <span class="spadfunFrom">denom</span><span class="index">denom</span><span id="chapter-9-26"></span><span class="index">Fraction</span><span id="chapter-9-27"></span>, respectively.</p>
+<div id="spadComm9-41" class="spadComm">
+<span id="commSav9-41" class="commSav">numer(a) </span>
+<div id="mathAns9-41">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-42" class="spadComm">
+<span id="commSav9-42" class="commSav">denom(b) </span>
+<div id="mathAns9-42">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>24</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Operations like <span class="spadfunFrom">max</span><span class="index">max</span><span id="chapter-9-28"></span><span class="index">Fraction</span><span id="chapter-9-29"></span>, <span class="spadfunFrom">min</span><span class="index">min</span><span id="chapter-9-30"></span><span class="index">Fraction</span><span id="chapter-9-31"></span>, <span class="spadfunFrom">negative?</span><span class="index">negative?</span><span id="chapter-9-32"></span><span class="index">Fraction</span><span id="chapter-9-33"></span>, <span class="spadfunFrom">positive?</span><span class="index">positive?</span><span id="chapter-9-34"></span><span class="index">Fraction</span><span id="chapter-9-35"></span> and <span class="spadfunFrom">zero?</span><span class="index">zero?</span><span id="chapter-9-36"></span><span class="index">Fraction</span><span id="chapter-9-37"></span> are all available if they are provided for the numerators and denominators. See <a href="section-9.34.xhtml#IntegerXmpPage" class="ref">IntegerXmpPage</a> for examples.</p>
+<p>Don't expect a useful answer from <span class="spadfunFrom">factor</span><span class="index">factor</span><span id="chapter-9-38"></span><span class="index">Fraction</span><span id="chapter-9-39"></span>, <span class="spadfunFrom">gcd</span><span class="index">gcd</span><span id="chapter-9-40"></span><span class="index">Fraction</span><span id="chapter-9-41"></span> or <span class="spadfunFrom">lcm</span><span class="index">lcm</span><span id="chapter-9-42"></span><span class="index">Fraction</span><span id="chapter-9-43"></span> if you apply them to fractions.</p>
+<div id="spadComm9-43" class="spadComm">
+<span id="commSav9-43" class="commSav">r := (x^2 + 2*x + 1)/(x^2 - 2*x + 1) </span>
+<div id="mathAns9-43">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2+2x+1x2-2x+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Polynomial Integer
+</div>
+<p>Since all non-zero fractions are invertible, these operations have trivial definitions.</p>
+<div id="spadComm9-44" class="spadComm">
+<span id="commSav9-44" class="commSav">factor(r) </span>
+<div id="mathAns9-44">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x2+2x+1x2-2x+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Factored Fraction Polynomial Integer
+</div>
+<p>Use <span class="spadfunFrom">map</span><span class="index">map</span><span id="chapter-9-44"></span><span class="index">Fraction</span><span id="chapter-9-45"></span> to apply <span class="spadfunFrom">factor</span><span class="index">factor</span><span id="chapter-9-46"></span><span class="index">Fraction</span><span id="chapter-9-47"></span> to the numerator and denominator, which is probably what you mean.</p>
+<div id="spadComm9-45" class="spadComm">
+<span id="commSav9-45" class="commSav">map(factor,r) </span>
+<div id="mathAns9-45">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>(x+1)2(x-1)2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Factored Polynomial Integer
+</div>
+<p>Other forms of fractions are available. Use <span class="teletype">continuedFraction</span> to create a continued fraction.</p>
+<div id="spadComm9-46" class="spadComm">
+<span id="commSav9-46" class="commSav">continuedFraction(7/12)</span>
+<div id="mathAns9-46">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: ContinuedFraction Integer
+</div>
+<p>Use <span class="teletype">partialFraction</span> to create a partial fraction. See <a href="section-9.12.xhtml#ContinuedFractionXmpPage" class="ref">ContinuedFractionXmpPage</a> and <a href="section-9.61.xhtml#PartialFractionXmpPage" class="ref">PartialFractionXmpPage</a> for additional information and examples.</p>
+<div id="spadComm9-47" class="spadComm">
+<span id="commSav9-47" class="commSav">partialFraction(7,12)</span>
+<div id="mathAns9-47">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1-322+13</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PartialFraction Integer
+</div>
+<p>Use conversion to create alternative views of fractions with objects moved in and out of the numerator and denominator.</p>
+<div id="spadComm9-48" class="spadComm">
+<span id="commSav9-48" class="commSav">g := 2/3 + 4/5*%i </span>
+<div id="mathAns9-48">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>23+45i</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Complex Fraction Integer
+</div>
+<p>Conversion is discussed in detail in Section <a href="ugTypesConvertPage" class="ref">ugTypesConvertPage</a> .</p>
+<div id="spadComm9-49" class="spadComm">
+<span id="commSav9-49" class="commSav">g :: FRAC COMPLEX INT </span>
+<div id="mathAns9-49">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>10+12i15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Complex Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.27.xhtml">Previous Section 9.27 Float</a><a href="section-9.29.xhtml">Next Section 9.29 FullPartialFractionExpansion</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

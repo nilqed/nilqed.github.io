@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section11.8</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section11.8</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-11.7.xhtml">Previous Section 11.7 Parameters</a><a href="section-11.9.xhtml">Next Section 11.9 Testing</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-11.8">
+<h2 class="sectiontitle" id="conditionals">11.8 Conditionals</h2>
+<span id="ugPackagesConds" class="label"></span>
+When packages have parameters, you can say that an operation is or is not <span class="index">conditional</span><span id="chapter-11-14"></span> exported depending on the values of those parameters. When the domain of objects
+S has an <span class="teletype">&lt;</span> operation, we can supply one-argument versions of
+bubbleSort and
+insertionSort which use this operation for sorting. The presence of the operation <span class="teletype">&lt;</span> is guaranteed when
+S is an ordered set.
+<div class="verbatim">
+<br />
+Exports == with<br />
+    bubbleSort!: (A,(S,S) -&gt; Boolean) -&gt; A<br />
+    insertionSort!: (A, (S,S) -&gt; Boolean) -&gt; A<br />
+<br />
+    if S has OrderedSet then<br />
+      bubbleSort!: A -&gt; A<br />
+      insertionSort!: A -&gt; A<br />
+
+</div>
+In addition to exporting the one-argument sort operations <span class="index">sort:bubble</span><span id="chapter-11-15"></span> conditionally, we must provide conditional definitions for the <span class="index">sort:insertion</span><span id="chapter-11-16"></span> operations in the <span class="teletype">Implementation</span> part. This is easy: just have the one-argument functions call the corresponding two-argument functions with the operation <span class="teletype">&lt;</span> from
+S.
+<div class="verbatim">
+<br />
+  Implementation == add<br />
+       ...<br />
+    if S has OrderedSet then<br />
+      bubbleSort!(m) == bubbleSort!(m,&lt; $S)<br />
+      insertionSort!(m) == insertionSort!(m,&lt; $S)<br />
+
+</div>
+<p>In <a href="section-6.15.xhtml#ugUserBlocks" class="ref">ugUserBlocks</a> , we give an alternative definition of <span style="font-weight: bold;"> bubbleSort</span> using <span class="spadfunFrom">first</span><span class="index">first</span><span id="chapter-11-17"></span><span class="index">List</span><span id="chapter-11-18"></span> and <span class="spadfunFrom">rest</span><span class="index">rest</span><span id="chapter-11-19"></span><span class="index">List</span><span id="chapter-11-20"></span> that is more efficient for a list (for which access to any element requires traversing the list from its first node). To implement a more efficient algorithm for lists, we need the operation <span style="font-weight: bold;"> setelt</span> which allows us to destructively change the <span style="font-weight: bold;"> first</span> and <span style="font-weight: bold;"> rest</span> of a list. Using Browse, you find that these operations come from category <span class="teletype">UnaryRecursiveAggregate</span>. Several aggregate types are unary recursive aggregates including those of <span class="teletype">List</span> and <span class="teletype">AssociationList</span>. We provide two different implementations for <span style="font-weight: bold;"> bubbleSort!</span> and <span style="font-weight: bold;"> insertionSort!</span>: one for list-like structures, another for array-like structures.</p>
+<div class="verbatim">
+<br />
+Implementation == add<br />
+        ...<br />
+    if A has UnaryRecursiveAggregate(S) then<br />
+      bubbleSort!(m,fn) ==<br />
+        empty? m =&gt; m<br />
+        l := m<br />
+        while not empty? (r := l.rest) repeat<br />
+           r := bubbleSort! r<br />
+           x := l.first<br />
+           if fn(r.first,x) then<br />
+             l.first := r.first<br />
+             r.first := x<br />
+           l.rest := r<br />
+           l := l.rest<br />
+         m<br />
+       insertionSort!(m,fn) ==<br />
+          ...<br />
+
+</div>
+<p>The ordering of definitions is important. The standard definitions come first and then the predicate</p>
+<div class="verbatim">
+<br />
+A has UnaryRecursiveAggregate(S)<br />
+
+</div>
+<p>is evaluated. If <span class="teletype">true</span>, the special definitions cover up the standard ones.</p>
+Another equivalent way to write the capsule is to use an
+if-then-else expression: <span class="index">if</span><span id="chapter-11-21"></span>
+<div class="verbatim">
+<br />
+     if A has UnaryRecursiveAggregate(S) then<br />
+        ...<br />
+     else<br />
+        ...<br />
+
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-11.7.xhtml">Previous Section 11.7 Parameters</a><a href="section-11.9.xhtml">Next Section 11.9 Testing</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

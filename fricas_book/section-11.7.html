@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section11.7</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section11.7</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-11.6.xhtml">Previous Section 11.6 Compiling Packages</a><a href="section-11.8.xhtml">Next Section 11.8 Conditionals</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-11.7">
+<h2 class="sectiontitle" id="parameters">11.7 Parameters</h2>
+<span id="ugPackagesParameters" class="label"></span>
+<p>The power of packages becomes evident when packages have parameters. Usually these parameters are domains and the exported operations have types involving these parameters.</p>
+<p>In Chapter <a href="section-2.0.xhtml#ugTypes" class="ref">ugTypes</a> , you learned that categories denote classes of domains. Although we cover this notion in detail in the next chapter, we now give you a sneak preview of its usefulness.</p>
+In <a href="section-6.15.xhtml#ugUserBlocks" class="ref">ugUserBlocks</a> , we defined functions
+bubbleSort(m) and
+insertionSort(m) to sort a list of integers. If you look at the code for these functions, you see that they may be used to sort <span class="italic">any</span> structure
+m with the right properties. Also, the functions can be used to sort lists of <span class="italic">any</span> elements---not just integers. Let us now recall the code for
+bubbleSort.
+<div class="verbatim">
+<br />
+bubbleSort(m) ==<br />
+  n := #m<br />
+  for i in 1..(n-1) repeat<br />
+    for j in n..(i+1) by -1 repeat<br />
+      if m.j &lt; m.(j-1) then swap!(m,j,j-1)<br />
+  m<br />
+
+</div>
+What properties of <span class="italic">lists of integers</span> are assumed by the sorting algorithm? In the first line, the operation <span style="font-weight: bold;"> #</span> computes the maximum index of the list. The first obvious property is that
+m must have a finite number of elements. In FriCAS, this is done by your telling FriCAS that
+m has the <span class="italic">attribute</span> <span style="font-weight: bold;"> finiteAggregate</span>. An <span class="italic">attribute</span> is a property that a domain either has or does not have. As we show later in <a href="section-12.9.xhtml#ugCategoriesAttributes" class="ref">ugCategoriesAttributes</a> , programs can query domains as to the presence or absence of an attribute.
+The operation <span style="font-weight: bold;"> swap</span> swaps elements of
+m. Using Browse, you find that <span style="font-weight: bold;"> swap</span> requires its elements to come from a domain of category <span class="teletype">IndexedAggregate</span> with attribute <span class="teletype">shallowlyMutable</span>. This attribute means that you can change the internal components of
+m without changing its external structure. Shallowly-mutable data structures include lists, streams, one- and two-dimensional arrays, vectors, and matrices.
+The category <span class="teletype">IndexedAggregate</span> designates the class of aggregates whose elements can be accessed by the notation
+m.s for suitable selectors
+s. The category <span class="teletype">IndexedAggregate</span> takes two arguments:
+Index, a domain of selectors for the aggregate, and
+Entry, a domain of entries for the aggregate. Since the sort functions access elements by integers, we must choose
+Index=<span class="teletype">Integer</span>. The most general class of domains for which
+bubbleSort and
+insertionSort are defined are those of category <span class="teletype">IndexedAggregate(Integer,Entry)</span> with the two attributes <span style="font-weight: bold;"> shallowlyMutable</span> and <span style="font-weight: bold;"> finiteAggregate</span>.
+<p>Using Browse, you can also discover that FriCAS has many kinds of domains with attribute <span style="font-weight: bold;"> shallowlyMutable</span>. Those of class <span class="teletype">IndexedAggregate(Integer,Entry)</span> include <span class="teletype">Bits</span>, <span class="teletype">FlexibleArray</span>, <span class="teletype">OneDimensionalArray</span>, <span class="teletype">List</span>, <span class="teletype">String</span>, and <span class="teletype">Vector</span>, and also <span class="teletype">HashTable</span> and <span class="teletype">EqTable</span> with integer keys. Although you may never want to sort all such structures, we nonetheless demonstrate FriCAS's ability to do so.</p>
+Another requirement is that <span class="teletype">Entry</span> has an operation <span class="teletype">&lt;</span>. One way to get this operation is to assume that <span class="teletype">Entry</span> has category <span class="teletype">OrderedSet</span>. By definition, will then export a <span class="teletype">&lt;</span> operation. A more general approach is to allow any comparison function
+f to be used for sorting. This function will be passed as an argument to the sorting functions.
+Our sorting package then takes two arguments: a domain
+S of objects of <span class="italic">any</span> type, and a domain
+A, an aggregate of type <span class="teletype">IndexedAggregate(Integer, S)</span> with the above two attributes. Here is its definition using what are close to the original definitions of
+bubbleSort and
+insertionSort for sorting lists of integers. The symbol <span class="teletype">!</span> is added to the ends of the operation names. This uniform naming convention is used for FriCAS operation names that destructively change one or more of their arguments.
+<div class="verbatim">
+<br />
+SortPackage(S,A) : Exports == Implementation where<br />
+  S: Object<br />
+  A: IndexedAggregate(Integer,S)<br />
+    with (finiteAggregate; shallowlyMutable)<br />
+<br />
+  Exports == with<br />
+    bubbleSort!: (A,(S,S) -&gt; Boolean) -&gt; A<br />
+    insertionSort!: (A, (S,S) -&gt; Boolean) -&gt; A<br />
+<br />
+  Implementation == add<br />
+    bubbleSort!(m,f) ==<br />
+      n := #m<br />
+      for i in 1..(n-1) repeat<br />
+        for j in n..(i+1) by -1 repeat<br />
+          if f(m.j,m.(j-1)) then swap!(m,j,j-1)<br />
+      m<br />
+    insertionSort!(m,f) ==<br />
+      for i in 2..#m repeat<br />
+        j := i<br />
+        while j &gt; 1 and f(m.j,m.(j-1)) repeat<br />
+          swap!(m,j,j-1)<br />
+          j := (j - 1) pretend PositiveInteger<br />
+      m<br />
+
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-11.6.xhtml">Previous Section 11.6 Compiling Packages</a><a href="section-11.8.xhtml">Next Section 11.8 Conditionals</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

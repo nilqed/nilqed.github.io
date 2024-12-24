@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section13.9</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section13.9</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-13.8.xhtml">Previous Section 13.8 Add Domain</a><a href="section-13.10.xhtml">Next Section 13.10 Origins</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-13.9">
+<h2 class="sectiontitle" id="defaults">13.9 Defaults</h2>
+<span id="ugDomainsDefaults" class="label"></span>
+<p>In Chapter <a href="section-11.0.xhtml#ugPackages" class="ref">ugPackages</a> we saw that categories can provide default implementations for their operations. How and when are they used? When FriCAS finds that <span class="teletype"> QuadraticForm(2, Fraction Integer)</span> does not implement the operations <span class="teletype"> *</span>, <span class="teletype"> +</span>, and <span class="teletype"> -</span>, it goes to <span class="teletype"> SquareMatrix(2,Fraction Integer)</span> to find it. As it turns out, <span class="teletype"> SquareMatrix(2, Fraction Integer)</span> does not implement <span class="italic"> any</span> of these operations!</p>
+<p>What does FriCAS do then? Here is its overall strategy. First, FriCAS looks for a function in the capsule for the domain. If it is not there, FriCAS looks in the add-domain for the operation. If that fails, FriCAS searches the add-domain of the add-domain, and so on. If all those fail, it then searches the default packages for the categories of which the domain is a member. In the case of <span class="teletype"> QuadraticForm</span>, it searches <span class="teletype"> AbelianGroup</span>, then its parents, grandparents, and so on. If this fails, it then searches the default packages of the add-domain. Whenever a function is found, the search stops immediately and the function is returned. When all fails, the system calls <span style="font-weight: bold;"> error</span> to report this unfortunate news to you. To find out the actual order of constructors searched for <span class="teletype"> QuadraticForm</span>, consult Browse: from the <span class="teletype"> QuadraticForm</span>, click on <span class="teletype"> Cross Reference</span>, then on <span class="teletype"> Lineage</span>.</p>
+Let's apply this search strategy for our example
+3*q-q+q. The scalar multiplication comes first. FriCAS finds a default implementation in <span class="teletype"> AbelianGroup&amp;</span>. Remember from <a href="section-12.6.xhtml#ugCategoriesDefaults" class="ref">ugCategoriesDefaults</a> that <span class="teletype"> SemiGroup</span> provides a default definition for
+xn by repeated squaring. <span class="teletype"> AbelianGroup</span> similarly provides a definition for
+nx by repeated doubling.
+But the search of the defaults for <span class="teletype"> QuadraticForm</span> fails to find any <span class="teletype"> +</span> or <span class="teletype"> *</span> in the default packages for the ancestors of <span class="teletype"> QuadraticForm</span>. So it now searches among those for <span class="teletype"> SquareMatrix</span>. Category <span class="teletype"> MatrixCategory</span>, which provides a uniform interface for all matrix domains, is a grandparent of <span class="teletype"> SquareMatrix</span> and has a capsule defining many functions for matrices, including matrix addition, subtraction, and scalar multiplication. The default package <span class="teletype"> MatrixCategory&amp;</span> is where the functions for
++ and
+- (from QuadraticForm) come from.
+<p>You can use Browse to discover where the operations for <span class="teletype"> QuadraticForm</span> are implemented. First, get the page describing <span class="teletype"> QuadraticForm</span>. With your mouse somewhere in this window, type a <span class="italic">2</span>, press the <span style="font-weight: bold;"> Tab</span> key, and then enter <span class="italic">Fraction Integer</span> to indicate that you want the domain <span class="teletype"> QuadraticForm(2, Fraction Integer)</span>. Now click on <span style="font-weight: bold;"> Operations</span> to get a table of operations and on <span class="teletype"> *</span> to get a page describing the <span class="teletype"> *</span> operation. Finally, click on <span style="font-weight: bold;"> implementation</span> at the bottom.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-13.8.xhtml">Previous Section 13.8 Add Domain</a><a href="section-13.10.xhtml">Next Section 13.10 Origins</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section10.2</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section10.2</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-10.1.xhtml">Previous Section 10.1 Drawing Ribbons Interactively</a><a href="section-10.3.xhtml">Next Section 10.3 Coloring and Positioning Ribbons</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-10.2">
+<h2 class="sectiontitle" id="a-ribbon-program">10.2 A Ribbon Program</h2>
+<span id="ugIntProgRibbon" class="label"></span>
+<p>The above approach creates a new viewport for each additional ribbon. A better approach is to build one object composed of all ribbons before creating a viewport. To do this, use <span style="font-weight: bold;"> makeObject</span> rather than <span style="font-weight: bold;"> draw</span>. The operations have similar formats, but <span style="font-weight: bold;"> draw</span> returns a viewport and <span style="font-weight: bold;"> makeObject</span> returns a space object.</p>
+We now create a function <span style="font-weight: bold;"> drawRibbons</span> of two arguments:
+flist, a list of formulas for the ribbons you want to draw, and
+xrange, the range over which you want them drawn. Using this function, you can just say
+<div class="verbatim">
+<br />
+drawRibbons([x^2, x^3], x=-1..1)<br />
+
+</div>
+<p>to do all of the work required in the last section. Here is the <span style="font-weight: bold;"> drawRibbons</span> program. Invoke your favorite editor and create a file called <span style="font-weight: bold;"> ribbon.input</span> containing the following program.</p>
+<div class="verbatim">
+<br />
+drawRibbons(flist, xrange) ==}{}<br />
+  sp := createThreeSpace()                     Create empty space $sp$.<br />
+  y0 := 0                                      The initial ribbon position.<br />
+  for f in flist repeat                        For each function $f$,<br />
+    makeObject(f, xrange, y=y0..y0+1,          create and add a ribbon<br />
+       space==sp, var2Steps == 1)              for $f$ to the space $sp$.<br />
+    y0 := y0 + 1                               The next ribbon position.<br />
+  vp := makeViewport3D(sp, "Ribbons")          Create viewport.<br />
+  drawStyle(vp, "shade")                       Select shading style.<br />
+  outlineRender(vp, "on")                      Show polygon outlines.<br />
+  showRegion(vp,"on")                          Enclose in a box.<br />
+  n :=  # flist                                The number of ribbons<br />
+  zoom(vp,n,1,n)                               Zoom in x- and z-directions.<br />
+  rotate(vp,0,75)                              Change the angle of view.<br />
+  vp                                           Return the viewport.<br />
+
+</div>
+<div class="caption">
+The first <span style="font-weight: bold;"> drawRibbons</span> function.
+</div>
+<span id="fig-ribdraw1" class="label"></span>
+<p>Here are some remarks on the syntax used in the <span style="font-weight: bold;"> drawRibbons</span> function (consult Chapter <a href="section-6.0.xhtml#ugUser" class="ref">ugUser</a> for more details). Unlike most other programming languages which use semicolons, parentheses, or <span class="italic">begin</span>--<span class="italic">end</span> brackets to delineate the structure of programs, the structure of an FriCAS program is determined by indentation. The first line of the function definition always begins in column 1. All other lines of the function are indented with respect to the first line and form a <span class="italic">pile</span> (see <a href="section-5.2.xhtml#ugLangBlocks" class="ref">ugLangBlocks</a> ).</p>
+<p>The definition of <span style="font-weight: bold;"> drawRibbons</span> consists of a pile of expressions to be executed one after another. Each expression of the pile is indented at the same level. Lines 4-7 designate one single expression: since lines 5-7 are indented with respect to the others, these lines are treated as a continuation of line 4. Also since lines 5 and 7 have the same indentation level, these lines designate a pile within the outer pile.</p>
+<p>The last line of a pile usually gives the value returned by the pile. Here it is also the value returned by the function. FriCAS knows this is the last line of the function because it is the last line of the file. In other cases, a new expression beginning in column one signals the end of a function.</p>
+<p>The line <span style="font-weight: bold;"> drawStyle</span><span class="teletype">(vp,"shade")</span> is given after the viewport has been created to select the draw style. We have also used the <span class="spadfunFrom">zoom</span><span class="index">zoom</span><span id="chapter-10-3"></span><span class="index">ThreeDimensionalViewport</span><span id="chapter-10-4"></span> option. Without the zoom, the viewport region would be scaled equally in all three coordinate directions.</p>
+<p>Let's try the function <span style="font-weight: bold;"> drawRibbons</span>. First you must read the file to give FriCAS the function definition.</p>
+<p>Read the input file.</p>
+<div id="spadComm10-5" class="spadComm">
+<span id="commSav10-5" class="commSav">)read ribbon </span>
+<div id="mathAns10-5">
+
+</div>
+</div>
+Draw ribbons for
+for
+-1≤x≤1
+<div class="spadgraph" style="width: 21em">
+drawRibbons([x^i for i in 1..5],x=-1..1)
+</div>
+<div class="image">
+<img src="ps/ribbons5.png" alt="picture" />
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-10.1.xhtml">Previous Section 10.1 Drawing Ribbons Interactively</a><a href="section-10.3.xhtml">Next Section 10.3 Coloring and Positioning Ribbons</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

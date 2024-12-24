@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.37</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.37</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.36.xhtml">Previous Section 9.36 IntegerNumberTheoryFunctions</a><a href="section-9.38.xhtml">Next Section 9.38 KeyedAccessFile</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.37">
+<h2 class="sectiontitle" id="kernel">9.37 Kernel</h2>
+<span id="KernelXmpPage" class="label"></span>
+<p>A <span class="italic">kernel</span> is a symbolic function application (such as <span class="teletype">sin(x+ y)</span>) or a symbol (such as <span class="teletype">x</span>). More precisely, a non-symbol kernel over a set <span class="italic">S</span> is an operator applied to a given list of arguments from <span class="italic">S</span>. The operator has type <span class="teletype">BasicOperator</span> (see <a href="section-9.3.xhtml#BasicOperatorXmpPage" class="ref">BasicOperatorXmpPage</a> ) and the kernel object is usually part of an expression object (see <a href="section-9.21.xhtml#ExpressionXmpPage" class="ref">ExpressionXmpPage</a> ).</p>
+<p>Kernels are created implicitly for you when you create expressions.</p>
+<div id="spadComm9-168" class="spadComm">
+<span id="commSav9-168" class="commSav">x :: Expression Integer</span>
+<div id="mathAns9-168">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>You can directly create a <span class="italic">symbol</span> kernel by using the <span class="spadfunFrom">kernel</span><span class="index">kernel</span><span id="chapter-9-122"></span><span class="index">Kernel</span><span id="chapter-9-123"></span> operation.</p>
+<div id="spadComm9-169" class="spadComm">
+<span id="commSav9-169" class="commSav">kernel x</span>
+<div id="mathAns9-169">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Kernel Expression Integer
+</div>
+<p>This expression has two different kernels.</p>
+<div id="spadComm9-170" class="spadComm">
+<span id="commSav9-170" class="commSav">sin(x) + cos(x) </span>
+<div id="mathAns9-170">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(x)+cos(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>The operator <span class="spadfunFrom">kernels</span><span class="index">kernels</span><span id="chapter-9-124"></span><span class="index">Expression</span><span id="chapter-9-125"></span> returns a list of the kernels in an object of type <span class="teletype">Expression</span>.</p>
+<div id="spadComm9-171" class="spadComm">
+<span id="commSav9-171" class="commSav">kernels % </span>
+<div id="mathAns9-171">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[sin(x),cos(x)]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Kernel Expression Integer
+</div>
+<p>This expression also has two different kernels.</p>
+<div id="spadComm9-172" class="spadComm">
+<span id="commSav9-172" class="commSav">sin(x)^2 + sin(x) + cos(x) </span>
+<div id="mathAns9-172">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin(x)2+sin(x)+cos(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>The <span class="teletype">sin(x)</span> kernel is used twice.</p>
+<div id="spadComm9-173" class="spadComm">
+<span id="commSav9-173" class="commSav">kernels % </span>
+<div id="mathAns9-173">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[sin(x),cos(x)]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Kernel Expression Integer
+</div>
+<p>An expression need not contain any kernels.</p>
+<div id="spadComm9-174" class="spadComm">
+<span id="commSav9-174" class="commSav">kernels(1 :: Expression Integer)</span>
+<div id="mathAns9-174">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Kernel Expression Integer
+</div>
+<p>If one or more kernels are present, one of them is designated the <span class="italic">main</span> kernel.</p>
+<div id="spadComm9-175" class="spadComm">
+<span id="commSav9-175" class="commSav">mainKernel(cos(x) + tan(x))</span>
+<div id="mathAns9-175">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>tan(x)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(Kernel Expression Integer,...)
+</div>
+<p>Kernels can be nested. Use <span class="spadfunFrom">height</span><span class="index">height</span><span id="chapter-9-126"></span><span class="index">Kernel</span><span id="chapter-9-127"></span> to determine the nesting depth.</p>
+<div id="spadComm9-176" class="spadComm">
+<span id="commSav9-176" class="commSav">height kernel x</span>
+<div id="mathAns9-176">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>This has height 2 because the <span class="teletype">x</span> has height 1 and then we apply an operator to that.</p>
+<div id="spadComm9-177" class="spadComm">
+<span id="commSav9-177" class="commSav">height mainKernel(sin x)</span>
+<div id="mathAns9-177">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-178" class="spadComm">
+<span id="commSav9-178" class="commSav">height mainKernel(sin cos x)</span>
+<div id="mathAns9-178">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-179" class="spadComm">
+<span id="commSav9-179" class="commSav">height mainKernel(sin cos (tan x + sin x))</span>
+<div id="mathAns9-179">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<p>Use the <span class="spadfunFrom">operator</span><span class="index">operator</span><span id="chapter-9-128"></span><span class="index">Kernel</span><span id="chapter-9-129"></span> operation to extract the operator component of the kernel. The operator has type <span class="teletype">BasicOperator</span>.</p>
+<div id="spadComm9-180" class="spadComm">
+<span id="commSav9-180" class="commSav">operator mainKernel(sin cos (tan x + sin x))</span>
+<div id="mathAns9-180">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+<p>Use the <span class="spadfunFrom">name</span><span class="index">name</span><span id="chapter-9-130"></span><span class="index">Kernel</span><span id="chapter-9-131"></span> operation to extract the name of the operator component of the kernel. The name has type <span class="teletype">Symbol</span>. This is really just a shortcut for a two-step process of extracting the operator and then calling <span class="spadfunFrom">name</span><span class="index">name</span><span id="chapter-9-132"></span><span class="index">BasicOperator</span><span id="chapter-9-133"></span> on the operator.</p>
+<div id="spadComm9-181" class="spadComm">
+<span id="commSav9-181" class="commSav">name mainKernel(sin cos (tan x + sin x))</span>
+<div id="mathAns9-181">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>sin</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<p>FriCAS knows about functions such as <span class="teletype">sin</span>, <span class="teletype">cos</span> and so on and can make kernels and then expressions using them. To create a kernel and expression using an arbitrary operator, use <span class="spadfunFrom">operator</span><span class="index">operator</span><span id="chapter-9-134"></span><span class="index">BasicOperator</span><span id="chapter-9-135"></span>.</p>
+<p>Now <span class="teletype">f</span> can be used to create symbolic function applications.</p>
+<div id="spadComm9-182" class="spadComm">
+<span id="commSav9-182" class="commSav">f := operator 'f </span>
+<div id="mathAns9-182">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>f</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: BasicOperator
+</div>
+<div id="spadComm9-183" class="spadComm">
+<span id="commSav9-183" class="commSav">e := f(x, y, 10) </span>
+<div id="mathAns9-183">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>f(x,y,10)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Expression Integer
+</div>
+<p>Use the <span class="spadfunFrom">is?</span><span class="index">is?</span><span id="chapter-9-136"></span><span class="index">Kernel</span><span id="chapter-9-137"></span> operation to learn if the operator component of a kernel is equal to a given operator.</p>
+<div id="spadComm9-184" class="spadComm">
+<span id="commSav9-184" class="commSav">is?(e, f) </span>
+<div id="mathAns9-184">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>You can also use a symbol or a string as the second argument to <span class="spadfunFrom">is?</span><span class="index">is?</span><span id="chapter-9-138"></span><span class="index">Kernel</span><span id="chapter-9-139"></span>.</p>
+<div id="spadComm9-185" class="spadComm">
+<span id="commSav9-185" class="commSav">is?(e, 'f) </span>
+<div id="mathAns9-185">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Boolean
+</div>
+<p>Use the <span class="spadfunFrom">argument</span><span class="index">argument</span><span id="chapter-9-140"></span><span class="index">Kernel</span><span id="chapter-9-141"></span> operation to get a list containing the argument component of a kernel.</p>
+<div id="spadComm9-186" class="spadComm">
+<span id="commSav9-186" class="commSav">argument mainKernel e </span>
+<div id="mathAns9-186">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[x,y,10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Expression Integer
+</div>
+<p>Conceptually, an object of type <span class="teletype">Expression</span> can be thought of a quotient of multivariate polynomials, where the <span class="italic">variables</span> are kernels. The arguments of the kernels are again expressions and so the structure recurses. See <a href="section-9.21.xhtml#ExpressionXmpPage" class="ref">ExpressionXmpPage</a> for examples of using kernels to take apart expression objects.</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.36.xhtml">Previous Section 9.36 IntegerNumberTheoryFunctions</a><a href="section-9.38.xhtml">Next Section 9.38 KeyedAccessFile</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

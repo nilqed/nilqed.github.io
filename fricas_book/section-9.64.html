@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.64</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.64</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.63.xhtml">Previous Section 9.63 Polynomial</a><a href="section-9.65.xhtml">Next Section 9.65 RadixExpansion</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.64">
+<h2 class="sectiontitle" id="quaternion">9.64 Quaternion</h2>
+<span id="QuaternionXmpPage" class="label"></span>
+<p>The domain constructor <span class="teletype">Quaternion</span> implements quaternions over commutative rings. For information on related topics see <a href="section-9.11.xhtml#ComplexXmpPage" class="ref">ComplexXmpPage</a> and <a href="section-9.56.xhtml#OctonionXmpPage" class="ref">OctonionXmpPage</a> . You can also issue the system command <span class="teletype">)show Quaternion</span> to display the full list of operations defined by <span class="teletype">Quaternion</span>.</p>
+<p>The basic operation for creating quaternions is <span class="spadfunFrom">quatern</span><span class="index">quatern</span><span id="chapter-9-89"></span><span class="index">Quaternion</span><span id="chapter-9-90"></span>. This is a quaternion over the rational numbers.</p>
+<div id="spadComm9-120" class="spadComm">
+<span id="commSav9-120" class="commSav">q := quatern(2/11,-8,3/4,1) </span>
+<div id="mathAns9-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>211-8i+34j+k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+<p>The four arguments are the real part, the <span class="teletype">i</span> imaginary part, the <span class="teletype">j</span> imaginary part, and the <span class="teletype">k</span> imaginary part, respectively.</p>
+<div id="spadComm9-121" class="spadComm">
+<span id="commSav9-121" class="commSav">[real q, imagI q, imagJ q, imagK q] </span>
+<div id="mathAns9-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[211,-8,34,1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Fraction Integer
+</div>
+<p>Because <span class="teletype">q</span> is over the rationals (and nonzero), you can invert it.</p>
+<div id="spadComm9-122" class="spadComm">
+<span id="commSav9-122" class="commSav">inv q </span>
+<div id="mathAns9-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>352126993+15488126993i-48442331j-1936126993k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+<p>The usual arithmetic (ring) operations are available</p>
+<div id="spadComm9-123" class="spadComm">
+<span id="commSav9-123" class="commSav">q^6 </span>
+<div id="mathAns9-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-20294907093193457256313856-482516908511288408i+14475507255341229056j+4825169085110307264k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+<div id="spadComm9-124" class="spadComm">
+<span id="commSav9-124" class="commSav">r := quatern(-2,3,23/9,-89); q + r </span>
+<div id="mathAns9-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-2011-5i+11936j-88k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+<p>In general, multiplication is not commutative.</p>
+<div id="spadComm9-125" class="spadComm">
+<span id="commSav9-125" class="commSav">q * r - r * q</span>
+<div id="mathAns9-125">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-249518i-1418j-81718k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+<p>There are no predefined constants for the imaginary <span class="teletype">i, j</span>, and <span class="teletype">k</span> parts, but you can easily define them.</p>
+<div id="spadComm9-126" class="spadComm">
+<span id="commSav9-126" class="commSav">i:=quatern(0,1,0,0); j:=quatern(0,0,1,0); k:=quatern(0,0,0,1) </span>
+<div id="mathAns9-126">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Integer
+</div>
+<p>These satisfy the normal identities.</p>
+<div id="spadComm9-127" class="spadComm">
+<span id="commSav9-127" class="commSav">[i*i, j*j, k*k, i*j, j*k, k*i, q*i] </span>
+<div id="mathAns9-127">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1,-1,-1,k,i,j,8+211i+j-34k]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Quaternion Fraction Integer
+</div>
+<p>The norm is the quaternion times its conjugate.</p>
+<div id="spadComm9-128" class="spadComm">
+<span id="commSav9-128" class="commSav">norm q </span>
+<div id="mathAns9-128">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1269931936</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Fraction Integer
+</div>
+<div id="spadComm9-129" class="spadComm">
+<span id="commSav9-129" class="commSav">conjugate q </span>
+<div id="mathAns9-129">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>211+8i-34j-k</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+<div id="spadComm9-130" class="spadComm">
+<span id="commSav9-130" class="commSav">q * % </span>
+<div id="mathAns9-130">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>1269931936</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Quaternion Fraction Integer
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.63.xhtml">Previous Section 9.63 Polynomial</a><a href="section-9.65.xhtml">Next Section 9.65 RadixExpansion</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

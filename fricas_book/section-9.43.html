@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.43</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.43</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.42.xhtml">Previous Section 9.42 LieExponentials</a><a href="section-9.44.xhtml">Next Section 9.44 LinearOrdinaryDifferentialOperator</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.43">
+<h2 class="sectiontitle" id="liepolynomial">9.43 LiePolynomial</h2>
+<span id="LiePolynomialXmpPage" class="label"></span>
+<p>Declaration of domains</p>
+<div id="spadComm9-101" class="spadComm">
+<span id="commSav9-101" class="commSav">RN := Fraction Integer </span>
+<div id="mathAns9-101">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>FractionInteger</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<div id="spadComm9-102" class="spadComm">
+<span id="commSav9-102" class="commSav">Lpoly := LiePolynomial(Symbol,RN) </span>
+<div id="mathAns9-102">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>LiePolynomial(Symbol,FractionInteger)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<div id="spadComm9-103" class="spadComm">
+<span id="commSav9-103" class="commSav">Dpoly := XDPOLY(Symbol,RN) </span>
+<div id="mathAns9-103">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>XDistributedPolynomial(Symbol,FractionInteger)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<div id="spadComm9-104" class="spadComm">
+<span id="commSav9-104" class="commSav">Lword := LyndonWord Symbol </span>
+<div id="mathAns9-104">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>LyndonWordSymbol</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Domain
+</div>
+<p>Initialisation</p>
+<div id="spadComm9-105" class="spadComm">
+<span id="commSav9-105" class="commSav">a:Symbol := 'a </span>
+<div id="mathAns9-105">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-106" class="spadComm">
+<span id="commSav9-106" class="commSav">b:Symbol := 'b </span>
+<div id="mathAns9-106">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>b</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-107" class="spadComm">
+<span id="commSav9-107" class="commSav">c:Symbol := 'c </span>
+<div id="mathAns9-107">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>c</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Symbol
+</div>
+<div id="spadComm9-108" class="spadComm">
+<span id="commSav9-108" class="commSav">aa: Lpoly := a </span>
+<div id="mathAns9-108">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[a]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-109" class="spadComm">
+<span id="commSav9-109" class="commSav">bb: Lpoly := b </span>
+<div id="mathAns9-109">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[b]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-110" class="spadComm">
+<span id="commSav9-110" class="commSav">cc: Lpoly := c </span>
+<div id="mathAns9-110">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[c]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-111" class="spadComm">
+<span id="commSav9-111" class="commSav">p : Lpoly := [aa,bb]</span>
+<div id="mathAns9-111">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[ab]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-112" class="spadComm">
+<span id="commSav9-112" class="commSav">q : Lpoly := [p,bb]</span>
+<div id="mathAns9-112">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[ab2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<p>All the Lyndon words of order 4</p>
+<div id="spadComm9-113" class="spadComm">
+<span id="commSav9-113" class="commSav">liste : List Lword := LyndonWordsList([a,b], 4)</span>
+<div id="mathAns9-113">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[[a],[b],[ab],[a2b],[ab2],[a3b],[a2b2],[ab3]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List LyndonWord Symbol
+</div>
+<div id="spadComm9-114" class="spadComm">
+<span id="commSav9-114" class="commSav">r: Lpoly := p + q + 3*LiePoly(liste.4)$Lpoly</span>
+<div id="mathAns9-114">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[ab]+3[a2b]+[ab2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-115" class="spadComm">
+<span id="commSav9-115" class="commSav">s:Lpoly := [p,r]</span>
+<div id="mathAns9-115">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-3[a2bab]+[abab2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-116" class="spadComm">
+<span id="commSav9-116" class="commSav">t:Lpoly := s + 2*LiePoly(liste.3) - 5*LiePoly(liste.5)</span>
+<div id="mathAns9-116">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>2[ab]-5[ab2]-3[a2bab]+[abab2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-117" class="spadComm">
+<span id="commSav9-117" class="commSav">degree t </span>
+<div id="mathAns9-117">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: PositiveInteger
+</div>
+<div id="spadComm9-118" class="spadComm">
+<span id="commSav9-118" class="commSav">mirror t </span>
+<div id="mathAns9-118">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-2[ab]-5[ab2]-3[a2bab]+[abab2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<p>Jacobi Relation</p>
+<div id="spadComm9-119" class="spadComm">
+<span id="commSav9-119" class="commSav">Jacobi(p: Lpoly, q: Lpoly, r: Lpoly): Lpoly == [ [p,q]$Lpoly, r] + [ [q,r]$Lpoly, p] + [ [r,p]$Lpoly, q] </span>
+<div id="mathAns9-119">
+
+</div>
+</div>
+<div class="verbatim">
+<br />
+Function declaration Jacobi : (<br />
+  LiePolynomial(Symbol,  Fraction Integer),<br />
+  LiePolynomial(Symbol,Fraction Integer),<br />
+  LiePolynomial(Symbol,Fraction Integer)) -&gt; <br />
+    LiePolynomial(Symbol,Fraction Integer) <br />
+  has been added to workspace.<br />
+
+</div>
+<div class="returnType">
+Void
+</div>
+<p>Tests</p>
+<div id="spadComm9-120" class="spadComm">
+<span id="commSav9-120" class="commSav">test: Lpoly := Jacobi(a,b,b) </span>
+<div id="mathAns9-120">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-121" class="spadComm">
+<span id="commSav9-121" class="commSav">test: Lpoly := Jacobi(p,q,r) </span>
+<div id="mathAns9-121">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-122" class="spadComm">
+<span id="commSav9-122" class="commSav">test: Lpoly := Jacobi(r,s,t) </span>
+<div id="mathAns9-122">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<p>Evaluation</p>
+<div id="spadComm9-123" class="spadComm">
+<span id="commSav9-123" class="commSav">eval(p, a, p)$Lpoly</span>
+<div id="mathAns9-123">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[ab2]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-124" class="spadComm">
+<span id="commSav9-124" class="commSav">eval(p, [a,b], [2*bb, 3*aa])$Lpoly </span>
+<div id="mathAns9-124">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-6[ab]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-125" class="spadComm">
+<span id="commSav9-125" class="commSav">r: Lpoly := [p,c] </span>
+<div id="mathAns9-125">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[abc]+[acb]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-126" class="spadComm">
+<span id="commSav9-126" class="commSav">r1: Lpoly := eval(r, [a,b,c], [bb, cc, aa])$Lpoly </span>
+<div id="mathAns9-126">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-[abc]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-127" class="spadComm">
+<span id="commSav9-127" class="commSav">r2: Lpoly := eval(r, [a,b,c], [cc, aa, bb])$Lpoly </span>
+<div id="mathAns9-127">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>-[acb]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+<div id="spadComm9-128" class="spadComm">
+<span id="commSav9-128" class="commSav">r + r1 + r2 </span>
+<div id="mathAns9-128">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: LiePolynomial(Symbol,Fraction Integer)
+</div>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.42.xhtml">Previous Section 9.42 LieExponentials</a><a href="section-9.44.xhtml">Next Section 9.44 LinearOrdinaryDifferentialOperator</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

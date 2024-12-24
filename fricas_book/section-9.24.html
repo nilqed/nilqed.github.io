@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section9.24</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section9.24</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-9.23.xhtml">Previous Section 9.23 FactoredFunctions2</a><a href="section-9.25.xhtml">Next Section 9.25 FileName</a> <a href="book-index.xhtml">Book Index</a>
+<section id="sec-9.24">
+<h2 class="sectiontitle" id="file">9.24 File</h2>
+<span id="FileXmpPage" class="label"></span>
+<p>The <span class="teletype">File(S)</span> domain provides a basic interface to read and write values of type <span class="teletype">S</span> in files.</p>
+<p>Before working with a file, it must be made accessible to FriCAS with the <span class="spadfunFrom">open</span><span class="index">open</span><span id="chapter-9-60"></span><span class="index">File</span><span id="chapter-9-61"></span> operation.</p>
+<div id="spadComm9-196" class="spadComm">
+<span id="commSav9-196" class="commSav">ifile:File List Integer:=open("/tmp/jazz1","output") </span>
+<div id="mathAns9-196">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/jazz1"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: File List Integer
+</div>
+<p>The <span class="spadfunFrom">open</span><span class="index">open</span><span id="chapter-9-62"></span><span class="index">File</span><span id="chapter-9-63"></span> function arguments are a <span class="teletype">FileName</span> and a <span class="teletype">String</span> specifying the mode. If a full pathname is not specified, the current default directory is assumed. The mode must be one of <span class="italic"><span class="teletype">input</span></span> or <span class="italic"><span class="teletype">output</span></span>. If it is not specified, <span class="italic"><span class="teletype">input</span></span> is assumed. Once the file has been opened, you can read or write data.</p>
+<p>The operations <span class="spadfunFrom">read</span><span class="index">read</span><span id="chapter-9-64"></span><span class="index">File</span><span id="chapter-9-65"></span> and <span class="spadfunFrom">write</span><span class="index">write</span><span id="chapter-9-66"></span><span class="index">File</span><span id="chapter-9-67"></span> are provided.</p>
+<div id="spadComm9-197" class="spadComm">
+<span id="commSav9-197" class="commSav">write!(ifile, [-1,2,3])</span>
+<div id="mathAns9-197">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1,2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-198" class="spadComm">
+<span id="commSav9-198" class="commSav">write!(ifile, [10,-10,0,111])</span>
+<div id="mathAns9-198">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,-10,0,111]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-199" class="spadComm">
+<span id="commSav9-199" class="commSav">write!(ifile, [7])</span>
+<div id="mathAns9-199">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>You can change from writing to reading (or vice versa) by reopening a file.</p>
+<div id="spadComm9-200" class="spadComm">
+<span id="commSav9-200" class="commSav">reopen!(ifile, "input")</span>
+<div id="mathAns9-200">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/jazz1"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: File List Integer
+</div>
+<div id="spadComm9-201" class="spadComm">
+<span id="commSav9-201" class="commSav">read! ifile</span>
+<div id="mathAns9-201">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[-1,2,3]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<div id="spadComm9-202" class="spadComm">
+<span id="commSav9-202" class="commSav">read! ifile</span>
+<div id="mathAns9-202">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[10,-10,0,111]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: List Integer
+</div>
+<p>The <span class="spadfunFrom">read</span><span class="index">read</span><span id="chapter-9-68"></span><span class="index">File</span><span id="chapter-9-69"></span> operation can cause an error if one tries to read more data than is in the file. To guard against this possibility the <span class="spadfunFrom">readIfCan</span><span class="index">readIfCan</span><span id="chapter-9-70"></span><span class="index">File</span><span id="chapter-9-71"></span> operation should be used.</p>
+<div id="spadComm9-203" class="spadComm">
+<span id="commSav9-203" class="commSav">readIfCan! ifile </span>
+<div id="mathAns9-203">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>[7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union(List Integer,...)
+</div>
+<div id="spadComm9-204" class="spadComm">
+<span id="commSav9-204" class="commSav">readIfCan! ifile </span>
+<div id="mathAns9-204">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"failed"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: Union("failed",...)
+</div>
+<p>You can find the current mode of the file, and the file's name.</p>
+<div id="spadComm9-205" class="spadComm">
+<span id="commSav9-205" class="commSav">iomode ifile</span>
+<div id="mathAns9-205">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"input"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: String
+</div>
+<div id="spadComm9-206" class="spadComm">
+<span id="commSav9-206" class="commSav">name ifile</span>
+<div id="mathAns9-206">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/jazz1"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: FileName
+</div>
+<p>When you are finished with a file, you should close it.</p>
+<div id="spadComm9-207" class="spadComm">
+<span id="commSav9-207" class="commSav">close! ifile</span>
+<div id="mathAns9-207">
+
+</div>
+</div>
+<div class="math">
+<table>
+<tbody>
+<tr class="odd">
+<td>"/tmp/jazz1"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="returnType">
+Type: File List Integer
+</div>
+<div id="spadComm9-208" class="spadComm">
+<span id="commSav9-208" class="commSav">)system rm /tmp/jazz1</span>
+<div id="mathAns9-208">
+
+</div>
+</div>
+<p>A limitation of the underlying LISP system is that not all values can be represented in a file. In particular, delayed values containing compiled functions cannot be saved.</p>
+<p>For more information on related topics, see <a href="section-9.81.xhtml#TextFileXmpPage" class="ref">TextFileXmpPage</a> , <a href="section-9.38.xhtml#KeyedAccessFileXmpPage" class="ref">KeyedAccessFileXmpPage</a> , <a href="section-9.41.xhtml#LibraryXmpPage" class="ref">LibraryXmpPage</a> , and <a href="section-9.25.xhtml#FileNameXmpPage" class="ref">FileNameXmpPage</a> .</p>
+</section>
+<a href="book-contents.xhtml">Book Contents</a> <a href="section-9.23.xhtml">Previous Section 9.23 FactoredFunctions2</a><a href="section-9.25.xhtml">Next Section 9.25 FileName</a> <a href="book-index.xhtml">Book Index</a>
+</body>
+</html>

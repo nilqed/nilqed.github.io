@@ -1,0 +1,7191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Section19.1</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Section19.1</h1>
+</header>
+]&gt;
+<a href="book-contents.xhtml">Book Contents</a><a href="section-18.1.xhtml">Previous Section 18.1 FriCAS Domains</a><a href="section-21.0.xhtml">Next Section 21.0 Programs for AXIOM Images</a><a href="book-index.xhtml">Book Index</a>
+<section id="sec-19.1">
+<h2 class="sectiontitle" id="fricas-packages">19.1 FriCAS Packages</h2>
+<span id="ugAppPackages" class="label"></span>
+<p>This is a listing of all packages in the FriCAS library at the time this book was produced. Use the Browse facility (described in Chapter <a href="section-14.0.xhtml#ugBrowse" class="ref">ugBrowse</a> ) to get more information about these constructors.</p>
+<p>This sample entry will help you read the following table:</p>
+PackageName{PackageAbbreviation}:{
+Category1 ...
+CategoryN}<span class="italic">with </span> {
+op1...
+opM}
+<p>where</p>
+<table class="begintabular">
+<tbody>
+<tr class="odd">
+<td>PackageName</td>
+<td>is the full package name, e.g., <span class="italic">PadeApproximantPackage</span>.</td>
+</tr>
+<tr class="even">
+<td>PackageAbbreviation</td>
+<td>is the package abbreviation, e.g., <span class="italic">PADEPAC</span>.</td>
+</tr>
+<tr class="odd">
+<td>Categoryi</td>
+<td>is a category to which the package belongs.</td>
+</tr>
+<tr class="even">
+<td>opj</td>
+<td>is an operation exported by the package.</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">AF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraicFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">^</span> belong? definingPolynomial inrootof iroot minPoly operator rootOf</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTHERAL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraicHermiteIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">HermiteIntegrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTALG</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraicIntegrate</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">algintegrate palginfieldint palgintegrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTAF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraicIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">algint</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ALGMANIP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraicManipulations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">ratDenom ratPoly rootKerSimp rootSimp rootSplit</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ALGMFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraicMultFact</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ALGPKG</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgebraPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">basisOfCenter basisOfCentroid basisOfCommutingElements basisOfLeftAnnihilator basisOfLeftNucleus basisOfLeftNucloid basisOfMiddleNucleus basisOfNucleus basisOfRightAnnihilator basisOfRightNucleus basisOfRightNucloid biRank doubleRank leftRank radicalOfLeftTraceForm rightRank weakBiRank</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ALGFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AlgFactor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">doublyTransitive? factor split</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ANY1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AnyFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce retract retractIfCan retractable?</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">APPRULE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ApplyRules</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">applyRules localUnquote</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMPRED</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">AttachPredicates</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">suchThat</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">BALFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">BalancedFactorisation</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">balancedFactorisation</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">BOP1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">BasicOperatorFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">constantOpIfCan constantOperator derivative evaluate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">BEZOUT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">BezoutMatrix</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bezoutDiscriminant bezoutMatrix bezoutResultant</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">BOUNDZRO</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">BoundIntegerRoots</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">integerBound</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CARTEN2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CartesianTensorFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reshape</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CHVAR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ChangeOfVariable</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">chvar eval goodPoint mkIntegral radPoly rootPoly</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CHARPOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CharacteristicPolynomialPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">characteristicPolynomial</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CVMP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CoerceVectorMatrixPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce coerceP</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COMBF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CombinatorialFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">^</span> belong? binomial factorial factorials iibinom iidprod iidsum iifact iiperm iipow ipow operator permutation product summation</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CDEN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CommonDenominator</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">clearDenominator commonDenominator splitDenominator</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COMMONOP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CommonOperators</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">operator</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COMMUPC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CommuteUnivariatePolynomialCategory</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">swap</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COMPFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ComplexFactorization</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COMPLEX2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ComplexFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CINTSLPE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ComplexIntegerSolveLinearPolynomialEquation</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solveLinearPolynomialEquation</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CRFP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ComplexRootFindingPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexZeros divisorCascade factor graeffe norm pleskenSplit reciprocalPolynomial rootRadius schwerpunkt setErrorBound startPolynomial</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CMPLXRT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ComplexRootPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexZeros</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODECONST</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ConstantLODE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">constDsolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COORDSYS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CoordinateSystems</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bipolar bipolarCylindrical cartesian conical cylindrical elliptic ellipticCylindrical oblateSpheroidal parabolic parabolicCylindrical paraboloidal polar prolateSpheroidal spherical toroidal</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CRAPACK</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CRApackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">chineseRemainder modTree multiEuclideanTree</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CYCLES</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CycleIndicators</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">SFunction alternating cap complete cup cyclic dihedral elementary eval graphs powerSum skewSFunction wreath</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CSTTOOLS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CyclicStreamTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">computeCycleEntry computeCycleLength cycleElt</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CYCLOTOM</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">CyclotomicPolynomialPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">cyclotomic cyclotomicDecomposition cyclotomicFactorization</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DEGRED</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DegreeReductionPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">expand reduce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DIOSP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DiophantineSolutionPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">dioSolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DIRPROD2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DirectProductFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DLP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DiscreteLogarithmPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">shanksDiscLogAlgorithm</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DISPLAY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DisplayPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bright center copies newLine say sayLength</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DDFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DistinctDegreeFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">distdfact exptMod factor irreducible? separateDegrees separateFactors tracePowMod</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DBLRESP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DoubleResultantPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">doubleResultant</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DRAWHACK</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DrawNumericHack</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DROPT0</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DrawOptionFunctions0</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">adaptive clipBoolean coordinate curveColorPalette pointColorPalette ranges space style title toScale tubePoints tubeRadius units var1Steps var2Steps</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DROPT1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DrawOptionFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">option</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">EigenPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">characteristicPolynomial eigenvalues eigenvector eigenvectors inteigen</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODEEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryFunctionODESolver</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SIGNEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryFunctionSign</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">sign</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EFSTRUC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryFunctionStructurePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">normalize realElementary rischNormalize validExponential</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EFUTS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryFunctionsUnivariateTaylorSeries</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">^</span> acos acosh acot acoth acsc acsch asec asech asin asinh atan atanh cos cosh cot coth csc csch exp log sec sech sin sincos sinh sinhcosh tan tanh</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">acos acosh acot acoth acsc acsch asec asech asin asinh atan atanh belong? cos cosh cot coth csc csch exp iiacos iiacosh iiacot iiacoth iiacsc iiacsch iiasec iiasech iiasin iiasinh iiatan iiatanh iicos iicosh iicot iicoth iicsc iicsch iiexp iilog iisec iisech iisin iisinh iitan iitanh log operator pi sec sech sin sinh specialTrigs tan tanh</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">lfextendedint lfextlimint lfinfieldint lfintegrate lflimitedint</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RDEEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ElementaryRischDE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">rischDE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ELFUTS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">EllipticFunctionsUnivariateTaylorSeries</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">cn dn sn sncndn</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EQ2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">EquationFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ERROR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ErrorFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">error</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GBEUCLID</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">EuclideanGroebnerBasisPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">euclideanGroebner euclideanNormalForm</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EVALCYC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">EvaluateCycleIndicators</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">eval</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EXPR2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ExpressionFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ES1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ExpressionSpaceFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ES2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ExpressionSpaceFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EXPRODE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ExpressionSpaceODESolver</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">seriesSolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EXPR2UPS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ExpressionToUnivariatePowerSeries</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">laurent puiseux series taylor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">EXPRTUBE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ExpressionTubePlot</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">constantToUnaryFunction tubePlot</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FR2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FactoredFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FACTFUNC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FactoredFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">log nthRoot</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FRUTIL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FactoredFunctionUtilities</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">mergeFactors refine</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FACUTIL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FactoringUtilities</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">completeEval degree lowerPolynomial normalDeriv raisePolynomial ran variables</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FORDER</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FindOrderFinite</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">order</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FDIV2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteDivisorFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteFieldFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">createMultiplicationMatrix createMultiplicationTable createZechTable sizeMultiplication</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFHOM</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteFieldHomomorphisms</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFPOLY2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteFieldPolynomialPackage2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">rootOfIrreduciblePoly</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFPOLY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteFieldPolynomialPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">createIrreduciblePoly createNormalPoly createNormalPrimitivePoly createPrimitiveNormalPoly createPrimitivePoly leastAffineMultiple nextIrreduciblePoly nextNormalPoly nextNormalPrimitivePoly nextPrimitiveNormalPoly nextPrimitivePoly normal? numberOfIrreduciblePoly numberOfNormalPoly numberOfPrimitivePoly primitive? random reducedQPowers</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFSLPE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteFieldSolveLinearPolynomialEquation</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solveLinearPolynomialEquation</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FLAGG2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteLinearAggregateFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FLASORT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteLinearAggregateSort</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">heapSort quickSort shellSort</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSAGG2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FiniteSetAggregateFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FLOATCP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FloatingComplexPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexRoots complexSolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FLOATRP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FloatingRealPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">realRoots solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FRIDEAL2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FractionalIdealFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FRAC2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FractionFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSPECF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionalSpecialFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">Beta Gamma abs airyAi airyBi belong? besselI besselJ besselK besselY digamma iiGamma iiabs operator polygamma</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFCAT2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionFieldCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FFINTBAS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionFieldIntegralBasis</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">integralBasis</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMASSFS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceAssertions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">assert constant multiple optional</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMPREDFS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceAttachPredicates</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">suchThat</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSCINT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceComplexIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexIntegrate internalIntegrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FS2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSINT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">integrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSPRMELT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpacePrimitiveElement</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">primitiveElement</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSRED</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceReduce</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bringDown newReduc</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SUMFS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceSum</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">sum</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FS2UPS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceToUnivariatePowerSeries</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">exprToGenUPS exprToUPS</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">FSUPFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">FunctionSpaceUnivariatePolynomialFactor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">ffactor qfactor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GAUSSFAC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GaussianFactorizationPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor prime? sumSquares</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GHENSEL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GeneralHenselPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">HenselLift completeHensel</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GENPGCD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GeneralPolynomialGcdPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">gcdPolynomial randomR</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GENUPS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GenerateUnivariatePowerSeries</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">laurent puiseux series taylor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GENEEZ</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GenExEuclid</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">compBound reduction solveid tablePow testModulus</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GENUFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GenUFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTG0</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GenusZeroIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">palgLODE0 palgRDE0 palgextint0 palgint0 palglimint0</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GOSPER</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GosperSummationMethod</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">GospersMethod</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GRDEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GraphicsDefaults</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">adaptive clipPointsDefault drawToScale maxPoints minPoints screenResolution</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GRAY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GrayCode</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">firstSubsetGray nextSubsetGray</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GBF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GroebnerFactorizationPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factorGroebnerBasis groebnerFactorize</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GBINTERN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GroebnerInternalPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">credPol critB critBonD critM critMTonD1 critMonD1 critT critpOrder fprindINFO gbasis hMonic lepol makeCrit minGbasis prinb prindINFO prinpolINFO prinshINFO redPo redPol sPol updatD updatF virtualDegree</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GB</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GroebnerPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">groebner normalForm</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">GROEBSOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">GroebnerSolve</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">genericPosition groebSolve testDim</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">HB</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">HallBasis</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">generate inHallBasis? lfunc</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">HEUGCD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">HeuGcd</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">content contprim gcd gcdcofact gcdcofactprim gcdprim lintgcd</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IDECOMP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IdealDecompositionPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">primaryDecomp prime? radical zeroDimPrimary? zeroDimPrime?</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INCRMAPS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IncrementingMaps</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">increment incrementBy</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ITFUN2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InfiniteTupleFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ITFUN3</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InfiniteTupleFunctions3</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INFINITY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">Infinity</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">infinity minusInfinity plusInfinity</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IALGFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerAlgFactor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ICDEN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerCommonDenominator</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">clearDenominator commonDenominator splitDenominator</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IMATLIN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerMatrixLinearAlgebraFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">determinant inverse nullSpace nullity rank rowEchelon</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IMATQF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerMatrixQuotientFieldFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">inverse nullSpace nullity rank rowEchelon</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INMODGCD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerModularGcd</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">modularGcd reduction</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INNMFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerMultFact</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INBFF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerNormalBasisFieldFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">*</span> <span class="teletype">^</span> <span class="teletype">/</span> basis dAndcExp expPot index inv lookup minimalPolynomial norm normal? normalElement pol qPot random repSq setFieldInfo trace xn</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INEP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerNumericEigenPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">charpol innerEigenvectors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INFSP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerNumericFloatSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">innerSolve innerSolve1 makeEq</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INPSIGN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerPolySign</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">signAround</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ISUMP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerPolySum</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">sum</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ITRIGMNP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InnerTrigonometricManipulations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">F2FG FG2F GF2FG explogs2trigs trigs2explogs</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INFORM1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InputFormFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">interpret packageCall</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">COMBINAT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerCombinatoricFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">binomial factorial multinomial partition permutation stirling1 stirling2</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerFactorizationPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">BasicMethod PollardSmallFactor factor squareFree</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ZLINDEP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerLinearDependence</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">linearDependenceOverZ linearlyDependentOverZ? solveLinearlyOverQ</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTHEORY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerNumberTheoryFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bernoulli chineseRemainder divisors euler eulerPhi fibonacci harmonic jacobi legendre moebiusMu numberOfDivisors sumOfDivisors sumOfKthPowerDivisors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PRIMES</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerPrimesPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">nextPrime prevPrime prime? primes</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTRET</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerRetractions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">integer integer? integerIfCan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IROOT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegerRoots</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">approxNthRoot approxSqrt perfectNthPower? perfectNthRoot perfectSqrt perfectSquare?</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IBATOOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegralBasisTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">diagonalProduct idealiser leastPower</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IR2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegrationResultFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IRRF2F</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegrationResultRFToFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexExpand complexIntegrate expand integrate split</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IR2F</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegrationResultToFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexExpand expand split</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTTOOLS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IntegrationTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">kmax ksec mkPrim union vark varselect</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INVLAPLA</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">InverseLaplaceTransform</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">inverseLaplace</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IRREDFFX</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IrredPolyOverFiniteField</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">generateIrredPoly</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">IRSN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">IrrRepSymNatPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">dimensionOfIrreducibleRepresentation irreducibleRepresentation</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">KERNEL2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">KernelFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">constantIfCan constantKernel</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">KOVACIC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">Kovacic</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">kovacic</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LAPLACE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LaplaceTransform</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">laplace</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LEADCDET</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LeadingCoefDetermination</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">distFact polCase</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LINDEP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LinearDependence</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">linearDependence linearlyDependent? solveLinear</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LPEFRAC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LinearPolynomialEquationByFractions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solveLinearPolynomialEquationByFractions</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LSMP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LinearSystemMatrixPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">aSolution hasSolution? rank solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LSPP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LinearSystemPolynomialPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">linSolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LGROBP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LinGrobnerPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">anticoord choosemon computeBasis coordinate groebgen intcompBasis linGenPos minPol totolex transform</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">LiouvillianFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">Ci Ei Si belong? dilog erf integral li operator</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LIST2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ListFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LIST3</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ListFunctions3</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LIST2MAP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ListToMap</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">match</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MKBCFUNC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MakeBinaryCompiledFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">binaryFunction compiledFunction</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MKFLCFN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MakeFloatCompiledFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">makeFloatFunction</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MKFUNC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MakeFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">function</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MKRECORD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MakeRecord</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">makeRecord</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MKUCFUNC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MakeUnaryCompiledFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">compiledFunction unaryFunction</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MAPPKG1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MappingPackage1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">^</span> coerce fixedPoint id nullary recur</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MAPPKG2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MappingPackage2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">const constant curry diag</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MAPPKG3</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MappingPackage3</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">*</span> constantLeft constantRight curryLeft curryRight twist</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MAPHACK1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MappingPackageInternalHacks1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">iter recur</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MAPHACK2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MappingPackageInternalHacks2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">arg1 arg2</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MAPHACK3</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MappingPackageInternalHacks3</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">comp</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MATCAT2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MatrixCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MCDEN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MatrixCommonDenominator</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">clearDenominator commonDenominator splitDenominator</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MATLIN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MatrixLinearAlgebraFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">determinant inverse minordet nullSpace nullity rank rowEchelon</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MTHING</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MergeThing</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">mergeDifference</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MESH</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MeshCreationRoutinesForThreeDimensions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">meshFun2Var meshPar1Var meshPar2Var ptFunc</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MDDFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ModularDistinctDegreeFactorizer</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">ddFact exptMod factor gcd separateFactors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MHROWRED</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ModularHermitianRowReduction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">rowEch rowEchelon</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MRF2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MonoidRingFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MSYSCMD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MoreSystemCommands</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">systemCommand</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MPC2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MPolyCatFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reshape</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MPC3</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MPolyCatFunctions3</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MPRFF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MPolyCatRationalFunctionFactorizer</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor pushdown pushdterm pushucoef pushuconst pushup totalfract</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MRATFAC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MRationalFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MFINFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MultFiniteFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MMAP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MultipleMap</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MULTFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MultivariateFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MLIFT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MultivariateLifting</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">corrPoly lifting lifting1</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MULTSQFR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">MultivariateSquareFree</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">squareFree squareFreePrim</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NCODIV</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NonCommutativeOperatorDivision</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">leftDivide leftExactQuotient leftGcd leftLcm leftQuotient leftRemainder</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NONE1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NoneFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NODE1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NonLinearFirstOrderODESolver</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NLINSOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NonLinearSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solve solveInField</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NPCOEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NPCoef</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">listexp npcoef</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NFINTBAS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumberFieldIntegralBasis</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">discriminant integralBasis</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NUMFMT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumberFormats</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">FormatArabic FormatRoman ScanArabic ScanRoman</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NTPOLFN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumberTheoreticPolynomialFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bernoulliB cyclotomic eulerE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NUMODE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumericalOrdinaryDifferentialEquations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">rk4 rk4a rk4f rk4qc</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NUMQUAD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumericalQuadrature</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">aromberg asimpson atrapezoidal romberg rombergo simpson simpsono trapezoidal trapezoidalo</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NCEP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumericComplexEigenPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">characteristicPolynomial complexEigenvalues complexEigenvectors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NCNTFRAC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumericContinuedFraction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">continuedFraction</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NREP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumericRealEigenPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">characteristicPolynomial realEigenvalues realEigenvectors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NUMTUBE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">NumericTubePlot</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">tube</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">NUMERIC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">Numeric</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexNumeric numeric</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">OCTCT2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OctonionCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODEINT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ODEIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">expint int</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODETOOLS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ODETools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">particularSolution variationOfParameters wronskianMatrix</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ARRAY12</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OneDimensionalArrayFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ONECOMP2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OnePointCompletionFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">OPQUERY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OperationsQuery</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">getDatabase</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ORDCOMP2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OrderedCompletionFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ORDFUNS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OrderingFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">pureLex reverseLex totalLex</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ORTHPOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OrthogonalPolynomialFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">ChebyshevU chebyshevT hermiteH laguerreL legendreP</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">OUT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">OutputPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">output</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PADEPAC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PadeApproximantPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">pade</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PADE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PadeApproximants</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">pade padecf</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">YSTREAM</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ParadoxicalCombinatorsForStreams</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">Y</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PARTPERM</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PartitionsAndPermutations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">conjugate conjugates partitions permutations sequences shuffle shufflein</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PATTERN1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">addBadValue badValues predicate satisfy? suchThat</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PATTERN2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMASS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchAssertions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">assert constant multiple optional</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMFS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchFunctionSpace</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMINS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchIntegerNumberSystem</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMKERNEL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchKernel</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMLSAGG</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchListAggregate</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMPLCAT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchPolynomialCategory</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMDOWN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchPushDown</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">fixPredicate patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMQFCAT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchQuotientFieldCategory</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PATRES2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchResultFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMSYM</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchSymbol</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PMTOOLS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatchTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">patternMatch patternMatchTimes</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PATMATCH</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PatternMatch</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">Is is?</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PERMAN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">Permanent</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">permanent</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PGE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PermutationGroupExamples</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">abelianGroup alternatingGroup cyclicGroup dihedralGroup janko2 mathieu11 mathieu12 mathieu22 mathieu23 mathieu24 rubiksGroup symmetricGroup youngGroup</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PICOERCE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PiCoercions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PLOT1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PlotFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">plot plotPolar</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PLOTTOOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PlotTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">calcRanges</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PTFUNC2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PointFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PTPACK</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PointPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">color hue phiCoord rCoord shade thetaCoord xCoord yCoord zCoord</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PFOQ</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PointsOfFiniteOrderRational</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">order torsion? torsionIfCan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PFOTOOLS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PointsOfFiniteOrderTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">badNum doubleDisc getGoodPrime mix polyred</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PFO</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PointsOfFiniteOrder</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">order torsion? torsionIfCan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">POLTOPOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolToPol</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">dmpToNdmp dmpToP ndmpToDmp ndmpToP pToDmp pToNdmp</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PGROEB</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolyGroebner</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">lexGroebner totalGroebner</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PAN2EXPR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialAN2Expression</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">POLYLIFT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialCategoryLifting</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">POLYCATQ</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialCategoryQuotientFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">isExpt isPlus isPower isTimes mainVariable multivariate univariate variables</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PFBRU</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialFactorizationByRecursionUnivariate</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bivariateSLPEBR factorByRecursion factorSFBRlcUnit factorSquareFreeByRecursion randomR solveLinearPolynomialEquationByRecursion</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PFBR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialFactorizationByRecursion</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bivariateSLPEBR factorByRecursion factorSFBRlcUnit factorSquareFreeByRecursion randomR solveLinearPolynomialEquationByRecursion</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">POLY2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PGCD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialGcdPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">gcd gcdPrimitive</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PINTERPA</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialInterpolationAlgorithms</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">LagrangeInterpolation</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PINTERP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialInterpolation</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">interpolate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PNTHEORY</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialNumberTheoryFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bernoulli chebyshevT chebyshevU cyclotomic euler fixedDivisor hermite laguerre legendre</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">POLYROOT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialRoots</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">froot qroot rroot</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SOLVEFOR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialSolveByFormulas</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">aCubic aLinear aQuadratic aQuartic aSolution cubic linear mapSolve quadratic quartic solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PSQFR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialSquareFree</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">squareFree</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">POLY2UP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PolynomialToUnivariatePolynomial</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">univariate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LIMITPS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PowerSeriesLimitPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexLimit limit</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PRIMARR2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PrimitiveArrayFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PRIMELT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PrimitiveElement</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">primitiveElement</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODEPRIM</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PrimitiveRatDE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">denomLODE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODEPRRIC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PrimitiveRatRicDE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">changevar constantCoefficientRicDE denomRicDE leadingCoefficientRicDE polyRicDE singRicDE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">PRINT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PrintPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">print</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTPAF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PureAlgebraicIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">palgLODE palgRDE palgextint palgint palglimint</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODEPAL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">PureAlgebraicLODE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">algDsolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">QALGSET2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">QuasiAlgebraicSet2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">radicalSimplify</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">QUATCT2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">QuaternionCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">QFCAT2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">QuotientFieldCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RadicalEigenPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">eigenMatrix gramschmidt normalise orthonormalBasis radicalEigenvalues radicalEigenvector radicalEigenvectors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SOLVERAD</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RadicalSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">contractSolve radicalRoots radicalSolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RADUTIL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RadixUtilities</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">radix</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RANDSRC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RandomNumberSource</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">randnum reseed size</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RATFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DEFINTRF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionDefiniteIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">integrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RFFACTOR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionFactorizer</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factorFraction</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RFFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionFactor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTRF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">extendedIntegrate infieldIntegrate internalIntegrate limitedIntegrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">LIMITRF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionLimitPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexLimit limit</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SIGNRF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionSign</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">sign</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SUMRF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunctionSum</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">sum</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalFunction</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce eval mainVariable multivariate univariate variables</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTRAT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">extendedint infieldint integrate limitedint</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODERAT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalLODE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">ratDsolve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RATRET</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalRetractions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">rational rational? rationalIfCan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODERTRIC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RationalRicDE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">changevar constantCoefficientRicDE polyRicDE ricDsolve singRicDE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RTODETLS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RatODETools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">genericPolynomial</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REALSOLV</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RealSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">realSolve solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REAL0Q</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RealZeroPackageQ</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">realZeros refine</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REAL0</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RealZeroPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">midpoint midpoints realZeros refine</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RMCAT2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RectangularMatrixCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RDIV</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ReducedDivisor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">order</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODERED</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ReduceLODE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">reduceLODE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REDORDER</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ReductionOfOrder</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">ReduceOrder</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REPDB</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RepeatedDoubling</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">double</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REPSQ</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RepeatedSquaring</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">expt</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REP1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RepresentationPackage1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">antisymmetricTensors createGenericMatrix permutationRepresentation symmetricTensors tensorProduct</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">REP2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RepresentationPackage2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">areEquivalent? completeEchelonBasis createRandomElement cyclicSubmodule isAbsolutelyIrreducible? meatAxe scanOneDimSubspaces split standardBasisOfCyclicSubmodule</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RESLATC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ResolveLatticeCompletion</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RETSOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">RetractSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solveRetract</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SAERFFC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SAERationalFunctionAlgFactor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SEGBIND2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SegmentBindingFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SEG2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SegmentFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SAEFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SimpleAlgebraicExtensionAlgFactor</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DFLOATSFUN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">DoubleFloatSpecialFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">Beta Gamma airyAi airyBi besselI besselJ besselK besselY digamma hypergeometric0F1 logGamma polygamma</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SCACHE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SortedCache</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">cache clearCache enterInCache</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SUP2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SparseUnivariatePolynomialFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SPECOUT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SpecialOutputPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">outputAsFortran outputAsScript outputAsTex</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">MATSTOR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">StorageEfficientMatrixOperations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">^</span> copy! leftScalarTimes! minus! plus! power! rightScalarTimes! times!</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">STREAM1</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">StreamFunctions1</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">concat</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">STREAM2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">StreamFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">STREAM3</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">StreamFunctions3</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">STTAYLOR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">StreamTaylorSeriesOperations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">*</span> <span class="teletype">+</span> <span class="teletype">-</span> <span class="teletype">/</span> addiag coerce compose deriv eval evenlambert gderiv generalLambert int integers integrate invmultisect lagrange lambert lazyGintegrate lazyIntegrate mapdiv mapmult monom multisect nlde oddintegers oddlambert power powern recip revert</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">STTF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">StreamTranscendentalFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">^</span> acos acosh acot acoth acsc acsch asec asech asin asinh atan atanh cos cosh cot coth csc csch exp log sec sech sin sincos sinh sinhcosh tan tanh</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SUBRESP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SubResultantPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">primitivePart subresultantVector</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SYMFUNC</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SymmetricFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">symFunc</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SGCF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SymmetricGroupCombinatoricFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coleman inverseColeman listYoungTableaus makeYoungTableau nextColeman nextLatticePermutation nextPartition numberOfImproperPartitions subSet unrankImproperPartitions0 unrankImproperPartitions1</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ODESYS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SystemODESolver</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solveInField triangulate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SYSSOLP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">SystemSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solve triangularSystems</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TABLBUMP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TableauxBumpers</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">bat bat1 bumprow bumptab bumptab1 inverse lex maxrow mr slex tab tab1 untab</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TANEXP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TangentExpansions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">tanAn tanNa tanSum</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TOOLSIGN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ToolsForSign</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">direction nonQsign sign</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DRAWCURV</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TopLevelDrawFunctionsForAlgebraicCurves</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">draw</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DRAWCFUN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TopLevelDrawFunctionsForCompiledFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">draw makeObject recolor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">DRAW</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TopLevelDrawFunctions</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">draw makeObject</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TOPSP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TopLevelThreeSpace</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">createThreeSpace</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTHERTR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TranscendentalHermiteIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">HermiteIntegrate</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">INTTR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TranscendentalIntegration</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">expextendedint expintegrate expintfldpoly explimitedint primextendedint primextintfrac primintegrate primintegratefrac primintfldpoly primlimintfrac primlimitedint</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TRMANIP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TranscendentalManipulations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">cos2sec cosh2sech cot2tan cot2trig coth2tanh coth2trigh csc2sin csch2sinh expand expandLog expandPower htrigs removeCosSq removeCoshSq removeSinSq removeSinhSq sec2cos sech2cosh simplify simplifyExp sin2csc sinh2csch tan2cot tan2trig tanh2coth tanh2trigh</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">RDETR</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TranscendentalRischDE</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">DSPDE SPDE baseRDE expRDE primRDE</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SOLVESER</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TransSolvePackageService</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">decomposeFunc unvectorise</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">SOLVETRA</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TransSolvePackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">solve</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TRIMAT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TriangularMatrixOperations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">LowTriBddDenomInv UpTriBddDenomInv</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TRIGMNIP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TrigonometricManipulations</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">complexElementary complexNormalize imag real real? trigs</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TUBETOOL</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TubePlotTools</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops"><span class="teletype">*</span> <span class="teletype">+</span> <span class="teletype">-</span> cosSinInfo cross dot loopPoints point unitVector</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">CLIP</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TwoDimensionalPlotClipping</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">clip clipParametric clipWithRanges</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">TWOFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">TwoFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">generalSqFr generalTwoFactor twoFactor</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UNIFACT</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariateFactorize</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">factor factorSquareFree genFact henselFact henselfact quadratic sqroot trueFactors</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">ULS2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariateLaurentSeriesFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UPOLYC2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariatePolynomialCategoryFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UPCDEN</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariatePolynomialCommonDenominator</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">clearDenominator commonDenominator splitDenominator</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UP2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariatePolynomialFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UPSQFREE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariatePolynomialSquareFree</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">BumInSepFFE squareFree squareFreePart</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UPXS2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariatePuiseuxSeriesFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UTS2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariateTaylorSeriesFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UTSODE</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UnivariateTaylorSeriesODESolver</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">mpsode ode ode1 ode2 stFunc1 stFunc2 stFuncN</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UNISEG2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UniversalSegmentFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UDPO</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UserDefinedPartialOrdering</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">getOrder largest less? more? setOrder userOrdered?</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">UDVO</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">UserDefinedVariableOrdering</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">getVariableOrder resetVariableOrder setVariableOrder</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">VECTOR2</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">VectorFunctions2</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">map reduce scan</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">VIEWDEF</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ViewDefaultsPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">axesColorDefault lineColorDefault pointColorDefault pointSizeDefault tubePointsDefault tubeRadiusDefault unitsColorDefault var1StepsDefault var2StepsDefault viewDefaults viewPosDefault viewSizeDefault viewWriteAvailable viewWriteDefault</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">VIEW</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">ViewportPackage</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">coerce drawCurves graphCurves</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">WEIER</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">WeierstrassPreparation</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">cfirst clikeUniv crest qqq sts2stst weierstrass</td>
+</tr>
+</tbody>
+</table>
+<table class="category-domain-package">
+<tbody>
+<tr class="odd">
+<td>Abbreviation:</td>
+<td class="abbrev">WFFINTBS</td>
+</tr>
+<tr class="even">
+<td>Full name:</td>
+<td class="full">WildFunctionFieldIntegralBasis</td>
+</tr>
+<tr class="odd">
+<td>Belongs to:</td>
+<td class="membs"></td>
+</tr>
+<tr class="even">
+<td>Operations:</td>
+<td class="ops">integralBasis listSquaredFactors</td>
+</tr>
+</tbody>
+</table>
+</section>
+<a href="book-contents.xhtml">Book Contents</a><a href="section-18.1.xhtml">Previous Section 18.1 FriCAS Domains</a><a href="section-21.0.xhtml">Next Section 21.0 Programs for AXIOM Images</a><a href="book-index.xhtml">Book Index</a>
+</body>
+</html>
