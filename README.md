@@ -16,8 +16,16 @@ https://pelicanthemes.com/
 
 https://github.com/getpelican/pelican
 
-`make html`
+MathJax plugin:
 
+https://github.com/pelican-plugins/render-math?tab=readme-ov-file#markdown
+
+
+
+Usage ...
+
+
+`make html`
 
 `make serve`
 
