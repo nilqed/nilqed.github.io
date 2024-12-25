@@ -24,22 +24,28 @@ LINKS = (
 #    ("Pelican", "https://getpelican.com/"),
 #    ("Python.org", "https://www.python.org/"),
 #    ("FriCAS", "https://fricas.org"),
-    ("BitBucket", "https://kfp.bitbucket.io/"),
+#    ("BitBucket", "https://kfp.bitbucket.io/"),
 )
 
 # Social widget
 SOCIAL = (
 #    ("You can add links in your config file", "#"),
+     ("BitBucket", "https://kfp.bitbucket.io/"),
      ("GitHub", "https://github.com/nilqed"),
 )
 
 DEFAULT_PAGINATION = 10
 
+
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
+
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
 #THEME = "/home/kfp/pelican-themes/mnmlist"       ###
-#THEME = "/home/kfp/pelican-themes/nmnlist"       #####
+#####THEME = "/home/kfp/pelican-themes/nmnlist"       #####
 #THEME = "/home/kfp/pelican-themes/elegant"       ## 
 #THEME = "/home/kfp/pelican-themes/dev-random"
 #THEME = "/home/kfp/pelican-themes/notebook"      ##

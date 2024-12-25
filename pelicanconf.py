@@ -36,16 +36,21 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 10
 
+
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
+
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
 #THEME = "/home/kfp/pelican-themes/mnmlist"       ###
-#THEME = "/home/kfp/pelican-themes/nmnlist"       #####
+THEME = "/home/kfp/pelican-themes/nmnlist"       #####
 #THEME = "/home/kfp/pelican-themes/elegant"       ## 
 #THEME = "/home/kfp/pelican-themes/dev-random"
 #THEME = "/home/kfp/pelican-themes/notebook"      ##
 #THEME = "/home/kfp/pelican-themes/monospace"     ##
-THEME = "/home/kfp/pelican-themes/storm"          #####
+#THEME = "/home/kfp/pelican-themes/storm"          #####
 #THEME = "/home/kfp/pelican-themes/graymill"      ####
 #THEME = "/home/kfp/pelican-themes/irfan"
 #THEME = "/home/kfp/pelican-themes/SoMA"

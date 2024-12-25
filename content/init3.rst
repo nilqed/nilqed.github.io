@@ -3,13 +3,17 @@ Initialization
 
 :date: 2010-10-03 10:20
 :modified: 2020-10-04 18:40
-:tags: test, math, atom
+:tags: new, scheme, python
 :category: init
-:slug: Init
+:slug: Init3 + More
 :author: kfp
 :summary: summary goes here
 
 aaaaas
+aaaaaaaaaaaaaaaaaaaa aaaaaaa aaaaaaaaaaaaaaaaaaaa aaaa aa aaaaaaaaaaaa
+aaaaaaaa aaa a a a aa
+aaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaa aaaaaaaaaaaaaaaa  aaaaaaaa
+aaaaaaaa aa aa a a  aaa aaaaaaaaa aa a  aaaaaaa aaaa
 aaaasa ::
 
    sslsdslds
