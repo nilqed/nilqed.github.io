@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearSystemMatrixPackage</title>
+</head>
+<body>
+<h1>LinearSystemMatrixPackage(F, Row, Col, M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/solvelin.spad#L1">solvelin.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/solvelin.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>Row : Join(<a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(F), <a href="shallowlyMutable.html">shallowlyMutable</a>)<li>Col : Join(<a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(F), <a href="shallowlyMutable.html">shallowlyMutable</a>)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(F, Row, Col)</ul>
+<p>
+This package solves linear system in the matrix form <code>AX = B</code>.</p>
+<a name="f_hasSolution_63"></a><dl><dt>hasSolution? : (M, Col) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>hasSolution?(A, B)</code> tests if the linear system <code>AX = B</code> has a solution.</p>
+</dd></dl>
+<a name="f_particularSolution"></a><dl><dt>particularSolution : (M, Col) -&gt Union(Col, "failed")</dt><dd><p>
+<code>particularSolution(A, B)</code> finds a particular solution of the linear system <code>AX = B</code>.</p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : (M, Col) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rank(A, B)</code> computes the rank of the complete matrix <code>(A|B)</code> of the linear system <code>AX = B</code>.</p>
+</dd></dl>
+<a name="f_solve"></a><dl><dt>solve : (M, <a href="List.html">List</a>(Col)) -&gt <a href="List.html">List</a>(Record(particular : Union(Col, "failed"), basis : <a href="List.html">List</a>(Col)))</dt><dd><p>
+<code>solve(A, LB)</code> finds a particular soln of the systems <code>AX = B</code> and a basis of the associated homogeneous systems <code>AX = 0</code> where <code>B</code> varies in the list of column vectors <code>LB</code>.</p>
+</dd></dl>
+<dl><dt>solve : (M, Col) -&gt Record(particular : Union(Col, "failed"), basis : <a href="List.html">List</a>(Col))</dt><dd><p>
+<code>solve(A, B)</code> finds a particular solution of the system <code>AX = B</code> and a basis of the associated homogeneous system <code>AX = 0</code>.</p>
+</dd></dl>
+</body>
+</html>

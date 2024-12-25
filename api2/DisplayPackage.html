@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DisplayPackage</title>
+</head>
+<body>
+<h1>DisplayPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/out.spad#L121">out.spad line 121</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/out.spad#L121">[edit on github]</a></p>
+<p>
+DisplayPackage allows one to print strings in a nice manner, including highlighting substrings.</p>
+<a name="f_bright"></a><dl><dt>bright : <a href="List.html">List</a>(<a href="String.html">String</a>) -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>bright(l)</code> sets the font property of a list of strings, <code>l</code>, to bold-face type.</p>
+</dd></dl>
+<dl><dt>bright : <a href="String.html">String</a> -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>bright(s)</code> sets the font property of the string <code>s</code> to bold-face type.</p>
+</dd></dl>
+<a name="f_center"></a><dl><dt>center : (<a href="List.html">List</a>(<a href="String.html">String</a>), <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>center(l, i, s)</code> takes a list of strings <code>l</code>, and centers them within a list of strings which is <code>i</code> characters long, in which the remaining spaces are filled with strings composed of as many repetitions as possible of the last string parameter <code>s</code>.</p>
+</dd></dl>
+<dl><dt>center : (<a href="String.html">String</a>, <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>center(s, i, s)</code> takes the first string <code>s</code>, and centers it within a string of length <code>i</code>, in which the other elements of the string are composed of as many replications as possible of the second indicated string, <code>s</code> which must have a length greater than that of an empty string.</p>
+</dd></dl>
+<a name="f_copies"></a><dl><dt>copies : (<a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>copies(i, s)</code> will take a string <code>s</code> and create a new string composed of <code>i</code> copies of <code>s</code>.</p>
+</dd></dl>
+<a name="f_newLine"></a><dl><dt>newLine : () -&gt <a href="String.html">String</a></dt><dd><p>
+<code>newLine()</code> sends a new line command to output.</p>
+</dd></dl>
+<a name="f_say"></a><dl><dt>say : <a href="List.html">List</a>(<a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>say(l)</code> sends a list of strings <code>l</code> to output.</p>
+</dd></dl>
+<dl><dt>say : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>say(s)</code> sends a string <code>s</code> to output.</p>
+</dd></dl>
+<a name="f_sayLength"></a><dl><dt>sayLength : <a href="List.html">List</a>(<a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>sayLength(l)</code> returns the length of a list of strings <code>l</code> as an integer.</p>
+</dd></dl>
+<dl><dt>sayLength : <a href="String.html">String</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>sayLength(s)</code> returns the length of a string <code>s</code> as an integer.</p>
+</dd></dl>
+</body>
+</html>

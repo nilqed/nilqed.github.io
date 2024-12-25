@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>EigenPackage</title>
+</head>
+<body>
+<h1>EigenPackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/eigen.spad#L216">eigen.spad line 216</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/eigen.spad#L216">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a></ul>
+<p>
+This is a package for the exact computation of eigenvalues and eigenvectors. This package works for matrices with coefficients which are rational functions over a ring where we can factor polynomials. Eigenvalues not in base field are represented by their minimal polynomial.</p>
+<a name="f_characteristicPolynomial"></a><dl><dt>characteristicPolynomial : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="Polynomial.html">Polynomial</a>(R)</dt><dd><p>
+<code>characteristicPolynomial(m)</code> returns the characteristicPolynomial of the matrix <code>m</code> using a new generated symbol symbol as the main variable.</p>
+</dd></dl>
+<dl><dt>characteristicPolynomial : (<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="Symbol.html">Symbol</a>) -&gt <a href="Polynomial.html">Polynomial</a>(R)</dt><dd><p>
+<code>characteristicPolynomial(m, var)</code> returns the characteristicPolynomial of the matrix <code>m</code> using the symbol var as the main variable.</p>
+</dd></dl>
+<a name="f_eigenvalues"></a><dl><dt>eigenvalues : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SuchThat.html">SuchThat</a>(<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(R)))) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>eigenvalues(m)</code> returns the eigenvalues of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_eigenvector"></a><dl><dt>eigenvector : (Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SuchThat.html">SuchThat</a>(<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(R))), <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>eigenvector(eigval, m)</code> returns the eigenvectors belonging to the eigenvalue <code>eigval</code> for the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_eigenvectors"></a><dl><dt>eigenvectors : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(Record(eigval : Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SuchThat.html">SuchThat</a>(<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(R))), eigmult : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eigvec : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>eigenvectors(m)</code> returns the eigenvalues and eigenvectors for the matrix <code>m</code>. The eigenvalues in base field and the corresponding eigenvectors are explicitly computed, while the other ones are given via their minimal polynomial and the corresponding eigenvectors are expressed in terms of a "generic" root of such a polynomial.</p>
+</dd></dl>
+<a name="f_generalizedEigenvector"></a><dl><dt>generalizedEigenvector : (Record(eigval : Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SuchThat.html">SuchThat</a>(<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(R))), eigmult : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eigvec : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))), <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>generalizedEigenvector(eigen, m)</code> returns the generalized eigenvectors of the matrix relative to the eigenvalue <code>eigen</code>, as returned by the function eigenvectors.</p>
+</dd></dl>
+<dl><dt>generalizedEigenvector : (Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SuchThat.html">SuchThat</a>(<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(R))), <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>generalizedEigenvector(alpha, m, k, g)</code> returns the generalized eigenvectors of the matrix relative to the eigenvalue <code>alpha</code>. The integers <code>k</code> and <code>g</code> are respectively the algebraic and the geometric multiplicity of the eigenvalue <code>alpha</code>.</p>
+</dd></dl>
+<a name="f_generalizedEigenvectors"></a><dl><dt>generalizedEigenvectors : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(Record(eigval : Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SuchThat.html">SuchThat</a>(<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(R))), geneigvec : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>generalizedEigenvectors(m)</code> returns the generalized returns the generalized eigenvectors of the matrix <code>m</code>.</p>
+</dd></dl>
+</body>
+</html>

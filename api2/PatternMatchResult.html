@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchResult</title>
+</head>
+<body>
+<h1>PatternMatchResult(R, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L1">patmatch1.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a><li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+A PatternMatchResult is an object internally returned by the pattern matcher; It is either a failed match, or a list of matches of the form (var, expr) meaning that the variable var matches the expression expr.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addMatch"></a><dl><dt>addMatch : (<a href="Pattern.html">Pattern</a>(R), S, %) -&gt %</dt><dd><p>
+<code>addMatch(var, expr, r)</code> adds the match (<code>var</code>, <code>expr</code>) in <code>r</code>, provided that <code>expr</code> satisfies the predicates attached to <code>var</code>, and that <code>var</code> is not matched to another expression already.</p>
+</dd></dl>
+<a name="f_addMatchRestricted"></a><dl><dt>addMatchRestricted : (<a href="Pattern.html">Pattern</a>(R), S, %, S) -&gt %</dt><dd><p>
+<code>addMatchRestricted(var, expr, r, val)</code> adds the match (<code>var</code>, <code>expr</code>) in <code>r</code>, provided that <code>expr</code> satisfies the predicates attached to <code>var</code>, that <code>var</code> is not matched to another expression already, and that either <code>var</code> is an optional pattern variable or that <code>expr</code> is not equal to val (usually an identity).</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : <a href="List.html">List</a>(Record(key : <a href="Symbol.html">Symbol</a>, entry : S)) -&gt %</dt><dd><p>
+<code>construct([v1, e1], ..., [vn, en])</code> returns the match result containing the matches (<code>v1</code>, <code>e1</code>), ..., (<code>vn</code>, en).</p>
+</dd></dl>
+<a name="f_destruct"></a><dl><dt>destruct : % -&gt <a href="List.html">List</a>(Record(key : <a href="Symbol.html">Symbol</a>, entry : S))</dt><dd><p>
+<code>destruct(r)</code> returns the list of matches (var, expr) in <code>r</code>. Error: if <code>r</code> is a failed match.</p>
+</dd></dl>
+<a name="f_failed"></a><dl><dt>failed : () -&gt %</dt><dd><p>
+<code>failed()</code> returns a failed match.</p>
+</dd></dl>
+<a name="f_failed_63"></a><dl><dt>failed? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>failed?(r)</code> tests if <code>r</code> is a failed match.</p>
+</dd></dl>
+<a name="f_getMatch"></a><dl><dt>getMatch : (<a href="Pattern.html">Pattern</a>(R), %) -&gt Union(S, "failed")</dt><dd><p>
+<code>getMatch(var, r)</code> returns the expression that <code>var</code> matches in the result <code>r</code>, and "failed" if <code>var</code> is not matched in <code>r</code>.</p>
+</dd></dl>
+<a name="f_insertMatch"></a><dl><dt>insertMatch : (<a href="Pattern.html">Pattern</a>(R), S, %) -&gt %</dt><dd><p>
+<code>insertMatch(var, expr, r)</code> adds the match (<code>var</code>, <code>expr</code>) in <code>r</code>, without checking predicates or previous matches for <code>var</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_new"></a><dl><dt>new : () -&gt %</dt><dd><p>
+<code>new()</code> returns a new empty match result.</p>
+</dd></dl>
+<a name="f_satisfy_63"></a><dl><dt>satisfy? : (%, <a href="Pattern.html">Pattern</a>(R)) -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>satisfy?(r, p)</code> returns <code>true</code> if the matches satisfy the top-level predicate of <code>p</code>, <code>false</code> if they don<code>'t</code>, and "failed" if not enough variables of <code>p</code> are matched in <code>r</code> to decide.</p>
+</dd></dl>
+<a name="f_union"></a><dl><dt>union : (%, %) -&gt %</dt><dd><p>
+<code>union(a, b)</code> makes the set-union of two match results.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

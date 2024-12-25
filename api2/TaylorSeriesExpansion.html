@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TaylorSeriesExpansion</title>
+</head>
+<body>
+<h1>TaylorSeriesExpansion(Coef, Expon, Var, PS, UTS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/serexp.spad#L1">serexp.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/serexp.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))<li>Expon : <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a><li>Var : <a href="OrderedSet.html">OrderedSet</a><li>PS : <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, Expon, Var)<li>UTS : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(Coef)</ul>
+<p>
+Category for operations needed by Taylor expansions.</p>
+<a name="f_applyTaylor"></a><dl><dt>applyTaylor : (Mapping(UTS, UTS), PS) -&gt PS</dt><dd><p>
+<code>applyTaylor(g, f)</code> applies <code>g</code> to <code>f</code></p>
+</dd></dl>
+<a name="f_apply_95taylor"></a><dl><dt>apply_taylor : (UTS, PS) -&gt PS</dt><dd><p>
+<code>apply_taylor(g, f)</code> applies <code>g</code> to <code>f</code></p>
+</dd></dl>
+<a name="f_taylor_95via_95deriv"></a><dl><dt>taylor_via_deriv : (Coef, <a href="List.html">List</a>(PS), <a href="List.html">List</a>(Mapping(Coef, Coef))) -&gt PS</dt><dd><p>
+<code>taylor_via_deriv(f, [x1, ..., xn], [D1, ..., Dn])</code> expands <code>f</code> into Taylor series at (<code>x1</code>, ..., <code>xn</code>) using <code>D1</code>, ..., <code>Dn</code> as partial derivatives</p>
+</dd></dl>
+<dl><dt>taylor_via_deriv : (PS, <a href="List.html">List</a>(PS), <a href="List.html">List</a>(Mapping(Coef, Coef))) -&gt PS</dt><dd><p>
+<code>taylor_via_deriv(f, [x1, ..., xn], [D1, ..., Dn])</code> expands <code>f</code> into Taylor series at (<code>x1</code>, ..., <code>xn</code>) using <code>D1</code>, ..., <code>Dn</code> as partial derivatives</p>
+</dd></dl>
+<a name="f_taylor_95via_95lode"></a><dl><dt>taylor_via_lode : (<a href="List.html">List</a>(UTS), PS, <a href="List.html">List</a>(Coef)) -&gt PS</dt><dd><p>
+<code>taylor_via_lode([a0, ..., ak], z, [c0, ..., ck])</code> expands into Taylor series solution of the linear ordinary differential equation</p>
+</dd></dl>
+</body>
+</html>

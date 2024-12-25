@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ComplexRootFindingPackage</title>
+</head>
+<body>
+<h1>ComplexRootFindingPackage(R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/crfp.spad#L1">crfp.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/crfp.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Field.html">Field</a>, <a href="OrderedRing.html">OrderedRing</a>)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Complex.html">Complex</a>(R))</ul>
+<p>
+ComplexRootFindingPackage provides functions to find all roots of a polynomial <code>p</code> over the complex number by using Plesken<code>'s</code> idea to calculate in the polynomial ring modulo <code>f</code> and employing the Chinese Remainder Theorem. In this first version, the precision (see <span class="std std-ref">digits</span>) is not increased when this is necessary to avoid rounding errors. Hence it is the user<code>'s</code> responsibility to increase the precision if necessary. Note also, if this package is called with e.g. Fraction Integer, the precise calculations could require a lot of time. Also note that evaluating the zeros is not necessarily a good check whether the result is correct: already evaluation can cause rounding errors.</p>
+<a name="f_complexZeros"></a><dl><dt>complexZeros : UP -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(R))</dt><dd><p>
+<code>complexZeros(p)</code> tries to determine all complex zeros of the polynomial <code>p</code> with accuracy given by the package constant  globalEps which you may change by  setErrorBound.</p>
+</dd></dl>
+<dl><dt>complexZeros : (UP, R) -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(R))</dt><dd><p>
+<code>complexZeros(p, eps)</code> tries to determine all complex zeros of the polynomial <code>p</code> with accuracy given by  eps.</p>
+</dd></dl>
+<a name="f_divisorCascade"></a><dl><dt>divisorCascade : (UP, UP) -&gt <a href="List.html">List</a>(Record(factors : <a href="List.html">List</a>(UP), error : R))</dt><dd><p>
+<code>divisorCascade(p, tp)</code> assumes that degree of polynomial  tp is smaller than degree of polynomial <code>p</code>, both monic. A sequence of divisions is calculated using the remainder, made monic, as divisor for the the next division. The result contains also the error of the factorizations, i.e. the norm of the remainder polynomial.</p>
+</dd></dl>
+<dl><dt>divisorCascade : (UP, UP, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(factors : <a href="List.html">List</a>(UP), error : R))</dt><dd><p>
+<code>divisorCascade(p, tp)</code> assumes that degree of polynomial  tp is smaller than degree of polynomial <code>p</code>, both monic. A sequence of divisions are calculated using the remainder, made monic, as divisor for the next division. The result contains also the error of the factorizations, i.e. the norm of the remainder polynomial. If  info is  true, then information messages are issued.</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : UP -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p)</code> tries to factor <code>p</code> into linear factors with error at most  globalEps, the internal error bound, which can be set by  setErrorBound. An overall error bound  eps0 is determined and iterated tree-like calls to  pleskenSplit are used to get the factorization.</p>
+</dd></dl>
+<dl><dt>factor : (UP, R) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p, eps)</code> tries to factor <code>p</code> into linear factors with error at most  eps. An overall error bound  eps0 is determined and iterated tree-like calls to  pleskenSplit are used to get the factorization.</p>
+</dd></dl>
+<dl><dt>factor : (UP, R, <a href="Boolean.html">Boolean</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p, eps, info)</code> tries to factor <code>p</code> into linear factors with error at most  eps. An overall error bound  eps0 is determined and iterated tree-like calls to  pleskenSplit are used to get the factorization. If  info is  true, then information messages are given.</p>
+</dd></dl>
+<a name="f_graeffe"></a><dl><dt>graeffe : UP -&gt UP</dt><dd><p>
+<code>graeffe p</code> determines <code>q</code> such that <code>q(-z^2) = p(z)*p(-z)</code>. Note that the roots of <code>q</code> are the squares of the roots of <code>p</code>.</p>
+</dd></dl>
+<a name="f_norm"></a><dl><dt>norm : UP -&gt R</dt><dd><p>
+<code>norm(p)</code> determines sum of absolute values of coefficients Note: this function depends on <span class="std std-ref">abs</span>.</p>
+</dd></dl>
+<a name="f_pleskenSplit"></a><dl><dt>pleskenSplit : (UP, R) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>pleskenSplit(poly, eps)</code> determines a start polynomial  start by using "startPolynomial" then it increases the exponent <code>n</code> of  start ^ n mod poly to get an approximate factor of  poly, in general of degree "degree <code>poly</code> <code>-1"</code>. Then a divisor cascade is calculated and the best splitting is chosen, as soon as the error is small enough.</p>
+</dd></dl>
+<dl><dt>pleskenSplit : (UP, R, <a href="Boolean.html">Boolean</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>pleskenSplit(poly, eps, info)</code> determines a start polynomial  start by using "startPolynomial" then it increases the exponent <code>n</code> of  start ^ n mod poly to get an approximate factor of  poly, in general of degree "degree <code>poly</code> <code>-1"</code>. Then a divisor cascade is calculated and the best splitting is chosen, as soon as the error is small enough. If  info is  true, then information messages are issued.</p>
+</dd></dl>
+<a name="f_reciprocalPolynomial"></a><dl><dt>reciprocalPolynomial : UP -&gt UP</dt><dd><p>
+<code>reciprocalPolynomial(p)</code> calculates a polynomial which has exactly the inverses of the non-zero roots of <code>p</code> as roots, and the same number of 0-roots.</p>
+</dd></dl>
+<a name="f_rootRadius"></a><dl><dt>rootRadius : UP -&gt R</dt><dd><p>
+<code>rootRadius(p)</code> calculates the root radius of <code>p</code> with a maximal error quotient of  1+globalEps, where  globalEps is the internal error bound, which can be set by  setErrorBound.</p>
+</dd></dl>
+<dl><dt>rootRadius : (UP, R) -&gt R</dt><dd><p>
+<code>rootRadius(p, errQuot)</code> calculates the root radius of <code>p</code> with a maximal error quotient of  errQuot.</p>
+</dd></dl>
+<a name="f_schwerpunkt"></a><dl><dt>schwerpunkt : UP -&gt <a href="Complex.html">Complex</a>(R)</dt><dd><p>
+<code>schwerpunkt(p)</code> determines the 'Schwerpunkt' of the roots of the polynomial <code>p</code> of degree <code>n</code>, i.e. the center of gravity, which is  coefficient of <code>x^(n-1)</code> divided by  n times coefficient of <code>x^n</code>.</p>
+</dd></dl>
+<a name="f_setErrorBound"></a><dl><dt>setErrorBound : R -&gt R</dt><dd><p>
+<code>setErrorBound(eps)</code> changes the internal error bound, by default being  10 ^ (-3) to <code>eps</code>, if <code>R</code> is a member in the category QuotientFieldCategory Integer. The internal  globalDigits is set to  ceiling(1/r)^2*10 being  10^7 by default.</p>
+</dd></dl>
+<a name="f_startPolynomial"></a><dl><dt>startPolynomial : UP -&gt Record(start : UP, factors : <a href="Factored.html">Factored</a>(UP))</dt><dd><p>
+<code>startPolynomial(p)</code> uses the ideas of Schoenhage<code>'s</code> variant of Graeffe<code>'s</code> method to construct circles which separate roots to get a good start polynomial, i.e. one whose image under the Chinese Remainder Isomorphism has both entries of norm smaller and greater or equal to 1. In case the roots are found during internal calculations. The corresponding factors are in  factors which are otherwise 1.</p>
+</dd></dl>
+</body>
+</html>

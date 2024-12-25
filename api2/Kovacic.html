@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Kovacic</title>
+</head>
+<body>
+<h1>Kovacic(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/kovacic.spad#L1">kovacic.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/kovacic.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+Kovacic provides a modified Kovacic<code>'s</code> algorithm for solving explicitly irreducible 2nd order linear ordinary differential equations.</p>
+<a name="f_kovacic"></a><dl><dt>kovacic : (<a href="Fraction.html">Fraction</a>(UP), <a href="Fraction.html">Fraction</a>(UP), <a href="Fraction.html">Fraction</a>(UP)) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(UP)), "failed")</dt><dd><p>
+<code>kovacic(a_0,a_1,a_2)</code> returns either "failed" or <code>P</code>(<code>u</code>) such that <code>$e^\int(-a_1/2a_2) e^\int u$</code> is a solution of <code>a_2 y'' + a_1 y' + a0 y = 0</code> whenever <code>u</code> is a solution of <code>P u = 0</code>. The equation must be already irreducible over the rational functions.</p>
+</dd></dl>
+<dl><dt>kovacic : (<a href="Fraction.html">Fraction</a>(UP), <a href="Fraction.html">Fraction</a>(UP), <a href="Fraction.html">Fraction</a>(UP), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(UP)), "failed")</dt><dd><p>
+<code>kovacic(a_0,a_1,a_2,ezfactor)</code> returns either "failed" or <code>P</code>(<code>u</code>) such that <code>$e^\int(-a_1/2a_2) e^\int u$</code> is a solution of <code>$a_2 y'' + a_1 y' + a0 y = 0$</code> whenever <code>u</code> is a solution of <code>P u = 0</code>. The equation must be already irreducible over the rational functions. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+</body>
+</html>

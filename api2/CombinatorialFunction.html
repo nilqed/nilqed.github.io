@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CombinatorialFunction</title>
+</head>
+<body>
+<h1>CombinatorialFunction(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/combfunc.spad#L29">combfunc.spad line 29</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/combfunc.spad#L29">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+Provides combinatorial functions over an integral domain.</p>
+<a name="f__94"></a><dl><dt>^ : (F, F) -&gt F</dt><dd><p>
+<code>a ^ b</code> returns the formal exponential a^b.</p>
+</dd></dl>
+<a name="f_belong_63"></a><dl><dt>belong? : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>belong?(op)</code> returns <code>true</code> if <code>op</code> is a combinatorial operator.</p>
+</dd></dl>
+<a name="f_binomial"></a><dl><dt>binomial : (F, F) -&gt F</dt><dd><p>
+<code>binomial(n, r)</code> returns the number of subsets of <code>r</code> objects taken among <code>n</code> objects, i.e. <code>n!/</code>(<code>r!</code> * (<code>n</code>-<code>r</code>)!).</p>
+</dd></dl>
+<a name="f_factorial"></a><dl><dt>factorial : F -&gt F</dt><dd><p>
+<code>factorial(n)</code> returns the factorial of <code>n</code>, i.e. <code>n!</code>.</p>
+</dd></dl>
+<a name="f_factorials"></a><dl><dt>factorials : F -&gt F</dt><dd><p>
+<code>factorials(f)</code> rewrites the permutations and binomials in <code>f</code> in terms of factorials.</p>
+</dd></dl>
+<dl><dt>factorials : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>factorials(f, x)</code> rewrites the permutations and binomials in <code>f</code> involving <code>x</code> in terms of factorials.</p>
+</dd></dl>
+<a name="f_iibinom"></a><dl><dt>iibinom : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iibinom(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iidprod"></a><dl><dt>iidprod : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iidprod(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iidsum"></a><dl><dt>iidsum : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iidsum(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iifact"></a><dl><dt>iifact : F -&gt F</dt><dd><p>
+<code>iifact(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiperm"></a><dl><dt>iiperm : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiperm(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iipow"></a><dl><dt>iipow : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iipow(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_ipow"></a><dl><dt>ipow : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>ipow(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>operator(op)</code> returns a copy of <code>op</code> with the domain-dependent properties appropriate for <code>F</code>; error if <code>op</code> is not a combinatorial operator.</p>
+</dd></dl>
+<a name="f_permutation"></a><dl><dt>permutation : (F, F) -&gt F</dt><dd><p>
+<code>permutation(n, r)</code> returns the number of permutations of <code>n</code> objects taken <code>r</code> at a time, i.e. <code>n!/</code>(<code>n</code>-<code>r</code>)!.</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : (F, <a href="SegmentBinding.html">SegmentBinding</a>(F)) -&gt F</dt><dd><p>
+<code>product(f(n), n = a..b)</code> returns <code>f</code>(a) * ... * <code>f</code>(<code>b</code>) as a formal product.</p>
+</dd></dl>
+<dl><dt>product : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>product(f(n), n)</code> returns the formal product <code>P</code>(<code>n</code>) which verifies <code>P</code>(<code>n+1</code>)<code>/P</code>(<code>n</code>) = <code>f</code>(<code>n</code>).</p>
+</dd></dl>
+<a name="f_summation"></a><dl><dt>summation : (F, <a href="SegmentBinding.html">SegmentBinding</a>(F)) -&gt F</dt><dd><p>
+<code>summation(f(n), n = a..b)</code> returns <code>f</code>(a) + ... + <code>f</code>(<code>b</code>) as a formal sum.</p>
+</dd></dl>
+<dl><dt>summation : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>summation(f(n), n)</code> returns the formal sum <code>S</code>(<code>n</code>) which verifies <code>S</code>(<code>n+1</code>) - <code>S</code>(<code>n</code>) = <code>f</code>(<code>n</code>).</p>
+</dd></dl>
+</body>
+</html>

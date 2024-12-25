@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LeadingCoefDetermination</title>
+</head>
+<body>
+<h1>LeadingCoefDetermination(OV, E, Z, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/leadcdet.spad#L1">leadcdet.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/leadcdet.spad#L1">[edit on github]</a></p>
+<ul>
+<li>OV : <a href="OrderedSet.html">OrderedSet</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>Z : <a href="GcdDomain.html">GcdDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(Z, E, OV)</ul>
+<p>
+Package for leading coefficient determination in the lifting step. Package working for every unique factorization domain <code>R</code> . Uses algorithm given in section 3 of [1] generalized to arbitrary unique factorization domain.</p>
+<a name="f_distFact"></a><dl><dt>distFact : (Z, <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(Z)), Record(contp : Z, factors : <a href="List.html">List</a>(Record(irr : P, pow : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))), <a href="List.html">List</a>(Z), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(Z)) -&gt Union(Record(polfac : <a href="List.html">List</a>(P), correct : Z, corrfact : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(Z))), "failed")</dt><dd><p>
+<code>distFact(contm, unilist, plead, vl, lvar, lval)</code>, where <code>contm</code> is the content of the evaluated polynomial, <code>unilist</code> is the list of factors of the evaluated polynomial, <code>plead</code> is the complete factorization of the leading coefficient, <code>vl</code> is the list of factors of the leading coefficient evaluated, <code>lvar</code> is the list of variables, lval is the list of values, returns a record giving the list of leading coefficients to impose on the univariate factors,</p>
+</dd></dl>
+<a name="f_polCase"></a><dl><dt>polCase : (Z, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(Z)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>polCase(contprod, numFacts, evallcs)</code>, where <code>contprod</code> is the product of the content of the leading coefficient of the polynomial to be factored with the content of the evaluated polynomial, <code>numFacts</code> is the number of factors of the leadingCoefficient, and evallcs is the list of the evaluated factors of the leadingCoefficient, returns <code>true</code> if the factors of the leading Coefficient can be distributed with this valuation.</p>
+</dd></dl>
+</body>
+</html>

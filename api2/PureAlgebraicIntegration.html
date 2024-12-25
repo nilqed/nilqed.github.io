@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PureAlgebraicIntegration</title>
+</head>
+<body>
+<h1>PureAlgebraicIntegration(R, F, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intaf.spad#L321">intaf.spad line 321</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intaf.spad#L321">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>)<li>L : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This package provides functions for integration, limited integration, extended integration and the risch differential equation for pure algebraic integrands.</p>
+<a name="f_palgLODE"></a><dl><dt>palgLODE : (L, F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="Symbol.html">Symbol</a>) -&gt Record(particular : Union(F, "failed"), basis : <a href="List.html">List</a>(F)) if L has <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</dt><dd><p>
+<code>palgLODE(op, g, kx, y, x)</code> returns the solution of <code>op f = g</code>. <code>y</code> is an algebraic function of <code>x</code>.</p>
+</dd></dl>
+<a name="f_palgRDE"></a><dl><dt>palgRDE : (F, F, F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), Mapping(Union(F, "failed"), F, F, <a href="Symbol.html">Symbol</a>)) -&gt Union(F, "failed")</dt><dd><p>
+<code>palgRDE(nfp, f, g, x, y, foo)</code> returns a function <code>z(x, y)</code> such that <code>dz/dx + n * df/dx z(x, y) = g(x, y)</code> if such a <code>z</code> exists, "failed" otherwise; <code>y</code> is an algebraic function of <code>x</code>; <code>foo(a, b, x)</code> is a function that solves <code>du/dx + n * da/dx u(x) = u(x)</code> for an unknown <code>u(x)</code> not involving <code>y</code>. <code>nfp</code> is <code>n * df/dx</code>.</p>
+</dd></dl>
+<a name="f_palgint"></a><dl><dt>palgint : (F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F)) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>palgint(f, x, y)</code> returns the integral of <code>f(x, y)dx</code> where <code>y</code> is an algebraic function of <code>x</code>.</p>
+</dd></dl>
+<a name="f_param_95LODE"></a><dl><dt>param_LODE : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F)) -&gt Record(particular : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>param_LODE(eq, lg, x, y)</code></p>
+</dd></dl>
+<a name="f_param_95RDE"></a><dl><dt>param_RDE : (F, <a href="List.html">List</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F)) -&gt Record(particular : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>param_RDE(fp, lg, x, y)</code></p>
+</dd></dl>
+</body>
+</html>

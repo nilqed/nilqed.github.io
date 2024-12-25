@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerCombinatoricFunctions</title>
+</head>
+<body>
+<h1>IntegerCombinatoricFunctions(I)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/combinat.spad#L1">combinat.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/combinat.spad#L1">[edit on github]</a></p>
+<ul>
+<li>I : <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></ul>
+<p>
+The IntegerCombinatoricFunctions package provides some standard functions in combinatorics.</p>
+<a name="f_binomial"></a><dl><dt>binomial : (I, I) -&gt I</dt><dd><p>
+<code>binomial(n, r)</code> returns the binomial coefficient <code>C(n, r) = n!/(r! (n-r)!)</code>, where <code>n &gt;= r &gt;= 0</code>. This is the number of combinations of <code>n</code> objects taken <code>r</code> at a time.</p>
+</dd></dl>
+<a name="f_catalan"></a><dl><dt>catalan : I -&gt I</dt><dd><p>
+<code>catalan(n)</code> returns the <code>n</code>-th Catalan number</p>
+</dd></dl>
+<a name="f_distinct_95partition"></a><dl><dt>distinct_partition : I -&gt I</dt><dd><p>
+<code>distinct_partition(n)</code> returns the number of partitions of the integer <code>n</code> with distinct members. This is the number of ways that <code>n</code> can be written as a sum of distinct positive integers. For <code>n &gt; 0</code> this is the same as number of ways that <code>n</code> can be written as a sum of odd positive integers.</p>
+</dd></dl>
+<a name="f_factorial"></a><dl><dt>factorial : I -&gt I</dt><dd><p>
+<code>factorial(n)</code> returns <code>n!</code>. this is the product of all integers between 1 and <code>n</code> (inclusive). Note: <code>0!</code> is defined to be 1.</p>
+</dd></dl>
+<a name="f_multinomial"></a><dl><dt>multinomial : (I, <a href="List.html">List</a>(I)) -&gt I</dt><dd><p>
+<code>multinomial(n, [m1, m2, ..., mk])</code> returns the multinomial coefficient <code>n!/(m1! m2! ... mk!)</code>.</p>
+</dd></dl>
+<a name="f_partition"></a><dl><dt>partition : I -&gt I</dt><dd><p>
+<code>partition(n)</code> returns the number of partitions of the integer <code>n</code>. This is the number of distinct ways that <code>n</code> can be written as a sum of positive integers.</p>
+</dd></dl>
+<a name="f_permutation"></a><dl><dt>permutation : (I, I) -&gt I</dt><dd><p>
+<code>permutation(n)</code> returns <code>!P(n, r) = n!/(n-r)!</code>. This is the number of permutations of <code>n</code> objects taken <code>r</code> at a time.</p>
+</dd></dl>
+<a name="f_stirling1"></a><dl><dt>stirling1 : (I, I) -&gt I</dt><dd><p>
+<code>stirling1(n, m)</code> returns the Stirling number of the first kind denoted <code>S[n, m]</code>.</p>
+</dd></dl>
+<a name="f_stirling2"></a><dl><dt>stirling2 : (I, I) -&gt I</dt><dd><p>
+<code>stirling2(n, m)</code> returns the Stirling number of the second kind denoted <code>SS[n, m]</code>.</p>
+</dd></dl>
+</body>
+</html>

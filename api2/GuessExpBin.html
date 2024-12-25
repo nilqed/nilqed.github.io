@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GuessExpBin</title>
+</head>
+<body>
+<h1>GuessExpBin(F, S, EXPRR, retract, coerce)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mantepse.spad#L494">mantepse.spad line 494</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mantepse.spad#L494">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>)<li>S : <a href="GcdDomain.html">GcdDomain</a><li>EXPRR : Join<a href="FunctionSpace.html">FunctionSpace</a>(<a href="Integer.html">Integer</a>), <a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a>, <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)) with
+<p>* : (%, %) -&gt %<p>/ : (%, %) -&gt %<p>^ : (%, %) -&gt %<p>numerator : % -&gt %<p>denominator : % -&gt %<p>ground? : % -&gt <a href="Boolean.html">Boolean</a><li>retract : Mapping(F, EXPRR)<li>coerce : Mapping(EXPRR, F)</ul>
+<p>
+This package implements guessing GuessExpRat and GuessBinRat functions of guessing package.</p>
+<a name="f_guessBinRat"></a><dl><dt>guessBinRat : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>)) -&gt <a href="List.html">List</a>(EXPRR)</dt><dd><p>
+<code>guessBinRat(l, options)</code> tries to find a function of the form <code>n+</code>-&gt;binomial(a+b <code>n</code>, <code>n</code>) <code>r</code>(<code>n</code>), where <code>r</code>(<code>n</code>) is a rational function, that fits <code>l</code>.</p>
+</dd></dl>
+<dl><dt>guessBinRat : <a href="Symbol.html">Symbol</a> -&gt Mapping(<a href="List.html">List</a>(EXPRR), <a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>)) if F has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>) and S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>guessBinRat q</code> returns a guesser that tries to find a function of the form <code>n+</code>-&gt;qbinomial(a+b <code>n</code>, <code>n</code>) <code>r</code>(<code>n</code>), where <code>r</code>(<code>q^n</code>) is a <code>q</code>-rational function, that fits <code>l</code>.</p>
+</dd></dl>
+<a name="f_guessExpRat"></a><dl><dt>guessExpRat : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>)) -&gt <a href="List.html">List</a>(EXPRR)</dt><dd><p>
+<code>guessExpRat(l, options)</code> tries to find a function of the form <code>n+</code>-&gt;(a+b <code>n</code>)<code>^n</code> <code>r</code>(<code>n</code>), where <code>r</code>(<code>n</code>) is a rational function, that fits <code>l</code>.</p>
+</dd></dl>
+<dl><dt>guessExpRat : <a href="Symbol.html">Symbol</a> -&gt Mapping(<a href="List.html">List</a>(EXPRR), <a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>)) if F has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>) and S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>guessExpRat q</code> returns a guesser that tries to find a function of the form <code>n+</code>-&gt;(a+b <code>q^n</code>)<code>^n</code> <code>r</code>(<code>q^n</code>), where <code>r</code>(<code>q^n</code>) is a <code>q</code>-rational function, that fits <code>l</code>.</p>
+</dd></dl>
+</body>
+</html>

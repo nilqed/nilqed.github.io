@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExpressionLinearSolve</title>
+</head>
+<body>
+<h1>ExpressionLinearSolve(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/expr.spad#L1167">expr.spad line 1167</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/expr.spad#L1167">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>)<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+Solver for linear systems represented as list of expressions.More efficient than using solve because it does not check that system really is linear.</p>
+<a name="f_lin_95sol"></a><dl><dt>lin_sol : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt Union(<a href="List.html">List</a>(F), "failed")</dt><dd><p>
+<code>lin_sol(eql, vl)</code> solves system of equations <code>eql</code> for variables in <code>vl</code>. Equations must be linear in variables from <code>vl</code>.</p>
+</dd></dl>
+</body>
+</html>

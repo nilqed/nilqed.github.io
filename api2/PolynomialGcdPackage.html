@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialGcdPackage</title>
+</head>
+<body>
+<h1>PolynomialGcdPackage(E, OV, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pgcd.spad#L1">pgcd.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pgcd.spad#L1">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="EuclideanDomain.html">EuclideanDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+This package computes multivariate polynomial <code>gcd</code><code>'s</code> using a hensel lifting strategy. The constraint on the coefficient domain is imposed by the lifting strategy. It is assumed that the coefficient domain has the property that almost all specializations preserve the degree of the <code>gcd</code>.</p>
+<a name="f_gcd"></a><dl><dt>gcd : (P, P) -&gt P</dt><dd><p>
+<code>gcd(p, q)</code> computes the <code>gcd</code> of the two polynomials <code>p</code> and <code>q</code>.</p>
+</dd></dl>
+<dl><dt>gcd : <a href="List.html">List</a>(P) -&gt P</dt><dd><p>
+<code>gcd(lp)</code> computes the <code>gcd</code> of the list of polynomials <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>gcd : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)</dt><dd><p>
+<code>gcd(lp)</code> computes the <code>gcd</code> of the list of polynomials <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>gcd : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)</dt><dd><p>
+<code>gcd(p, q)</code> computes the <code>gcd</code> of the two polynomials <code>p</code> and <code>q</code>.</p>
+</dd></dl>
+<a name="f_gcdPrimitive"></a><dl><dt>gcdPrimitive : (P, P) -&gt P</dt><dd><p>
+<code>gcdPrimitive(p, q)</code> computes the <code>gcd</code> of the primitive polynomials <code>p</code> and <code>q</code>.</p>
+</dd></dl>
+<dl><dt>gcdPrimitive : <a href="List.html">List</a>(P) -&gt P</dt><dd><p>
+<code>gcdPrimitive lp</code> computes the <code>gcd</code> of the list of primitive polynomials <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>gcdPrimitive : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)</dt><dd><p>
+<code>gcdPrimitive(p, q)</code> computes the <code>gcd</code> of the primitive polynomials <code>p</code> and <code>q</code>.</p>
+</dd></dl>
+</body>
+</html>

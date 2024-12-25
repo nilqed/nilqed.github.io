@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NonLinearFirstOrderODESolver</title>
+</head>
+<body>
+<h1>NonLinearFirstOrderODESolver(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L355">odeef.spad line 355</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L355">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>), <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>F : Join(<a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R), <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>)</ul>
+<p>
+NonLinearFirstOrderODESolver provides a function for finding closed form first integrals of nonlinear ordinary differential equations of order 1.</p>
+<a name="f_solve"></a><dl><dt>solve : (F, F, <a href="BasicOperator.html">BasicOperator</a>, <a href="Symbol.html">Symbol</a>) -&gt Union(F, "failed")</dt><dd><p>
+<code>solve(M(x, y), N(x, y), y, x)</code> returns <code>F(x, y)</code> such that <code>F(x, y) = c</code> for a constant <code>c</code> is a first integral of the equation <code>M(x, y) dx + N(x, y) dy = 0</code>, or "failed" if no first-integral can be found.</p>
+</dd></dl>
+</body>
+</html>

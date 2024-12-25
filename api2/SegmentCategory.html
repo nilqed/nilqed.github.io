@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SegmentCategory</title>
+</head>
+<body>
+<h1>SegmentCategory(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/seg.spad#L1">seg.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/seg.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+This category provides operations on ranges, or  segments as they are called.</p>
+<a name="f__43"></a><dl><dt>+ : (%, S) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd><p>
+<code>(l..h)<code>+i</code></code> returns segment <code>l+i .. h+i</code>.</p>
+</dd></dl>
+<dl><dt>+ : (S, %) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd><p>
+<code>i+(l..h)</code> returns segment <code>i+l .. i+h</code>.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : (%, S) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>(l..h)<code>-i</code></code> returns segment <code>l-i .. h-i</code>.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_BY"></a><dl><dt>BY : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>s by n</code> creates a new segment in which only every <code>n</code><code>-</code>th element is used.</p>
+</dd></dl>
+<a name="f_SEGMENT"></a><dl><dt>SEGMENT : (S, S) -&gt %</dt><dd><p>
+<code>l..h</code> creates a segment with <code>l</code> and <code>h</code> as the endpoints.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt>convert : S -&gt %</dt><dd><p>
+<code>convert(i)</code> creates the segment <code>i..i</code>.</p>
+</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_high"></a><dl><dt>high : % -&gt S</dt><dd><p>
+<code>high(s)</code> returns the second endpoint of <code>s</code>. Note: <code>high(l..h) = h</code>.</p>
+</dd></dl>
+<a name="f_incr"></a><dl><dt>incr : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>incr(s)</code> returns <code>n</code>, where <code>s</code> is a segment in which every <code>n</code><code>-</code>th element is used. Note: <code>incr(l..h by n) = n</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_low"></a><dl><dt>low : % -&gt S</dt><dd><p>
+<code>low(s)</code> returns the first endpoint of <code>s</code>. Note: <code>low(l..h) = l</code>.</p>
+</dd></dl>
+<a name="f_reverse"></a><dl><dt>reverse : % -&gt % if S has <a href="OrderedRing.html">OrderedRing</a></dt><dd><p>
+<code>reverse(s)</code> returns segment <code>s</code> in reverse order.</p>
+</dd></dl>
+<a name="f_segment"></a><dl><dt>segment : (S, S) -&gt %</dt><dd><p>
+<code>segment(i, j)</code> is an alternate way to create the segment <code>i..j</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IncidenceAlgebra</title>
+</head>
+<body>
+<h1>IncidenceAlgebra(R, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/logic.spad#L287">logic.spad line 287</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/logic.spad#L287">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+A domain for incidence matrices of finite posets.</p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>x * y</code> is the product of the matrices <code>x</code> and <code>y</code>. Error: if the dimensions are incompatible.</p>
+</dd></dl>
+<dl><dt>* : (%, R) -&gt %</dt><dd><p>
+<code>r*x</code> is the left scalar multiple of the scalar <code>r</code> and the matrix <code>x</code>.</p>
+</dd></dl>
+<dl><dt>* : (R, %) -&gt %</dt><dd><p>
+<code>r*x</code> is the left scalar multiple of the scalar <code>r</code> and the matrix <code>x</code>.</p>
+</dd></dl>
+<dl><dt>* : (<a href="Permutation.html">Permutation</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>\pi * A</code> permutes the indices and the matrix according to the permutation <code>\pi</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>x + y</code> is the sum of the matrices <code>x</code> and <code>y</code>. Error: if the dimensions are incompatible.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>x ^ n</code> computes a non-negative integral power of the matrix <code>x</code>. Error: if the matrix is not square.</p>
+</dd></dl>
+<a name="f_apply"></a><dl><dt>apply : (%, S, S) -&gt R</dt><dd><p>
+<code>A(s, t)</code> returns $A_<code>i</code>, <code>j</code>$, where $<code>i</code>$, $<code>j</code>$ are the positions of $<code>s</code>$ and $<code>t</code>$ in the index list.</p>
+</dd></dl>
+<dl><dt>apply : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>A(i, j)</code> returns $A_<code>i</code>, <code>j</code>$</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_incidenceAlgebra"></a><dl><dt>incidenceAlgebra : (<a href="Matrix.html">Matrix</a>(R), <a href="List.html">List</a>(S)) -&gt %</dt><dd><p>
+<code>incidenceAlgebra(A, ss)</code> constructs an adjacency matrix with with indices <code>ss</code> and Matrix A</p>
+</dd></dl>
+<dl><dt>incidenceAlgebra : (<a href="Matrix.html">Matrix</a>(R), <a href="OneDimensionalArray.html">OneDimensionalArray</a>(S)) -&gt %</dt><dd><p>
+<code>incidenceAlgebra(A, ss)</code> constructs an adjacency matrix with with indices <code>ss</code> and Matrix A</p>
+</dd></dl>
+<a name="f_indices"></a><dl><dt>indices : % -&gt <a href="OneDimensionalArray.html">OneDimensionalArray</a>(S)</dt><dd><p>
+<code>indices(A)</code> returns the indices of the incidence matrix A</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_matrix"></a><dl><dt>matrix : % -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>matrix(A)</code> returns the underlying matrix of the incidence matrix A</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

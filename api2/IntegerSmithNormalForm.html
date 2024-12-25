@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerSmithNormalForm</title>
+</head>
+<body>
+<h1>IntegerSmithNormalForm</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/smith2.spad#L103">smith2.spad line 103</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/smith2.spad#L103">[edit on github]</a></p>
+<p>
+This package computes Smith form of integer matrices. It is more efficinet than general case by first using elimination with unit pivots from UnitGaussianElimination.</p>
+<a name="f_completeSmith"></a><dl><dt>completeSmith : (<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), Mapping(Record(Smith : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), leftEqMat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), rightEqMat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)), <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))) -&gt Record(Smith : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), leftEqMat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), rightEqMat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>completeSmith(m, full)</code> computes record containing Smith normal form of <code>m</code> and the left and right equivalence matrices. It first reduces <code>m</code> to smaller matrix and then uses full to finish.</p>
+</dd></dl>
+<a name="f_smith"></a><dl><dt>smith : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>smith(m)</code> computes Smith normal form of <code>m</code></p>
+</dd></dl>
+<dl><dt>smith : (<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), Mapping(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>smith(m, full)</code> computes Smith normal form of <code>m</code>. It first reduces <code>m</code> to smaller matrix and then uses full to finish.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FortranCodePackage1</title>
+</head>
+<body>
+<h1>FortranCodePackage1</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortpak.spad#L1">fortpak.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortpak.spad#L1">[edit on github]</a></p>
+<p>
+FortranCodePackage1 provides some utilities for producing useful objects in FortranCode domain. The Package may be used with the FortranCode domain and its <code>printCode</code> or possibly via an outputAsFortran. (The package provides items of use in connection with ASPs in the AXIOM-NAG link and, where appropriate, naming accords with that in IRENA.) The easy-to-use functions use Fortran loop variables <code>I1</code>, <code>I2</code>, and it is users' responsibility to check that this is sensible. The advanced functions use SegmentBinding to allow users control over Fortran loop variable names.</p>
+<a name="f_identitySquareMatrix"></a><dl><dt>identitySquareMatrix : (<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="FortranCode.html">FortranCode</a></dt><dd><p>
+<code>identitySquareMatrix(s, p)</code> is undocumented</p>
+</dd></dl>
+<a name="f_zeroMatrix"></a><dl><dt>zeroMatrix : (<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="FortranCode.html">FortranCode</a></dt><dd><p>
+<code>zeroMatrix(s, p, q)</code> uses loop variables in the Fortran, <code>I1</code> and <code>I2</code></p>
+</dd></dl>
+<dl><dt>zeroMatrix : (<a href="Symbol.html">Symbol</a>, <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="FortranCode.html">FortranCode</a></dt><dd><p>
+<code>zeroMatrix(s, b, d)</code> in this version gives the user control over names of Fortran variables used in loops.</p>
+</dd></dl>
+<a name="f_zeroSquareMatrix"></a><dl><dt>zeroSquareMatrix : (<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="FortranCode.html">FortranCode</a></dt><dd><p>
+<code>zeroSquareMatrix(s, p)</code> is undocumented</p>
+</dd></dl>
+<a name="f_zeroVector"></a><dl><dt>zeroVector : (<a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="FortranCode.html">FortranCode</a></dt><dd><p>
+<code>zeroVector(s, p)</code> is undocumented</p>
+</dd></dl>
+</body>
+</html>

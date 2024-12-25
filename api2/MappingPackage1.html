@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MappingPackage1</title>
+</head>
+<body>
+<h1>MappingPackage1(A)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mappkg.spad#L58">mappkg.spad line 58</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mappkg.spad#L58">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+various Currying operations.</p>
+<a name="f__94"></a><dl><dt>^ : (Mapping(A, A), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Mapping(A, A)</dt><dd><p>
+<code>f^n</code> is the function which is the <code>n</code>-fold application of <code>f</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : A -&gt Mapping(A)</dt><dd><p>
+<code>coerce A</code> changes its argument into a nullary function.</p>
+</dd></dl>
+<a name="f_id"></a><dl><dt>id : A -&gt A</dt><dd><p>
+<code>id x</code> is <code>x</code>.</p>
+</dd></dl>
+<a name="f_nullary"></a><dl><dt>nullary : A -&gt Mapping(A)</dt><dd><p>
+<code>nullary A</code> changes its argument into a nullary function.</p>
+</dd></dl>
+<a name="f_recur"></a><dl><dt>recur : Mapping(A, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, A) -&gt Mapping(A, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, A)</dt><dd><p>
+<code>recur(g)</code> is the function <code>h</code> such that <code>h(n, x)= g(n, g(n-1, ..g(1, x)..))</code>.</p>
+</dd></dl>
+</body>
+</html>

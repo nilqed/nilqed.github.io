@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>EltableAggregate</title>
+</head>
+<body>
+<h1>EltableAggregate(Dom, Im)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/aggcat.spad#L782">aggcat.spad line 782</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/aggcat.spad#L782">[edit on github]</a></p>
+<ul>
+<li>Dom : <a href="Type.html">Type</a><li>Im : <a href="Type.html">Type</a></ul>
+<p>
+An eltable aggregate is one which can be viewed as a function. For example, the list <code>[1, 7, 4]</code> can be applied to 1, 2, and 3 respectively and will return the integers 1, 7, and 4; thus this list may be viewed as mapping 1 to 1, 2 to 7 and 3 to 4. In general, an aggregate can map members of a domain  Dom to an image domain  Im.</p>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, Dom) -&gt Im</dt><dd> from <a href="Eltable.html">Eltable</a>(Dom, Im)</dd></dl>
+<dl><dt>elt : (%, Dom, Im) -&gt Im</dt><dd><p>
+<code>elt(u, x, y)</code> applies <code>u</code> to <code>x</code> if <code>x</code> is in the domain of <code>u</code>, and returns <code>y</code> otherwise.</p>
+</dd></dl>
+<a name="f_qelt"></a><dl><dt>qelt : (%, Dom) -&gt Im</dt><dd><p>
+<code>qelt(u, x)</code> applies <code>u</code> to <code>x</code> without checking whether <code>x</code> is in the domain of <code>u</code>. If <code>x</code> is not in the domain of <code>u</code> a memory-access violation may occur. If a check on whether <code>x</code> is in the domain of <code>u</code> is required, use the function <code>elt</code>.</p>
+</dd></dl>
+<a name="f_qsetelt_33"></a><dl><dt>qsetelt! : (%, Dom, Im) -&gt Im if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd><p>
+<code>qsetelt!(u, x, y)</code> sets the image of <code>x</code> to be <code>y</code> under <code>u</code>, without checking that <code>x</code> is in the domain of <code>u</code>. If such a check is required use the function <code>setelt!</code>.</p>
+</dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, Dom, Im) -&gt Im if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd><p>
+<code>setelt!(u, x, y)</code> sets the image of <code>x</code> to be <code>y</code> under <code>u</code>, if <code>x</code> is in the domain of <code>u</code>. Error: if <code>x</code> is not in the domain of <code>u</code>.</p>
+</dd></dl>
+<p><a href="Eltable.html">Eltable</a>(Dom, Im)
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MonomialExtensionTools</title>
+</head>
+<body>
+<h1>MonomialExtensionTools(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intrf.spad#L109">intrf.spad line 109</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intrf.spad#L109">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+Tools for handling monomial extensions.</p>
+<a name="f_decompose"></a><dl><dt>decompose : (<a href="Fraction.html">Fraction</a>(UP), Mapping(UP, UP)) -&gt Record(poly : UP, normal : <a href="Fraction.html">Fraction</a>(UP), special : <a href="Fraction.html">Fraction</a>(UP))</dt><dd><p>
+<code>decompose(f, D)</code> returns <code>[p, n, s]</code> such that <code>f = p+n+s</code>, all the squarefree factors of <code>denom(n)</code> are normal <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>, <code>denom(s)</code> is special <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>, and <code>n</code> and <code>s</code> are proper fractions (no pole at infinity). <code>D</code> is the derivation to use.</p>
+</dd></dl>
+<a name="f_normalDenom"></a><dl><dt>normalDenom : (<a href="Fraction.html">Fraction</a>(UP), Mapping(UP, UP)) -&gt UP</dt><dd><p>
+<code>normalDenom(f, D)</code> returns the product of all the normal factors of <code>denom(f)</code>. <code>D</code> is the derivation to use.</p>
+</dd></dl>
+<a name="f_split"></a><dl><dt>split : (UP, Mapping(UP, UP)) -&gt Record(normal : UP, special : UP)</dt><dd><p>
+<code>split(p, D)</code> returns <code>[n, s]</code> such that <code>p = n s</code>, all the squarefree factors of <code>n</code> are normal <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>, and <code>s</code> is special <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>. <code>D</code> is the derivation to use.</p>
+</dd></dl>
+<a name="f_splitSquarefree"></a><dl><dt>splitSquarefree : (UP, Mapping(UP, UP)) -&gt Record(normal : <a href="Factored.html">Factored</a>(UP), special : <a href="Factored.html">Factored</a>(UP))</dt><dd><p>
+<code>splitSquarefree(p, D)</code> returns <code>[n_1 n_2^2 ... n_m^m, s_1 s_2^2 ... s_q^q]</code> such that <code>p = n_1 n_2^2 ... n_m^m s_1 s_2^2 ... s_q^q</code>, each <code>n_i</code> is normal <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code> and each <code>s_i</code> is special <code>w</code>.<code>r</code>.<code>t</code> <code>D</code>. <code>D</code> is the derivation to use.</p>
+</dd></dl>
+</body>
+</html>

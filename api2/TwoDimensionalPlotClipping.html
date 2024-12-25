@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TwoDimensionalPlotClipping</title>
+</head>
+<body>
+<h1>TwoDimensionalPlotClipping</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/clip.spad#L1">clip.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/clip.spad#L1">[edit on github]</a></p>
+<p>
+The purpose of this package is to provide reasonable plots of functions with singularities.</p>
+<a name="f_clip"></a><dl><dt>clip : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))) -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clip(ll)</code> performs two-dimensional clipping on a list of lists of points, <code>ll</code>; the default parameters <code>1/2</code> for the fraction and <code>5/1</code> for the scale are used in the iClipParametric subroutine, which is called by this function.</p>
+</dd></dl>
+<dl><dt>clip : <a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clip(l)</code> performs two-dimensional clipping on a curve <code>l</code>, which is a list of points; the default parameters <code>1/2</code> for the fraction and <code>5/1</code> for the scale are used in the iClipParametric subroutine, which is called by this function.</p>
+</dd></dl>
+<dl><dt>clip : <a href="Plot.html">Plot</a> -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clip(p)</code> performs two-dimensional clipping on a plot, <code>p</code>, from the domain Plot for the graph of one variable, <code>y = f(x)</code>; the default parameters <code>1/4</code> for the fraction and <code>5/1</code> for the scale are used in the <span class="spadfun">clip</span> function.</p>
+</dd></dl>
+<dl><dt>clip : (<a href="Plot.html">Plot</a>, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clip(p, frac, sc)</code> performs two-dimensional clipping on a plot, <code>p</code>, from the domain Plot for the graph of one variable <code>y = f(x)</code>; the fraction parameter is specified by <code>frac</code> and the scale parameter is specified by <code>sc</code> for use in the <span class="spadfun">clip</span> function.</p>
+</dd></dl>
+<a name="f_clipParametric"></a><dl><dt>clipParametric : <a href="Plot.html">Plot</a> -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clipParametric(p)</code> performs two-dimensional clipping on a plot, <code>p</code>, from the domain Plot for the parametric curve <code>x = f(t)</code>, <code>y = g(t)</code>; the default parameters <code>1/2</code> for the fraction and <code>5/1</code> for the scale are used in the iClipParametric subroutine, which is called by this function.</p>
+</dd></dl>
+<dl><dt>clipParametric : (<a href="Plot.html">Plot</a>, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clipParametric(p, frac, sc)</code> performs two-dimensional clipping on a plot, <code>p</code>, from the domain Plot for the parametric curve <code>x = f(t)</code>, <code>y = g(t)</code>; the fraction parameter is specified by <code>frac</code> and the scale parameter is specified by <code>sc</code> for use in the iClipParametric subroutine, which is called by this function.</p>
+</dd></dl>
+<a name="f_clipWithRanges"></a><dl><dt>clipWithRanges : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt Record(brans : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), xValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), yValues : <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>clipWithRanges(pointLists, xMin, xMax, yMin, yMax)</code> performs clipping on a list of lists of points, <code>pointLists</code>. Clipping is done within the specified ranges of <code>xMin</code>, <code>xMax</code> and <code>yMin</code>, <code>yMax</code>. This function is used internally by the iClipParametric subroutine in this package.</p>
+</dd></dl>
+</body>
+</html>

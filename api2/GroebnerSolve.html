@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GroebnerSolve</title>
+</head>
+<body>
+<h1>GroebnerSolve(lv, F, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/groebsol.spad#L1">groebsol.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/groebsol.spad#L1">[edit on github]</a></p>
+<ul>
+<li>lv : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)<li>F : <a href="GcdDomain.html">GcdDomain</a><li>R : <a href="GcdDomain.html">GcdDomain</a></ul>
+<p>
+Solve systems of polynomial equations using Groebner bases Total order Groebner bases are computed and then converted to lex ones This package is mostly intended for internal use.</p>
+<a name="f_genericPosition"></a><dl><dt>genericPosition : (<a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)), <a href="List.html">List</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(lv))) -&gt Record(dpolys : <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)), coords : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>genericPosition(lp, lv)</code> puts a radical zero dimensional ideal in general position, for system <code>lp</code> in variables <code>lv</code>.</p>
+</dd></dl>
+<a name="f_groebSolve"></a><dl><dt>groebSolve : (<a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)), <a href="List.html">List</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(lv))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)))</dt><dd><p>
+<code>groebSolve(lp, lv)</code> reduces the polynomial system <code>lp</code> in variables <code>lv</code> to triangular form. Algorithm based on groebner bases algorithm with linear algebra for change of ordering. Preprocessing for the general solver. The polynomials in input are of type DMP.</p>
+</dd></dl>
+<a name="f_testDim"></a><dl><dt>testDim : (<a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)), <a href="List.html">List</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(lv))) -&gt Union(<a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)), "failed")</dt><dd><p>
+<code>testDim(lp, lv)</code> tests if the polynomial system <code>lp</code> in variables <code>lv</code> is zero dimensional.</p>
+</dd></dl>
+</body>
+</html>

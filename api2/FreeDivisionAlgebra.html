@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeDivisionAlgebra</title>
+</head>
+<body>
+<h1>FreeDivisionAlgebra(VAR, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fdalg.spad#L8">fdalg.spad line 8</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fdalg.spad#L8">[edit on github]</a></p>
+<ul>
+<li>VAR : <a href="OrderedSet.html">OrderedSet</a><li>F : <a href="Field.html">Field</a></ul>
+<p>
+The elements of the Free Field are represented by Admissible Linear Systems (ALS) in standard form ...</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, F) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(F)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt>* : (%, <a href="Matrix.html">Matrix</a>(F)) -&gt %</dt><dd><p>
+<code>f * U</code> column transformation</p>
+</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (F, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(F)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt>* : (<a href="Matrix.html">Matrix</a>(F), %) -&gt %</dt><dd><p>
+<code>T * f</code> row transformation</p>
+</dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<dl><dt>+ : (%, F) -&gt %</dt><dd><p>
+<code>f + alpha</code> adds the scalar alpha to <code>f</code>.</p>
+</dd></dl>
+<dl><dt>+ : (F, %) -&gt %</dt><dd><p>
+<code>alpha + f</code> adds the scalar alpha to <code>f</code>.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt>- : (%, F) -&gt %</dt><dd><p>
+<code>f - alpha</code> subtracts the scalar alpha from <code>f</code>.</p>
+</dd></dl>
+<dl><dt>- : (F, %) -&gt %</dt><dd><p>
+<code>alpha - f</code> adds the scalar alpha to <code>-f</code>.</p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (%, %) -&gt %</dt><dd><p>
+<code>f / g</code> computes <code>f</code> * <code>g^</code>-1 for nonzero element <code>g</code>.</p>
+</dd></dl>
+<dl><dt>/ : (%, F) -&gt %</dt><dd><p>
+<code>f / alpha</code> computes <code>f</code> / alpha for nonzero alpha.</p>
+</dd></dl>
+<dl><dt>/ : (F, %) -&gt %</dt><dd><p>
+<code>alpha / f</code> computes alpha / <code>f</code> for nonzero <code>f</code>.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>f^n</code> returns <code>f^n</code>.</p>
+</dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt>^ : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd><p>
+<code>f^n</code> returns <code>f^n</code>.</p>
+</dd></dl>
+<a name="f_addALS"></a><dl><dt>addALS : (%, %) -&gt %</dt><dd><p>
+<code>addALS(f,g)</code> computes <code>f+g</code> in terms of the admissible linear systems for <code>f</code> and <code>g</code> (without minimization).</p>
+</dd></dl>
+<a name="f_addColumns_33"></a><dl><dt>addColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>addColumns!(f, i, j, alpha)</code> adds alpha*column(<code>i</code>) to column(<code>j</code>) in A and subtracts row(<code>j</code>) from row(<code>i</code>) in <code>s</code> (in the ALS of <code>f</code>), i.e. (A*U)(U^-1*s) = <code>v</code>.</p>
+</dd></dl>
+<a name="f_addColumnsRows_33"></a><dl><dt>addColumnsRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>addColumnsRows!(f, i, j, alpha)</code> adds alpha*column(<code>i</code>) to column(<code>j</code>) and subtracts alpha*row(<code>j</code>) from row(<code>i</code>) in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_addMIN"></a><dl><dt>addMIN : (%, %) -&gt %</dt><dd><p>
+<code>addMIN(f,g)</code> uses addALS(<code>f</code>,<code>g</code>) with minimization.</p>
+</dd></dl>
+<a name="f_addRows_33"></a><dl><dt>addRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>addRows!(f, i, j, alpha)</code> adds alpha*row(<code>i</code>) to row(<code>j</code>) in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_addRowsColumns_33"></a><dl><dt>addRowsColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>addRowsColumns!(f, i, j, alpha)</code> adds alpha*row(<code>i</code>) to row(<code>j</code>) and subtracts alpha*column(<code>j</code>) from column(<code>i</code>) in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_admissibleLinearSystem"></a><dl><dt>admissibleLinearSystem : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>admissibleLinearSystem(f)</code> output as ALS.</p>
+</dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_appendSupport_33"></a><dl><dt>appendSupport! : (%, <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR))) -&gt %</dt><dd><p>
+<code>appendSupport! (f, lst)</code> appends variables not in the support.</p>
+</dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_blockElimination"></a><dl><dt>blockElimination : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Boolean.html">Boolean</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>blockElimination(f, rsrc, rdst, flg_u, csrc, cdst, flg_v)</code> returns transformation matrices if it is possible to eliminate all entries in <code>rdst</code> <code>x</code> <code>cdst</code> (including columns in <code>u</code> if <code>flg_u</code> = <code>true</code>, including rows in <code>v</code> if flg_v = <code>true</code>) by using rows in <code>rsrc</code> and columns in <code>csrc</code>. Otherwise an empty list.</p>
+</dd></dl>
+<dl><dt>blockElimination : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>blockElimination(f, rsrc, rdst, csrc, cdst)</code> flg_u = <code>true</code>, flg_v = <code>true</code></p>
+</dd></dl>
+<a name="f_blockStructure"></a><dl><dt>blockStructure : % -&gt <a href="Matrix.html">Matrix</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>blockStructure(f)</code> analyzes the structure of the ALS of <code>f</code> and detects blocks with respect to an upper triangular structure. Entry (<code>i</code>,1) contains the first row, (<code>i</code>,2) the last row, (<code>i</code>,3) the size and (<code>i</code>,4) if block <code>i</code> is refined.</p>
+</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : F -&gt %</dt><dd><p>
+<code>coerce(c)</code> converts the constant <code>c</code> into an element of the free field represented by an ALS in minimal refined form.</p>
+</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt>coerce : <a href="FreeMonoid.html">FreeMonoid</a>(VAR) -&gt %</dt><dd><p>
+<code>coerce(m)</code> converts the monoid <code>m</code> into an element of the free field represented by an ALS in minimal refined form.</p>
+</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt>coerce : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F) -&gt %</dt><dd><p>
+<code>coerce(p)</code> converts the polynomial <code>p</code> to an element in the free field represented by an minimal admissible linear system.</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(f)</code> prints the ALS of <code>f</code> if the debug flag is set and a rational expression if the alternative output flag is set.</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)</dt><dd><p>
+<code>coerce(f)</code> converts the element to XDPOLY (if possible).</p>
+</dd></dl>
+<a name="f_columnSpan"></a><dl><dt>columnSpan : % -&gt <a href="Stream.html">Stream</a>(<a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)))</dt><dd><p>
+<code>columnSpan(f)</code> computes the column span for a regular element, that is (<code>v'</code>, <code>Mv'</code>, M^2v', ...) where PAs=Pv=v' with PA = <code>I</code>-<code>M</code>.</p>
+</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(f)</code> gives a copy of the element <code>f</code>.</p>
+</dd></dl>
+<dl><dt>copy : (%, F) -&gt %</dt><dd><p>
+<code>copy(f, alpha)</code> gives a copy of element <code>f</code> multiplied by alpha.</p>
+</dd></dl>
+<a name="f_dimension"></a><dl><dt>dimension : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>dimension(f)</code> returns the dimension of the ALS.</p>
+</dd></dl>
+<a name="f_disableAlternativeOutput"></a><dl><dt>disableAlternativeOutput : % -&gt %</dt><dd><p>
+<code>disableAlternativeOutput(f)</code> disable output as rational expression.</p>
+</dd></dl>
+<a name="f_disableDebugOutput"></a><dl><dt>disableDebugOutput : % -&gt %</dt><dd><p>
+<code>disableDebugOutput(f)</code> disable displaying the ALS.</p>
+</dd></dl>
+<a name="f_display"></a><dl><dt>display : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>display(f,[s])</code> prints the element <code>f</code> as A*(<code>s_1</code>,<code>s_2</code>,...,<code>s_n</code>)' = <code>v</code>.</p>
+</dd></dl>
+<dl><dt>display : (%, <a href="OutputForm.html">OutputForm</a>) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>display(f,sol)</code> prints the element <code>f</code> as A*sol = <code>v</code>.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt F</dt><dd><p>
+<code>elt(f, i)</code> returns <code>v</code>(<code>i</code>) from the ALS of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)</dt><dd><p>
+<code>elt(f, i, j)</code> returns A(<code>i</code>,<code>j</code>) from the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_enableAlternativeOutput"></a><dl><dt>enableAlternativeOutput : % -&gt %</dt><dd><p>
+<code>enableAlternativeOutput(f)</code> enable output as rational expression.</p>
+</dd></dl>
+<a name="f_enableDebugOutput"></a><dl><dt>enableDebugOutput : % -&gt %</dt><dd><p>
+<code>enableDebugOutput(f)</code> enable displaying the ALS.</p>
+</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extendedALS"></a><dl><dt>extendedALS : % -&gt %</dt><dd><p>
+<code>extendedALS(f)</code> returns an extended ALS for <code>f</code>, that is, 1*f (with a scalar first row).</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>factor(f)</code> factorizes <code>f</code> in f=f_1*f_2*...*f_k with atoms (irreducible elements) f_i. Notice that this factorization is unique only with respect to similarity.</p>
+</dd></dl>
+<a name="f_factorizationEquations"></a><dl><dt>factorizationEquations : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F))</dt><dd><p>
+<code>factorizationEquations(f,k_rows,k_cols)</code> for debugging purposes (interface LINPEN)</p>
+</dd></dl>
+<a name="f_factorizationGroebner"></a><dl><dt>factorizationGroebner : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F))</dt><dd><p>
+<code>factorizationGroebner(f,k_rows,k_cols)</code> for debugging purposes (interface LINPEN)</p>
+</dd></dl>
+<a name="f_factorizationSolve"></a><dl><dt>factorizationSolve : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(F))))</dt><dd><p>
+<code>factorizationSolve(f,k_rows,k_cols)</code> returns a (possible empty) list of solutions for an admissible transformation to create an upper right block of zeros of size <code>k_rows</code> times <code>k_cols</code>.</p>
+</dd></dl>
+<a name="f_factorizationTransformations"></a><dl><dt>factorizationTransformations : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(F)))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>factorizationTransformations(f,k_rows,k_cols,sol)</code> for debugging purposes (interface LINPEN)</p>
+</dd></dl>
+<a name="f_factorize"></a><dl><dt>factorize : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>factorize(f,k)</code> factorizes <code>f</code> in f=g*h with rank(<code>g</code>)<code>=k</code> if possible (if necessary by using non-linear techniques).</p>
+</dd></dl>
+<a name="f_factors"></a><dl><dt>factors : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>factors(f)</code> analysis the block structure of the system matrix of the ALS of <code>f</code> to split <code>f</code> into factors.</p>
+</dd></dl>
+<a name="f_insertRowsColumns"></a><dl><dt>insertRowsColumns : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>insertRowsColumns(f, lst_row, lst_col)</code> returns a new system with rows and columns inserted. An index <code>k</code> means a new row/column between <code>k</code> and <code>k+1</code>. The number of rows and columns have to be the same!</p>
+</dd></dl>
+<a name="f_interval"></a><dl><dt>interval : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>interval(i, j)</code> creates list [<code>i</code>, <code>i+1</code>, ..., <code>j</code>]</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt><a href="DivisionRing.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<a name="f_inverse"></a><dl><dt>inverse : % -&gt %</dt><dd><p>
+<code>inverse(f)</code> <code>f^</code>-1 using invertMIN.</p>
+</dd></dl>
+<a name="f_invertALS"></a><dl><dt>invertALS : % -&gt %</dt><dd><p>
+<code>invertALS(f)</code> computes <code>f^</code>-1 in terms of the ALS for <code>f</code>. There is no check if <code>f</code> is invertible!</p>
+</dd></dl>
+<a name="f_invertMIN"></a><dl><dt>invertMIN : % -&gt %</dt><dd><p>
+<code>invertMIN(f)</code> uses invertSTD(<code>f</code>) and minimization to construct a minimal system for <code>f^</code>-1. Linear techniques are used to get a fine pivot block structure.</p>
+</dd></dl>
+<a name="f_invertSTD"></a><dl><dt>invertSTD : % -&gt %</dt><dd><p>
+<code>invertSTD(f)</code> computes the standard inverse of <code>f</code> in terems of the admissible linear system There is no check if <code>f</code> is invertible!</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftFactor"></a><dl><dt>leftFactor : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>leftFactor(f,k)</code> returns the left factor of rank <code>k</code> of a polynomial <code>f</code> or 1 if it<code>'s</code> not possible by linear techniques.</p>
+</dd></dl>
+<a name="f_leftFamily"></a><dl><dt>leftFamily : % -&gt <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd><p>
+<code>leftFamily(f)</code> prints the left family s=A^-1*v.</p>
+</dd></dl>
+<a name="f_leftMinimization"></a><dl><dt>leftMinimization : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>leftMinimization(f, i_min, i_max)</code> tries to apply a left minimization step with respect to the pivot block with the rows/columns (<code>i_min</code>, ..., i_max).</p>
+</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_linearization"></a><dl><dt>linearization : % -&gt <a href="Matrix.html">Matrix</a>(%)</dt><dd><p>
+<code>linearization(f)</code> returns the element <code>f</code> as linearization with entries represented by admissible linear systems in minimal refined form.</p>
+</dd></dl>
+<dl><dt>linearization : % -&gt <a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F))</dt><dd><p>
+<code>linearization(f)</code> returns the element <code>f</code> as linearization.</p>
+</dd></dl>
+<a name="f_matrix"></a><dl><dt>matrix : (%, <a href="FreeMonoid.html">FreeMonoid</a>(VAR)) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>matrix(f,m)</code> returns the coefficient matrix for the monomial <code>m</code> of the ALS of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>matrix : % -&gt <a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F))</dt><dd><p>
+<code>matrix(f)</code> returns the matrix of the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_minimal_63"></a><dl><dt>minimal? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>minimal?(f)</code> is <code>f</code> represented by a minimal ALS?</p>
+</dd></dl>
+<a name="f_minimize"></a><dl><dt>minimize : % -&gt %</dt><dd><p>
+<code>minimize(f)</code> minimizes the underlying ALS by applying left and right block minimization steps. Minimality is only guaranteed if the remaining blocks are refined.</p>
+</dd></dl>
+<a name="f_multiplyALS"></a><dl><dt>multiplyALS : (%, %) -&gt %</dt><dd><p>
+<code>multiplyALS(f,g)</code> computes <code>f*g</code> in terms of the admissible linear systems for <code>f</code> and <code>g</code> (without minimization).</p>
+</dd></dl>
+<a name="f_multiplyColumn_33"></a><dl><dt>multiplyColumn! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>multiplyColumn!(f, i, alpha)</code> multiplies column(<code>i</code>) by alpha in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_multiplyMIN"></a><dl><dt>multiplyMIN : (%, %) -&gt %</dt><dd><p>
+<code>multiplyMIN(f,g)</code> uses multiplyALS(<code>f</code>,<code>g</code>) with minimization.</p>
+</dd></dl>
+<a name="f_multiplyRow_33"></a><dl><dt>multiplyRow! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>multiplyRow!(f, i, alpha)</code> multiplies row(<code>i</code>) by alpha in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_mutable_63"></a><dl><dt>mutable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>mutable?(f)</code> is the underlying ALS of <code>f</code> mutable?</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : F -&gt %</dt><dd><p>
+<code>new(c)</code> creates a constant element.</p>
+</dd></dl>
+<dl><dt>new : (<a href="FreeMonoid.html">FreeMonoid</a>(VAR), F) -&gt %</dt><dd><p>
+<code>new(m,c)</code> creates a monomial element with coefficient <code>c</code>.</p>
+</dd></dl>
+<dl><dt>new : (<a href="LinearMultivariateMatrixPencil.html">LinearMultivariateMatrixPencil</a>(F), <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR))) -&gt %</dt><dd><p>
+<code>new(lp, lst)</code> creates an element by the linear multivariate matrix pencil <code>lp</code> and the list of monomials <code>lst</code>.</p>
+</dd></dl>
+<a name="f_normalALS"></a><dl><dt>normalALS : % -&gt %</dt><dd><p>
+<code>normalALS(f)</code> removes a scalar first row of an (extended) ALS.</p>
+</dd></dl>
+<a name="f_normalize_33"></a><dl><dt>normalize! : % -&gt %</dt><dd><p>
+<code>normalize!(f)</code> rescales the rows such that the first nonzero entry of the coefficient matrix in the diagonal is one. The right hand side is normalized by normalizeRHS! and the non-zero entry is in the last row of the corresponding block.</p>
+</dd></dl>
+<a name="f_normalizeDIAG_33"></a><dl><dt>normalizeDIAG! : % -&gt %</dt><dd><p>
+<code>normalizeDIAG!(f)</code> rescales the rows such that the first nonzero entry of the coefficient matrix in the diagonal is one.</p>
+</dd></dl>
+<a name="f_normalizePLS_33"></a><dl><dt>normalizePLS! : % -&gt %</dt><dd><p>
+<code>normalizePLS!(f)</code> scales and rearranges rows and columns of the system matrix such that the constant part of the system matrix is the identity matrix (possibly of smaller size).</p>
+</dd></dl>
+<a name="f_normalizeRHS_33"></a><dl><dt>normalizeRHS! : % -&gt %</dt><dd><p>
+<code>normalizeRHS!(f)</code> eliminates non-zero entries in the right hand side of ALS with respect of the non-zero entry with the highest index.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_pencil"></a><dl><dt>pencil : % -&gt <a href="LinearMultivariateMatrixPencil.html">LinearMultivariateMatrixPencil</a>(F)</dt><dd><p>
+<code>pencil(f)</code> returns a pointer to the underlying pencil.</p>
+</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(F)</dd></dl>
+<a name="f_polynomial"></a><dl><dt>polynomial : % -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)</dt><dd><p>
+<code>polynomial(f)</code> returns <code>f</code> as XDPOLY (if possible)</p>
+</dd></dl>
+<a name="f_polynomial_63"></a><dl><dt>polynomial? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>polynomial?(f)</code> is the ALS in polynomial form?</p>
+</dd></dl>
+<a name="f_qaddColumns_33"></a><dl><dt>qaddColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>addColumns!(f, i, j, alpha)</code> adds alpha*column(<code>i</code>) to column(<code>j</code>) in A and subtracts row(<code>j</code>) from row(<code>i</code>) in <code>s</code> (in the ALS of <code>f</code>), i.e. (A*U)(U^-1*s) = <code>v</code>.</p>
+</dd></dl>
+<a name="f_qaddRows_33"></a><dl><dt>qaddRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt %</dt><dd><p>
+<code>addRows!(f, i, j, alpha)</code> adds alpha*row(<code>i</code>) to row(<code>j</code>) in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_qelt"></a><dl><dt>qelt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)</dt><dd><p>
+<code>qelt(f, i, j)</code> returns A(<code>i</code>,<code>j</code>) from the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_qnew"></a><dl><dt>qnew : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>qnew(n)</code> creates an empty ALS of dimension <code>n</code>.</p>
+</dd></dl>
+<dl><dt>qnew : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR))) -&gt %</dt><dd><p>
+<code>qnew(n, lst)</code> creates an empty ALS of dimension <code>n</code>.</p>
+</dd></dl>
+<a name="f_qregular_63"></a><dl><dt>qregular? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qregular?(f, i_min, i_max)</code> does the specified diagonal block define a regular element?</p>
+</dd></dl>
+<a name="f_qswapColumns_33"></a><dl><dt>qswapColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapColumns!(f, i, j)</code> exchanges columns <code>i</code> and <code>j</code> in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_qswapRows_33"></a><dl><dt>qswapRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapRows!(f, i, j)</code> exchanges rows <code>i</code> and <code>j</code> in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_qzero_63"></a><dl><dt>qzero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qzero?(f, i_min, i_max, j_min, j_max)</code> is the specified block zero (in the system matrix)?</p>
+</dd></dl>
+<dl><dt>qzero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="FreeMonoid.html">FreeMonoid</a>(VAR)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qzero?(f, i_min, i_max, j_min, j_max, m)</code> is the specified block zero in the (system) matrix corresponding to the monomial <code>m?</code></p>
+</dd></dl>
+<dl><dt>qzero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qzero?(f, i_min, i_max, j_min, j_max, l)</code> is the specified block zero in matrix <code>l?</code></p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rank(f)</code> returns the rank of the element <code>f</code>, that is, the dimension of a minimal admissible linear system (for <code>f</code>).</p>
+</dd></dl>
+<a name="f_ratexpr"></a><dl><dt>ratexpr : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>ratexpr(f)</code> analysis the block structure of the admissible linear system to write <code>f</code> as rational expression.</p>
+</dd></dl>
+<a name="f_ratexprInverse"></a><dl><dt>ratexprInverse : (%, <a href="Boolean.html">Boolean</a>) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>ratexprInverse(f, flg)</code> returns <code>f</code> in output form if it is a polynomial, (<code>f</code>)^-1 if <code>f^</code>-1 is a polynomial, "r&lt;rank&gt;" if the system is minimal and "d&lt;dim&gt;" in general.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_refine_33"></a><dl><dt>refine! : % -&gt %</dt><dd><p>
+<code>refine!(f)</code> refines <code>f</code> using non-linear techniques.</p>
+</dd></dl>
+<dl><dt>refine! : (%, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>refine!(f, flg)</code> refines the underlying admissible admissible linear system using simple and linear techniques and if flg=true also non-linear techniques (Groebner basis).</p>
+</dd></dl>
+<a name="f_refineUR_33"></a><dl><dt>refineUR! : % -&gt %</dt><dd><p>
+<code>refineUR!(f)</code> uses linear techniques to create upper right blocks of zeros in staircase form (as far as possible).</p>
+</dd></dl>
+<dl><dt>refineUR! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>refineUR!(f,k)</code> uses linear techniques to create an upper right block of zeros with <code>k</code> rows (if possible).</p>
+</dd></dl>
+<a name="f_refined_63"></a><dl><dt>refined? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>refined?(f)</code> is <code>f</code> represented by a refined ALS?</p>
+</dd></dl>
+<a name="f_refinementEquations"></a><dl><dt>refinementEquations : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F))</dt><dd><p>
+<code>refinementEquations(f,i_min,i_max,k_rows,flg_u,flg_r)</code> for debugging purposes (interface LINPEN)</p>
+</dd></dl>
+<a name="f_refinementGroebner"></a><dl><dt>refinementGroebner : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F))</dt><dd><p>
+<code>refinementGroebner(f,i_min,i_max,k_rows,flg_u,flg_r)</code> computes a Groebner basis for the ideal generated by the equations for creating a zero block with <code>k</code> rows within the pivot block <code>i_min</code>..<code>i_max</code> and conditions to guarantee invertible transformations.</p>
+</dd></dl>
+<a name="f_refinementSolve"></a><dl><dt>refinementSolve : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(F))))</dt><dd><p>
+<code>refinementSolve(f,i_min,i_max,k_rows,flg_u,flg_r)</code> Computes a list of solutions (for the entries in transformation matrices) to create a lower left block of zeros with <code>k</code> rows in the pivot block <code>i_min</code>..<code>i_max</code>.</p>
+</dd></dl>
+<a name="f_refinementTransformations"></a><dl><dt>refinementTransformations : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(F)))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>refinementTransformations(f,i_min,i_max,sol)</code> for debugging purposes (interface LINPEN)</p>
+</dd></dl>
+<a name="f_regular_63"></a><dl><dt>regular? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>regular?(f)</code> is <code>f</code> a regular element?</p>
+</dd></dl>
+<a name="f_removeRowsColumns"></a><dl><dt>removeRowsColumns : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>removeRowsColumns(f, lst_row, lst_col)</code> returns a new system with the specified rows and columns removed. The number of rows and columns have to be the same!</p>
+</dd></dl>
+<a name="f_representation"></a><dl><dt>representation : % -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)))</dt><dd><p>
+<code>representation(f)</code> returns the element <code>f</code> as linear representation (<code>u</code>,A,<code>v</code>).</p>
+</dd></dl>
+<a name="f_rightFactor"></a><dl><dt>rightFactor : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>rightFactor(f,k)</code> returns the right factor of rank <code>k</code> of a polynomial <code>f</code> or 1 if it<code>'s</code> not possible by linear techniques.</p>
+</dd></dl>
+<a name="f_rightFamily"></a><dl><dt>rightFamily : % -&gt <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd><p>
+<code>rightFamily(f)</code> prints the right family t=u*A^-1.</p>
+</dd></dl>
+<a name="f_rightMinimization"></a><dl><dt>rightMinimization : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>rightMinimization(f, i_min, i_max)</code> tries to apply a right minimization step with respect to the pivot block with the rows/columns (<code>i_min</code>, ..., i_max).</p>
+</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rowSpan"></a><dl><dt>rowSpan : % -&gt <a href="Stream.html">Stream</a>(<a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)))</dt><dd><p>
+<code>rowSpan(f)</code> computes the row span for a regular element, that is (<code>u</code>; uM; <code>uM^2</code>; ...) where PAs=Pv with PA = <code>I</code>-<code>M</code>.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_scalar_63"></a><dl><dt>scalar? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>scalar?(f)</code> is <code>f</code> scalar?</p>
+</dd></dl>
+<dl><dt>scalar? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>scalar?(f, i, j)</code> is A(<code>i</code>,<code>j</code>) scalar?</p>
+</dd></dl>
+<a name="f_scaleALS"></a><dl><dt>scaleALS : (%, F) -&gt %</dt><dd><p>
+<code>scaleALS(f, alpha)</code> computes alpha*f by scaling the right hand side of the ALS for <code>f</code>.</p>
+</dd></dl>
+<a name="f_setRefined_33"></a><dl><dt>setRefined! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>setRefined!(f,max_sze)</code> sets the internal flag if the system is refined (over the ground field) up to the specified block size.</p>
+</dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, F) -&gt F</dt><dd><p>
+<code>setelt!(f, i, alpha)</code> sets <code>v</code>(<code>i</code>) = alpha in the ALS of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)) -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F)</dt><dd><p>
+<code>setelt!(f, i, j, p)</code> sets A(<code>i</code>,<code>j</code>) = <code>p</code> in the ALS of <code>f</code> (where <code>p</code> has degree less equal one) if the system is in polynomial form and j&gt;i.</p>
+</dd></dl>
+<a name="f_solutionVector"></a><dl><dt>solutionVector : % -&gt <a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F))</dt><dd><p>
+<code>solutionVector(f)</code> computes the solution vector <code>s</code> of As=v if <code>f</code> is polynomial.</p>
+</dd></dl>
+<dl><dt>solutionVector : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F))</dt><dd><p>
+<code>solutionVector(f, k)</code> computes the approximated solution vector up to powers <code>M^k</code> <code>v'</code> where PAs=Pv=v' with PA = <code>I</code>-<code>M</code>.</p>
+</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_summands"></a><dl><dt>summands : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>summands(f)</code> analysis the block structure of the system matrix of the ALS of <code>f</code> to split <code>f</code> into summands.</p>
+</dd></dl>
+<a name="f_swapColumns_33"></a><dl><dt>swapColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapColumns!(f, i, j)</code> exchanges columns <code>i</code> and <code>j</code> in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_swapRows_33"></a><dl><dt>swapRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapRows!(f, i, j)</code> exchanges rows <code>i</code> and <code>j</code> in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_swapRowsColumns_33"></a><dl><dt>swapRowsColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapRowsColumns!(f, i, j)</code> exchanges rows <code>i</code> and <code>j</code> and columns <code>j</code> and <code>i</code> in the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_toggleAlternativeOutput"></a><dl><dt>toggleAlternativeOutput : % -&gt %</dt><dd><p>
+<code>toggleAlternativeOutput(f)</code> enable/disable output as rational expression.</p>
+</dd></dl>
+<a name="f_toggleDebugOutput"></a><dl><dt>toggleDebugOutput : % -&gt %</dt><dd><p>
+<code>toggleDebugOutput(f)</code> enable/disable ALS.</p>
+</dd></dl>
+<a name="f_transformColumns_33"></a><dl><dt>transformColumns! : (%, <a href="Matrix.html">Matrix</a>(F)) -&gt %</dt><dd><p>
+<code>transformColumns!(f, U)</code> transforms the ALS of <code>f</code> from the right.</p>
+</dd></dl>
+<a name="f_transformRows_33"></a><dl><dt>transformRows! : (%, <a href="Matrix.html">Matrix</a>(F)) -&gt %</dt><dd><p>
+<code>transformRows!(f, T)</code> transforms the ALS of <code>f</code> from the left.</p>
+</dd></dl>
+<a name="f_transformationMatrix"></a><dl><dt>transformationMatrix : % -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>transformationMatrix(f)</code> returns the identity matrix to be modified and used within transformRows! or transformColumns!</p>
+</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt %</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %)</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_variables"></a><dl><dt>variables : % -&gt <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR))</dt><dd><p>
+<code>variables(f)</code> returns a list of the variables.</p>
+</dd></dl>
+<a name="f_vector"></a><dl><dt>vector : % -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>vector(f)</code> returns <code>v</code> from the ALS of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>vector : % -&gt <a href="Matrix.html">Matrix</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F))</dt><dd><p>
+<code>vector(f)</code> returns <code>v</code> from the ALS of <code>f</code>.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt>zero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zero?(f, i, j)</code> is A(<code>i</code>,<code>j</code>) zero?</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Rng.html">Rng</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="DivisionRing.html">DivisionRing</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="Algebra.html">Algebra</a>(F)
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="BiModule.html">BiModule</a>(F, F)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(F)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Module.html">Module</a>(F)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RightModule.html">RightModule</a>(F)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="LeftModule.html">LeftModule</a>(F)
+</body>
+</html>

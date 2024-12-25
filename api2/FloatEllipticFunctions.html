@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FloatEllipticFunctions</title>
+</head>
+<body>
+<h1>FloatEllipticFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/special2.spad#L2080">special2.spad line 2080</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/special2.spad#L2080">[edit on github]</a></p>
+<p>
+This package implements arbitrary precision numerical elliptic functions. The method is based on descending Landen transform.</p>
+<a name="f_ellipticE"></a><dl><dt>ellipticE : <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>ellipticE(m)</code> is the complete elliptic integral of the second kind.</p>
+</dd></dl>
+<dl><dt>ellipticE : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>ellipticE(z, m)</code> is the incomplete elliptic integral of the second kind.</p>
+</dd></dl>
+<dl><dt>ellipticE : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>ellipticE(m)</code> is the complete elliptic integral of the second kind.</p>
+</dd></dl>
+<dl><dt>ellipticE : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>ellipticE(z, m)</code> is the incomplete elliptic integral of the second kind.</p>
+</dd></dl>
+<a name="f_ellipticF"></a><dl><dt>ellipticF : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>ellipticF(z, m)</code> is the incomplete elliptic integral of the first kind.</p>
+</dd></dl>
+<dl><dt>ellipticF : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>ellipticF(z, m)</code> is the incomplete elliptic integral of the first kind.</p>
+</dd></dl>
+<a name="f_ellipticK"></a><dl><dt>ellipticK : <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>ellipticK(m)</code> is the complete elliptic integral of the first kind.</p>
+</dd></dl>
+<dl><dt>ellipticK : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>ellipticK(m)</code> is the complete elliptic integral of the first kind.</p>
+</dd></dl>
+<a name="f_ellipticPi"></a><dl><dt>ellipticPi : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>ellipticPi(z, n, m)</code> is the incomplete elliptic integral of the third kind.</p>
+</dd></dl>
+<dl><dt>ellipticPi : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>ellipticPi(z, n, m)</code> is the incomplete elliptic integral of the third kind.</p>
+</dd></dl>
+<a name="f_jacobiCn"></a><dl><dt>jacobiCn : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>jacobiCn(z, m)</code> is the Jacobi <code>cn</code> function</p>
+</dd></dl>
+<dl><dt>jacobiCn : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>jacobiCn(z, m)</code> is the Jacobi <code>cn</code> function</p>
+</dd></dl>
+<a name="f_jacobiDn"></a><dl><dt>jacobiDn : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>jacobiDn(z, m)</code> is the Jacobi <code>dn</code> function</p>
+</dd></dl>
+<dl><dt>jacobiDn : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>jacobiDn(z, m)</code> is the Jacobi <code>dn</code> function</p>
+</dd></dl>
+<a name="f_jacobiSn"></a><dl><dt>jacobiSn : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>jacobiSn(z, m)</code> is the Jacobi <code>sn</code> function</p>
+</dd></dl>
+<dl><dt>jacobiSn : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>jacobiSn(z, m)</code> is the Jacobi <code>sn</code> function</p>
+</dd></dl>
+<a name="f_jacobiZeta"></a><dl><dt>jacobiZeta : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>jacobiZeta(z, m)</code> is the Jacobi zeta function</p>
+</dd></dl>
+<a name="f_kprod"></a><dl><dt>kprod : <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<dl><dt>kprod : <a href="List.html">List</a>(<a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<a name="f_landen"></a><dl><dt>landen : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Float.html">Float</a>) -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<dl><dt>landen : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="List.html">List</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<a name="f_landen1"></a><dl><dt>landen1 : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))) -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<dl><dt>landen1 : (<a href="Float.html">Float</a>, <a href="List.html">List</a>(<a href="Float.html">Float</a>)) -&gt <a href="List.html">List</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<a name="f_landen2"></a><dl><dt>landen2 : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)), <a href="Float.html">Float</a>) -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<dl><dt>landen2 : (<a href="Float.html">Float</a>, <a href="List.html">List</a>(<a href="Float.html">Float</a>), <a href="Float.html">Float</a>) -&gt <a href="List.html">List</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<a name="f_modularInvariantJ"></a><dl><dt>modularInvariantJ : <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>modularInvariantJ(tau)</code> computes modular invariant <code>j</code>, that is <code>1728*g2^3/(g2^3 - 27*g3^2)</code> where <code>g2</code>, <code>g3</code> are invariants corresponding to half periods <code>w1</code>, <code>w2</code> such that <code>tau = w1/w2</code>.</p>
+</dd></dl>
+<a name="f_rabs"></a><dl><dt>rabs : <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<dl><dt>rabs : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<a name="f_sn2"></a><dl><dt>sn2 : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<dl><dt>sn2 : (<a href="Float.html">Float</a>, <a href="List.html">List</a>(<a href="Float.html">Float</a>)) -&gt <a href="Float.html">Float</a></dt><dd><p>
+Undocumented.</p>
+</dd></dl>
+<a name="f_weierstrassHalfPeriods"></a><dl><dt>weierstrassHalfPeriods : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+<code>weierstrassHalfPeriods(g2, g3)</code> computes half periods of Weierstrass elliptic functions from invariants <code>g2</code>, <code>g3</code>.</p>
+</dd></dl>
+<a name="f_weierstrassInvariants"></a><dl><dt>weierstrassInvariants : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+<code>weierstrassInvariants(w1, w2)</code> computes invariants <code>g2</code>, <code>g3</code> of Weierstrass elliptic functions from half periods <code>w1</code>, <code>w2</code>.</p>
+</dd></dl>
+<a name="f_weierstrassP"></a><dl><dt>weierstrassP : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>weierstrassP(g2, g3, x)</code> is the Weierstrass <code>P</code> function</p>
+</dd></dl>
+<dl><dt>weierstrassP : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>weierstrassP(g2, g3, x)</code> is the Weierstrass <code>P</code> function</p>
+</dd></dl>
+<a name="f_weierstrassPPrime"></a><dl><dt>weierstrassPPrime : (<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>weierstrassPPrime(g2, g3, x)</code> is the derivative of the Weierstrass <code>P</code> function</p>
+</dd></dl>
+<dl><dt>weierstrassPPrime : (<a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>weierstrassPPrime(g2, g3, x)</code> is the derivative of the Weierstrass <code>P</code> function</p>
+</dd></dl>
+</body>
+</html>

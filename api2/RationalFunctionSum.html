@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalFunctionSum</title>
+</head>
+<body>
+<h1>RationalFunctionSum(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sum.spad#L262">sum.spad line 262</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sum.spad#L262">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))</ul>
+<p>
+Computes sums of rational functions.</p>
+<a name="f_sum"></a><dl><dt>sum : (<a href="Polynomial.html">Polynomial</a>(R), <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>sum(f(n), n = a..b)</code> returns <code>f(a) + f(a+1) + ... f(b)</code>.</p>
+</dd></dl>
+<dl><dt>sum : (<a href="Polynomial.html">Polynomial</a>(R), <a href="Symbol.html">Symbol</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>sum(a(n), n)</code> returns <code>A</code> which is the indefinite sum of <code>a</code> with respect to upward difference on <code>n</code>, i.e. <code>A(n+1) - A(n) = a(n)</code>.</p>
+</dd></dl>
+<dl><dt>sum : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Expression.html">Expression</a>(R))</dt><dd><p>
+<code>sum(f(n), n = a..b)</code> returns <code>f(a) + f(a+1) + ... f(b)</code>.</p>
+</dd></dl>
+<dl><dt>sum : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Expression.html">Expression</a>(R))</dt><dd><p>
+<code>sum(a(n), n)</code> returns <code>A</code> which is the indefinite sum of <code>a</code> with respect to upward difference on <code>n</code>, i.e. <code>A(n+1) - A(n) = a(n)</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExpressionToUnivariatePowerSeries</title>
+</head>
+<body>
+<h1>ExpressionToUnivariatePowerSeries(R, FE)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/expr2ups.spad#L1">expr2ups.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/expr2ups.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>FE : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package provides functions to convert functional expressions to power series.</p>
+<a name="f_laurent"></a><dl><dt>laurent : FE -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>laurent(f)</code> returns a Laurent expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable.</p>
+</dd></dl>
+<dl><dt>laurent : (FE, <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>laurent(f, x = a)</code> expands the expression <code>f</code> as a Laurent series in powers of <code>(x - a)</code>.</p>
+</dd></dl>
+<dl><dt>laurent : (FE, <a href="Equation.html">Equation</a>(FE), <a href="Integer.html">Integer</a>) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>laurent(f, x = a, n)</code> expands the expression <code>f</code> as a Laurent series in powers of <code>(x - a)</code>; terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>laurent : (FE, <a href="Integer.html">Integer</a>) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>laurent(f, n)</code> returns a Laurent expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable and terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>laurent : <a href="Symbol.html">Symbol</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>laurent(x)</code> returns <code>x</code> viewed as a Laurent series.</p>
+</dd></dl>
+<a name="f_puiseux"></a><dl><dt>puiseux : FE -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>puiseux(f)</code> returns a Puiseux expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable.</p>
+</dd></dl>
+<dl><dt>puiseux : (FE, <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>puiseux(f, x = a)</code> expands the expression <code>f</code> as a Puiseux series in powers of <code>(x - a)</code>.</p>
+</dd></dl>
+<dl><dt>puiseux : (FE, <a href="Equation.html">Equation</a>(FE), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>puiseux(f, x = a, n)</code> expands the expression <code>f</code> as a Puiseux series in powers of <code>(x - a)</code>; terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>puiseux : (FE, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>puiseux(f, n)</code> returns a Puiseux expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable and terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>puiseux : <a href="Symbol.html">Symbol</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>puiseux(x)</code> returns <code>x</code> viewed as a Puiseux series.</p>
+</dd></dl>
+<a name="f_series"></a><dl><dt>series : FE -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>series(f)</code> returns a series expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable.</p>
+</dd></dl>
+<dl><dt>series : (FE, <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>series(f, x = a)</code> expands the expression <code>f</code> as a series in powers of (<code>x</code> - a).</p>
+</dd></dl>
+<dl><dt>series : (FE, <a href="Equation.html">Equation</a>(FE), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>series(f, x = a, n)</code> expands the expression <code>f</code> as a series in powers of (<code>x</code> - a); terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>series : (FE, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>series(f, n)</code> returns a series expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable and terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>series : <a href="Symbol.html">Symbol</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>series(x)</code> returns <code>x</code> viewed as a series.</p>
+</dd></dl>
+<a name="f_taylor"></a><dl><dt>taylor : FE -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(f)</code> returns a Taylor expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable.</p>
+</dd></dl>
+<dl><dt>taylor : (FE, <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(f, x = a)</code> expands the expression <code>f</code> as a Taylor series in powers of <code>(x - a)</code>.</p>
+</dd></dl>
+<dl><dt>taylor : (FE, <a href="Equation.html">Equation</a>(FE), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(f, x = a)</code> expands the expression <code>f</code> as a Taylor series in powers of <code>(x - a)</code>; terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>taylor : (FE, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(f, n)</code> returns a Taylor expansion of the expression <code>f</code>. Note: <code>f</code> should have only one variable; the series will be expanded in powers of that variable and terms will be computed up to order at least <code>n</code>.</p>
+</dd></dl>
+<dl><dt>taylor : <a href="Symbol.html">Symbol</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(x)</code> returns <code>x</code> viewed as a Taylor series.</p>
+</dd></dl>
+</body>
+</html>

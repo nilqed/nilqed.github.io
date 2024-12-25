@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ListMonoidOps</title>
+</head>
+<body>
+<h1>ListMonoidOps(S, E, un)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/free.spad#L1">free.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/free.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>E : <a href="AbelianMonoid.html">AbelianMonoid</a><li>un : E</ul>
+<p>
+This internal package represents monoid (abelian or not, with or without inverses) as lists and provides some common operations to the various flavors of monoids.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : S -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(S)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftMult"></a><dl><dt>leftMult : (S, %) -&gt %</dt><dd><p>
+<code>leftMult(s, a)</code> returns <code>s * a</code> where <code>*</code> is the monoid operation, which is assumed non-commutative.</p>
+</dd></dl>
+<a name="f_listOfMonoms"></a><dl><dt>listOfMonoms : % -&gt <a href="List.html">List</a>(Record(gen : S, exp : E))</dt><dd><p>
+<code>listOfMonoms(l)</code> returns the list of the monomials forming <code>l</code>.</p>
+</dd></dl>
+<a name="f_makeMulti"></a><dl><dt>makeMulti : <a href="List.html">List</a>(Record(gen : S, exp : E)) -&gt %</dt><dd><p>
+<code>makeMulti(l)</code> returns the element whose list of monomials is <code>l</code>.</p>
+</dd></dl>
+<a name="f_makeTerm"></a><dl><dt>makeTerm : (S, E) -&gt %</dt><dd><p>
+<code>makeTerm(s, e)</code> returns the monomial <code>s</code> exponentiated by <code>e</code> (e.g. s^e or <code>e</code> * <code>s</code>).</p>
+</dd></dl>
+<a name="f_makeUnit"></a><dl><dt>makeUnit : () -&gt %</dt><dd><p>
+<code>makeUnit()</code> returns the unit element of the monomial.</p>
+</dd></dl>
+<a name="f_mapExpon"></a><dl><dt>mapExpon : (Mapping(E, E), %) -&gt %</dt><dd><p>
+<code>mapExpon(f, a1^e1 ... an^en)</code> returns <code>a1^f(e1) ... an^f(en)</code>.</p>
+</dd></dl>
+<a name="f_mapGen"></a><dl><dt>mapGen : (Mapping(S, S), %) -&gt %</dt><dd><p>
+<code>mapGen(f, a1^e1 ... an^en)</code> returns <code>f(a1)^e1 ... f(an)^en</code>.</p>
+</dd></dl>
+<a name="f_nthExpon"></a><dl><dt>nthExpon : (%, <a href="Integer.html">Integer</a>) -&gt E</dt><dd><p>
+<code>nthExpon(l, n)</code> returns the exponent of the n^th monomial of <code>l</code>.</p>
+</dd></dl>
+<a name="f_nthFactor"></a><dl><dt>nthFactor : (%, <a href="Integer.html">Integer</a>) -&gt S</dt><dd><p>
+<code>nthFactor(l, n)</code> returns the factor of the n^th monomial of <code>l</code>.</p>
+</dd></dl>
+<a name="f_outputForm"></a><dl><dt>outputForm : (%, Mapping(<a href="OutputForm.html">OutputForm</a>, <a href="OutputForm.html">OutputForm</a>, <a href="OutputForm.html">OutputForm</a>), Mapping(<a href="OutputForm.html">OutputForm</a>, <a href="OutputForm.html">OutputForm</a>, <a href="OutputForm.html">OutputForm</a>), <a href="Integer.html">Integer</a>) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>outputForm(l, fop, fexp, unit)</code> converts the monoid element represented by <code>l</code> to an OutputForm. Argument unit is the output form for the unit of the monoid (e.g. 0 or 1), <code>fop(a, b)</code> is the output form for the monoid operation applied to <code>a</code> and <code>b</code> (e.g. <code>a + b</code>, <code>a * b</code>, <code>ab</code>), and <code>fexp(a, n)</code> is the output form for the exponentiation operation applied to <code>a</code> and <code>n</code> (e.g. <code>n a</code>, <code>n * a</code>, <code>a ^ n</code>, <code>a^n</code>).</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt S</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(S, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_reverse"></a><dl><dt>reverse : % -&gt %</dt><dd><p>
+<code>reverse(l)</code> reverses the list of monomials forming <code>l</code>. This has some effect if the monoid is non-abelian, i.e. <code>reverse(a1^e1 ... an^en) = an^en ... a1^e1</code> which is different.</p>
+</dd></dl>
+<a name="f_reverse_33"></a><dl><dt>reverse! : % -&gt %</dt><dd><p>
+<code>reverse!(l)</code> reverses the list of monomials forming <code>l</code>, destroying the element <code>l</code>.</p>
+</dd></dl>
+<a name="f_rightMult"></a><dl><dt>rightMult : (%, S) -&gt %</dt><dd><p>
+<code>rightMult(a, s)</code> returns <code>a * s</code> where <code>*</code> is the monoid operation, which is assumed non-commutative.</p>
+</dd></dl>
+<a name="f_size"></a><dl><dt>size : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>size(l)</code> returns the number of monomials forming <code>l</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraicIntegrate</title>
+</head>
+<body>
+<h1>AlgebraicIntegrate(R0, F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intalg.spad#L133">intalg.spad line 133</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intalg.spad#L133">[edit on github]</a></p>
+<ul>
+<li>R0 : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R0))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : <a href="FunctionFieldCategory.html">FunctionFieldCategory</a>(F, UP, UPUP)</ul>
+<p>
+This package provides functions for integrating a function on an algebraic curve.</p>
+<a name="f_algintegrate"></a><dl><dt>algintegrate : (R, Mapping(UP, UP), Mapping(<a href="IntegrationResult.html">IntegrationResult</a>(F), F)) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(R)</dt><dd><p>
+<code>algintegrate(f, d, rec)</code> integrates <code>f</code> with respect to the derivation <code>d</code>.</p>
+</dd></dl>
+<a name="f_palgintegrate"></a><dl><dt>palgintegrate : (R, F, Mapping(UP, UP)) -&gt Record(result1 : <a href="IntegrationResult.html">IntegrationResult</a>(R), result2 : F)</dt><dd><p>
+<code>palgintegrate(f, x, d)</code> integrates <code>f</code> with respect to the derivation <code>d</code>. Argument <code>f</code> must be a pure algebraic function.</p>
+</dd></dl>
+</body>
+</html>

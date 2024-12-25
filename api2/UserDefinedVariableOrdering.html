@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UserDefinedVariableOrdering</title>
+</head>
+<body>
+<h1>UserDefinedVariableOrdering</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/setorder.spad#L90">setorder.spad line 90</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/setorder.spad#L90">[edit on github]</a></p>
+<p>
+This packages provides functions to allow the user to select the ordering on the variables and operators for displaying polynomials, fractions and expressions. The ordering affects the display only and not the computations.</p>
+<a name="f_getVariableOrder"></a><dl><dt>getVariableOrder : () -&gt Record(high : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), low : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>))</dt><dd><p>
+<code>getVariableOrder()</code> returns <code>[[b1, ..., bm], [a1, ..., an]]</code> such that the ordering on the variables was given by <code>setVariableOrder([b1, ..., bm], [a1, ..., an])</code>.</p>
+</dd></dl>
+<a name="f_resetVariableOrder"></a><dl><dt>resetVariableOrder : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>resetVariableOrder()</code> cancels any previous use of setVariableOrder and returns to the default system ordering.</p>
+</dd></dl>
+<a name="f_setVariableOrder"></a><dl><dt>setVariableOrder : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setVariableOrder([a1, ..., an])</code> defines an ordering on the variables given by <code>a1 &gt; a2 &gt; ... &gt; an &gt; other variables</code>.</p>
+</dd></dl>
+<dl><dt>setVariableOrder : (<a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setVariableOrder([b1, ..., bm], [a1, ..., an])</code> defines an ordering on the variables given by <code>b1 &gt; b2 &gt; ... &gt; bm &gt;</code> other variables <code>&gt; a1 &gt; a2 &gt; ... &gt; an</code>.</p>
+</dd></dl>
+</body>
+</html>

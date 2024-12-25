@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionalSpecialFunction</title>
+</head>
+<body>
+<h1>FunctionalSpecialFunction(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/combfunc.spad#L443">combfunc.spad line 443</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/combfunc.spad#L443">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+Provides some special functions over an integral domain.</p>
+<a name="f_Beta"></a><dl><dt>Beta : (F, F) -&gt F</dt><dd><p>
+<code>Beta(x, y)</code> returns the beta function applied to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<dl><dt>Beta : (F, F, F) -&gt F</dt><dd><p>
+<code>Beta(x, a, b)</code> is incomplete Beta function applied to <code>x</code>, a and <code>b</code>.</p>
+</dd></dl>
+<a name="f_Gamma"></a><dl><dt>Gamma : F -&gt F</dt><dd><p>
+<code>Gamma(f)</code> returns the formal Gamma function applied to <code>f</code>.</p>
+</dd></dl>
+<dl><dt>Gamma : (F, F) -&gt F</dt><dd><p>
+<code>Gamma(a, x)</code> returns the incomplete Gamma function applied to a and <code>x</code>.</p>
+</dd></dl>
+<a name="f_abs"></a><dl><dt>abs : F -&gt F</dt><dd><p>
+<code>abs(f)</code> returns the absolute value operator applied to <code>f</code>.</p>
+</dd></dl>
+<a name="f_airyAi"></a><dl><dt>airyAi : F -&gt F</dt><dd><p>
+<code>airyAi(x)</code> returns the Airy <code>Ai</code> function applied to <code>x</code>.</p>
+</dd></dl>
+<a name="f_airyAiPrime"></a><dl><dt>airyAiPrime : F -&gt F</dt><dd><p>
+<code>airyAiPrime(x)</code> returns the derivative of Airy <code>Ai</code> function applied to <code>x</code>.</p>
+</dd></dl>
+<a name="f_airyBi"></a><dl><dt>airyBi : F -&gt F</dt><dd><p>
+<code>airyBi(x)</code> returns the Airy <code>Bi</code> function applied to <code>x</code>.</p>
+</dd></dl>
+<a name="f_airyBiPrime"></a><dl><dt>airyBiPrime : F -&gt F</dt><dd><p>
+<code>airyBiPrime(x)</code> returns the derivative of Airy <code>Bi</code> function applied to <code>x</code>.</p>
+</dd></dl>
+<a name="f_angerJ"></a><dl><dt>angerJ : (F, F) -&gt F</dt><dd><p>
+<code>angerJ(v, z)</code> is the Anger <code>J</code> function.</p>
+</dd></dl>
+<a name="f_belong_63"></a><dl><dt>belong? : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>belong?(op)</code> returns <code>true</code> if <code>op</code> is a special function operator.</p>
+</dd></dl>
+<a name="f_besselI"></a><dl><dt>besselI : (F, F) -&gt F</dt><dd><p>
+<code>besselI(x, y)</code> returns the Bessel <code>I</code> function applied to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<a name="f_besselJ"></a><dl><dt>besselJ : (F, F) -&gt F</dt><dd><p>
+<code>besselJ(x, y)</code> returns the Bessel <code>J</code> function applied to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<a name="f_besselK"></a><dl><dt>besselK : (F, F) -&gt F</dt><dd><p>
+<code>besselK(x, y)</code> returns the Bessel <code>K</code> function applied to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<a name="f_besselY"></a><dl><dt>besselY : (F, F) -&gt F</dt><dd><p>
+<code>besselY(x, y)</code> returns the Bessel <code>Y</code> function applied to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<a name="f_ceiling"></a><dl><dt>ceiling : F -&gt F</dt><dd><p>
+<code>ceiling(x)</code> returns the smallest integer above or equal <code>x</code>.</p>
+</dd></dl>
+<a name="f_charlierC"></a><dl><dt>charlierC : (F, F, F) -&gt F</dt><dd><p>
+<code>charlierC(n, a, z)</code> is the Charlier polynomial.</p>
+</dd></dl>
+<a name="f_coerce_95Q"></a><dl><dt>coerce_Q : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt F</dt><dd><p>
+<code>coerce_Q(x)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_conjugate"></a><dl><dt>conjugate : F -&gt F</dt><dd><p>
+<code>conjugate(f)</code> returns the conjugate value operator applied to <code>f</code>.</p>
+</dd></dl>
+<a name="f_digamma"></a><dl><dt>digamma : F -&gt F</dt><dd><p>
+<code>digamma(x)</code> returns the digamma function applied to <code>x</code>.</p>
+</dd></dl>
+<a name="f_diracDelta"></a><dl><dt>diracDelta : F -&gt F</dt><dd><p>
+<code>diracDelta(x)</code> is unit mass at zeros of <code>x</code>.</p>
+</dd></dl>
+<a name="f_ellipticE"></a><dl><dt>ellipticE : F -&gt F</dt><dd><p>
+<code>ellipticE(m)</code> is the complete elliptic integral of the second kind: <code>ellipticE(m) = integrate(sqrt(1-m*t^2)/sqrt(1-t^2), t = 0..1)</code>.</p>
+</dd></dl>
+<dl><dt>ellipticE : (F, F) -&gt F</dt><dd><p>
+<code>ellipticE(z, m)</code> is the incomplete elliptic integral of the second kind: <code>ellipticE(z, m) = integrate(sqrt(1-m*t^2)/sqrt(1-t^2), t = 0..z)</code>.</p>
+</dd></dl>
+<a name="f_ellipticF"></a><dl><dt>ellipticF : (F, F) -&gt F</dt><dd><p>
+<code>ellipticF(z, m)</code> is the incomplete elliptic integral of the first kind : <code>ellipticF(z, m) = integrate(1/sqrt((1-t^2)*(1-m*t^2)), t = 0..z)</code>.</p>
+</dd></dl>
+<a name="f_ellipticK"></a><dl><dt>ellipticK : F -&gt F</dt><dd><p>
+<code>ellipticK(m)</code> is the complete elliptic integral of the first kind: <code>ellipticK(m) = integrate(1/sqrt((1-t^2)*(1-m*t^2)), t = 0..1)</code>.</p>
+</dd></dl>
+<a name="f_ellipticPi"></a><dl><dt>ellipticPi : (F, F, F) -&gt F</dt><dd><p>
+<code>ellipticPi(z, n, m)</code> is the incomplete elliptic integral of the third kind: <code>ellipticPi(z, n, m) = integrate(1/((1-n*t^2)*sqrt((1-t^2)*(1-m*t^2))), t = 0..z)</code>.</p>
+</dd></dl>
+<a name="f_floor"></a><dl><dt>floor : F -&gt F</dt><dd><p>
+<code>floor(x)</code> returns the largest integer below or equal <code>x</code>.</p>
+</dd></dl>
+<a name="f_fractionPart"></a><dl><dt>fractionPart : F -&gt F</dt><dd><p>
+<code>fractionPart(x)</code> returns the fractional part of <code>x</code>.</p>
+</dd></dl>
+<a name="f_hahnQ"></a><dl><dt>hahnQ : (F, F, F, F, F) -&gt F</dt><dd><p>
+<code>hahnQ(n, a, b, N, z)</code> is the Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hahnR"></a><dl><dt>hahnR : (F, F, F, F, F) -&gt F</dt><dd><p>
+<code>hahnR(n, c, d, N, z)</code> is the dual Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hahnS"></a><dl><dt>hahnS : (F, F, F, F, F) -&gt F</dt><dd><p>
+<code>hahnS(n, a, b, c, z)</code> is the continuous dual Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hahn_95p"></a><dl><dt>hahn_p : (F, F, F, F, F) -&gt F</dt><dd><p>
+<code>hahn_p(n, a, b, bar_a, bar_b, z)</code> is the continuous Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hankelH1"></a><dl><dt>hankelH1 : (F, F) -&gt F</dt><dd><p>
+<code>hankelH1(v, z)</code> is first Hankel function (Bessel function of the third kind).</p>
+</dd></dl>
+<a name="f_hankelH2"></a><dl><dt>hankelH2 : (F, F) -&gt F</dt><dd><p>
+<code>hankelH2(v, z)</code> is the second Hankel function (Bessel function of the third kind).</p>
+</dd></dl>
+<a name="f_hermiteH"></a><dl><dt>hermiteH : (F, F) -&gt F</dt><dd><p>
+<code>hermiteH(n, z)</code> is the Hermite polynomial.</p>
+</dd></dl>
+<a name="f_hypergeometricF"></a><dl><dt>hypergeometricF : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(F), F) -&gt F</dt><dd><p>
+<code>hypergeometricF(la, lb, z)</code> is the generalized hypergeometric function.</p>
+</dd></dl>
+<a name="f_iAiryAi"></a><dl><dt>iAiryAi : F -&gt F</dt><dd><p>
+<code>iAiryAi(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iAiryAiPrime"></a><dl><dt>iAiryAiPrime : F -&gt F</dt><dd><p>
+<code>iAiryAiPrime(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iAiryBi"></a><dl><dt>iAiryBi : F -&gt F</dt><dd><p>
+<code>iAiryBi(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iAiryBiPrime"></a><dl><dt>iAiryBiPrime : F -&gt F</dt><dd><p>
+<code>iAiryBiPrime(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iLambertW"></a><dl><dt>iLambertW : F -&gt F</dt><dd><p>
+<code>iLambertW(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiAiryAi"></a><dl><dt>iiAiryAi : F -&gt F</dt><dd><p>
+<code>iiAiryAi(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiAiryAiPrime"></a><dl><dt>iiAiryAiPrime : F -&gt F</dt><dd><p>
+<code>iiAiryAiPrime(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiAiryBi"></a><dl><dt>iiAiryBi : F -&gt F</dt><dd><p>
+<code>iiAiryBi(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiAiryBiPrime"></a><dl><dt>iiAiryBiPrime : F -&gt F</dt><dd><p>
+<code>iiAiryBiPrime(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiBesselI"></a><dl><dt>iiBesselI : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiBesselI(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiBesselJ"></a><dl><dt>iiBesselJ : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiBesselJ(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiBesselK"></a><dl><dt>iiBesselK : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiBesselK(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiBesselY"></a><dl><dt>iiBesselY : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiBesselY(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiBeta"></a><dl><dt>iiBeta : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiBeta(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiGamma"></a><dl><dt>iiGamma : F -&gt F</dt><dd><p>
+<code>iiGamma(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiHypergeometricF"></a><dl><dt>iiHypergeometricF : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iiHypergeometricF(l)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiPolylog"></a><dl><dt>iiPolylog : (F, F) -&gt F</dt><dd><p>
+<code>iiPolylog(x, s)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiabs"></a><dl><dt>iiabs : F -&gt F</dt><dd><p>
+<code>iiabs(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iiconjugate"></a><dl><dt>iiconjugate : F -&gt F</dt><dd><p>
+<code>iiconjugate(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iidigamma"></a><dl><dt>iidigamma : F -&gt F</dt><dd><p>
+<code>iidigamma(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_iipolygamma"></a><dl><dt>iipolygamma : <a href="List.html">List</a>(F) -&gt F</dt><dd><p>
+<code>iipolygamma(x)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_jacobiCn"></a><dl><dt>jacobiCn : (F, F) -&gt F</dt><dd><p>
+<code>jacobiCn(z, m)</code> is the Jacobi elliptic <code>cn</code> function, defined by <code>jacobiCn(z, m)^2 + jacobiSn(z, m)^2 = 1</code> and <code>jacobiCn(0, m) = 1</code>.</p>
+</dd></dl>
+<a name="f_jacobiDn"></a><dl><dt>jacobiDn : (F, F) -&gt F</dt><dd><p>
+<code>jacobiDn(z, m)</code> is the Jacobi elliptic <code>dn</code> function, defined by <code>jacobiDn(z, m)^2 + m*jacobiSn(z, m)^2 = 1</code> and <code>jacobiDn(0, m) = 1</code>.</p>
+</dd></dl>
+<a name="f_jacobiP"></a><dl><dt>jacobiP : (F, F, F, F) -&gt F</dt><dd><p>
+<code>jacobiP(n, a, b, z)</code> is the Jacobi polynomial.</p>
+</dd></dl>
+<a name="f_jacobiSn"></a><dl><dt>jacobiSn : (F, F) -&gt F</dt><dd><p>
+<code>jacobiSn(z, m)</code> is the Jacobi elliptic <code>sn</code> function, defined by the formula <code>jacobiSn(ellipticF(z, m), m) = z</code>.</p>
+</dd></dl>
+<a name="f_jacobiTheta"></a><dl><dt>jacobiTheta : (F, F) -&gt F</dt><dd><p>
+<code>jacobiTheta(z, m)</code> is the Jacobi Theta function in Jacobi notation.</p>
+</dd></dl>
+<a name="f_jacobiZeta"></a><dl><dt>jacobiZeta : (F, F) -&gt F</dt><dd><p>
+<code>jacobiZeta(z, m)</code> is the Jacobi elliptic zeta function, defined by <code>D(jacobiZeta(z, m), z) = jacobiDn(z, m)^2 - ellipticE(m)/ellipticK(m)</code> and <code>jacobiZeta(0, m) = 0</code>.</p>
+</dd></dl>
+<a name="f_kelvinBei"></a><dl><dt>kelvinBei : (F, F) -&gt F</dt><dd><p>
+<code>kelvinBei(v, z)</code> is the Kelvin bei function defined by equality. <code>kelvinBei(v, z) = imag(besselJ(v, exp(3*%pi*%i/4)*z))</code>. for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_kelvinBer"></a><dl><dt>kelvinBer : (F, F) -&gt F</dt><dd><p>
+<code>kelvinBer(v, z)</code> is the Kelvin ber function defined by equality <code>kelvinBer(v, z) = real(besselJ(v, exp(3*%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_kelvinKei"></a><dl><dt>kelvinKei : (F, F) -&gt F</dt><dd><p>
+<code>kelvinKei(v, z)</code> is the Kelvin kei function defined by equality <code>kelvinKei(v, z) = imag(exp(-v*%pi*%i/2)*besselK(v, exp(%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_kelvinKer"></a><dl><dt>kelvinKer : (F, F) -&gt F</dt><dd><p>
+<code>kelvinKer(v, z)</code> is the Kelvin kei function defined by equality <code>kelvinKer(v, z) = real(exp(-v*%pi*%i/2)*besselK(v, exp(%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_krawtchoukK"></a><dl><dt>krawtchoukK : (F, F, F, F) -&gt F</dt><dd><p>
+<code>krawtchoukK(n, p, N, z)</code> is the Krawtchouk polynomial.</p>
+</dd></dl>
+<a name="f_kummerM"></a><dl><dt>kummerM : (F, F, F) -&gt F</dt><dd><p>
+<code>kummerM(a, b, z)</code> is the Kummer <code>M</code> function.</p>
+</dd></dl>
+<a name="f_kummerU"></a><dl><dt>kummerU : (F, F, F) -&gt F</dt><dd><p>
+<code>kummerU(a, b, z)</code> is the Kummer <code>U</code> function.</p>
+</dd></dl>
+<a name="f_laguerreL"></a><dl><dt>laguerreL : (F, F, F) -&gt F</dt><dd><p>
+<code>laguerreL(n, a, z)</code> is the Laguerre polynomial.</p>
+</dd></dl>
+<a name="f_lambertW"></a><dl><dt>lambertW : F -&gt F</dt><dd><p>
+<code>lambertW(x)</code> is the Lambert <code>W</code> function at <code>x</code>.</p>
+</dd></dl>
+<a name="f_legendreP"></a><dl><dt>legendreP : (F, F, F) -&gt F</dt><dd><p>
+<code>legendreP(nu, mu, z)</code> is the Legendre <code>P</code> function.</p>
+</dd></dl>
+<a name="f_legendreQ"></a><dl><dt>legendreQ : (F, F, F) -&gt F</dt><dd><p>
+<code>legendreQ(nu, mu, z)</code> is the Legendre <code>Q</code> function.</p>
+</dd></dl>
+<a name="f_lerchPhi"></a><dl><dt>lerchPhi : (F, F, F) -&gt F</dt><dd><p>
+<code>lerchPhi(z, s, a)</code> is the Lerch Phi function.</p>
+</dd></dl>
+<a name="f_lommelS1"></a><dl><dt>lommelS1 : (F, F, F) -&gt F</dt><dd><p>
+<code>lommelS1(mu, nu, z)</code> is the Lommel <code>s</code> function.</p>
+</dd></dl>
+<a name="f_lommelS2"></a><dl><dt>lommelS2 : (F, F, F) -&gt F</dt><dd><p>
+<code>lommelS2(mu, nu, z)</code> is the Lommel <code>S</code> function.</p>
+</dd></dl>
+<a name="f_meijerG"></a><dl><dt>meijerG : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(F), <a href="List.html">List</a>(F), <a href="List.html">List</a>(F), F) -&gt F</dt><dd><p>
+<code>meijerG(la, lb, lc, ld, z)</code> is the meijerG function.</p>
+</dd></dl>
+<a name="f_meixnerM"></a><dl><dt>meixnerM : (F, F, F, F) -&gt F</dt><dd><p>
+<code>meixnerM(n, b, c, z)</code> is the Meixner polynomial.</p>
+</dd></dl>
+<a name="f_meixnerP"></a><dl><dt>meixnerP : (F, F, F, F) -&gt F</dt><dd><p>
+<code>meixnerP(n, phi, lambda, z)</code> is the Meixner-Pollaczek polynomial.</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>operator(op)</code> returns a copy of <code>op</code> with the domain-dependent properties appropriate for <code>F</code>; error if <code>op</code> is not a special function operator.</p>
+</dd></dl>
+<a name="f_polygamma"></a><dl><dt>polygamma : (F, F) -&gt F</dt><dd><p>
+<code>polygamma(x, y)</code> returns the polygamma function applied to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<a name="f_polylog"></a><dl><dt>polylog : (F, F) -&gt F</dt><dd><p>
+<code>polylog(s, x)</code> is the polylogarithm of order <code>s</code> at <code>x</code>.</p>
+</dd></dl>
+<a name="f_racahR"></a><dl><dt>racahR : (F, F, F, F, F, F) -&gt F</dt><dd><p>
+<code>racahR(n, a, b, c, d, z)</code> is the Racah polynomial.</p>
+</dd></dl>
+<a name="f_retract_95Q"></a><dl><dt>retract_Q : F -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd><p>
+<code>retract_Q(x)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_riemannZeta"></a><dl><dt>riemannZeta : F -&gt F</dt><dd><p>
+<code>riemannZeta(z)</code> is the Riemann Zeta function.</p>
+</dd></dl>
+<a name="f_sign"></a><dl><dt>sign : F -&gt F</dt><dd><p>
+<code>sign(x)</code> returns the sign of <code>x</code>.</p>
+</dd></dl>
+<a name="f_struveH"></a><dl><dt>struveH : (F, F) -&gt F</dt><dd><p>
+<code>struveH(v, z)</code> is the Struve <code>H</code> function.</p>
+</dd></dl>
+<a name="f_struveL"></a><dl><dt>struveL : (F, F) -&gt F</dt><dd><p>
+<code>struveL(v, z)</code> is the Struve <code>L</code> function defined by the formula <code>struveL(v, z) = -%i^exp(-v*%pi*%i/2)*struveH(v, %i*z)</code>.</p>
+</dd></dl>
+<a name="f_unitStep"></a><dl><dt>unitStep : F -&gt F</dt><dd><p>
+<code>unitStep(x)</code> is 0 for <code>x</code> less than 0, 1 for <code>x</code> bigger or equal 0.</p>
+</dd></dl>
+<a name="f_weberE"></a><dl><dt>weberE : (F, F) -&gt F</dt><dd><p>
+<code>weberE(v, z)</code> is the Weber <code>E</code> function.</p>
+</dd></dl>
+<a name="f_weierstrassP"></a><dl><dt>weierstrassP : (F, F, F) -&gt F</dt><dd><p>
+<code>weierstrassP(g2, g3, x)</code> is the Weierstrass <code>P</code> function.</p>
+</dd></dl>
+<a name="f_weierstrassPInverse"></a><dl><dt>weierstrassPInverse : (F, F, F) -&gt F</dt><dd><p>
+<code>weierstrassPInverse(g2, g3, z)</code> is the inverse of Weierstrass <code>P</code> function, defined by the formula <code>weierstrassP(g2, g3, weierstrassPInverse(g2, g3, z)) = z</code>.</p>
+</dd></dl>
+<a name="f_weierstrassPPrime"></a><dl><dt>weierstrassPPrime : (F, F, F) -&gt F</dt><dd><p>
+<code>weierstrassPPrime(g2, g3, x)</code> is the derivative of Weierstrass <code>P</code> function.</p>
+</dd></dl>
+<a name="f_weierstrassSigma"></a><dl><dt>weierstrassSigma : (F, F, F) -&gt F</dt><dd><p>
+<code>weierstrassSigma(g2, g3, x)</code> is the Weierstrass Sigma function.</p>
+</dd></dl>
+<a name="f_weierstrassZeta"></a><dl><dt>weierstrassZeta : (F, F, F) -&gt F</dt><dd><p>
+<code>weierstrassZeta(g2, g3, x)</code> is the Weierstrass Zeta function.</p>
+</dd></dl>
+<a name="f_whittakerM"></a><dl><dt>whittakerM : (F, F, F) -&gt F</dt><dd><p>
+<code>whittakerM(k, m, z)</code> is the Whittaker <code>M</code> function.</p>
+</dd></dl>
+<a name="f_whittakerW"></a><dl><dt>whittakerW : (F, F, F) -&gt F</dt><dd><p>
+<code>whittakerW(k, m, z)</code> is the Whittaker <code>W</code> function.</p>
+</dd></dl>
+<a name="f_wilsonW"></a><dl><dt>wilsonW : (F, F, F, F, F, F) -&gt F</dt><dd><p>
+<code>wilsonW(n, a, b, c, d, z)</code> is the Wilson polynomial.</p>
+</dd></dl>
+</body>
+</html>

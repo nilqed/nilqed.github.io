@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InfiniteLambertProduct</title>
+</head>
+<body>
+<h1>InfiniteLambertProduct(Coef, UTS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/taylor.spad#L436">taylor.spad line 436</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/taylor.spad#L436">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="Ring.html">Ring</a><li>UTS : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(Coef)</ul>
+<p>
+This package computes infinite products of univariate Taylor series</p>
+<a name="f_evenInfiniteProduct"></a><dl><dt>evenInfiniteProduct : UTS -&gt UTS</dt><dd><p>
+<code>evenInfiniteProduct(f(x))</code> computes <code>product(n=2, 4, 6..., f(x^n))</code>. The series <code>f(x)</code> should have constant coefficient 1.</p>
+</dd></dl>
+<a name="f_generalInfiniteProduct"></a><dl><dt>generalInfiniteProduct : (UTS, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt UTS</dt><dd><p>
+<code>generalInfiniteProduct(f(x), a, d)</code> computes <code>product(n=a, a+d, a+2*d, ..., f(x^n))</code>. The series <code>f(x)</code> should have constant coefficient 1.</p>
+</dd></dl>
+<a name="f_infiniteProduct"></a><dl><dt>infiniteProduct : UTS -&gt UTS</dt><dd><p>
+<code>infiniteProduct(f(x))</code> computes <code>product(n=1, 2, 3..., f(x^n))</code>. The series <code>f(x)</code> should have constant coefficient 1.</p>
+</dd></dl>
+<a name="f_oddInfiniteProduct"></a><dl><dt>oddInfiniteProduct : UTS -&gt UTS</dt><dd><p>
+<code>oddInfiniteProduct(f(x))</code> computes <code>product(n=1, 3, 5..., f(x^n))</code>. The series <code>f(x)</code> should have constant coefficient 1.</p>
+</dd></dl>
+</body>
+</html>

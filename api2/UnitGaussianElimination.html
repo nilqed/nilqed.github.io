@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnitGaussianElimination</title>
+</head>
+<body>
+<h1>UnitGaussianElimination</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/smith2.spad#L1">smith2.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/smith2.spad#L1">[edit on github]</a></p>
+<p>
+Gaussian elimination using only 1 or <code>-1</code> as pivots </p>
+<a name="f_pre_95gauss"></a><dl><dt>pre_gauss : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>pre_gauss(m)</code> performs Gaussian eliminaton on rows of <code>m</code> using only 1 and <code>-1</code> as pivots. Note: <code>m</code> is modified in place</p>
+</dd></dl>
+<a name="f_pre_95lr"></a><dl><dt>pre_lr : (<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>pre_lr(m, <code>pi</code>, pj)</code> is like pre_gauss, but records positions of pivots in <code>pi</code> and <code>pj</code> and returns transformation matrix. <code>m</code>, <code>pi</code>, <code>pj</code> are modified in place</p>
+</dd></dl>
+<a name="f_pre_95smith"></a><dl><dt>pre_smith : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>pre_smith(m)</code> first performs pre_gauss(<code>m</code>) and then drops all rows and columns of <code>m</code> containing pivots.</p>
+</dd></dl>
+</body>
+</html>

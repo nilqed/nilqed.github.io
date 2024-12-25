@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ProductFacet</title>
+</head>
+<body>
+<h1>ProductFacet</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L802">alg_top.spad line 802</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L802">[edit on github]</a></p>
+<p>
+Holds the product of two simplexes for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/ Date Created: April 2016 Basic Operations: Related packages: Related categories: FacetCategory Related Domains: Also See: AMS Classifications:</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_addVertex2"></a><dl><dt>addVertex2 : (%, Record(left : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, right : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+used by cone. Adds a vertex to face.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="FacetCategory.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_getIndexs"></a><dl><dt>getIndexs : % -&gt <a href="List.html">List</a>(Record(left : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, right : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+returns left indexes</p>
+</dd></dl>
+<a name="f_getMaxLeft"></a><dl><dt>getMaxLeft : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+returns maximum left index</p>
+</dd></dl>
+<a name="f_getMaxRight"></a><dl><dt>getMaxRight : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+returns maximum right index</p>
+</dd></dl>
+<a name="f_getMult"></a><dl><dt><a href="FacetCategory.html#f_getMult">getMult</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="FacetCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_productFacet"></a><dl><dt>productFacet : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(Record(left : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, right : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd><p>
+Constructor for product facet</p>
+</dd></dl>
+<dl><dt>productFacet : (<a href="Integer.html">Integer</a>, <a href="ProductFacet.html">ProductFacet</a>) -&gt %</dt><dd><p>
+Copy constructor to allow change of sign</p>
+</dd></dl>
+<a name="f_setMult_33"></a><dl><dt>setMult! : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+sets multiplier of face</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="FacetCategory.html">FacetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+</body>
+</html>

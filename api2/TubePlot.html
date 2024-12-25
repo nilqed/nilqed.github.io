@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TubePlot</title>
+</head>
+<body>
+<h1>TubePlot(Curve)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tube.spad#L1">tube.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tube.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Curve : <a href="PlottableSpaceCurveCategory.html">PlottableSpaceCurveCategory</a></ul>
+<p>
+Package for constructing tubes around 3-dimensional parametric curves. Domain of tubes around 3-dimensional parametric curves.</p>
+<a name="f_closed_63"></a><dl><dt>closed? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>closed?(t)</code> tests whether the given tube plot <code>t</code> is closed.</p>
+</dd></dl>
+<a name="f_getCurve"></a><dl><dt>getCurve : % -&gt Curve</dt><dd><p>
+<code>getCurve(t)</code> returns the PlottableSpaceCurveCategory representing the parametric curve of the given tube plot <code>t</code>.</p>
+</dd></dl>
+<a name="f_listLoops"></a><dl><dt>listLoops : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)))</dt><dd><p>
+<code>listLoops(t)</code> returns the list of lists of points, or the 'loops', of the given tube plot <code>t</code>.</p>
+</dd></dl>
+<a name="f_open_63"></a><dl><dt>open? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>open?(t)</code> tests whether the given tube plot <code>t</code> is open.</p>
+</dd></dl>
+<a name="f_setClosed"></a><dl><dt>setClosed : (%, <a href="Boolean.html">Boolean</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>setClosed(t, b)</code> declares the given tube plot <code>t</code> to be closed if <code>b</code> is <code>true</code>, or if <code>b</code> is <code>false</code>, <code>t</code> is set to be open.</p>
+</dd></dl>
+<a name="f_tube"></a><dl><dt>tube : (Curve, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>tube(c, ll, b)</code> creates a tube of the domain TubePlot from a space curve <code>c</code> of the category PlottableSpaceCurveCategory, a list of lists of points (loops) <code>ll</code> and a boolean <code>b</code> which if <code>true</code> indicates a closed tube, or if <code>false</code> an open tube.</p>
+</dd></dl>
+</body>
+</html>

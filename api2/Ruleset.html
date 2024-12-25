@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Ruleset</title>
+</head>
+<body>
+<h1>Ruleset(Base, R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/rule.spad#L238">rule.spad line 238</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/rule.spad#L238">[edit on github]</a></p>
+<ul>
+<li>Base : <a href="SetCategory.html">SetCategory</a><li>R : Join(<a href="Ring.html">Ring</a>, <a href="PatternMatchable.html">PatternMatchable</a>(Base), <a href="Comparable.html">Comparable</a>, <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(Base)))<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="PatternMatchable.html">PatternMatchable</a>(Base), <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(Base)))</ul>
+<p>
+A ruleset is a set of pattern matching rules grouped together.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, F) -&gt F</dt><dd> from <a href="Eltable.html">Eltable</a>(F, F)</dd></dl>
+<dl><dt>elt : (%, F, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt F</dt><dd><p>
+<code>elt(r, f, n)</code> or <code>r</code>(<code>f</code>, <code>n</code>) applies all the rules of <code>r</code> to <code>f</code> at most <code>n</code> times.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_rules"></a><dl><dt>rules : % -&gt <a href="List.html">List</a>(<a href="RewriteRule.html">RewriteRule</a>(Base, R, F))</dt><dd><p>
+<code>rules(r)</code> returns the rules contained in <code>r</code>.</p>
+</dd></dl>
+<a name="f_ruleset"></a><dl><dt>ruleset : <a href="List.html">List</a>(<a href="RewriteRule.html">RewriteRule</a>(Base, R, F)) -&gt %</dt><dd><p>
+<code>ruleset([r1, ..., rn])</code> creates the rule set <code>r1, ..., rn</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Eltable.html">Eltable</a>(F, F)
+</body>
+</html>

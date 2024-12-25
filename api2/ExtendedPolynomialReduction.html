@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExtendedPolynomialReduction</title>
+</head>
+<body>
+<h1>ExtendedPolynomialReduction(C, E, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/extred.spad#L1">extred.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/extred.spad#L1">[edit on github]</a></p>
+<ul>
+<li>C : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>R : Join(<a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(C, E), <a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a>)</ul>
+<p>
+ExtendedPolynomialReduction(<code>C</code>, <code>E</code>, <code>R</code>) is a package that allows denominatorFree reductions of a polynomial <code>r</code> from <code>R</code> <code>wrt</code> a list of polynomials from <code>R</code> (usually such a list is a Groebner basis <code>wrt</code> the order given via <code>E</code>). Additionally, the reduction steps are recorded and provided in the output.</p>
+<a name="f_reduce"></a><dl><dt>reduce : (R, <a href="List.html">List</a>(R)) -&gt Record(poly : R, repr : <a href="Vector.html">Vector</a>(R), mult : C)</dt><dd><p>
+<code>reduce(r, bas)</code> returns a triple (<code>p</code>, <code>v</code>, <code>m</code>) such that <code>m*r</code> = sum(bas.<code>i</code> * <code>v</code>.<code>i</code>, <code>i=1</code>..#bas) + <code>p</code></p>
+</dd></dl>
+</body>
+</html>

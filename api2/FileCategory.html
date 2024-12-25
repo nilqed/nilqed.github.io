@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FileCategory</title>
+</head>
+<body>
+<h1>FileCategory(Name, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/files.spad#L1">files.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/files.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Name : <a href="SetCategory.html">SetCategory</a><li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This category provides an interface to operate on files in the computer<code>'s</code> file system. The precise method of naming files is determined by the Name parameter. The type of the contents of the file is determined by <code>S</code>.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_close_33"></a><dl><dt>close! : % -&gt %</dt><dd><p>
+<code>close!(f)</code> returns the file <code>f</code> closed to input and output.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_flush"></a><dl><dt>flush : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>flush(f)</code> make sure that buffered data in written out to the operating system.</p>
+</dd></dl>
+<a name="f_iomode"></a><dl><dt>iomode : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>iomode(f)</code> returns the status of the file <code>f</code>. The input/output status of <code>f</code> may be "input", "output" or "closed" mode.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_name"></a><dl><dt>name : % -&gt Name</dt><dd><p>
+<code>name(f)</code> returns the external name of the file <code>f</code>.</p>
+</dd></dl>
+<a name="f_open"></a><dl><dt>open : Name -&gt %</dt><dd><p>
+<code>open(s)</code> returns the file <code>s</code> open for input.</p>
+</dd></dl>
+<dl><dt>open : (Name, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>open(s, mode)</code> returns a file <code>s</code> open for operation in the indicated mode: "input" or "output".</p>
+</dd></dl>
+<a name="f_read_33"></a><dl><dt>read! : % -&gt S</dt><dd><p>
+<code>read!(f)</code> extracts a value from file <code>f</code>. The state of <code>f</code> is modified so a subsequent call to <span class="spadfun">read!</span> will return the next element.</p>
+</dd></dl>
+<a name="f_reopen_33"></a><dl><dt>reopen! : (%, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>reopen!(f, mode)</code> returns a file <code>f</code> reopened for operation in the indicated mode: "input" or "output". <code>reopen!(f,"input")</code> will reopen the file <code>f</code> for input.</p>
+</dd></dl>
+<a name="f_write_33"></a><dl><dt>write! : (%, S) -&gt S</dt><dd><p>
+<code>write!(f, s)</code> puts the value <code>s</code> into the file <code>f</code>. The state of <code>f</code> is modified so subsequents call to <code>write!</code> will append one after another.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteFieldPolynomialPackage</title>
+</head>
+<body>
+<h1>FiniteFieldPolynomialPackage(GF)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffdoms.spad#L271">ffdoms.spad line 271</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffdoms.spad#L271">[edit on github]</a></p>
+<ul>
+<li>GF : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></ul>
+<p>
+This package provides a number of functions for generating, counting and testing irreducible, normal, primitive, random polynomials over finite fields.</p>
+<a name="f_clexSmaller_63"></a><dl><dt>clexSmaller? : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>clexSmaller?(f, g)</code> compares monic <code>f</code> and <code>g</code> of the same degree in the following order. Error: if <code>f</code> or <code>g</code> is not monic or if <code>f</code> and <code>g</code> have different degrees or if common degree is 0. <code>f &lt; g</code> if the constant term of <code>f</code> is zero and constant term of <code>g</code> is nonzero. If both constant term of <code>f</code> and <code>g</code> are nonzero then <code>f &lt; g</code> if the  lookup of the constant term of <code>f</code> is less than this number for <code>g</code>. If these values are equal, then <code>lexSmaller?</code> is used as ordering predicate.</p>
+</dd></dl>
+<a name="f_cnlexSmaller_63"></a><dl><dt>cnlexSmaller? : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>cnlexSmaller?(f, g)</code> compares monic <code>f</code> and <code>g</code> of the same degree <code>n</code> in the following order. Error: if <code>f</code> or <code>g</code> is not monic or if <code>f</code> and <code>g</code> have different degrees or if common degree is 0. <code>f &lt; g</code> if the constant term of <code>f</code> is zero and constant term of <code>g</code> is nonzero. If both constant term of <code>f</code> and <code>g</code> are nonzero then <code>f &lt; g</code> if the  lookup of the constant term of <code>f</code> is less than this number for <code>g</code>. If constant terms are equal then <code>nlexSmaller?</code> is used as ordering predicate.</p>
+</dd></dl>
+<a name="f_createIrreduciblePoly"></a><dl><dt>createIrreduciblePoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>createIrreduciblePoly(n)</code>$FFPOLY(<code>GF</code>) generates a monic irreducible univariate polynomial of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<a name="f_createNormalPoly"></a><dl><dt>createNormalPoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>createNormalPoly(n)</code>$FFPOLY(<code>GF</code>) generates a normal polynomial of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<a name="f_createNormalPrimitivePoly"></a><dl><dt>createNormalPrimitivePoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>createNormalPrimitivePoly(n)</code>$FFPOLY(<code>GF</code>) generates a normal and primitive polynomial of degree <code>n</code> over the field  GF. Note: this function is equivalent to createPrimitiveNormalPoly(<code>n</code>)</p>
+</dd></dl>
+<a name="f_createPrimitiveNormalPoly"></a><dl><dt>createPrimitiveNormalPoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>createPrimitiveNormalPoly(n)</code>$FFPOLY(<code>GF</code>) generates a normal and primitive polynomial of degree <code>n</code> over the field  GF.</p>
+</dd></dl>
+<a name="f_createPrimitivePoly"></a><dl><dt>createPrimitivePoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>createPrimitivePoly(n)</code>$FFPOLY(<code>GF</code>) generates a primitive polynomial of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<a name="f_leastAffineMultiple"></a><dl><dt>leastAffineMultiple : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>leastAffineMultiple(f)</code> computes the least affine polynomial which is divisible by the polynomial <code>f</code> over the finite field  GF, i.e. a polynomial whose exponents are 0 or a power of <code>q</code>, the size of  GF.</p>
+</dd></dl>
+<a name="f_lexSmaller_63"></a><dl><dt>lexSmaller? : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lexSmaller?(f, g)</code> compares monic <code>f</code> and <code>g</code> of the same degree in the following order. Error: if <code>f</code> or <code>g</code> is not monic or if <code>f</code> and <code>g</code> have different degrees or if common degree is 0. <code>f &lt; g</code> if the number of monomials of <code>f</code> is less than this number for <code>g</code>. If <code>f</code> and <code>g</code> have the same number of monomials, the lists of exponents are compared lexicographically. If these lists are also equal, the lists of coefficients are compared according to the lexicographic ordering induced by the ordering of the elements of  GF given by  lookup.</p>
+</dd></dl>
+<a name="f_nextIrreduciblePoly"></a><dl><dt>nextIrreduciblePoly : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), "failed")</dt><dd><p>
+<code>nextIrreduciblePoly(f)</code> yields the next monic irreducible polynomial over a finite field  GF of the same degree as <code>f</code> in the following order, or "failed" if there are no greater ones. Error: if <code>f</code> has degree 0. Note: the input polynomial <code>f</code> is made monic. <code>lexSmaller?</code> is used as ordering predicate.</p>
+</dd></dl>
+<a name="f_nextNormalPoly"></a><dl><dt>nextNormalPoly : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), "failed")</dt><dd><p>
+<code>nextNormalPoly(f)</code> yields the next normal polynomial over a finite field  GF of the same degree as <code>f</code> in the following order, or "failed" if there are no greater ones. Error: if <code>f</code> has degree 0. Note: the input polynomial <code>f</code> is made monic. <code>nlexSmaller?</code> is used as ordering predicate.</p>
+</dd></dl>
+<a name="f_nextNormalPrimitivePoly"></a><dl><dt>nextNormalPrimitivePoly : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), "failed")</dt><dd><p>
+<code>nextNormalPrimitivePoly(f)</code> yields the next normal primitive polynomial over a finite field  GF of the same degree as <code>f</code> in the following order, or "failed" if there are no greater ones. Error: if <code>f</code> has degree 0. Note: the input polynomial <code>f</code> is made monic. <code>cnlexSmaller?</code> is used as ordering predicate. This operation is equivalent to nextPrimitiveNormalPoly(<code>f</code>).</p>
+</dd></dl>
+<a name="f_nextPrimitiveNormalPoly"></a><dl><dt>nextPrimitiveNormalPoly : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), "failed")</dt><dd><p>
+<code>nextPrimitiveNormalPoly(f)</code> yields the next primitive normal polynomial over a finite field  GF of the same degree as <code>f</code> in the following order, or "failed" if there are no greater ones. Error: if <code>f</code> has degree 0. Note: the input polynomial <code>f</code> is made monic. <code>cnlexSmaller?</code> is used as ordering predicate. This operation is equivalent to nextNormalPrimitivePoly(<code>f</code>).</p>
+</dd></dl>
+<a name="f_nextPrimitivePoly"></a><dl><dt>nextPrimitivePoly : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), "failed")</dt><dd><p>
+<code>nextPrimitivePoly(f)</code> yields the next primitive polynomial over a finite field  GF of the same degree as <code>f</code> in the following order, or "failed" if there are no greater ones. Error: if <code>f</code> has degree 0. Note: the input polynomial <code>f</code> is made monic. <code>clexSmaller?</code> is used as ordering predicate.</p>
+</dd></dl>
+<a name="f_nlexSmaller_63"></a><dl><dt>nlexSmaller? : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>nlexSmaller?(f, g)</code> compares monic <code>f</code> and <code>g</code> of the same degree <code>n</code> in the following order. Error: if <code>f</code> or <code>g</code> is not monic or if <code>f</code> and <code>g</code> have different degrees or if common degree is 0. <code>f &lt; g</code> if the coefficient of the term of degree  n-1 of <code>f</code> is zero and than that for <code>g</code> is nonzero. Also, <code>f &lt; g</code> if both coefficients are nonzero and  lookup of the coefficient of <code>f</code> is less than that for <code>g</code>. In case those coefficients are equal, then <code>lexSmaller?</code> is used as ordering predicate.</p>
+</dd></dl>
+<a name="f_normal_63"></a><dl><dt>normal? : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>normal?(f)</code> tests whether the polynomial <code>f</code> over a finite field is normal, i.e. its roots are linearly independent over the field.</p>
+</dd></dl>
+<a name="f_numberOfIrreduciblePoly"></a><dl><dt>numberOfIrreduciblePoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>numberOfIrreduciblePoly(n)</code>$FFPOLY(<code>GF</code>) yields the number of monic irreducible univariate polynomials of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<a name="f_numberOfNormalPoly"></a><dl><dt>numberOfNormalPoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>numberOfNormalPoly(n)</code>$FFPOLY(<code>GF</code>) yields the number of normal polynomials of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<a name="f_numberOfPrimitivePoly"></a><dl><dt>numberOfPrimitivePoly : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>numberOfPrimitivePoly(n)</code>$FFPOLY(<code>GF</code>) yields the number of primitive polynomials of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<a name="f_primitive_63"></a><dl><dt>primitive? : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>primitive?(f)</code> tests whether the polynomial <code>f</code> over a finite field is primitive, i.e. all its roots are primitive.</p>
+</dd></dl>
+<a name="f_random"></a><dl><dt>random : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>random(n)</code>$FFPOLY(<code>GF</code>) generates a random monic polynomial of degree <code>n</code> over the finite field  GF.</p>
+</dd></dl>
+<dl><dt>random : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>random(m, n)</code>$FFPOLY(<code>GF</code>) generates a random monic polynomial of degree <code>d</code> over the finite field  GF, <code>d</code> between <code>m</code> and <code>n</code>.</p>
+</dd></dl>
+<a name="f_reducedQPowers"></a><dl><dt>reducedQPowers : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF))</dt><dd><p>
+<code>reducedQPowers(f)</code> generates <code>[x, x^q, x^(q^2), ..., x^(q^(n-1))]</code> reduced modulo <code>f</code> where <code>q = size()$GF</code> and <code>n = degree f</code>.</p>
+</dd></dl>
+</body>
+</html>

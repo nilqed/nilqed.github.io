@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetDifferential</title>
+</head>
+<body>
+<h1>JetDifferential(JB, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L3591">jet.spad line 3591</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L3591">[edit on github]</a></p>
+<ul>
+<li>JB : <a href="JetBundleCategory.html">JetBundleCategory</a><li>D : <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</ul>
+<p>
+<code>JetDifferential(JB, D)</code> implements differentials (one-forms) over the jet bundle <code>JB</code> with coefficients from <code>D</code>. The differentials operate on <code>JetVectorField(JB, D)</code>.</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, D) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(D)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (D, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(D)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt>coefficient : (%, JB) -&gt D</dt><dd><p>
+<code>coefficient(om, jb)</code> returns the coefficient of <code>om</code> for the differential of <code>jb</code>.</p>
+</dd></dl>
+<a name="f_coefficients"></a><dl><dt>coefficients : % -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>coefficients(om)</code> yields the coefficients of <code>om</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_contract"></a><dl><dt>contract : (<a href="JetVectorField.html">JetVectorField</a>(JB, D), %) -&gt D</dt><dd><p>
+<code>contract(v, om)</code> computes the interior derivative of <code>om</code> with respect to <code>v</code>.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(om)</code> returns a copy of the differential <code>om</code>.</p>
+</dd></dl>
+<a name="f_d"></a><dl><dt>d : D -&gt %</dt><dd><p>
+<code>d(f)</code> computes the differential of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>d : JB -&gt %</dt><dd><p>
+<code>d(jb)</code> returns the differential of <code>jb</code>.</p>
+</dd></dl>
+<a name="f_dP"></a><dl><dt>dP : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>dP(i, mu)</code> returns the differential of <code>P(i, mu)</code>.</p>
+</dd></dl>
+<a name="f_dU"></a><dl><dt>dU : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>dU(i)</code> returns the differential of <code>U(i)</code>.</p>
+</dd></dl>
+<a name="f_dX"></a><dl><dt>dX : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>dX(i)</code> returns the differential of <code>X(i)</code>.</p>
+</dd></dl>
+<a name="f_differentials"></a><dl><dt>differentials : % -&gt <a href="List.html">List</a>(JB)</dt><dd><p>
+<code>directions(om)</code> yields the differentials where <code>om</code> has non-vanishing coefficients.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (%, <a href="JetVectorField.html">JetVectorField</a>(JB, D)) -&gt D</dt><dd><p>
+<code>eval(om, v)</code> applies the differential <code>om</code> to the vector field <code>v</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lie"></a><dl><dt>lie : (<a href="JetVectorField.html">JetVectorField</a>(JB, D), %) -&gt %</dt><dd><p>
+<code>lie(v, om)</code> calculates the Lie derivative of <code>om</code> with respect to <code>v</code>.</p>
+</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RightModule.html">RightModule</a>(D)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BiModule.html">BiModule</a>(D, D)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="LeftModule.html">LeftModule</a>(D)
+<p><a href="Module.html">Module</a>(D)
+</body>
+</html>

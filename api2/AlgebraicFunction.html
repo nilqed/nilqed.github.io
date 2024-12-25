@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraicFunction</title>
+</head>
+<body>
+<h1>AlgebraicFunction(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/algfunc.spad#L257">algfunc.spad line 257</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/algfunc.spad#L257">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+This package provides algebraic functions over an integral domain.</p>
+<a name="f__94"></a><dl><dt>^ : (F, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>x ^ q</code> is <code>x</code> raised to the rational power <code>q</code>.</p>
+</dd></dl>
+<a name="f_belong_63"></a><dl><dt>belong? : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>belong?(op)</code> is <code>true</code> if <code>op</code> is an algebraic operator, that is, an <code>n</code>th root or implicit algebraic operator.</p>
+</dd></dl>
+<a name="f_definingPolynomial"></a><dl><dt>definingPolynomial : F -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>definingPolynomial(f)</code> returns the defining polynomial of <code>f</code> as an element of <code>F</code>. Error: if <code>f</code> is not a kernel.</p>
+</dd></dl>
+<a name="f_droot"></a><dl><dt>droot : <a href="List.html">List</a>(F) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>droot(l)</code> should be a non-exported function.</p>
+</dd></dl>
+<a name="f_inrootof"></a><dl><dt>inrootof : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), F) -&gt F</dt><dd><p>
+<code>inrootof(p, x)</code> should be a non-exported function.</p>
+</dd></dl>
+<a name="f_iroot"></a><dl><dt>iroot : (R, <a href="Integer.html">Integer</a>) -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>iroot(p, n)</code> should be a non-exported function.</p>
+</dd></dl>
+<a name="f_minPoly"></a><dl><dt>minPoly : <a href="Kernel.html">Kernel</a>(F) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>minPoly(k)</code> returns the defining polynomial of <code>k</code>.</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>operator(op)</code> returns a copy of <code>op</code> with the domain-dependent properties appropriate for <code>F</code>. Error: if <code>op</code> is not an algebraic operator, that is, an <code>n</code>th root or implicit algebraic operator.</p>
+</dd></dl>
+<a name="f_rootOf"></a><dl><dt>rootOf : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>rootOf(p, y)</code> returns <code>y</code> such that <code>p(y) = 0</code>. The object returned displays as <code>'y</code>.</p>
+</dd></dl>
+<a name="f_rootSum"></a><dl><dt>rootSum : (F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>rootSum(expr, p, s)</code></p>
+</dd></dl>
+</body>
+</html>

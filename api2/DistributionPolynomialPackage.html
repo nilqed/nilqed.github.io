@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DistributionPolynomialPackage</title>
+</head>
+<body>
+<h1>DistributionPolynomialPackage(R, S, UPS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/distro.spad#L1015">distro.spad line 1015</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/distro.spad#L1015">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a><li>S : Join(<a href="CommutativeRing.html">CommutativeRing</a>, <a href="Module.html">Module</a>(R))<li>UPS : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(S)</ul>
+<p>
+A package to apply polynomial transformations to distributions and integrate polynomials with respect to distributions.</p>
+<a name="f_apply"></a><dl><dt>apply : (UPS, <a href="Distribution.html">Distribution</a>(R)) -&gt <a href="Distribution.html">Distribution</a>(S)</dt><dd><p>
+<code>apply(p, d)</code> computes the distribution of the random variable <code>p(X)</code>$ where <code>X</code> has distribution <code>d</code>.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (<a href="Distribution.html">Distribution</a>(R), UPS) -&gt S</dt><dd><p>
+<code>eval(d, p)</code> evaluates the distribution <code>d</code> as a linear functional on the polynomial <code>p</code>. Same as <code>integrate(p, d)</code>.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : (UPS, <a href="Distribution.html">Distribution</a>(R)) -&gt S</dt><dd><p>
+<code>integrate(p, d)</code> integrates the polynomial <code>p</code> against the distribution <code>d</code>. Same as <code>eval(d, p)</code>.</p>
+</dd></dl>
+</body>
+</html>

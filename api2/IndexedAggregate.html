@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IndexedAggregate</title>
+</head>
+<body>
+<h1>IndexedAggregate(Index, Entry)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/aggcat.spad#L826">aggcat.spad line 826</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/aggcat.spad#L826">[edit on github]</a></p>
+<ul>
+<li>Index : <a href="Type.html">Type</a><li>Entry : <a href="Type.html">Type</a></ul>
+<p>
+An indexed aggregate is a many-to-one mapping of indices to entries. For example, a one-dimensional-array is an indexed aggregate where the index is an integer. Also, a table is an indexed aggregate where the indices and entries may have any type.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if Entry has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a> or Entry has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, Entry), %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if Entry has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Entry, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if Entry has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, Entry), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, Index) -&gt Entry</dt><dd> from <a href="Eltable.html">Eltable</a>(Index, Entry)</dd></dl>
+<dl><dt><a href="EltableAggregate.html#f_elt">elt</a> : (%, Index, Entry) -&gt Entry</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Index, Entry)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_entries"></a><dl><dt>entries : % -&gt <a href="List.html">List</a>(Entry)</dt><dd><p>
+<code>entries(u)</code> returns a list of all the entries of aggregate <code>u</code> in no assumed order.</p>
+</dd></dl>
+<a name="f_entry_63"></a><dl><dt>entry? : (Entry, %) -&gt <a href="Boolean.html">Boolean</a> if Entry has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>entry?(x, u)</code> tests if <code>x</code> equals <code>u . i</code> for some index <code>i</code>.</p>
+</dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, Entry, Entry) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Entry, Entry)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(Entry)) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="Evalable.html">Evalable</a>(Entry)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(Entry), <a href="List.html">List</a>(Entry)) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Entry, Entry)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(Entry))) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="Evalable.html">Evalable</a>(Entry)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, Entry), %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_fill_33"></a><dl><dt>fill! : (%, Entry) -&gt % if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd><p>
+<code>fill!(u, x)</code> replaces each entry in aggregate <code>u</code> by <code>x</code>. The modified <code>u</code> is returned as value.</p>
+</dd></dl>
+<a name="f_first"></a><dl><dt>first : % -&gt Entry if Index has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>first(u)</code> returns the first element <code>x</code> of <code>u</code>. Note: for collections, <code>first([x, y, ..., z]) = x</code>. Error: if <code>u</code> is empty.</p>
+</dd></dl>
+<a name="f_index_63"></a><dl><dt>index? : (Index, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>index?(i, u)</code> tests if <code>i</code> is an index of aggregate <code>u</code>.</p>
+</dd></dl>
+<a name="f_indices"></a><dl><dt>indices : % -&gt <a href="List.html">List</a>(Index)</dt><dd><p>
+<code>indices(u)</code> returns a list of indices of aggregate <code>u</code> in no particular order.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if Entry has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(Entry, Entry), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(Entry, Entry), %) -&gt % if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt Entry if Entry has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, Entry, Entry), %) -&gt Entry if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_maxIndex"></a><dl><dt>maxIndex : % -&gt Index if Index has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>maxIndex(u)</code> returns the maximum index <code>i</code> of aggregate <code>u</code>. Note: in general, <code>maxIndex(u) = reduce(max, indices u)</code>; for List, <code>maxIndex(u) = #u</code>.</p>
+</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (Entry, %) -&gt <a href="Boolean.html">Boolean</a> if Entry has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(Entry) if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt Entry if Entry has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_minIndex"></a><dl><dt>minIndex : % -&gt Index if Index has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>minIndex(u)</code> returns the minimum index <code>i</code> of aggregate <code>u</code>. Note: in general, <code>minIndex(a) = reduce(min, indices a)</code>; for List, <code>minIndex(a) = 1</code>.</p>
+</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(Entry) if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<a name="f_qelt"></a><dl><dt><a href="EltableAggregate.html#f_qelt">qelt</a> : (%, Index) -&gt Entry</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Index, Entry)</dd></dl>
+<a name="f_qsetelt_33"></a><dl><dt><a href="EltableAggregate.html#f_qsetelt_33">qsetelt!</a> : (%, Index, Entry) -&gt Entry if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Index, Entry)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_setelt_33"></a><dl><dt><a href="EltableAggregate.html#f_setelt_33">setelt!</a> : (%, Index, Entry) -&gt Entry if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Index, Entry)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_swap_33"></a><dl><dt>swap! : (%, Index, Index) -&gt <a href="Void.html">Void</a> if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd><p>
+<code>swap!(u, i, j)</code> interchanges elements <code>i</code> and <code>j</code> of aggregate <code>u</code>. No meaningful value is returned.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if Entry has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a> or Entry has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="EltableAggregate.html">EltableAggregate</a>(Index, Entry)
+<p><a href="Evalable.html">Evalable</a>(Entry)
+<p><a href="Eltable.html">Eltable</a>(Index, Entry)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(Entry, Entry)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)
+</body>
+</html>

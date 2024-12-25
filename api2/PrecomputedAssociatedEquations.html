@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PrecomputedAssociatedEquations</title>
+</head>
+<body>
+<h1>PrecomputedAssociatedEquations(R, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lodof.spad#L143">lodof.spad line 143</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lodof.spad#L143">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(R)</ul>
+<p>
+PrecomputedAssociatedEquations stores some generic precomputations which speed up the computations of the associated equations needed for factoring operators.</p>
+<a name="f_firstUncouplingMatrix"></a><dl><dt>firstUncouplingMatrix : (L, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Matrix.html">Matrix</a>(R), "failed")</dt><dd><p>
+<code>firstUncouplingMatrix(op, m)</code> returns the matrix A such that <code>A w = (W', W'', ..., W^N)</code> in the corresponding associated equations for right-factors of order <code>m</code> of <code>op</code>. Returns "failed" if the matrix A has not been precomputed for the particular combination <code>degree(L), m</code>.</p>
+</dd></dl>
+</body>
+</html>

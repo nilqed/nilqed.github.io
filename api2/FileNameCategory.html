@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FileNameCategory</title>
+</head>
+<body>
+<h1>FileNameCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fname.spad#L1">fname.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fname.spad#L1">[edit on github]</a></p>
+<p>
+This category provides an interface to names in the file system.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>coerce(s)</code> converts a string to a file name according to operating system-dependent conventions.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>coerce(fn)</code> produces a string for a file name according to operating system-dependent conventions.</p>
+</dd></dl>
+<a name="f_directory"></a><dl><dt>directory : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>directory(f)</code> returns the directory part of the file name.</p>
+</dd></dl>
+<a name="f_exists_63"></a><dl><dt>exists? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>exists?(f)</code> tests if the file exists in the file system.</p>
+</dd></dl>
+<a name="f_extension"></a><dl><dt>extension : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>extension(f)</code> returns the type part of the file name.</p>
+</dd></dl>
+<a name="f_filename"></a><dl><dt>filename : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>filename(d, n, e)</code> creates a file name with <code>d</code> as its directory, <code>n</code> as its name and <code>e</code> as its extension. This is a portable way to create file names. When <code>d</code> or <code>t</code> is the empty string, a default is used.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_name"></a><dl><dt>name : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>name(f)</code> returns the name part of the file name.</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>new(d, pref, e)</code> constructs the name of a new writable file with <code>d</code> as its directory, <code>pref</code> as a prefix of its name and <code>e</code> as its extension. When <code>d</code> or <code>t</code> is the empty string, a default is used. An error occurs if a new file cannot be written in the given directory.</p>
+</dd></dl>
+<a name="f_readable_63"></a><dl><dt>readable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>readable?(f)</code> tests if the named file exist and can it be opened for reading.</p>
+</dd></dl>
+<a name="f_writable_63"></a><dl><dt>writable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>writable?(f)</code> tests if the named file be opened for writing. The named file need not already exist.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TexFormat</title>
+</head>
+<body>
+<h1>TexFormat</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tex.spad#L1">tex.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tex.spad#L1">[edit on github]</a></p>
+<p>
+TexFormat provides a coercion from OutputForm to TeX format. The particular dialect of TeX used is LaTeX. The basic object consists of three parts: a prologue, a tex part and an epilogue. The functions <span class="spadfun">prologue</span>, <span class="spadfun">tex</span> and <span class="spadfun">epilogue</span> extract these parts, respectively. The main guts of the expression go into the tex part. The other parts can be set (<span class="spadfun">setPrologue!</span>, <span class="spadfun">setEpilogue!</span>) so that contain the appropriate tags for printing. For example, the prologue and epilogue might simply contain <code>``</code>\spad{\[}<code>''</code> and <code>``</code>\spad{\]}<code>''</code>, respectively, so that the TeX section will be printed in LaTeX display math mode.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="OutputForm.html">OutputForm</a> -&gt %</dt><dd><p>
+<code>coerce(o)</code> changes <code>o</code> in the standard output format to TeX format.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt>convert : (<a href="OutputForm.html">OutputForm</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>convert(o, step)</code> changes <code>o</code> in standard output format to TeX format and also adds the given step number. This is useful if you want to create equations with given numbers or have the equation numbers correspond to the interpreter step numbers.</p>
+</dd></dl>
+<dl><dt>convert : (<a href="OutputForm.html">OutputForm</a>, <a href="Integer.html">Integer</a>, <a href="OutputForm.html">OutputForm</a>) -&gt %</dt><dd><p>
+<code>convert(o, step, type)</code> changes <code>o</code> in standard output format to TeX format and also adds the given <code>step</code> number and type. This is useful if you want to create equations with given numbers or have the equation numbers correspond to the interpreter <code>step</code> numbers.</p>
+</dd></dl>
+<a name="f_display"></a><dl><dt>display : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>display(t)</code> outputs the TeX formatted code <code>t</code> so that each line has length less than or equal to the value set by the system command )set output length.</p>
+</dd></dl>
+<dl><dt>display : (%, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>display(t, width)</code> outputs the TeX formatted code <code>t</code> so that each line has length less than or equal to width.</p>
+</dd></dl>
+<a name="f_epilogue"></a><dl><dt>epilogue : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>epilogue(t)</code> extracts the epilogue section of a TeX form <code>t</code>.</p>
+</dd></dl>
+<a name="f_getDialect"></a><dl><dt>getDialect : () -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>getDialect()</code> return current dialect setting.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_new"></a><dl><dt>new : () -&gt %</dt><dd><p>
+<code>new()</code> create a new, empty object. Use <span class="spadfun">setPrologue!</span>, <span class="spadfun">setTex!</span> and <span class="spadfun">setEpilogue!</span> to set the various components of this object.</p>
+</dd></dl>
+<a name="f_prologue"></a><dl><dt>prologue : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>prologue(t)</code> extracts the prologue section of a TeX form <code>t</code>.</p>
+</dd></dl>
+<a name="f_setDialect"></a><dl><dt>setDialect : <a href="Symbol.html">Symbol</a> -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>setDialect(d)</code> sets <code>s</code> as current dialect and returns previous setting. Possible values are <code>tex</code> meaning using mostly plain TeX constructs and <code>latex</code> which means more idiomatic LaTeX.</p>
+</dd></dl>
+<a name="f_setEpilogue_33"></a><dl><dt>setEpilogue! : (%, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>setEpilogue!(t, strings)</code> sets the epilogue section of a TeX form <code>t</code> to strings.</p>
+</dd></dl>
+<a name="f_setPrologue_33"></a><dl><dt>setPrologue! : (%, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>setPrologue!(t, strings)</code> sets the prologue section of a TeX form <code>t</code> to strings.</p>
+</dd></dl>
+<a name="f_setTex_33"></a><dl><dt>setTex! : (%, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>setTex!(t, strings)</code> sets the TeX section of a TeX form <code>t</code> to strings.</p>
+</dd></dl>
+<a name="f_tex"></a><dl><dt>tex : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>tex(t)</code> extracts the TeX section of a TeX form <code>t</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

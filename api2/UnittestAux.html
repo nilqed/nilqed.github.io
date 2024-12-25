@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnittestAux</title>
+</head>
+<body>
+<h1>UnittestAux(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/unittest.spad#L377">unittest.spad line 377</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/unittest.spad#L377">[edit on github]</a></p>
+<ul>
+<li>R : <a href="BasicType.html">BasicType</a></ul>
+<p>
+UnittestAux is an auxiliary package to Unittest, that performs checking of tests, dealing also with fatal errors.</p>
+<a name="f_testAbsolutePrecision"></a><dl><dt>testAbsolutePrecision : R -&gt R if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+<code>testAbsolutePrecision(eps)</code> returns the current absolute precision used for floating point comparison, and then sets it to <code>eps</code>. The default value is 1.0e-15.</p>
+</dd></dl>
+<a name="f_testComplexEqualsAux"></a><dl><dt>testComplexEqualsAux : (<a href="String.html">String</a>, <a href="Complex.html">Complex</a>(R), <a href="Complex.html">Complex</a>(R)) -&gt <a href="Void.html">Void</a> if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+<code>testComplexEqualsAux(inp ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be approximately equal as complex numbers, taking into account <span class="spadfun">testAbsolutePrecision</span> and <span class="spadfun">testRelativePrecision</span>.</p>
+</dd></dl>
+<a name="f_testEqualsAux"></a><dl><dt>testEqualsAux : (<a href="String.html">String</a>, R, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testEqualsAux(inp, ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be equal. To sidestep the possibility that the equality function of the domain <code>R</code> performs some simplifications, we convert <code>ex1</code> and <code>ex2</code> to <code>InputForm</code>, if possible.</p>
+</dd></dl>
+<a name="f_testEqualsAuxCmp"></a><dl><dt>testEqualsAuxCmp : (R, R) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>testEqualsAuxCmp should</code> be local but is conditional</p>
+</dd></dl>
+<a name="f_testLibraryErrorAux"></a><dl><dt>testLibraryErrorAux : (<a href="String.html">String</a>, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testLibraryErrorAux(inp, ex)</code> states that ex should throw an error. Such a test will never count as a fatal error.</p>
+</dd></dl>
+<a name="f_testNotEqualsAux"></a><dl><dt>testNotEqualsAux : (<a href="String.html">String</a>, R, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testNotEqualsAux(inp, ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be different.</p>
+</dd></dl>
+<a name="f_testRealEqualsAux"></a><dl><dt>testRealEqualsAux : (<a href="String.html">String</a>, R, R) -&gt <a href="Void.html">Void</a> if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+<code>testRealEqualsAux(inp, ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be approximately equal as real numbers, taking into account <span class="spadfun">testAbsolutePrecision</span> and <span class="spadfun">testRelativePrecision</span>.</p>
+</dd></dl>
+<a name="f_testRelativePrecision"></a><dl><dt>testRelativePrecision : R -&gt R if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+<code>testRelativePrecision(eps)</code> returns the current absolute precision used for floating point comparison, and then sets it to <code>eps</code>. The default value is 1.0e-15.</p>
+</dd></dl>
+<a name="f_testTrueAux"></a><dl><dt>testTrueAux : (<a href="String.html">String</a>, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testTrueAux(inp, ex)</code> states that ex should be <code>true</code>.</p>
+</dd></dl>
+<a name="f_xftestComplexEqualsAux"></a><dl><dt>xftestComplexEqualsAux : (<a href="String.html">String</a>, <a href="Complex.html">Complex</a>(R), <a href="Complex.html">Complex</a>(R)) -&gt <a href="Void.html">Void</a> if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+xftestComplexEqualsAux is like testComplexEqualsAux, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestEqualsAux"></a><dl><dt>xftestEqualsAux : (<a href="String.html">String</a>, R, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestEqualsAux is like testEquals, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestLibraryErrorAux"></a><dl><dt>xftestLibraryErrorAux : (<a href="String.html">String</a>, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>xftestLibraryErrorAux like</code> testLibraryErrorAux, but expects failure (that is no error).</p>
+</dd></dl>
+<a name="f_xftestNotEqualsAux"></a><dl><dt>xftestNotEqualsAux : (<a href="String.html">String</a>, R, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestNotEqualsAux is like testEquals, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestRealEqualsAux"></a><dl><dt>xftestRealEqualsAux : (<a href="String.html">String</a>, R, R) -&gt <a href="Void.html">Void</a> if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+xftestRealEqualsAux is like testRealEqualsAux, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestTrueAux"></a><dl><dt>xftestTrueAux : (<a href="String.html">String</a>, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestTrueAux is like testTrueAux, but expects failure.</p>
+</dd></dl>
+</body>
+</html>

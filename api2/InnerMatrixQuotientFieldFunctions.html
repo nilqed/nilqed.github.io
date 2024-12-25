@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerMatrixQuotientFieldFunctions</title>
+</head>
+<body>
+<h1>InnerMatrixQuotientFieldFunctions(R, Row, Col, M, QF, Row2, Col2, M2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matfuns.spad#L400">matfuns.spad line 400</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matfuns.spad#L400">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>Row : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>Col : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(R, Row, Col)<li>QF : <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(R)<li>Row2 : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(QF)<li>Col2 : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(QF)<li>M2 : <a href="MatrixCategory.html">MatrixCategory</a>(QF, Row2, Col2)</ul>
+<p>
+InnerMatrixQuotientFieldFunctions provides functions on matrices over an integral domain which involve the quotient field of that integral domain. The functions rowEchelon and inverse return matrices with entries in the quotient field.</p>
+<a name="f_inverse"></a><dl><dt>inverse : M -&gt Union(M2, "failed")</dt><dd><p>
+<code>inverse(m)</code> returns the inverse of the matrix <code>m</code>. If the matrix is not invertible, "failed" is returned. Error: if the matrix is not square. Note: the result will have entries in the quotient field.</p>
+</dd></dl>
+<a name="f_nullSpace"></a><dl><dt>nullSpace : M -&gt <a href="List.html">List</a>(Col) if Col2 has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd><p>
+<code>nullSpace(m)</code> returns a basis for the null space of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_rowEchelon"></a><dl><dt>rowEchelon : M -&gt M2</dt><dd><p>
+<code>rowEchelon(m)</code> returns the row echelon form of the matrix <code>m</code>. the result will have entries in the quotient field.</p>
+</dd></dl>
+</body>
+</html>

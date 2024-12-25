@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>U32VectorPolynomialOperations</title>
+</head>
+<body>
+<h1>U32VectorPolynomialOperations</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/u32vec.spad#L403">u32vec.spad line 403</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/u32vec.spad#L403">[edit on github]</a></p>
+<p>
+This is a low-level package which implements operations on vectors treated as univariate modular polynomials.Most operations takes modulus as parameter.Modulus is machine sized prime which should be small enough to avoid overflow in intermediate calculations.</p>
+<a name="f_copy_95first"></a><dl><dt>copy_first : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>copy_first(v1, v2, n)</code> copies first <code>n</code> elements of <code>v2</code> into <code>n</code> first positions in <code>v1</code>.</p>
+</dd></dl>
+<a name="f_copy_95slice"></a><dl><dt>copy_slice : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>copy_slice(v1, v2, m, n)</code> copies the slice of <code>v2</code> starting at <code>m</code> elements and having <code>n</code> elements into corresponding positions in <code>v1</code>.</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : <a href="U32Vector.html">U32Vector</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>degree(v)</code> is degree of <code>v</code> treated as polynomial</p>
+</dd></dl>
+<a name="f_differentiate"></a><dl><dt>differentiate : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+Polynomial differentiation.</p>
+</dd></dl>
+<dl><dt>differentiate : (<a href="U32Vector.html">U32Vector</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+Polynomial differentiation.</p>
+</dd></dl>
+<a name="f_divide_33"></a><dl><dt>divide! : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+Polynomial division.</p>
+</dd></dl>
+<a name="f_eval_95at"></a><dl><dt>eval_at : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>eval_at(v, deg, pt, p)</code> treats <code>v</code> as coefficients of polynomial of degree <code>deg</code> and evaluates the polynomial at point <code>pt</code> modulo <code>p</code></p>
+</dd></dl>
+<a name="f_extended_95gcd"></a><dl><dt>extended_gcd : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+<code>extended_gcd(v1, v2, p)</code> gives [<code>g</code>, <code>c1</code>, <code>c2</code>] such that <code>g</code> is <code>gcd(v1, v2, p)</code>, <code>g = c1*v1 + c2*v2</code> and degree(<code>c1</code>) &lt; max(degree(<code>v2</code>) - degree(<code>g</code>), 0) and degree(<code>c2</code>) &lt; max(degree(<code>v1</code>) - degree(<code>g</code>), 1)</p>
+</dd></dl>
+<a name="f_gcd"></a><dl><dt>gcd : (<a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>gcd(a, lo, <code>hi</code>, p)</code> computes <code>gcd</code> of elements a(<code>lo</code>), a(<code>lo+1</code>), ..., a(<code>hi</code>).</p>
+</dd></dl>
+<dl><dt>gcd : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>gcd(v1, v2, p)</code> computes monic <code>gcd</code> of <code>v1</code> and <code>v2</code> modulo <code>p</code>.</p>
+</dd></dl>
+<a name="f_lcm"></a><dl><dt>lcm : (<a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>lcm(a, lo, <code>hi</code>, p)</code> computes <code>lcm</code> of elements a(<code>lo</code>), a(<code>lo+1</code>), ..., a(<code>hi</code>).</p>
+</dd></dl>
+<a name="f_mul"></a><dl><dt>mul : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+Polynomial multiplication.</p>
+</dd></dl>
+<a name="f_mul_95by_95binomial"></a><dl><dt>mul_by_binomial : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>mul_by_binomial(v, pt, p)</code> treats <code>v</code> a polynomial and multiplies in place this polynomial by binomial (<code>x</code> + <code>pt</code>). Highest coefficient of product is ignored.</p>
+</dd></dl>
+<dl><dt>mul_by_binomial : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>mul_by_binomial(v, deg, pt, p)</code> treats <code>v</code> as coefficients of polynomial of degree <code>deg</code> - 1 and multiplies in place this polynomial by binomial (<code>x</code> + <code>pt</code>). Highest coefficient of product is ignored.</p>
+</dd></dl>
+<a name="f_mul_95by_95scalar"></a><dl><dt>mul_by_scalar : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>mul_by_scalar(v, deg, c, p)</code> treats <code>v</code> as coefficients of polynomial of degree <code>deg</code> and multiplies in place this polynomial by scalar <code>c</code></p>
+</dd></dl>
+<a name="f_pa_95to_95sup"></a><dl><dt>pa_to_sup : <a href="U32Vector.html">U32Vector</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>pa_to_sup(v)</code> converts vector of coefficients to a polynomial</p>
+</dd></dl>
+<a name="f_pow"></a><dl><dt>pow : (<a href="U32Vector.html">U32Vector</a>, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>pow(u, n, d, p)</code> returns u^n truncated after degree <code>d</code>, except if <code>n=1</code>, in which case <code>u</code> itself is returned</p>
+</dd></dl>
+<a name="f_remainder_33"></a><dl><dt>remainder! : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+Polynomial remainder</p>
+</dd></dl>
+<a name="f_resultant"></a><dl><dt>resultant : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>resultant(v1, v2, p)</code> computes resultant of <code>v1</code> and <code>v2</code> modulo <code>p</code>.</p>
+</dd></dl>
+<a name="f_to_95mod_95pa"></a><dl><dt>to_mod_pa : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>to_mod_pa(s, p)</code> reduces coefficients of polynomial <code>s</code> modulo prime <code>p</code> and converts the result to vector</p>
+</dd></dl>
+<a name="f_truncated_95mul_95add"></a><dl><dt>truncated_mul_add : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>truncated_mul_add(x, y, z, d, p)</code> adds to <code>z</code> the product x*y truncated after degree <code>d</code>.</p>
+</dd></dl>
+<a name="f_truncated_95mul_95add2"></a><dl><dt>truncated_mul_add2 : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>truncated_mul_add2(x, y, z, d1, d2, p)</code> adds to <code>z</code> the product x*y and the variable to power <code>d1</code> truncated after degree <code>d</code>.</p>
+</dd></dl>
+<a name="f_truncated_95multiplication"></a><dl><dt>truncated_multiplication : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>truncated_multiplication(x, y, d, p)</code> computes x*y truncated after degree <code>d</code>.</p>
+</dd></dl>
+<a name="f_vector_95add_95mul"></a><dl><dt>vector_add_mul : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>vector_add_mul(v1, v2, m, n, c, p)</code> sets <code>v1</code>(<code>m</code>), ..., <code>v1</code>(<code>n</code>) to corresponding extries in <code>v1</code> + <code>c*v2</code> modulo <code>p</code>.</p>
+</dd></dl>
+<a name="f_vector_95combination"></a><dl><dt>vector_combination : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>vector_combination(v1, c1, v2, c2, n, delta, p)</code> replaces first <code>n</code> + 1 entries of <code>v1</code> by corresponding entries of <code>c1*v1+c2*x^delta*v2</code> mod <code>p</code>.</p>
+</dd></dl>
+</body>
+</html>

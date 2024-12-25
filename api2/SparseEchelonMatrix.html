@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SparseEchelonMatrix</title>
+</head>
+<body>
+<h1>SparseEchelonMatrix(C, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L1286">jet.spad line 1286</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L1286">[edit on github]</a></p>
+<ul>
+<li>C : <a href="OrderedSet.html">OrderedSet</a><li>D : <a href="Ring.html">Ring</a></ul>
+<p>
+<code>SparseEchelonMatrix(C, D)</code> implements sparse matrices whose columns are enumerated by the OrderedSet <code>C</code> and whose entries belong to the GcdDomain <code>D</code>. The basic operation of this domain is the computation of an row echelon form. The algorithm used tries to maintain the sparsity and is especially adapted to matrices which are already close to a row echelon form.</p>
+<a name="f__42"></a><dl><dt>* : (<a href="Matrix.html">Matrix</a>(D), %) -&gt %</dt><dd><p>
+<code>L*A</code> implements left multiplication with a usual matrix.</p>
+</dd></dl>
+<dl><dt>* : (<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(D)), %) -&gt % if D has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>L*A</code> implements left multiplication with a usual matrix over the quotient field of <code>D</code>.</p>
+</dd></dl>
+<a name="f_allIndices"></a><dl><dt>allIndices : % -&gt <a href="List.html">List</a>(C)</dt><dd><p>
+<code>allIndices(A)</code> returns all indices used for enumerating the columns of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_appendRow_33"></a><dl><dt>appendRow! : (%, Record(Indices : <a href="List.html">List</a>(C), Entries : <a href="List.html">List</a>(D))) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>appendRow!(A, r)</code> appends the row <code>r</code> at the end of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="Matrix.html">Matrix</a>(D)</dt><dd><p>
+<code>coerce(A)</code> yields the matrix <code>A</code> in the usual matrix type.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_consRow_33"></a><dl><dt>consRow! : (%, Record(Indices : <a href="List.html">List</a>(C), Entries : <a href="List.html">List</a>(D))) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>consRow!(A, r)</code> inserts the row <code>r</code> at the top of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(A)</code> returns a copy of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_deleteRow_33"></a><dl><dt>deleteRow! : (%, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>deleteRow(A, i)</code> deletes the <code>i</code><code>-</code>th row of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_elimZeroCols_33"></a><dl><dt>elimZeroCols! : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>elimZeroCols!(A)</code> removes columns which contain only zeros. This affects basically only the value of <code>allIndices(A)</code>.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="Integer.html">Integer</a>, C) -&gt D</dt><dd><p>
+<code>elt(A, i, c)</code> returns the entry of the matrix <code>A</code> in row <code>i</code> and in the column with index <code>c</code>.</p>
+</dd></dl>
+<a name="f_extract"></a><dl><dt>extract : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>extract(A, i1, i2)</code> extracts the rows <code>i1</code> to <code>i2</code> and returns them as a new matrix.</p>
+</dd></dl>
+<a name="f_horizJoin"></a><dl><dt>horizJoin : (%, %) -&gt %</dt><dd><p>
+<code>horizJoin(A, B)</code> horizontally concats the matrices <code>A</code> and <code>B</code>. It is assumed that all indices of <code>B</code> are smaller than those of <code>A</code>.</p>
+</dd></dl>
+<a name="f_horizSplit"></a><dl><dt>horizSplit : (%, C) -&gt Record(Left : %, Right : %)</dt><dd><p>
+<code>horizSplit(A, c)</code> splits the matrix <code>A</code> into two at the column given by <code>c</code>. The first column of the right matrix is enumerated by the first index less or equal to <code>c</code>.</p>
+</dd></dl>
+<a name="f_join"></a><dl><dt>join : (%, %) -&gt %</dt><dd><p>
+<code>join(A, B)</code> vertically concats the matrices <code>A</code> and <code>B</code>.</p>
+</dd></dl>
+<a name="f_ncols"></a><dl><dt>ncols : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>ncols(A)</code> returns the number of columns of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : (<a href="List.html">List</a>(C), <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>new(inds, nrows)</code> generates a new matrix with <code>nrows</code> rows and columns enumerated by the indices <code>inds</code>. The matrix is empty, i.e. the zero matrix.</p>
+</dd></dl>
+<a name="f_nrows"></a><dl><dt>nrows : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>nrows(A)</code> returns the number of rows of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_pivot"></a><dl><dt>pivot : (%, <a href="Integer.html">Integer</a>) -&gt Record(Index : C, Entry : D)</dt><dd><p>
+<code>pivot(A, i)</code> returns the leading entry of the <code>i</code><code>-</code>th row of the matrix <code>A</code> together with its index.</p>
+</dd></dl>
+<a name="f_pivots"></a><dl><dt>pivots : % -&gt Record(Indices : <a href="List.html">List</a>(C), Entries : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>pivots(A)</code> returns all leading entries of the matrix <code>A</code> together with their indices.</p>
+</dd></dl>
+<a name="f_primitiveRowEchelon"></a><dl><dt>primitiveRowEchelon : % -&gt Record(Ech : %, Lt : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(D)), Pivots : <a href="List.html">List</a>(D), Rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>) if D has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>primitiveRowEchelon(A)</code> computes a row echelon form for the matrix <code>A</code>. The algorithm used is fraction-free elimination. Every row is made primitive by division by the <code>gcd</code>. The algorithm is especially adapted to matrices already close to row echelon form. The transformation matrix, the used pivots and the rank of the matrix are also returned.</p>
+</dd></dl>
+<a name="f_purge_33"></a><dl><dt>purge! : (%, Mapping(<a href="Boolean.html">Boolean</a>, C)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>purge!(A, crit)</code> eliminates all columns belonging to an index <code>c</code> such that <code>crit(c)</code> yields <code>true</code>.</p>
+</dd></dl>
+<a name="f_row"></a><dl><dt>row : (%, <a href="Integer.html">Integer</a>) -&gt Record(Indices : <a href="List.html">List</a>(C), Entries : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>row(A, i)</code> returns the <code>i</code><code>-</code>th row of the matrix <code>A</code>.</p>
+</dd></dl>
+<a name="f_rowEchelon"></a><dl><dt>rowEchelon : % -&gt Record(Ech : %, Lt : <a href="Matrix.html">Matrix</a>(D), Pivots : <a href="List.html">List</a>(D), Rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>primitiveRowEchelon(A)</code> computes a row echelon form for the matrix <code>A</code>. The algorithm used is fraction-free elimination. It is especially adapted to matrices already close to row echelon form. The transformation matrix, the used pivots and the rank of the matrix are also returned.</p>
+</dd></dl>
+<a name="f_setGcdMode"></a><dl><dt>setGcdMode : <a href="Symbol.html">Symbol</a> -&gt <a href="Symbol.html">Symbol</a> if D has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>setGcdMode(s)</code> sets a new value for the flag deciding on the method used to compute gcd`s for lists. Possible values for <code>s</code> are <code>iterated</code> and <code>random</code>.</p>
+</dd></dl>
+<a name="f_setRow_33"></a><dl><dt>setRow! : (%, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(C), <a href="List.html">List</a>(D)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setRow!(A, i, ind, ent)</code> sets the <code>i</code><code>-</code>th row of the matrix <code>A</code>. Its indices are <code>ind</code>; the entries <code>ent</code>.</p>
+</dd></dl>
+<dl><dt>setRow! : (%, <a href="Integer.html">Integer</a>, Record(Indices : <a href="List.html">List</a>(C), Entries : <a href="List.html">List</a>(D))) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setRow!(A, i, ind, ent)</code> sets the <code>i</code><code>-</code>th row of the matrix <code>A</code> to the value <code>r</code>.</p>
+</dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, <a href="Integer.html">Integer</a>, C, D) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setelt!(A, i, c, d)</code> sets the entry of the matrix <code>A</code> in row <code>i</code> and in the column with index <code>c</code> to the value <code>d</code>.</p>
+</dd></dl>
+<a name="f_sortedPurge_33"></a><dl><dt>sortedPurge! : (%, Mapping(<a href="Boolean.html">Boolean</a>, C)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>sortedPurge!(A, crit)</code> is like <code>purge</code>, however, with the additional assumption that <code>crit</code> respects the ordering of the indices.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+</body>
+</html>

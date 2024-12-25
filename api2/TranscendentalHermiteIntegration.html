@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TranscendentalHermiteIntegration</title>
+</head>
+<body>
+<h1>TranscendentalHermiteIntegration(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intrf.spad#L213">intrf.spad line 213</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intrf.spad#L213">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+Hermite integration, transcendental case.</p>
+<a name="f_HermiteIntegrate"></a><dl><dt>HermiteIntegrate : (<a href="Fraction.html">Fraction</a>(UP), Mapping(UP, UP)) -&gt Record(answer : <a href="Fraction.html">Fraction</a>(UP), logpart : <a href="Fraction.html">Fraction</a>(UP), specpart : <a href="Fraction.html">Fraction</a>(UP), polypart : UP)</dt><dd><p>
+<code>HermiteIntegrate(f, D)</code> returns <code>[g, h, s, p]</code> such that <code>f = Dg + h + s + p</code>, <code>h</code> has a squarefree denominator normal <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>, and all the squarefree factors of the denominator of <code>s</code> are special <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>. Furthermore, <code>h</code> and <code>s</code> have no polynomial parts. <code>D</code> is the derivation to use on UP.</p>
+</dd></dl>
+<dl><dt>HermiteIntegrate : (<a href="Fraction.html">Fraction</a>(UP), Mapping(UP, UP), UP) -&gt Record(answer : <a href="Fraction.html">Fraction</a>(UP), logpart : <a href="Fraction.html">Fraction</a>(UP), specpart : <a href="Fraction.html">Fraction</a>(UP), polypart : UP)</dt><dd><p>
+<code>HermiteIntegrate(f, D, d0)</code> returns <code>[g, h, s, p]</code> such that <code>f = Dg + g*d0 + h + s + p</code>, <code>h</code> has a squarefree denominator normal <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>, and all the squarefree factors of the denominator of <code>s</code> are special <code>w</code>.<code>r</code>.<code>t</code>. <code>D</code>. Furthermore, <code>h</code> and <code>s</code> have no polynomial parts. <code>D</code> is the derivation to use on UP.</p>
+</dd></dl>
+</body>
+</html>

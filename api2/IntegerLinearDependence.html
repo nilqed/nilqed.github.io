@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerLinearDependence</title>
+</head>
+<body>
+<h1>IntegerLinearDependence(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lindep.spad#L133">lindep.spad line 133</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lindep.spad#L133">[edit on github]</a></p>
+<ul>
+<li>R : <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</ul>
+<p>
+Test for linear dependence over the integers.</p>
+<a name="f_linearDependenceOverZ"></a><dl><dt>linearDependenceOverZ : <a href="Vector.html">Vector</a>(R) -&gt Union(<a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd><p>
+<code>linearlyDependenceOverZ([v1, ..., vn])</code> returns <code>[c1, ..., cn]</code> if <code>c1*v1 + ... + cn*vn = 0</code> and not all the <code>ci</code><code>'s</code> are 0, "failed" if the <code>vi</code><code>'s</code> are linearly independent over the integers.</p>
+</dd></dl>
+<a name="f_linearlyDependentOverZ_63"></a><dl><dt>linearlyDependentOverZ? : <a href="Vector.html">Vector</a>(R) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>linearlyDependentOverZ?([v1, ..., vn])</code> returns <code>true</code> if the <code>vi</code><code>'s</code> are linearly dependent over the integers, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_particularSolutionOverQ"></a><dl><dt>particularSolutionOverQ : (<a href="Matrix.html">Matrix</a>(R), <a href="Vector.html">Vector</a>(R)) -&gt Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+<code>solveLinearlyOverQ([v1, ..., vn], u)</code> returns <code>[c1, ..., cn]</code> such that <code>c1*v1 + ... + cn*vn = u</code>, "failed" if no such rational numbers <code>ci</code><code>'s</code> exist.</p>
+</dd></dl>
+<dl><dt>particularSolutionOverQ : (<a href="Vector.html">Vector</a>(R), R) -&gt Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+<code>particularSolutionOverQ([v1, ..., vn], u)</code> returns <code>[c1, ..., cn]</code> such that <code>c1*v1 + ... + cn*vn = u</code>, "failed" if no such rational numbers <code>ci</code><code>'s</code> exist.</p>
+</dd></dl>
+<a name="f_solveLinearlyOverQ"></a><dl><dt>solveLinearlyOverQ : (<a href="Matrix.html">Matrix</a>(R), <a href="Vector.html">Vector</a>(R)) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))))</dt><dd><p>
+<code>solveLinearlyOverQ([v1, ..., vn], u)</code> returns solution of the system <code>c1*v1 + ... + cn*vn = u</code> and and a basis of the associated homogeneous system <code>c1*v1 + ... + cn*vn = 0</code></p>
+</dd></dl>
+<dl><dt>solveLinearlyOverQ : (<a href="Vector.html">Vector</a>(R), R) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))))</dt><dd><p>
+<code>solveLinearlyOverQ([v1, ..., vn], u)</code> returns solution of the system <code>c1*v1 + ... + cn*vn = u</code> and and a basis of the associated homogeneous system <code>c1*v1 + ... + cn*vn = 0</code></p>
+</dd></dl>
+</body>
+</html>

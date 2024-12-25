@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearCombinationUtilities</title>
+</head>
+<body>
+<h1>LinearCombinationUtilities(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L130">intpar.spad line 130</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L130">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+This package implements frequently used operations on linear combinations.</p>
+<a name="f_dehomogenize"></a><dl><dt>dehomogenize : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))) -&gt Record(particular : Union(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F)), "failed"), basis : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))))</dt><dd><p>
+<code>dehomogenize(ls)</code> converts list of solutions (a, [<code>c0</code>, <code>c1</code>, ..., <code>cn</code>]) to homogeneous equation <code>L</code>(a) + <code>c0</code> <code>f</code> + <code>c1</code> <code>g1</code> + ... + <code>cn</code> <code>gn</code> = 0 into list of solutions of inhomogeneous equation <code>L</code>(a) + <code>f</code> + <code>c1</code> <code>g1</code> + ... + <code>cn</code> <code>gn</code> = 0. This transformation works the same for all equations, so we only need list of solutions as argument</p>
+</dd></dl>
+<a name="f_lin_95comb"></a><dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(F), <a href="List.html">List</a>(F)) -&gt F</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+<dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="List.html">List</a>(F)) -&gt F</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+<dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(F), <a href="List.html">List</a>(UP)) -&gt UP</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+<dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(F), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt <a href="Fraction.html">Fraction</a>(UP)</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+<dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt <a href="Fraction.html">Fraction</a>(UP)</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+<dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(F), <a href="List.html">List</a>(<a href="LaurentPolynomial.html">LaurentPolynomial</a>(F, UP))) -&gt <a href="LaurentPolynomial.html">LaurentPolynomial</a>(F, UP)</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+<dl><dt>lin_comb : (<a href="Vector.html">Vector</a>(F), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))) -&gt <a href="Vector.html">Vector</a>(F)</dt><dd><p>
+<code>lin_comb(v, [f1, ..., fn])</code> computes linear combination <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code>. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal positive length.</p>
+</dd></dl>
+<a name="f_lin_95comb_33"></a><dl><dt>lin_comb! : (<a href="Vector.html">Vector</a>(F), <a href="Vector.html">Vector</a>(F), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))) -&gt <a href="Vector.html">Vector</a>(F)</dt><dd><p>
+<code>lin_comb!(v, w, [f1, ..., fn])</code> computes linear combination <code>w</code> + <code>v</code>(1) <code>f1</code> + ... <code>v</code>(<code>n</code>) <code>fn</code> by modifying <code>w</code> in place. Vector <code>v</code> and list [<code>f1</code>, ..., <code>fn</code>] must be of equal length.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FortranTemplate</title>
+</head>
+<body>
+<h1>FortranTemplate</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortran.spad#L1338">fortran.spad line 1338</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortran.spad#L1338">[edit on github]</a></p>
+<p>
+Code to manipulate Fortran templates</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_close_33"></a><dl><dt><a href="FileCategory.html#f_close_33">close!</a> : % -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_flush"></a><dl><dt><a href="FileCategory.html#f_flush">flush</a> : % -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_fortranCarriageReturn"></a><dl><dt>fortranCarriageReturn : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>fortranCarriageReturn()</code> produces a carriage return on the current Fortran output stream</p>
+</dd></dl>
+<a name="f_fortranLiteral"></a><dl><dt>fortranLiteral : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>fortranLiteral(s)</code> writes <code>s</code> to the current Fortran output stream</p>
+</dd></dl>
+<a name="f_fortranLiteralLine"></a><dl><dt>fortranLiteralLine : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>fortranLiteralLine(s)</code> writes <code>s</code> to the current Fortran output stream, followed by a carriage return</p>
+</dd></dl>
+<a name="f_iomode"></a><dl><dt><a href="FileCategory.html#f_iomode">iomode</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_name"></a><dl><dt><a href="FileCategory.html#f_name">name</a> : % -&gt <a href="FileName.html">FileName</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_open"></a><dl><dt><a href="FileCategory.html#f_open">open</a> : <a href="FileName.html">FileName</a> -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<dl><dt><a href="FileCategory.html#f_open">open</a> : (<a href="FileName.html">FileName</a>, <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_processTemplate"></a><dl><dt>processTemplate : <a href="FileName.html">FileName</a> -&gt <a href="FileName.html">FileName</a></dt><dd><p>
+<code>processTemplate(tp)</code> processes the template <code>tp</code>, writing the result to the current FORTRAN output stream.</p>
+</dd></dl>
+<dl><dt>processTemplate : (<a href="FileName.html">FileName</a>, <a href="FileName.html">FileName</a>) -&gt <a href="FileName.html">FileName</a></dt><dd><p>
+<code>processTemplate(tp, fn)</code> processes the template <code>tp</code>, writing the result out to <code>fn</code>.</p>
+</dd></dl>
+<a name="f_read_33"></a><dl><dt><a href="FileCategory.html#f_read_33">read!</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_reopen_33"></a><dl><dt><a href="FileCategory.html#f_reopen_33">reopen!</a> : (%, <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_write_33"></a><dl><dt><a href="FileCategory.html#f_write_33">write!</a> : (%, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

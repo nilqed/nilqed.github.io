@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SparsePolynomialCoercionHelpers</title>
+</head>
+<body>
+<h1>SparsePolynomialCoercionHelpers(R, VarSet1, VarSet2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/multpoly.spad#L776">multpoly.spad line 776</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/multpoly.spad#L776">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>VarSet1 : <a href="OrderedSet.html">OrderedSet</a><li>VarSet2 : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+This package contains a function which speeds up coercion in an important special case.</p>
+<a name="f_remap_95variables"></a><dl><dt>remap_variables : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R, VarSet1), <a href="List.html">List</a>(VarSet1), <a href="List.html">List</a>(VarSet2)) -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R, VarSet2)</dt><dd><p>
+<code>remap_variables(p, lv1, lv2)</code> replaces corresponding variables from <code>l1</code> by variables from <code>lv2</code>. Assumes that <code>lv1</code> and <code>lv2</code> have the same length and that <code>p</code> has variables in <code>lv1</code>.</p>
+</dd></dl>
+</body>
+</html>

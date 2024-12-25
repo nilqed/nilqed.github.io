@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OpenMath</title>
+</head>
+<body>
+<h1>OpenMath</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/omcat.spad#L1">omcat.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/omcat.spad#L1">[edit on github]</a></p>
+<p>
+OpenMath provides operations for exporting an object in OpenMath format.</p>
+<a name="f_OMwrite"></a><dl><dt>OMwrite : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>OMwrite(u)</code> returns the OpenMath <code>XML</code> encoding of <code>u</code> as a complete OpenMath object.</p>
+</dd></dl>
+<dl><dt>OMwrite : (%, <a href="Boolean.html">Boolean</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>OMwrite(u, true)</code> returns the OpenMath <code>XML</code> encoding of <code>u</code> as a complete OpenMath object; OMwrite(<code>u</code>, <code>false</code>) returns the OpenMath <code>XML</code> encoding of <code>u</code> as an OpenMath fragment.</p>
+</dd></dl>
+<dl><dt>OMwrite : (<a href="OpenMathDevice.html">OpenMathDevice</a>, %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMwrite(dev, u)</code> writes the OpenMath form of <code>u</code> to the OpenMath device <code>dev</code> as a complete OpenMath object.</p>
+</dd></dl>
+<dl><dt>OMwrite : (<a href="OpenMathDevice.html">OpenMathDevice</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMwrite(dev, u, true)</code> writes the OpenMath form of <code>u</code> to the OpenMath device <code>dev</code> as a complete OpenMath object; OMwrite(<code>dev</code>, <code>u</code>, <code>false</code>) writes the object as an OpenMath fragment.</p>
+</dd></dl>
+</body>
+</html>

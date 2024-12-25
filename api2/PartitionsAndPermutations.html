@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PartitionsAndPermutations</title>
+</head>
+<body>
+<h1>PartitionsAndPermutations</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/partperm.spad#L1">partperm.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/partperm.spad#L1">[edit on github]</a></p>
+<p>
+PartitionsAndPermutations contains functions for generating streams of integer partitions, and streams of sequences of integers composed from a multi-set.</p>
+<a name="f_conjugate"></a><dl><dt>conjugate : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>conjugate(pt)</code> is the conjugate of the partition <code>pt</code>.</p>
+</dd></dl>
+<a name="f_conjugates"></a><dl><dt>conjugates : <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>conjugates(lp)</code> is the stream of conjugates of a stream of partitions <code>lp</code>.</p>
+</dd></dl>
+<a name="f_distinct_95partitions"></a><dl><dt>distinct_partitions : <a href="Integer.html">Integer</a> -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>distinct_partitions(n)</code> is the stream of all partitions of <code>n</code> into distinct numbers.</p>
+</dd></dl>
+<dl><dt>distinct_partitions : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>distinct_partitions(p, l, n)</code> is the stream of partitions of <code>n</code> into distinct numbers whose number of parts is no greater than <code>p</code> and whose largest part is no greater than <code>l</code>.</p>
+</dd></dl>
+<a name="f_odd_95partitions"></a><dl><dt>odd_partitions : <a href="Integer.html">Integer</a> -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>odd_partitions(n)</code> is the stream of all partitions of <code>n</code> into odd numbers.</p>
+</dd></dl>
+<dl><dt>odd_partitions : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>odd_partitions(p, l, n)</code> is the stream of partitions of <code>n</code> into odd numbers whose number of parts is no greater than <code>p</code> and whose largest part is no greater than <code>l</code>.</p>
+</dd></dl>
+<a name="f_partitions"></a><dl><dt>partitions : <a href="Integer.html">Integer</a> -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>partitions(n)</code> is the stream of all partitions of <code>n</code>.</p>
+</dd></dl>
+<dl><dt>partitions : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>partitions(p, l)</code> is the stream of all partitions whose number of parts and largest part are no greater than <code>p</code> and <code>l</code>.</p>
+</dd></dl>
+<dl><dt>partitions : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>partitions(p, l, n)</code> is the stream of partitions of <code>n</code> whose number of parts is no greater than <code>p</code> and whose largest part is no greater than <code>l</code>.</p>
+</dd></dl>
+<a name="f_permutations"></a><dl><dt>permutations : <a href="Integer.html">Integer</a> -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>permutations(n)</code> is the stream of permutations formed from <code>1, 2, 3, ..., n</code>.</p>
+</dd></dl>
+<a name="f_sequences"></a><dl><dt>sequences : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>sequences([l0, l1, l2, .., ln])</code> is the set of all sequences formed from <code>l0</code> 0<code>'s</code>, <code>l1</code> 1<code>'s</code>, <code>l2</code> 2<code>'s</code>, ..., <code>ln</code> <code>n</code><code>'s</code>.</p>
+</dd></dl>
+<dl><dt>sequences : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>sequences(l1, l2)</code> is the stream of all sequences that can be composed from the multiset defined from two lists of integers <code>l1</code> and <code>l2</code>. For example, the pair <code>([1, 2, 4], [2, 3, 5])</code> represents multi-set with 1 <code>2</code>, 2 <code>3</code><code>'s</code>, and 4 <code>5</code><code>'s</code>.</p>
+</dd></dl>
+<a name="f_shuffle"></a><dl><dt>shuffle : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>shuffle(l1, l2)</code> forms the stream of all shuffles of <code>l1</code> and <code>l2</code>, i.e. all sequences that can be formed from merging <code>l1</code> and <code>l2</code>.</p>
+</dd></dl>
+<a name="f_shufflein"></a><dl><dt>shufflein : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>shufflein(l, st)</code> maps shuffle(<code>l</code>, <code>u</code>) on to all members <code>u</code> of st, concatenating the results.</p>
+</dd></dl>
+</body>
+</html>

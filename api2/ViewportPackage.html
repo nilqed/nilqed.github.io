@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ViewportPackage</title>
+</head>
+<body>
+<h1>ViewportPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/viewpack.spad#L1">viewpack.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/viewpack.spad#L1">[edit on github]</a></p>
+<p>
+ViewportPackage provides functions for creating GraphImages and TwoDimensionalViewports from lists of lists of points.</p>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="GraphImage.html">GraphImage</a> -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>coerce(<code>gi</code>)</code> converts the indicated GraphImage, <code>gi</code>, into the TwoDimensionalViewport form.</p>
+</dd></dl>
+<a name="f_drawCurves"></a><dl><dt>drawCurves : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>drawCurves([[p0], [p1], ..., [pn]], [options])</code> creates a TwoDimensionalViewport from the list of lists of points, <code>p0</code> through <code>pn</code>, using the options specified in the list <code>options</code>.</p>
+</dd></dl>
+<dl><dt>drawCurves : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="Palette.html">Palette</a>, <a href="Palette.html">Palette</a>, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>drawCurves([[p0], [p1], ..., [pn]], ptColor, lineColor, ptSize, [options])</code> creates a TwoDimensionalViewport from the list of lists of points, <code>p0</code> through <code>pn</code>, using the options specified in the list <code>options</code>. The point color is specified by <code>ptColor</code>, the line color is specified by <code>lineColor</code>, and the point size is specified by <code>ptSize</code>.</p>
+</dd></dl>
+<a name="f_graphCurves"></a><dl><dt>graphCurves : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))) -&gt <a href="GraphImage.html">GraphImage</a></dt><dd><p>
+<code>graphCurves([[p0], [p1], ..., [pn]])</code> creates a GraphImage from the list of lists of points indicated by <code>p0</code> through <code>pn</code>.</p>
+</dd></dl>
+<dl><dt>graphCurves : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="GraphImage.html">GraphImage</a></dt><dd><p>
+<code>graphCurves([[p0], [p1], ..., [pn]], [options])</code> creates a GraphImage from the list of lists of points, <code>p0</code> through <code>pn</code>, using the options specified in the list <code>options</code>.</p>
+</dd></dl>
+<dl><dt>graphCurves : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="Palette.html">Palette</a>, <a href="Palette.html">Palette</a>, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="GraphImage.html">GraphImage</a></dt><dd><p>
+<code>graphCurves([[p0], [p1], ..., [pn]], ptColor, lineColor, ptSize, [options])</code> creates a GraphImage from the list of lists of points, <code>p0</code> through <code>pn</code>, using the options specified in the list <code>options</code>. The graph point color is specified by <code>ptColor</code>, the graph line color is specified by <code>lineColor</code>, and the size of the points is specified by <code>ptSize</code>.</p>
+</dd></dl>
+</body>
+</html>

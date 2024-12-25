@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteDivisor</title>
+</head>
+<body>
+<h1>FiniteDivisor(F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/divisor.spad#L805">divisor.spad line 805</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/divisor.spad#L805">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : <a href="FunctionFieldCategory.html">FunctionFieldCategory</a>(F, UP, UPUP)</ul>
+<p>
+This domains implements finite rational divisors on a curve, that is finite formal sums SUM(<code>n</code> * <code>P</code>) where the <code>n</code><code>'s</code> are integers and the <code>P</code><code>'s</code> are finite rational points on the curve.</p>
+<a name="f__42"></a><dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_decompose"></a><dl><dt><a href="FiniteDivisorCategory.html#f_decompose">decompose</a> : % -&gt Record(id : <a href="FractionalIdeal.html">FractionalIdeal</a>(UP, <a href="Fraction.html">Fraction</a>(UP), UPUP, R), principalPart : R)</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<a name="f_divisor"></a><dl><dt><a href="FiniteDivisorCategory.html#f_divisor">divisor</a> : (F, F) -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<dl><dt><a href="FiniteDivisorCategory.html#f_divisor">divisor</a> : (F, F, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<dl><dt><a href="FiniteDivisorCategory.html#f_divisor">divisor</a> : R -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<dl><dt><a href="FiniteDivisorCategory.html#f_divisor">divisor</a> : (R, UP, UP) -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<dl><dt><a href="FiniteDivisorCategory.html#f_divisor">divisor</a> : (R, UP, UP, UP, F) -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<dl><dt><a href="FiniteDivisorCategory.html#f_divisor">divisor</a> : <a href="FractionalIdeal.html">FractionalIdeal</a>(UP, <a href="Fraction.html">Fraction</a>(UP), UPUP, R) -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<a name="f_finiteBasis"></a><dl><dt>finiteBasis : % -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>finiteBasis(d)</code> returns a basis for <code>d</code> as a module over  K[x].</p>
+</dd></dl>
+<a name="f_generator"></a><dl><dt><a href="FiniteDivisorCategory.html#f_generator">generator</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<dl><dt><a href="FiniteDivisorCategory.html#f_generator">generator</a> : (%, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(UP)) -&gt Union(R, "failed")</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<a name="f_ideal"></a><dl><dt><a href="FiniteDivisorCategory.html#f_ideal">ideal</a> : % -&gt <a href="FractionalIdeal.html">FractionalIdeal</a>(UP, <a href="Fraction.html">Fraction</a>(UP), UPUP, R)</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<a name="f_lSpaceBasis"></a><dl><dt>lSpaceBasis : % -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>lSpaceBasis(d)</code> returns a basis for <code>L(d) = f | (f) &gt;= -d</code> as a module over <code>K[x]</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_principal_63"></a><dl><dt><a href="FiniteDivisorCategory.html#f_principal_63">principal?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<a name="f_reduce"></a><dl><dt><a href="FiniteDivisorCategory.html#f_reduce">reduce</a> : % -&gt %</dt><dd> from <a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="FiniteDivisorCategory.html">FiniteDivisorCategory</a>(F, UP, UPUP, R)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+</body>
+</html>

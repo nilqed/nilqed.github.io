@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerSparseUnivariatePowerSeries</title>
+</head>
+<body>
+<h1>InnerSparseUnivariatePowerSeries(Coef)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sups.spad#L1">sups.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sups.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="Ring.html">Ring</a></ul>
+<p>
+InnerSparseUnivariatePowerSeries is an internal domain used for creating sparse Taylor and Laurent series.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, Coef) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(Coef)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (Coef, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(Coef)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="AbelianMonoidRing.html#f__47">/</a> : (%, Coef) -&gt % if Coef has <a href="Field.html">Field</a></dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="DifferentialRing.html#f_D">D</a> : % -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_D">D</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_approximate"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_approximate">approximate</a> : (%, <a href="Integer.html">Integer</a>) -&gt Coef if Coef has coerce : <a href="Symbol.html">Symbol</a> -&gt Coef and Coef has ^ : (Coef, <a href="Integer.html">Integer</a>) -&gt Coef</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_cAcos"></a><dl><dt>cAcos : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAcos(f)</code> computes the arccosine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAcosh"></a><dl><dt>cAcosh : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAcosh(f)</code> computes the inverse hyperbolic cosine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAcot"></a><dl><dt>cAcot : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAcot(f)</code> computes the arccotangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAcoth"></a><dl><dt>cAcoth : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAcoth(f)</code> computes the inverse hyperbolic cotangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAcsc"></a><dl><dt>cAcsc : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAcsc(f)</code> computes the arccosecant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAcsch"></a><dl><dt>cAcsch : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAcsch(f)</code> computes the inverse hyperbolic cosecant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAsec"></a><dl><dt>cAsec : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAsec(f)</code> computes the arcsecant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAsech"></a><dl><dt>cAsech : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAsech(f)</code> computes the inverse hyperbolic secant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAsin"></a><dl><dt>cAsin : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAsin(f)</code> computes the arcsine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAsinh"></a><dl><dt>cAsinh : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAsinh(f)</code> computes the inverse hyperbolic sine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAtan"></a><dl><dt>cAtan : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAtan(f)</code> computes the arctangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cAtanh"></a><dl><dt>cAtanh : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cAtanh(f)</code> computes the inverse hyperbolic tangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cCos"></a><dl><dt>cCos : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cCos(f)</code> computes the cosine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cCosh"></a><dl><dt>cCosh : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cCosh(f)</code> computes the hyperbolic cosine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cCot"></a><dl><dt>cCot : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cCot(f)</code> computes the cotangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cCoth"></a><dl><dt>cCoth : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cCoth(f)</code> computes the hyperbolic cotangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cCsc"></a><dl><dt>cCsc : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cCsc(f)</code> computes the cosecant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cCsch"></a><dl><dt>cCsch : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cCsch(f)</code> computes the hyperbolic cosecant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cExp"></a><dl><dt>cExp : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cExp(f)</code> computes the exponential of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cLog"></a><dl><dt>cLog : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cLog(f)</code> computes the logarithm of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cPower"></a><dl><dt>cPower : (%, Coef) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cPower(f, r)</code> computes <code>f^r</code>, where <code>f</code> has constant coefficient 1. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cRationalPower"></a><dl><dt>cRationalPower : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cRationalPower(f, r)</code> computes <code>f^r</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cSec"></a><dl><dt>cSec : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cSec(f)</code> computes the secant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cSech"></a><dl><dt>cSech : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cSech(f)</code> computes the hyperbolic secant of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cSin"></a><dl><dt>cSin : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cSin(f)</code> computes the sine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cSinh"></a><dl><dt>cSinh : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cSinh(f)</code> computes the hyperbolic sine of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cTan"></a><dl><dt>cTan : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cTan(f)</code> computes the tangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_cTanh"></a><dl><dt>cTanh : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cTanh(f)</code> computes the hyperbolic tangent of the power series <code>f</code>. For use when the coefficient ring is commutative.</p>
+</dd></dl>
+<a name="f_center"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_center">center</a> : % -&gt Coef</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if Coef has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="AbelianMonoidRing.html#f_coefficient">coefficient</a> : (%, <a href="Integer.html">Integer</a>) -&gt Coef</dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt % if Coef has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : Coef -&gt % if Coef has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="Algebra.html">Algebra</a>(Coef)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_complete"></a><dl><dt><a href="PowerSeriesCategory.html#f_complete">complete</a> : % -&gt %</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="PowerSeriesCategory.html#f_degree">degree</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : % -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if Coef has * : (<a href="Integer.html">Integer</a>, Coef) -&gt Coef and Coef has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, %) -&gt %</dt><dd> from <a href="Eltable.html">Eltable</a>(%, %)</dd></dl>
+<dl><dt><a href="UnivariatePowerSeriesCategory.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>) -&gt Coef</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_eval">eval</a> : (%, Coef) -&gt <a href="Stream.html">Stream</a>(Coef) if Coef has ^ : (Coef, <a href="Integer.html">Integer</a>) -&gt Coef</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extend"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_extend">extend</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_getRef"></a><dl><dt>getRef : % -&gt <a href="Reference.html">Reference</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>getRef(f)</code> returns a reference containing the order to which the terms of <code>f</code> have been computed.</p>
+</dd></dl>
+<a name="f_getStream"></a><dl><dt>getStream : % -&gt <a href="Stream.html">Stream</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef))</dt><dd><p>
+<code>getStream(f)</code> returns the stream of terms representing the series <code>f</code>.</p>
+</dd></dl>
+<a name="f_iCompose"></a><dl><dt>iCompose : (%, %) -&gt %</dt><dd><p>
+<code>iCompose(f, g)</code> returns <code>f(g(x))</code>. This is an internal function which should only be called for Taylor series <code>f(x)</code> and <code>g(x)</code> such that the constant coefficient of <code>g(x)</code> is zero.</p>
+</dd></dl>
+<a name="f_iExquo"></a><dl><dt>iExquo : (%, %, <a href="Boolean.html">Boolean</a>) -&gt Union(%, "failed")</dt><dd><p>
+<code>iExquo(f, g, taylor?)</code> is the quotient of the power series <code>f</code> and <code>g</code>. If <code>taylor?</code> is <code>true</code>, then we must have <code>order(f) &gt;= order(g)</code>.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>integrate(f(x))</code> returns an anti-derivative of the power series <code>f(x)</code> with constant coefficient 0. Warning: function does not check for a term of degree <code>-1</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="PowerSeriesCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt Coef</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="PowerSeriesCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt %</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : <a href="Integer.html">Integer</a>, c : Coef)</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_makeSeries"></a><dl><dt>makeSeries : (<a href="Reference.html">Reference</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Integer.html">Integer</a>)), <a href="Stream.html">Stream</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef))) -&gt %</dt><dd><p>
+<code>makeSeries(refer, str)</code> creates a power series from the reference <code>refer</code> and the stream <code>str</code>.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(Coef, Coef), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (Coef, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt>monomial? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>monomial?(f)</code> tests if <code>f</code> is a single monomial.</p>
+</dd></dl>
+<a name="f_multiplyCoefficients"></a><dl><dt>multiplyCoefficients : (Mapping(Coef, <a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>multiplyCoefficients(fn, f)</code> returns the series <code>sum(fn(n) * an * x^n, n = n0..)</code>, where <code>f</code> is the series <code>sum(an * x^n, n = n0..)</code>.</p>
+</dd></dl>
+<a name="f_multiplyExponents"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_multiplyExponents">multiplyExponents</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_order">order</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="UnivariatePowerSeriesCategory.html#f_order">order</a> : (%, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if Coef has <a href="CommutativeRing.html">CommutativeRing</a> or Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(Coef)</dd></dl>
+<a name="f_pole_63"></a><dl><dt><a href="PowerSeriesCategory.html#f_pole_63">pole?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_series"></a><dl><dt>series : <a href="Stream.html">Stream</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef)) -&gt %</dt><dd><p>
+<code>series(st)</code> creates a series from a stream of non-zero terms, where a term is an exponent-coefficient pair. The terms in the stream should be ordered by increasing order of exponents.</p>
+</dd></dl>
+<a name="f_seriesToOutputForm"></a><dl><dt>seriesToOutputForm : (<a href="Stream.html">Stream</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef)), <a href="Reference.html">Reference</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Integer.html">Integer</a>)), <a href="Symbol.html">Symbol</a>, Coef, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>seriesToOutputForm(st, refer, var, cen, r)</code> prints the series <code>f((var - cen)^r)</code>.</p>
+</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_taylorQuoByVar"></a><dl><dt>taylorQuoByVar : % -&gt %</dt><dd><p>
+<code>taylorQuoByVar(a0 + a1 x + a2 x^2 + ...)</code> returns <code>a1 + a2 x + a3 x^2 + ...</code></p>
+</dd></dl>
+<a name="f_terms"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_terms">terms</a> : % -&gt <a href="Stream.html">Stream</a>(Record(k : <a href="Integer.html">Integer</a>, c : Coef))</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_truncate"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_truncate">truncate</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="UnivariatePowerSeriesCategory.html#f_truncate">truncate</a> : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_variable"></a><dl><dt><a href="UnivariatePowerSeriesCategory.html#f_variable">variable</a> : % -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(Coef)
+<p><a href="Module.html">Module</a>(Coef)
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coef, <a href="Integer.html">Integer</a>)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="Rng.html">Rng</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="RightModule.html">RightModule</a>(Coef)
+<p><a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="Integer.html">Integer</a>)
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(Coef)
+<p><a href="Magma.html">Magma</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="UnivariatePowerSeriesCategory.html">UnivariatePowerSeriesCategory</a>(Coef, <a href="Integer.html">Integer</a>)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="DifferentialRing.html">DifferentialRing</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="Eltable.html">Eltable</a>(%, %)
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="BiModule.html">BiModule</a>(Coef, Coef)
+<p><a href="LeftModule.html">LeftModule</a>(Coef)
+<p><a href="Module.html">Module</a>(%)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Algebra.html">Algebra</a>(Coef)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+</body>
+</html>

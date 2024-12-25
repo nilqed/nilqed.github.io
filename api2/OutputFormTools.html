@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OutputFormTools</title>
+</head>
+<body>
+<h1>OutputFormTools</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/outform2.spad#L13">outform2.spad line 13</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/outform2.spad#L13">[edit on github]</a></p>
+<p>
+This package implements tools form handling OutputForm</p>
+<a name="f_arguments"></a><dl><dt>arguments : <a href="OutputForm.html">OutputForm</a> -&gt <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd><p>
+<code>arguments(f)</code> gives arguments of form <code>f</code>. Valid only when atom?(<code>f</code>) is <code>false</code></p>
+</dd></dl>
+<a name="f_atom_63"></a><dl><dt>atom? : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>atom?(f)</code> checks if form <code>f</code> is atomic, <code>false</code> means composite</p>
+</dd></dl>
+<a name="f_atom_95to_95string"></a><dl><dt>atom_to_string : <a href="OutputForm.html">OutputForm</a> -&gt <a href="String.html">String</a></dt><dd><p>
+<code>atom_to_string(f)</code> converts <code>f</code> to string form.</p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : (<a href="OutputForm.html">OutputForm</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>construct(op, la)</code> creates OutputForm with operator <code>op</code> and arguments la</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty?(f)</code> checks if form <code>f</code> is empty.</p>
+</dd></dl>
+<a name="f_has_95op_63"></a><dl><dt>has_op? : (<a href="OutputForm.html">OutputForm</a>, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>has_op?(f, s)</code> returns <code>true</code> is <code>f</code> is a composite from with operator <code>s</code>, otherwise returns <code>false</code></p>
+</dd></dl>
+<a name="f_integer"></a><dl><dt>integer : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>integer(f)</code> gives integer corresponding to <code>f</code>. Valid only when integer?(<code>f</code>) is <code>true</code></p>
+</dd></dl>
+<a name="f_integer_63"></a><dl><dt>integer? : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>integer?(f)</code> checks if <code>f</code> is an integer, this implies atom?(<code>f</code>)</p>
+</dd></dl>
+<a name="f_is_95symbol_63"></a><dl><dt>is_symbol? : (<a href="OutputForm.html">OutputForm</a>, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is_symbol?(f, s)</code> returns <code>true</code> if form is symbol <code>s</code>, otherwise returns <code>false</code></p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="OutputForm.html">OutputForm</a> -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>operator(f)</code> gives operator (head) of form <code>f</code>. Valid only when atom?(<code>f</code>) is <code>false</code></p>
+</dd></dl>
+<a name="f_precondition"></a><dl><dt>precondition : <a href="OutputForm.html">OutputForm</a> -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>precondition(f)</code> prepares form for formatting.</p>
+</dd></dl>
+<a name="f_string"></a><dl><dt>string : <a href="OutputForm.html">OutputForm</a> -&gt <a href="String.html">String</a></dt><dd><p>
+<code>string(f)</code> gives string corresponding to <code>f</code>. Valid only when string?(<code>f</code>) is <code>true</code></p>
+</dd></dl>
+<a name="f_string_63"></a><dl><dt>string? : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>string?(f)</code> checks if <code>f</code> is a string, this implies atom?(<code>f</code>)</p>
+</dd></dl>
+<a name="f_symbol"></a><dl><dt>symbol : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>symbol(f)</code> gives symbol corresponding to <code>f</code>. Valid only when symbol?(<code>f</code>) is <code>true</code></p>
+</dd></dl>
+<a name="f_symbol_63"></a><dl><dt>symbol? : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>symbol?(f)</code> checks if <code>f</code> is a symbol, this implies atom?(<code>f</code>)</p>
+</dd></dl>
+</body>
+</html>

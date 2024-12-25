@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularEvaluationCategory</title>
+</head>
+<body>
+<h1>ModularEvaluationCategory(PT, MP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/evalut.spad#L177">evalut.spad line 177</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/evalut.spad#L177">[edit on github]</a></p>
+<ul>
+<li>PT : <a href="Type.html">Type</a><li>MP : <a href="Type.html">Type</a></ul>
+<p>
+ModularEvaluationCategory(<code>PT</code>, <code>MP</code>) defines interface to evaluation functions for <code>ModularAlgebraicGcd2</code>.</p>
+<a name="f_degree"></a><dl><dt>degree : (MP, <a href="Symbol.html">Symbol</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>degree(p, v)</code> computes degree of <code>p</code> with respect to <code>v</code>.</p>
+</dd></dl>
+<a name="f_eval1"></a><dl><dt>eval1 : (MP, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, Record(prime : <a href="Integer.html">Integer</a>, eval1coeffbuf : <a href="U32Vector.html">U32Vector</a>, eval1expbuf : <a href="SortedExponentVector.html">SortedExponentVector</a>)) -&gt Union(MP, "failed")</dt><dd><p>
+<code>eval1(p, v, r, pss)</code> evaluates <code>p</code> with respect to single variable <code>v</code> at <code>r</code>. <code>pss</code> is global state.</p>
+</dd></dl>
+<a name="f_ldegree"></a><dl><dt>ldegree : (PT, <a href="Symbol.html">Symbol</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>ldegree(p, v)</code> computes degree of <code>p</code> with respect to <code>v</code>. <code>v</code> must be one of auxiliary variables and must be lexicographically first variable which appears in <code>p</code>. Moreover, <code>p</code> must be a polynomial in <code>v</code> (not a rational function).</p>
+</dd></dl>
+<a name="f_modpreduction"></a><dl><dt>modpreduction : (MP, <a href="Integer.html">Integer</a>) -&gt Union(MP, "failed")</dt><dd><p>
+<code>modpreduction(p, q)</code> reduces all coefficients of <code>p</code> modulo <code>q</code>.</p>
+</dd></dl>
+<a name="f_subst_95vars"></a><dl><dt>subst_vars : (PT, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt MP</dt><dd><p>
+<code>subst_vars(p, lv1, lv2)</code> substitutes variables from list <code>lv2</code> for corresponding variables from <code>lv1</code>.</p>
+</dd></dl>
+<a name="f_trial_95division"></a><dl><dt>trial_division : (MP, <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(MP), <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>trial_division(p, q, lm, v, lz)</code> checks if <code>p</code> is divisible by <code>q</code>. <code>lm</code> is a list of defining equations for algebraic parameters, <code>v</code> is main variable, <code>lz</code> is the list of algebraic parameters.</p>
+</dd></dl>
+</body>
+</html>

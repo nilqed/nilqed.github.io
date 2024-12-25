@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OutputForm</title>
+</head>
+<body>
+<h1>OutputForm</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/outform.spad#L190">outform.spad line 190</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/outform.spad#L190">[edit on github]</a></p>
+<p>
+This domain is used to create and manipulate mathematical expressions for output. It is intended to provide an insulating layer between the expression rendering software (e.g. TeX, or Script) and the output coercions in the various domains.</p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>f * g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>f + g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : % -&gt %</dt><dd><p>
+<code>- f</code> creates the equivalent prefix form.</p>
+</dd></dl>
+<dl><dt>- : (%, %) -&gt %</dt><dd><p>
+<code>f - g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (%, %) -&gt %</dt><dd><p>
+<code>f / g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__60"></a><dl><dt>&lt; : (%, %) -&gt %</dt><dd><p>
+<code>f &lt; g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__60_61"></a><dl><dt>&lt;= : (%, %) -&gt %</dt><dd><p>
+<code>f &lt;= g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt %</dt><dd><p>
+<code>f = g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt>&gt; : (%, %) -&gt %</dt><dd><p>
+<code>f &gt; g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f__62_61"></a><dl><dt>&gt;= : (%, %) -&gt %</dt><dd><p>
+<code>f &gt;= g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_SEGMENT"></a><dl><dt>SEGMENT : % -&gt %</dt><dd><p>
+<code>SEGMENT(x)</code> creates the prefix form: <code>x..</code>.</p>
+</dd></dl>
+<dl><dt>SEGMENT : (%, %) -&gt %</dt><dd><p>
+<code>SEGMENT(x, y)</code> creates the infix form: <code>x..y</code>.</p>
+</dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, %) -&gt %</dt><dd><p>
+<code>f ^ g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_and"></a><dl><dt>and : (%, %) -&gt %</dt><dd><p>
+<code>f and g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_assign"></a><dl><dt>assign : (%, %) -&gt %</dt><dd><p>
+<code>assign(f, g)</code> creates a form for the assignment <code>f := g</code>.</p>
+</dd></dl>
+<a name="f_binomial"></a><dl><dt>binomial : (%, %) -&gt %</dt><dd><p>
+<code>binomial(n, m)</code> creates a form for the binomial coefficient of <code>n</code> and <code>m</code>.</p>
+</dd></dl>
+<a name="f_blankSeparate"></a><dl><dt>blankSeparate : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>blankSeparate(l)</code> creates the form separating the elements of <code>l</code> by blanks.</p>
+</dd></dl>
+<a name="f_box"></a><dl><dt>box : % -&gt %</dt><dd><p>
+<code>box(f)</code> encloses <code>f</code> in a box.</p>
+</dd></dl>
+<a name="f_brace"></a><dl><dt>brace : % -&gt %</dt><dd><p>
+<code>brace(f)</code> creates the form enclosing <code>f</code> in braces (curly brackets).</p>
+</dd></dl>
+<dl><dt>brace : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>brace(lf)</code> creates the form separating the elements of <code>lf</code> by commas and encloses the result in curly brackets.</p>
+</dd></dl>
+<a name="f_bracket"></a><dl><dt>bracket : % -&gt %</dt><dd><p>
+<code>bracket(f)</code> creates the form enclosing <code>f</code> in square brackets.</p>
+</dd></dl>
+<dl><dt>bracket : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>bracket(lf)</code> creates the form separating the elements of <code>lf</code> by commas and encloses the result in square brackets.</p>
+</dd></dl>
+<a name="f_center"></a><dl><dt>center : % -&gt %</dt><dd><p>
+<code>center(f)</code> centers form <code>f</code> in total space.</p>
+</dd></dl>
+<dl><dt>center : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>center(f, n)</code> centers form <code>f</code> within space of width <code>n</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commaSeparate"></a><dl><dt>commaSeparate : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>commaSeparate(l)</code> creates the form separating the elements of <code>l</code> by commas.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_differentiate"></a><dl><dt>differentiate : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>differentiate(f, n)</code> creates a form for the <code>n</code>th derivative of <code>f</code>, e.g. <code>f'</code>, <code>f''</code>, <code>f'''</code>, <code>"f</code> super <code>iv</code>".</p>
+</dd></dl>
+<a name="f_dot"></a><dl><dt>dot : % -&gt %</dt><dd><p>
+<code>dot(f)</code> creates the form with one dot overhead.</p>
+</dd></dl>
+<dl><dt>dot : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>dot(f, n)</code> creates the form <code>f</code> with <code>n</code> dots overhead.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>elt(op, l)</code> creates a form for application of <code>op</code> to list of arguments <code>l</code>.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : () -&gt %</dt><dd><p>
+<code>empty()</code> creates an empty form.</p>
+</dd></dl>
+<a name="f_exquo"></a><dl><dt>exquo : (%, %) -&gt %</dt><dd><p>
+<code>exquo(f, g)</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_hconcat"></a><dl><dt>hconcat : (%, %) -&gt %</dt><dd><p>
+<code>hconcat(f, g)</code> horizontally concatenate forms <code>f</code> and <code>g</code>.</p>
+</dd></dl>
+<dl><dt>hconcat : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>hconcat(u)</code> horizontally concatenates all forms in list <code>u</code>.</p>
+</dd></dl>
+<a name="f_hspace"></a><dl><dt>hspace : <a href="Integer.html">Integer</a> -&gt %</dt><dd><p>
+<code>hspace(n)</code> creates white space of width <code>n</code>.</p>
+</dd></dl>
+<a name="f_infix"></a><dl><dt>infix : (%, %, %) -&gt %</dt><dd><p>
+<code>infix(op, a, b)</code> creates a form which prints as: a <code>op</code> <code>b</code>.</p>
+</dd></dl>
+<dl><dt>infix : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>infix(f, l)</code> creates a form depicting the <code>n</code>-ary application of infix operation <code>f</code> to a tuple of arguments <code>l</code>.</p>
+</dd></dl>
+<a name="f_infix_63"></a><dl><dt>infix? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>infix?(op)</code> returns <code>true</code> if <code>op</code> is an infix operator, and <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_int"></a><dl><dt>int : % -&gt %</dt><dd><p>
+<code>int(expr)</code> creates the form prefixing <code>expr</code> with an integral sign.</p>
+</dd></dl>
+<dl><dt>int : (%, %) -&gt %</dt><dd><p>
+<code>int(expr, lowerlimit)</code> creates the form prefixing <code>expr</code> by an integral sign with a lowerlimit.</p>
+</dd></dl>
+<dl><dt>int : (%, %, %) -&gt %</dt><dd><p>
+<code>int(expr, lowerlimit, upperlimit)</code> creates the form prefixing <code>expr</code> by an integral sign with both a <code>lowerlimit</code> and upperlimit.</p>
+</dd></dl>
+<a name="f_label"></a><dl><dt>label : (%, %) -&gt %</dt><dd><p>
+<code>label(n, f)</code> gives form <code>f</code> an equation label <code>n</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_left"></a><dl><dt>left : % -&gt %</dt><dd><p>
+<code>left(f)</code> left-justifies form <code>f</code> in total space.</p>
+</dd></dl>
+<dl><dt>left : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>left(f, n)</code> left-justifies form <code>f</code> within space of width <code>n</code>.</p>
+</dd></dl>
+<a name="f_matrix"></a><dl><dt>matrix : <a href="List.html">List</a>(<a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>matrix(llf)</code> makes <code>llf</code> (a list of lists of forms) into a form which displays as a matrix.</p>
+</dd></dl>
+<a name="f_message"></a><dl><dt>message : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>message(s)</code> creates an form with no string quotes from string <code>s</code>.</p>
+</dd></dl>
+<a name="f_messagePrint"></a><dl><dt>messagePrint : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>messagePrint(s)</code> prints <code>s</code> without string quotes. Note: <code>messagePrint(s)</code> is equivalent to <code>print message(s)</code>.</p>
+</dd></dl>
+<a name="f_not"></a><dl><dt>not : % -&gt %</dt><dd><p>
+<code>not f</code> creates the equivalent prefix form.</p>
+</dd></dl>
+<a name="f_or"></a><dl><dt>or : (%, %) -&gt %</dt><dd><p>
+<code>f or g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_outputForm"></a><dl><dt>outputForm : <a href="Integer.html">Integer</a> -&gt %</dt><dd><p>
+<code>outputForm(n)</code> creates a form for an integer.</p>
+</dd></dl>
+<dl><dt>outputForm : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>outputForm(s)</code> creates a form for a string.</p>
+</dd></dl>
+<dl><dt>outputForm : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>outputForm(s)</code> creates a form for a symbol.</p>
+</dd></dl>
+<a name="f_over"></a><dl><dt>over : (%, %) -&gt %</dt><dd><p>
+<code>over(f, g)</code> creates a form for the vertical fraction of <code>f</code> over <code>g</code>.</p>
+</dd></dl>
+<a name="f_overbar"></a><dl><dt>overbar : % -&gt %</dt><dd><p>
+<code>overbar(f)</code> creates the form <code>f</code> with an overbar.</p>
+</dd></dl>
+<a name="f_overlabel"></a><dl><dt>overlabel : (%, %) -&gt %</dt><dd><p>
+<code>overlabel(x,f)</code> creates the form <code>f</code> with <code>"x</code> overbar" over the top.</p>
+</dd></dl>
+<a name="f_paren"></a><dl><dt>paren : % -&gt %</dt><dd><p>
+<code>paren(f)</code> creates the form enclosing <code>f</code> in parentheses.</p>
+</dd></dl>
+<dl><dt>paren : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>paren(lf)</code> creates the form separating the elements of <code>lf</code> by commas and encloses the result in parentheses.</p>
+</dd></dl>
+<a name="f_pile"></a><dl><dt>pile : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>pile(l)</code> creates the form consisting of the elements of <code>l</code> which displays as a pile, i.e. the elements begin on a new line and are indented right to the same margin.</p>
+</dd></dl>
+<a name="f_postfix"></a><dl><dt>postfix : (%, %) -&gt %</dt><dd><p>
+<code>postfix(op, a)</code> creates a form which prints as: a <code>op</code>.</p>
+</dd></dl>
+<a name="f_prefix"></a><dl><dt>prefix : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>prefix(f, l)</code> creates a form depicting the <code>n</code>-ary prefix application of <code>f</code> to a tuple of arguments given by list <code>l</code>.</p>
+</dd></dl>
+<a name="f_presub"></a><dl><dt>presub : (%, %) -&gt %</dt><dd><p>
+<code>presub(f, n)</code> creates a form for <code>f</code> presubscripted by <code>n</code>.</p>
+</dd></dl>
+<a name="f_presuper"></a><dl><dt>presuper : (%, %) -&gt %</dt><dd><p>
+<code>presuper(f, n)</code> creates a form for <code>f</code> presuperscripted by <code>n</code>.</p>
+</dd></dl>
+<a name="f_prime"></a><dl><dt>prime : % -&gt %</dt><dd><p>
+<code>prime(f)</code> creates the form <code>f</code> followed by a suffix prime (single quote).</p>
+</dd></dl>
+<dl><dt>prime : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>prime(f, n)</code> creates the form <code>f</code> followed by <code>n</code> primes.</p>
+</dd></dl>
+<a name="f_print"></a><dl><dt>print : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>print(u)</code> prints the form <code>u</code>.</p>
+</dd></dl>
+<a name="f_prod"></a><dl><dt>prod : % -&gt %</dt><dd><p>
+<code>prod(expr)</code> creates the form prefixing <code>expr</code> by a capital <code>pi</code>.</p>
+</dd></dl>
+<dl><dt>prod : (%, %) -&gt %</dt><dd><p>
+<code>prod(expr, lowerlimit)</code> creates the form prefixing <code>expr</code> by a capital <code>pi</code> with a lowerlimit.</p>
+</dd></dl>
+<dl><dt>prod : (%, %, %) -&gt %</dt><dd><p>
+<code>prod(expr, lowerlimit, upperlimit)</code> creates the form prefixing <code>expr</code> by a capital <code>pi</code> with both a <code>lowerlimit</code> and upperlimit.</p>
+</dd></dl>
+<a name="f_quo"></a><dl><dt>quo : (%, %) -&gt %</dt><dd><p>
+<code>f quo g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_quote"></a><dl><dt>quote : % -&gt %</dt><dd><p>
+<code>quote(f)</code> creates the form <code>f</code> with a prefix quote.</p>
+</dd></dl>
+<a name="f_rarrow"></a><dl><dt>rarrow : (%, %) -&gt %</dt><dd><p>
+<code>rarrow(f, g)</code> creates a form for the mapping <code>f -&gt; g</code>.</p>
+</dd></dl>
+<a name="f_rem"></a><dl><dt>rem : (%, %) -&gt %</dt><dd><p>
+<code>f rem g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<a name="f_right"></a><dl><dt>right : % -&gt %</dt><dd><p>
+<code>right(f)</code> right-justifies form <code>f</code> in total space.</p>
+</dd></dl>
+<dl><dt>right : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>right(f, n)</code> right-justifies form <code>f</code> within space of width <code>n</code>.</p>
+</dd></dl>
+<a name="f_root"></a><dl><dt>root : % -&gt %</dt><dd><p>
+<code>root(f)</code> creates a form for the square root of form <code>f</code>.</p>
+</dd></dl>
+<dl><dt>root : (%, %) -&gt %</dt><dd><p>
+<code>root(f, n)</code> creates a form for the <code>n</code>th root of form <code>f</code>.</p>
+</dd></dl>
+<a name="f_rspace"></a><dl><dt>rspace : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>rspace(n, m)</code> creates rectangular white space, <code>n</code> wide by <code>m</code> high.</p>
+</dd></dl>
+<a name="f_scripts"></a><dl><dt>scripts : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>scripts(f, l)</code> where <code>l</code> is <code>[sub, super, presuper, presub]</code> creates a form for <code>f</code> with scripts on all 4 corners. If <code>l</code> has less than 4 elements corresponding scripts are absent.</p>
+</dd></dl>
+<a name="f_semicolonSeparate"></a><dl><dt>semicolonSeparate : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>semicolonSeparate(l)</code> creates the form separating the elements of <code>l</code> by semicolons.</p>
+</dd></dl>
+<a name="f_slash"></a><dl><dt>slash : (%, %) -&gt %</dt><dd><p>
+<code>slash(f, g)</code> creates a form for the horizontal fraction of <code>f</code> over <code>g</code>.</p>
+</dd></dl>
+<a name="f_sub"></a><dl><dt>sub : (%, %) -&gt %</dt><dd><p>
+<code>sub(f, n)</code> creates a form for <code>f</code> subscripted by <code>n</code>.</p>
+</dd></dl>
+<a name="f_sum"></a><dl><dt>sum : % -&gt %</dt><dd><p>
+<code>sum(expr)</code> creates the form prefixing <code>expr</code> by a capital sigma.</p>
+</dd></dl>
+<dl><dt>sum : (%, %) -&gt %</dt><dd><p>
+<code>sum(expr, lowerlimit)</code> creates the form prefixing <code>expr</code> by a capital sigma with a lowerlimit.</p>
+</dd></dl>
+<dl><dt>sum : (%, %, %) -&gt %</dt><dd><p>
+<code>sum(expr, lowerlimit, upperlimit)</code> creates the form prefixing <code>expr</code> by a capital sigma with both a <code>lowerlimit</code> and upperlimit.</p>
+</dd></dl>
+<a name="f_super"></a><dl><dt>super : (%, %) -&gt %</dt><dd><p>
+<code>super(f, n)</code> creates a form for <code>f</code> superscripted by <code>n</code>.</p>
+</dd></dl>
+<a name="f_supersub"></a><dl><dt>supersub : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>supersub(a, [sub1, super1, sub2, super2, ...])</code> creates a form with each subscript aligned under each superscript.</p>
+</dd></dl>
+<a name="f_tensor"></a><dl><dt>tensor : (%, %) -&gt %</dt><dd><p>
+<code>tensor(a, b)</code> creates a form for a tensor <code>b</code></p>
+</dd></dl>
+<a name="f_vconcat"></a><dl><dt>vconcat : (%, %) -&gt %</dt><dd><p>
+<code>vconcat(f, g)</code> vertically concatenates forms <code>f</code> and <code>g</code>.</p>
+</dd></dl>
+<dl><dt>vconcat : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>vconcat(u)</code> vertically concatenates all forms in list <code>u</code>.</p>
+</dd></dl>
+<a name="f_vspace"></a><dl><dt>vspace : <a href="Integer.html">Integer</a> -&gt %</dt><dd><p>
+<code>vspace(n)</code> creates white space of height <code>n</code>.</p>
+</dd></dl>
+<a name="f_zag"></a><dl><dt>zag : (%, %) -&gt %</dt><dd><p>
+<code>zag(f, g)</code> creates a form for the continued fraction form for <code>f</code> over <code>g</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt>~= : (%, %) -&gt %</dt><dd><p>
+<code>f ~= g</code> creates the equivalent infix form.</p>
+</dd></dl>
+<dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

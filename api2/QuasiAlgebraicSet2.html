@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>QuasiAlgebraicSet2</title>
+</head>
+<body>
+<h1>QuasiAlgebraicSet2(vl)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/qalgset.spad#L186">qalgset.spad line 186</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/qalgset.spad#L186">[edit on github]</a></p>
+<ul>
+<li>vl : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+QuasiAlgebraicSet2 adds a function <span class="spadfun">radicalSimplify</span> which uses IdealDecompositionPackage to simplify the representation of a quasi-algebraic set. A quasi-algebraic set is the intersection of a Zariski closed set, defined as the common zeros of a given list of polynomials (the defining polynomials for equations), and a principal Zariski open set, defined as the complement of the common zeros of a polynomial <code>f</code> (the defining polynomial for the inequation). Quasi-algebraic sets are implemented in the domain QuasiAlgebraicSet, where two simplification routines are provided: <span class="spadfun">idealSimplify</span> and <span class="spadfun">simplify</span>. The function <span class="spadfun">radicalSimplify</span> is added for comparison study only. Because the domain IdealDecompositionPackage provides facilities for computing with radical ideals, it is necessary to restrict the ground ring to the domain Fraction Integer, and the polynomial ring to be of type DistributedMultivariatePolynomial. The routine <span class="spadfun">radicalSimplify</span> uses these to compute groebner basis of radical ideals and is inefficient and restricted when compared to the two in QuasiAlgebraicSet.</p>
+<a name="f_radicalSimplify"></a><dl><dt>radicalSimplify : <a href="QuasiAlgebraicSet.html">QuasiAlgebraicSet</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="QuasiAlgebraicSet.html">QuasiAlgebraicSet</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>radicalSimplify(s)</code> returns a different and presumably simpler representation of <code>s</code> with the defining polynomials for the equations forming a groebner basis, and the defining polynomial for the inequation reduced with respect to the basis, using using groebner basis of radical ideals</p>
+</dd></dl>
+</body>
+</html>

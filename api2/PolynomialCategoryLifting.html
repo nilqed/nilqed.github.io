@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialCategoryLifting</title>
+</head>
+<body>
+<h1>PolynomialCategoryLifting(E, Vars, R, P, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/polycat.spad#L727">polycat.spad line 727</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/polycat.spad#L727">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>Vars : <a href="OrderedSet.html">OrderedSet</a><li>R : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, Vars)<li>S :  with
+<p>+ : (%, %) -&gt %<p>* : (%, %) -&gt %<p>^ : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</ul>
+<p>
+This package provides a very general map function, which given a set <code>S</code> and polynomials over <code>R</code> with maps from the variables into <code>S</code> and the coefficients into <code>S</code>, maps polynomials into <code>S</code>. <code>S</code> is assumed to support <code>+</code>, <code>*</code> and <code>^</code>.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, Vars), Mapping(S, R), P) -&gt S</dt><dd><p>
+<code>map(varmap, coefmap, p)</code> takes a <code>varmap</code>, a mapping from the variables of polynomial <code>p</code> into <code>S</code>, <code>coefmap</code>, a mapping from coefficients of <code>p</code> into <code>S</code>, and <code>p</code>, and produces a member of <code>S</code> using the corresponding arithmetic in <code>S</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OrthogonalPolynomialFunctions</title>
+</head>
+<body>
+<h1>OrthogonalPolynomialFunctions(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/special.spad#L120">special.spad line 120</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/special.spad#L120">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+This package provides orthogonal polynomials as functions on a ring.</p>
+<a name="f_chebyshevT"></a><dl><dt>chebyshevT : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>chebyshevT(n, x)</code> is the <code>n</code>-th Chebyshev polynomial of the first kind, <code>T[n](x)</code>. These are defined by <code>(1-t*x)/(1-2*t*x+t^2) = sum(T[n](x) *t^n, n = 0..)</code>.</p>
+</dd></dl>
+<a name="f_chebyshevU"></a><dl><dt>chebyshevU : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>chebyshevU(n, x)</code> is the <code>n</code>-th Chebyshev polynomial of the second kind, <code>U[n](x)</code>. These are defined by <code>1/(1-2*t*x+t^2) = sum(T[n](x) *t^n, n = 0..)</code>.</p>
+</dd></dl>
+<a name="f_hermiteH"></a><dl><dt>hermiteH : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>hermiteH(n, x)</code> is the <code>n</code>-th Hermite polynomial, <code>H[n](x)</code>. These are defined by <code>exp(2*t*x-t^2) = sum(H[n](x)*t^n/n!, n = 0..)</code>.</p>
+</dd></dl>
+<a name="f_laguerreL"></a><dl><dt>laguerreL : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>laguerreL(n, x)</code> is the <code>n</code>-th Laguerre polynomial, <code>L[n](x)</code>. These are defined by <code>exp(-t*x/(1-t))/(1-t) = sum(L[n](x)*t^n/n!, n = 0..)</code>.</p>
+</dd></dl>
+<dl><dt>laguerreL : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>laguerreL(m, n, x)</code> is the associated Laguerre polynomial, <code>L&lt;m&gt;[n](x)</code>. This is the <code>m</code>-th derivative of <code>L[n](x)</code>.</p>
+</dd></dl>
+<a name="f_legendreP"></a><dl><dt>legendreP : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>legendreP(n, x)</code> is the <code>n</code>-th Legendre polynomial, <code>P[n](x)</code>. These are defined by <code>1/sqrt(1-2*x*t+t^2) = sum(P[n](x)*t^n, n = 0..)</code>.</p>
+</dd></dl>
+</body>
+</html>

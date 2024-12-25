@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialRoots</title>
+</head>
+<body>
+<h1>PolynomialRoots(E, V, R, P, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/manip.spad#L39">manip.spad line 39</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/manip.spad#L39">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)<li>F : <a href="Field.html">Field</a> with
+<p>numer : % -&gt P<p>denom : % -&gt P<p>coerce : P -&gt %</ul>
+<p>
+computes <code>n</code>-th roots of quotients of multivariate polynomials</p>
+<a name="f_froot"></a><dl><dt>froot : (F, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, coef : F, radicand : F) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>froot(f, n)</code> returns <code>[m, c, r]</code> such that <code>f^(1/n) = c * r^(1/m)</code>.</p>
+</dd></dl>
+<a name="f_nthr"></a><dl><dt>nthr : (P, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, coef : P, radicand : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>nthr(p, n)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_qroot"></a><dl><dt>qroot : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, coef : F, radicand : F)</dt><dd><p>
+<code>qroot(f, n)</code> returns <code>[m, c, r]</code> such that <code>f^(1/n) = c * r^(1/m)</code>.</p>
+</dd></dl>
+<a name="f_rroot"></a><dl><dt>rroot : (R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, coef : F, radicand : F)</dt><dd><p>
+<code>rroot(f, n)</code> returns <code>[m, c, r]</code> such that <code>f^(1/n) = c * r^(1/m)</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionSpaceComplexIntegration</title>
+</head>
+<body>
+<h1>FunctionSpaceComplexIntegration(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/integrat.spad#L47">integrat.spad line 47</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/integrat.spad#L47">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R))</ul>
+<p>
+FunctionSpaceComplexIntegration provides functions for the indefinite integration of complex-valued functions.</p>
+<a name="f_complexIntegrate"></a><dl><dt>complexIntegrate : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>complexIntegrate(f, x)</code> returns the integral of <code>f(x)dx</code> where <code>x</code> is viewed as a complex variable.</p>
+</dd></dl>
+<a name="f_internalIntegrate"></a><dl><dt>internalIntegrate : (F, <a href="Symbol.html">Symbol</a>) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>internalIntegrate(f, x)</code> returns the integral of <code>f(x)dx</code> where <code>x</code> is viewed as a complex variable.</p>
+</dd></dl>
+<a name="f_internalIntegrate0"></a><dl><dt>internalIntegrate0 : (F, <a href="Symbol.html">Symbol</a>) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>internalIntegrate0 should</code> be a local function, but is conditional.</p>
+</dd></dl>
+</body>
+</html>

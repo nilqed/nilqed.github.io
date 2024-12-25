@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ListToMap</title>
+</head>
+<body>
+<h1>ListToMap(A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/list.spad#L365">list.spad line 365</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/list.spad#L365">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a><li>B : <a href="Type.html">Type</a></ul>
+<p>
+ListToMap allows mappings to be described by a pair of lists of equal lengths. The image of an element <code>x</code>, which appears in position <code>n</code> in the first list, is then the <code>n</code>th element of the second list. A default value or default function can be specified to be used when <code>x</code> does not appear in the first list. In the absence of defaults, an error will occur in that case.</p>
+<a name="f_match"></a><dl><dt>match : (<a href="List.html">List</a>(A), <a href="List.html">List</a>(B), A) -&gt B</dt><dd><p>
+<code>match(la, lb, a)</code> creates a map defined by lists <code>la</code> and <code>lb</code> of equal length, where <code>a</code> is used as the default source value if the given one is not in <code>la</code>. The target of a source value <code>x</code> in <code>la</code> is the value <code>y</code> with the same index in <code>lb</code>. Error: if <code>la</code> and <code>lb</code> are not of equal length.</p>
+</dd></dl>
+<dl><dt>match : (<a href="List.html">List</a>(A), <a href="List.html">List</a>(B), A, B) -&gt B</dt><dd><p>
+<code>match(la, lb, a, b)</code> creates a map defined by lists <code>la</code> and <code>lb</code> of equal length, and applies this map to a. The target of a source value <code>x</code> in <code>la</code> is the value <code>y</code> with the same index in <code>lb</code>. Argument <code>b</code> is the default target value if a is not in <code>la</code>. Error: if <code>la</code> and <code>lb</code> are not of equal length.</p>
+</dd></dl>
+<dl><dt>match : (<a href="List.html">List</a>(A), <a href="List.html">List</a>(B), A, Mapping(B, A)) -&gt B</dt><dd><p>
+<code>match(la, lb, a, f)</code> creates a map defined by lists <code>la</code> and <code>lb</code> of equal length, and applies this map to a. The target of a source value <code>x</code> in <code>la</code> is the value <code>y</code> with the same index in <code>lb</code>. Argument <code>f</code> is a default function to call if a is not in <code>la</code>. The value returned is then obtained by applying <code>f</code> to argument a.</p>
+</dd></dl>
+<dl><dt>match : (<a href="List.html">List</a>(A), <a href="List.html">List</a>(B)) -&gt Mapping(B, A)</dt><dd><p>
+<code>match(la, lb)</code> creates a map with no default source or target values defined by lists <code>la</code> and <code>lb</code> of equal length. The target of a source value <code>x</code> in <code>la</code> is the value <code>y</code> with the same index in <code>lb</code>. Error: if <code>la</code> and <code>lb</code> are not of equal length. Note: when this map is applied, an error occurs when applied to a value missing from <code>la</code>.</p>
+</dd></dl>
+<dl><dt>match : (<a href="List.html">List</a>(A), <a href="List.html">List</a>(B), B) -&gt Mapping(B, A)</dt><dd><p>
+<code>match(la, lb, b)</code> creates a map defined by lists <code>la</code> and <code>lb</code> of equal length, where <code>b</code> is used as the default target value if the given function argument is not in <code>la</code>. The target of a source value <code>x</code> in <code>la</code> is the value <code>y</code> with the same index in <code>lb</code>. Error: if <code>la</code> and <code>lb</code> are not of equal length.</p>
+</dd></dl>
+<dl><dt>match : (<a href="List.html">List</a>(A), <a href="List.html">List</a>(B), Mapping(B, A)) -&gt Mapping(B, A)</dt><dd><p>
+<code>match(la, lb, f)</code> creates a map defined by lists <code>la</code> and <code>lb</code> of equal length. The target of a source value <code>x</code> in <code>la</code> is the value <code>y</code> with the same index in <code>lb</code>. Argument <code>f</code> is used as the function to call when the given function argument is not in <code>la</code>. The value returned is <code>f</code> applied to that argument.</p>
+</dd></dl>
+</body>
+</html>

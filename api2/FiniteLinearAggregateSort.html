@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteLinearAggregateSort</title>
+</head>
+<body>
+<h1>FiniteLinearAggregateSort(S, V)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/defaults.spad#L56">defaults.spad line 56</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/defaults.spad#L56">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a><li>V : Join(<a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(S), <a href="shallowlyMutable.html">shallowlyMutable</a>)</ul>
+<p>
+This package exports 3 sorting algorithms which work over FiniteLinearAggregates.</p>
+<a name="f_heapSort"></a><dl><dt>heapSort : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), V) -&gt V</dt><dd><p>
+<code>heapSort(f, agg)</code> sorts the aggregate agg with the ordering function <code>f</code> using the heapsort algorithm.</p>
+</dd></dl>
+<a name="f_quickSort"></a><dl><dt>quickSort : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), V) -&gt V</dt><dd><p>
+<code>quickSort(f, agg)</code> sorts the aggregate agg with the ordering function <code>f</code> using the quicksort algorithm.</p>
+</dd></dl>
+<a name="f_shellSort"></a><dl><dt>shellSort : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), V) -&gt V</dt><dd><p>
+<code>shellSort(f, agg)</code> sorts the aggregate agg with the ordering function <code>f</code> using the shellSort algorithm.</p>
+</dd></dl>
+</body>
+</html>

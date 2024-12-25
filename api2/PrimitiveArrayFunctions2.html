@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PrimitiveArrayFunctions2</title>
+</head>
+<body>
+<h1>PrimitiveArrayFunctions2(A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/array1.spad#L31">array1.spad line 31</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/array1.spad#L31">[edit on github]</a></p>
+<ul>
+<li>A : <a href="Type.html">Type</a><li>B : <a href="Type.html">Type</a></ul>
+<p>
+This package provides tools for operating on primitive arrays with unary and binary functions involving different underlying types.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(B, A), <a href="PrimitiveArray.html">PrimitiveArray</a>(A)) -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(B)</dt><dd><p>
+<code>map(f, a)</code> applies function <code>f</code> to each member of primitive array <code>a</code> resulting in a new primitive array over a possibly different underlying domain.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(B, A, B), <a href="PrimitiveArray.html">PrimitiveArray</a>(A), B) -&gt B</dt><dd><p>
+<code>reduce(f, a, r)</code> applies function <code>f</code> to each successive element of the primitive array <code>a</code> and an accumulant initialized to <code>r</code>. For example, <code>reduce(_+$Integer, [1, 2, 3], 0)</code> does <code>3+(2+(1+0))</code>. Note: third argument <code>r</code> may be regarded as the identity element for the function <code>f</code>.</p>
+</dd></dl>
+<a name="f_scan"></a><dl><dt>scan : (Mapping(B, A, B), <a href="PrimitiveArray.html">PrimitiveArray</a>(A), B) -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(B)</dt><dd><p>
+<code>scan(f, a, r)</code> successively applies <code>reduce(f, x, r)</code> to more and more leading sub-arrays <code>x</code> of primitive array <code>a</code>. More precisely, if <code>a</code> is <code>[a1, a2, ...]</code>, then <code>scan(f, a, r)</code> returns <code>[reduce(f, [a1], r), reduce(f, [a1, a2], r), ...]</code>.</p>
+</dd></dl>
+</body>
+</html>

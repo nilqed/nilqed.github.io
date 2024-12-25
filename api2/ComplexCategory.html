@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ComplexCategory</title>
+</head>
+<body>
+<h1>ComplexCategory(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/gaussian.spad#L1">gaussian.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/gaussian.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+This category represents the extension of a ring by a square root of <code>-1</code>.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Field.html#f__47">/</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="Field.html">Field</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="DifferentialRing.html#f_D">D</a> : % -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_D">D</a> : (%, Mapping(R, R)) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_D">D</a> : (%, Mapping(R, R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_D">D</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="ElementaryFunctionCategory.html#f__94">^</a> : (%, %) -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<dl><dt><a href="RadicalCategory.html#f__94">^</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="RadicalCategory.html">RadicalCategory</a> and R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<dl><dt><a href="DivisionRing.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_abs"></a><dl><dt>abs : % -&gt % if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd><p>
+<code>abs(x)</code> returns the absolute value of <code>x</code> = sqrt(norm(<code>x</code>)).</p>
+</dd></dl>
+<a name="f_acos"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acos">acos</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acosh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acosh">acosh</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acot"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acot">acot</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acoth"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acoth">acoth</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acsc"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acsc">acsc</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acsch"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acsch">acsch</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_argument"></a><dl><dt>argument : % -&gt R if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd><p>
+<code>argument(x)</code> returns the angle made by (1, 0) and <code>x</code>.</p>
+</dd></dl>
+<a name="f_asec"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asec">asec</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asech"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asech">asech</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_asin"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asin">asin</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asinh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asinh">asinh</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_atan"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_atan">atan</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_atanh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_atanh">atanh</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_basis"></a><dl><dt><a href="FramedModule.html#f_basis">basis</a> : () -&gt <a href="Vector.html">Vector</a>(%)</dt><dd> from <a href="FramedModule.html">FramedModule</a>(R)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_characteristicPolynomial"></a><dl><dt><a href="FiniteRankAlgebra.html#f_characteristicPolynomial">characteristicPolynomial</a> : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="FiniteFieldCategory.html#f_charthRoot">charthRoot</a> : % -&gt % if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if R has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> or % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(R)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) or R has <a href="Field.html">Field</a></dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_complex"></a><dl><dt>complex : (R, R) -&gt %</dt><dd><p>
+<code>complex(x, y)</code> constructs <code>x</code> + %i*y.</p>
+</dd></dl>
+<a name="f_conditionP"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_conditionP">conditionP</a> : <a href="Matrix.html">Matrix</a>(%) -&gt Union(<a href="Vector.html">Vector</a>(%), "failed") if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a> or % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt>conjugate : % -&gt %</dt><dd><p>
+<code>conjugate(x + %i y)</code> returns <code>x</code> - %<code>i</code> <code>y</code>.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="MonogenicAlgebra.html#f_convert">convert</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) -&gt %</dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="FramedModule.html#f_convert">convert</a> : <a href="Vector.html">Vector</a>(R) -&gt %</dt><dd> from <a href="FramedModule.html">FramedModule</a>(R)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>) if R has <a href="RealConstant.html">RealConstant</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if R has <a href="RealConstant.html">RealConstant</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>) if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>) if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="FramedModule.html#f_convert">convert</a> : % -&gt <a href="Vector.html">Vector</a>(R)</dt><dd> from <a href="FramedModule.html">FramedModule</a>(R)</dd></dl>
+<a name="f_coordinates"></a><dl><dt><a href="FramedModule.html#f_coordinates">coordinates</a> : <a href="Vector.html">Vector</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="FramedModule.html">FramedModule</a>(R)</dd></dl>
+<dl><dt><a href="FiniteRankAlgebra.html#f_coordinates">coordinates</a> : (<a href="Vector.html">Vector</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="FramedModule.html#f_coordinates">coordinates</a> : % -&gt <a href="Vector.html">Vector</a>(R)</dt><dd> from <a href="FramedModule.html">FramedModule</a>(R)</dd></dl>
+<dl><dt><a href="FiniteRankAlgebra.html#f_coordinates">coordinates</a> : (%, <a href="Vector.html">Vector</a>(%)) -&gt <a href="Vector.html">Vector</a>(R)</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_cos"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cos">cos</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_cosh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_cosh">cosh</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_cot"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cot">cot</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_coth"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_coth">coth</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_createPrimitiveElement"></a><dl><dt><a href="FiniteFieldCategory.html#f_createPrimitiveElement">createPrimitiveElement</a> : () -&gt % if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_csc"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_csc">csc</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_csch"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_csch">csch</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_definingPolynomial"></a><dl><dt><a href="MonogenicAlgebra.html#f_definingPolynomial">definingPolynomial</a> : () -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_derivationCoordinates"></a><dl><dt><a href="MonogenicAlgebra.html#f_derivationCoordinates">derivationCoordinates</a> : (<a href="Vector.html">Vector</a>(%), Mapping(R, R)) -&gt <a href="Matrix.html">Matrix</a>(R) if R has <a href="Field.html">Field</a></dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : % -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_differentiate">differentiate</a> : (%, Mapping(R, R)) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_differentiate">differentiate</a> : (%, Mapping(R, R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_discreteLog"></a><dl><dt><a href="FiniteFieldCategory.html#f_discreteLog">discreteLog</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<dl><dt><a href="FieldOfPrimeCharacteristic.html#f_discreteLog">discreteLog</a> : (%, %) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed") if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FieldOfPrimeCharacteristic.html">FieldOfPrimeCharacteristic</a></dd></dl>
+<a name="f_discriminant"></a><dl><dt><a href="FramedAlgebra.html#f_discriminant">discriminant</a> : () -&gt R</dt><dd> from <a href="FramedAlgebra.html">FramedAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="FiniteRankAlgebra.html#f_discriminant">discriminant</a> : <a href="Vector.html">Vector</a>(%) -&gt R</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_divide"></a><dl><dt><a href="EuclideanDomain.html#f_divide">divide</a> : (%, %) -&gt Record(quotient : %, remainder : %) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, R) -&gt % if R has <a href="Eltable.html">Eltable</a>(R, R)</dt><dd> from <a href="Eltable.html">Eltable</a>(R, %)</dd></dl>
+<a name="f_enumerate"></a><dl><dt><a href="Finite.html#f_enumerate">enumerate</a> : () -&gt <a href="List.html">List</a>(%) if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_euclideanSize"></a><dl><dt><a href="EuclideanDomain.html#f_euclideanSize">euclideanSize</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(R)) -&gt % if R has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, R) -&gt % if R has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dd></dl>
+<a name="f_exp"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_exp">exp</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_expressIdealMember"></a><dl><dt><a href="PrincipalIdealDomain.html#f_expressIdealMember">expressIdealMember</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed") if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<dl><dt>exquo : (%, R) -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>exquo(x, r)</code> returns the exact quotient of <code>x</code> by <code>r</code>, or "failed" if <code>r</code> does not divide <code>x</code> exactly.</p>
+</dd></dl>
+<a name="f_extendedEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %) -&gt Record(coef1 : %, coef2 : %, generator : %) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %, %) -&gt Union(Record(coef1 : %, coef2 : %), "failed") if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_factor"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_factor">factor</a> : % -&gt <a href="Factored.html">Factored</a>(%) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_factorPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorPolynomial">factorPolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_factorSquareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorSquareFreePolynomial">factorSquareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_factorsOfCyclicGroupSize"></a><dl><dt><a href="FiniteFieldCategory.html#f_factorsOfCyclicGroupSize">factorsOfCyclicGroupSize</a> : () -&gt <a href="List.html">List</a>(Record(factor : <a href="Integer.html">Integer</a>, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)) if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a> or R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt % if R has <a href="Field.html">Field</a> or R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) if R has <a href="Field.html">Field</a> or R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_generator"></a><dl><dt><a href="MonogenicAlgebra.html#f_generator">generator</a> : () -&gt %</dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_imag"></a><dl><dt>imag : % -&gt R</dt><dd><p>
+<code>imag(x)</code> returns imaginary part of <code>x</code>.</p>
+</dd></dl>
+<a name="f_imaginary"></a><dl><dt>imaginary : () -&gt %</dt><dd><p>
+<code>imaginary()</code> = sqrt(<code>-1</code>) = %<code>i</code>.</p>
+</dd></dl>
+<a name="f_index"></a><dl><dt><a href="Finite.html#f_index">index</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt % if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_init"></a><dl><dt><a href="StepThrough.html#f_init">init</a> : () -&gt % if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="StepThrough.html">StepThrough</a></dd></dl>
+<a name="f_inv"></a><dl><dt><a href="DivisionRing.html#f_inv">inv</a> : % -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a> or R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt % if R has <a href="Field.html">Field</a> or R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %) if R has <a href="Field.html">Field</a> or R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_lift"></a><dl><dt><a href="MonogenicAlgebra.html#f_lift">lift</a> : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_log"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_log">log</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_lookup"></a><dl><dt><a href="Finite.html#f_lookup">lookup</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="FullyEvalableOver.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="FullyEvalableOver.html">FullyEvalableOver</a>(R)</dd></dl>
+<a name="f_minimalPolynomial"></a><dl><dt><a href="FiniteRankAlgebra.html#f_minimalPolynomial">minimalPolynomial</a> : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) if R has <a href="Field.html">Field</a></dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_multiEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_multiEuclidean">multiEuclidean</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed") if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_nextItem"></a><dl><dt><a href="StepThrough.html#f_nextItem">nextItem</a> : % -&gt Union(%, "failed") if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="StepThrough.html">StepThrough</a></dd></dl>
+<a name="f_norm"></a><dl><dt>norm : % -&gt R</dt><dd><p>
+<code>norm(x)</code> returns <code>x</code> * conjugate(<code>x</code>)</p>
+</dd></dl>
+<a name="f_nthRoot"></a><dl><dt><a href="RadicalCategory.html#f_nthRoot">nthRoot</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="RadicalCategory.html">RadicalCategory</a> and R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="FieldOfPrimeCharacteristic.html#f_order">order</a> : % -&gt <a href="OnePointCompletion.html">OnePointCompletion</a>(<a href="PositiveInteger.html">PositiveInteger</a>) if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FieldOfPrimeCharacteristic.html">FieldOfPrimeCharacteristic</a></dd></dl>
+<dl><dt><a href="FiniteFieldCategory.html#f_order">order</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a> if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_patternMatch"></a><dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %) if R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %) if R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_pi"></a><dl><dt><a href="TranscendentalFunctionCategory.html#f_pi">pi</a> : () -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)</dd></dl>
+<a name="f_polarCoordinates"></a><dl><dt>polarCoordinates : % -&gt Record(r : R, phi : R) if R has <a href="RealNumberSystem.html">RealNumberSystem</a> and R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd><p>
+<code>polarCoordinates(x)</code> returns (<code>r</code>, phi) such that <code>x</code> = <code>r</code> * exp(%<code>i</code> * phi).</p>
+</dd></dl>
+<a name="f_prime_63"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_prime_63">prime?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_primeFrobenius"></a><dl><dt><a href="FieldOfPrimeCharacteristic.html#f_primeFrobenius">primeFrobenius</a> : % -&gt % if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FieldOfPrimeCharacteristic.html">FieldOfPrimeCharacteristic</a></dd></dl>
+<dl><dt><a href="FieldOfPrimeCharacteristic.html#f_primeFrobenius">primeFrobenius</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FieldOfPrimeCharacteristic.html">FieldOfPrimeCharacteristic</a></dd></dl>
+<a name="f_primitive_63"></a><dl><dt><a href="FiniteFieldCategory.html#f_primitive_63">primitive?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_primitiveElement"></a><dl><dt><a href="FiniteFieldCategory.html#f_primitiveElement">primitiveElement</a> : () -&gt % if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_principalIdeal"></a><dl><dt><a href="PrincipalIdealDomain.html#f_principalIdeal">principalIdeal</a> : <a href="List.html">List</a>(%) -&gt Record(coef : <a href="List.html">List</a>(%), generator : %) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_quo"></a><dl><dt><a href="EuclideanDomain.html#f_quo">quo</a> : (%, %) -&gt % if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_random"></a><dl><dt><a href="Finite.html#f_random">random</a> : () -&gt % if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_rank"></a><dl><dt><a href="FiniteRankAlgebra.html#f_rank">rank</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_rational"></a><dl><dt>rational : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>rational(x)</code> returns <code>x</code> as a rational number. Error: if <code>x</code> is not a rational number.</p>
+</dd></dl>
+<a name="f_rational_63"></a><dl><dt>rational? : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>rational?(x)</code> tests if <code>x</code> is a rational number.</p>
+</dd></dl>
+<a name="f_rationalIfCan"></a><dl><dt>rationalIfCan : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>rationalIfCan(x)</code> returns <code>x</code> as a rational number, or "failed" if <code>x</code> is not a rational number.</p>
+</dd></dl>
+<a name="f_real"></a><dl><dt>real : % -&gt R</dt><dd><p>
+<code>real(x)</code> returns real part of <code>x</code>.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reduce"></a><dl><dt><a href="MonogenicAlgebra.html#f_reduce">reduce</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) -&gt %</dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="MonogenicAlgebra.html#f_reduce">reduce</a> : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)) -&gt Union(%, "failed") if R has <a href="Field.html">Field</a></dt><dd> from <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(R), vec : <a href="Vector.html">Vector</a>(R))</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_regularRepresentation"></a><dl><dt><a href="FramedAlgebra.html#f_regularRepresentation">regularRepresentation</a> : % -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="FramedAlgebra.html">FramedAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="FiniteRankAlgebra.html#f_regularRepresentation">regularRepresentation</a> : (%, <a href="Vector.html">Vector</a>(%)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_rem"></a><dl><dt><a href="EuclideanDomain.html#f_rem">rem</a> : (%, %) -&gt % if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_representationType"></a><dl><dt><a href="FiniteFieldCategory.html#f_representationType">representationType</a> : () -&gt Union("prime", "polynomial", "normal", "cyclic") if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_represents"></a><dl><dt><a href="FramedModule.html#f_represents">represents</a> : <a href="Vector.html">Vector</a>(R) -&gt %</dt><dd> from <a href="FramedModule.html">FramedModule</a>(R)</dd></dl>
+<dl><dt><a href="FiniteRankAlgebra.html#f_represents">represents</a> : (<a href="Vector.html">Vector</a>(R), <a href="Vector.html">Vector</a>(%)) -&gt %</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sec"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sec">sec</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sech"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sech">sech</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_sin"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sin">sin</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sinh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sinh">sinh</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_size"></a><dl><dt><a href="Finite.html#f_size">size</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_sizeLess_63"></a><dl><dt><a href="EuclideanDomain.html#f_sizeLess_63">sizeLess?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_solveLinearPolynomialEquation"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_solveLinearPolynomialEquation">solveLinearPolynomialEquation</a> : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), "failed") if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_sqrt"></a><dl><dt><a href="RadicalCategory.html#f_sqrt">sqrt</a> : % -&gt % if R has <a href="RadicalCategory.html">RadicalCategory</a> and R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_squareFree"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFree">squareFree</a> : % -&gt <a href="Factored.html">Factored</a>(%) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_squareFreePart"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFreePart">squareFreePart</a> : % -&gt % if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a> or R has <a href="Field.html">Field</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_squareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_squareFreePolynomial">squareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a> or R has <a href="EuclideanDomain.html">EuclideanDomain</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_tableForDiscreteLogarithm"></a><dl><dt><a href="FiniteFieldCategory.html#f_tableForDiscreteLogarithm">tableForDiscreteLogarithm</a> : <a href="Integer.html">Integer</a> -&gt <a href="Table.html">Table</a>(<a href="PositiveInteger.html">PositiveInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) if R has <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dt><dd> from <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></dd></dl>
+<a name="f_tan"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_tan">tan</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_tanh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_tanh">tanh</a> : % -&gt % if R has <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_trace"></a><dl><dt><a href="FiniteRankAlgebra.html#f_trace">trace</a> : % -&gt R</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_traceMatrix"></a><dl><dt><a href="FramedAlgebra.html#f_traceMatrix">traceMatrix</a> : () -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="FramedAlgebra.html">FramedAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<dl><dt><a href="FiniteRankAlgebra.html#f_traceMatrix">traceMatrix</a> : <a href="Vector.html">Vector</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="Field.html">Field</a>
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(R)
+<p><a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="FiniteRankAlgebra.html">FiniteRankAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="Eltable.html">Eltable</a>(R, %)
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(R)
+<p><a href="Algebra.html">Algebra</a>(R)
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))
+<p><a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="Module.html">Module</a>(R)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a>
+<p><a href="DifferentialRing.html">DifferentialRing</a>
+<p><a href="FieldOfPrimeCharacteristic.html">FieldOfPrimeCharacteristic</a>
+<p><a href="RadicalCategory.html">RadicalCategory</a>
+<p><a href="DivisionRing.html">DivisionRing</a>
+<p><a href="arbitraryPrecision.html">arbitraryPrecision</a>
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="EuclideanDomain.html">EuclideanDomain</a>
+<p><a href="canonicalsClosed.html">canonicalsClosed</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="FramedAlgebra.html">FramedAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="StepThrough.html">StepThrough</a>
+<p><a href="Module.html">Module</a>(%)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="DifferentialExtension.html">DifferentialExtension</a>(R)
+<p><a href="FullyEvalableOver.html">FullyEvalableOver</a>(R)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="Patternable.html">Patternable</a>(R)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>
+<p><a href="FiniteFieldCategory.html">FiniteFieldCategory</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="FramedModule.html">FramedModule</a>(R)
+<p><a href="Finite.html">Finite</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))
+<p><a href="multiplicativeValuation.html">multiplicativeValuation</a>
+<p><a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a>
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="FullyPatternMatchable.html">FullyPatternMatchable</a>(R)
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+</body>
+</html>

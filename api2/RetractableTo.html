@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RetractableTo</title>
+</head>
+<body>
+<h1>RetractableTo(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/coerce.spad#L53">coerce.spad line 53</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/coerce.spad#L53">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+A is retractable to <code>B</code> means that some elements of A can be converted into elements of <code>B</code> and any element of <code>B</code> can be converted into an element of A.</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : S -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(S)</dd></dl>
+<a name="f_retract"></a><dl><dt>retract : % -&gt S</dt><dd><p>
+<code>retract(a)</code> transforms a into an element of <code>S</code> if possible. Error: if a cannot be made into an element of <code>S</code>.</p>
+</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt>retractIfCan : % -&gt Union(S, "failed")</dt><dd><p>
+<code>retractIfCan(a)</code> transforms a into an element of <code>S</code> if possible. Returns "failed" if a cannot be made into an element of <code>S</code>.</p>
+</dd></dl>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+</body>
+</html>

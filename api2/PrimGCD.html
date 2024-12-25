@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PrimGCD</title>
+</head>
+<body>
+<h1>PrimGCD</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/amodgcd.spad#L67">amodgcd.spad line 67</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/amodgcd.spad#L67">[edit on github]</a></p>
+<p>
+This is unfinished package for computing primitive <code>gcd</code> over algebraic extensions.Algebraic extension is defined by list of polynomial forming triangular system. Currently implemented is only trial division.</p>
+<a name="f_alg_95reduce"></a><dl><dt>alg_reduce : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>alg_reduce(x, lm, lv, lz)</code> reduces <code>x</code> modulo elements of <code>lm</code>.</p>
+</dd></dl>
+<a name="f_alg_95reduce0"></a><dl><dt>alg_reduce0 : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Symbol.html">Symbol</a>) -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>alg_reduce0(x, m, lv, z)</code> performs single reduction step.</p>
+</dd></dl>
+<a name="f_alg_95trial_95division"></a><dl><dt>alg_trial_division : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>alg_trial_division(x, y, lm, lv, lz)</code> checks if <code>x</code> is divisible by <code>y</code> in algebraic extension defined by <code>lm</code>. <code>lz</code> is list of algebraic variables, <code>lv</code> is list of independent (polynomial) variables. Other variables serve as parameters.</p>
+</dd></dl>
+<a name="f_coeffs0"></a><dl><dt>coeffs0 : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>))) -&gt <a href="List.html">List</a>(<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>))</dt><dd><p>
+<code>coeffs0(x, lv, lp)</code> is used by <code>coeffs1</code></p>
+</dd></dl>
+<a name="f_coeffs1"></a><dl><dt>coeffs1 : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>))</dt><dd><p>
+<code>coeffs1(x, lv)</code> computes list of coefficients of <code>x</code> with respect to variables in <code>lv</code>. Variables in <code>lv</code> must be decreasing and bigger than all other variables of <code>x</code>.</p>
+</dd></dl>
+<a name="f_lcx0"></a><dl><dt>lcx0 : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt Record(lcx0lc : <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), lcx0m : <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>))</dt><dd><p>
+<code>lcx0(x, lv)</code> computes leading coefficient of <code>x</code> and corresponding product of variables (monomial with coefficient 1) with respect to variables in <code>lv</code> Variables in <code>lv</code> must be decreasing and bigger than all other variables of <code>x</code>.</p>
+</dd></dl>
+<a name="f_lcz"></a><dl><dt>lcz : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), <a href="Symbol.html">Symbol</a>) -&gt Record(lczlc : <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>), k : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>lcz(x, z)</code> computes leading coefficient and degree of <code>x</code> with respect to variable <code>z</code>.</p>
+</dd></dl>
+</body>
+</html>

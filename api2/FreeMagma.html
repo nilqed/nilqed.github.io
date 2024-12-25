@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeMagma</title>
+</head>
+<body>
+<h1>FreeMagma(VarSet)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L1">xlpoly.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L1">[edit on github]</a></p>
+<ul>
+<li>VarSet : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+This type is the basic representation of parenthesized words (binary trees over arbitrary symbols) useful in LiePolynomial.  Author: Michel Petitot (petitot@lifl.<code>fr</code>).</p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>x*y</code> returns the tree <code>[x, y]</code>.</p>
+</dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : VarSet -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(VarSet)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="FreeMonoid.html">FreeMonoid</a>(VarSet)</dt><dd><p>
+<code>coerce(x)</code> returns the element of FreeMonoid(VarSet) corresponding to <code>x</code> by removing parentheses.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_first"></a><dl><dt>first : % -&gt VarSet</dt><dd><p>
+<code>first(x)</code> returns the first entry of the tree <code>x</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_left"></a><dl><dt>left : % -&gt %</dt><dd><p>
+<code>left(x)</code> returns left subtree of <code>x</code> or error if <span class="spadop">retractable?</span>(<code>x</code>) is <code>true</code>.</p>
+</dd></dl>
+<a name="f_length"></a><dl><dt>length : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>length(x)</code> returns the number of entries in <code>x</code>.</p>
+</dd></dl>
+<a name="f_lexico"></a><dl><dt>lexico : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lexico(x, y)</code> returns <code>true</code> iff <code>x</code> is smaller than <code>y</code> <code>w</code>.<code>r</code>.<code>t</code>. the lexicographical ordering induced by <code>VarSet</code>. <code>N</code>.<code>B</code>. This operation does not take into account the tree structure of its arguments. Thus this is not a total ordering.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_mirror"></a><dl><dt>mirror : % -&gt %</dt><dd><p>
+<code>mirror(x)</code> returns the reversed word of <code>x</code>. That is <code>x</code> itself if <span class="spadop">retractable?</span>(<code>x</code>) is <code>true</code> and <code>mirror(z) * mirror(y)</code> if <code>x</code> is <code>y*z</code>.</p>
+</dd></dl>
+<a name="f_rest"></a><dl><dt>rest : % -&gt %</dt><dd><p>
+<code>rest(x)</code> return <code>x</code> without the first entry or error if <span class="spadop">retractable?</span>(<code>x</code>) is <code>true</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt VarSet</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(VarSet)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(VarSet, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(VarSet)</dd></dl>
+<a name="f_retractable_63"></a><dl><dt>retractable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>retractable?(x)</code> tests if <code>x</code> is a tree with only one entry.</p>
+</dd></dl>
+<a name="f_right"></a><dl><dt>right : % -&gt %</dt><dd><p>
+<code>right(x)</code> returns right subtree of <code>x</code> or error if <span class="spadop">retractable?</span>(<code>x</code>) is <code>true</code>.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_varList"></a><dl><dt>varList : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>varList(x)</code> returns the list of distinct entries of <code>x</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(VarSet)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(VarSet)
+</body>
+</html>

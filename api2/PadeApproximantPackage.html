@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PadeApproximantPackage</title>
+</head>
+<body>
+<h1>PadeApproximantPackage(R, x, pt)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pade.spad#L1">pade.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pade.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Field.html">Field</a><li>x : <a href="Symbol.html">Symbol</a><li>pt : R</ul>
+<p>
+This package computes reliable Pade approximants using a generalized Viskovatov continued fraction algorithm.</p>
+<a name="f_pade"></a><dl><dt>pade : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="UnivariateTaylorSeries.html">UnivariateTaylorSeries</a>(R, x, pt)) -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="UnivariatePolynomial.html">UnivariatePolynomial</a>(x, R)), "failed")</dt><dd><p>
+<code>pade(nd, dd, s)</code> computes the quotient of polynomials (if it exists) with numerator degree at most <code>nd</code> and denominator degree at most <code>dd</code> which matches the series <code>s</code> to order <code>nd + dd</code>.</p>
+</dd></dl>
+<dl><dt>pade : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="UnivariateTaylorSeries.html">UnivariateTaylorSeries</a>(R, x, pt), <a href="UnivariateTaylorSeries.html">UnivariateTaylorSeries</a>(R, x, pt)) -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="UnivariatePolynomial.html">UnivariatePolynomial</a>(x, R)), "failed")</dt><dd><p>
+<code>pade(nd, dd, ns, ds)</code> computes the approximant as a quotient of polynomials (if it exists) for arguments <code>nd</code> (numerator degree of approximant), <code>dd</code> (denominator degree of approximant), <code>ns</code> (numerator series of function), and <code>ds</code> (denominator series of function).</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SExpressionCategory</title>
+</head>
+<body>
+<h1>SExpressionCategory(Str, Sym, Int, Flt)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sex.spad#L1">sex.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sex.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Str : <a href="SetCategory.html">SetCategory</a><li>Sym : <a href="SetCategory.html">SetCategory</a><li>Int : <a href="SetCategory.html">SetCategory</a><li>Flt : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This category allows the manipulation of Lisp values while keeping the grunge fairly localized.</p>
+<a name="f__35"></a><dl><dt># : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>#((a1, ..., an))</code> returns <code>n</code>.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_atom_63"></a><dl><dt>atom? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>atom?(s)</code> is <code>true</code> if <code>s</code> is a Lisp atom.</p>
+</dd></dl>
+<a name="f_car"></a><dl><dt>car : % -&gt %</dt><dd><p>
+<code>car((a1, ..., an))</code> returns <code>a1</code>.</p>
+</dd></dl>
+<a name="f_cdr"></a><dl><dt>cdr : % -&gt %</dt><dd><p>
+<code>cdr((a1, ..., an))</code> returns <code>(a2, ..., an)</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt>convert : Flt -&gt %</dt><dd><p>
+<code>convert(x)</code> returns the Lisp atom <code>x</code>.</p>
+</dd></dl>
+<dl><dt>convert : Int -&gt %</dt><dd><p>
+<code>convert(x)</code> returns the Lisp atom <code>x</code>.</p>
+</dd></dl>
+<dl><dt>convert : Str -&gt %</dt><dd><p>
+<code>convert(x)</code> returns the Lisp atom <code>x</code>.</p>
+</dd></dl>
+<dl><dt>convert : Sym -&gt %</dt><dd><p>
+<code>convert(x)</code> returns the Lisp atom <code>x</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>convert([a1, ..., an])</code> returns the <code>S</code>-expression <code>(a1, ..., an)</code>.</p>
+</dd></dl>
+<a name="f_destruct"></a><dl><dt>destruct : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>destruct((a1, ..., an))</code> returns the list [<code>a1</code>, ..., an].</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>elt((a1, ..., an), i)</code> returns <code><code>ai</code></code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(s, [i1, ..., im])</code> recursively selects subexpression, that is elt(<code>s</code>, []) is just <code>s</code> and elt(<code>s</code>, [<code>i1</code>, ..., im]) is the same as elt(elt(<code>s</code>, <code>i1</code>), [<code>i2</code>, ..., im]).</p>
+</dd></dl>
+<a name="f_eq"></a><dl><dt>eq : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>eq(s, t)</code> is <code>true</code> if EQ(<code>s</code>, <code>t</code>) is <code>true</code> in Lisp.</p>
+</dd></dl>
+<a name="f_float"></a><dl><dt>float : % -&gt Flt</dt><dd><p>
+<code>float(s)</code> returns <code>s</code> as an element of <code>Flt</code>; Error: if <code>s</code> is not an atom that also belongs to <code>Flt</code>.</p>
+</dd></dl>
+<a name="f_float_63"></a><dl><dt>float? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>float?(s)</code> is <code>true</code> if <code>s</code> is an atom and belong to <code>Flt</code>.</p>
+</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_integer"></a><dl><dt>integer : % -&gt Int</dt><dd><p>
+<code>integer(s)</code> returns <code>s</code> as an element of Int. Error: if <code>s</code> is not an atom that also belongs to Int.</p>
+</dd></dl>
+<a name="f_integer_63"></a><dl><dt>integer? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>integer?(s)</code> is <code>true</code> if <code>s</code> is an atom and belong to Int.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_list_63"></a><dl><dt>list? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>list?(s)</code> is <code>true</code> if <code>s</code> is a Lisp list, possibly ().</p>
+</dd></dl>
+<a name="f_null_63"></a><dl><dt>null? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>null?(s)</code> is <code>true</code> if <code>s</code> is the <code>S</code>-expression ().</p>
+</dd></dl>
+<a name="f_pair_63"></a><dl><dt>pair? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>pair?(s)</code> is <code>true</code> if <code>s</code> has is a non-null Lisp list.</p>
+</dd></dl>
+<a name="f_string"></a><dl><dt>string : % -&gt Str</dt><dd><p>
+<code>string(s)</code> returns <code>s</code> as an element of <code>Str</code>. Error: if <code>s</code> is not an atom that also belongs to <code>Str</code>.</p>
+</dd></dl>
+<a name="f_string_63"></a><dl><dt>string? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>string?(s)</code> is <code>true</code> if <code>s</code> is an atom and belong to <code>Str</code>.</p>
+</dd></dl>
+<a name="f_symbol"></a><dl><dt>symbol : % -&gt Sym</dt><dd><p>
+<code>symbol(s)</code> returns <code>s</code> as an element of <code>Sym</code>. Error: if <code>s</code> is not an atom that also belongs to <code>Sym</code>.</p>
+</dd></dl>
+<a name="f_symbol_63"></a><dl><dt>symbol? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>symbol?(s)</code> is <code>true</code> if <code>s</code> is an atom and belong to <code>Sym</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

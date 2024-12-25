@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FortranCode</title>
+</head>
+<body>
+<h1>FortranCode</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortran.spad#L66">fortran.spad line 66</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortran.spad#L66">[edit on github]</a></p>
+<p>
+This domain builds representations of program code segments for use with the FortranProgram domain.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_assign"></a><dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Expression.html">Expression</a>(<a href="MachineComplex.html">MachineComplex</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Expression.html">Expression</a>(<a href="MachineFloat.html">MachineFloat</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Expression.html">Expression</a>(<a href="MachineInteger.html">MachineInteger</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))) -&gt %</dt><dd><p>
+<code>assign(x, l, y)</code> creates a representation of the assignment of <code>y</code> to the <code>l</code><code>'</code>th element of array <code>x</code> (<code>l</code> is a list of indices).</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>assign(x, l, y)</code> creates a representation of the assignment of <code>y</code> to the <code>l</code><code>'</code>th element of array <code>x</code> (<code>l</code> is a list of indices).</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>assign(x, l, y)</code> creates a representation of the assignment of <code>y</code> to the <code>l</code><code>'</code>th element of array <code>x</code> (<code>l</code> is a list of indices).</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Expression.html">Expression</a>(<a href="MachineComplex.html">MachineComplex</a>)) -&gt %</dt><dd><p>
+<code>assign(x, l, y)</code> creates a representation of the assignment of <code>y</code> to the <code>l</code><code>'</code>th element of array <code>x</code> (<code>l</code> is a list of indices).</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Expression.html">Expression</a>(<a href="MachineFloat.html">MachineFloat</a>)) -&gt %</dt><dd><p>
+<code>assign(x, l, y)</code> creates a representation of the assignment of <code>y</code> to the <code>l</code><code>'</code>th element of array <code>x</code> (<code>l</code> is a list of indices).</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Expression.html">Expression</a>(<a href="MachineInteger.html">MachineInteger</a>)) -&gt %</dt><dd><p>
+<code>assign(x, l, y)</code> creates a representation of the assignment of <code>y</code> to the <code>l</code><code>'</code>th element of array <code>x</code> (<code>l</code> is a list of indices).</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="MachineComplex.html">MachineComplex</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="MachineFloat.html">MachineFloat</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="MachineInteger.html">MachineInteger</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="MachineComplex.html">MachineComplex</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="MachineFloat.html">MachineFloat</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Matrix.html">Matrix</a>(<a href="MachineInteger.html">MachineInteger</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="MachineComplex.html">MachineComplex</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="MachineFloat.html">MachineFloat</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="MachineInteger.html">MachineInteger</a>))) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="MachineComplex.html">MachineComplex</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="MachineFloat.html">MachineFloat</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<dl><dt>assign : (<a href="Symbol.html">Symbol</a>, <a href="Vector.html">Vector</a>(<a href="MachineInteger.html">MachineInteger</a>)) -&gt %</dt><dd><p>
+<code>assign(x, y)</code> creates a representation of the FORTRAN expression x=y.</p>
+</dd></dl>
+<a name="f_block"></a><dl><dt>block : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>block(l)</code> creates a representation of the statements in <code>l</code> as a block.</p>
+</dd></dl>
+<a name="f_call"></a><dl><dt>call : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>call(s)</code> creates a representation of a FORTRAN CALL statement</p>
+</dd></dl>
+<a name="f_code"></a><dl><dt>code : % -&gt Union(:(nullBranch, "null"), :(assignmentBranch, Record(var : <a href="Symbol.html">Symbol</a>, arrayIndex : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), rand : Record(ints2Floats? : <a href="Boolean.html">Boolean</a>, expr : <a href="OutputForm.html">OutputForm</a>))), :(arrayAssignmentBranch, Record(var : <a href="Symbol.html">Symbol</a>, rand : <a href="OutputForm.html">OutputForm</a>, ints2Floats? : <a href="Boolean.html">Boolean</a>)), :(conditionalBranch, Record(switch : <a href="Switch.html">Switch</a>, thenClause : %, elseClause : %)), :(returnBranch, Record(empty? : <a href="Boolean.html">Boolean</a>, value : Record(ints2Floats? : <a href="Boolean.html">Boolean</a>, expr : <a href="OutputForm.html">OutputForm</a>))), :(blockBranch, <a href="List.html">List</a>(%)), :(commentBranch, <a href="List.html">List</a>(<a href="String.html">String</a>)), :(callBranch, <a href="String.html">String</a>), :(forBranch, Record(range : <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), span : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), body : %)), :(labelBranch, <a href="SingleInteger.html">SingleInteger</a>), :(loopBranch, Record(switch : <a href="Switch.html">Switch</a>, body : %)), :(commonBranch, Record(name : <a href="Symbol.html">Symbol</a>, contents : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>))), :(printBranch, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)))</dt><dd><p>
+<code>code(f)</code> returns the internal representation of the object represented by <code>f</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(f)</code> returns an object of type OutputForm.</p>
+</dd></dl>
+<a name="f_comment"></a><dl><dt>comment : <a href="List.html">List</a>(<a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>comment(s)</code> creates a representation of the Strings <code>s</code> as a multi-line FORTRAN comment.</p>
+</dd></dl>
+<dl><dt>comment : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>comment(s)</code> creates a representation of the String <code>s</code> as a single FORTRAN comment.</p>
+</dd></dl>
+<a name="f_common"></a><dl><dt>common : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd><p>
+<code>common(name, contents)</code> creates a representation a named common block.</p>
+</dd></dl>
+<a name="f_cond"></a><dl><dt>cond : (<a href="Switch.html">Switch</a>, %) -&gt %</dt><dd><p>
+<code>cond(s, e)</code> creates a representation of the FORTRAN expression IF (<code>s</code>) THEN <code>e</code>.</p>
+</dd></dl>
+<dl><dt>cond : (<a href="Switch.html">Switch</a>, %, %) -&gt %</dt><dd><p>
+<code>cond(s, e, f)</code> creates a representation of the FORTRAN expression IF (<code>s</code>) THEN <code>e</code> ELSE <code>f</code>.</p>
+</dd></dl>
+<a name="f_continue"></a><dl><dt>continue : <a href="SingleInteger.html">SingleInteger</a> -&gt %</dt><dd><p>
+<code>continue(l)</code> creates a representation of a FORTRAN CONTINUE labelled with <code>l</code></p>
+</dd></dl>
+<a name="f_forLoop"></a><dl><dt>forLoop : (<a href="SegmentBinding.html">SegmentBinding</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), %) -&gt %</dt><dd><p>
+<code>forLoop(i=1..10, c)</code> creates a representation of a FORTRAN DO loop with <code>i</code> ranging over the values 1 to 10.</p>
+</dd></dl>
+<dl><dt>forLoop : (<a href="SegmentBinding.html">SegmentBinding</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>forLoop(i=1..10, n, c)</code> creates a representation of a FORTRAN DO loop with <code>i</code> ranging over the values 1 to 10 by <code>n</code>.</p>
+</dd></dl>
+<a name="f_getCode"></a><dl><dt>getCode : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>getCode(f)</code> returns a list of strings representing <code>f</code> in Fortran notation. This is used by the FortranProgram domain.</p>
+</dd></dl>
+<a name="f_gotoJump"></a><dl><dt>gotoJump : <a href="SingleInteger.html">SingleInteger</a> -&gt %</dt><dd><p>
+<code>gotoJump(l)</code> creates a representation of a FORTRAN GOTO statement</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_operation"></a><dl><dt>operation : % -&gt Union(:(Null, "null"), :(Assignment, "assignment"), :(Conditional, "conditional"), :(Return, "return"), :(Block, "block"), :(Comment, "comment"), :(Call, "call"), :(For, "for"), :(While, "while"), :(Repeat, "repeat"), :(Goto, "goto"), :(Continue, "continue"), :(ArrayAssignment, "arrayAssignment"), :(Save, "save"), :(Stop, "stop"), :(Common, "common"), :(Print, "print"))</dt><dd><p>
+<code>operation(f)</code> returns the name of the operation represented by <code>f</code>.</p>
+</dd></dl>
+<a name="f_printCode"></a><dl><dt>printCode : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printCode(f)</code> prints out <code>f</code> in FORTRAN notation.</p>
+</dd></dl>
+<a name="f_printStatement"></a><dl><dt>printStatement : <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>) -&gt %</dt><dd><p>
+<code>printStatement(l)</code> creates a representation of a PRINT statement.</p>
+</dd></dl>
+<a name="f_repeatUntilLoop"></a><dl><dt>repeatUntilLoop : (<a href="Switch.html">Switch</a>, %) -&gt %</dt><dd><p>
+<code>repeatUntilLoop(s, c)</code> creates a repeat ... until loop in FORTRAN.</p>
+</dd></dl>
+<a name="f_returns"></a><dl><dt>returns : () -&gt %</dt><dd><p>
+<code>returns()</code> creates a representation of a FORTRAN RETURN statement.</p>
+</dd></dl>
+<dl><dt>returns : <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>returns(e)</code> creates a representation of a FORTRAN RETURN statement with a returned value.</p>
+</dd></dl>
+<dl><dt>returns : <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>) -&gt %</dt><dd><p>
+<code>returns(e)</code> creates a representation of a FORTRAN RETURN statement with a returned value.</p>
+</dd></dl>
+<dl><dt>returns : <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>returns(e)</code> creates a representation of a FORTRAN RETURN statement with a returned value.</p>
+</dd></dl>
+<dl><dt>returns : <a href="Expression.html">Expression</a>(<a href="MachineComplex.html">MachineComplex</a>) -&gt %</dt><dd><p>
+<code>returns(e)</code> creates a representation of a FORTRAN RETURN statement with a returned value.</p>
+</dd></dl>
+<dl><dt>returns : <a href="Expression.html">Expression</a>(<a href="MachineFloat.html">MachineFloat</a>) -&gt %</dt><dd><p>
+<code>returns(e)</code> creates a representation of a FORTRAN RETURN statement with a returned value.</p>
+</dd></dl>
+<dl><dt>returns : <a href="Expression.html">Expression</a>(<a href="MachineInteger.html">MachineInteger</a>) -&gt %</dt><dd><p>
+<code>returns(e)</code> creates a representation of a FORTRAN RETURN statement with a returned value.</p>
+</dd></dl>
+<a name="f_save"></a><dl><dt>save : () -&gt %</dt><dd><p>
+<code>save()</code> creates a representation of a SAVE statement.</p>
+</dd></dl>
+<a name="f_setLabelValue"></a><dl><dt>setLabelValue : <a href="SingleInteger.html">SingleInteger</a> -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd><p>
+<code>setLabelValue(i)</code> resets the counter which produces labels to <code>i</code></p>
+</dd></dl>
+<a name="f_stop"></a><dl><dt>stop : () -&gt %</dt><dd><p>
+<code>stop()</code> creates a representation of a STOP statement.</p>
+</dd></dl>
+<a name="f_whileLoop"></a><dl><dt>whileLoop : (<a href="Switch.html">Switch</a>, %) -&gt %</dt><dd><p>
+<code>whileLoop(s, c)</code> creates a while loop in FORTRAN.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

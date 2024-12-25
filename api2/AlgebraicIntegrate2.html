@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraicIntegrate2</title>
+</head>
+<body>
+<h1>AlgebraicIntegrate2(R0, F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L1441">intpar.spad line 1441</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L1441">[edit on github]</a></p>
+<ul>
+<li>R0 : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R0))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : <a href="FunctionFieldCategory.html">FunctionFieldCategory</a>(F, UP, UPUP)</ul>
+<p>
+This package implements parametric integration in algebraic case.Some cases remain unimplemented and the code throws errors when they appear as the input.</p>
+<a name="f_algextint"></a><dl><dt>algextint : (Mapping(UP, UP), Mapping(<a href="List.html">List</a>(Record(ratpart : <a href="Fraction.html">Fraction</a>(UP), coeffs : <a href="Vector.html">Vector</a>(F))), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))), Mapping(<a href="List.html">List</a>(Record(ratpart : <a href="Fraction.html">Fraction</a>(UP), coeffs : <a href="Vector.html">Vector</a>(F))), <a href="Fraction.html">Fraction</a>(UP), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(Record(ratpart : R, coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>algextint(der, ext, rde, csolve, [g1, ..., gn])</code> returns a basis of solutions of the homogeneous system <code>h' + c1*g1 + ... + cn*gn = 0</code>. Argument <code>ext</code> is an extended integration function on <code>F</code>, <code>rde</code> is RDE solver, <code>csolve</code> is linear solver over constants.</p>
+</dd></dl>
+<a name="f_algextint_95base"></a><dl><dt>algextint_base : (Mapping(UP, UP), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(Record(ratpart : R, coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>algextint_base(der, csolve, [g1, ..., gn])</code> is like algextint(<code>der</code>, ext, rde, <code>csolve</code>, [<code>g1</code>, ..., <code>gn</code>]), but assumes that field is algebraic extension of rational functions and that <code>gi</code>-<code>s</code> have no poles at infinity.</p>
+</dd></dl>
+</body>
+</html>

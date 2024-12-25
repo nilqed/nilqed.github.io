@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TwoFactorize</title>
+</head>
+<body>
+<h1>TwoFactorize(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/twofact.spad#L53">twofact.spad line 53</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/twofact.spad#L53">[edit on github]</a></p>
+<ul>
+<li>F : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></ul>
+<p>
+A basic package for the factorization of bivariate polynomials over a finite field. The functions here represent the base step for the multivariate factorizer.</p>
+<a name="f_doFactor"></a><dl><dt>doFactor : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="Integer.html">Integer</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>doFactor(p, n, ext?)</code> returns the factorisation of polynomial <code>p</code>, <code>p</code> is assumed to be primitive and squarefree, <code>n</code> is degree in auxiliary variable, ext? if <code>false</code> inhibits use of extension field.</p>
+</dd></dl>
+<a name="f_generalTwoFactor"></a><dl><dt>generalTwoFactor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>generalTwoFactor(p)</code> returns the factorisation of polynomial <code>p</code>, a sparse univariate polynomial (sup) over a sup over <code>F</code>.</p>
+</dd></dl>
+<a name="f_tryTwoFactor"></a><dl><dt>tryTwoFactor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>tryTwoFactor(p)</code> returns the factorisation of polynomial <code>p</code>, if it does not require using field extensions, otherwise returns <code>p</code> unfactored (nil factorization).</p>
+</dd></dl>
+</body>
+</html>

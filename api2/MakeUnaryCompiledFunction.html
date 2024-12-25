@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MakeUnaryCompiledFunction</title>
+</head>
+<body>
+<h1>MakeUnaryCompiledFunction(S, D, I)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mkfunc.spad#L268">mkfunc.spad line 268</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mkfunc.spad#L268">[edit on github]</a></p>
+<ul>
+<li>S : <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)<li>D : <a href="Type.html">Type</a><li>I : <a href="Type.html">Type</a></ul>
+<p>
+transforms top-level objects into compiled functions.</p>
+<a name="f_compiledFunction"></a><dl><dt>compiledFunction : (S, <a href="Symbol.html">Symbol</a>) -&gt Mapping(I, D)</dt><dd><p>
+<code>compiledFunction(expr, x)</code> returns a function <code>f: D -&gt; I</code> defined by <code>f(x) == expr</code>. Function <code>f</code> is compiled and directly applicable to objects of type <code>D</code>.</p>
+</dd></dl>
+<a name="f_unaryFunction"></a><dl><dt>unaryFunction : <a href="Symbol.html">Symbol</a> -&gt Mapping(I, D)</dt><dd><p>
+<code>unaryFunction(a)</code> is a local function</p>
+</dd></dl>
+</body>
+</html>

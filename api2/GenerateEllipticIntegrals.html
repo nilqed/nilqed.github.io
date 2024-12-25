@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GenerateEllipticIntegrals</title>
+</head>
+<body>
+<h1>GenerateEllipticIntegrals(F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intspec.spad#L1">intspec.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intspec.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : Join(<a href="Field.html">Field</a>, <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(<a href="Fraction.html">Fraction</a>(UP), UPUP))</ul>
+<p>
+This package provides support functions for generating elliptic integrals.</p>
+<a name="f_fsqrt"></a><dl><dt>fsqrt : F -&gt F</dt><dd><p>
+<code>fsqrt(f)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_gen_95ef"></a><dl><dt>gen_ef : (F, UP, R, R) -&gt Union(Record(result1 : <a href="Fraction.html">Fraction</a>(UP), result2 : F), "failed")</dt><dd><p>
+<code>gen_ef(f_var, f_pol, cfr, cer)</code> produces linear combination</p>
+</dd></dl>
+<a name="f_get_95elliptics"></a><dl><dt>get_elliptics : (Mapping(UP, UP), F) -&gt <a href="List.html">List</a>(Record(f_form : R, e_form : R, f_var : F, f_pol : UP))</dt><dd><p>
+<code>get_elliptics(der, x)</code> tries to find elliptic forms on <code>R</code> <code>x</code> is expression for variable of integration in <code>F</code></p>
+</dd></dl>
+</body>
+</html>

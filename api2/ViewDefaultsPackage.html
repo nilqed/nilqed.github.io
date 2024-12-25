@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ViewDefaultsPackage</title>
+</head>
+<body>
+<h1>ViewDefaultsPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/viewDef.spad#L1">viewDef.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/viewDef.spad#L1">[edit on github]</a></p>
+<p>
+ViewportDefaultsPackage describes default and user definable values for graphics</p>
+<a name="f_axesColorDefault"></a><dl><dt>axesColorDefault : () -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>axesColorDefault()</code> returns the default color of the axes in a 2D viewport.</p>
+</dd></dl>
+<dl><dt>axesColorDefault : <a href="Palette.html">Palette</a> -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>axesColorDefault(p)</code> sets the default color of the axes in a 2D viewport to the palette <code>p</code>.</p>
+</dd></dl>
+<a name="f_lineColorDefault"></a><dl><dt>lineColorDefault : () -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>lineColorDefault()</code> returns the default color of lines connecting points in a 2D viewport.</p>
+</dd></dl>
+<dl><dt>lineColorDefault : <a href="Palette.html">Palette</a> -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>lineColorDefault(p)</code> sets the default color of lines connecting points in a 2D viewport to the palette <code>p</code>.</p>
+</dd></dl>
+<a name="f_pointColorDefault"></a><dl><dt>pointColorDefault : () -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>pointColorDefault()</code> returns the default color of points in a 2D viewport.</p>
+</dd></dl>
+<dl><dt>pointColorDefault : <a href="Palette.html">Palette</a> -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>pointColorDefault(p)</code> sets the default color of points in a 2D viewport to the palette <code>p</code>.</p>
+</dd></dl>
+<a name="f_pointSizeDefault"></a><dl><dt>pointSizeDefault : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>pointSizeDefault()</code> returns the default size of the points in a 2D viewport.</p>
+</dd></dl>
+<dl><dt>pointSizeDefault : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>pointSizeDefault(i)</code> sets the default size of the points in a 2D viewport to <code>i</code>.</p>
+</dd></dl>
+<a name="f_tubePointsDefault"></a><dl><dt>tubePointsDefault : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>tubePointsDefault()</code> returns the number of points to be used when creating the circle to be used in creating a 3D tube plot.</p>
+</dd></dl>
+<dl><dt>tubePointsDefault : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>tubePointsDefault(i)</code> sets the number of points to use when creating the circle to be used in creating a 3D tube plot to <code>i</code>.</p>
+</dd></dl>
+<a name="f_tubeRadiusDefault"></a><dl><dt>tubeRadiusDefault : () -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>tubeRadiusDefault()</code> returns the radius used for a 3D tube plot.</p>
+</dd></dl>
+<dl><dt>tubeRadiusDefault : <a href="Float.html">Float</a> -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>tubeRadiusDefault(r)</code> sets the default radius for a 3D tube plot to <code>r</code>.</p>
+</dd></dl>
+<a name="f_unitsColorDefault"></a><dl><dt>unitsColorDefault : () -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>unitsColorDefault()</code> returns the default color of the unit ticks in a 2D viewport.</p>
+</dd></dl>
+<dl><dt>unitsColorDefault : <a href="Palette.html">Palette</a> -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>unitsColorDefault(p)</code> sets the default color of the unit ticks in a 2D viewport to the palette <code>p</code>.</p>
+</dd></dl>
+<a name="f_var1StepsDefault"></a><dl><dt>var1StepsDefault : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>var1StepsDefault()</code> is the current setting for the number of steps to take when creating a 3D mesh in the direction of the first defined free variable (a free variable is considered defined when its range is specified (e.g. <code>x=0</code>..10)).</p>
+</dd></dl>
+<dl><dt>var1StepsDefault : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>var1StepsDefault(i)</code> sets the number of steps to take when creating a 3D mesh in the direction of the first defined free variable to <code>i</code> (a free variable is considered defined when its range is specified (e.g. <code>x=0</code>..10)).</p>
+</dd></dl>
+<a name="f_var2StepsDefault"></a><dl><dt>var2StepsDefault : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>var2StepsDefault()</code> is the current setting for the number of steps to take when creating a 3D mesh in the direction of the first defined free variable (a free variable is considered defined when its range is specified (e.g. <code>x=0</code>..10)).</p>
+</dd></dl>
+<dl><dt>var2StepsDefault : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>var2StepsDefault(i)</code> sets the number of steps to take when creating a 3D mesh in the direction of the first defined free variable to <code>i</code> (a free variable is considered defined when its range is specified (e.g. <code>x=0</code>..10)).</p>
+</dd></dl>
+<a name="f_viewDefaults"></a><dl><dt>viewDefaults : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>viewDefaults()</code> resets all the default graphics settings.</p>
+</dd></dl>
+<a name="f_viewPosDefault"></a><dl><dt>viewPosDefault : () -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>viewPosDefault()</code> returns the default <code>X</code> and <code>Y</code> position of a viewport window unless overridden explicitly, newly created viewports will have this <code>X</code> and <code>Y</code> coordinate.</p>
+</dd></dl>
+<dl><dt>viewPosDefault : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>viewPosDefault([x, y])</code> sets the default <code>X</code> and <code>Y</code> position of a viewport window unless overridden explicitly, newly created viewports will have th <code>X</code> and <code>Y</code> coordinates <code>x</code>, <code>y</code>.</p>
+</dd></dl>
+<a name="f_viewSizeDefault"></a><dl><dt>viewSizeDefault : () -&gt <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd><p>
+<code>viewSizeDefault()</code> returns the default viewport width and height.</p>
+</dd></dl>
+<dl><dt>viewSizeDefault : <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd><p>
+<code>viewSizeDefault([w, h])</code> sets the default viewport width to <code>w</code> and height to <code>h</code>.</p>
+</dd></dl>
+<a name="f_viewWriteAvailable"></a><dl><dt>viewWriteAvailable : () -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>viewWriteAvailable()</code> returns a list of available methods for writing, such as BITMAP, POSTSCRIPT, etc.</p>
+</dd></dl>
+<a name="f_viewWriteDefault"></a><dl><dt>viewWriteDefault : () -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>viewWriteDefault()</code> returns the list of things to write in a viewport data file; a viewAlone file is always generated.</p>
+</dd></dl>
+<dl><dt>viewWriteDefault : <a href="List.html">List</a>(<a href="String.html">String</a>) -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>viewWriteDefault(l)</code> sets the default list of things to write in a viewport data file to the strings in <code>l</code>; a viewAlone file is always generated.</p>
+</dd></dl>
+</body>
+</html>

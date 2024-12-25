@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PendantTree</title>
+</head>
+<body>
+<h1>PendantTree(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tree.spad#L414">tree.spad line 414</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tree.spad#L414">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+A PendantTree(<code>S</code>) is either a leaf? and is an <code>S</code> or has a left and a right are both PendantTree(<code>S</code>).</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_child_63"></a><dl><dt><a href="RecursiveAggregate.html#f_child_63">child?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_children"></a><dl><dt><a href="RecursiveAggregate.html#f_children">children</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="Tree.html">Tree</a>(S)</dt><dd><p>
+<code>coerce(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_cyclic_63"></a><dl><dt><a href="RecursiveAggregate.html#f_cyclic_63">cyclic?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_distance"></a><dl><dt><a href="RecursiveAggregate.html#f_distance">distance</a> : (%, %) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="BinaryRecursiveAggregate.html#f_elt">elt</a> : (%, "left") -&gt %</dt><dd> from <a href="BinaryRecursiveAggregate.html">BinaryRecursiveAggregate</a>(S)</dd></dl>
+<dl><dt><a href="BinaryRecursiveAggregate.html#f_elt">elt</a> : (%, "right") -&gt %</dt><dd> from <a href="BinaryRecursiveAggregate.html">BinaryRecursiveAggregate</a>(S)</dd></dl>
+<dl><dt><a href="RecursiveAggregate.html#f_elt">elt</a> : (%, "value") -&gt S</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, S, S) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(S, S)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(S)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="Evalable.html">Evalable</a>(S)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(S), <a href="List.html">List</a>(S)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(S, S)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(S))) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="Evalable.html">Evalable</a>(S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leaf_63"></a><dl><dt><a href="RecursiveAggregate.html#f_leaf_63">leaf?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_leaves"></a><dl><dt><a href="RecursiveAggregate.html#f_leaves">leaves</a> : % -&gt <a href="List.html">List</a>(S)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_left"></a><dl><dt><a href="BinaryRecursiveAggregate.html#f_left">left</a> : % -&gt %</dt><dd> from <a href="BinaryRecursiveAggregate.html">BinaryRecursiveAggregate</a>(S)</dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(S, S), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt S if S has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt S if S has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_node_63"></a><dl><dt><a href="RecursiveAggregate.html#f_node_63">node?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_nodes"></a><dl><dt><a href="RecursiveAggregate.html#f_nodes">nodes</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_ptree"></a><dl><dt>ptree : (%, %) -&gt %</dt><dd><p>
+<code>ptree(x, y)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>ptree : S -&gt %</dt><dd><p>
+<code>ptree(s)</code> is a leaf? pendant tree</p>
+</dd></dl>
+<a name="f_right"></a><dl><dt><a href="BinaryRecursiveAggregate.html#f_right">right</a> : % -&gt %</dt><dd> from <a href="BinaryRecursiveAggregate.html">BinaryRecursiveAggregate</a>(S)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_value"></a><dl><dt><a href="RecursiveAggregate.html#f_value">value</a> : % -&gt S</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BinaryRecursiveAggregate.html">BinaryRecursiveAggregate</a>(S)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(S, S)
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="Evalable.html">Evalable</a>(S)
+</body>
+</html>

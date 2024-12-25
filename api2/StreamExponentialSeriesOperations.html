@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>StreamExponentialSeriesOperations</title>
+</head>
+<body>
+<h1>StreamExponentialSeriesOperations(Coef)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/expps.spad#L22">expps.spad line 22</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/expps.spad#L22">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+StreamExponentialSeriesOperations implements arithmetic of exponential power series, where a power series is represented by a stream of its coefficients.</p>
+<a name="f__42"></a><dl><dt>* : (<a href="Stream.html">Stream</a>(Coef), <a href="Stream.html">Stream</a>(Coef)) -&gt <a href="Stream.html">Stream</a>(Coef)</dt><dd><p>
+<code>a * b</code> returns the power series (Cauchy) product of <code>a</code> and <code>b:</code> <code>[a0, a1, ...] * [b0, b1, ...] = [c0, c1, ...]</code> where <code>ck = sum(i + j = k, binomial(k, i) * <code>ai</code> * bj)</code>.</p>
+</dd></dl>
+<a name="f_deriv"></a><dl><dt>deriv : <a href="Stream.html">Stream</a>(Coef) -&gt <a href="Stream.html">Stream</a>(Coef)</dt><dd><p>
+<code>deriv(f)</code> is the derivative, which simply coincides with left shift</p>
+</dd></dl>
+<a name="f_exp0"></a><dl><dt>exp0 : <a href="Stream.html">Stream</a>(Coef) -&gt <a href="Stream.html">Stream</a>(Coef)</dt><dd><p>
+<code>exp0(f)</code> returns the exponential of the power series represented by cons(0, <code>f</code>), i.e. assuming zero constant term and therefore transcendentality is not involved.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : (Coef, <a href="Stream.html">Stream</a>(Coef)) -&gt <a href="Stream.html">Stream</a>(Coef)</dt><dd><p>
+<code>integrate(c, f)</code> integrates with constant term <code>c</code>, this is simply the right shift</p>
+</dd></dl>
+<a name="f_lazyIntegrate"></a><dl><dt>lazyIntegrate : (Coef, Mapping(<a href="Stream.html">Stream</a>(Coef))) -&gt <a href="Stream.html">Stream</a>(Coef)</dt><dd><p>
+<code>lazyIntegrate(c, f)</code> integrates with constant term <code>c</code>, this is simply the right shift</p>
+</dd></dl>
+<a name="f_log1"></a><dl><dt>log1 : <a href="Stream.html">Stream</a>(Coef) -&gt <a href="Stream.html">Stream</a>(Coef)</dt><dd><p>
+<code>log1(f)</code> returns the logarithm of the power series represented by cons(1, <code>f</code>), i.e. assuming that the constant term is 1 and therefore transcendentality is not involved.</p>
+</dd></dl>
+</body>
+</html>

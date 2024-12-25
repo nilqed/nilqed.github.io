@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerNormalBasisFieldFunctions</title>
+</head>
+<body>
+<h1>InnerNormalBasisFieldFunctions(GF)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffdoms.spad#L2000">ffdoms.spad line 2000</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffdoms.spad#L2000">[edit on github]</a></p>
+<ul>
+<li>GF : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></ul>
+<p>
+InnerNormalBasisFieldFunctions(<code>GF</code>) (unexposed): This package has functions used by every normal basis finite field extension domain.</p>
+<a name="f__42"></a><dl><dt>* : (<a href="Vector.html">Vector</a>(GF), <a href="Vector.html">Vector</a>(GF)) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>x*y</code> is undocumented See <span class="std std-ref">*</span></p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (<a href="Vector.html">Vector</a>(GF), <a href="Vector.html">Vector</a>(GF)) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>x/y</code> is undocumented See <span class="std std-ref">/</span></p>
+</dd></dl>
+<a name="f__94"></a><dl><dt>^ : (<a href="Vector.html">Vector</a>(GF), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>x^n</code> is undocumented See <span class="std std-ref">^</span></p>
+</dd></dl>
+<a name="f_basis"></a><dl><dt>basis : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="Vector.html">Vector</a>(<a href="Vector.html">Vector</a>(GF))</dt><dd><p>
+<code>basis(n)</code> is undocumented See <span class="std std-ref">basis</span></p>
+</dd></dl>
+<a name="f_dAndcExp"></a><dl><dt>dAndcExp : (<a href="Vector.html">Vector</a>(GF), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingleInteger.html">SingleInteger</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>dAndcExp(v, n, k)</code> computes <code>v^e</code> interpreting <code>v</code> as an element of normal basis field. A divide and conquer algorithm similar to the one from <code>D</code>.<code>R</code>.Stinson, "Some observations on parallel Algorithms for fast exponentiation in <code>GF</code>(2^n)", Siam <code>J</code>. Computation, Vol.19, No.4, <code>pp</code>.711-717, August 1990 is used. Argument <code>k</code> is a parameter of this algorithm.</p>
+</dd></dl>
+<a name="f_expPot"></a><dl><dt>expPot : (<a href="Vector.html">Vector</a>(GF), <a href="SingleInteger.html">SingleInteger</a>, <a href="SingleInteger.html">SingleInteger</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>expPot(v, e, d)</code> returns the sum from <code>i = 0</code> to <code>e - 1</code> of <code>v^(q^i*d)</code>, interpreting <code>v</code> as an element of a normal basis field and where <code>q</code> is the size of the ground field. Note: for a description of the algorithm, see <code>T</code>.Itoh and <code>S</code>.Tsujii, "A fast algorithm for computing multiplicative inverses in <code>GF</code>(2^m) using normal bases", Information and Computation 78, <code>pp</code>.171-177, 1988.</p>
+</dd></dl>
+<a name="f_index"></a><dl><dt>index : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>index(n, m)</code> is a index function for vectors of length <code>n</code> over the ground field.</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt>inv : <a href="Vector.html">Vector</a>(GF) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>inv x</code> is undocumented See <span class="std std-ref">inv</span></p>
+</dd></dl>
+<a name="f_lookup"></a><dl><dt>lookup : <a href="Vector.html">Vector</a>(GF) -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>lookup(x)</code> is undocumented See <span class="std std-ref">lookup</span></p>
+</dd></dl>
+<a name="f_minimalPolynomial"></a><dl><dt>minimalPolynomial : <a href="Vector.html">Vector</a>(GF) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>minimalPolynomial(x)</code> is undocumented See <span class="std std-ref">minimalPolynomial</span></p>
+</dd></dl>
+<a name="f_norm"></a><dl><dt>norm : (<a href="Vector.html">Vector</a>(GF), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>norm(x, n)</code> is undocumented See <span class="std std-ref">norm</span></p>
+</dd></dl>
+<a name="f_normal_63"></a><dl><dt>normal? : <a href="Vector.html">Vector</a>(GF) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>normal?(x)</code> is undocumented See <span class="std std-ref">normal?</span></p>
+</dd></dl>
+<a name="f_normalElement"></a><dl><dt>normalElement : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>normalElement(n)</code> is undocumented See <span class="std std-ref">normalElement</span></p>
+</dd></dl>
+<a name="f_pol"></a><dl><dt>pol : <a href="Vector.html">Vector</a>(GF) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>pol(v)</code> turns the vector <code>[v0, ..., vn]</code> into the polynomial <code>v0+v1*x+ ... + vn*x^n</code>.</p>
+</dd></dl>
+<a name="f_qPot"></a><dl><dt>qPot : (<a href="Vector.html">Vector</a>(GF), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>qPot(v, e)</code> computes <code>v^(q^e)</code>, interpreting <code>v</code> as an element of normal basis field, <code>q</code> the size of the ground field. This is done by a cyclic <code>e</code>-shift of the vector <code>v</code>.</p>
+</dd></dl>
+<a name="f_random"></a><dl><dt>random : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>random(n)</code> creates a vector over the ground field with random entries.</p>
+</dd></dl>
+<a name="f_repSq"></a><dl><dt>repSq : (<a href="Vector.html">Vector</a>(GF), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>repSq(v, e)</code> computes <code>v^e</code> by repeated squaring, interpreting <code>v</code> as an element of a normal basis field.</p>
+</dd></dl>
+<a name="f_setFieldInfo"></a><dl><dt>setFieldInfo : (<a href="Vector.html">Vector</a>(<a href="List.html">List</a>(Record(value : GF, index : <a href="SingleInteger.html">SingleInteger</a>))), GF) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setFieldInfo(m, p)</code> initializes the field arithmetic, where <code>m</code> is the multiplication table and <code>p</code> is the respective normal element of the ground field <code>GF</code>.</p>
+</dd></dl>
+<a name="f_trace"></a><dl><dt>trace : (<a href="Vector.html">Vector</a>(GF), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Vector.html">Vector</a>(GF)</dt><dd><p>
+<code>trace(x, n)</code> is undocumented See <span class="std std-ref">trace</span></p>
+</dd></dl>
+<a name="f_xn"></a><dl><dt>xn : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF)</dt><dd><p>
+<code>xn(n)</code> returns the polynomial <code>x^n-1</code>.</p>
+</dd></dl>
+</body>
+</html>

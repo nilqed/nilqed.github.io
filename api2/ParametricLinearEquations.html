@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ParametricLinearEquations</title>
+</head>
+<body>
+<h1>ParametricLinearEquations(R, Var, Expon, GR)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pleqn.spad#L1">pleqn.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pleqn.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="EuclideanDomain.html">EuclideanDomain</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>Var : Join(<a href="OrderedSet.html">OrderedSet</a>, <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>))<li>Expon : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>GR : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, Expon, Var)</ul>
+<p>
+This package completely solves a parametric linear system of equations by decomposing the set of all parametric values for which the linear system is consistent into a union of quasi-algebraic sets (which need not be irredundant, but most of the time is). Each quasi-algebraic set is described by a list of polynomials that vanish on the set, and a list of polynomials that vanish at no point of the set. For each quasi-algebraic set, the solution of the linear system is given, as a particular solution and a basis of the homogeneous system. The parametric linear system should be given in matrix form, with a coefficient matrix and a right hand side vector. The entries of the coefficient matrix and right hand side vector should be polynomials in the parametric variables, over a Euclidean domain of characteristic zero.  If the system is homogeneous, the right hand side need not be given. The right hand side can also be replaced by an indeterminate vector, in which case, the conditions required for consistency will also be given.</p>
+<a name="f_B1solve"></a><dl><dt>B1solve : Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), vec : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, rows : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), cols : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>B1solve(s)</code> solves the system (<code>s</code>.mat) <code>z</code> = <code>s</code>.vec for the variables given by the column indices of <code>s</code>.cols in terms of the other variables and the right hand side <code>s</code>.vec by assuming that the rank is <code>s</code>.rank, that the system is consistent, with the linearly independent equations indexed by the given row indices <code>s</code>.rows; the coefficients in <code>s</code>.mat involving parameters are treated as polynomials. B1solve(<code>s</code>) returns a particular solution to the system and a basis of the homogeneous system (<code>s</code>.mat) <code>z</code> = 0.</p>
+</dd></dl>
+<a name="f_ParCond"></a><dl><dt>ParCond : (<a href="Matrix.html">Matrix</a>(GR), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(Record(det : GR, rows : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), cols : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>ParCond(m, k)</code> returns the list of all <code>k</code> by <code>k</code> subdeterminants in the matrix <code>m</code></p>
+</dd></dl>
+<a name="f_ParCondList"></a><dl><dt>ParCondList : (<a href="Matrix.html">Matrix</a>(GR), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(Record(rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eqns : <a href="List.html">List</a>(Record(det : GR, rows : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), cols : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))), fgb : <a href="List.html">List</a>(GR)))</dt><dd><p>
+<code>ParCondList(c, r)</code> computes a list of subdeterminants of each rank <code>&gt;=</code> <code>r</code> of the matrix <code>c</code> and returns a groebner basis for the ideal they generate</p>
+</dd></dl>
+<a name="f_bsolve"></a><dl><dt>bsolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="String.html">String</a>, <a href="Integer.html">Integer</a>) -&gt Record(rgl : <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))))), rgsz : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>bsolve(c, w, r, s, m)</code> returns a list of regimes and solutions of the system <code>c</code> <code>z</code> = <code>w</code> for ranks at least <code>r</code>; depending on the mode <code>m</code> chosen, it writes the output to a file given by the string <code>s</code>.</p>
+</dd></dl>
+<a name="f_dmp2rfi"></a><dl><dt>dmp2rfi : GR -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>dmp2rfi(p)</code> converts <code>p</code> to target domain</p>
+</dd></dl>
+<dl><dt>dmp2rfi : <a href="List.html">List</a>(GR) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>dmp2rfi(l)</code> converts <code>l</code> to target domain</p>
+</dd></dl>
+<dl><dt>dmp2rfi : <a href="Matrix.html">Matrix</a>(GR) -&gt <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>dmp2rfi(m)</code> converts <code>m</code> to target domain</p>
+</dd></dl>
+<a name="f_factorset"></a><dl><dt>factorset : GR -&gt <a href="List.html">List</a>(GR)</dt><dd><p>
+<code>factorset(p)</code> returns the set of irreducible factors of <code>p</code>.</p>
+</dd></dl>
+<a name="f_hasoln"></a><dl><dt>hasoln : (<a href="List.html">List</a>(GR), <a href="List.html">List</a>(GR)) -&gt Record(sysok : <a href="Boolean.html">Boolean</a>, z0 : <a href="List.html">List</a>(GR), n0 : <a href="List.html">List</a>(GR))</dt><dd><p>
+<code>hasoln(g, l)</code> tests whether the quasi-algebraic set defined by <code>p</code> = 0 for <code>p</code> in <code>g</code> and <code>q</code> <code>~=</code> 0 for <code>q</code> in <code>l</code> is empty or not and returns a simplified definition of the quasi-algebraic set</p>
+</dd></dl>
+<a name="f_inconsistent_63"></a><dl><dt>inconsistent? : <a href="List.html">List</a>(GR) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>inconsistent?(pl)</code> returns <code>true</code> if the system of equations <code>p</code> = 0 for <code>p</code> in <code>pl</code> is inconsistent. It is assumed that <code>pl</code> is a groebner basis.</p>
+</dd></dl>
+<dl><dt>inconsistent? : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>inconsistent?(pl)</code> returns <code>true</code> if the system of equations <code>p</code> = 0 for <code>p</code> in <code>pl</code> is inconsistent. It is assumed that <code>pl</code> is a groebner basis.</p>
+</dd></dl>
+<a name="f_maxrank"></a><dl><dt>maxrank : <a href="List.html">List</a>(Record(rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eqns : <a href="List.html">List</a>(Record(det : GR, rows : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), cols : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))), fgb : <a href="List.html">List</a>(GR))) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>maxrank(r)</code> returns the maximum rank in the list <code>r</code> of regimes</p>
+</dd></dl>
+<a name="f_minrank"></a><dl><dt>minrank : <a href="List.html">List</a>(Record(rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eqns : <a href="List.html">List</a>(Record(det : GR, rows : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), cols : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))), fgb : <a href="List.html">List</a>(GR))) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>minrank(r)</code> returns the minimum rank in the list <code>r</code> of regimes</p>
+</dd></dl>
+<a name="f_minset"></a><dl><dt>minset : <a href="List.html">List</a>(<a href="List.html">List</a>(GR)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(GR))</dt><dd><p>
+<code>minset(sl)</code> returns the sublist of <code>sl</code> consisting of the minimal lists (with respect to inclusion) in the list <code>sl</code> of lists</p>
+</dd></dl>
+<a name="f_nextSublist"></a><dl><dt>nextSublist : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>nextSublist(n, k)</code> returns a list of <code>k</code>-subsets of 1, ..., <code>n</code>.</p>
+</dd></dl>
+<a name="f_overset_63"></a><dl><dt>overset? : (<a href="List.html">List</a>(GR), <a href="List.html">List</a>(<a href="List.html">List</a>(GR))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>overset?(s, sl)</code> returns <code>true</code> if <code>s</code> properly a sublist of a member of <code>sl</code>; otherwise it returns <code>false</code></p>
+</dd></dl>
+<a name="f_pr2dmp"></a><dl><dt>pr2dmp : <a href="Polynomial.html">Polynomial</a>(R) -&gt GR</dt><dd><p>
+<code>pr2dmp(p)</code> converts <code>p</code> to target domain</p>
+</dd></dl>
+<a name="f_psolve"></a><dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(GR), <a href="PositiveInteger.html">PositiveInteger</a>, <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>psolve(c, w, k, s)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks <code>&gt;=</code> <code>k</code> of the matrix <code>c</code> and given right hand side <code>w</code>, writes the results to a file named <code>s</code>, and returns the number of regimes</p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(GR), <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>psolve(c, w, s)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks of the matrix <code>c</code> and given right hand side vector <code>w</code>, writes the results to a file named <code>s</code>, and returns the number of regimes</p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="PositiveInteger.html">PositiveInteger</a>, <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>psolve(c, w, k, s)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks <code>&gt;=</code> <code>k</code> of the matrix <code>c</code> and indeterminate right hand side <code>w</code>, writes the results to a file named <code>s</code>, and returns the number of regimes</p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>psolve(c, w, s)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks of the matrix <code>c</code> and indeterminate right hand side <code>w</code>, writes the results to a file named <code>s</code>, and returns the number of regimes</p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="PositiveInteger.html">PositiveInteger</a>, <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>psolve(c, k, s)</code> solves <code>c</code> <code>z</code> = 0 for all possible ranks <code>&gt;=</code> <code>k</code> of the matrix <code>c</code>, writes the results to a file named <code>s</code>, and returns the number of regimes</p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>psolve(c, s)</code> solves <code>c</code> <code>z</code> = 0 for all possible ranks of the matrix <code>c</code> and given right hand side vector <code>w</code>, writes the results to a file named <code>s</code>, and returns the number of regimes</p>
+</dd></dl>
+<dl><dt>psolve : <a href="Matrix.html">Matrix</a>(GR) -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>psolve(c)</code> solves the homogeneous linear system <code>c</code> <code>z</code> = 0 for all possible ranks of the matrix <code>c</code></p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(GR)) -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>psolve(c, w)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks of the matrix <code>c</code> and given right hand side vector <code>w</code></p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(GR), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>psolve(c, w, k)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks <code>&gt;=</code> <code>k</code> of the matrix <code>c</code> and given right hand side vector <code>w</code></p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>psolve(c, w)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks of the matrix <code>c</code> and indeterminate right hand side <code>w</code></p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>psolve(c, w, k)</code> solves <code>c</code> <code>z</code> = <code>w</code> for all possible ranks <code>&gt;=</code> <code>k</code> of the matrix <code>c</code> and indeterminate right hand side <code>w</code></p>
+</dd></dl>
+<dl><dt>psolve : (<a href="Matrix.html">Matrix</a>(GR), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>psolve(c)</code> solves the homogeneous linear system <code>c</code> <code>z</code> = 0 for all possible ranks <code>&gt;=</code> <code>k</code> of the matrix <code>c</code></p>
+</dd></dl>
+<a name="f_rdregime"></a><dl><dt>rdregime : <a href="String.html">String</a> -&gt <a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))))</dt><dd><p>
+<code>rdregime(s)</code> reads in a list from a file with name <code>s</code></p>
+</dd></dl>
+<a name="f_redmat"></a><dl><dt>redmat : (<a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(GR)) -&gt <a href="Matrix.html">Matrix</a>(GR)</dt><dd><p>
+<code>redmat(m, g)</code> returns a matrix whose entries are those of <code>m</code> modulo the ideal generated by the groebner basis <code>g</code></p>
+</dd></dl>
+<a name="f_redpps"></a><dl><dt>redpps : (Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))), <a href="List.html">List</a>(GR)) -&gt Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>redpps(s, g)</code> returns the simplified form of <code>s</code> after reducing modulo a groebner basis <code>g</code></p>
+</dd></dl>
+<a name="f_regime"></a><dl><dt>regime : (Record(det : GR, rows : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), cols : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)), <a href="Matrix.html">Matrix</a>(GR), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="List.html">List</a>(<a href="List.html">List</a>(GR)), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Integer.html">Integer</a>) -&gt Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))))</dt><dd><p>
+<code>regime(y, c, w, p, r, rm, m)</code> returns a regime, a list of polynomials specifying the consistency conditions, a particular solution and basis representing the general solution of the parametric linear system <code>c</code> <code>z</code> = <code>w</code> on that regime. The regime returned depends on the subdeterminant <code>y</code>.det and the row and column indices. The solutions are simplified using the assumption that the system has rank <code>r</code> and maximum rank <code>rm</code>. The list <code>p</code> represents a list of list of factors of polynomials in a groebner basis of the ideal generated by higher order subdeterminants, and ius used for the simplification. The mode <code>m</code> distinguishes the cases when the system is homogeneous, or the right hand side is arbitrary, or when there is no new right hand side variables.</p>
+</dd></dl>
+<a name="f_se2rfi"></a><dl><dt>se2rfi : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>se2rfi(l)</code> converts <code>l</code> to target domain</p>
+</dd></dl>
+<a name="f_sqfree"></a><dl><dt>sqfree : GR -&gt GR</dt><dd><p>
+<code>sqfree(p)</code> returns the product of square free factors of <code>p</code></p>
+</dd></dl>
+<a name="f_wrregime"></a><dl><dt>wrregime : (<a href="List.html">List</a>(Record(eqzro : <a href="List.html">List</a>(GR), neqzro : <a href="List.html">List</a>(GR), wcond : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), bsoln : Record(partsol : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))))), <a href="String.html">String</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>wrregime(l, s)</code> writes a list of regimes to a file named <code>s</code> and returns the number of regimes written</p>
+</dd></dl>
+</body>
+</html>

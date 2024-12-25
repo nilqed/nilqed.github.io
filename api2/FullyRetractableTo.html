@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FullyRetractableTo</title>
+</head>
+<body>
+<h1>FullyRetractableTo(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/retract.spad#L1">retract.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/retract.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+A is fully retractable to <code>B</code> means that A is retractable to <code>B</code>, and, in addition, if <code>B</code> is retractable to the integers or rational numbers then so is A. In particular, what we are asserting is that there are no integers (rationals) in A which don<code>'t</code> retract into <code>B</code>. Date Created: March 1990</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : S -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(S)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt % if S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt S</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(S, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if S has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(S)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+</body>
+</html>

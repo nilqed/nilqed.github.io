@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ConstantLODE</title>
+</head>
+<body>
+<h1>ConstantLODE(R, F, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/oderf.spad#L688">oderf.spad line 688</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/oderf.spad#L688">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>), <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>F : Join(<a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R), <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>)<li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</ul>
+<p>
+Solution of linear ordinary differential equations, constant coefficient case.</p>
+<a name="f_constDsolve"></a><dl><dt>constDsolve : (L, F, <a href="Symbol.html">Symbol</a>) -&gt Record(particular : F, basis : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>constDsolve(op, g, x)</code> returns <code>[f, [y1, ..., ym]]</code> where <code>f</code> is a particular solution of the equation <code>op y = g</code>, and the <code><code>yi</code></code><code>'s</code> form a basis for the solutions of <code>op y = 0</code>.</p>
+</dd></dl>
+</body>
+</html>

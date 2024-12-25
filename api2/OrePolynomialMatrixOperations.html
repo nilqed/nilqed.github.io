@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OrePolynomialMatrixOperations</title>
+</head>
+<body>
+<h1>OrePolynomialMatrixOperations(F, LO)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/skpol.spad#L395">skpol.spad line 395</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/skpol.spad#L395">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>LO : <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(F)</ul>
+<p>
+undocumented</p>
+<a name="f_rowEchelon"></a><dl><dt>rowEchelon : <a href="Matrix.html">Matrix</a>(LO) -&gt <a href="Matrix.html">Matrix</a>(LO)</dt><dd><p>
+<code>rowEchelon(m)</code> returns the row echelon form of the matrix <code>m</code>.</p>
+</dd></dl>
+<dl><dt>rowEchelon : (<a href="Matrix.html">Matrix</a>(LO), F, <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(LO), vecs : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>rowEchelon(m, c, lv)</code> returns [<code>m2</code>, <code>lv2</code>] such that <code>m2</code> is the row echelon form of the matrix <code>m</code>. <code>lv2</code> is transformed <code>lv</code> using <code>c</code> as parameter to <code>apply</code>.</p>
+</dd></dl>
+<a name="f_solve"></a><dl><dt>solve : (<a href="Matrix.html">Matrix</a>(LO), F, <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), Mapping(Record(particular : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(F)), LO, <a href="List.html">List</a>(F))) -&gt Union(Record(particular : <a href="List.html">List</a>(Record(ratpart : <a href="Vector.html">Vector</a>(F), coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))), "failed")</dt><dd><p>
+<code>solve(m, c, lv, solf)</code> returns "failed" of [[<code>vp1</code>, ..., vp_m], [<code>b1</code>, ..., <code>bl</code>]] such that <code>bi</code>-<code>s</code> are basis of solutions of homogeneous system <code>m</code> <code>bi</code> = 0. Each vpi = [<code>r</code>, [<code>c1</code>, ..., <code>cn</code>]] is a particular solution of a parametric matrix equation <code>m</code> <code>r</code> = \sum <code>ci</code> <code>vi</code> where <code>lv</code> = [<code>v1</code>, ..., <code>vn</code>]. solf is scalar solver, <code>c</code> is a parameter to <code>apply</code> (needed for action of LO on <code>F</code>). "failed" means that system is underdetermined.</p>
+</dd></dl>
+</body>
+</html>

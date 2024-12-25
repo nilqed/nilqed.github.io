@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeMonoid</title>
+</head>
+<body>
+<h1>FreeMonoid(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/free.spad#L110">free.spad line 110</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/free.spad#L110">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+The free monoid on a set <code>S</code> is the monoid of finite products of the form <code>reduce(*, [<code>si</code> ^ <code>ni</code>])</code> where the <code>si</code><code>'s</code> are in <code>S</code>, and the <code>ni</code><code>'s</code> are nonnegative integers. The multiplication is not commutative. When <code>S</code> is an OrderedSet, then FreeMonoid(<code>S</code>) has order: for two elements <code>x</code> and <code>y</code> the relation <code>x &lt; y</code> holds if either <code>length(x) &lt; length(y)</code> holds or if these lengths are equal and if <code>x</code> is smaller than <code>y</code> <code>w</code>.<code>r</code>.<code>t</code>. the lexicographical ordering induced by <code>S</code>.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt>* : (%, S) -&gt %</dt><dd><p>
+<code>x * s</code> returns the product of <code>x</code> by <code>s</code> on the right.</p>
+</dd></dl>
+<dl><dt>* : (S, %) -&gt %</dt><dd><p>
+<code>s * x</code> returns the product of <code>x</code> by <code>s</code> on the left.</p>
+</dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt>^ : (S, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>s ^ n</code> returns the product of <code>s</code> by itself <code>n</code> times.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : S -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(S)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_divide"></a><dl><dt>divide : (%, %) -&gt Union(Record(lm : %, rm : %), "failed")</dt><dd><p>
+<code>divide(x, y)</code> returns the left and right exact quotients of <code>x</code> by <code>y</code>, i.e. <code>[l, r]</code> such that <code>x = l * y * r</code>, "failed" if <code>x</code> is not of the form <code>l * y * r</code>.</p>
+</dd></dl>
+<a name="f_factors"></a><dl><dt>factors : % -&gt <a href="List.html">List</a>(Record(gen : S, exp : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>factors(a1^e1, ..., an^en)</code> returns <code>[[a1, e1], ..., [an, en]]</code>.</p>
+</dd></dl>
+<a name="f_first"></a><dl><dt>first : % -&gt S</dt><dd><p>
+<code>first(x)</code> returns the first letter of <code>x</code>.</p>
+</dd></dl>
+<a name="f_hclf"></a><dl><dt>hclf : (%, %) -&gt %</dt><dd><p>
+<code>hclf(x, y)</code> returns the highest common left factor of <code>x</code> and <code>y</code>, i.e. the largest <code>d</code> such that <code>x = d a</code> and <code>y = d b</code>.</p>
+</dd></dl>
+<a name="f_hcrf"></a><dl><dt>hcrf : (%, %) -&gt %</dt><dd><p>
+<code>hcrf(x, y)</code> returns the highest common right factor of <code>x</code> and <code>y</code>, i.e. the largest <code>d</code> such that <code>x = a d</code> and <code>y = b d</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_length"></a><dl><dt>length : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>length(x)</code> returns the length of <code>x</code>.</p>
+</dd></dl>
+<a name="f_lexico"></a><dl><dt>lexico : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>lexico(x, y)</code> returns <code>true</code> iff <code>x</code> is smaller than <code>y</code> <code>w</code>.<code>r</code>.<code>t</code>. the pure lexicographical ordering induced by <code>S</code>.</p>
+</dd></dl>
+<a name="f_lquo"></a><dl><dt>lquo : (%, %) -&gt Union(%, "failed")</dt><dd><p>
+<code>lquo(x, y)</code> returns the exact left quotient of <code>x</code> by <code>y</code> i.e. <code>q</code> such that <code>x = y * q</code>, "failed" if <code>x</code> is not of the form <code>y * q</code>.</p>
+</dd></dl>
+<dl><dt>lquo : (%, S) -&gt Union(%, "failed")</dt><dd><p>
+<code>lquo(x, s)</code> returns the exact left quotient of <code>x</code> by <code>s</code>.</p>
+</dd></dl>
+<a name="f_mapExpon"></a><dl><dt>mapExpon : (Mapping(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>), %) -&gt %</dt><dd><p>
+<code>mapExpon(f, a1^e1 ... an^en)</code> returns <code>a1^f(e1) ... an^f(en)</code>.</p>
+</dd></dl>
+<a name="f_mapGen"></a><dl><dt>mapGen : (Mapping(S, S), %) -&gt %</dt><dd><p>
+<code>mapGen(f, a1^e1 ... an^en)</code> returns <code>f(a1)^e1 ... f(an)^en</code>.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_mirror"></a><dl><dt>mirror : % -&gt %</dt><dd><p>
+<code>mirror(x)</code> returns the reversed word of <code>x</code>.</p>
+</dd></dl>
+<a name="f_nthExpon"></a><dl><dt>nthExpon : (%, <a href="Integer.html">Integer</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>nthExpon(x, n)</code> returns the exponent of the n^th monomial of <code>x</code>.</p>
+</dd></dl>
+<a name="f_nthFactor"></a><dl><dt>nthFactor : (%, <a href="Integer.html">Integer</a>) -&gt S</dt><dd><p>
+<code>nthFactor(x, n)</code> returns the factor of the n^th monomial of <code>x</code>.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_overlap"></a><dl><dt>overlap : (%, %) -&gt Record(lm : %, mm : %, rm : %)</dt><dd><p>
+<code>overlap(x, y)</code> returns <code>[l, m, r]</code> such that <code>x = l * m</code>, <code>y = m * r</code> and <code>l</code> and <code>r</code> have no overlap, i.e. <code>overlap(l, r) = [l, 1, r]</code>.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rest"></a><dl><dt>rest : % -&gt %</dt><dd><p>
+<code>rest(x)</code> returns <code>x</code> except the first letter.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt S</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(S, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rquo"></a><dl><dt>rquo : (%, %) -&gt Union(%, "failed")</dt><dd><p>
+<code>rquo(x, y)</code> returns the exact right quotient of <code>x</code> by <code>y</code> i.e. <code>q</code> such that <code>x = q * y</code>, "failed" if <code>x</code> is not of the form <code>q * y</code>.</p>
+</dd></dl>
+<dl><dt>rquo : (%, S) -&gt Union(%, "failed")</dt><dd><p>
+<code>rquo(x, s)</code> returns the exact right quotient of <code>x</code> by <code>s</code>.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="MagmaWithUnit.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_size"></a><dl><dt>size : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>size(x)</code> returns the number of monomials in <code>x</code>.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_varList"></a><dl><dt>varList : % -&gt <a href="List.html">List</a>(S)</dt><dd><p>
+<code>varList(x)</code> returns the list of variables of <code>x</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+<p><a href="RetractableTo.html">RetractableTo</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="OrderedMonoid.html">OrderedMonoid</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="OrderedSemiGroup.html">OrderedSemiGroup</a>
+</body>
+</html>

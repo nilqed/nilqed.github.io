@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolyGroebner</title>
+</head>
+<body>
+<h1>PolyGroebner(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pgrobner.spad#L1">pgrobner.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pgrobner.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="GcdDomain.html">GcdDomain</a></ul>
+<p>
+Groebner functions for <code>P</code> <code>F</code> This package is an interface package to the groebner basis package which allows you to compute groebner bases for polynomials in either lexicographic ordering or total degree ordering refined by reverse lex. The input is the ordinary polynomial type which is internally converted to a type with the required ordering. The resulting grobner basis is converted back to ordinary polynomials. The ordering among the variables is controlled by an explicit list of variables which is passed as a second argument. The coefficient domain is allowed to be any <code>gcd</code> domain, but the groebner basis is computed as if the polynomials were over a field.</p>
+<a name="f_lexGroebner"></a><dl><dt>lexGroebner : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F))</dt><dd><p>
+<code>lexGroebner(lp, lv)</code> computes Groebner basis for the list of polynomials <code>lp</code> in lexicographic order. The variables are ordered by their position in the list <code>lv</code>.</p>
+</dd></dl>
+<a name="f_totalGroebner"></a><dl><dt>totalGroebner : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F))</dt><dd><p>
+<code>totalGroebner(lp, lv)</code> computes Groebner basis for the list of polynomials <code>lp</code> with the terms ordered first by total degree and then refined by reverse lexicographic ordering. The variables are ordered by their position in the list <code>lv</code>.</p>
+</dd></dl>
+</body>
+</html>

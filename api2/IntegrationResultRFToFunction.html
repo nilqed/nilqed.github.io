@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegrationResultRFToFunction</title>
+</head>
+<body>
+<h1>IntegrationResultRFToFunction(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/irexpand.spad#L262">irexpand.spad line 262</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/irexpand.spad#L262">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="Comparable.html">Comparable</a>, <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))</ul>
+<p>
+This package allows a sum of logs over the roots of a polynomial to be expressed as explicit logarithms and arc tangents, provided that the indexing polynomial can be factored into quadratics. Date Created: 21 August 1988</p>
+<a name="f_complexExpand"></a><dl><dt>complexExpand : <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="Expression.html">Expression</a>(R)</dt><dd><p>
+<code>complexExpand(i)</code> returns the expanded complex function corresponding to <code>i</code>.</p>
+</dd></dl>
+<a name="f_complexIntegrate"></a><dl><dt>complexIntegrate : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="Expression.html">Expression</a>(R) if R has <a href="CharacteristicZero.html">CharacteristicZero</a></dt><dd><p>
+<code>complexIntegrate(f, x)</code> returns the integral of <code>f(x)dx</code> where <code>x</code> is viewed as a complex variable.</p>
+</dd></dl>
+<a name="f_expand"></a><dl><dt>expand : (<a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R))</dt><dd><p>
+<code>expand(i, x)</code> returns the list of possible real functions of <code>x</code> corresponding to <code>i</code>.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="Expression.html">Expression</a>(R), <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R))) if R has <a href="CharacteristicZero.html">CharacteristicZero</a></dt><dd><p>
+<code>integrate(f, x)</code> returns the integral of <code>f(x)dx</code> where <code>x</code> is viewed as a real variable.</p>
+</dd></dl>
+<a name="f_split"></a><dl><dt>split : <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>split(u(x) + sum_P(a)=0 Q(a, x))</code> returns <code>u(x) + sum_P1(a)=0 Q(a, x) + ... + sum_Pn(a)=0 Q(a, x)</code> where <code>P1</code>, ..., <code>Pn</code> are the factors of <code>P</code>.</p>
+</dd></dl>
+</body>
+</html>

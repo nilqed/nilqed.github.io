@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraPackage</title>
+</head>
+<body>
+<h1>AlgebraPackage(R, A)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/naalg.spad#L594">naalg.spad line 594</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/naalg.spad#L594">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>A : <a href="FramedNonAssociativeAlgebra.html">FramedNonAssociativeAlgebra</a>(R)</ul>
+<p>
+AlgebraPackage assembles a variety of useful functions for general algebras.</p>
+<a name="f_basis"></a><dl><dt>basis : <a href="Vector.html">Vector</a>(A) -&gt <a href="Vector.html">Vector</a>(A) if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd><p>
+<code>basis(va)</code> selects a basis from the elements of <code>va</code>.</p>
+</dd></dl>
+<a name="f_basisOfCenter"></a><dl><dt>basisOfCenter : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfCenter()</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>commutator(x, a) = 0</code> and <code>associator(x, a, b) = associator(a, x, b) = associator(a, b, x) = 0</code> for all <code>a</code>, <code>b</code> in <code>A</code>.</p>
+</dd></dl>
+<a name="f_basisOfCentroid"></a><dl><dt>basisOfCentroid : () -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>basisOfCentroid()</code> returns a basis of the centroid, i.e. the endomorphism ring of <code>A</code> considered as <code>(A, A)</code>-bimodule.</p>
+</dd></dl>
+<a name="f_basisOfCommutingElements"></a><dl><dt>basisOfCommutingElements : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfCommutingElements()</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>0 = commutator(x, a)</code> for all <code>a</code> in <code>A</code>.</p>
+</dd></dl>
+<a name="f_basisOfLeftAnnihilator"></a><dl><dt>basisOfLeftAnnihilator : A -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfLeftAnnihilator(a)</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>0 = x*a</code>.</p>
+</dd></dl>
+<a name="f_basisOfLeftNucleus"></a><dl><dt>basisOfLeftNucleus : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfLeftNucleus()</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>0 = associator(x, a, b)</code> for all <code>a</code>, <code>b</code> in <code>A</code>.</p>
+</dd></dl>
+<a name="f_basisOfLeftNucloid"></a><dl><dt>basisOfLeftNucloid : () -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>basisOfLeftNucloid()</code> returns a basis of the space of endomorphisms of <code>A</code> as right module. Note: left nucloid coincides with left nucleus if <code>A</code> has a unit.</p>
+</dd></dl>
+<a name="f_basisOfMiddleNucleus"></a><dl><dt>basisOfMiddleNucleus : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfMiddleNucleus()</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>0 = associator(a, x, b)</code> for all <code>a</code>, <code>b</code> in <code>A</code>.</p>
+</dd></dl>
+<a name="f_basisOfNucleus"></a><dl><dt>basisOfNucleus : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfNucleus()</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>associator(x, a, b) = associator(a, x, b) = associator(a, b, x) = 0</code> for all <code>a</code>, <code>b</code> in <code>A</code>.</p>
+</dd></dl>
+<a name="f_basisOfRightAnnihilator"></a><dl><dt>basisOfRightAnnihilator : A -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfRightAnnihilator(a)</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>0 = a*x</code>.</p>
+</dd></dl>
+<a name="f_basisOfRightNucleus"></a><dl><dt>basisOfRightNucleus : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>basisOfRightNucleus()</code> returns a basis of the space of all <code>x</code> of <code>A</code> satisfying <code>0 = associator(a, b, x)</code> for all <code>a</code>, <code>b</code> in <code>A</code>.</p>
+</dd></dl>
+<a name="f_basisOfRightNucloid"></a><dl><dt>basisOfRightNucloid : () -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>basisOfRightNucloid()</code> returns a basis of the space of endomorphisms of <code>A</code> as left module. Note: right nucloid coincides with right nucleus if <code>A</code> has a unit.</p>
+</dd></dl>
+<a name="f_biRank"></a><dl><dt>biRank : A -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>biRank(x)</code> determines the number of linearly independent elements in <code>x</code>, <code>x*bi</code>, <code>bi*x</code>, <code>bi*x*bj</code>, <code>i, j=1, ..., n</code>, where <code>b=[b1, ..., bn]</code> is a basis. Note: if <code>A</code> has a unit, then <span class="std std-ref">doubleRank</span>, <span class="std std-ref">weakBiRank</span> and <span class="std std-ref">biRank</span> coincide.</p>
+</dd></dl>
+<a name="f_doubleRank"></a><dl><dt>doubleRank : A -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>doubleRank(x)</code> determines the number of linearly independent elements in <code>b1*x</code>, ..., <code>x*bn</code>, where <code>b=[b1, ..., bn]</code> is a basis.</p>
+</dd></dl>
+<a name="f_leftRank"></a><dl><dt>leftRank : A -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>leftRank(x)</code> determines the number of linearly independent elements in <code>x*b1</code>, ..., <code>x*bn</code>, where <code>b=[b1, ..., bn]</code> is a basis.</p>
+</dd></dl>
+<a name="f_radicalOfLeftTraceForm"></a><dl><dt>radicalOfLeftTraceForm : () -&gt <a href="List.html">List</a>(A)</dt><dd><p>
+<code>radicalOfLeftTraceForm()</code> returns basis for null space of <code>leftTraceMatrix()</code>, if the algebra is associative, alternative or a Jordan algebra, then this space equals the radical (maximal nil ideal) of the algebra.</p>
+</dd></dl>
+<a name="f_rightRank"></a><dl><dt>rightRank : A -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rightRank(x)</code> determines the number of linearly independent elements in <code>b1*x</code>, ..., <code>bn*x</code>, where <code>b=[b1, ..., bn]</code> is a basis.</p>
+</dd></dl>
+<a name="f_weakBiRank"></a><dl><dt>weakBiRank : A -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>weakBiRank(x)</code> determines the number of linearly independent elements in the <code>bi*x*bj</code>, <code>i, j=1, ..., n</code>, where <code>b=[b1, ..., bn]</code> is a basis.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LazardSetSolvingPackage</title>
+</head>
+<body>
+<h1>LazardSetSolvingPackage(R, E, V, P, TS, ST)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/nsregset.spad#L21">nsregset.spad line 21</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/nsregset.spad#L21">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="RegularTriangularSetCategory.html">RegularTriangularSetCategory</a>(R, E, V, P)<li>ST : <a href="SquareFreeRegularTriangularSetCategory.html">SquareFreeRegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+A package for solving polynomial systems by means of Lazard triangular sets [1]. This package provides two operations. One for solving in the sense of the regular zeros, and the other for solving in the sense of the Zariski closure. Both produce square-free regular sets. Moreover, the decompositions do not contain any redundant component. However, only zero-dimensional regular sets are normalized, since normalization may be time consumming in positive dimension. The decomposition process is that of [2].</p>
+<a name="f_normalizeIfCan"></a><dl><dt>normalizeIfCan : ST -&gt ST</dt><dd><p>
+<code>normalizeIfCan(ts)</code> returns <code>ts</code> in an normalized shape if <code>ts</code> is zero-dimensional.</p>
+</dd></dl>
+<a name="f_zeroSetSplit"></a><dl><dt>zeroSetSplit : (<a href="List.html">List</a>(P), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(ST)</dt><dd><p>
+<code>zeroSetSplit(lp, clos?)</code> has the same specifications as <span class="spadop">zeroSetSplit</span>(<code>lp</code>, clos?).</p>
+</dd></dl>
+</body>
+</html>

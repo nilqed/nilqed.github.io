@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MappingPackage2</title>
+</head>
+<body>
+<h1>MappingPackage2(A, C)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mappkg.spad#L108">mappkg.spad line 108</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mappkg.spad#L108">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a><li>C : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+various Currying operations.</p>
+<a name="f_const"></a><dl><dt>const : C -&gt Mapping(C, A)</dt><dd><p>
+<code>const c</code> is a function which produces <code>c</code> when applied to its argument.</p>
+</dd></dl>
+<a name="f_constant"></a><dl><dt>constant : Mapping(C) -&gt Mapping(C, A)</dt><dd><p>
+<code>constant(f)</code> is the function <code>g</code> such that <code>g a= f ()</code>.</p>
+</dd></dl>
+<a name="f_curry"></a><dl><dt>curry : (Mapping(C, A), A) -&gt Mapping(C)</dt><dd><p>
+<code>curry(f, a)</code> is the function <code>g</code> such that <code>g ()= f a</code>.</p>
+</dd></dl>
+<a name="f_diag"></a><dl><dt>diag : Mapping(C, A, A) -&gt Mapping(C, A)</dt><dd><p>
+<code>diag(f)</code> is the function <code>g</code> such that <code>g a = f(a, a)</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinGroebnerPackage</title>
+</head>
+<body>
+<h1>LinGroebnerPackage(lv, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lingrob.spad#L1">lingrob.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lingrob.spad#L1">[edit on github]</a></p>
+<ul>
+<li>lv : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)<li>F : <a href="GcdDomain.html">GcdDomain</a></ul>
+<p>
+Given a Groebner basis <code>B</code> with respect to the total degree ordering for a zero-dimensional ideal <code>I</code>, compute a Groebner basis with respect to the lexicographical ordering by using linear algebra. This is an internal package, operations in this package may crash the system on invalid input.</p>
+<a name="f_anticoord"></a><dl><dt>anticoord : (<a href="List.html">List</a>(F), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F), <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F))) -&gt <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)</dt><dd><p>
+<code>anticoord </code>is undocumented</p>
+</dd></dl>
+<a name="f_choosemon"></a><dl><dt>choosemon : (<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F), <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F))) -&gt <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)</dt><dd><p>
+<code>choosemon </code>is undocumented</p>
+</dd></dl>
+<a name="f_computeBasis"></a><dl><dt>computeBasis : <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)) -&gt <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F))</dt><dd><p>
+<code>computeBasis(l)</code> is a helper function which computes a basis of a linear space which contains a lexicographic Groebner basis. It expects a basis (ordered by total degree, reverse lexicographic) of a zero dimensional ideal.</p>
+</dd></dl>
+<a name="f_coord"></a><dl><dt>coord : (<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F), <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F))) -&gt <a href="Vector.html">Vector</a>(F)</dt><dd><p>
+<code>coord </code>is undocumented</p>
+</dd></dl>
+<a name="f_groebgen"></a><dl><dt>groebgen : <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)) -&gt Record(glbase : <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)), glval : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>groebgen </code>is undocumented</p>
+</dd></dl>
+<a name="f_intcompBasis"></a><dl><dt>intcompBasis : (<a href="OrderedVariableList.html">OrderedVariableList</a>(lv), <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)), <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F))) -&gt <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F))</dt><dd><p>
+<code>intcompBasis </code>is undocumented</p>
+</dd></dl>
+<a name="f_linGenPos"></a><dl><dt>linGenPos : <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)) -&gt Record(gblist : <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F)), gvlist : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>linGenPos </code>is undocumented</p>
+</dd></dl>
+<a name="f_minPol"></a><dl><dt>minPol : (<a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)), <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)), <a href="OrderedVariableList.html">OrderedVariableList</a>(lv)) -&gt <a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)</dt><dd><p>
+<code>minPol </code>is undocumented</p>
+</dd></dl>
+<dl><dt>minPol : (<a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)), <a href="OrderedVariableList.html">OrderedVariableList</a>(lv)) -&gt <a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)</dt><dd><p>
+<code>minPol </code>is undocumented</p>
+</dd></dl>
+<a name="f_totolex"></a><dl><dt>totolex : <a href="List.html">List</a>(<a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)) -&gt <a href="List.html">List</a>(<a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F))</dt><dd><p>
+<code>totolex </code>is undocumented</p>
+</dd></dl>
+<a name="f_transform"></a><dl><dt>transform : <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(lv, F) -&gt <a href="HomogeneousDistributedMultivariatePolynomial.html">HomogeneousDistributedMultivariatePolynomial</a>(lv, F)</dt><dd><p>
+<code>transform </code>is undocumented</p>
+</dd></dl>
+</body>
+</html>

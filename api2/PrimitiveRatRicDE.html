@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PrimitiveRatRicDE</title>
+</head>
+<body>
+<h1>PrimitiveRatRicDE(F, UP, L, LQ)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/riccati.spad#L1">riccati.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/riccati.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(UP)<li>LQ : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(<a href="Fraction.html">Fraction</a>(UP))</ul>
+<p>
+In-field solution of Riccati equations, primitive case.</p>
+<a name="f_changeVar"></a><dl><dt>changeVar : (L, UP) -&gt L</dt><dd><p>
+<code>changeVar(+/[<code>ai</code> D^i], a)</code> returns the operator <code>+/[<code>ai</code> (D+a)<code>^i</code>]</code>.</p>
+</dd></dl>
+<dl><dt>changeVar : (L, <a href="Fraction.html">Fraction</a>(UP)) -&gt L</dt><dd><p>
+<code>changeVar(+/[<code>ai</code> D^i], a)</code> returns the operator <code>+/[<code>ai</code> (D+a)<code>^i</code>]</code>.</p>
+</dd></dl>
+<a name="f_constantCoefficientRicDE"></a><dl><dt>constantCoefficientRicDE : (L, Mapping(<a href="List.html">List</a>(F), UP)) -&gt <a href="List.html">List</a>(Record(constant : F, eq : L))</dt><dd><p>
+<code>constantCoefficientRicDE(op, ric)</code> returns <code>[[a1, L1], [a2, L2], ... , [ak, Lk]]</code> such that any rational solution with no polynomial part of the associated Riccati equation of <code>op y = 0</code> must be one of the <code>ai</code><code>'s</code> in which case the equation for <code>z = y e^-int <code>ai</code></code> is <code><code>Li</code> z = 0</code>. <code>ric</code> is a Riccati equation solver over <code>F</code>, whose input is the associated linear equation.</p>
+</dd></dl>
+<a name="f_denomRicDE"></a><dl><dt>denomRicDE : L -&gt UP</dt><dd><p>
+<code>denomRicDE(op)</code> returns a polynomial <code>d</code> such that any rational solution of the associated Riccati equation of <code>op y = 0</code> is of the form <code>p/d + q'/q + r</code> for some polynomials <code>p</code> and <code>q</code> and a reduced <code>r</code>. Also, <code>deg(p) &lt; deg(d)</code> and <code>gcd</code>(<code>d</code>, <code>q</code>) = 1.</p>
+</dd></dl>
+<a name="f_leadingCoefficientRicDE"></a><dl><dt>leadingCoefficientRicDE : L -&gt <a href="List.html">List</a>(Record(deg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eq : UP))</dt><dd><p>
+<code>leadingCoefficientRicDE(op)</code> returns <code>[[m1, p1], [m2, p2], ... , [mk, pk]]</code> such that the polynomial part of any rational solution of the associated Riccati equation of <code>op y = 0</code> must have degree <code>mj</code> for some <code>j</code>, and its leading coefficient is then a zero of <code>pj</code>. In addition, <code>m1&gt;m2&gt; ... &gt;mk</code>.</p>
+</dd></dl>
+<a name="f_polyRicDE"></a><dl><dt>polyRicDE : (L, Mapping(<a href="List.html">List</a>(F), UP)) -&gt <a href="List.html">List</a>(Record(poly : UP, eq : L))</dt><dd><p>
+<code>polyRicDE(op, zeros)</code> returns <code>[[p1, L1], [p2, L2], ... , [pk, Lk]]</code> such that the polynomial part of any rational solution of the associated Riccati equation of <code>op y=0</code> must be one of the <code>pi</code><code>'s</code> (up to the constant coefficient), in which case the equation for <code>z=y e^-int p</code> is <code><code>Li</code> z =0</code>. <code>zeros</code> is a zero finder in <code>UP</code>.</p>
+</dd></dl>
+<a name="f_singRicDE"></a><dl><dt>singRicDE : (L, Mapping(<a href="List.html">List</a>(UP), UP, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(UP)), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt <a href="List.html">List</a>(Record(frac : <a href="Fraction.html">Fraction</a>(UP), eq : L))</dt><dd><p>
+<code>singRicDE(op, zeros, ezfactor)</code> returns <code>[[f1, L1], [f2, L2], ... , [fk, Lk]]</code> such that the singular part of any rational solution of the associated Riccati equation of <code>op y=0</code> must be one of the <code>fi</code><code>'s</code> (up to the constant coefficient), in which case the equation for <code>z=y e^-int p</code> is <code><code>Li</code> z=0</code>. <code>zeros(C(x), H(x, y))</code> returns all the <code>P_i(x)</code><code>'s</code> such that <code>H(x, P_i(x)) = 0 modulo C(x)</code>. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+</body>
+</html>

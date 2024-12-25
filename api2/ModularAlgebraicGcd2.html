@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularAlgebraicGcd2</title>
+</head>
+<body>
+<h1>ModularAlgebraicGcd2(PT, MP, MPT, MD, ME, MO)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/amodgcd.spad#L206">amodgcd.spad line 206</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/amodgcd.spad#L206">[edit on github]</a></p>
+<ul>
+<li>PT : <a href="Type.html">Type</a><li>MP : <a href="Type.html">Type</a><li>MPT : <a href="Type.html">Type</a><li>MD : <a href="Type.html">Type</a><li>ME : <a href="ModularEvaluationCategory.html">ModularEvaluationCategory</a>(PT, MP)<li>MO : <a href="ModularAlgebraicGcdOperations.html">ModularAlgebraicGcdOperations</a>(MP, MPT, MD)</ul>
+<p>
+This package computes <code>gcd</code> over field of algebraic functions over <code>Q</code> using modular method based on <code>M</code>. Monagan and van Hoej paper. Core modular operations are passed as parameter (MO) to this package.Similarly, evaluation functions are passed as parameter ME.</p>
+<a name="f_algebraicGcd"></a><dl><dt>algebraicGcd : (PT, PT, <a href="List.html">List</a>(PT), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>algebraicGcd(x, y, lm, lp, v, la)</code> computes <code>gcd</code> of <code>x</code> and <code>y</code> modulo polynomials in <code>lm</code>. la is list of algebraic parameters, <code>lp</code> is a list of transcendental parameters, <code>v</code> is main variable.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FloatingRealPackage</title>
+</head>
+<body>
+<h1>FloatingRealPackage(Par)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numsolve.spad#L334">numsolve.spad line 334</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numsolve.spad#L334">[edit on github]</a></p>
+<ul>
+<li>Par : Join(<a href="OrderedRing.html">OrderedRing</a>, <a href="Field.html">Field</a>)</ul>
+<p>
+This is a package for the approximation of real solutions for systems of polynomial equations over the rational numbers. The results are expressed as either rational numbers or floats depending on the type of the precision parameter which can be either a rational number or a floating point number.</p>
+<a name="f_realRoots"></a><dl><dt>realRoots : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), Par) -&gt <a href="List.html">List</a>(Par)</dt><dd><p>
+<code>realRoots(rf, eps)</code> finds the real zeros of a univariate rational function with precision given by eps.</p>
+</dd></dl>
+<dl><dt>realRoots : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), Par) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(Par))</dt><dd><p>
+<code>realRoots(lp, lv, eps)</code> computes the list of the real solutions of the list <code>lp</code> of rational functions with rational coefficients with respect to the variables in <code>lv</code>, with precision eps. Each solution is expressed as a list of numbers in order corresponding to the variables in <code>lv</code>.</p>
+</dd></dl>
+<a name="f_solve"></a><dl><dt>solve : (<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))), Par) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(Par)))</dt><dd><p>
+<code>solve(eq, eps)</code> finds all of the real solutions of the univariate equation <code>eq</code> of rational functions with respect to the unique variables appearing in <code>eq</code>, with precision eps.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), Par) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(Par)))</dt><dd><p>
+<code>solve(p, eps)</code> finds all of the real solutions of the univariate rational function <code>p</code> with rational coefficients with respect to the unique variable appearing in <code>p</code>, with precision eps.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))), Par) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(Par))))</dt><dd><p>
+<code>solve(leq, eps)</code> finds all of the real solutions of the system <code>leq</code> of equationas of rational functions with respect to all the variables appearing in <code>lp</code>, with precision eps.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))), Par) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(Par))))</dt><dd><p>
+<code>solve(lp, eps)</code> finds all of the real solutions of the system <code>lp</code> of rational functions over the rational numbers with respect to all the variables appearing in <code>lp</code>, with precision eps.</p>
+</dd></dl>
+</body>
+</html>

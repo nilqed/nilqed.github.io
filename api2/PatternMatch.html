@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatch</title>
+</head>
+<body>
+<h1>PatternMatch(Base, Subject, Pat)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L879">patmatch1.spad line 879</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L879">[edit on github]</a></p>
+<ul>
+<li>Base : <a href="SetCategory.html">SetCategory</a><li>Subject : <a href="PatternMatchable.html">PatternMatchable</a>(Base)<li>Pat : <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(Base))</ul>
+<p>
+This package provides the top-level pattern matching functions.</p>
+<a name="f_Is"></a><dl><dt>Is : (Subject, Pat) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(Subject)) if Subject has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>Is(expr, pat)</code> matches the pattern pat on the expression <code>expr</code> and returns a list of matches <code>[v1 = e1, ..., vn = en]</code>; returns an empty list if either <code>expr</code> is exactly equal to pat or if pat does not match <code>expr</code>.</p>
+</dd></dl>
+<dl><dt>Is : (Subject, Pat) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(Subject))) if Subject hasn't <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>) and Subject has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>Is(expr, pat)</code> matches the pattern pat on the expression <code>expr</code> and returns a list of matches <code>[v1 = e1, ..., vn = en]</code>; returns an empty list if either <code>expr</code> is exactly equal to pat or if pat does not match <code>expr</code>.</p>
+</dd></dl>
+<dl><dt>Is : (<a href="List.html">List</a>(Subject), Pat) -&gt <a href="PatternMatchListResult.html">PatternMatchListResult</a>(Base, Subject, <a href="List.html">List</a>(Subject))</dt><dd><p>
+<code>Is([e1, ..., en], pat)</code> matches the pattern pat on the list of expressions <code>[e1, ..., en]</code> and returns the result.</p>
+</dd></dl>
+<dl><dt>Is : (Subject, Pat) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(Base, Subject) if Subject hasn't <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>) and Subject hasn't <a href="Ring.html">Ring</a></dt><dd><p>
+<code>Is(expr, pat)</code> matches the pattern pat on the expression <code>expr</code> and returns a match of the form <code>[v1 = e1, ..., vn = en]</code>; returns an empty match if <code>expr</code> is exactly equal to pat. returns a <span class="spadfun">failed</span> match if pat does not match <code>expr</code>.</p>
+</dd></dl>
+<a name="f_is_63"></a><dl><dt>is? : (Subject, Pat) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?(expr, pat)</code> tests if the expression <code>expr</code> matches the pattern pat.</p>
+</dd></dl>
+<dl><dt>is? : (<a href="List.html">List</a>(Subject), Pat) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?([e1, ..., en], pat)</code> tests if the list of expressions <code>[e1, ..., en]</code> matches the pattern pat.</p>
+</dd></dl>
+</body>
+</html>

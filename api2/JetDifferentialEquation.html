@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetDifferentialEquation</title>
+</head>
+<body>
+<h1>JetDifferentialEquation(JB, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L3759">jet.spad line 3759</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L3759">[edit on github]</a></p>
+<ul>
+<li>JB : <a href="JetBundleCategory.html">JetBundleCategory</a><li>D : <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</ul>
+<p>
+JetDifferentialEquation provides the basic data structures and procedures for differential equations as needed in the geometric theory. Differential equation means here always a submanifold in the jet bundle. The concrete equations which define this submanifold are called system. In an object of the type JetDifferentialEquation much more than only the system is stored. <code>D</code> denotes the class of functions allowed as equations. It is assumed that the <code>simplify</code> procedure of <code>D</code> returns only independent equations and a system with symbol in row echelon form.</p>
+<a name="f_analyseSymbol"></a><dl><dt>analyseSymbol : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D) -&gt Record(Rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, NumMultVar : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Betas : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>analyseSymbol(symb)</code> computes the multiplicative variables of the symbol <code>symb</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(de)</code> transforms the differential equation <code>de</code> to OutputForm.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(De)</code> returns a copy of the equation <code>De</code>.</p>
+</dd></dl>
+<a name="f_dimension"></a><dl><dt>dimension : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>dimension(de, q)</code> computes the dimension of the differential equation <code>de</code> as a submanifold of the <code>q</code><code>-</code>th order jet bundle. The result is correct only, if <code>de</code> is simplified.</p>
+</dd></dl>
+<a name="f_display"></a><dl><dt>display : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>display(de)</code> prints all information stored about the differential equation <code>de</code>. This comprises the system ordered by the order of the equations, the Jacobi matrices separately for each order and the index of the independent variable with respect to which the equation was lastly differentiated (1 for not prolonged equations).</p>
+</dd></dl>
+<a name="f_extractSymbol"></a><dl><dt>extractSymbol : (%, <a href="Boolean.html">Boolean</a>) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D)</dt><dd><p>
+<code>extractSymbol(de, solved?)</code> computes the symbol of the differential equation <code>de</code>. If <code>solved?</code> is <code>true</code>, the row echelon form of the symbol is computed at once.</p>
+</dd></dl>
+<a name="f_insert"></a><dl><dt>insert : (<a href="List.html">List</a>(D), %) -&gt %</dt><dd><p>
+<code>insert(sys, de)</code> adds the system <code>sys = 0</code> to the differential equation <code>de</code>.</p>
+</dd></dl>
+<a name="f_jacobiMatrix"></a><dl><dt>jacobiMatrix : % -&gt <a href="List.html">List</a>(<a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D))</dt><dd><p>
+<code>jacobiMatrix(De)</code> returns a list of Jacobi matrices sorted by the order of the equations.</p>
+</dd></dl>
+<a name="f_join"></a><dl><dt>join : (%, %) -&gt %</dt><dd><p>
+<code>join(de1, de2)</code> combines <code>de1</code> and <code>de2</code> to a single differential equation.</p>
+</dd></dl>
+<a name="f_makeSystem"></a><dl><dt>makeSystem : <a href="List.html">List</a>(D) -&gt %</dt><dd><p>
+<code>makeSystem(sys)</code> creates a differential equation from a system.</p>
+</dd></dl>
+<a name="f_order"></a><dl><dt>order : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>order(de)</code> yields the order of the differential equation <code>de</code>.</p>
+</dd></dl>
+<a name="f_printSys"></a><dl><dt>printSys : <a href="List.html">List</a>(D) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>printSys(sys)</code> writes a list of functions as a vector of equations (with right hand side 0) and coerces the result to OutputForm.</p>
+</dd></dl>
+<a name="f_project"></a><dl><dt>project : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>project(de, q)</code> projects the differential equation <code>de</code> of order higher than <code>q</code> into the <code>q</code><code>-</code>th order jet bundle.</p>
+</dd></dl>
+<a name="f_prolong"></a><dl><dt>prolong : % -&gt Record(SDe : %, IC : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>prolong(de)</code> prolongs the differential equation <code>de</code>. Additionally the arising integrability conditions are returned.</p>
+</dd></dl>
+<dl><dt>prolong : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(SDe : %, IC : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>prolong(de, q)</code> is like <code>prolong(de)</code>. However, only equations of lower order than <code>q</code> are prolonged.</p>
+</dd></dl>
+<a name="f_prolongMV"></a><dl><dt>prolongMV : Record(Rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, NumMultVar : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Betas : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Record(Rank : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, NumMultVar : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Betas : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>prolongMV(mv)</code> calculates the number of multiplicative variables for the prolongation of an involutive symbol.</p>
+</dd></dl>
+<a name="f_prolongSymbol"></a><dl><dt>prolongSymbol : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D)</dt><dd><p>
+<code>prolongSymbol(symb)</code> prolongs directly the symbol <code>symb</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt>retract : % -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>retract(de)</code> returns the system defining the differential equation <code>de</code>.</p>
+</dd></dl>
+<a name="f_setSimpMode"></a><dl><dt>setSimpMode : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>setSimpMode(i)</code> sets the flag controlling the used simplifications and returns the old value. Current values are: <code>i = 0</code> <code>-&gt;</code> No simplification modulo lower order equations. <code>i = 1</code> <code>-&gt;</code> Simplification modulo lower order equations. Default is 0.</p>
+</dd></dl>
+<a name="f_simplify"></a><dl><dt>simplify : % -&gt Record(SDe : %, IC : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>simplify(de)</code> simplifies the equations of each order separately using the procedure <code>simplify</code> from <code>D</code>. Found integrability conditions are also returned separately.</p>
+</dd></dl>
+<a name="f_tableau"></a><dl><dt>tableau : (<a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D), <a href="JetDifferential.html">JetDifferential</a>(JB, D)) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D)</dt><dd><p>
+<code>tableau(symb, chi)</code> computes the tableau parametrized by a given one-form.</p>
+</dd></dl>
+<dl><dt>tableau : (<a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D), <a href="List.html">List</a>(<a href="JetDifferential.html">JetDifferential</a>(JB, D))) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, D)</dt><dd><p>
+<code>tableau(symb, lchi)</code> computes the extended tableau parametrized by a given list of one-forms.</p>
+</dd></dl>
+</body>
+</html>

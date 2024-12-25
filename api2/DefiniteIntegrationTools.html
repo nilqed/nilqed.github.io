@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DefiniteIntegrationTools</title>
+</head>
+<body>
+<h1>DefiniteIntegrationTools(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/defintrf.spad#L1">defintrf.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/defintrf.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+DefiniteIntegrationTools provides common tools used by the definite integration of both rational and elementary functions.</p>
+<a name="f_checkForZero"></a><dl><dt>checkForZero : (<a href="Polynomial.html">Polynomial</a>(R), <a href="Symbol.html">Symbol</a>, <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="Boolean.html">Boolean</a>) -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>checkForZero(p, x, a, b, incl?)</code> is <code>true</code> if <code>p</code> has a zero for <code>x</code> between a and <code>b</code>, <code>false</code> otherwise, "failed" if this cannot be determined. Check for a and <code>b</code> inclusive if incl? is <code>true</code>, exclusive otherwise.</p>
+</dd></dl>
+<dl><dt>checkForZero : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="Boolean.html">Boolean</a>) -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>checkForZero(p, a, b, incl?)</code> is <code>true</code> if <code>p</code> has a zero between a and <code>b</code>, <code>false</code> otherwise, "failed" if this cannot be determined. Check for a and <code>b</code> inclusive if incl? is <code>true</code>, exclusive otherwise.</p>
+</dd></dl>
+<a name="f_computeInt"></a><dl><dt>computeInt : (<a href="Kernel.html">Kernel</a>(F), F, <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="Boolean.html">Boolean</a>) -&gt Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(F), "failed")</dt><dd><p>
+<code>computeInt(x, g, a, b, eval?)</code> returns the integral of <code>f</code> for <code>x</code> between a and <code>b</code>, assuming that <code>g</code> is an indefinite integral of <code>f</code> and <code>f</code> has no pole between a and <code>b</code>. If <code>eval?</code> is <code>true</code>, then <code>g</code> can be evaluated safely at <code>a</code> and <code>b</code>, provided that they are finite values. Otherwise, limits must be computed.</p>
+</dd></dl>
+<a name="f_ignore_63"></a><dl><dt>ignore? : <a href="String.html">String</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>ignore?(s)</code> is <code>true</code> if <code>s</code> is the string that tells the integrator to assume that the function has no pole in the integration interval.</p>
+</dd></dl>
+</body>
+</html>

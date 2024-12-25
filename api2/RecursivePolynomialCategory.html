@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RecursivePolynomialCategory</title>
+</head>
+<body>
+<h1>RecursivePolynomialCategory(R, E, V)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/newpoly.spad#L231">newpoly.spad line 231</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/newpoly.spad#L231">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+A category for general multi-variate polynomials with coefficients in a ring, variables in an ordered set, and exponents from an ordered abelian monoid, with a <span class="spadfun">sup</span> operation. When not constant, such a polynomial is viewed as a univariate polynomial in its main variable <code>w</code>. <code>r</code>. <code>t</code>. to the total ordering on the elements in the ordered set, so that some operations usually defined for univariate polynomials make sense here.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="AbelianMonoidRing.html#f__47">/</a> : (%, R) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, V) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, V, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(V)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(V), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<a name="f_LazardQuotient"></a><dl><dt>LazardQuotient : (%, %, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>LazardQuotient(a, b, n)</code> returns <code>a^n exquo b^(n-1)</code> assuming that this quotient does not fail.</p>
+</dd></dl>
+<a name="f_LazardQuotient2"></a><dl><dt>LazardQuotient2 : (%, %, %, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>LazardQuotient2(p, a, b, n)</code> returns <code>(a^(n-1) * p) exquo b^(n-1)</code> assuming that this quotient does not fail.</p>
+</dd></dl>
+<a name="f_RittWuCompare"></a><dl><dt>RittWuCompare : (%, %) -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>RittWuCompare(a,b)</code> returns <code>"failed"</code> if <code>a</code> and <code>b</code> have same rank <code>w</code>.<code>r</code>.<code>t</code>. Ritt and Wu Wen Tsun ordering using the refinement of Lazard, otherwise returns <code>infRittWu?(a, b)</code>.</p>
+</dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_binomThmExpt"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_binomThmExpt">binomThmExpt</a> : (%, %, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if % has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> or R has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_coefficient">coefficient</a> : (%, V, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_coefficient">coefficient</a> : (%, <a href="List.html">List</a>(V), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="AbelianMonoidRing.html#f_coefficient">coefficient</a> : (%, E) -&gt R</dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_coefficients"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficients">coefficients</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(R)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : V -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(V)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) or R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="Polynomial.html">Polynomial</a>(R) if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="Polynomial.html">Polynomial</a>(R))</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conditionP"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_conditionP">conditionP</a> : <a href="Matrix.html">Matrix</a>(%) -&gt Union(<a href="Vector.html">Vector</a>(%), "failed") if % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : E, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : E, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_content"></a><dl><dt><a href="PolynomialCategory.html#f_content">content</a> : (%, V) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="FiniteAbelianMonoidRing.html#f_content">content</a> : % -&gt R if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_convert"></a><dl><dt>convert : <a href="Polynomial.html">Polynomial</a>(R) -&gt % if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>convert(p)</code> returns the same as <code>retract(p)</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) and V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>convert(p)</code> returns the same as <code>retract(p)</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Integer.html">Integer</a>) and V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>convert(p)</code> returns the same as <code>retract(p)</code>.</p>
+</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>) and R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>) if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>)) and R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>) if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>)) and R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Polynomial.html">Polynomial</a>(R) if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Polynomial.html">Polynomial</a>(R))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="String.html">String</a> if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>) and R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="String.html">String</a>)</dd></dl>
+<a name="f_deepestInitial"></a><dl><dt>deepestInitial : % -&gt %</dt><dd><p>
+<code>deepestInitial(p)</code> returns an error if <code>p</code> belongs to <code>R</code>, otherwise returns the last term of <code>iteratedInitials(p)</code>.</p>
+</dd></dl>
+<a name="f_deepestTail"></a><dl><dt>deepestTail : % -&gt %</dt><dd><p>
+<code>deepestTail(p)</code> returns <code>0</code> if <code>p</code> belongs to <code>R</code>, otherwise returns tail(<code>p</code>), if <code>tail(p)</code> belongs to <code>R</code> or <code>mvar(tail(p)) &lt; mvar(p)</code>, otherwise returns <code>deepestTail(tail(p))</code>.</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="AbelianMonoidRing.html#f_degree">degree</a> : % -&gt E</dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_degree">degree</a> : (%, <a href="List.html">List</a>(V)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_degree">degree</a> : (%, V) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, V) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, V, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(V)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(V), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)</dd></dl>
+<a name="f_discriminant"></a><dl><dt><a href="PolynomialCategory.html#f_discriminant">discriminant</a> : (%, V) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, %, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, V, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(V, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, V, R) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(V, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(%)) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(V), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(V, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(V), <a href="List.html">List</a>(R)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(V, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<a name="f_exactQuotient"></a><dl><dt>exactQuotient : (%, %) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>exactQuotient(a, b)</code> computes the exact quotient of <code>a</code> by <code>b</code>, which is assumed to be a divisor of <code>a</code>. No error is returned if this exact quotient fails!</p>
+</dd></dl>
+<dl><dt>exactQuotient : (%, R) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>exactQuotient(p, r)</code> computes the exact quotient of <code>p</code> by <code>r</code>, which is assumed to be a divisor of <code>p</code>. No error is returned if this exact quotient fails!</p>
+</dd></dl>
+<a name="f_exactQuotient_33"></a><dl><dt>exactQuotient! : (%, %) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>exactQuotient!(a, b)</code> replaces <code>a</code> by <code>exactQuotient(a, b)</code></p>
+</dd></dl>
+<dl><dt>exactQuotient! : (%, R) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>exactQuotient!(p, r)</code> replaces <code>p</code> by <code>exactQuotient(p, r)</code>.</p>
+</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<dl><dt><a href="FiniteAbelianMonoidRing.html#f_exquo">exquo</a> : (%, R) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_extendedSubResultantGcd"></a><dl><dt>extendedSubResultantGcd : (%, %) -&gt Record(gcd : %, coef1 : %, coef2 : %) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>extendedSubResultantGcd(a, b)</code> returns <code>[g, ca, cb]</code> such that <code>g</code> is <code>subResultantGcd(a, b)</code> and we have <code>ca * a + cb * cb = g</code>.</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_factor">factor</a> : % -&gt <a href="Factored.html">Factored</a>(%) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_factorPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorPolynomial">factorPolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_factorSquareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorSquareFreePolynomial">factorSquareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_fmecg"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_fmecg">fmecg</a> : (%, E, R, %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt>gcd : (R, %) -&gt R if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>gcd(r, p)</code> returns the <code>gcd</code> of <code>r</code> and the content of <code>p</code>.</p>
+</dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_ground"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_ground">ground</a> : % -&gt R</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_ground_63"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_ground_63">ground?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_halfExtendedSubResultantGcd1"></a><dl><dt>halfExtendedSubResultantGcd1 : (%, %) -&gt Record(gcd : %, coef1 : %) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>halfExtendedSubResultantGcd1(a, b)</code> returns <code>[g, ca]</code> if <code>extendedSubResultantGcd(a, b)</code> returns <code>[g, ca, cb]</code> otherwise produces an error.</p>
+</dd></dl>
+<a name="f_halfExtendedSubResultantGcd2"></a><dl><dt>halfExtendedSubResultantGcd2 : (%, %) -&gt Record(gcd : %, coef2 : %) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>halfExtendedSubResultantGcd2(a, b)</code> returns <code>[g, cb]</code> if <code>extendedSubResultantGcd(a, b)</code> returns <code>[g, ca, cb]</code> otherwise produces an error.</p>
+</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if R has <a href="Hashable.html">Hashable</a> and V has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if R has <a href="Hashable.html">Hashable</a> and V has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_head"></a><dl><dt>head : % -&gt %</dt><dd><p>
+<code>head(p)</code> returns <code>p</code> if <code>p</code> belongs to <code>R</code>, otherwise returns its leading term (monomial in the FriCAS sense), where <code>p</code> is viewed as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_headReduce"></a><dl><dt>headReduce : (%, %) -&gt %</dt><dd><p>
+<code>headReduce(a, b)</code> returns a polynomial <code>r</code> such that <code>headReduced?(r, b)</code> holds and there exists an integer <code>e</code> such that <code>init(b)^e a - r</code> is zero modulo <code>b</code>.</p>
+</dd></dl>
+<a name="f_headReduced_63"></a><dl><dt>headReduced? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>headReduced?(a, b)</code> returns <code>true</code> iff <code>degree(head(a), mvar(b)) &lt; mdeg(b)</code>.</p>
+</dd></dl>
+<dl><dt>headReduced? : (%, <a href="List.html">List</a>(%)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>headReduced?(q, lp)</code> returns <code>true</code> iff <code>headReduced?(q, p)</code> holds for every <code>p</code> in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_iexactQuo"></a><dl><dt>iexactQuo : (R, R) -&gt R if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>iexactQuo(x, y)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_infRittWu_63"></a><dl><dt>infRittWu? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>infRittWu?(a, b)</code> returns <code>true</code> if <code>a</code> is less than <code>b</code> <code>w</code>.<code>r</code>.<code>t</code>. the Ritt and Wu Wen Tsun ordering using the refinement of Lazard.</p>
+</dd></dl>
+<a name="f_init"></a><dl><dt>init : % -&gt %</dt><dd><p>
+<code>init(p)</code> returns an error if <code>p</code> belongs to <code>R</code>, otherwise returns its leading coefficient, where <code>p</code> is viewed as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_initiallyReduce"></a><dl><dt>initiallyReduce : (%, %) -&gt %</dt><dd><p>
+<code>initiallyReduce(a, b)</code> returns a polynomial <code>r</code> such that <code>initiallyReduced?(r, b)</code> holds and there exists an integer <code>e</code> such that <code>init(b)^e a - r</code> is zero modulo <code>b</code>.</p>
+</dd></dl>
+<a name="f_initiallyReduced_63"></a><dl><dt>initiallyReduced? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>initiallyReduced?(a, b)</code> returns <code>false</code> iff there exists an iterated initial of <code>a</code> which is not reduced <code>w</code>.<code>r</code>.<code>t</code> <code>b</code>.</p>
+</dd></dl>
+<dl><dt>initiallyReduced? : (%, <a href="List.html">List</a>(%)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>initiallyReduced?(q, lp)</code> returns <code>true</code> iff <code>initiallyReduced?(q, p)</code> holds for every <code>p</code> in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_isExpt"></a><dl><dt><a href="PolynomialCategory.html#f_isExpt">isExpt</a> : % -&gt Union(Record(var : V, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>), "failed")</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_isPlus"></a><dl><dt><a href="PolynomialCategory.html#f_isPlus">isPlus</a> : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_isTimes"></a><dl><dt><a href="PolynomialCategory.html#f_isTimes">isTimes</a> : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_iteratedInitials"></a><dl><dt>iteratedInitials : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>iteratedInitials(p)</code> returns <code>[]</code> if <code>p</code> belongs to <code>R</code>, otherwise returns the list of the iterated initials of <code>p</code>.</p>
+</dd></dl>
+<a name="f_lastSubResultant"></a><dl><dt>lastSubResultant : (%, %) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>lastSubResultant(a, b)</code> returns the last non-zero subresultant of <code>a</code> and <code>b</code> where <code>a</code> and <code>b</code> are assumed to have the same main variable <code>v</code> and are viewed as univariate polynomials in <code>v</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lazyPquo"></a><dl><dt>lazyPquo : (%, %) -&gt %</dt><dd><p>
+<code>lazyPquo(a, b)</code> returns the polynomial <code>q</code> such that <code>lazyPseudoDivide(a, b)</code> returns <code>[c, g, q, r]</code>.</p>
+</dd></dl>
+<dl><dt>lazyPquo : (%, %, V) -&gt %</dt><dd><p>
+<code>lazyPquo(a, b, v)</code> returns the polynomial <code>q</code> such that <code>lazyPseudoDivide(a, b, v)</code> returns <code>[c, g, q, r]</code>.</p>
+</dd></dl>
+<a name="f_lazyPrem"></a><dl><dt>lazyPrem : (%, %) -&gt %</dt><dd><p>
+<code>lazyPrem(a, b)</code> returns the polynomial <code>r</code> reduced <code>w</code>.<code>r</code>.<code>t</code>. <code>b</code> and such that <code>b</code> divides <code>init(b)^e a - r</code> where <code>e</code> is the number of steps of this pseudo-division.</p>
+</dd></dl>
+<dl><dt>lazyPrem : (%, %, V) -&gt %</dt><dd><p>
+<code>lazyPrem(a, b, v)</code> returns the polynomial <code>r</code> reduced <code>w</code>.<code>r</code>.<code>t</code>. <code>b</code> viewed as univariate polynomials in the variable <code>v</code> such that <code>b</code> divides <code>init(b)^e a - r</code> where <code>e</code> is the number of steps of this pseudo-division.</p>
+</dd></dl>
+<a name="f_lazyPremWithDefault"></a><dl><dt>lazyPremWithDefault : (%, %) -&gt Record(coef : %, gap : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, remainder : %)</dt><dd><p>
+<code>lazyPremWithDefault(a, b)</code> returns <code>[c, g, r]</code> such that <code>r = lazyPrem(a, b)</code> and <code>(c^g)*r = prem(a, b)</code>.</p>
+</dd></dl>
+<dl><dt>lazyPremWithDefault : (%, %, V) -&gt Record(coef : %, gap : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, remainder : %)</dt><dd><p>
+<code>lazyPremWithDefault(a, b, v)</code> returns <code>[c, g, r]</code> such that <code>r = lazyPrem(a, b, v)</code> and <code>(c^g)*r = prem(a, b, v)</code>.</p>
+</dd></dl>
+<a name="f_lazyPseudoDivide"></a><dl><dt>lazyPseudoDivide : (%, %) -&gt Record(coef : %, gap : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, quotient : %, remainder : %)</dt><dd><p>
+<code>lazyPseudoDivide(a, b)</code> returns <code>[c, g, q, r]</code> such that <code>[c, g, r] = lazyPremWithDefault(a, b)</code> and <code>q</code> is the pseudo-quotient computed in this lazy pseudo-division.</p>
+</dd></dl>
+<dl><dt>lazyPseudoDivide : (%, %, V) -&gt Record(coef : %, gap : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, quotient : %, remainder : %)</dt><dd><p>
+<code>lazyPseudoDivide(a, b, v)</code> returns <code>[c, g, q, r]</code> such that <code>r = lazyPrem(a, b, v)</code>, <code>(c^g)*r = prem(a, b, v)</code> and <code>q</code> is the pseudo-quotient computed in this lazy pseudo-division.</p>
+</dd></dl>
+<a name="f_lazyResidueClass"></a><dl><dt>lazyResidueClass : (%, %) -&gt Record(polnum : %, polden : %, power : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>lazyResidueClass(a, b)</code> returns <code>[p, q, n]</code> where <code>p / q^n</code> represents the residue class of <code>a</code> modulo <code>b</code> and <code>p</code> is reduced <code>w</code>.<code>r</code>.<code>t</code>. <code>b</code> and <code>q</code> is <code>init(b)</code>.</p>
+</dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt>leadingCoefficient : (%, V) -&gt %</dt><dd><p>
+<code>leadingCoefficient(p, v)</code> returns the leading coefficient of <code>p</code>, where <code>p</code> is viewed as A univariate polynomial in <code>v</code>.</p>
+</dd></dl>
+<dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt R</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt E</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : E, c : R)</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leastMonomial"></a><dl><dt>leastMonomial : % -&gt %</dt><dd><p>
+<code>leastMonomial(p)</code> returns an error if <code>p</code> is <code>O</code>, otherwise, if <code>p</code> belongs to <code>R</code> returns <code>1</code>, otherwise, the monomial of <code>p</code> with lowest degree, where <code>p</code> is viewed as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_linearExtend"></a><dl><dt><a href="FreeModuleCategory.html#f_linearExtend">linearExtend</a> : (Mapping(R, E), %) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_listOfTerms">listOfTerms</a> : % -&gt <a href="List.html">List</a>(Record(k : E, c : R))</dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, E)</dd></dl>
+<a name="f_mainCoefficients"></a><dl><dt>mainCoefficients : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>mainCoefficients(p)</code> returns an error if <code>p</code> is <code>O</code>, otherwise, if <code>p</code> belongs to <code>R</code> returns [<code>p</code>], otherwise returns the list of the coefficients of <code>p</code>, where <code>p</code> is viewed as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_mainContent"></a><dl><dt>mainContent : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>mainContent(p)</code> returns the content of <code>p</code> viewed as a univariate polynomial in its main variable and with coefficients in the polynomial ring generated by its other variables over <code>R</code>.</p>
+</dd></dl>
+<a name="f_mainMonomial"></a><dl><dt>mainMonomial : % -&gt %</dt><dd><p>
+<code>mainMonomial(p)</code> returns an error if <code>p</code> is <code>O</code>, otherwise, if <code>p</code> belongs to <code>R</code> returns <code>1</code>, otherwise, <code>mvar(p)</code> raised to the power <code>mdeg(p)</code>.</p>
+</dd></dl>
+<a name="f_mainMonomials"></a><dl><dt>mainMonomials : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>mainMonomials(p)</code> returns an error if <code>p</code> is <code>O</code>, otherwise, if <code>p</code> belongs to <code>R</code> returns [1], otherwise returns the list of the monomials of <code>p</code>, where <code>p</code> is viewed as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_mainPrimitivePart"></a><dl><dt>mainPrimitivePart : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>mainPrimitivePart(p)</code> returns the primitive part of <code>p</code> viewed as a univariate polynomial in its main variable and with coefficients in the polynomial ring generated by its other variables over <code>R</code>.</p>
+</dd></dl>
+<a name="f_mainSquareFreePart"></a><dl><dt>mainSquareFreePart : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>mainSquareFreePart(p)</code> returns the square free part of <code>p</code> viewed as a univariate polynomial in its main variable and with coefficients in the polynomial ring generated by its other variables over <code>R</code>.</p>
+</dd></dl>
+<a name="f_mainVariable"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_mainVariable">mainVariable</a> : % -&gt Union(V, "failed")</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_mapExponents"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_mapExponents">mapExponents</a> : (Mapping(E, E), %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_mdeg"></a><dl><dt>mdeg : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>mdeg(p)</code> returns an error if <code>p</code> is <code>0</code>, otherwise, if <code>p</code> belongs to <code>R</code> returns <code>0</code>, otherwise, returns the degree of <code>p</code> in its main variable.</p>
+</dd></dl>
+<a name="f_minimumDegree"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_minimumDegree">minimumDegree</a> : % -&gt E</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<dl><dt><a href="PolynomialCategory.html#f_minimumDegree">minimumDegree</a> : (%, <a href="List.html">List</a>(V)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="PolynomialCategory.html#f_minimumDegree">minimumDegree</a> : (%, V) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_monic_63"></a><dl><dt>monic? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>monic?(p)</code> returns <code>false</code> if <code>p</code> belongs to <code>R</code>, otherwise returns <code>true</code> iff <code>p</code> is monic as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_monicDivide"></a><dl><dt><a href="PolynomialCategory.html#f_monicDivide">monicDivide</a> : (%, %, V) -&gt Record(quotient : %, remainder : %)</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_monicModulo"></a><dl><dt>monicModulo : (%, %) -&gt %</dt><dd><p>
+<code>monicModulo(a, b)</code> computes <code>a mod b</code>, if <code>b</code> is monic as univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomial">monomial</a> : (%, V, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomial">monomial</a> : (%, <a href="List.html">List</a>(V), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (R, E) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_monomials"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomials">monomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_multivariate"></a><dl><dt><a href="PolynomialCategory.html#f_multivariate">multivariate</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), V) -&gt %</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="PolynomialCategory.html#f_multivariate">multivariate</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), V) -&gt %</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_mvar"></a><dl><dt>mvar : % -&gt V</dt><dd><p>
+<code>mvar(p)</code> returns an error if <code>p</code> belongs to <code>R</code>, otherwise returns its main variable <code>w</code>. <code>r</code>. <code>t</code>. to the total ordering on the elements in <code>V</code>.</p>
+</dd></dl>
+<a name="f_next_95subResultant2"></a><dl><dt>next_subResultant2 : (%, %, %, %) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>next_subResultant2(p, q, z, s)</code> is the multivariate version of the operation <span class="spadop"><code>next_sousResultant2</code></span> from the PseudoRemainderSequence constructor.</p>
+</dd></dl>
+<a name="f_normalized_63"></a><dl><dt>normalized? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>normalized?(a, b)</code> returns <code>true</code> iff <code>a</code> and its iterated initials have degree zero <code>w</code>.<code>r</code>.<code>t</code>. the main variable of <code>b</code></p>
+</dd></dl>
+<dl><dt>normalized? : (%, <a href="List.html">List</a>(%)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>normalized?(q, lp)</code> returns <code>true</code> iff <code>normalized?(q, p)</code> holds for every <code>p</code> in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_numberOfMonomials">numberOfMonomials</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, E)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_patternMatch"></a><dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %) if V has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>) and R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %) if V has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>) and R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a> or R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)</dd></dl>
+<a name="f_pomopo_33"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_pomopo_33">pomopo!</a> : (%, R, E, %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_pquo"></a><dl><dt>pquo : (%, %) -&gt %</dt><dd><p>
+<code>pquo(a, b)</code> computes the pseudo-quotient of <code>a</code> by <code>b</code>, both viewed as univariate polynomials in the main variable of <code>b</code>.</p>
+</dd></dl>
+<dl><dt>pquo : (%, %, V) -&gt %</dt><dd><p>
+<code>pquo(a, b, v)</code> computes the pseudo-quotient of <code>a</code> by <code>b</code>, both viewed as univariate polynomials in <code>v</code>.</p>
+</dd></dl>
+<a name="f_prem"></a><dl><dt>prem : (%, %) -&gt %</dt><dd><p>
+<code>prem(a, b)</code> computes the pseudo-remainder of <code>a</code> by <code>b</code>, both viewed as univariate polynomials in the main variable of <code>b</code>.</p>
+</dd></dl>
+<dl><dt>prem : (%, %, V) -&gt %</dt><dd><p>
+<code>prem(a, b, v)</code> computes the pseudo-remainder of <code>a</code> by <code>b</code>, both viewed as univariate polynomials in <code>v</code>.</p>
+</dd></dl>
+<a name="f_primPartElseUnitCanonical"></a><dl><dt>primPartElseUnitCanonical : % -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>primPartElseUnitCanonical(p)</code> returns <code>primitivePart(p)</code> if <code>R</code> is a <code>gcd</code>-domain, otherwise <code>unitCanonical(p)</code>.</p>
+</dd></dl>
+<a name="f_primPartElseUnitCanonical_33"></a><dl><dt>primPartElseUnitCanonical! : % -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>primPartElseUnitCanonical!(p)</code> replaces <code>p</code> by <code>primPartElseUnitCanonical(p)</code>.</p>
+</dd></dl>
+<a name="f_prime_63"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_prime_63">prime?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_primitiveMonomials"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_primitiveMonomials">primitiveMonomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_primitivePart"></a><dl><dt><a href="PolynomialCategory.html#f_primitivePart">primitivePart</a> : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="PolynomialCategory.html#f_primitivePart">primitivePart</a> : (%, V) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_primitivePart_33"></a><dl><dt>primitivePart! : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>primitivePart!(p)</code> replaces <code>p</code> by its primitive part.</p>
+</dd></dl>
+<a name="f_pseudoDivide"></a><dl><dt>pseudoDivide : (%, %) -&gt Record(quotient : %, remainder : %)</dt><dd><p>
+<code>pseudoDivide(a, b)</code> computes <code>[pquo(a, b), prem(a, b)]</code>, both polynomials viewed as univariate polynomials in the main variable of <code>b</code>, if <code>b</code> is not a constant polynomial.</p>
+</dd></dl>
+<a name="f_quasiMonic_63"></a><dl><dt>quasiMonic? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>quasiMonic?(p)</code> returns <code>false</code> if <code>p</code> belongs to <code>R</code>, otherwise returns <code>true</code> iff the initial of <code>p</code> lies in the base ring <code>R</code>.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reduced_63"></a><dl><dt>reduced? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>reduced?(a, b)</code> returns <code>true</code> iff <code>degree(a, mvar(b)) &lt; mdeg(b)</code>.</p>
+</dd></dl>
+<dl><dt>reduced? : (%, <a href="List.html">List</a>(%)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>reduced?(q, lp)</code> returns <code>true</code> iff <code>reduced?(q, p)</code> holds for every <code>p</code> in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(R), vec : <a href="Vector.html">Vector</a>(R))</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<dl><dt>reductum : (%, V) -&gt %</dt><dd><p>
+<code>reductum(p, v)</code> returns the reductum of <code>p</code>, where <code>p</code> is viewed as a univariate polynomial in <code>v</code>.</p>
+</dd></dl>
+<a name="f_resultant"></a><dl><dt>resultant : (%, %) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>resultant(a, b)</code> computes the resultant of <code>a</code> and <code>b</code> where <code>a</code> and <code>b</code> are assumed to have the same main variable <code>v</code> and are viewed as univariate polynomials in <code>v</code>.</p>
+</dd></dl>
+<dl><dt><a href="PolynomialCategory.html#f_resultant">resultant</a> : (%, %, V) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_retract"></a><dl><dt>retract : <a href="Polynomial.html">Polynomial</a>(R) -&gt % if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>retract(p)</code> returns <code>p</code> as an element of the current domain, if <code>retractIfCan(p)</code> does not return "failed", otherwise an error is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) and V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>retract(p)</code> returns <code>p</code> as an element of the current domain, if <code>retractIfCan(p)</code> does not return "failed", otherwise an error is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Integer.html">Integer</a>) and V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>retract(p)</code> returns <code>p</code> as an element of the current domain, if <code>retractIfCan(p)</code> does not return "failed", otherwise an error is produced.</p>
+</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt V</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(V)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt>retractIfCan : <a href="Polynomial.html">Polynomial</a>(R) -&gt Union(%, "failed") if V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>retractIfCan(p)</code> returns <code>p</code> as an element of the current domain, if all its variables belong to <code>V</code>.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt Union(%, "failed") if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) and V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>retractIfCan(p)</code> returns <code>p</code> as an element of the current domain, if all its variables belong to <code>V</code>.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>) -&gt Union(%, "failed") if R has <a href="Algebra.html">Algebra</a>(<a href="Integer.html">Integer</a>) and V has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>retractIfCan(p)</code> returns <code>p</code> as an element of the current domain, if all its variables belong to <code>V</code>.</p>
+</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(V, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(V)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_solveLinearPolynomialEquation"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_solveLinearPolynomialEquation">solveLinearPolynomialEquation</a> : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), "failed") if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_squareFree"></a><dl><dt><a href="PolynomialCategory.html#f_squareFree">squareFree</a> : % -&gt <a href="Factored.html">Factored</a>(%) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_squareFreePart"></a><dl><dt><a href="PolynomialCategory.html#f_squareFreePart">squareFreePart</a> : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_squareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_squareFreePolynomial">squareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_subResultantChain"></a><dl><dt>subResultantChain : (%, %) -&gt <a href="List.html">List</a>(%) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>subResultantChain(a, b)</code>, where <code>a</code> and <code>b</code> are not constant polynomials with the same main variable, returns the subresultant chain of <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_subResultantGcd"></a><dl><dt>subResultantGcd : (%, %) -&gt % if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>subResultantGcd(a, b)</code> computes a <code>gcd</code> of <code>a</code> and <code>b</code> where <code>a</code> and <code>b</code> are assumed to have the same main variable <code>v</code> and are viewed as univariate polynomials in <code>v</code> with coefficients in the fraction field of the polynomial ring generated by their other variables over <code>R</code>.</p>
+</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_supRittWu_63"></a><dl><dt>supRittWu? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>supRittWu?(a, b)</code> returns <code>true</code> if <code>a</code> is greater than <code>b</code> <code>w</code>.<code>r</code>.<code>t</code>. the Ritt and Wu Wen Tsun ordering using the refinement of Lazard.</p>
+</dd></dl>
+<a name="f_support"></a><dl><dt><a href="FreeModuleCategory.html#f_support">support</a> : % -&gt <a href="List.html">List</a>(E)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)</dd></dl>
+<a name="f_tail"></a><dl><dt>tail : % -&gt %</dt><dd><p>
+<code>tail(p)</code> returns its reductum, where <code>p</code> is viewed as a univariate polynomial in its main variable.</p>
+</dd></dl>
+<a name="f_totalDegree"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegree">totalDegree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegree">totalDegree</a> : (%, <a href="List.html">List</a>(V)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_totalDegreeSorted"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegreeSorted">totalDegreeSorted</a> : (%, <a href="List.html">List</a>(V)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_univariate"></a><dl><dt><a href="PolynomialCategory.html#f_univariate">univariate</a> : (%, V) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<dl><dt><a href="PolynomialCategory.html#f_univariate">univariate</a> : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd> from <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_variables"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_variables">variables</a> : % -&gt <a href="List.html">List</a>(V)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, E)
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(R)
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(V)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(R)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Polynomial.html">Polynomial</a>(R))
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(V)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(%, %)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Magma.html">Magma</a>
+<p><a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a>
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(V)
+<p><a href="Algebra.html">Algebra</a>(R)
+<p><a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(V, %)
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(V, R)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="String.html">String</a>)
+<p><a href="Module.html">Module</a>(%)
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(R)
+<p><a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)
+<p><a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, V)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="Polynomial.html">Polynomial</a>(R))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Evalable.html">Evalable</a>(%)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+</body>
+</html>

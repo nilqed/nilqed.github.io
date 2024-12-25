@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InputFormFunctions1</title>
+</head>
+<body>
+<h1>InputFormFunctions1(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mkfunc.spad#L191">mkfunc.spad line 191</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mkfunc.spad#L191">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Type.html">Type</a></ul>
+<p>
+Tools for manipulating input forms.</p>
+<a name="f_atType"></a><dl><dt>atType : <a href="InputForm.html">InputForm</a> -&gt <a href="InputForm.html">InputForm</a></dt><dd><p>
+<code>atType(f)</code> returns the input form corresponding to <code>f@R</code></p>
+</dd></dl>
+<a name="f_coerceToType"></a><dl><dt>coerceToType : <a href="InputForm.html">InputForm</a> -&gt <a href="InputForm.html">InputForm</a></dt><dd><p>
+<code>coerceToType(f)</code> returns the input form corresponding to f::R</p>
+</dd></dl>
+<a name="f_getType"></a><dl><dt>getType : () -&gt <a href="InputForm.html">InputForm</a></dt><dd><p>
+<code>getType()</code> returns the input form corresponding to <code>R</code></p>
+</dd></dl>
+<a name="f_interpret"></a><dl><dt>interpret : <a href="InputForm.html">InputForm</a> -&gt R</dt><dd><p>
+<code>interpret(f)</code> passes <code>f</code> to the interpreter, and transforms the result into an object of type <code>R</code>.</p>
+</dd></dl>
+<a name="f_packageCall"></a><dl><dt>packageCall : <a href="Symbol.html">Symbol</a> -&gt <a href="InputForm.html">InputForm</a></dt><dd><p>
+<code>packageCall(f)</code> returns the input form corresponding to <code>f</code>$<code>R</code>.</p>
+</dd></dl>
+<dl><dt>packageCall : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="InputForm.html">InputForm</a>)) -&gt <a href="InputForm.html">InputForm</a></dt><dd><p>
+<code>packageCall(f, l)</code> returns the input form corresponding to <code>f</code>(<code>l</code>.1, <code>l</code>.2, ...)$<code>R</code>.</p>
+</dd></dl>
+<a name="f_pretendOfType"></a><dl><dt>pretendOfType : <a href="InputForm.html">InputForm</a> -&gt <a href="InputForm.html">InputForm</a></dt><dd><p>
+<code>pretendOfType(f)</code> returns the input form corresponding to <code>f pretend R</code></p>
+</dd></dl>
+</body>
+</html>

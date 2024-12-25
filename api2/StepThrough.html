@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>StepThrough</title>
+</head>
+<body>
+<h1>StepThrough</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/catdef.spad#L1477">catdef.spad line 1477</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/catdef.spad#L1477">[edit on github]</a></p>
+<p>
+A class of objects which can be 'stepped through'. Repeated applications of <span class="spadfun">nextItem</span> is guaranteed never to return duplicate items and only return "failed" after exhausting all elements of the domain. This assumes that the sequence starts with <code>init()</code>. For infinite domains, repeated application of <span class="spadfun">nextItem</span> is not required to reach all possible domain elements starting from any initial element.  Conditional attributes: infiniterepeated <code>nextItem</code><code>'s</code> are never "failed".</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_init"></a><dl><dt>init : () -&gt %</dt><dd><p>
+<code>init()</code> chooses an initial object for stepping.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_nextItem"></a><dl><dt>nextItem : % -&gt Union(%, "failed")</dt><dd><p>
+<code>nextItem(x)</code> returns the next item, or "failed" if domain is exhausted.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

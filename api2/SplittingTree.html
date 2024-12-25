@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SplittingTree</title>
+</head>
+<body>
+<h1>SplittingTree(V, C)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/newdata.spad#L295">newdata.spad line 295</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/newdata.spad#L295">[edit on github]</a></p>
+<ul>
+<li>V : Join(<a href="SetCategory.html">SetCategory</a>, <a href="Aggregate.html">Aggregate</a>)<li>C : Join(<a href="SetCategory.html">SetCategory</a>, <a href="Aggregate.html">Aggregate</a>)</ul>
+<p>
+This domain exports a modest implementation of splitting trees. Splitting trees are needed when the evaluation of some quantity under some hypothesis requires to split the hypothesis into sub-cases. For instance by adding some new hypothesis on one hand and its negation on another hand. The computations are terminated for a splitting tree <code>a</code> when <code>status(value(a))</code> is <code>true</code>. Thus, if for the splitting tree <code>a</code> the flag <code>status(value(a))</code> is <code>true</code>, then <code>status(value(d))</code> is <code>true</code> for any subtree <code>d</code> of <code>a</code>. This property of splitting trees is called the termination condition. If no vertex in a splitting tree <code>a</code> is equal to another, <code>a</code> is said to satisfy the no-duplicates condition. The splitting tree <code>a</code> will satisfy this condition if nodes are added to <code>a</code> by means of <code>splitNodeOf!</code> and if <code>construct</code> is only used to create the root of <code>a</code> with no children.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, <a href="SplittingNode.html">SplittingNode</a>(V, C)), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_child_63"></a><dl><dt><a href="RecursiveAggregate.html#f_child_63">child?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_children"></a><dl><dt><a href="RecursiveAggregate.html#f_children">children</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_conditions"></a><dl><dt>conditions : % -&gt <a href="List.html">List</a>(C)</dt><dd><p>
+<code>conditions(a)</code> returns the list of the conditions of the leaves of a</p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : (V, C, V, <a href="List.html">List</a>(C)) -&gt %</dt><dd><p>
+<code>construct(v1, t, v2, lt)</code> creates a splitting tree with value (i.e. root vertex) given by <code>[v, t]$S</code> and with children list given by <code>[[[v, t]$S]$% for s in ls]</code>.</p>
+</dd></dl>
+<dl><dt>construct : (V, C, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>construct(v, t, la)</code> creates a splitting tree with value (i.e. root vertex) given by <code>[v, t]$S</code> and with <code>la</code> as children list.</p>
+</dd></dl>
+<dl><dt>construct : (V, C, <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))) -&gt %</dt><dd><p>
+<code>construct(v, t, ls)</code> creates a splitting tree with value (i.e. root vertex) given by <code>[v, t]$S</code> and with children list given by <code>[[s]$% for s in ls]</code>.</p>
+</dd></dl>
+<dl><dt>construct : <a href="SplittingNode.html">SplittingNode</a>(V, C) -&gt %</dt><dd><p>
+<code>construct(s)</code> creates a splitting tree with value (i.e. root vertex) given by <code>s</code> and no children. Thus, if the status of <code>s</code> is <code>false</code>, <code>[s]</code> represents the starting point of the evaluation <code>value(s)</code> under the hypothesis <code>condition(s)</code>.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, <a href="SplittingNode.html">SplittingNode</a>(V, C)), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (<a href="SplittingNode.html">SplittingNode</a>(V, C), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_cyclic_63"></a><dl><dt><a href="RecursiveAggregate.html#f_cyclic_63">cyclic?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_distance"></a><dl><dt><a href="RecursiveAggregate.html#f_distance">distance</a> : (%, %) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="RecursiveAggregate.html#f_elt">elt</a> : (%, "value") -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))) -&gt % if <a href="SplittingNode.html">SplittingNode</a>(V, C) has <a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C)))) -&gt % if <a href="SplittingNode.html">SplittingNode</a>(V, C) has <a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C)), <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))) -&gt % if <a href="SplittingNode.html">SplittingNode</a>(V, C) has <a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C)) -&gt % if <a href="SplittingNode.html">SplittingNode</a>(V, C) has <a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, <a href="SplittingNode.html">SplittingNode</a>(V, C)), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_extractSplittingLeaf"></a><dl><dt>extractSplittingLeaf : % -&gt Union(%, "failed")</dt><dd><p>
+<code>extractSplittingLeaf(a)</code> returns the left most leaf (as a tree) whose status is <code>false</code> if any, else "failed" is returned.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leaf_63"></a><dl><dt><a href="RecursiveAggregate.html#f_leaf_63">leaf?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_leaves"></a><dl><dt><a href="RecursiveAggregate.html#f_leaves">leaves</a> : % -&gt <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(<a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C)), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(<a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C)), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C) if <a href="SplittingNode.html">SplittingNode</a>(V, C) has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, <a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C)), %) -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (<a href="SplittingNode.html">SplittingNode</a>(V, C), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C) if <a href="SplittingNode.html">SplittingNode</a>(V, C) has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_node_63"></a><dl><dt><a href="RecursiveAggregate.html#f_node_63">node?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_nodeOf_63"></a><dl><dt>nodeOf? : (<a href="SplittingNode.html">SplittingNode</a>(V, C), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>nodeOf?(s, a)</code> returns <code>true</code> iff some node of <code>a</code> is equal to <code>s</code></p>
+</dd></dl>
+<a name="f_nodes"></a><dl><dt><a href="RecursiveAggregate.html#f_nodes">nodes</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_remove"></a><dl><dt>remove : (<a href="SplittingNode.html">SplittingNode</a>(V, C), %) -&gt %</dt><dd><p>
+<code>remove(s, a)</code> returns the splitting tree obtained from a by removing every sub-tree <code>b</code> such that <code>value(b)</code> and <code>s</code> have the same value, condition and status.</p>
+</dd></dl>
+<a name="f_remove_33"></a><dl><dt>remove! : (<a href="SplittingNode.html">SplittingNode</a>(V, C), %) -&gt %</dt><dd><p>
+<code>remove!(s, a)</code> replaces a by remove(<code>s</code>, a)</p>
+</dd></dl>
+<a name="f_result"></a><dl><dt>result : % -&gt <a href="List.html">List</a>(Record(val : V, tower : C))</dt><dd><p>
+<code>result(a)</code> where <code>ls</code> is the leaves list of <code>a</code> returns <code>[[value(s), condition(s)]$VT for s in ls]</code> if the computations are terminated in <code>a</code> else an error is produced.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_setchildren_33"></a><dl><dt><a href="RecursiveAggregate.html#f_setchildren_33">setchildren!</a> : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_setelt_33"></a><dl><dt><a href="RecursiveAggregate.html#f_setelt_33">setelt!</a> : (%, "value", <a href="SplittingNode.html">SplittingNode</a>(V, C)) -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_setvalue_33"></a><dl><dt><a href="RecursiveAggregate.html#f_setvalue_33">setvalue!</a> : (%, <a href="SplittingNode.html">SplittingNode</a>(V, C)) -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_splitNodeOf_33"></a><dl><dt>splitNodeOf! : (%, %, <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))) -&gt %</dt><dd><p>
+<code>splitNodeOf!(l, a, ls)</code> returns <code>a</code> where the children list of <code>l</code> has been set to <code>[[s]$% for s in ls | not nodeOf?(s, a)]</code>. Thus, if <code>l</code> is not a node of <code>a</code>, this latter splitting tree is unchanged.</p>
+</dd></dl>
+<dl><dt>splitNodeOf! : (%, %, <a href="List.html">List</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C)), Mapping(<a href="Boolean.html">Boolean</a>, C, C)) -&gt %</dt><dd><p>
+<code>splitNodeOf!(l, a, ls, sub?)</code> returns <code>a</code> where the children list of <code>l</code> has been set to <code>[[s]$% for s in ls | not subNodeOf?(s, a, sub?)]</code>. Thus, if <code>l</code> is not a node of <code>a</code>, this latter splitting tree is unchanged.</p>
+</dd></dl>
+<a name="f_subNodeOf_63"></a><dl><dt>subNodeOf? : (<a href="SplittingNode.html">SplittingNode</a>(V, C), %, Mapping(<a href="Boolean.html">Boolean</a>, C, C)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subNodeOf?(s, a, sub?)</code> returns <code>true</code> iff for some node <code>n</code> in <code>a</code> we have <code>s = n</code> or <code>status(n)</code> and <code>subNode?(s, n, sub?)</code>.</p>
+</dd></dl>
+<a name="f_updateStatus_33"></a><dl><dt>updateStatus! : % -&gt %</dt><dd><p>
+<code>updateStatus!(a)</code> returns a where the status of the vertices are updated to satisfy the "termination condition".</p>
+</dd></dl>
+<a name="f_value"></a><dl><dt><a href="RecursiveAggregate.html#f_value">value</a> : % -&gt <a href="SplittingNode.html">SplittingNode</a>(V, C)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Evalable.html">Evalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))
+<p><a href="RecursiveAggregate.html">RecursiveAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C), <a href="SplittingNode.html">SplittingNode</a>(V, C))
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(<a href="SplittingNode.html">SplittingNode</a>(V, C))
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Aggregate.html">Aggregate</a>
+</body>
+</html>

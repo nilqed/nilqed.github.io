@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchListResult</title>
+</head>
+<body>
+<h1>PatternMatchListResult(R, S, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L121">patmatch1.spad line 121</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L121">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a><li>S : <a href="SetCategory.html">SetCategory</a><li>L : <a href="ListAggregate.html">ListAggregate</a>(S)</ul>
+<p>
+A PatternMatchListResult is an object internally returned by the pattern matcher when matching on lists. It is either a failed match, or a pair of PatternMatchResult, one for atoms (elements of the list), and one for lists.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_atoms"></a><dl><dt>atoms : % -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(R, S)</dt><dd><p>
+<code>atoms(r)</code> returns the list of matches that match atoms (elements of the lists).</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_failed"></a><dl><dt>failed : () -&gt %</dt><dd><p>
+<code>failed()</code> returns a failed match.</p>
+</dd></dl>
+<a name="f_failed_63"></a><dl><dt>failed? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>failed?(r)</code> tests if <code>r</code> is a failed match.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lists"></a><dl><dt>lists : % -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(R, L)</dt><dd><p>
+<code>lists(r)</code> returns the list of matches that match lists.</p>
+</dd></dl>
+<a name="f_makeResult"></a><dl><dt>makeResult : (<a href="PatternMatchResult.html">PatternMatchResult</a>(R, S), <a href="PatternMatchResult.html">PatternMatchResult</a>(R, L)) -&gt %</dt><dd><p>
+<code>makeResult(r1, r2)</code> makes the combined result [<code>r1</code>, <code>r2</code>].</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : () -&gt %</dt><dd><p>
+<code>new()</code> returns a new empty match result.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

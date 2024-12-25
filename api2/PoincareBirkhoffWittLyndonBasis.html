@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PoincareBirkhoffWittLyndonBasis</title>
+</head>
+<body>
+<h1>PoincareBirkhoffWittLyndonBasis(VarSet)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L647">xlpoly.spad line 647</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L647">[edit on github]</a></p>
+<ul>
+<li>VarSet : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+This domain provides the internal representation of polynomials in non-commutative variables written over the Poincare-Birkhoff-Witt basis. See the XPBWPolynomial domain constructor. See Free Lie Algebras by <code>C</code>. Reutenauer (Oxford science publications).  Author: Michel Petitot (petitot@lifl.<code>fr</code>).</p>
+<a name="f_1"></a><dl><dt>1 : () -&gt %</dt><dd><p>
+<code>1</code> returns the empty list.</p>
+</dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : VarSet -&gt %</dt><dd><p>
+<code>coerce(v)</code> return <code>v</code></p>
+</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="LyndonWord.html">LyndonWord</a>(VarSet) -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="LyndonWord.html">LyndonWord</a>(VarSet))</dd></dl>
+<dl><dt>coerce : % -&gt <a href="FreeMonoid.html">FreeMonoid</a>(VarSet)</dt><dd><p>
+<code>coerce([l1]*[l2]*...[ln])</code> returns the word <code>l1*l2*...*ln</code>, where <code>[l_i]</code> is the backeted form of the Lyndon word <code>l_i</code>.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_first"></a><dl><dt>first : % -&gt <a href="LyndonWord.html">LyndonWord</a>(VarSet)</dt><dd><p>
+<code>first([l1]*[l2]*...[ln])</code> returns the Lyndon word <code>l1</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_length"></a><dl><dt>length : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>length([l1]*[l2]*...[ln])</code> returns the length of the word <code>l1*l2*...*ln</code>.</p>
+</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt>listOfTerms : % -&gt <a href="List.html">List</a>(<a href="LyndonWord.html">LyndonWord</a>(VarSet))</dt><dd><p>
+<code>listOfTerms([l1]*[l2]*...[ln])</code> returns the list of words <code>l1, l2, .... ln</code>.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_rest"></a><dl><dt>rest : % -&gt %</dt><dd><p>
+<code>rest([l1]*[l2]*...[ln])</code> returns the list <code>l2, .... ln</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="LyndonWord.html">LyndonWord</a>(VarSet)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="LyndonWord.html">LyndonWord</a>(VarSet))</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="LyndonWord.html">LyndonWord</a>(VarSet), "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="LyndonWord.html">LyndonWord</a>(VarSet))</dd></dl>
+<a name="f_retractable_63"></a><dl><dt>retractable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>retractable?([l1]*[l2]*...[ln])</code> returns <code>true</code> iff <code>n</code> equals <code>1</code>.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_varList"></a><dl><dt>varList : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>varList([l1]*[l2]*...[ln])</code> returns the list of variables in the word <code>l1*l2*...*ln</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="LyndonWord.html">LyndonWord</a>(VarSet))
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="LyndonWord.html">LyndonWord</a>(VarSet))
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+</body>
+</html>

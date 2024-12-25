@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PureAlgebraicLODE</title>
+</head>
+<body>
+<h1>PureAlgebraicLODE(F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L252">odeef.spad line 252</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L252">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : <a href="FunctionFieldCategory.html">FunctionFieldCategory</a>(F, UP, UPUP)</ul>
+<p>
+In-field solution of an linear ordinary differential equation, pure algebraic case.</p>
+<a name="f_algDsolve"></a><dl><dt>algDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(R), <a href="List.html">List</a>(R)) -&gt Record(particular : <a href="List.html">List</a>(Record(ratpart : R, coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(R))</dt><dd><p>
+<code>algDsolve(op, lg)</code> is a parametric version of algDsolve(<code>op</code>, <code>g</code>)</p>
+</dd></dl>
+<dl><dt>algDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(R), R) -&gt Record(particular : Union(R, "failed"), basis : <a href="List.html">List</a>(R))</dt><dd><p>
+<code>algDsolve(op, g)</code> returns <code>["failed", []]</code> if the equation <code>op y = g</code> has no solution in <code>R</code>. Otherwise, it returns <code>[f, [y1, ..., ym]]</code> where <code>f</code> is a particular rational solution and the <code>y_i's</code> form a basis for the solutions in <code>R</code> of the homogeneous equation.</p>
+</dd></dl>
+</body>
+</html>

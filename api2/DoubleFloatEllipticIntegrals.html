@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DoubleFloatEllipticIntegrals</title>
+</head>
+<body>
+<h1>DoubleFloatEllipticIntegrals</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/special2.spad#L1197">special2.spad line 1197</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/special2.spad#L1197">[edit on github]</a></p>
+<p>
+<code>DoubleFloatEllipticIntegrals</code> implements machine A package for computing machine precision real and complex elliptic integrals, using algorithms given by Carlson. Note: Complex versions may misbehave for very large/small arguments and close to branch cuts.</p>
+<a name="f_ellipticE"></a><dl><dt>ellipticE : <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticE(m)</code> is the complete elliptic integral of the second kind</p>
+</dd></dl>
+<dl><dt>ellipticE : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticE(z, m)</code> is the incomplete elliptic integral of the second kind.</p>
+</dd></dl>
+<dl><dt>ellipticE : <a href="DoubleFloat.html">DoubleFloat</a> -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticE(m)</code> is the complete elliptic integral of the second kind</p>
+</dd></dl>
+<dl><dt>ellipticE : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticE(z, m)</code> is the incomplete elliptic integral of the second kind.</p>
+</dd></dl>
+<a name="f_ellipticF"></a><dl><dt>ellipticF : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticF(z, m)</code> is the incomplete elliptic integral of the first kind.</p>
+</dd></dl>
+<dl><dt>ellipticF : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticF(z, m)</code> is the incomplete elliptic integral of the first kind.</p>
+</dd></dl>
+<a name="f_ellipticK"></a><dl><dt>ellipticK : <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticK(z, m)</code> is the incomplete elliptic integral of the first kind.</p>
+</dd></dl>
+<dl><dt>ellipticK : <a href="DoubleFloat.html">DoubleFloat</a> -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticK(z, m)</code> is the complete elliptic integral of the first kind.</p>
+</dd></dl>
+<a name="f_ellipticPi"></a><dl><dt>ellipticPi : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticPi(z, n, m)</code> is the incomplete elliptic integral of the third kind.</p>
+</dd></dl>
+<dl><dt>ellipticPi : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticPi(z, n, m)</code> is the incomplete elliptic integral of the third kind.</p>
+</dd></dl>
+<a name="f_ellipticRC"></a><dl><dt>ellipticRC : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticRC(x, y)</code> computes integral from 0 to infinity of <code>(1/2)*(t+x)^(-1/2)*(t+y)^(-1)dt</code>.</p>
+</dd></dl>
+<dl><dt>ellipticRC : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticRC(x, y)</code> computes integral from 0 to infinity of <code>(1/2)*(t+x)^(-1/2)*(t+y)^(-1)dt</code>.</p>
+</dd></dl>
+<a name="f_ellipticRD"></a><dl><dt>ellipticRD : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticRD(x, y, z)</code> computes integral from 0 to infinity of <code>(3/2)*(t+x)^(-1/2)*(t+y)^(-1/2)*(t+Z)^(-3/2)dt</code>.</p>
+</dd></dl>
+<dl><dt>ellipticRD : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticRD(x, y, z)</code> computes integral from 0 to infinity of <code>(3/2)*(t+x)^(-1/2)*(t+y)^(-1/2)*(t+Z)^(-3/2)dt</code>.</p>
+</dd></dl>
+<a name="f_ellipticRF"></a><dl><dt>ellipticRF : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>ellipticRF(x, y, z)</code> computes integral from 0 to infinity of <code>(1/2)*(t+x)^(-1/2)*(t+y)^(-1/2)*(t+Z)^(-1/2)dt</code>.</p>
+</dd></dl>
+<dl><dt>ellipticRF : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticRF(x, y, z)</code> computes integral from 0 to infinity of <code>(1/2)*(t+x)^(-1/2)*(t+y)^(-1/2)*(t+Z)^(-1/2)dt</code>.</p>
+</dd></dl>
+<a name="f_ellipticRJ"></a><dl><dt>ellipticRJ : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+ellipticRF(<code>x</code>, <code>y</code>, <code>z</code>, <code>p</code>) computes integral from 0 to infinity of <code>(3/2)*(t+x)^(-1/2)*(t+y)^(-1/2)*(t+Z)^(-1/2)*(t+p)^(-1)dt</code>.</p>
+</dd></dl>
+<dl><dt>ellipticRJ : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>ellipticRJ(x, y, z, p)</code> computes integral from 0 to infinity of <code>(3/2)*(t+x)^(-1/2)*(t+y)^(-1/2)*(t+Z)^(-1/2)*(t+p)^(-1)dt</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteRankNonAssociativeAlgebra</title>
+</head>
+<body>
+<h1>FiniteRankNonAssociativeAlgebra(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/naalgc.spad#L224">naalgc.spad line 224</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/naalgc.spad#L224">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+A FiniteRankNonAssociativeAlgebra is a non associative algebra over a commutative ring <code>R</code> which is a free <code>R</code>-module of finite rank.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_alternative_63"></a><dl><dt>alternative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>alternative?()</code> tests if <code>2*associator(a, a, b) = 0 = 2*associator(a, b, b)</code> for all <code>a</code>, <code>b</code> in the algebra. Note: we only can test this; in general we don<code>'t</code> know whether <code>2*a=0</code> implies <code>a=0</code>.</p>
+</dd></dl>
+<a name="f_antiAssociative_63"></a><dl><dt>antiAssociative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>antiAssociative?()</code> tests if multiplication in algebra is anti-associative, i.e. <code>(a*b)*c + a*(b*c) = 0</code> for all <code>a</code>, <code>b</code>, <code>c</code> in the algebra.</p>
+</dd></dl>
+<a name="f_antiCommutative_63"></a><dl><dt>antiCommutative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>antiCommutative?()</code> tests if <code>a*a = 0</code> for all <code>a</code> in the algebra. Note: this implies <code>a*b + b*a = 0</code> for all <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associative_63"></a><dl><dt>associative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>associative?()</code> tests if multiplication in algebra is associative.</p>
+</dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_associatorDependence"></a><dl><dt>associatorDependence : () -&gt <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>associatorDependence()</code> looks for the associator identities, i.e. finds a basis of the solutions of the linear combinations of the six permutations of <code>associator(a, b, c)</code> which yield 0, for all <code>a</code>, <code>b</code>, <code>c</code> in the algebra. The order of the permutations is <code>123 231 312 132 321 213</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutative_63"></a><dl><dt>commutative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>commutative?()</code> tests if multiplication in the algebra is commutative.</p>
+</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conditionsForIdempotents"></a><dl><dt>conditionsForIdempotents : <a href="Vector.html">Vector</a>(%) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>conditionsForIdempotents([v1, ..., vn])</code> determines a complete list of polynomial equations for the coefficients of idempotents with respect to the <code>R</code>-module basis <code>v1</code>, ..., <code>vn</code>.</p>
+</dd></dl>
+<a name="f_coordinates"></a><dl><dt>coordinates : (<a href="Vector.html">Vector</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>coordinates([a1, ..., am], [v1, ..., vn])</code> returns a matrix whose <code>i</code>-th row is formed by the coordinates of <code><code>ai</code></code> with respect to the <code>R</code>-module basis <code>v1</code>, ..., <code>vn</code>.</p>
+</dd></dl>
+<dl><dt>coordinates : (%, <a href="Vector.html">Vector</a>(%)) -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>coordinates(a, [v1, ..., vn])</code> returns the coordinates of <code>a</code> with respect to the <code>R</code>-module basis <code>v1</code>, ..., <code>vn</code>.</p>
+</dd></dl>
+<a name="f_flexible_63"></a><dl><dt>flexible? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>flexible?()</code> tests if <code>2*associator(a, b, a) = 0</code> for all <code>a</code>, <code>b</code> in the algebra. Note: we only can test this; in general we don<code>'t</code> know whether <code>2*a=0</code> implies <code>a=0</code>.</p>
+</dd></dl>
+<a name="f_jacobiIdentity_63"></a><dl><dt>jacobiIdentity? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>jacobiIdentity?()</code> tests if <code>(a*b)*c + (b*c)*a + (c*a)*b = 0</code> for all <code>a</code>, <code>b</code>, <code>c</code> in the algebra. For example, this holds for crossed products of 3-dimensional vectors.</p>
+</dd></dl>
+<a name="f_jordanAdmissible_63"></a><dl><dt>jordanAdmissible? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>jordanAdmissible?()</code> tests if 2 is invertible in the coefficient domain and the multiplication defined by <code>(1/2)(a*b+b*a)</code> determines a Jordan algebra, i.e. satisfies the Jordan identity. The property of CommutativeStar follows from by definition.</p>
+</dd></dl>
+<a name="f_jordanAlgebra_63"></a><dl><dt>jordanAlgebra? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>jordanAlgebra?()</code> tests if the algebra is commutative, characteristic is not 2, and <code>(a*b)*a^2 - a*(b*a^2) = 0</code> for all <code>a</code>, <code>b</code>, <code>c</code> in the algebra (Jordan identity). Example: for every associative algebra <code>(A, +, @)</code> we can construct a Jordan algebra <code>(A, +, *)</code>, where <code>a*b := (a@b+b@a)/2</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftAlternative_63"></a><dl><dt>leftAlternative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>leftAlternative?()</code> tests if <code>2*associator(a, a, b) = 0</code> for all <code>a</code>, <code>b</code> in the algebra. Note: we only can test this; in general we don<code>'t</code> know whether <code>2*a=0</code> implies <code>a=0</code>.</p>
+</dd></dl>
+<a name="f_leftCharacteristicPolynomial"></a><dl><dt>leftCharacteristicPolynomial : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>leftCharacteristicPolynomial(a)</code> returns the characteristic polynomial of the left regular representation of <code>a</code> with respect to any basis.</p>
+</dd></dl>
+<a name="f_leftDiscriminant"></a><dl><dt>leftDiscriminant : <a href="Vector.html">Vector</a>(%) -&gt R</dt><dd><p>
+<code>leftDiscriminant([v1, ..., vn])</code> returns the determinant of the <code>n</code>-by-<code>n</code> matrix whose element at the <code>i</code><code>-</code>th row and <code>j</code><code>-</code>th column is given by the left trace of the product <code>vi*vj</code>. Note: the same as <code>determinant(leftTraceMatrix([v1, ..., vn]))</code>.</p>
+</dd></dl>
+<a name="f_leftMinimalPolynomial"></a><dl><dt>leftMinimalPolynomial : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>leftMinimalPolynomial(a)</code> returns the polynomial determined by the smallest non-trivial linear combination of left powers of <code>a</code>. Note: the polynomial never has a constant term as in general the algebra has no unit.</p>
+</dd></dl>
+<a name="f_leftNorm"></a><dl><dt>leftNorm : % -&gt R</dt><dd><p>
+<code>leftNorm(a)</code> returns the determinant of the left regular representation of <code>a</code>.</p>
+</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt>leftRecip : % -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>leftRecip(a)</code> returns an element, which is a left inverse of <code>a</code>, or <code>"failed"</code> if there is no unit element, if such an element doesn<code>'t</code> exist or cannot be determined (see unitsKnown).</p>
+</dd></dl>
+<a name="f_leftRegularRepresentation"></a><dl><dt>leftRegularRepresentation : (%, <a href="Vector.html">Vector</a>(%)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>leftRegularRepresentation(a, [v1, ..., vn])</code> returns the matrix <code>m</code> of the linear map defined by left multiplication by <code>a</code> with respect to the <code>R</code>-module basis <code>b = [v1, ..., vn]</code>. That is for all <code>x</code> <code>coordinates(a*x, b) = m*coordinates(x, b)</code>.</p>
+</dd></dl>
+<a name="f_leftTrace"></a><dl><dt>leftTrace : % -&gt R</dt><dd><p>
+<code>leftTrace(a)</code> returns the trace of the left regular representation of <code>a</code>.</p>
+</dd></dl>
+<a name="f_leftTraceMatrix"></a><dl><dt>leftTraceMatrix : <a href="Vector.html">Vector</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>leftTraceMatrix([v1, ..., vn])</code> is the <code>n</code>-by-<code>n</code> matrix whose element at the <code>i</code><code>-</code>th row and <code>j</code><code>-</code>th column is given by the left trace of the product <code>vi*vj</code>.</p>
+</dd></dl>
+<a name="f_leftUnit"></a><dl><dt>leftUnit : () -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>leftUnit()</code> returns a left unit of the algebra (not necessarily unique), or <code>"failed"</code> if there is none.</p>
+</dd></dl>
+<a name="f_leftUnits"></a><dl><dt>leftUnits : () -&gt Union(Record(particular : %, basis : <a href="List.html">List</a>(%)), "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>leftUnits()</code> returns the affine space of all left units of the algebra, or <code>"failed"</code> if there is none.</p>
+</dd></dl>
+<a name="f_lieAdmissible_63"></a><dl><dt>lieAdmissible? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lieAdmissible?()</code> tests if the algebra defined by the commutators is a Lie algebra, i.e. satisfies the Jacobi identity. The property of anticommutativity follows from definition.</p>
+</dd></dl>
+<a name="f_lieAlgebra_63"></a><dl><dt>lieAlgebra? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lieAlgebra?()</code> tests if the algebra is anticommutative and <code>(a*b)*c + (b*c)*a + (c*a)*b = 0</code> for all <code>a</code>, <code>b</code>, <code>c</code> in the algebra (Jacobi identity). Example: for every associative algebra <code>(A, +, @)</code> we can construct a Lie algebra <code>(A, +, *)</code>, where <code>a*b := a@b-b@a</code>.</p>
+</dd></dl>
+<a name="f_noncommutativeJordanAlgebra_63"></a><dl><dt>noncommutativeJordanAlgebra? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>noncommutativeJordanAlgebra?()</code> tests if the algebra is flexible and Jordan admissible.</p>
+</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)</dd></dl>
+<a name="f_powerAssociative_63"></a><dl><dt>powerAssociative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>powerAssociative?()</code> tests if all subalgebras generated by a single element are associative.</p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>rank()</code> returns the rank of the algebra as <code>R</code>-module.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt>recip : % -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>recip(a)</code> returns an element, which is both a left and a right inverse of <code>a</code>, or <code>"failed"</code> if there is no unit element, if such an element doesn<code>'t</code> exist or cannot be determined (see unitsKnown).</p>
+</dd></dl>
+<a name="f_represents"></a><dl><dt>represents : (<a href="Vector.html">Vector</a>(R), <a href="Vector.html">Vector</a>(%)) -&gt %</dt><dd><p>
+<code>represents([a1, ..., am], [v1, ..., vm])</code> returns the linear combination <code>a1*vm + ... + an*vm</code>.</p>
+</dd></dl>
+<a name="f_rightAlternative_63"></a><dl><dt>rightAlternative? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>rightAlternative?()</code> tests if <code>2*associator(a, b, b) = 0</code> for all <code>a</code>, <code>b</code> in the algebra. Note: we only can test this; in general we don<code>'t</code> know whether <code>2*a=0</code> implies <code>a=0</code>.</p>
+</dd></dl>
+<a name="f_rightCharacteristicPolynomial"></a><dl><dt>rightCharacteristicPolynomial : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>rightCharacteristicPolynomial(a)</code> returns the characteristic polynomial of the right regular representation of <code>a</code> with respect to any basis.</p>
+</dd></dl>
+<a name="f_rightDiscriminant"></a><dl><dt>rightDiscriminant : <a href="Vector.html">Vector</a>(%) -&gt R</dt><dd><p>
+<code>rightDiscriminant([v1, ..., vn])</code> returns the determinant of the <code>n</code>-by-<code>n</code> matrix whose element at the <code>i</code><code>-</code>th row and <code>j</code><code>-</code>th column is given by the right trace of the product <code>vi*vj</code>. Note: the same as <code>determinant(rightTraceMatrix([v1, ..., vn]))</code>.</p>
+</dd></dl>
+<a name="f_rightMinimalPolynomial"></a><dl><dt>rightMinimalPolynomial : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rightMinimalPolynomial(a)</code> returns the polynomial determined by the smallest non-trivial linear combination of right powers of <code>a</code>. Note: the polynomial never has a constant term as in general the algebra has no unit.</p>
+</dd></dl>
+<a name="f_rightNorm"></a><dl><dt>rightNorm : % -&gt R</dt><dd><p>
+<code>rightNorm(a)</code> returns the determinant of the right regular representation of <code>a</code>.</p>
+</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt>rightRecip : % -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rightRecip(a)</code> returns an element, which is a right inverse of <code>a</code>, or <code>"failed"</code> if there is no unit element, if such an element doesn<code>'t</code> exist or cannot be determined (see unitsKnown).</p>
+</dd></dl>
+<a name="f_rightRegularRepresentation"></a><dl><dt>rightRegularRepresentation : (%, <a href="Vector.html">Vector</a>(%)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rightRegularRepresentation(a, [v1, ..., vn])</code> returns the matrix <code>m</code> of the linear map defined by right multiplication by <code>a</code> with respect to the <code>R</code>-module basis <code>b = [v1, ..., vn]</code>. That is for all <code>x</code> <code>coordinates(x*a, b) = m*coordinates(x, b)</code>.</p>
+</dd></dl>
+<a name="f_rightTrace"></a><dl><dt>rightTrace : % -&gt R</dt><dd><p>
+<code>rightTrace(a)</code> returns the trace of the right regular representation of <code>a</code>.</p>
+</dd></dl>
+<a name="f_rightTraceMatrix"></a><dl><dt>rightTraceMatrix : <a href="Vector.html">Vector</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rightTraceMatrix([v1, ..., vn])</code> is the <code>n</code>-by-<code>n</code> matrix whose element at the <code>i</code><code>-</code>th row and <code>j</code><code>-</code>th column is given by the right trace of the product <code>vi*vj</code>.</p>
+</dd></dl>
+<a name="f_rightUnit"></a><dl><dt>rightUnit : () -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rightUnit()</code> returns a right unit of the algebra (not necessarily unique), or <code>"failed"</code> if there is none.</p>
+</dd></dl>
+<a name="f_rightUnits"></a><dl><dt>rightUnits : () -&gt Union(Record(particular : %, basis : <a href="List.html">List</a>(%)), "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rightUnits()</code> returns the affine space of all right units of the algebra, or <code>"failed"</code> if there is none.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_someBasis"></a><dl><dt>someBasis : () -&gt <a href="Vector.html">Vector</a>(%)</dt><dd><p>
+<code>someBasis()</code> returns some <code>R</code>-module basis.</p>
+</dd></dl>
+<a name="f_structuralConstants"></a><dl><dt>structuralConstants : <a href="Vector.html">Vector</a>(%) -&gt <a href="Vector.html">Vector</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>structuralConstants([v1, v2, ..., vm])</code> calculates the structural constants <code>[(gammaijk) for k in 1..m]</code> defined by <code><code>vi</code> * vj = gammaij1 * v1 + ... + gammaijm * vm</code>, where <code>[v1, ..., vm]</code> is an <code>R</code>-module basis of a subalgebra.</p>
+</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_unit"></a><dl><dt>unit : () -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>unit()</code> returns a unit of the algebra (necessarily unique), or <code>"failed"</code> if there is none.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="Module.html">Module</a>(R)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

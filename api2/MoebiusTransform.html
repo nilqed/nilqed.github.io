@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MoebiusTransform</title>
+</head>
+<body>
+<h1>MoebiusTransform(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/moebius.spad#L1">moebius.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/moebius.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a></ul>
+<p>
+MoebiusTransform(<code>F</code>) is the domain of fractional linear (Moebius) transformations over <code>F</code>.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Group.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="Group.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="Group.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="Group.html#f_conjugate">conjugate</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (%, F) -&gt F</dt><dd><p>
+<code>eval(m, x)</code> returns <code>(a*x + b)/(c*x + d)</code> where <code>m = moebius(a, b, c, d)</code> (see <span class="std std-ref">moebius</span>).</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="OnePointCompletion.html">OnePointCompletion</a>(F)) -&gt <a href="OnePointCompletion.html">OnePointCompletion</a>(F)</dt><dd><p>
+<code>eval(m, x)</code> returns <code>(a*x + b)/(c*x + d)</code> where <code>m = moebius(a, b, c, d)</code> (see <span class="std std-ref">moebius</span>).</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt><a href="Group.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_moebius"></a><dl><dt>moebius : (F, F, F, F) -&gt %</dt><dd><p>
+<code>moebius(a, b, c, d)</code> returns <code>matrix [[a, b], [c, d]]</code>.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_recip"></a><dl><dt>recip : () -&gt %</dt><dd><p>
+<code>recip()</code> returns <code>matrix [[0, 1], [1, 0]]</code> representing the map <code>x -&gt; 1 / x</code>.</p>
+</dd></dl>
+<dl><dt>recip : % -&gt %</dt><dd><p>
+<code>recip(m)</code> = recip() * <code>m</code></p>
+</dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="MagmaWithUnit.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_scale"></a><dl><dt>scale : (%, F) -&gt %</dt><dd><p>
+<code>scale(m, h)</code> returns <code>scale(h) * m</code> (see <span class="std std-ref">shift</span>).</p>
+</dd></dl>
+<dl><dt>scale : F -&gt %</dt><dd><p>
+<code>scale(k)</code> returns <code>matrix [[k, 0], [0, 1]]</code> representing the map <code>x -&gt; k * x</code>.</p>
+</dd></dl>
+<a name="f_shift"></a><dl><dt>shift : (%, F) -&gt %</dt><dd><p>
+<code>shift(m, h)</code> returns <code>shift(h) * m</code> (see <span class="std std-ref">shift</span>).</p>
+</dd></dl>
+<dl><dt>shift : F -&gt %</dt><dd><p>
+<code>shift(k)</code> returns <code>matrix [[1, k], [0, 1]]</code> representing the map <code>x -&gt; x + k</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Group.html">Group</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

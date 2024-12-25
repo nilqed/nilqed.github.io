@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TableauxBumpers</title>
+</head>
+<body>
+<h1>TableauxBumpers(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tableau.spad#L45">tableau.spad line 45</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tableau.spad#L45">[edit on github]</a></p>
+<ul>
+<li>S : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+TableauBumpers implements the Schenstead-Knuth correspondence between sequences and pairs of Young tableaux. The 2 Young tableaux are represented as a single tableau with pairs as components.</p>
+<a name="f_bat"></a><dl><dt>bat : <a href="Tableau.html">Tableau</a>(<a href="List.html">List</a>(S)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(S))</dt><dd><p>
+<code>bat(ls)</code> unbumps a tableau <code>ls</code></p>
+</dd></dl>
+<a name="f_bat1"></a><dl><dt>bat1 : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(S))</dt><dd><p>
+<code>bat1(llp)</code> unbumps a tableau <code>llp</code>. Operation <code>bat1</code> is the inverse of <code>tab1</code>.</p>
+</dd></dl>
+<a name="f_bumprow"></a><dl><dt>bumprow : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), <a href="List.html">List</a>(S), <a href="List.html">List</a>(<a href="List.html">List</a>(S))) -&gt Record(fs : <a href="Boolean.html">Boolean</a>, sd : <a href="List.html">List</a>(S), td : <a href="List.html">List</a>(<a href="List.html">List</a>(S)))</dt><dd><p>
+<code>bumprow(cf, pr, r)</code> is an auxiliary function which bumps a row <code>r</code> with a pair <code>pr</code> using comparison function <code>cf</code>, and returns a record</p>
+</dd></dl>
+<a name="f_bumptab"></a><dl><dt>bumptab : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), <a href="List.html">List</a>(S), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))</dt><dd><p>
+<code>bumptab(cf, pr, t)</code> bumps a tableau <code>t</code> with a pair <code>pr</code> using comparison function <code>cf</code>, returning a new tableau</p>
+</dd></dl>
+<a name="f_bumptab1"></a><dl><dt>bumptab1 : (<a href="List.html">List</a>(S), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))</dt><dd><p>
+<code>bumptab1(pr, t)</code> bumps a tableau <code>t</code> with a pair <code>pr</code> using comparison function <span class="spadfun">&lt;</span>, returning a new tableau</p>
+</dd></dl>
+<a name="f_inverse"></a><dl><dt>inverse : <a href="List.html">List</a>(S) -&gt <a href="List.html">List</a>(S)</dt><dd><p>
+<code>inverse(ls)</code> forms the inverse of a sequence <code>ls</code></p>
+</dd></dl>
+<a name="f_lex"></a><dl><dt>lex : <a href="List.html">List</a>(<a href="List.html">List</a>(S)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(S))</dt><dd><p>
+<code>lex(ls)</code> sorts a list of pairs to lexicographic order</p>
+</dd></dl>
+<a name="f_maxrow"></a><dl><dt>maxrow : (<a href="List.html">List</a>(S), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))), <a href="List.html">List</a>(<a href="List.html">List</a>(S)), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))) -&gt Record(f1 : <a href="List.html">List</a>(S), f2 : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))), f3 : <a href="List.html">List</a>(<a href="List.html">List</a>(S)), f4 : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))))</dt><dd><p>
+<code>maxrow(a, b, c, d, e)</code> is an auxiliary function for <code>mr</code></p>
+</dd></dl>
+<a name="f_mr"></a><dl><dt>mr : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))) -&gt Record(f1 : <a href="List.html">List</a>(S), f2 : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))), f3 : <a href="List.html">List</a>(<a href="List.html">List</a>(S)), f4 : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S))))</dt><dd><p>
+<code>mr(t)</code> is an auxiliary function which finds the position of the maximum element of a tableau <code>t</code> which is in the lowest row, producing a record of results</p>
+</dd></dl>
+<a name="f_slex"></a><dl><dt>slex : <a href="List.html">List</a>(S) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(S))</dt><dd><p>
+<code>slex(ls)</code> sorts the argument sequence <code>ls</code>, then zips (see <span class="std std-ref">map</span>) the original argument sequence with the sorted result to a list of pairs</p>
+</dd></dl>
+<a name="f_tab"></a><dl><dt>tab : <a href="List.html">List</a>(S) -&gt <a href="Tableau.html">Tableau</a>(<a href="List.html">List</a>(S))</dt><dd><p>
+<code>tab(ls)</code> creates a tableau from <code>ls</code> by first creating a list of pairs using <span class="std std-ref">slex</span>, then creating a tableau using <span class="std std-ref"><code>tab1</code></span>.</p>
+</dd></dl>
+<a name="f_tab1"></a><dl><dt>tab1 : <a href="List.html">List</a>(<a href="List.html">List</a>(S)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))</dt><dd><p>
+<code>tab1(lp)</code> creates a tableau from a list of pairs <code>lp</code></p>
+</dd></dl>
+<a name="f_untab"></a><dl><dt>untab : (<a href="List.html">List</a>(<a href="List.html">List</a>(S)), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(S)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(S))</dt><dd><p>
+<code>untab(lp, llp)</code> is an auxiliary function which unbumps a tableau <code>llp</code>, using <code>lp</code> to accumulate pairs</p>
+</dd></dl>
+</body>
+</html>

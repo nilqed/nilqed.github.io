@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FortranVectorFunctionCategory</title>
+</head>
+<body>
+<h1>FortranVectorFunctionCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortcat.spad#L199">fortcat.spad line 199</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortcat.spad#L199">[edit on github]</a></p>
+<p>
+FortranVectorFunctionCategory is the category of arguments to NAG Library routines which return the values of vectors of functions.</p>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="FortranCode.html">FortranCode</a> -&gt %</dt><dd><p>
+<code>coerce(e)</code> takes an object from FortranCode and uses it as the body of an ASP.</p>
+</dd></dl>
+<dl><dt>coerce : <a href="List.html">List</a>(<a href="FortranCode.html">FortranCode</a>) -&gt %</dt><dd><p>
+<code>coerce(e)</code> takes an object from List FortranCode and uses it as the body of an ASP.</p>
+</dd></dl>
+<dl><dt>coerce : Record(localSymbols : <a href="SymbolTable.html">SymbolTable</a>, code : <a href="List.html">List</a>(<a href="FortranCode.html">FortranCode</a>)) -&gt %</dt><dd><p>
+<code>coerce(e)</code> takes the component of <code>e</code> from List FortranCode and uses it as the body of the ASP, making the declarations in the SymbolTable component.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_outputAsFortran"></a><dl><dt><a href="FortranProgramCategory.html#f_outputAsFortran">outputAsFortran</a> : % -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FortranProgramCategory.html">FortranProgramCategory</a></dd></dl>
+<a name="f_retract"></a><dl><dt>retract : <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>retract(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>retract(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Float.html">Float</a>))) -&gt %</dt><dd><p>
+<code>retract(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>retract(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Vector.html">Vector</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>retract(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retract : <a href="Vector.html">Vector</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>retract(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt>retractIfCan : <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)) -&gt Union(%, "failed")</dt><dd><p>
+<code>retractIfCan(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)) -&gt Union(%, "failed")</dt><dd><p>
+<code>retractIfCan(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Float.html">Float</a>))) -&gt Union(%, "failed")</dt><dd><p>
+<code>retractIfCan(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt Union(%, "failed")</dt><dd><p>
+<code>retractIfCan(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Vector.html">Vector</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Float.html">Float</a>)) -&gt Union(%, "failed")</dt><dd><p>
+<code>retractIfCan(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<dl><dt>retractIfCan : <a href="Vector.html">Vector</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt Union(%, "failed")</dt><dd><p>
+<code>retractIfCan(e)</code> tries to convert <code>e</code> into an ASP, checking that legal Fortran-77 is produced.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="FortranProgramCategory.html">FortranProgramCategory</a>
+</body>
+</html>

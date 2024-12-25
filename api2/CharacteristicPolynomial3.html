@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CharacteristicPolynomial3</title>
+</head>
+<body>
+<h1>CharacteristicPolynomial3(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/charpol.spad#L86">charpol.spad line 86</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/charpol.spad#L86">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+This package computes characteristic polynomial via interpolation from values at several points. Additionally, it computes determinant of matrix of fractions by clearing common denominators of rows. The determinant routine can be used to compute characteristic polynomial instead of regular determinant.</p>
+<a name="f_char_95pol_95via_95den_95interpolation"></a><dl><dt>char_pol_via_den_interpolation : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(R)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(R)) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>char_pol_via_den_interpolation(m)</code> computes characteristic polynomial of <code>m</code>.</p>
+</dd></dl>
+<a name="f_char_95pol_95via_95interpolation"></a><dl><dt>char_pol_via_interpolation : <a href="Matrix.html">Matrix</a>(R) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>char_pol_via_interpolation(m)</code> computes characteristic polynomial of <code>m</code>.</p>
+</dd></dl>
+<a name="f_det_95via_95common_95denominator"></a><dl><dt>det_via_common_denominator : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(R)) -&gt <a href="Fraction.html">Fraction</a>(R) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>det_via_common_denominator(m)</code> computes determinant of <code>m</code>.</p>
+</dd></dl>
+</body>
+</html>

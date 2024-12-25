@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DegreeReductionPackage</title>
+</head>
+<body>
+<h1>DegreeReductionPackage(R1, R2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/solverad.spad#L260">solverad.spad line 260</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/solverad.spad#L260">[edit on github]</a></p>
+<ul>
+<li>R1 : <a href="Ring.html">Ring</a><li>R2 : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)</ul>
+<p>
+This package is undocumented</p>
+<a name="f_cyclotomic_95roots"></a><dl><dt>cyclotomic_roots : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R2))</dt><dd><p>
+<code>cyclotomic_roots(n)</code> returns list of roots of <code>n</code>-th cyclotomic polynomial.</p>
+</dd></dl>
+<a name="f_expand"></a><dl><dt>expand : (<a href="Expression.html">Expression</a>(R2), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R2))</dt><dd><p>
+<code>expand(f, n)</code> returns list of all solutions <code>y</code> to equation <code>y^n</code> = <code>f</code></p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R1) -&gt Record(pol : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R1), deg : <a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd><p>
+<code>reduce(p)</code> returns [<code>q</code>, <code>d</code>] such that <code>p</code>(<code>x</code>) = <code>q</code>(<code>x^d</code>) and <code>d</code> is maximal with this property</p>
+</dd></dl>
+</body>
+</html>

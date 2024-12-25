@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeModuleCategory</title>
+</head>
+<body>
+<h1>FreeModuleCategory(R, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/poly.spad#L19">poly.spad line 19</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/poly.spad#L19">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+A domain of this category implements formal linear combinations of elements from a domain <code>Basis</code> with coefficients in a domain <code>R</code>. The domain <code>Basis</code> needs only to belong to the category SetCategory and <code>R</code> to the category Ring. Thus the coefficient ring may be non-commutative. See the XDistributedPolynomial constructor for examples of domains built with the FreeModuleCategory category constructor. Author: Michel Petitot (petitot@lifl.<code>fr</code>)  Note (Franz Lehner, June 2009): <code>FreeModule</code> originally was not of FreeModuleCategory. Some functions (like <code>support</code>, <code>coefficients</code>, <code>monomials</code>, ...) from here could be moved to <code>IndexedDirectProductCategory</code> but at the moment there is no need for this.</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt>coefficient : (%, S) -&gt R</dt><dd><p>
+<code>coefficient(x, s)</code> returns the coefficient of the basis element <code>s</code></p>
+</dd></dl>
+<a name="f_coefficients"></a><dl><dt>coefficients : % -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>coefficients(x)</code> returns the list of coefficients of <code>x</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : S, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : S, c : R)) -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt R if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt S if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : S, c : R) if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_linearExtend"></a><dl><dt>linearExtend : (Mapping(R, S), %) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>linearExtend: (f, x)</code> returns the linear extension of a map defined on the basis applied to a linear combination</p>
+</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_listOfTerms">listOfTerms</a> : % -&gt <a href="List.html">List</a>(Record(k : S, c : R))</dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, S)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (R, S) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_monomials"></a><dl><dt>monomials : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>monomials(x)</code> returns the list of <code>r_i*b_i</code> whose sum is <code>x</code>.</p>
+</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_numberOfMonomials">numberOfMonomials</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, S)</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_support"></a><dl><dt>support : % -&gt <a href="List.html">List</a>(S)</dt><dd><p>
+<code>support(x)</code> returns the list of basis elements with nonzero coefficients.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, S)
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(R)
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

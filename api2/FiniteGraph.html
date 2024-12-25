@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteGraph</title>
+</head>
+<body>
+<h1>FiniteGraph(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/graph.spad#L1106">graph.spad line 1106</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/graph.spad#L1106">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+Category of finite graphs, allows us to model graph theory </p>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>x+y</code> computes sum of <code>x</code> and <code>y</code>, that is disjoint union of nodes with arrows from appropriate input</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addArrow_33"></a><dl><dt>addArrow! : (%, Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd><p>
+<code>addArrow!(s, ar)</code> adds an arrow ar to the graph <code>s</code></p>
+</dd></dl>
+<dl><dt>addArrow! : (%, <a href="String.html">String</a>, S, S) -&gt %</dt><dd><p>
+<code>addArrow!(s, nm, o1, o2)</code> adds an arrow to the graph <code>s</code>, where: <code>nm</code> is the name of the arrow <code>o1</code> is the start object <code>o2</code> is the end object</p>
+</dd></dl>
+<dl><dt>addArrow! : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addArrow!(s, nm, n1, n2)</code> adds an arrow to the graph <code>s</code>, where: <code>nm</code> is the name of the arrow <code>n1</code> is the index of the start object <code>n2</code> is the index of the end object</p>
+</dd></dl>
+<dl><dt>addArrow! : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>addArrow!(s, nm, n1, n2, mp)</code> adds an arrow to the graph <code>s</code>, where: <code>nm</code> is the name of the arrow <code>n1</code> is the index of the start object <code>n2</code> is the index of the end object <code>mp</code> is a map represented by this arrow</p>
+</dd></dl>
+<a name="f_addObject_33"></a><dl><dt>addObject! : (%, S) -&gt %</dt><dd><p>
+<code>addObject!(s, n)</code> adds object <code>n</code> to the graph <code>s</code>. Use this version if you don<code>'t</code> intend to create diagrams and therefore don<code>'t</code> care about <code>x</code>, <code>y</code> coordinates.</p>
+</dd></dl>
+<dl><dt>addObject! : (%, Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>addObject!(s, n)</code> adds object with coordinates <code>n</code> to the graph <code>s</code>.</p>
+</dd></dl>
+<a name="f_adjacencyMatrix"></a><dl><dt>adjacencyMatrix : % -&gt <a href="Matrix.html">Matrix</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>adjacencyMatrix(s)</code> returns an <code>n</code> by <code>n</code> matrix A, where <code>n</code> is the number of vertices in the graph. If there is an edge from a vertex <code>x</code> to a vertex <code>y</code>, then the element ax, <code>y</code> is 1 (or in general the number of xy edges), otherwise it is 0. In computing, this matrix makes it easy to find subgraphs, and to reverse a directed graph.</p>
+</dd></dl>
+<a name="f_arrowName"></a><dl><dt>arrowName : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>arrowName(s, a, b)</code> retrieves the name of arrow a-<code>&gt;b</code> if it does not exist then return <code>"?"</code></p>
+</dd></dl>
+<a name="f_arrowsFromArrow"></a><dl><dt>arrowsFromArrow : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+index of all arrows leading to a given arrow</p>
+</dd></dl>
+<a name="f_arrowsFromNode"></a><dl><dt>arrowsFromNode : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>arrowsFromNode(s, a)</code> gives list of all arrows leading to a given node</p>
+</dd></dl>
+<a name="f_arrowsToArrow"></a><dl><dt>arrowsToArrow : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>arrowsToArrow(s, a)</code> returns index of all arrows leading from a given arrow</p>
+</dd></dl>
+<a name="f_arrowsToNode"></a><dl><dt>arrowsToNode : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>arrowsToNode(s, a)</code> gives list of all arrows leading from a given node</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_createWidth"></a><dl><dt>createWidth : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>createWidth(x)</code> can be used by domains which extend graph to help in creating coordinates for objects in a graph</p>
+</dd></dl>
+<a name="f_createX"></a><dl><dt>createX : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>createX(x, n)</code> can be used by domains which extend graph to help in creating the <code>x</code> coordinate for objects in a graph</p>
+</dd></dl>
+<a name="f_createY"></a><dl><dt>createY : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>createY(x, n)</code> can be used by domains which extend graph to help in creating the <code>y</code> coordinate for objects in a graph</p>
+</dd></dl>
+<a name="f_cycleClosed"></a><dl><dt>cycleClosed : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>cycleClosed(objs, arrowName)</code> constructs a graph with vertices (from <code>objs</code>) connected in a cycle. arrowName is a prefix for all arrow names, this will be followed by a number starting at 1 and incremented for each arrow</p>
+</dd></dl>
+<a name="f_cycleOpen"></a><dl><dt>cycleOpen : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>cycleOpen(objs, arrowName)</code> constructs a graph with vertices (from <code>objs</code>) connected in a cycle but with one gap. The last vertex in the sequence loops back to itself so all vertices have one outgoing arrow. arrowName is a prefix for all arrow names, this will be followed by a number starting at 1 and incremented for each arrow</p>
+</dd></dl>
+<a name="f_deepDiagramSvg"></a><dl><dt>deepDiagramSvg : (<a href="String.html">String</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_diagramHeight"></a><dl><dt>diagramHeight : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>diagramHeight(s)</code> returns the height of the diagram that will be generated by diagramSvg. This is the maximum posY of all vertices in graph <code>s</code></p>
+</dd></dl>
+<a name="f_diagramSvg"></a><dl><dt>diagramSvg : (<a href="String.html">String</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>diagramSvg(fileName, n, dispArrowName)</code> creates an <code>SVG</code> diagram fileName: String is the name of the <code>SVG</code> file that will be created <code>n:</code> % is the graph that will be written dispArrowName: Boolean is <code>true</code> to include the name of each arrow</p>
+</dd></dl>
+<a name="f_diagramWidth"></a><dl><dt>diagramWidth : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>diagramWidth(s)</code> returns the width of the diagram that will be generated by diagramSvg. This is the maximum posX of all vertices in graph <code>s</code></p>
+</dd></dl>
+<a name="f_diagramsSvg"></a><dl><dt>diagramsSvg : (<a href="String.html">String</a>, <a href="List.html">List</a>(%), <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+creates <code>SVG</code> diagram containing multiple graphs fileName: String is the name of the <code>SVG</code> file that will be created <code>ln:</code> List % is list of graphs that will be written dispArrowName: Boolean is <code>true</code> to include the name of each arrow</p>
+</dd></dl>
+<a name="f_distance"></a><dl><dt>distance : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>distance(s, a, b)</code> gives the shortest distance between nodes 'a' and <code>'b'</code> as a number of hops. 0 if 'a' = <code>'b'</code>, <code>-1</code> if it is not possible to go from 'a' to <code>'b'</code></p>
+</dd></dl>
+<a name="f_distanceMatrix"></a><dl><dt>distanceMatrix : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>distanceMatrix(s)</code> gives matrix of distances between vertices. Element a_<code>i</code>, <code>j</code> is the distance from <code>i</code> to <code>j</code>. Distance matrices are related to adjacency matrices, with the differences that: a. the latter only provides the information which vertices are connected but does not tell about costs or distances between the vertices <code>b</code>. adjacency matrix only tells us about directly connected vertices while distance matrix also considers indirect connections.</p>
+</dd></dl>
+<a name="f_flatten"></a><dl><dt>flatten : <a href="DirectedGraph.html">DirectedGraph</a>(%) -&gt %</dt><dd><p>
+<code>flatten(n)</code> takes a second order graph, that is a graph whose elements are themselves graphs and create a first order graph whose vertices are the vertices of the inner graphs.</p>
+</dd></dl>
+<a name="f_getArrowIndex"></a><dl><dt>getArrowIndex : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>getArrowIndex(s, a, b)</code> retrieves arrow index of the arrow form a to <code>b</code></p>
+</dd></dl>
+<a name="f_getArrows"></a><dl><dt>getArrows : % -&gt <a href="List.html">List</a>(Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd><p>
+<code>getArrows(s)</code> returns a list of all the arrows (or edges)</p>
+</dd></dl>
+<a name="f_getVertexIndex"></a><dl><dt>getVertexIndex : (%, S) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>getVertexIndex(s, o)</code> gives index of object <code>o</code>. returns 0 if not found</p>
+</dd></dl>
+<a name="f_getVertices"></a><dl><dt>getVertices : % -&gt <a href="List.html">List</a>(Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>getVertices(s)</code> returns a list of all the vertices (or objects) of the graph <code>s</code>.</p>
+</dd></dl>
+<a name="f_inDegree"></a><dl><dt>inDegree : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>inDegree(s, a)</code> gives the number of arrows leading in to node 'a' in graph <code>'s'</code></p>
+</dd></dl>
+<a name="f_incidenceMatrix"></a><dl><dt>incidenceMatrix : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>incidenceMatrix(s)</code> represents graph <code>s</code> by a matrix of size <code>|V|</code> by |E| where: V=number of vertices E=number of edges entry [vertex, arrow] = arrow endpoint data (undirected case case: 1 - incident, 0 - not incident, directed case: <code>-1</code> - start, 1 - end, 0 - not incident).</p>
+</dd></dl>
+<a name="f_initial"></a><dl><dt>initial : () -&gt %</dt><dd><p>
+<code>initial constructs</code> a graph without vertices or edges</p>
+</dd></dl>
+<a name="f_isAcyclic_63"></a><dl><dt>isAcyclic? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isAcyclic?(s)</code> returns <code>true</code> if there are no loops</p>
+</dd></dl>
+<a name="f_isDirectSuccessor_63"></a><dl><dt>isDirectSuccessor? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isDirectSuccessor?(s, a, b)</code> is <code>true</code> if <code>'b'</code> is a direct successor of 'a' that is, if there is a direct arrow from 'a' to <code>'b'</code></p>
+</dd></dl>
+<a name="f_isDirected_63"></a><dl><dt>isDirected? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isDirected?()</code> is <code>true</code> iff % is domain consisting of directed graphs, <code>false</code> for undirected graphs.</p>
+</dd></dl>
+<a name="f_isFixPoint_63"></a><dl><dt>isFixPoint? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isFixPoint?(s, a)</code> is <code>true</code> if 'a' has an arrow to itself</p>
+</dd></dl>
+<a name="f_isFunctional_63"></a><dl><dt>isFunctional? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isFunctional?(s)</code> returns <code>true</code> if <code>s</code> is a functional graph, that is a directed graph in which each vertex has a single outgoing arrow.</p>
+</dd></dl>
+<a name="f_isGreaterThan_63"></a><dl><dt>isGreaterThan? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isGreaterThan?(s, a, b)</code> is <code>true</code> if we can get from vertex 'a' to <code>'b'</code> through a sequence of arrows but we can<code>'t</code> go in the opposite direction from <code>'b'</code> to 'a'</p>
+</dd></dl>
+<a name="f_kgraph"></a><dl><dt>kgraph : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>kgraph(objs, arrowName)</code> constructs a graph with vertices (from <code>objs</code>) and fully connected arrows, that is, each object has an arrow to every other object except itself. arrowName is a prefix for all arrow names, this will be followed by a number starting at 1 and incremented for each arrow</p>
+</dd></dl>
+<a name="f_laplacianMatrix"></a><dl><dt>laplacianMatrix : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>laplacianMatrix(s)</code> returns matrix also known as "Kirchhoff matrix" or "Admittance matrix" where: entry [<code>i</code>, <code>j</code>] = inDegree(<code>vi</code>) if <code>i</code> = <code>j</code> (number of incoming links) <code>-1</code> if <code>i</code> not = <code>j</code> and <code>vi</code> is adjacent to <code>vj</code> 0 otherwise Alternatively this is defined as <code>D</code> - A, where <code>D</code> is the diagonal degree matrix. It contains both adjacency information and degree information. There are other, similar matrices, that are also called "Laplacian matrices" of a graph.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_loopsArrows"></a><dl><dt>loopsArrows : % -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd><p>
+<code>loopsArrows(s)</code> returns a list of loops for this graph in this case the loop is represented by the indexes of the sequence of nodes passed through. to-do: it would be better to use a more efficient algorithm, currently the code calls spanningForestArrow and traverses the result for loops, it might be more efficient to use Floyds algorithm.</p>
+</dd></dl>
+<a name="f_loopsAtNode"></a><dl><dt>loopsAtNode : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd><p>
+<code>loopsAtNode(s, a)</code> returns a list of loops for this graph that pass through vertex index 'a'</p>
+</dd></dl>
+<a name="f_loopsNodes"></a><dl><dt>loopsNodes : % -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd><p>
+<code>loopsNodes(s)</code> returns a list of loops for this graph in this case the loop is represented by the indexes of the sequence of nodes passed through.</p>
+</dd></dl>
+<a name="f_looseEquals"></a><dl><dt>looseEquals : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>looseEquals(x, y)</code> is <code>true</code> if <code>x</code> 'equals' <code>y</code> this is a looser version of equality test but is not as general as isomorphism. it only requires the same number of vertices but does not require the objects themselves being equal. the arrows must be the same, that is it may return <code>false</code> if the order of vertices is changed so this is not isomorphism test.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt>map : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(S), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>map(s, m, newOb, offsetX, offsetY)</code> creates a new graph by mapping from this one <code>newOb</code> should contain the new list of vertices. <code>m</code> should contain a NNI value for each vertex, this is the new index into <code>newOb</code>. It is allowed that <code>newOb</code> may contain less objects than <code>s</code> (for surjective mapping) or more objects than <code>s</code> (for injective mapping)</p>
+</dd></dl>
+<a name="f_mapContra"></a><dl><dt>mapContra : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(S), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>mapContra(s, m, newOb, offsetX, offsetY)</code> is similar to map function but reverses the directions of the arrows</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt>max : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>max(s)</code> returns index of the vertex which can be reached from all other vertices. Gives 0 if no such node exists or if it is not unique, if there is a loop for instance.</p>
+</dd></dl>
+<dl><dt>max : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>max(s, sub)</code> returns index of the vertex which can be reached from a given subset of the vertices. Gives 0 if no such node exists or if it is not unique, if there is a loop for instance.</p>
+</dd></dl>
+<a name="f_merge"></a><dl><dt>merge : (%, %) -&gt %</dt><dd><p>
+<code>merge(a, b)</code> returns sum : union (not necessarily disjoint) of nodes with arrows merged in from appropriate input, if arrow exists from both inputs then it will be duplicated.</p>
+</dd></dl>
+<a name="f_min"></a><dl><dt>min : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>min(s)</code> returns index of the vertex which can reach to all other vertices. Gives 0 if no such node exists or if it is not unique, if there is a loop for instance.</p>
+</dd></dl>
+<dl><dt>min : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>min(s, sub)</code> returns index of the vertex which can reach to a given subset of the vertices. Gives 0 if no such node exists or if it is not unique, if there is a loop for instance.</p>
+</dd></dl>
+<a name="f_nodeFromArrow"></a><dl><dt>nodeFromArrow : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>nodeFromArrow(s, a)</code> returns index of all nodes with a direct arrow leading in to arrow 'a' in graph <code>'s'</code></p>
+</dd></dl>
+<a name="f_nodeFromNode"></a><dl><dt>nodeFromNode : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>nodeFromNode(s, a)</code> gives list of all nodes with a direct arrow leading in to node 'a' in graph <code>'s'</code></p>
+</dd></dl>
+<a name="f_nodeToArrow"></a><dl><dt>nodeToArrow : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>nodeToArrow(s, a)</code> returns index of all nodes with a direct arrow leading out of arrow 'a' in graph <code>'s'</code></p>
+</dd></dl>
+<a name="f_nodeToNode"></a><dl><dt>nodeToNode : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>nodeToNode(s, a)</code> gives list of all nodes with a direct arrow leading out of node 'a' in graph <code>'s'</code></p>
+</dd></dl>
+<a name="f_outDegree"></a><dl><dt>outDegree : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>outDegree(s, a)</code> gives the number of arrows leading out of node 'a' in graph <code>'s'</code></p>
+</dd></dl>
+<a name="f_routeArrows"></a><dl><dt>routeArrows : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>routeArrows(s, a, b)</code> gives the shortest route between nodes 'a' and <code>'b'</code> as a sequence of arrow indexes. [] if 'a' = <code>'b'</code> [0] if it is not possible to go from 'a' to <code>'b'</code></p>
+</dd></dl>
+<a name="f_routeNodes"></a><dl><dt>routeNodes : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>routeNodes(s, a, b)</code> gives the shortest route between nodes 'a' and <code>'b'</code> as a sequence of node indexes. [a] if 'a' = <code>'b'</code> [] if it is not possible to go from 'a' to <code>'b'</code></p>
+</dd></dl>
+<a name="f_spanningForestArrow"></a><dl><dt>spanningForestArrow : % -&gt <a href="List.html">List</a>(<a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>spanningForestArrow(s)</code> constructs a spanning tree for every arrow.</p>
+</dd></dl>
+<a name="f_spanningForestNode"></a><dl><dt>spanningForestNode : % -&gt <a href="List.html">List</a>(<a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>spanningForestNode(s)</code> constructs a spanning tree for every vertex.</p>
+</dd></dl>
+<a name="f_spanningTreeArrow"></a><dl><dt>spanningTreeArrow : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>spanningTreeArrow(s, i)</code> constructs a spanning tree for graph <code>'s'</code> rooted at the arrow indexed by 'i'. The tree will expand out from 'i' only stopping when reaching a arrow that has already been visited (that is: loop detected). Elements in the tree are Integer, a positive Integer represents a arrow and a negative Integer represents a repeated arrow. note: it is possible that nodes may be visited many times, only arrows must not be re-visited.</p>
+</dd></dl>
+<a name="f_spanningTreeNode"></a><dl><dt>spanningTreeNode : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>spanningTreeNode(s, i)</code> constructs a spanning tree for graph <code>'s'</code> rooted at the node indexed by 'i'. The tree will expand out from 'i' only stopping when reaching a vertex that has already been visited (that is: loop detected). Elements in the tree are Integer, a positive Integer represents a vertex and a negative Integer represents a repeated vertex.</p>
+</dd></dl>
+<a name="f_subdiagramSvg"></a><dl><dt>subdiagramSvg : (<a href="Scene.html">Scene</a>(<a href="SCartesian.html">SCartesian</a>(2)), %, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>subdiagramSvg(sc, n, dispArrowName, deep)</code> creates a branch of an <code>SVG</code> diagram diagram under an already existing scene node <code>sc</code>. <code>n:</code> % is the graph that will be written dispArrowName: Boolean is <code>true</code> to include the name of each arrow</p>
+</dd></dl>
+<a name="f_terminal"></a><dl><dt>terminal : S -&gt %</dt><dd><p>
+<code>terminal(a)</code> constructs a graph over a with a single vertex and a single loop</p>
+</dd></dl>
+<a name="f_unit"></a><dl><dt>unit : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>unit(objs, arrowName)</code> constructs a graph with vertices (from <code>objs</code>) and arrows from each object to itself. arrowName is a prefix for all arrow names, this will be followed by a number starting at 1 and incremented for each arrow</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

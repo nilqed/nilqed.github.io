@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TopLevelDrawFunctionsForAlgebraicCurves</title>
+</head>
+<body>
+<h1>TopLevelDrawFunctionsForAlgebraicCurves(R, Ex)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/draw.spad#L957">draw.spad line 957</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/draw.spad#L957">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))<li>Ex : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+TopLevelDrawFunctionsForAlgebraicCurves provides top level functions for drawing non-singular algebraic curves.</p>
+<a name="f_draw"></a><dl><dt>draw : (<a href="Equation.html">Equation</a>(Ex), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>draw(f(x, y) = g(x, y), x, y, l)</code> draws the graph of a polynomial equation. The list <code>l</code> of draw options must specify a region in the plane in which the curve is to sketched.</p>
+</dd></dl>
+<a name="f_makeObject"></a><dl><dt>makeObject : (<a href="Equation.html">Equation</a>(Ex), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="GraphImage.html">GraphImage</a></dt><dd><p>
+<code>makeObject(f(x, y) = g(x, y), x, y, l)</code> creates the graph of a polynomial equation. The list <code>l</code> of draw options must specify a region in the plane in which the curve is to sketched.</p>
+</dd></dl>
+</body>
+</html>

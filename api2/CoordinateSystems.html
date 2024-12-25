@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CoordinateSystems</title>
+</head>
+<body>
+<h1>CoordinateSystems(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/coordsys.spad#L1">coordsys.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/coordsys.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Field.html">Field</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="RadicalCategory.html">RadicalCategory</a>)</ul>
+<p>
+CoordinateSystems provides coordinate transformation functions for plotting. Functions in this package return conversion functions which take points expressed in other coordinate systems and return points with the corresponding Cartesian coordinates.</p>
+<a name="f_bipolar"></a><dl><dt>bipolar : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>bipolar(a)</code> transforms from bipolar coordinates to Cartesian coordinates: <code>bipolar(a)</code> is a function which will map the point <code>(u, v)</code> to <code>x = a*sinh(v)/(cosh(v)-cos(u))</code>, <code>y = a*sin(u)/(cosh(v)-cos(u))</code>.</p>
+</dd></dl>
+<a name="f_bipolarCylindrical"></a><dl><dt>bipolarCylindrical : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>bipolarCylindrical(a)</code> transforms from bipolar cylindrical coordinates to Cartesian coordinates: <code>bipolarCylindrical(a)</code> is a function which <code>++</code> will map the point <code>(u, v, z)</code> to <code>x = a*sinh(v)/(cosh(v)-cos(u))</code>, <code>y = a*sin(u)/(cosh(v)-cos(u))</code>, <code>z</code>.</p>
+</dd></dl>
+<a name="f_cartesian"></a><dl><dt>cartesian : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>cartesian(pt)</code> returns the Cartesian coordinates of point <code>pt</code>.</p>
+</dd></dl>
+<a name="f_conical"></a><dl><dt>conical : (R, R) -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>conical(a, b)</code> transforms from conical coordinates to Cartesian coordinates: <code>conical(a, b)</code> is a function which will map the point <code>(lambda, mu, nu)</code> to <code>x = lambda*mu*nu/(a*b)</code>, <code>y = lambda/a*sqrt((mu^2-a^2)*(nu^2-a^2)/(a^2-b^2))</code>, <code>z = lambda/b*sqrt((mu^2-b^2)*(nu^2-b^2)/(b^2-a^2))</code>.</p>
+</dd></dl>
+<a name="f_cylindrical"></a><dl><dt>cylindrical : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>cylindrical(pt)</code> transforms <code>pt</code> from polar coordinates to Cartesian coordinates: the function produced will map the point <code>(r, theta, z)</code> to <code>x = r * cos(theta)</code>, <code>y = r * sin(theta)</code>, <code>z</code>.</p>
+</dd></dl>
+<a name="f_elliptic"></a><dl><dt>elliptic : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>elliptic(a)</code> transforms from elliptic coordinates to Cartesian coordinates: <code>elliptic(a)</code> is a function which will map the point <code>(u, v)</code> to <code>x = a*cosh(u)*cos(v)</code>, <code>y = a*sinh(u)*sin(v)</code>.</p>
+</dd></dl>
+<a name="f_ellipticCylindrical"></a><dl><dt>ellipticCylindrical : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>ellipticCylindrical(a)</code> transforms from elliptic cylindrical coordinates to Cartesian coordinates: <code>ellipticCylindrical(a)</code> is a function which will map the point <code>(u, v, z)</code> to <code>x = a*cosh(u)*cos(v)</code>, <code>y = a*sinh(u)*sin(v)</code>, <code>z</code>.</p>
+</dd></dl>
+<a name="f_oblateSpheroidal"></a><dl><dt>oblateSpheroidal : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>oblateSpheroidal(a)</code> transforms from oblate spheroidal coordinates to Cartesian coordinates: <code>oblateSpheroidal(a)</code> is a function which will map the point <code>(<code>xi</code>, eta, phi)</code> to <code>x = a*sinh(<code>xi</code>)*sin(eta)*cos(phi)</code>, <code>y = a*sinh(<code>xi</code>)*sin(eta)*sin(phi)</code>, <code>z = a*cosh(<code>xi</code>)*cos(eta)</code>.</p>
+</dd></dl>
+<a name="f_parabolic"></a><dl><dt>parabolic : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>parabolic(pt)</code> transforms <code>pt</code> from parabolic coordinates to Cartesian coordinates: the function produced will map the point <code>(u, v)</code> to <code>x = 1/2*(u^2 - v^2)</code>, <code>y = u*v</code>.</p>
+</dd></dl>
+<a name="f_parabolicCylindrical"></a><dl><dt>parabolicCylindrical : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>parabolicCylindrical(pt)</code> transforms <code>pt</code> from parabolic cylindrical coordinates to Cartesian coordinates: the function produced will map the point <code>(u, v, z)</code> to <code>x = 1/2*(u^2 - v^2)</code>, <code>y = u*v</code>, <code>z</code>.</p>
+</dd></dl>
+<a name="f_paraboloidal"></a><dl><dt>paraboloidal : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>paraboloidal(pt)</code> transforms <code>pt</code> from paraboloidal coordinates to Cartesian coordinates: the function produced will map the point <code>(u, v, phi)</code> to <code>x = u*v*cos(phi)</code>, <code>y = u*v*sin(phi)</code>, <code>z = 1/2 * (u^2 - v^2)</code>.</p>
+</dd></dl>
+<a name="f_polar"></a><dl><dt>polar : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>polar(pt)</code> transforms <code>pt</code> from polar coordinates to Cartesian coordinates: the function produced will map the point <code>(r, theta)</code> to <code>x = r * cos(theta)</code>, <code>y = r * sin(theta)</code>.</p>
+</dd></dl>
+<a name="f_prolateSpheroidal"></a><dl><dt>prolateSpheroidal : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>prolateSpheroidal(a)</code> transforms from prolate spheroidal coordinates to Cartesian coordinates: <code>prolateSpheroidal(a)</code> is a function which will map the point <code>(<code>xi</code>, eta, phi)</code> to <code>x = a*sinh(<code>xi</code>)*sin(eta)*cos(phi)</code>, <code>y = a*sinh(<code>xi</code>)*sin(eta)*sin(phi)</code>, <code>z = a*cosh(<code>xi</code>)*cos(eta)</code>.</p>
+</dd></dl>
+<a name="f_spherical"></a><dl><dt>spherical : <a href="Point.html">Point</a>(R) -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>spherical(pt)</code> transforms <code>pt</code> from spherical coordinates to Cartesian coordinates: the function produced will map the point <code>(r, theta, phi)</code> to <code>x = r*sin(phi)*cos(theta)</code>, <code>y = r*sin(phi)*sin(theta)</code>, <code>z = r*cos(phi)</code>.</p>
+</dd></dl>
+<a name="f_toroidal"></a><dl><dt>toroidal : R -&gt Mapping(<a href="Point.html">Point</a>(R), <a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>toroidal(a)</code> transforms from toroidal coordinates to Cartesian coordinates: <code>toroidal(a)</code> is a function which will map the point <code>(u, v, phi)</code> to <code>x = a*sinh(v)*cos(phi)/(cosh(v)-cos(u))</code>, <code>y = a*sinh(v)*sin(phi)/(cosh(v)-cos(u))</code>, <code>z = a*sin(u)/(cosh(v)-cos(u))</code>.</p>
+</dd></dl>
+</body>
+</html>

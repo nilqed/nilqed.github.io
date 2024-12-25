@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GroebnerInternalPackage</title>
+</head>
+<body>
+<h1>GroebnerInternalPackage(Dom, Expon, Dpol)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/gbintern.spad#L1">gbintern.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/gbintern.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Dom : <a href="GcdDomain.html">GcdDomain</a><li>Expon : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>Dpol : Join(<a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(Dom, Expon), <a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a>)</ul>
+<p>
+This package provides low level tools for Groebner basis computations.</p>
+<a name="f_credPol"></a><dl><dt>credPol : (Dpol, <a href="List.html">List</a>(Dpol)) -&gt Dpol</dt><dd><p>
+<code>credPol </code>is undocumented</p>
+</dd></dl>
+<a name="f_critB"></a><dl><dt>critB : (Expon, Expon, Expon, Expon) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>critB </code>is undocumented</p>
+</dd></dl>
+<a name="f_critBonD"></a><dl><dt>critBonD : (Dpol, <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))) -&gt <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))</dt><dd><p>
+<code>critBonD </code>is undocumented</p>
+</dd></dl>
+<a name="f_critM"></a><dl><dt>critM : (Expon, Expon) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>critM </code>is undocumented</p>
+</dd></dl>
+<a name="f_critMTonD1"></a><dl><dt>critMTonD1 : <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol)) -&gt <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))</dt><dd><p>
+<code>critMTonD1 </code>is undocumented</p>
+</dd></dl>
+<a name="f_critMonD1"></a><dl><dt>critMonD1 : (Expon, <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))) -&gt <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))</dt><dd><p>
+<code>critMonD1 </code>is undocumented</p>
+</dd></dl>
+<a name="f_critT"></a><dl><dt>critT : Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>critT </code>is undocumented</p>
+</dd></dl>
+<a name="f_critpOrder"></a><dl><dt>critpOrder : (Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol), Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>critpOrder </code>is undocumented</p>
+</dd></dl>
+<a name="f_fprindINFO"></a><dl><dt>fprindINFO : (Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol), Dpol, Dpol, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>fprindINFO </code>is undocumented</p>
+</dd></dl>
+<a name="f_gbasis"></a><dl><dt>gbasis : (<a href="List.html">List</a>(Dpol), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(Dpol)</dt><dd><p>
+<code>gbasis(pols, f1, f2)</code> computes a Groebner basis of <code>pols</code>.</p>
+</dd></dl>
+<a name="f_gbasisExtend"></a><dl><dt>gbasisExtend : (<a href="List.html">List</a>(Dpol), <a href="List.html">List</a>(Dpol), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(Dpol)</dt><dd><p>
+<code>gbasisExtend(pols, gb, f1, f2)</code> computes a Groebner basis of concat(<code>pols</code>, <code>gb</code>) where <code>gb</code> is assumed to be already a Groebner basis, i.e. no <code>S</code>-polynomials among elements of <code>gb</code> will ever be considered.</p>
+</dd></dl>
+<a name="f_hMonic"></a><dl><dt>hMonic : Dpol -&gt Dpol</dt><dd><p>
+<code>hMonic </code>is undocumented</p>
+</dd></dl>
+<a name="f_lepol"></a><dl><dt>lepol : Dpol -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>lepol </code>is undocumented</p>
+</dd></dl>
+<a name="f_makeCrit"></a><dl><dt>makeCrit : (Record(totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, pol : Dpol), Dpol, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol)</dt><dd><p>
+<code>makeCrit </code>is undocumented</p>
+</dd></dl>
+<a name="f_minGbasis"></a><dl><dt>minGbasis : <a href="List.html">List</a>(Dpol) -&gt <a href="List.html">List</a>(Dpol)</dt><dd><p>
+<code>minGbasis </code>is undocumented</p>
+</dd></dl>
+<a name="f_prinb"></a><dl><dt>prinb : <a href="Integer.html">Integer</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>prinb </code>is undocumented</p>
+</dd></dl>
+<a name="f_prindINFO"></a><dl><dt>prindINFO : (Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol), Dpol, Dpol, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>prindINFO </code>is undocumented</p>
+</dd></dl>
+<a name="f_prinpolINFO"></a><dl><dt>prinpolINFO : <a href="List.html">List</a>(Dpol) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>prinpolINFO </code>is undocumented</p>
+</dd></dl>
+<a name="f_prinshINFO"></a><dl><dt>prinshINFO : Dpol -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>prinshINFO </code>is undocumented</p>
+</dd></dl>
+<a name="f_redPo"></a><dl><dt>redPo : (Dpol, <a href="List.html">List</a>(Dpol)) -&gt Record(poly : Dpol, mult : Dom)</dt><dd><p>
+<code>redPo </code>is undocumented</p>
+</dd></dl>
+<a name="f_redPol"></a><dl><dt>redPol : (Dpol, <a href="List.html">List</a>(Dpol)) -&gt Dpol</dt><dd><p>
+<code>redPol </code>is undocumented</p>
+</dd></dl>
+<a name="f_sPol"></a><dl><dt>sPol : Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol) -&gt Dpol</dt><dd><p>
+<code>sPol </code>is undocumented</p>
+</dd></dl>
+<a name="f_updatD"></a><dl><dt>updatD : (<a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol)), <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))) -&gt <a href="List.html">List</a>(Record(lcmfij : Expon, totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, poli : Dpol, polj : Dpol))</dt><dd><p>
+<code>updatD </code>is undocumented</p>
+</dd></dl>
+<a name="f_updatF"></a><dl><dt>updatF : (Dpol, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(Record(totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, pol : Dpol))) -&gt <a href="List.html">List</a>(Record(totdeg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, pol : Dpol))</dt><dd><p>
+<code>updatF </code>is undocumented</p>
+</dd></dl>
+<a name="f_virtualDegree"></a><dl><dt>virtualDegree : Dpol -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>virtualDegree </code>is undocumented</p>
+</dd></dl>
+</body>
+</html>

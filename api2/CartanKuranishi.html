@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CartanKuranishi</title>
+</head>
+<body>
+<h1>CartanKuranishi(JB, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L4569">jet.spad line 4569</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L4569">[edit on github]</a></p>
+<ul>
+<li>JB : <a href="JetBundleCategory.html">JetBundleCategory</a><li>D : <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</ul>
+<p>
+CartanKuranishi is a package for the completion of a given differential equation to an involutive equation. Procedures for Cartan characters and Hilbert polynomial are also provided. Based on the Cartan-Kuranishi theorem as it is used in formal theory.</p>
+<a name="f_alpha"></a><dl><dt>alpha : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>alpha(q, beta)</code> computes the Cartan characters for a differential equation of order <code>q</code> and with characters <code>beta</code>.</p>
+</dd></dl>
+<a name="f_alphaHilbert"></a><dl><dt>alphaHilbert : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>alphaHilbert(hp)</code> computes the Cartan characters for the Hilbert polynomial <code>hp</code>.</p>
+</dd></dl>
+<a name="f_arbFunctions"></a><dl><dt>arbFunctions : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>arbFunctions(q, j, cc)</code> uses the Cartan characters <code>cc</code> to compute the number of arbitrary functions of differentiation order <code>j</code> in the general solution of a differential equation of order <code>q</code>.</p>
+</dd></dl>
+<a name="f_bound"></a><dl><dt>bound : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>bound(n, m, q)</code> computes an upper bound for the number of prolongations needed to make the symbol of an equation of order <code>q</code> with <code>n</code> independent and <code>m</code> dependent variables involutive.</p>
+</dd></dl>
+<a name="f_complete"></a><dl><dt>complete : <a href="JetDifferentialEquation.html">JetDifferentialEquation</a>(JB, D) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>complete(de)</code> completes <code>de</code> to an involutive equation. No result is returned; the display depends of the setting of the output flags with <span class="spadfun">setOutput</span>.</p>
+</dd></dl>
+<a name="f_complete2"></a><dl><dt>complete2 : <a href="JetDifferentialEquation.html">JetDifferentialEquation</a>(JB, D) -&gt Record(IDe : <a href="JetDifferentialEquation.html">JetDifferentialEquation</a>(JB, D), ISys : <a href="List.html">List</a>(D), Order : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, NumProj : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Dim : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, CarChar : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>complete2(de)</code> is like <span class="spadfun">complete</span> but returns the involutive equation <code>IDe</code>, a basis <code>ISys</code> for the involutive system without prolongations, its order <code>Order</code>, the number <code>NumProj</code> of needed projections and the Cartan characters <code>CarChar</code>.</p>
+</dd></dl>
+<a name="f_gauge"></a><dl><dt>gauge : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>gauge(q, j, gamma)</code> computes the gauge corrections to the number of arbitrary functions of differentiation order <code>j</code> for a system of order <code>q</code> with <code>gamma</code> gauge functions.</p>
+</dd></dl>
+<a name="f_gaugeHilbert"></a><dl><dt>gaugeHilbert : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>gaugeHilbert(q, gamma)</code> computes the gauge correction to the Hilbert polynomial for a system of order <code>q</code> with <code>gamma</code> gauge functions.</p>
+</dd></dl>
+<a name="f_hilbert"></a><dl><dt>hilbert : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>hilbert(cc)</code> computes the Hilbert polynomial to the Cartan characters <code>cc</code>.</p>
+</dd></dl>
+<a name="f_setOutMode"></a><dl><dt>setOutMode : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>setOutput(i)</code> controls amount of generated output during the completion algorithm: <code>i = 0</code> --&gt; no display, <code>i = 1</code> --&gt; result is displayed, <code>i = 2</code> --&gt; Cartan characters are displayed, <code>i = 3</code> --&gt; integrability conditions are traced, <code>i = 4</code> --&gt; intermediate dimensions are traced, <code>i = 5</code> --&gt; all intermediate systems are traced, <code>i = 6</code> --&gt; all intermediate systems and symbols are traced, if <code>i &gt; 10</code> then TeX output is produced. Default is 0. The old value is returned.</p>
+</dd></dl>
+<a name="f_setRedMode"></a><dl><dt>setRedMode : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>setRedMode(i)</code> sets the flag for the reduction mode. Returns old value. Current values are: <code>i = 0</code> --&gt; No reduction of integrability conditions etc. <code>i = 1</code> --&gt; Autoreduction of complete system and reduction of all integrability conditions. Default is 0.</p>
+</dd></dl>
+<a name="f_setSimpMode"></a><dl><dt>setSimpMode : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>setSimpMode(i)</code> sets the simplification mode used in <code>JetDifferentialEquation</code>. Returns old value.</p>
+</dd></dl>
+<a name="f_stirling"></a><dl><dt>stirling : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>stirling(i, k, q)</code> computes the corresponding modified Stirling number.</p>
+</dd></dl>
+</body>
+</html>

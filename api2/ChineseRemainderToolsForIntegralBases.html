@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ChineseRemainderToolsForIntegralBases</title>
+</head>
+<body>
+<h1>ChineseRemainderToolsForIntegralBases(K, R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/padiclib.spad#L88">padiclib.spad line 88</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/padiclib.spad#L88">[edit on github]</a></p>
+<ul>
+<li>K : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a><li>R : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(K)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+Modular helpers for computing integral bases.</p>
+<a name="f_chineseRemainder"></a><dl><dt>chineseRemainder : (<a href="List.html">List</a>(UP), <a href="List.html">List</a>(Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R))), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>chineseRemainder(lu, lr, n)</code> is undocumented</p>
+</dd></dl>
+<a name="f_factorList"></a><dl><dt>factorList : (K, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(K))</dt><dd><p>
+<code>factorList(k, n, m, j)</code> is undocumented</p>
+</dd></dl>
+<a name="f_listConjugateBases"></a><dl><dt>listConjugateBases : (Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R)), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R)))</dt><dd><p>
+<code>listConjugateBases(bas, q, n)</code> returns the list <code>[bas, bas^Frob, bas^(Frob^2), ...bas^(Frob^(n-1))]</code>, where <code>Frob</code> raises the coefficients of all polynomials appearing in the basis <code>bas</code> to the <code>q</code>th power.</p>
+</dd></dl>
+</body>
+</html>

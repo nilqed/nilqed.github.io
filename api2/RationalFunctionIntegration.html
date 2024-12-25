@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalFunctionIntegration</title>
+</head>
+<body>
+<h1>RationalFunctionIntegration(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intrf.spad#L595">intrf.spad line 595</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intrf.spad#L595">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="CharacteristicZero.html">CharacteristicZero</a>)</ul>
+<p>
+This package provides functions for the integration of rational functions.</p>
+<a name="f_infieldIntegrate"></a><dl><dt>infieldIntegrate : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(F)), <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(F)), "failed")</dt><dd><p>
+<code>infieldIntegrate(f, x)</code> returns a fraction <code>g</code> such that <code>dg/dx = f</code> if <code>g</code> exists, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_internalIntegrate"></a><dl><dt>internalIntegrate : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(F)), <a href="Symbol.html">Symbol</a>) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(F)))</dt><dd><p>
+<code>internalIntegrate(f, x)</code> returns <code>g</code> such that <code>dg/dx = f</code>.</p>
+</dd></dl>
+</body>
+</html>

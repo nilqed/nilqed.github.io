@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PseudoRemainderSequence</title>
+</head>
+<body>
+<h1>PseudoRemainderSequence(R, polR)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/prs.spad#L1">prs.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/prs.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>polR : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+This package contains some functions: <span class="spadop">discriminant</span>, <span class="spadop">resultant</span>, <span class="spadop">subResultantGcd</span>, <span class="spadop">chainSubResultants</span>, <span class="spadop">degreeSubResultant</span>, <span class="spadop">lastSubResultant</span>, <span class="spadop">resultantEuclidean</span>, <span class="spadop">subResultantGcdEuclidean</span>, <span class="spadop"><code>semiSubResultantGcdEuclidean1</code></span>, <span class="spadop"><code>semiSubResultantGcdEuclidean2</code></span>, etc. These procedures are coming from improvements of the subresultants algorithm.</p>
+<a name="f_LazardQuotient"></a><dl><dt>LazardQuotient : (R, R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>LazardQuotient(x, y, n)</code> computes <code>x^n exquo y^(n-1)</code></p>
+</dd></dl>
+<a name="f_LazardQuotient2"></a><dl><dt>LazardQuotient2 : (polR, R, R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt polR</dt><dd><p>
+<code>LazardQuotient2(F, x, y, n)</code> computes <code>(x^(n-1) * F) exquo y^(n-1)</code></p>
+</dd></dl>
+<a name="f_chainSubResultants"></a><dl><dt>chainSubResultants : (polR, polR) -&gt <a href="List.html">List</a>(polR)</dt><dd><p>
+<code>chainSubResultants(P, Q)</code> computes the list of non zero subresultants of <code>P</code> and <code>Q</code>.</p>
+</dd></dl>
+<a name="f_degreeSubResultant"></a><dl><dt>degreeSubResultant : (polR, polR, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt polR</dt><dd><p>
+<code>degreeSubResultant(P, Q, d)</code> computes a subresultant of degree <code>d</code>.</p>
+</dd></dl>
+<a name="f_degreeSubResultantEuclidean"></a><dl><dt>degreeSubResultantEuclidean : (polR, polR, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(coef1 : polR, coef2 : polR, subResultant : polR)</dt><dd><p>
+<code>degreeSubResultantEuclidean(P, Q, d)</code> returns a subresultant <code>S_i</code> of degree <code>d</code> and carries out the equality <code>coef1*P + coef2*Q = S_i</code>.</p>
+</dd></dl>
+<a name="f_discriminant"></a><dl><dt>discriminant : polR -&gt R</dt><dd><p>
+<code>discriminant(P)</code> returns the discriminant of <code>P</code>.</p>
+</dd></dl>
+<a name="f_discriminantEuclidean"></a><dl><dt>discriminantEuclidean : polR -&gt Record(coef1 : polR, coef2 : polR, discriminant : R)</dt><dd><p>
+<code>discriminantEuclidean(P)</code> carries out the equality <code>coef1 * P + coef2 * D(P) = discriminant(P)</code>.</p>
+</dd></dl>
+<a name="f_divide"></a><dl><dt>divide : (polR, polR) -&gt Record(quotient : polR, remainder : polR)</dt><dd><p>
+<code>divide(F, G)</code> computes quotient and rest of the exact euclidean division of <code>F</code> by <code>G</code>.</p>
+</dd></dl>
+<a name="f_gcd"></a><dl><dt>gcd : (polR, polR) -&gt polR if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>gcd(P, Q)</code> returns the <code>gcd</code> of <code>P</code> and <code>Q</code>.</p>
+</dd></dl>
+<a name="f_indiceSubResultant"></a><dl><dt>indiceSubResultant : (polR, polR, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt polR</dt><dd><p>
+<code>indiceSubResultant(P, Q, i)</code> returns the subresultant of indice <code>i</code></p>
+</dd></dl>
+<a name="f_indiceSubResultantEuclidean"></a><dl><dt>indiceSubResultantEuclidean : (polR, polR, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(coef1 : polR, coef2 : polR, subResultant : polR)</dt><dd><p>
+<code>indiceSubResultant(P, Q, i)</code> returns the subresultant <code>S_i(P, Q)</code> and carries out the equality <code>coef1*P + coef2*Q = S_i(P, Q)</code></p>
+</dd></dl>
+<a name="f_lastSubResultant"></a><dl><dt>lastSubResultant : (polR, polR) -&gt polR</dt><dd><p>
+<code>lastSubResultant(P, Q)</code> computes the last non zero subresultant of <code>P</code> and <code>Q</code></p>
+</dd></dl>
+<a name="f_lastSubResultantEuclidean"></a><dl><dt>lastSubResultantEuclidean : (polR, polR) -&gt Record(coef1 : polR, coef2 : polR, subResultant : polR)</dt><dd><p>
+<code>lastSubResultantEuclidean(P, Q)</code> computes the last non zero subresultant <code>S</code> and carries out the equality <code>coef1*P + coef2*Q = S</code>.</p>
+</dd></dl>
+<a name="f_next_95sousResultant2"></a><dl><dt>next_sousResultant2 : (polR, polR, polR, R) -&gt polR</dt><dd><p>
+<code>next_sousResultant2(P, Q, Z, s)</code> returns the subresultant <code>S_e-1</code> where <code>P ~ S_d, Q = S_d-1, Z = S_e, s = lc(S_d)</code></p>
+</dd></dl>
+<a name="f_resultant"></a><dl><dt>resultant : (polR, polR) -&gt R</dt><dd><p>
+<code>resultant(P, Q)</code> returns the resultant of <code>P</code> and <code>Q</code></p>
+</dd></dl>
+<a name="f_resultantEuclidean"></a><dl><dt>resultantEuclidean : (polR, polR) -&gt Record(coef1 : polR, coef2 : polR, resultant : R)</dt><dd><p>
+<code>resultantEuclidean(P, Q)</code> carries out the equality <code>coef1*P + coef2*Q = resultant(P, Q)</code></p>
+</dd></dl>
+<a name="f_resultantReduit"></a><dl><dt>resultantReduit : (polR, polR) -&gt R if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>resultantReduit(P,Q)</code> returns the "reduce resultant" of <code>P</code> and <code>Q</code>.</p>
+</dd></dl>
+<a name="f_resultantReduitEuclidean"></a><dl><dt>resultantReduitEuclidean : (polR, polR) -&gt Record(coef1 : polR, coef2 : polR, resultantReduit : R) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>resultantReduitEuclidean(P, Q)</code> returns the "reduce resultant" and carries out the equality <code>coef1*P + coef2*Q = resultantReduit(P, Q)</code>.</p>
+</dd></dl>
+<a name="f_schema"></a><dl><dt>schema : (polR, polR) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>schema(P, Q)</code> returns the list of degrees of non zero subresultants of <code>P</code> and <code>Q</code>.</p>
+</dd></dl>
+<a name="f_semiDegreeSubResultantEuclidean"></a><dl><dt>semiDegreeSubResultantEuclidean : (polR, polR, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(coef2 : polR, subResultant : polR)</dt><dd><p>
+<code>semiDegreeSubResultantEuclidean(P, Q, d)</code> returns a subresultant <code>S_i</code> of degree <code>d</code> and carries out the equality <code>... P + coef2*Q = S_i</code>. Warning: <code>degree(P) &gt;= degree(Q)</code>.</p>
+</dd></dl>
+<a name="f_semiDiscriminantEuclidean"></a><dl><dt>semiDiscriminantEuclidean : polR -&gt Record(coef2 : polR, discriminant : R)</dt><dd><p>
+<code>discriminantEuclidean(P)</code> carries out the equality <code>... P + coef2 * D(P) = discriminant(P)</code>. Warning: <code>degree(P) &gt;= degree(Q)</code>.</p>
+</dd></dl>
+<a name="f_semiIndiceSubResultantEuclidean"></a><dl><dt>semiIndiceSubResultantEuclidean : (polR, polR, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(coef2 : polR, subResultant : polR)</dt><dd><p>
+<code>semiIndiceSubResultantEuclidean(P, Q, i)</code> returns the subresultant <code>S_i(P, Q)</code> and carries out the equality <code>... P + coef2*Q = S_i(P, Q)</code> Warning: <code>degree(P) &gt;= degree(Q)</code>.</p>
+</dd></dl>
+<a name="f_semiLastSubResultantEuclidean"></a><dl><dt>semiLastSubResultantEuclidean : (polR, polR) -&gt Record(coef2 : polR, subResultant : polR)</dt><dd><p>
+<code>semiLastSubResultantEuclidean(P, Q)</code> computes the last non zero subresultant <code>S</code> and carries out the equality <code>... P + coef2*Q = S</code>. Warning: <code>degree(P) &gt;= degree(Q)</code>.</p>
+</dd></dl>
+<a name="f_semiResultantEuclidean1"></a><dl><dt>semiResultantEuclidean1 : (polR, polR) -&gt Record(coef1 : polR, resultant : R)</dt><dd><p>
+<code>semiResultantEuclidean1(P, Q)</code> carries out the equality <code>coef1.P + ... Q = resultant(P, Q)</code>.</p>
+</dd></dl>
+<a name="f_semiResultantEuclidean2"></a><dl><dt>semiResultantEuclidean2 : (polR, polR) -&gt Record(coef2 : polR, resultant : R)</dt><dd><p>
+<code>semiResultantEuclidean2(P, Q)</code> carries out the equality <code>... P + coef2*Q = resultant(P, Q)</code>. Warning: <code>degree(P) &gt;= degree(Q)</code>.</p>
+</dd></dl>
+<a name="f_semiResultantReduitEuclidean"></a><dl><dt>semiResultantReduitEuclidean : (polR, polR) -&gt Record(coef2 : polR, resultantReduit : R) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>semiResultantReduitEuclidean(P, Q)</code> returns the "reduce resultant" and carries out the equality <code>... P + coef2*Q = resultantReduit(P, Q)</code>.</p>
+</dd></dl>
+<a name="f_semiSubResultantGcdEuclidean1"></a><dl><dt>semiSubResultantGcdEuclidean1 : (polR, polR) -&gt Record(coef1 : polR, gcd : polR)</dt><dd><p>
+<code>semiSubResultantGcdEuclidean1(P, Q)</code> carries out the equality <code>coef1*P + ... Q = +/- S_i(P, Q)</code> where the degree (not the indice) of the subresultant <code>S_i(P, Q)</code> is as small as possible.</p>
+</dd></dl>
+<a name="f_semiSubResultantGcdEuclidean2"></a><dl><dt>semiSubResultantGcdEuclidean2 : (polR, polR) -&gt Record(coef2 : polR, gcd : polR)</dt><dd><p>
+<code>semiSubResultantGcdEuclidean2(P, Q)</code> carries out the equality <code>... P + coef2*Q = +/- S_i(P, Q)</code> where the degree (not the indice) of the subresultant <code>S_i(P, Q)</code> is as small as possible. Warning: <code>degree(P) &gt;= degree(Q)</code>.</p>
+</dd></dl>
+<a name="f_subResultantGcd"></a><dl><dt>subResultantGcd : (polR, polR) -&gt polR</dt><dd><p>
+<code>subResultantGcd(P, Q)</code> returns the <code>gcd</code> of two primitive polynomials <code>P</code> and <code>Q</code>.</p>
+</dd></dl>
+<a name="f_subResultantGcdEuclidean"></a><dl><dt>subResultantGcdEuclidean : (polR, polR) -&gt Record(coef1 : polR, coef2 : polR, gcd : polR)</dt><dd><p>
+<code>subResultantGcdEuclidean(P, Q)</code> carries out the equality <code>coef1*P + coef2*Q = +/- S_i(P, Q)</code> where the degree (not the indice) of the subresultant <code>S_i(P, Q)</code> is as small as possible.</p>
+</dd></dl>
+</body>
+</html>

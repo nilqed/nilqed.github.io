@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GosperSummationMethod</title>
+</head>
+<body>
+<h1>GosperSummationMethod(E, V, R, P, Q)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sum.spad#L53">sum.spad line 53</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sum.spad#L53">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)<li>Q : Join<a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Field.html">Field</a>) with
+<p>coerce : P -&gt %<p>numer : % -&gt P<p>denom : % -&gt P</ul>
+<p>
+Gosper<code>'s</code> summation algorithm.</p>
+<a name="f_GospersMethod"></a><dl><dt>GospersMethod : (Q, V, Mapping(V)) -&gt Union(Q, "failed")</dt><dd><p>
+<code>GospersMethod(b, n, new)</code> returns a rational function <code>rf(n)</code> such that <code>a(n) * rf(n)</code> is the indefinite sum of <code>a(n)</code> with respect to upward difference on <code>n</code>, i.e. <code>a(n+1) * rf(n+1) - a(n) * rf(n) = a(n)</code>, where <code>b(n) = a(n)/a(n-1)</code> is a rational function. Returns "failed" if no such rational function <code>rf(n)</code> exists. Note: <code>new</code> is a nullary function returning a new <code>V</code> every time. The condition on <code>a(n)</code> is that <code>a(n)/a(n-1)</code> is a rational function of <code>n</code>.</p>
+</dd></dl>
+</body>
+</html>

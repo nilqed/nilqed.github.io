@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GroupPresentation</title>
+</head>
+<body>
+<h1>GroupPresentation</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/gpresent.spad#L450">gpresent.spad line 450</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/gpresent.spad#L450">[edit on github]</a></p>
+<p>
+Group represented by its generators and relations. Here we use it to hold homotopy group such as fundamental group. for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/finiteGroup/presentation/ Date Created: Jan 2016 Basic Operations: Related packages: Related categories: Related Domains: PermutationGroup Also See: AMS Classifications:</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_cyclicGroup"></a><dl><dt>cyclicGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>cyclicGroup(n)</code> constructs the cyclic group of order <code>n</code> acting on the integers 1, ..., <code>n</code>.</p>
+</dd></dl>
+<a name="f_dihedralGroup"></a><dl><dt>dihedralGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>dihedralGroup(n)</code> constructs the dihedral group of order 2n acting on integers 1, ..., <code>N</code>.</p>
+</dd></dl>
+<a name="f_directProduct"></a><dl><dt>directProduct : (%, %) -&gt %</dt><dd><p>
+<code>directProduct of</code> two groups</p>
+</dd></dl>
+<a name="f_groupPresentation"></a><dl><dt>groupPresentation : () -&gt %</dt><dd><p>
+construct trivial group with no generators or relations</p>
+</dd></dl>
+<dl><dt>groupPresentation : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+construct free group with generators but no relations</p>
+</dd></dl>
+<dl><dt>groupPresentation : (<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+construct from generators and relations</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_quotient"></a><dl><dt>quotient : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+take quotient by adding relations specified by addrel</p>
+</dd></dl>
+<dl><dt>quotient : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+take quotient by removing generators specified by remgen</p>
+</dd></dl>
+<a name="f_refactor"></a><dl><dt>refactor : % -&gt %</dt><dd><p>
+actual value of generators is not important, it is only important that they correspond to the appropriate entries in the relations. Therefore we can refactor the generators without changing the group represented.</p>
+</dd></dl>
+<a name="f_simplify"></a><dl><dt>simplify : % -&gt %</dt><dd><p>
+<code>simplify(s)</code> tries to simplify <code>s</code>. There may not be a simplest form but it is possible to do some simplifications as follows: 1. Remove all zero terms in relations. 2. If a relation consists of a single generator then remove that generator. 3. If a relation consists of a pair of generators then make the second generator the inverse of the first. 4. If a generator is adjacent to its inverse then cancel them out. 5. Remove duplicate relations. 6. Substitute one relation in another.</p>
+</dd></dl>
+<dl><dt>simplify : (%, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+simplify with option to trace</p>
+</dd></dl>
+<a name="f_symmetricGroup"></a><dl><dt>symmetricGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>symmetricGroup(n)</code> constructs the symmetric group of order <code>n</code>-1. Note: generates all possible relations may not be minimal.</p>
+</dd></dl>
+<a name="f_toPermutationIfCan"></a><dl><dt>toPermutationIfCan : % -&gt Union(<a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd><p>
+convert to permutation group return "failed" for infinite groups. For more information about the algorithm see: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/finiteGroup/pres2perm/"<http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/finiteGroup/pres2perm/</a></p>
+</dd></dl>
+<dl><dt>toPermutationIfCan : (%, <a href="Boolean.html">Boolean</a>) -&gt Union(<a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd><p>
+convert to permutation group return "failed" for infinite groups. For more information about the algorithm see: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/finiteGroup/pres2perm/"<http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/finiteGroup/pres2perm/</a></p>
+</dd></dl>
+<dl><dt>toPermutationIfCan : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>)), <a href="Boolean.html">Boolean</a>) -&gt Union(<a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd><p>
+<code>toPermutationIfCan(a, sg, trace)</code> returns permutation representation of a on cosets of subgroup generate by <code>sg</code> or "failed" if computation exceed resource limit. trace activates debugging printouts.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

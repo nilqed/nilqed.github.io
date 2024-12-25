@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteLinearAggregateFunctions2</title>
+</head>
+<body>
+<h1>FiniteLinearAggregateFunctions2(S, A, R, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/aggcat2.spad#L1">aggcat2.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/aggcat2.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a><li>A : Join(<a href="LinearAggregate.html">LinearAggregate</a>(S), <a href="finiteAggregate.html">finiteAggregate</a>)<li>R : <a href="Type.html">Type</a><li>B : Join(<a href="LinearAggregate.html">LinearAggregate</a>(R), <a href="finiteAggregate.html">finiteAggregate</a>)</ul>
+<p>
+<code>FiniteLinearAggregateFunctions2</code> provides functions involving two FiniteLinearAggregates where the underlying domains might be different. An example of this might be creating a list of rational numbers by mapping a function across a list of integers where the function divides each integer by 1000.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(R, S), A) -&gt B</dt><dd><p>
+<code>map(f, a)</code> applies function <code>f</code> to each member of aggregate <code>a</code> resulting in a new aggregate over a possibly different underlying domain.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(R, S, R), A, R) -&gt R</dt><dd><p>
+<code>reduce(f, a, r)</code> applies function <code>f</code> to each successive element of the aggregate <code>a</code> and an accumulant initialized to <code>r</code>. For example, <code>reduce(_+$Integer, [1, 2, 3], 0)</code> does <code>3+(2+(1+0))</code>. Note: third argument <code>r</code> may be regarded as the identity element for the function <code>f</code>.</p>
+</dd></dl>
+<a name="f_scan"></a><dl><dt>scan : (Mapping(R, S, R), A, R) -&gt B</dt><dd><p>
+<code>scan(f, a, r)</code> successively applies <code>reduce(f, x, r)</code> to more and more leading sub-aggregates <code>x</code> of aggregate <code>a</code>. More precisely, if <code>a</code> is <code>[a1, a2, ...]</code>, then <code>scan(f, a, r)</code> returns <code>[reduce(f, [a1], r), reduce(f, [a1, a2], r), ...]</code>.</p>
+</dd></dl>
+</body>
+</html>

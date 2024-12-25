@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SKICombinators</title>
+</head>
+<body>
+<h1>SKICombinators(UT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/computation.spad#L1631">computation.spad line 1631</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/computation.spad#L1631">[edit on github]</a></p>
+<ul>
+<li>UT : <a href="VarCat.html">VarCat</a></ul>
+<p>
+This domain implements SKI combinators. Ski combinators were introduced by Moses Schoenfinkel and Haskell Curry with the aim of eliminating the need for variables in mathematical logic. It is equivalent to lambda calculus but it can be used for doing, without variables, anything that would require variables in other systems.</p>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+return <code>true</code> if equal (deep search) that is: all terms at all levels in tree must be equal to return <code>true</code> all terms must be exactly equal, not just equivalent, that is SKK=I will return <code>false</code> even though 'SKK' and 'I' have the same effect</p>
+</dd></dl>
+<a name="f_I"></a><dl><dt>I : () -&gt %</dt><dd><p>
+Constructs a <code>I</code> combinator</p>
+</dd></dl>
+<a name="f_K"></a><dl><dt>K : () -&gt %</dt><dd><p>
+Constructs a <code>K</code> combinator</p>
+</dd></dl>
+<a name="f_S"></a><dl><dt>S : () -&gt %</dt><dd><p>
+Constructs a <code>S</code> combinator</p>
+</dd></dl>
+<a name="f_atom_63"></a><dl><dt>atom? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is an atom, that is a leaf node otherwise return <code>false</code> if this is a compound term</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_freeVariable_63"></a><dl><dt>freeVariable? : (%, UT) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+the variable indicated by <code>'s'</code> is free if it does not appear in node <code>'n'</code> or any of its subnodes.</p>
+</dd></dl>
+<a name="f_getChildren"></a><dl><dt>getChildren : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+returns child nodes if this is a compound term otherwise returns []</p>
+</dd></dl>
+<a name="f_getVariable"></a><dl><dt>getVariable : % -&gt UT</dt><dd><p>
+returns the variable, if this is not a variable then return <code>I</code></p>
+</dd></dl>
+<a name="f_isI_63"></a><dl><dt>isI? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is an <code>I</code> combinator node</p>
+</dd></dl>
+<a name="f_isK_63"></a><dl><dt>isK? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is a <code>K</code> combinator node</p>
+</dd></dl>
+<a name="f_isS_63"></a><dl><dt>isS? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is a <code>S</code> combinator node</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_parseSki"></a><dl><dt>parseSki : <a href="String.html">String</a> -&gt %</dt><dd><p>
+Constructs combinators from a string</p>
+</dd></dl>
+<a name="f_parseTerm"></a><dl><dt>parseTerm : (<a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(rft : %, pout : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+parseTerm is used by parseSki. It would rarely be called externally but it is here to allow it to call parseSki that is to allow circular calls</p>
+</dd></dl>
+<a name="f_redux"></a><dl><dt>redux : % -&gt %</dt><dd><p>
+weak reduction - apply this combinator to rearrange its subnodes then apply recursively to its subnodes.</p>
+</dd></dl>
+<a name="f_ski"></a><dl><dt>ski : (%, %) -&gt %</dt><dd><p>
+Constructs a node combinator over combinators</p>
+</dd></dl>
+<dl><dt>ski : UT -&gt %</dt><dd><p>
+Constructs variable combinator</p>
+</dd></dl>
+<a name="f_toString"></a><dl><dt>toString : % -&gt <a href="String.html">String</a></dt><dd><p>
+output</p>
+</dd></dl>
+<a name="f_variable_63"></a><dl><dt>variable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is an variable</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

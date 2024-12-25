@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TextFile</title>
+</head>
+<body>
+<h1>TextFile</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/files.spad#L131">files.spad line 131</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/files.spad#L131">[edit on github]</a></p>
+<p>
+This domain provides an implementation of text files. Text is stored in these files using the native character set of the computer.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_close_33"></a><dl><dt><a href="FileCategory.html#f_close_33">close!</a> : % -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_endOfFile_63"></a><dl><dt>endOfFile? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>endOfFile?(f)</code> tests whether the file <code>f</code> is positioned after the end of all text. If the file is open for output, then this test is always <code>true</code>.</p>
+</dd></dl>
+<a name="f_flush"></a><dl><dt><a href="FileCategory.html#f_flush">flush</a> : % -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_iomode"></a><dl><dt><a href="FileCategory.html#f_iomode">iomode</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_name"></a><dl><dt><a href="FileCategory.html#f_name">name</a> : % -&gt <a href="FileName.html">FileName</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_open"></a><dl><dt><a href="FileCategory.html#f_open">open</a> : <a href="FileName.html">FileName</a> -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<dl><dt><a href="FileCategory.html#f_open">open</a> : (<a href="FileName.html">FileName</a>, <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_read_33"></a><dl><dt><a href="FileCategory.html#f_read_33">read!</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_readIfCan_33"></a><dl><dt>readIfCan! : % -&gt Union(<a href="String.html">String</a>, "failed")</dt><dd><p>
+<code>readIfCan!(f)</code> returns a string of the contents of a line from file <code>f</code>, if possible. If <code>f</code> is not readable or if it is positioned at the end of file, then <code>"failed"</code> is returned.</p>
+</dd></dl>
+<a name="f_readLine_33"></a><dl><dt>readLine! : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>readLine!(f)</code> returns a string of the contents of a line from the file <code>f</code>.</p>
+</dd></dl>
+<a name="f_readLineIfCan_33"></a><dl><dt>readLineIfCan! : % -&gt Union(<a href="String.html">String</a>, "failed")</dt><dd><p>
+<code>readLineIfCan!(f)</code> returns a string of the contents of a line from file <code>f</code>, if possible. If <code>f</code> is not readable or if it is positioned at the end of file, then <code>"failed"</code> is returned.</p>
+</dd></dl>
+<a name="f_reopen_33"></a><dl><dt><a href="FileCategory.html#f_reopen_33">reopen!</a> : (%, <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_write_33"></a><dl><dt><a href="FileCategory.html#f_write_33">write!</a> : (%, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)</dd></dl>
+<a name="f_writeLine_33"></a><dl><dt>writeLine! : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>writeLine!(f)</code> finishes the current line in the file <code>f</code>. An empty string is returned. The call <code>writeLine!(f)</code> is equivalent to <code>writeLine!(f,"")</code>.</p>
+</dd></dl>
+<dl><dt>writeLine! : (%, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>writeLine!(f, s)</code> writes the contents of the string <code>s</code> and finishes the current line in the file <code>f</code>. The value of <code>s</code> is returned.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, <a href="String.html">String</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

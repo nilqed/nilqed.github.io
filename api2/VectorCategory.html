@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>VectorCategory</title>
+</head>
+<body>
+<h1>VectorCategory(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/vector.spad#L35">vector.spad line 35</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/vector.spad#L35">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Type.html">Type</a></ul>
+<p>
+VectorCategory represents the type of vector like objects, i.e. finite sequences indexed by some finite segment of the integers. The operations available on vectors depend on the structure of the underlying components. Many operations from the component domain are defined for vectors componentwise. It can by assumed that extraction or updating components can be done in constant time.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__42"></a><dl><dt>* : (%, R) -&gt % if R has <a href="SemiGroup.html">SemiGroup</a></dt><dd><p>
+<code>y * r</code> multiplies each component of the vector <code>y</code> by the element <code>r</code>.</p>
+</dd></dl>
+<dl><dt>* : (R, %) -&gt % if R has <a href="SemiGroup.html">SemiGroup</a></dt><dd><p>
+<code>r * y</code> multiplies the element <code>r</code> times each component of the vector <code>y</code>.</p>
+</dd></dl>
+<dl><dt>* : (<a href="Integer.html">Integer</a>, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>n * y</code> multiplies each component of the vector <code>y</code> by the integer <code>n</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt % if R has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd><p>
+<code>x + y</code> returns the component-wise sum of the vectors <code>x</code> and <code>y</code>. Error: if <code>x</code> and <code>y</code> are not of the same length.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : % -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>-x</code> negates all components of the vector <code>x</code>.</p>
+</dd></dl>
+<dl><dt>- : (%, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>x - y</code> returns the component-wise difference of the vectors <code>x</code> and <code>y</code>. Error: if <code>x</code> and <code>y</code> are not of the same length.</p>
+</dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if R has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_concat"></a><dl><dt><a href="LinearAggregate.html#f_concat">concat</a> : (%, %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_concat">concat</a> : (%, R) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_concat">concat</a> : (R, %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_concat">concat</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="Collection.html#f_construct">construct</a> : <a href="List.html">List</a>(R) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_copyInto_33"></a><dl><dt><a href="LinearAggregate.html#f_copyInto_33">copyInto!</a> : (%, %, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (R, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_cross"></a><dl><dt>cross : (%, %) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>cross(u, v)</code> constructs the cross product of <code>u</code> and <code>v</code>. Error: if <code>u</code> and <code>v</code> are not of length 3.</p>
+</dd></dl>
+<a name="f_delete"></a><dl><dt><a href="LinearAggregate.html#f_delete">delete</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_delete">delete</a> : (%, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_dot"></a><dl><dt>dot : (%, %) -&gt R if R has <a href="AbelianMonoid.html">AbelianMonoid</a> and R has <a href="SemiRng.html">SemiRng</a></dt><dd><p>
+<code>dot(x, y)</code> computes the inner product of the two vectors <code>x</code> and <code>y</code>. Error: if <code>x</code> and <code>y</code> are not of the same length.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="Eltable.html">Eltable</a>(<a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>), %)</dd></dl>
+<dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>) -&gt R</dt><dd> from <a href="Eltable.html">Eltable</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<dl><dt><a href="EltableAggregate.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_entries"></a><dl><dt><a href="IndexedAggregate.html#f_entries">entries</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_entry_63"></a><dl><dt><a href="IndexedAggregate.html#f_entry_63">entry?</a> : (R, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_fill_33"></a><dl><dt><a href="IndexedAggregate.html#f_fill_33">fill!</a> : (%, R) -&gt %</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_find"></a><dl><dt><a href="Collection.html#f_find">find</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt Union(R, "failed")</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_first"></a><dl><dt><a href="LinearAggregate.html#f_first">first</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="IndexedAggregate.html#f_first">first</a> : % -&gt R</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_index_63"></a><dl><dt><a href="IndexedAggregate.html#f_index_63">index?</a> : (<a href="Integer.html">Integer</a>, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_indices"></a><dl><dt><a href="IndexedAggregate.html#f_indices">indices</a> : % -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_insert"></a><dl><dt><a href="LinearAggregate.html#f_insert">insert</a> : (%, %, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_insert">insert</a> : (R, %, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftTrim"></a><dl><dt><a href="LinearAggregate.html#f_leftTrim">leftTrim</a> : (%, R) -&gt % if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_length"></a><dl><dt>length : % -&gt R if R has <a href="RadicalCategory.html">RadicalCategory</a> and R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>length(v)</code> computes the sqrt(dot(<code>v</code>, <code>v</code>)), i.e. the euclidean length</p>
+</dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_map">map</a> : (Mapping(R, R, R), %, %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt R if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt R</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_maxIndex"></a><dl><dt><a href="IndexedAggregate.html#f_maxIndex">maxIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (R, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_merge"></a><dl><dt><a href="LinearAggregate.html#f_merge">merge</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_merge">merge</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %, %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt R if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_minIndex"></a><dl><dt><a href="IndexedAggregate.html#f_minIndex">minIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_new"></a><dl><dt><a href="LinearAggregate.html#f_new">new</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_outerProduct"></a><dl><dt>outerProduct : (%, %) -&gt <a href="Matrix.html">Matrix</a>(R) if R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>outerProduct(u, v)</code> constructs the matrix whose (<code>i</code>, <code>j</code>)<code>'</code>th element is <code>u</code>(<code>i</code>)<code>*v</code>(<code>j</code>).</p>
+</dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_position"></a><dl><dt><a href="LinearAggregate.html#f_position">position</a> : (R, %) -&gt <a href="Integer.html">Integer</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_position">position</a> : (R, %, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_position">position</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_qelt"></a><dl><dt><a href="EltableAggregate.html#f_qelt">qelt</a> : (%, <a href="Integer.html">Integer</a>) -&gt R</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_qsetelt_33"></a><dl><dt><a href="EltableAggregate.html#f_qsetelt_33">qsetelt!</a> : (%, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_reduce"></a><dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(R, R, R), %) -&gt R</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(R, R, R), %, R) -&gt R</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(R, R, R), %, R, R) -&gt R if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_remove"></a><dl><dt><a href="Collection.html#f_remove">remove</a> : (R, %) -&gt % if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<dl><dt><a href="Collection.html#f_remove">remove</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_removeDuplicates"></a><dl><dt><a href="Collection.html#f_removeDuplicates">removeDuplicates</a> : % -&gt % if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_reverse"></a><dl><dt><a href="LinearAggregate.html#f_reverse">reverse</a> : % -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_reverse_33"></a><dl><dt><a href="LinearAggregate.html#f_reverse_33">reverse!</a> : % -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_rightTrim"></a><dl><dt><a href="LinearAggregate.html#f_rightTrim">rightTrim</a> : (%, R) -&gt % if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_select"></a><dl><dt><a href="Collection.html#f_select">select</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_setelt_33"></a><dl><dt><a href="EltableAggregate.html#f_setelt_33">setelt!</a> : (%, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_setelt_33">setelt!</a> : (%, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>), R) -&gt R</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_sort"></a><dl><dt><a href="LinearAggregate.html#f_sort">sort</a> : % -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_sort">sort</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_sort_33"></a><dl><dt><a href="LinearAggregate.html#f_sort_33">sort!</a> : % -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_sort_33">sort!</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_sorted_63"></a><dl><dt><a href="LinearAggregate.html#f_sorted_63">sorted?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_sorted_63">sorted?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_swap_33"></a><dl><dt><a href="IndexedAggregate.html#f_swap_33">swap!</a> : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_trim"></a><dl><dt><a href="LinearAggregate.html#f_trim">trim</a> : (%, R) -&gt % if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_zero"></a><dl><dt>zero : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt % if R has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd><p>
+<code>zero(n)</code> creates a zero vector of length <code>n</code>.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt>zero? : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd><p>
+<code>zero?(x)</code> returns <code>true</code> if <code>x</code> is a zero vector, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="LinearAggregate.html">LinearAggregate</a>(R)
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="OneDimensionalArrayAggregate.html">OneDimensionalArrayAggregate</a>(R)
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)
+<p><a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="Eltable.html">Eltable</a>(<a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>), %)
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="Collection.html">Collection</a>(R)
+<p><a href="Eltable.html">Eltable</a>(<a href="Integer.html">Integer</a>, R)
+</body>
+</html>

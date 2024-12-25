@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Database</title>
+</head>
+<body>
+<h1>Database(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alql.spad#L115">alql.spad line 115</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alql.spad#L115">[edit on github]</a></p>
+<ul>
+<li>S : <a href="OrderedSet.html">OrderedSet</a> with
+<p>elt : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="String.html">String</a><p>display : % -&gt <a href="Void.html">Void</a><p>fullDisplay : % -&gt <a href="Void.html">Void</a></ul>
+<p>
+This domain implements a simple view of a database whose fields are indexed by symbols</p>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>db1+db2</code> returns the merge of databases <code>db1</code> and <code>db2</code></p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : (%, %) -&gt %</dt><dd><p>
+<code>db1-db2</code> returns the difference of databases <code>db1</code> and <code>db2</code> i.e. consisting of elements in <code>db1</code> but not in <code>db2</code></p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="List.html">List</a>(S) -&gt %</dt><dd><p>
+<code>coerce(l)</code> makes a database out of a list</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_display"></a><dl><dt>display : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>display(x)</code> displays <code>x</code> in some form</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="QueryEquation.html">QueryEquation</a>) -&gt %</dt><dd><p>
+<code>elt(db, q)</code> returns all elements of <code>db</code> which satisfy <code>q</code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="DataList.html">DataList</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>elt(db, s)</code> returns the <code>s</code> field of each element of <code>db</code>.</p>
+</dd></dl>
+<a name="f_fullDisplay"></a><dl><dt>fullDisplay : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>fullDisplay(x)</code> displays <code>x</code> in detail</p>
+</dd></dl>
+<dl><dt>fullDisplay : (%, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>fullDisplay(db, start, end )</code> prints full details of entries in the range <code>start..end</code> in <code>db</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

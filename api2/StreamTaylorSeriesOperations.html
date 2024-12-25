@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>StreamTaylorSeriesOperations</title>
+</head>
+<body>
+<h1>StreamTaylorSeriesOperations(A)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sttaylor.spad#L1">sttaylor.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sttaylor.spad#L1">[edit on github]</a></p>
+<ul>
+<li>A : <a href="Ring.html">Ring</a></ul>
+<p>
+StreamTaylorSeriesOperations implements Taylor series arithmetic, where a Taylor series is represented by a stream of its coefficients, see corresponding operations in the category Ring.</p>
+<a name="f__42"></a><dl><dt>* : (A, <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>r * a</code> returns the power series scalar multiplication of <code>r</code> by <code>a</code>: <code>r * [a0, a1, ...] = [r * a0, r * a1, ...]</code></p>
+</dd></dl>
+<dl><dt>* : (<a href="Stream.html">Stream</a>(A), A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>a * r</code> returns the power series scalar multiplication of <code>a</code> by <code>r:</code> <code>[a0, a1, ...] * r = [a0 * r, a1 * r, ...]</code></p>
+</dd></dl>
+<dl><dt>* : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>a * b</code> returns the power series (Cauchy) product of <code>a</code> and <code>b:</code> <code>[a0, a1, ...] * [b0, b1, ...] = [c0, c1, ...]</code> where <code>ck = sum(i + j = k, <code>ai</code> * bk)</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>a + b</code> returns the power series sum of <code>a</code> and <code>b</code>: <code>[a0, a1, ..] + [b0, b1, ..] = [a0 + b0, a1 + b1, ..]</code></p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>- a</code> returns the power series negative of <code>a</code>: <code>- [a0, a1, ...] = [- a0, - a1, ...]</code></p>
+</dd></dl>
+<dl><dt>- : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>a - b</code> returns the power series difference of <code>a</code> and <code>b</code>: <code>[a0, a1, ..] - [b0, b1, ..] = [a0 - b0, a1 - b1, ..]</code></p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>a / b</code> returns the power series quotient of <code>a</code> by <code>b</code>. An error message is returned if <code>b</code> is not invertible. This function is used in fixed point computations.</p>
+</dd></dl>
+<a name="f_addiag"></a><dl><dt>addiag : <a href="Stream.html">Stream</a>(<a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>addiag(x)</code> performs diagonal addition of a stream of streams. if <code>x</code> = <code>[[a&lt;0, 0&gt;, a&lt;0, 1&gt;, ..], [a&lt;1, 0&gt;, a&lt;1, 1&gt;, ..], [a&lt;2, 0&gt;, a&lt;2, 1&gt;, ..], ..]</code> and <code>addiag(x) = [b&lt;0, b&lt;1&gt;, ...], then b&lt;k&gt; = sum(i+j=k, a&lt;i, j&gt;)</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : A -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>coerce(r)</code> converts a ring element <code>r</code> to a stream with one element.</p>
+</dd></dl>
+<a name="f_compose"></a><dl><dt>compose : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>compose(a, b)</code> composes the power series <code>a</code> with the power series <code>b</code>.</p>
+</dd></dl>
+<a name="f_deriv"></a><dl><dt>deriv : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>deriv(a)</code> returns the derivative of the power series with respect to the power series variable. Thus <code>deriv([a0, a1, a2, ...])</code> returns <code>[a1, 2 a2, 3 a3, ...]</code>.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (<a href="Stream.html">Stream</a>(A), A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>eval(a, r)</code> returns a stream of partial sums of the power series <code>a</code> evaluated at the power series variable equal to <code>r</code>.</p>
+</dd></dl>
+<a name="f_evenlambert"></a><dl><dt>evenlambert : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>evenlambert(st)</code> computes <code>f(x^2) + f(x^4) + f(x^6) + ...</code> if <code>st</code> is a stream representing <code>f(x)</code>. This function is used for computing infinite products. If <code>f(x)</code> is a power series with constant coefficient 1, then <code>prod(f(x^(2*n)), n=1..infinity) = exp(evenlambert(log(f(x))))</code>.</p>
+</dd></dl>
+<a name="f_exquo"></a><dl><dt>exquo : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt Union(<a href="Stream.html">Stream</a>(A), "failed")</dt><dd><p>
+<code>exquo(a, b)</code> returns the power series quotient of <code>a</code> by <code>b</code>, if the quotient exists, and "failed" otherwise</p>
+</dd></dl>
+<a name="f_gderiv"></a><dl><dt>gderiv : (Mapping(A, <a href="Integer.html">Integer</a>), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>gderiv(f, [a0, a1, a2, ..])</code> returns <code>[f(0)*a0, f(1)*a1, f(2)*a2, ..]</code>.</p>
+</dd></dl>
+<a name="f_generalLambert"></a><dl><dt>generalLambert : (<a href="Stream.html">Stream</a>(A), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>generalLambert(f(x), a, d)</code> returns <code>f(x^a) + f(x^(a + d)) + f(x^(a + 2 d)) + ...</code>. <code>f(x)</code> should have zero constant coefficient and <code>a</code> and <code>d</code> should be positive.</p>
+</dd></dl>
+<a name="f_general_95Lambert_95product"></a><dl><dt>general_Lambert_product : (<a href="Stream.html">Stream</a>(A), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>general_Lambert_product(f(x), a, d)</code> returns <code>f(x^a)*f(x^(a + d))*f(x^(a + 2 d))* ...</code>. <code>f(x)</code> should have constant coefficient equal to one and <code>a</code> and <code>d</code> should be positive.</p>
+</dd></dl>
+<a name="f_int"></a><dl><dt>int : A -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>int(r)</code> returns [<code>r</code>, <code>r+1</code>, <code>r+2</code>, ...], where <code>r</code> is a ring element.</p>
+</dd></dl>
+<a name="f_integers"></a><dl><dt>integers : <a href="Integer.html">Integer</a> -&gt <a href="Stream.html">Stream</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>integers(n)</code> returns <code>[n, n+1, n+2, ...]</code>.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : (A, <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>integrate(r, a)</code> returns the integral of the power series <code>a</code> with respect to the power series variable where <code>r</code> denotes the constant of integration. Thus <code>integrate(a, [a0, a1, a2, ...]) = [a, a0, a1/2, a2/3, ...]</code>.</p>
+</dd></dl>
+<a name="f_invmultisect"></a><dl><dt>invmultisect : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>invmultisect(a, b, st)</code> substitutes <code>x^((a+b)*n)</code> for <code>x^n</code> and multiplies by <code>x^b</code>.</p>
+</dd></dl>
+<a name="f_lagrange"></a><dl><dt>lagrange : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>lagrange(g)</code> produces the power series for <code>f</code> where <code>f</code> is implicitly defined as <code>f(z) = z*g(f(z))</code>.</p>
+</dd></dl>
+<a name="f_lambert"></a><dl><dt>lambert : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>lambert(st)</code> computes <code>f(x) + f(x^2) + f(x^3) + ...</code> if <code>st</code> is a stream representing <code>f(x)</code>. This function is used for computing infinite products. If <code>f(x)</code> is a power series with constant coefficient 1 then <code>prod(f(x^n), n = 1..infinity) = exp(lambert(log(f(x))))</code>.</p>
+</dd></dl>
+<a name="f_lazyGintegrate"></a><dl><dt>lazyGintegrate : (Mapping(A, <a href="Integer.html">Integer</a>), A, Mapping(<a href="Stream.html">Stream</a>(A))) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Field.html">Field</a></dt><dd><p>
+<code>lazyGintegrate(f, r, g)</code> is used for fixed point computations.</p>
+</dd></dl>
+<a name="f_lazyIntegrate"></a><dl><dt>lazyIntegrate : (A, Mapping(<a href="Stream.html">Stream</a>(A))) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>lazyIntegrate(r, f)</code> is a version of integrate used for fixed point computations.</p>
+</dd></dl>
+<a name="f_mapdiv"></a><dl><dt>mapdiv : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Field.html">Field</a></dt><dd><p>
+<code>mapdiv([a0, a1, ..], [b0, b1, ..])</code> returns <code>[a0/b0, a1/b1, ..]</code>.</p>
+</dd></dl>
+<a name="f_mapmult"></a><dl><dt>mapmult : (<a href="Stream.html">Stream</a>(A), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>mapmult([a0, a1, ..], [b0, b1, ..])</code> returns <code>[a0*b0, a1*b1, ..]</code>.</p>
+</dd></dl>
+<a name="f_monom"></a><dl><dt>monom : (A, <a href="Integer.html">Integer</a>) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>monom(deg, coef)</code> is a monomial of degree <code>deg</code> with coefficient coef.</p>
+</dd></dl>
+<a name="f_multisect"></a><dl><dt>multisect : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>multisect(a, b, st)</code> selects the coefficients of <code>x^((a+b)*n+a)</code>, and changes them to <code>x^n</code>.</p>
+</dd></dl>
+<a name="f_nlde"></a><dl><dt>nlde : <a href="Stream.html">Stream</a>(<a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>nlde(u)</code> solves a first order non-linear differential equation described by <code>u</code> of the form <code>[[b&lt;0, 0&gt;, b&lt;0, 1&gt;, ...], [b&lt;1, 0&gt;, b&lt;1, 1&gt;, .], ...]</code>. the differential equation has the form <code>y' = sum(i=0 to infinity, j=0 to infinity, b&lt;i, j&gt;*(x^i)*(y^j))</code>.</p>
+</dd></dl>
+<a name="f_oddintegers"></a><dl><dt>oddintegers : <a href="Integer.html">Integer</a> -&gt <a href="Stream.html">Stream</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>oddintegers(n)</code> returns <code>[n, n+2, n+4, ...]</code>.</p>
+</dd></dl>
+<a name="f_oddlambert"></a><dl><dt>oddlambert : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>oddlambert(st)</code> computes <code>f(x) + f(x^3) + f(x^5) + ...</code> if <code>st</code> is a stream representing <code>f(x)</code>. This function is used for computing infinite products. If <code>f</code>(<code>x</code>) is a power series with constant coefficient 1 then <code>prod(f(x^(2*n-1)), n=1..infinity) = exp(oddlambert(log(f(x))))</code>.</p>
+</dd></dl>
+<a name="f_power"></a><dl><dt>power : (A, <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Field.html">Field</a></dt><dd><p>
+<code>power(a, f)</code> returns the power series <code>f</code> raised to the power <code>a</code>.</p>
+</dd></dl>
+<a name="f_powern"></a><dl><dt>powern : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A) if A has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>powern(r, f)</code> raises power series <code>f</code> to the power <code>r</code>.</p>
+</dd></dl>
+<a name="f_prodiag"></a><dl><dt>prodiag : <a href="Stream.html">Stream</a>(<a href="Stream.html">Stream</a>(A)) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>prodiag(x)</code> performs "diagonal" infinite product of a stream of streams. When <code>x(i)</code> is interpreted as stream of coefficients of series <code>f_i(z), i=1,...</code>, then <code>prodiag(x) = (1 + z*f_1(z))*(1 + z^2*f_2(x))*...</code></p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt>recip : <a href="Stream.html">Stream</a>(A) -&gt Union(<a href="Stream.html">Stream</a>(A), "failed")</dt><dd><p>
+<code>recip(a)</code> returns the power series reciprocal of <code>a</code>, or "failed" if not possible.</p>
+</dd></dl>
+<a name="f_revert"></a><dl><dt>revert : <a href="Stream.html">Stream</a>(A) -&gt <a href="Stream.html">Stream</a>(A)</dt><dd><p>
+<code>revert(a)</code> computes the inverse of a power series <code>a</code> with respect to composition. the series should have constant coefficient 0 and invertible first order coefficient.</p>
+</dd></dl>
+</body>
+</html>

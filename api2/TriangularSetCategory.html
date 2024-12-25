@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TriangularSetCategory</title>
+</head>
+<body>
+<h1>TriangularSetCategory(R, E, V, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/triset.spad#L1">triset.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/triset.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)</ul>
+<p>
+The category of triangular sets of multivariate polynomials with coefficients in an integral domain. Let <code>R</code> be an integral domain and <code>V</code> a finite ordered set of variables, say <code>X1 &lt; X2 &lt; ... &lt; Xn</code>. A set <code>S</code> of polynomials in <code>R[X1, X2, ..., Xn]</code> is triangular if no elements of <code>S</code> lies in <code>R</code>, and if two distinct elements of <code>S</code> have distinct main variables. Note that the empty set is a triangular set. A triangular set is not necessarily a (lexicographical) Groebner basis and the notion of reduction related to triangular sets is based on the recursive view of polynomials. We recall this notion here and refer to [1] for more details. A polynomial <code>P</code> is reduced <code>w</code>.<code>r</code>.<code>t</code> a non-constant polynomial <code>Q</code> if the degree of <code>P</code> in the main variable of <code>Q</code> is less than the main degree of <code>Q</code>. A polynomial <code>P</code> is reduced <code>w</code>.<code>r</code>.<code>t</code> a triangular set <code>T</code> if it is reduced <code>w</code>.<code>r</code>.<code>t</code>. every polynomial of <code>T</code>. </p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_algebraic_63"></a><dl><dt>algebraic? : (V, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>algebraic?(v, ts)</code> returns <code>true</code> iff <code>v</code> is the main variable of some polynomial in <code>ts</code>.</p>
+</dd></dl>
+<a name="f_algebraicVariables"></a><dl><dt>algebraicVariables : % -&gt <a href="List.html">List</a>(V)</dt><dd><p>
+<code>algebraicVariables(ts)</code> returns the decreasingly sorted list of the main variables of the polynomials of <code>ts</code>.</p>
+</dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_autoReduced_63"></a><dl><dt>autoReduced? : (%, Mapping(<a href="Boolean.html">Boolean</a>, P, <a href="List.html">List</a>(P))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>autoReduced?(ts, redOp?)</code> returns <code>true</code> iff every element of <code>ts</code> is reduced <code>w</code>.<code>r</code>.<code>t</code> to every other in the sense of <code>redOp?</code></p>
+</dd></dl>
+<a name="f_basicSet"></a><dl><dt>basicSet : (<a href="List.html">List</a>(P), Mapping(<a href="Boolean.html">Boolean</a>, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt Union(Record(bas : %, top : <a href="List.html">List</a>(P)), "failed")</dt><dd><p>
+<code>basicSet(ps, pred?, redOp?)</code> returns the same as <code>basicSet(qs, redOp?)</code> where <code>qs</code> consists of the polynomials of <code>ps</code> satisfying property <code>pred?</code>.</p>
+</dd></dl>
+<dl><dt>basicSet : (<a href="List.html">List</a>(P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt Union(Record(bas : %, top : <a href="List.html">List</a>(P)), "failed")</dt><dd><p>
+<code>basicSet(ps, redOp?)</code> returns <code>[bs, ts]</code> where <code>concat(bs, ts)</code> is <code>ps</code> and <code>bs</code> is a basic set in Wu Wen Tsun sense of <code>ps</code> <code>w</code>.<code>r</code>.<code>t</code> the reduction-test <code>redOp?</code>, if no non-zero constant polynomial lie in <code>ps</code>, otherwise <code>"failed"</code> is returned.</p>
+</dd></dl>
+<a name="f_coHeight"></a><dl><dt>coHeight : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if V has <a href="Finite.html">Finite</a></dt><dd><p>
+<code>coHeight(ts)</code> returns <code>size()$V</code> minus <code>#ts</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="List.html">List</a>(P))</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_collect"></a><dl><dt><a href="PolynomialSetCategory.html#f_collect">collect</a> : (%, V) -&gt %</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_collectQuasiMonic"></a><dl><dt>collectQuasiMonic : % -&gt %</dt><dd><p>
+<code>collectQuasiMonic(ts)</code> returns the subset of <code>ts</code> consisting of the polynomials with initial in <code>R</code>.</p>
+</dd></dl>
+<a name="f_collectUnder"></a><dl><dt><a href="PolynomialSetCategory.html#f_collectUnder">collectUnder</a> : (%, V) -&gt %</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_collectUpper"></a><dl><dt><a href="PolynomialSetCategory.html#f_collectUpper">collectUpper</a> : (%, V) -&gt %</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="Collection.html#f_construct">construct</a> : <a href="List.html">List</a>(P) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (P, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>degree(ts)</code> returns the product of main degrees of the members of <code>ts</code>.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, P, P) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(P, P)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(P)) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="Evalable.html">Evalable</a>(P)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(P, P)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(P))) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="Evalable.html">Evalable</a>(P)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_extend"></a><dl><dt>extend : (%, P) -&gt %</dt><dd><p>
+<code>extend(ts, p)</code> returns a triangular set which encodes the simple extension by <code>p</code> of the extension of the base field defined by <code>ts</code>, according to the properties of triangular sets of the current category If the required properties do not hold an error is returned.</p>
+</dd></dl>
+<a name="f_extendIfCan"></a><dl><dt>extendIfCan : (%, P) -&gt Union(%, "failed")</dt><dd><p>
+<code>extendIfCan(ts, p)</code> returns a triangular set which encodes the simple extension by <code>p</code> of the extension of the base field defined by <code>ts</code>, according to the properties of triangular sets of the current domain. If the required properties do not hold then "failed" is returned. This operation encodes in some sense the properties of the triangular sets of the current category. Is is used to implement the <code>construct</code> operation to guarantee that every triangular set build from a list of polynomials has the required properties.</p>
+</dd></dl>
+<a name="f_find"></a><dl><dt><a href="Collection.html#f_find">find</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt Union(P, "failed")</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_first"></a><dl><dt>first : % -&gt Union(P, "failed")</dt><dd><p>
+<code>first(ts)</code> returns the polynomial of <code>ts</code> with greatest main variable if <code>ts</code> is not empty, otherwise returns <code>"failed"</code>.</p>
+</dd></dl>
+<a name="f_headReduce"></a><dl><dt>headReduce : (P, %) -&gt P</dt><dd><p>
+<code>headReduce(p, ts)</code> returns a polynomial <code>r</code> such that <code>headReduce?(r, ts)</code> holds and there exists some product <code>h</code> of <code>initials(ts)</code> such that <code>h*p - r</code> lies in the ideal generated by <code>ts</code>.</p>
+</dd></dl>
+<a name="f_headReduced_63"></a><dl><dt>headReduced? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>headReduced?(ts)</code> returns <code>true</code> iff the head of every element of <code>ts</code> is reduced <code>w</code>.<code>r</code>.<code>t</code> to any other element of <code>ts</code>.</p>
+</dd></dl>
+<dl><dt>headReduced? : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>headReduced?(p, ts)</code> returns <code>true</code> iff the head of <code>p</code> is reduced <code>w</code>.<code>r</code>.<code>t</code>. <code>ts</code>.</p>
+</dd></dl>
+<a name="f_headRemainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_headRemainder">headRemainder</a> : (P, %) -&gt Record(num : P, den : R)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_iexactQuo"></a><dl><dt><a href="PolynomialSetCategory.html#f_iexactQuo">iexactQuo</a> : (R, R) -&gt R</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_infRittWu_63"></a><dl><dt>infRittWu? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>infRittWu?(ts1, ts2)</code> returns <code>true</code> iff <code>ts2</code> has higher rank than <code>ts1</code> in Wu Wen Tsun sense.</p>
+</dd></dl>
+<a name="f_initiallyReduce"></a><dl><dt>initiallyReduce : (P, %) -&gt P</dt><dd><p>
+<code>initiallyReduce(p, ts)</code> returns a polynomial <code>r</code> such that <code>initiallyReduced?(r, ts)</code> holds and there exists some product <code>h</code> of <code>initials(ts)</code> such that <code>h*p - r</code> lies in the ideal generated by <code>ts</code>.</p>
+</dd></dl>
+<a name="f_initiallyReduced_63"></a><dl><dt>initiallyReduced? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>initiallyReduced?(ts)</code> returns <code>true</code> iff for every element <code>p</code> of <code>ts</code> <code>p</code> and all its iterated initials are reduced <code>w</code>.<code>r</code>.<code>t</code>. to the other elements of <code>ts</code> with the same main variable.</p>
+</dd></dl>
+<dl><dt>initiallyReduced? : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>initiallyReduced?(p, ts)</code> returns <code>true</code> iff <code>p</code> and all its iterated initials are reduced <code>w</code>.<code>r</code>.<code>t</code>. to the elements of <code>ts</code> with the same main variable.</p>
+</dd></dl>
+<a name="f_initials"></a><dl><dt>initials : % -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>initials(ts)</code> returns the list of the non-constant initials of the members of <code>ts</code>.</p>
+</dd></dl>
+<a name="f_last"></a><dl><dt>last : % -&gt Union(P, "failed")</dt><dd><p>
+<code>last(ts)</code> returns the polynomial of <code>ts</code> with smallest main variable if <code>ts</code> is not empty, otherwise returns <code>"failed"</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_mainVariable_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_mainVariable_63">mainVariable?</a> : (V, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_mainVariables"></a><dl><dt><a href="PolynomialSetCategory.html#f_mainVariables">mainVariables</a> : % -&gt <a href="List.html">List</a>(V)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(P, P), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(P, P), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt P if P has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P, P), %) -&gt P</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt P if P has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_mvar"></a><dl><dt><a href="PolynomialSetCategory.html#f_mvar">mvar</a> : % -&gt V</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_normalized_63"></a><dl><dt>normalized? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>normalized?(ts)</code> returns <code>true</code> iff for every <code>p</code> in <code>ts</code> we have <code>normalized?(p, us)</code> where <code>us</code> is <code>collectUnder(ts, mvar(p))</code>.</p>
+</dd></dl>
+<dl><dt>normalized? : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>normalized?(p, ts)</code> returns <code>true</code> iff <code>p</code> and all its iterated initials have degree zero <code>w</code>.<code>r</code>.<code>t</code>. the main variables of the polynomials of <code>ts</code></p>
+</dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_quasiComponent"></a><dl><dt>quasiComponent : % -&gt Record(close : <a href="List.html">List</a>(P), open : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>quasiComponent(ts)</code> returns <code>[lp, lq]</code> where <code>lp</code> is the list of the members of <code>ts</code> and <code>lq</code>is <code>initials(ts)</code>.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (P, %, Mapping(P, P, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt P</dt><dd><p>
+<code>reduce(p, ts, redOp, redOp?)</code> returns a polynomial <code>r</code> such that <code>redOp?(r, p)</code> holds for every <code>p</code> of <code>ts</code> and there exists some product <code>h</code> of the initials of the members of <code>ts</code> such that <code>h*p - r</code> lies in the ideal generated by <code>ts</code>. The operation <code>redOp</code> must satisfy the following conditions. For every <code>p</code> and <code>q</code> we have <code>redOp?(redOp(p, q), q)</code> and there exists an integer <code>e</code> and a polynomial <code>f</code> such that <code>init(q)^e*p = f*q + redOp(p, q)</code>.</p>
+</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %, P) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %, P, P) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_reduceByQuasiMonic"></a><dl><dt>reduceByQuasiMonic : (P, %) -&gt P</dt><dd><p>
+<code>reduceByQuasiMonic(p, ts)</code> returns the same as <code>remainder(p, collectQuasiMonic(ts)).polnum</code>.</p>
+</dd></dl>
+<a name="f_reduced_63"></a><dl><dt>reduced? : (P, %, Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>reduced?(p, ts, redOp?)</code> returns <code>true</code> iff <code>p</code> is reduced <code>w</code>.<code>r</code>.<code>t</code>. in the sense of the operation <code>redOp?</code>, that is if for every <code>t</code> in <code>ts</code> <code>redOp?(p, t)</code> holds.</p>
+</dd></dl>
+<a name="f_remainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_remainder">remainder</a> : (P, %) -&gt Record(rnum : R, polnum : P, den : R)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_remove"></a><dl><dt><a href="Collection.html#f_remove">remove</a> : (P, %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_remove">remove</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_removeDuplicates"></a><dl><dt><a href="Collection.html#f_removeDuplicates">removeDuplicates</a> : % -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_removeZero"></a><dl><dt>removeZero : (P, %) -&gt P</dt><dd><p>
+<code>removeZero(p, ts)</code> returns <code>0</code> if <code>p</code> reduces to <code>0</code> by pseudo-division <code>w</code>.<code>r</code>.<code>t</code> <code>ts</code> otherwise returns a polynomial <code>q</code> computed from <code>p</code> by removing any coefficient in <code>p</code> reducing to <code>0</code>.</p>
+</dd></dl>
+<a name="f_rest"></a><dl><dt>rest : % -&gt Union(%, "failed")</dt><dd><p>
+<code>rest(ts)</code> returns the polynomials of <code>ts</code> with smaller main variable than <code>mvar(ts)</code> if <code>ts</code> is not empty, otherwise returns "failed"</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableFrom.html#f_retract">retract</a> : <a href="List.html">List</a>(P) -&gt %</dt><dd> from <a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableFrom.html#f_retractIfCan">retractIfCan</a> : <a href="List.html">List</a>(P) -&gt Union(%, "failed")</dt><dd> from <a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))</dd></dl>
+<a name="f_rewriteIdealWithHeadRemainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_rewriteIdealWithHeadRemainder">rewriteIdealWithHeadRemainder</a> : (<a href="List.html">List</a>(P), %) -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_rewriteIdealWithRemainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_rewriteIdealWithRemainder">rewriteIdealWithRemainder</a> : (<a href="List.html">List</a>(P), %) -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_rewriteSetWithReduction"></a><dl><dt>rewriteSetWithReduction : (<a href="List.html">List</a>(P), %, Mapping(P, P, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>rewriteSetWithReduction(lp, ts, redOp, redOp?)</code> returns a list <code>lq</code> of polynomials such that <code>[reduce(p, ts, redOp, redOp?) for p in lp]</code> and <code>lp</code> have the same zeros inside the regular zero set of <code>ts</code>. Moreover, for every polynomial <code>q</code> in <code>lq</code> and every polynomial <code>t</code> in <code>ts</code> <code>redOp?(q, t)</code> holds and there exists a polynomial <code>p</code> in the ideal generated by <code>lp</code> and a product <code>h</code> of <code>initials(ts)</code> such that <code>h*p - r</code> lies in the ideal generated by <code>ts</code>. The operation <code>redOp</code> must satisfy the following conditions. For every <code>p</code> and <code>q</code> we have <code>redOp?(redOp(p, q), q)</code> and there exists an integer <code>e</code> and a polynomial <code>f</code> such that <code>init(q)^e*p = f*q + redOp(p, q)</code>.</p>
+</dd></dl>
+<a name="f_roughBase_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughBase_63">roughBase?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughEqualIdeals_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughEqualIdeals_63">roughEqualIdeals?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughSubIdeal_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughSubIdeal_63">roughSubIdeal?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughUnitIdeal_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughUnitIdeal_63">roughUnitIdeal?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_select"></a><dl><dt><a href="Collection.html#f_select">select</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt>select : (%, V) -&gt Union(P, "failed")</dt><dd><p>
+<code>select(ts, v)</code> returns the polynomial of <code>ts</code> with <code>v</code> as main variable, if any.</p>
+</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_sort"></a><dl><dt><a href="PolynomialSetCategory.html#f_sort">sort</a> : (%, V) -&gt Record(under : %, floor : %, upper : %)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_stronglyReduce"></a><dl><dt>stronglyReduce : (P, %) -&gt P</dt><dd><p>
+<code>stronglyReduce(p, ts)</code> returns a polynomial <code>r</code> such that <code>stronglyReduced?(r, ts)</code> holds and there exists some product <code>h</code> of <code>initials(ts)</code> such that <code>h*p - r</code> lies in the ideal generated by <code>ts</code>.</p>
+</dd></dl>
+<a name="f_stronglyReduced_63"></a><dl><dt>stronglyReduced? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>stronglyReduced?(ts)</code> returns <code>true</code> iff every element of <code>ts</code> is reduced <code>w</code>.<code>r</code>.<code>t</code> to any other element of <code>ts</code>.</p>
+</dd></dl>
+<dl><dt>stronglyReduced? : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>stronglyReduced?(p, ts)</code> returns <code>true</code> iff <code>p</code> is reduced <code>w</code>.<code>r</code>.<code>t</code>. <code>ts</code>.</p>
+</dd></dl>
+<a name="f_triangular_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_triangular_63">triangular?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_trivialIdeal_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_trivialIdeal_63">trivialIdeal?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_variables"></a><dl><dt><a href="PolynomialSetCategory.html#f_variables">variables</a> : % -&gt <a href="List.html">List</a>(V)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_zeroSetSplit"></a><dl><dt>zeroSetSplit : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>zeroSetSplit(lp)</code> returns a list <code>lts</code> of triangular sets such that the zero set of <code>lp</code> is the union of the closures of the regular zero sets of the members of <code>lts</code>.</p>
+</dd></dl>
+<a name="f_zeroSetSplitIntoTriangularSystems"></a><dl><dt>zeroSetSplitIntoTriangularSystems : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(Record(close : %, open : <a href="List.html">List</a>(P)))</dt><dd><p>
+<code>zeroSetSplitIntoTriangularSystems(lp)</code> returns a list of triangular systems <code>[[ts1, qs1], ..., [tsn, qsn]]</code> such that the zero set of <code>lp</code> is the union of the closures of the <code>W_i</code> where <code>W_i</code> consists of the zeros of <code>ts</code> which do not cancel any polynomial in <code>qsi</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="List.html">List</a>(P))
+<p><a href="Collection.html">Collection</a>(P)
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)
+<p><a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(P, P)
+<p><a href="Evalable.html">Evalable</a>(P)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

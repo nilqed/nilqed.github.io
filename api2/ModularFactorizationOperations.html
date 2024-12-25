@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularFactorizationOperations</title>
+</head>
+<body>
+<h1>ModularFactorizationOperations(PA, MMT, MD, PMD)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffact.spad#L1">ffact.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffact.spad#L1">[edit on github]</a></p>
+<ul>
+<li>PA : <a href="Type.html">Type</a><li>MMT : <a href="Type.html">Type</a><li>MD : <a href="Type.html">Type</a><li>PMD : <a href="Type.html">Type</a></ul>
+<p>
+This category specifies operations needed by univariate factorization over finite fields</p>
+<a name="f_add_95poly"></a><dl><dt>add_poly : (PA, PA, MD) -&gt PA</dt><dd><p>
+<code>add_poly(pol1, pol2, md)</code> add polynomials <code>pol1</code> and <code>pol2</code>.</p>
+</dd></dl>
+<a name="f_copy_95mat_95part"></a><dl><dt>copy_mat_part : (MMT, <a href="Integer.html">Integer</a>) -&gt MMT</dt><dd><p>
+<code>copy_mat_part(man, nr)</code> creates copy of modular composition matrix stored in first <code>nr</code> rows of mat.</p>
+</dd></dl>
+<a name="f_copy_95poly"></a><dl><dt>copy_poly : (PA, <a href="Integer.html">Integer</a>, MD) -&gt PA</dt><dd><p>
+<code>copy_poly(pol, d, m)</code> creates copy of <code>pol</code> with enough space to represent polynomials of degree smaller than <code>d</code>. Error if degree of <code>pol</code> is bigger or equal than <code>d</code>.</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : PA -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>degree(pol)</code> returns degree of the polynomial <code>pol</code>.</p>
+</dd></dl>
+<a name="f_divide_33"></a><dl><dt>divide! : (PA, PA, MD) -&gt PA</dt><dd><p>
+<code>divide!(pol1, pol2, md)</code> performs division with remainder of <code>pol1</code> by <code>pol2</code>. <code>pol1</code> is modified in place to contain remainder. Quotient is return value.</p>
+</dd></dl>
+<a name="f_empty_95mat"></a><dl><dt>empty_mat : () -&gt MMT</dt><dd><p>
+<code>empty_mat()</code> returns empty (that is of dimensions 0) matrix.</p>
+</dd></dl>
+<a name="f_empty_95mat_63"></a><dl><dt>empty_mat? : MMT -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty_mat?(mat)</code> returns <code>true</code> if matrix is empty, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_empty_95poly"></a><dl><dt>empty_poly : () -&gt PA</dt><dd><p>
+<code>empty_poly()</code> returns empty (that is 0) polynomial.</p>
+</dd></dl>
+<a name="f_gcd"></a><dl><dt>gcd : (PA, PA, MD) -&gt PA</dt><dd><p>
+<code>gcd(pol1, pol2, md)</code> computes <code>gcd</code> of <code>pol1</code> and <code>pol2</code>.</p>
+</dd></dl>
+<a name="f_get_95char"></a><dl><dt>get_char : MD -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>get_char(md)</code> returns characteristic of the field described by info <code>md</code>.</p>
+</dd></dl>
+<a name="f_get_95extension_95degree"></a><dl><dt>get_extension_degree : MD -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>get_extension_degree(md)</code> returns degree of the field described by info <code>md</code> over its prime subfield.</p>
+</dd></dl>
+<a name="f_get_95mod"></a><dl><dt>get_mod : PMD -&gt MD</dt><dd><p>
+<code>get_mod(pmd)</code> extracts field info from reduction data.</p>
+</dd></dl>
+<a name="f_ini_95rdata"></a><dl><dt>ini_rdata : (PA, MD) -&gt PMD</dt><dd><p>
+<code>ini_rdata(pv, p)</code> generates data allowing faster computation of remainders from division by <code>pv</code> modulo <code>p</code>. Result is used by other functions in this package, in particular <code>red_pol!</code>.</p>
+</dd></dl>
+<a name="f_mod_95exp"></a><dl><dt>mod_exp : (PA, <a href="Integer.html">Integer</a>, PMD) -&gt PA</dt><dd><p>
+<code>mod_exp(pv, d, rd)</code> computes <code>pv^d</code> modulo reduction data in <code>rd</code>.</p>
+</dd></dl>
+<a name="f_modular_95compose"></a><dl><dt>modular_compose : (PA, MMT, PA, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PMD) -&gt PA</dt><dd><p>
+<code>modular_compose(pol, pm, p1, l1, rd)</code> computes composion of <code>pol</code> with <code>p0</code> modulo reduction data <code>rd</code>. <code>pm</code> and <code>p1</code> are as from call to <code>power_matrix(p0, l1, rd)</code>.</p>
+</dd></dl>
+<a name="f_monomial1"></a><dl><dt>monomial1 : MD -&gt PA</dt><dd><p>
+<code>monomial1(md)</code> returns monomial of degree 1 with coefficient 1.</p>
+</dd></dl>
+<a name="f_power_95matrix"></a><dl><dt>power_matrix : (PA, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PMD) -&gt Record(matr : MMT, poly : PA)</dt><dd><p>
+<code>power_matrix(s, l, rd)</code> computes [<code>m</code>, <code>p</code>] such that <code>p = s^l</code> modulo reduction data <code>rd</code> and column <code>j</code> of <code>m</code> contain <code>s^j</code> modulo reduction data <code>rd</code>. Note that lowest column index is <code>j = 0</code> and highest index is <code>j=l-1</code>. <code>rd</code> should be obtained by earlier call to <code>ini_rdata</code>.</p>
+</dd></dl>
+<a name="f_random_95poly"></a><dl><dt>random_poly : (<a href="Integer.html">Integer</a>, MD) -&gt PA</dt><dd><p>
+<code>random_poly(n, md)</code> generated random polynomial of degree <code>n</code>.</p>
+</dd></dl>
+<a name="f_red_95pol_33"></a><dl><dt>red_pol! : (PA, PMD) -&gt PA</dt><dd><p>
+<code>red_pol!(pv, rd)</code> computes remainder of <code>pv</code> using reduction data <code>rd</code> produced by earlier call to <code>ini_rdata</code>.</p>
+</dd></dl>
+<a name="f_shift_95mat_33"></a><dl><dt>shift_mat! : (MMT, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>shift_mat!(mat, sa, nr)</code> moves modular composition matrix stored in <code>nr</code> rows of <code>mat</code> starting at <code>sa</code> to first <code>nr</code> rows of <code>mat</code>. This is designed to work on output of split_mat!.</p>
+</dd></dl>
+<a name="f_split_95mat_33"></a><dl><dt>split_mat! : (MMT, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, PMD, PMD) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>split_mat!(mat, nr0, nr1, nr2, pmod1, pmod2)</code> splits modular composition matrix <code>mat</code> into two matrices, first modulo <code>pmod1</code>, second modulo <code>pmod2</code>. To save space first result replaces first <code>nr1</code> rows of <code>mat</code>, second result is stored in next <code>nr2</code> rows of <code>mat</code>. <code>nr0</code> is number of rows used in argument.</p>
+</dd></dl>
+<a name="f_sub1_33"></a><dl><dt>sub1! : (PA, MD) -&gt PA</dt><dd><p>
+<code>sub1!(pol, md)</code> subtracts 1 from the polynomial <code>pol</code>.</p>
+</dd></dl>
+<a name="f_sub_95poly"></a><dl><dt>sub_poly : (PA, PA, MD) -&gt PA</dt><dd><p>
+<code>sub_poly(pol1, pol2, md)</code> subtracts polynomials <code>pol2</code> from <code>pol1</code>.</p>
+</dd></dl>
+<a name="f_trim_95mat_33"></a><dl><dt>trim_mat! : (MMT, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, PMD) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>trim_mat!(mat, nr0, nc1, pmod)</code> reduces modular composition matrix <code>mat</code> modulo reduction data pmod. <code>nr0</code> is number of rows used in argument, <code>nr1</code> is number of rows used in the result. <code>mat</code> is is modified in place.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RetractSolvePackage</title>
+</head>
+<body>
+<h1>RetractSolvePackage(Q, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/nlinsol.spad#L1">nlinsol.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/nlinsol.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Q : <a href="IntegralDomain.html">IntegralDomain</a><li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(Q))</ul>
+<p>
+RetractSolvePackage is an interface to SystemSolvePackage that attempts to retract the coefficients of the equations before solving.</p>
+<a name="f_solveRetract"></a><dl><dt>solveRetract : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solveRetract(lp, lv)</code> finds the solutions of the list <code>lp</code> of rational functions with respect to the list of symbols <code>lv</code>. The function tries to retract all the coefficients of the equations to <code>Q</code> before solving if possible.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>HallBasis</title>
+</head>
+<body>
+<h1>HallBasis</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fnla.spad#L70">fnla.spad line 70</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fnla.spad#L70">[edit on github]</a></p>
+<p>
+Generate a basis for the free Lie algebra on <code>n</code> generators over a ring <code>R</code> with identity up to basic commutators of length <code>c</code> using the algorithm of <code>P</code>. Hall as given in Serre<code>'s</code> book Lie Groups <code>--</code> Lie Algebras.</p>
+<a name="f_basis"></a><dl><dt>basis : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Vector.html">Vector</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>basis(numberOfGens, maximalWeight)</code> generates a vector of elements of the form [left, weight, right] which represents a <code>P</code>. Hall basis element for the free lie algebra on <code>numberOfGens</code> generators. We only generate those basis elements of weight less than or equal to maximalWeight</p>
+</dd></dl>
+<a name="f_inHallBasis_63"></a><dl><dt>inHallBasis? : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>inHallBasis?(numberOfGens, leftCandidate, rightCandidate, left)</code> tests to see if a new element should be added to the <code>P</code>. Hall basis being constructed. The list <code>[leftCandidate, wt, rightCandidate]</code> is included in the basis if in the unique factorization of <code>rightCandidate</code>, we have left factor leftOfRight, and leftOfRight <code>&lt;=</code> <code>leftCandidate</code></p>
+</dd></dl>
+<a name="f_lfunc"></a><dl><dt>lfunc : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>lfunc(d, n)</code> computes the rank of the <code>n</code>th factor in the lower central series of the free <code>d</code>-generated free Lie algebra; This rank is <code>d</code> if <code>n</code> = 1 and binom(<code>d</code>, 2) if <code>n</code> = 2</p>
+</dd></dl>
+</body>
+</html>

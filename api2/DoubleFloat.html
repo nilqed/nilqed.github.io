@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DoubleFloat</title>
+</head>
+<body>
+<h1>DoubleFloat</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sf.spad#L302">sf.spad line 302</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sf.spad#L302">[edit on github]</a></p>
+<p>
+DoubleFloat is intended to make accessible hardware floating point arithmetic in FriCAS, either native double precision, or IEEE. On most machines, there will be hardware support for the arithmetic operations: <span class="std std-ref">+</span>, <span class="std std-ref">*</span>, <span class="std std-ref">/</span> and possibly also the <span class="std std-ref">sqrt</span> operation. The operations <span class="std std-ref">exp</span>, <span class="std std-ref">log</span>, <span class="std std-ref">sin</span>, <span class="std std-ref">cos</span>, <span class="std std-ref">atan</span> are normally coded in software based on minimax polynomial/rational approximations. Some general comments about the accuracy of the operations: the operations <span class="std std-ref">+</span>, <span class="std std-ref">*</span>, <span class="std std-ref">/</span> and <span class="std std-ref">sqrt</span> are expected to be fully accurate. The operations <span class="std std-ref">exp</span>, <span class="std std-ref">log</span>, <span class="std std-ref">sin</span>, <span class="std std-ref">cos</span> and <span class="std std-ref">atan</span> are not expected to be fully accurate. In particular, <span class="std std-ref">sin</span> and <span class="std std-ref">cos</span> will lose all precision for large arguments.  The Float domain provides an alternative to the <code>DoubleFloat</code> domain. It provides an arbitrary precision model of floating point arithmetic. This means that accuracy problems like those above are eliminated by increasing the working precision where necessary. Float provides some special functions such as <span class="std std-ref">erf</span>, the error function in addition to the elementary functions. The disadvantage of Float is that it is much more expensive than small floats when the latter can be used.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Field.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Field.html">Field</a></dd></dl>
+<dl><dt><a href="FloatingPointSystem.html#f__47">/</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_Beta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_Beta">Beta</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="SpecialFunctionCategory.html#f_Beta">Beta</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="DifferentialRing.html#f_D">D</a> : % -&gt %</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_D">D</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<a name="f_Gamma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_Gamma">Gamma</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="SpecialFunctionCategory.html#f_Gamma">Gamma</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_OMwrite"></a><dl><dt><a href="OpenMath.html#f_OMwrite">OMwrite</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="OpenMath.html">OpenMath</a></dd></dl>
+<dl><dt><a href="OpenMath.html#f_OMwrite">OMwrite</a> : (%, <a href="Boolean.html">Boolean</a>) -&gt <a href="String.html">String</a></dt><dd> from <a href="OpenMath.html">OpenMath</a></dd></dl>
+<dl><dt><a href="OpenMath.html#f_OMwrite">OMwrite</a> : (<a href="OpenMathDevice.html">OpenMathDevice</a>, %) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="OpenMath.html">OpenMath</a></dd></dl>
+<dl><dt><a href="OpenMath.html#f_OMwrite">OMwrite</a> : (<a href="OpenMathDevice.html">OpenMathDevice</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="OpenMath.html">OpenMath</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="ElementaryFunctionCategory.html#f__94">^</a> : (%, %) -&gt %</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<dl><dt><a href="RadicalCategory.html#f__94">^</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<dl><dt><a href="DivisionRing.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_abs"></a><dl><dt><a href="OrderedRing.html#f_abs">abs</a> : % -&gt %</dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_acos"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acos">acos</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acosh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acosh">acosh</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acot"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acot">acot</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acoth"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acoth">acoth</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acsc"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acsc">acsc</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acsch"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acsch">acsch</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_airyAi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyAi">airyAi</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_airyAiPrime"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyAiPrime">airyAiPrime</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_airyBi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyBi">airyBi</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_airyBiPrime"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyBiPrime">airyBiPrime</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_angerJ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_angerJ">angerJ</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_asec"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asec">asec</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asech"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asech">asech</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_asin"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asin">asin</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asinh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asinh">asinh</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_atan"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_atan">atan</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<dl><dt>atan : (%, %) -&gt %</dt><dd><p>
+<code>atan(x, y)</code> computes the arc tangent from <code>x</code> with phase <code>y</code>.</p>
+</dd></dl>
+<a name="f_atanh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_atanh">atanh</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_base"></a><dl><dt><a href="FloatingPointSystem.html#f_base">base</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_besselI"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselI">besselI</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_besselJ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselJ">besselJ</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_besselK"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselK">besselK</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_besselY"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselY">besselY</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_bits"></a><dl><dt><a href="FloatingPointSystem.html#f_bits">bits</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_ceiling"></a><dl><dt><a href="RealNumberSystem.html#f_ceiling">ceiling</a> : % -&gt %</dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charlierC"></a><dl><dt><a href="SpecialFunctionCategory.html#f_charlierC">charlierC</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="SpecialFunctionCategory.html#f_conjugate">conjugate</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Float.html">Float</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="String.html">String</a>)</dd></dl>
+<a name="f_cos"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cos">cos</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_cosh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_cosh">cosh</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_cot"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cot">cot</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_coth"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_coth">coth</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_csc"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_csc">csc</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_csch"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_csch">csch</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : % -&gt %</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<a name="f_digamma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_digamma">digamma</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_digits"></a><dl><dt><a href="FloatingPointSystem.html#f_digits">digits</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_diracDelta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_diracDelta">diracDelta</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_divide"></a><dl><dt><a href="EuclideanDomain.html#f_divide">divide</a> : (%, %) -&gt Record(quotient : %, remainder : %)</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_doubleFloatFormat"></a><dl><dt>doubleFloatFormat : <a href="String.html">String</a> -&gt <a href="String.html">String</a></dt><dd><p>
+change the output format for doublefloats using lisp format strings</p>
+</dd></dl>
+<a name="f_ellipticE"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticE">ellipticE</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="SpecialFunctionCategory.html#f_ellipticE">ellipticE</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_ellipticF"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticF">ellipticF</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_ellipticK"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticK">ellipticK</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_ellipticPi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticPi">ellipticPi</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_euclideanSize"></a><dl><dt><a href="EuclideanDomain.html#f_euclideanSize">euclideanSize</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_exp"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_exp">exp</a> : % -&gt %</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_exp1"></a><dl><dt>exp1 : () -&gt %</dt><dd><p>
+<code>exp1()</code> returns the natural log base <code>2.718281828...</code>.</p>
+</dd></dl>
+<a name="f_exponent"></a><dl><dt><a href="FloatingPointSystem.html#f_exponent">exponent</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_expressIdealMember"></a><dl><dt><a href="PrincipalIdealDomain.html#f_expressIdealMember">expressIdealMember</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extendedEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %) -&gt Record(coef1 : %, coef2 : %, generator : %)</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %, %) -&gt Union(Record(coef1 : %, coef2 : %), "failed")</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_factor"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_factor">factor</a> : % -&gt <a href="Factored.html">Factored</a>(%)</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_float"></a><dl><dt><a href="FloatingPointSystem.html#f_float">float</a> : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<dl><dt><a href="FloatingPointSystem.html#f_float">float</a> : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_floor"></a><dl><dt><a href="RealNumberSystem.html#f_floor">floor</a> : % -&gt %</dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_fractionPart"></a><dl><dt><a href="RealNumberSystem.html#f_fractionPart">fractionPart</a> : % -&gt %</dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="GcdDomain.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_hahnQ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahnQ">hahnQ</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hahnR"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahnR">hahnR</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hahnS"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahnS">hahnS</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hahn_95p"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahn_95p">hahn_p</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hankelH1"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hankelH1">hankelH1</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hankelH2"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hankelH2">hankelH2</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hermiteH"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hermiteH">hermiteH</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hypergeometricF"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hypergeometricF">hypergeometricF</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%), %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_inv"></a><dl><dt><a href="DivisionRing.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<a name="f_jacobiCn"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiCn">jacobiCn</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiDn"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiDn">jacobiDn</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiP">jacobiP</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiSn"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiSn">jacobiSn</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiTheta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiTheta">jacobiTheta</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiZeta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiZeta">jacobiZeta</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinBei"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinBei">kelvinBei</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinBer"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinBer">kelvinBer</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinKei"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinKei">kelvinKei</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinKer"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinKer">kelvinKer</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_krawtchoukK"></a><dl><dt><a href="SpecialFunctionCategory.html#f_krawtchoukK">krawtchoukK</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kummerM"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kummerM">kummerM</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kummerU"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kummerU">kummerU</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_laguerreL"></a><dl><dt><a href="SpecialFunctionCategory.html#f_laguerreL">laguerreL</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_lambertW"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lambertW">lambertW</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %)</dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_legendreP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_legendreP">legendreP</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_legendreQ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_legendreQ">legendreQ</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_lerchPhi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lerchPhi">lerchPhi</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_log"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_log">log</a> : % -&gt %</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_log10"></a><dl><dt>log10 : % -&gt %</dt><dd><p>
+<code>log10(x)</code> computes the logarithm with base 10 for <code>x</code>.</p>
+</dd></dl>
+<a name="f_log2"></a><dl><dt>log2 : % -&gt %</dt><dd><p>
+<code>log2(x)</code> computes the logarithm with base 2 for <code>x</code>.</p>
+</dd></dl>
+<a name="f_lommelS1"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lommelS1">lommelS1</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_lommelS2"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lommelS2">lommelS2</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_mantissa"></a><dl><dt><a href="FloatingPointSystem.html#f_mantissa">mantissa</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="FloatingPointSystem.html#f_max">max</a> : () -&gt % if % hasn't <a href="arbitraryExponent.html">arbitraryExponent</a> and % hasn't <a href="arbitraryPrecision.html">arbitraryPrecision</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_meijerG"></a><dl><dt><a href="SpecialFunctionCategory.html#f_meijerG">meijerG</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%), <a href="List.html">List</a>(%), <a href="List.html">List</a>(%), %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_meixnerM"></a><dl><dt><a href="SpecialFunctionCategory.html#f_meixnerM">meixnerM</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_meixnerP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_meixnerP">meixnerP</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="FloatingPointSystem.html#f_min">min</a> : () -&gt % if % hasn't <a href="arbitraryExponent.html">arbitraryExponent</a> and % hasn't <a href="arbitraryPrecision.html">arbitraryPrecision</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_multiEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_multiEuclidean">multiEuclidean</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_negative_63"></a><dl><dt><a href="OrderedRing.html#f_negative_63">negative?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_norm"></a><dl><dt><a href="RealNumberSystem.html#f_norm">norm</a> : % -&gt %</dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_nthRoot"></a><dl><dt><a href="RadicalCategory.html#f_nthRoot">nthRoot</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="FloatingPointSystem.html#f_order">order</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_patternMatch"></a><dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dd></dl>
+<a name="f_pi"></a><dl><dt><a href="TranscendentalFunctionCategory.html#f_pi">pi</a> : () -&gt %</dt><dd> from <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)</dd></dl>
+<a name="f_polygamma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_polygamma">polygamma</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_polylog"></a><dl><dt><a href="SpecialFunctionCategory.html#f_polylog">polylog</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_positive_63"></a><dl><dt><a href="OrderedRing.html#f_positive_63">positive?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_precision"></a><dl><dt><a href="FloatingPointSystem.html#f_precision">precision</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_prime_63"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_prime_63">prime?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_principalIdeal"></a><dl><dt><a href="PrincipalIdealDomain.html#f_principalIdeal">principalIdeal</a> : <a href="List.html">List</a>(%) -&gt Record(coef : <a href="List.html">List</a>(%), generator : %)</dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_qlog"></a><dl><dt>qlog : % -&gt %</dt><dd><p>
+<code>qlog(x)</code> computes natural logarithm of <code>x</code>. It assumes that <code>x &gt; 0</code>.</p>
+</dd></dl>
+<a name="f_qsqrt"></a><dl><dt>qsqrt : % -&gt %</dt><dd><p>
+<code>qsqrt(x)</code> computes square root of <code>x</code>. It assumes that <code>x &gt;= 0</code>.</p>
+</dd></dl>
+<a name="f_quo"></a><dl><dt><a href="EuclideanDomain.html#f_quo">quo</a> : (%, %) -&gt %</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_racahR"></a><dl><dt><a href="SpecialFunctionCategory.html#f_racahR">racahR</a> : (%, %, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_rationalApproximation"></a><dl><dt>rationalApproximation : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>rationalApproximation(f, n)</code> computes a rational approximation <code>r</code> to <code>f</code> with relative error <code>&lt; 10^(-n)</code>.</p>
+</dd></dl>
+<dl><dt>rationalApproximation : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>rationalApproximation(f, n, b)</code> computes a rational approximation <code>r</code> to <code>f</code> with relative error <code>&lt; b^(-n)</code> (that is, <code>|(r-f)/f| &lt; b^(-n)</code>).</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rem"></a><dl><dt><a href="EuclideanDomain.html#f_rem">rem</a> : (%, %) -&gt %</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_riemannZeta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_riemannZeta">riemannZeta</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_round"></a><dl><dt><a href="RealNumberSystem.html#f_round">round</a> : % -&gt %</dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sec"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sec">sec</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sech"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sech">sech</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_sign"></a><dl><dt><a href="SpecialFunctionCategory.html#f_sign">sign</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="OrderedRing.html#f_sign">sign</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_sin"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sin">sin</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sinh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sinh">sinh</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_sizeLess_63"></a><dl><dt><a href="EuclideanDomain.html#f_sizeLess_63">sizeLess?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_sqrt"></a><dl><dt><a href="RadicalCategory.html#f_sqrt">sqrt</a> : % -&gt %</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_squareFree"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFree">squareFree</a> : % -&gt <a href="Factored.html">Factored</a>(%)</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_squareFreePart"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFreePart">squareFreePart</a> : % -&gt %</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_struveH"></a><dl><dt><a href="SpecialFunctionCategory.html#f_struveH">struveH</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_struveL"></a><dl><dt><a href="SpecialFunctionCategory.html#f_struveL">struveL</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_tan"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_tan">tan</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_tanh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_tanh">tanh</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_toString"></a><dl><dt><a href="FloatingPointSystem.html#f_toString">toString</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<dl><dt><a href="FloatingPointSystem.html#f_toString">toString</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="String.html">String</a></dt><dd> from <a href="FloatingPointSystem.html">FloatingPointSystem</a></dd></dl>
+<a name="f_truncate"></a><dl><dt><a href="RealNumberSystem.html#f_truncate">truncate</a> : % -&gt %</dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt %</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %)</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitStep"></a><dl><dt><a href="SpecialFunctionCategory.html#f_unitStep">unitStep</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weberE"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weberE">weberE</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassP">weierstrassP</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassPInverse"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassPInverse">weierstrassPInverse</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassPPrime"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassPPrime">weierstrassPPrime</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassSigma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassSigma">weierstrassSigma</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassZeta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassZeta">weierstrassZeta</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_whittakerM"></a><dl><dt><a href="SpecialFunctionCategory.html#f_whittakerM">whittakerM</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_whittakerW"></a><dl><dt><a href="SpecialFunctionCategory.html#f_whittakerW">whittakerW</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_wholePart"></a><dl><dt><a href="RealNumberSystem.html#f_wholePart">wholePart</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RealNumberSystem.html">RealNumberSystem</a></dd></dl>
+<a name="f_wilsonW"></a><dl><dt><a href="SpecialFunctionCategory.html#f_wilsonW">wilsonW</a> : (%, %, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Float.html">Float</a>)
+<p><a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="OrderedAbelianGroup.html">OrderedAbelianGroup</a>
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a>
+<p><a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="RadicalCategory.html">RadicalCategory</a>
+<p><a href="Field.html">Field</a>
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Magma.html">Magma</a>
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a>
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="DifferentialRing.html">DifferentialRing</a>
+<p><a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a>
+<p><a href="DivisionRing.html">DivisionRing</a>
+<p><a href="OpenMath.html">OpenMath</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="EuclideanDomain.html">EuclideanDomain</a>
+<p><a href="Approximate.html">Approximate</a>
+<p><a href="canonicalsClosed.html">canonicalsClosed</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="OrderedCancellationAbelianMonoid.html">OrderedCancellationAbelianMonoid</a>
+<p><a href="OrderedRing.html">OrderedRing</a>
+<p><a href="RealNumberSystem.html">RealNumberSystem</a>
+<p><a href="FloatingPointSystem.html">FloatingPointSystem</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="RealConstant.html">RealConstant</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="String.html">String</a>)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="DoubleFloat.html">DoubleFloat</a>)
+<p><a href="OrderedAbelianSemiGroup.html">OrderedAbelianSemiGroup</a>
+<p><a href="Module.html">Module</a>(%)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GaloisGroupFactorizer</title>
+</head>
+<body>
+<h1>GaloisGroupFactorizer(UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/galfact.spad#L383">galfact.spad line 383</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/galfact.spad#L383">[edit on github]</a></p>
+<ul>
+<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Integer.html">Integer</a>)</ul>
+<p>
+GaloisGroupFactorizer provides functions to factor resolvents.</p>
+<a name="f_btwFact"></a><dl><dt>btwFact : (UP, <a href="Boolean.html">Boolean</a>, <a href="Set.html">Set</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(contp : <a href="Integer.html">Integer</a>, factors : <a href="List.html">List</a>(Record(irr : UP, pow : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd><p>
+<code>btwFact(p, sqf, pd, r)</code> returns the factorization of <code>p</code>, the result is a Record such that <code>contp=</code>content <code>p</code>, <code>factors=</code>List of irreducible factors of <code>p</code> with exponent. If <code>sqf=true</code> the polynomial is assumed to be square free (i.e. without repeated factors). <code>pd</code> is the Set of possible degrees. <code>r</code> is a lower bound for the number of factors of <code>p</code>. Please do not use this function in your code because its design may change.</p>
+</dd></dl>
+<a name="f_degreePartition"></a><dl><dt>degreePartition : <a href="List.html">List</a>(Record(factor : UP, degree : <a href="Integer.html">Integer</a>)) -&gt <a href="Multiset.html">Multiset</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>degreePartition(ddfactorization)</code> returns the degree partition of the polynomial <code>f</code> modulo <code>p</code> where <code>ddfactorization</code> is the distinct degree factorization of <code>f</code> computed by <code>ddfact</code> from modular factorization package for some prime <code>p</code>.</p>
+</dd></dl>
+<a name="f_eisensteinIrreducible_63"></a><dl><dt>eisensteinIrreducible? : UP -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>eisensteinIrreducible?(p)</code> returns <code>true</code> if <code>p</code> can be shown to be irreducible by Eisenstein<code>'s</code> criterion, <code>false</code> is inconclusive.</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : UP -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p)</code> returns the factorization of <code>p</code> over the integers.</p>
+</dd></dl>
+<dl><dt>factor : (UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p, listOfDegrees)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm and knowing that <code>p</code> has for possible splitting of its degree listOfDegrees.</p>
+</dd></dl>
+<dl><dt>factor : (UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p, listOfDegrees, r)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm, knowing that <code>p</code> has for possible splitting of its degree <code>listOfDegrees</code> and that <code>p</code> has at least <code>r</code> factors.</p>
+</dd></dl>
+<dl><dt>factor : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p, r)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm and knowing that <code>p</code> has at least <code>r</code> factors.</p>
+</dd></dl>
+<dl><dt>factor : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p, d, r)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm, knowing that <code>d</code> divides the degree of all factors of <code>p</code> and that <code>p</code> has at least <code>r</code> factors.</p>
+</dd></dl>
+<a name="f_factorOfDegree"></a><dl><dt>factorOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, UP) -&gt Union(UP, "failed")</dt><dd><p>
+<code>factorOfDegree(d, p)</code> returns a factor of <code>p</code> of degree <code>d</code>.</p>
+</dd></dl>
+<dl><dt>factorOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Union(UP, "failed")</dt><dd><p>
+<code>factorOfDegree(d, p, listOfDegrees)</code> returns a factor of <code>p</code> of degree <code>d</code> knowing that <code>p</code> has for possible splitting of its degree listOfDegrees.</p>
+</dd></dl>
+<dl><dt>factorOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(UP, "failed")</dt><dd><p>
+<code>factorOfDegree(d, p, listOfDegrees, r)</code> returns a factor of <code>p</code> of degree <code>d</code> knowing that <code>p</code> has for possible splitting of its degree <code>listOfDegrees</code>, and that <code>p</code> has at least <code>r</code> factors.</p>
+</dd></dl>
+<dl><dt>factorOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>) -&gt Union(UP, "failed")</dt><dd><p>
+<code>factorOfDegree(d, p, listOfDegrees, r, sqf)</code> returns a factor of <code>p</code> of degree <code>d</code> knowing that <code>p</code> has for possible splitting of its degree <code>listOfDegrees</code>, and that <code>p</code> has at least <code>r</code> factors. If <code>sqf=true</code> the polynomial is assumed to be square free (i.e. without repeated factors).</p>
+</dd></dl>
+<dl><dt>factorOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(UP, "failed")</dt><dd><p>
+<code>factorOfDegree(d, p, r)</code> returns a factor of <code>p</code> of degree <code>d</code> knowing that <code>p</code> has at least <code>r</code> factors.</p>
+</dd></dl>
+<a name="f_factorSquareFree"></a><dl><dt>factorSquareFree : UP -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factorSquareFree(p)</code> returns the factorization of <code>p</code> which is supposed not having any repeated factor (this is not checked).</p>
+</dd></dl>
+<dl><dt>factorSquareFree : (UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factorSquareFree(p, listOfDegrees)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm and knowing that <code>p</code> has for possible splitting of its degree listOfDegrees. <code>p</code> is supposed not having any repeated factor (this is not checked).</p>
+</dd></dl>
+<dl><dt>factorSquareFree : (UP, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factorSquareFree(p, listOfDegrees, r)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm, knowing that <code>p</code> has for possible splitting of its degree <code>listOfDegrees</code> and that <code>p</code> has at least <code>r</code> factors. <code>p</code> is supposed not having any repeated factor (this is not checked).</p>
+</dd></dl>
+<dl><dt>factorSquareFree : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factorSquareFree(p, r)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm and knowing that <code>p</code> has at least <code>r</code> factors. <code>p</code> is supposed not having any repeated factor (this is not checked).</p>
+</dd></dl>
+<dl><dt>factorSquareFree : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factorSquareFree(p, d, r)</code> factorizes the polynomial <code>p</code> using the single factor bound algorithm, knowing that <code>d</code> divides the degree of all factors of <code>p</code> and that <code>p</code> has at least <code>r</code> factors. <code>p</code> is supposed not having any repeated factor (this is not checked).</p>
+</dd></dl>
+<a name="f_henselFact"></a><dl><dt>henselFact : (UP, <a href="Boolean.html">Boolean</a>) -&gt Record(contp : <a href="Integer.html">Integer</a>, factors : <a href="List.html">List</a>(Record(irr : UP, pow : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd><p>
+<code>henselFact(p, sqf)</code> returns the factorization of <code>p</code>, the result is a Record such that <code>contp=</code>content <code>p</code>, <code>factors=</code>List of irreducible factors of <code>p</code> with exponent. If <code>sqf=true</code> the polynomial is assumed to be square free (i.e. without repeated factors).</p>
+</dd></dl>
+<a name="f_makeFR"></a><dl><dt>makeFR : Record(contp : <a href="Integer.html">Integer</a>, factors : <a href="List.html">List</a>(Record(irr : UP, pow : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>makeFR(flist)</code> turns the final factorization of henselFact into a Factored object.</p>
+</dd></dl>
+<a name="f_modularFactor"></a><dl><dt>modularFactor : (UP, <a href="Set.html">Set</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Record(prime : <a href="Integer.html">Integer</a>, factors : <a href="List.html">List</a>(UP))</dt><dd><p>
+<code>modularFactor(f, d)</code> chooses a "good" prime and returns the factorization of <code>f</code> modulo this prime in a form that may be used by <span class="std std-ref">completeHensel</span>. If prime is zero it means that <code>f</code> has been proved to be irreducible over the integers or that <code>f</code> is a unit (i.e. 1 or <code>-1</code>). <code>f</code> shall be primitive (i.e. content(<code>p</code>)<code>=1</code>) and square free (i.e. without repeated factors). <code>d</code> is set of possible degrees of factors.</p>
+</dd></dl>
+<a name="f_musserTrials"></a><dl><dt>musserTrials : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>musserTrials()</code> returns the number of primes that are tried in <span class="spadfun">modularFactor</span>.</p>
+</dd></dl>
+<dl><dt>musserTrials : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>musserTrials(n)</code> sets to <code>n</code> the number of primes to be tried in <span class="spadfun">modularFactor</span> and returns the previous value.</p>
+</dd></dl>
+<a name="f_numberOfFactors"></a><dl><dt>numberOfFactors : <a href="List.html">List</a>(Record(factor : UP, degree : <a href="Integer.html">Integer</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>numberOfFactors(ddfactorization)</code> returns the number of factors of the polynomial <code>f</code> modulo <code>p</code> where <code>ddfactorization</code> is the distinct degree factorization of <code>f</code> computed by modular factorization package for some prime <code>p</code>.</p>
+</dd></dl>
+<a name="f_stopMusserTrials"></a><dl><dt>stopMusserTrials : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>stopMusserTrials()</code> returns the bound on the number of factors for which <span class="spadfun">modularFactor</span> stops to look for an other prime. You will have to remember that the step of recombining the extraneous factors may take up to <code>2^stopMusserTrials()</code> trials.</p>
+</dd></dl>
+<dl><dt>stopMusserTrials : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>stopMusserTrials(n)</code> sets to <code>n</code> the bound on the number of factors for which <span class="spadfun">modularFactor</span> stops to look for an other prime. You will have to remember that the step of recombining the extraneous factors may take up to <code>2^n</code> trials. Returns the previous value.</p>
+</dd></dl>
+<a name="f_tryFunctionalDecomposition"></a><dl><dt>tryFunctionalDecomposition : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>tryFunctionalDecomposition(b)</code> chooses whether factorizers have to look for functional decomposition of polynomials (<code>true</code>) or not (<code>false</code>). Returns the previous value.</p>
+</dd></dl>
+<a name="f_tryFunctionalDecomposition_63"></a><dl><dt>tryFunctionalDecomposition? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>tryFunctionalDecomposition?()</code> returns <code>true</code> if factorizers try functional decomposition of polynomials before factoring them.</p>
+</dd></dl>
+<a name="f_useEisensteinCriterion"></a><dl><dt>useEisensteinCriterion : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>useEisensteinCriterion(b)</code> chooses whether factorizers check Eisenstein<code>'s</code> criterion before factoring: <code>true</code> for using it, <code>false</code> else. Returns the previous value.</p>
+</dd></dl>
+<a name="f_useEisensteinCriterion_63"></a><dl><dt>useEisensteinCriterion? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>useEisensteinCriterion?()</code> returns <code>true</code> if factorizers check Eisenstein<code>'s</code> criterion before factoring.</p>
+</dd></dl>
+<a name="f_useSingleFactorBound"></a><dl><dt>useSingleFactorBound : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>useSingleFactorBound(b)</code> chooses the algorithm to be used by the factorizers: <code>true</code> for algorithm with single factor bound, <code>false</code> for algorithm with overall bound. Returns the previous value.</p>
+</dd></dl>
+<a name="f_useSingleFactorBound_63"></a><dl><dt>useSingleFactorBound? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>useSingleFactorBound?()</code> returns <code>true</code> if algorithm with single factor bound is used for factorization, <code>false</code> for algorithm with overall bound.</p>
+</dd></dl>
+</body>
+</html>

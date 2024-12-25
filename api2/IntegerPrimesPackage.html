@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerPrimesPackage</title>
+</head>
+<body>
+<h1>IntegerPrimesPackage(I)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intfact.spad#L1">intfact.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intfact.spad#L1">[edit on github]</a></p>
+<ul>
+<li>I : <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></ul>
+<p>
+The IntegerPrimesPackage implements a modification of Rabin<code>'s</code> probabilistic primality test and the utility functions <span class="spadfun">nextPrime</span>, <span class="spadfun">prevPrime</span> and <span class="spadfun">primes</span>.</p>
+<a name="f_nextPrime"></a><dl><dt>nextPrime : I -&gt I</dt><dd><p>
+<code>nextPrime(n)</code> returns the smallest prime strictly larger than <code>n</code></p>
+</dd></dl>
+<a name="f_prevPrime"></a><dl><dt>prevPrime : I -&gt I</dt><dd><p>
+<code>prevPrime(n)</code> returns the largest prime strictly smaller than <code>n</code></p>
+</dd></dl>
+<a name="f_prime_63"></a><dl><dt>prime? : I -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>prime?(n)</code> returns <code>true</code> if <code>n</code> is prime and <code>false</code> if not. Note that we ignore sign of <code>n</code>, so <code>-5</code> is considered prime. The algorithm used is Rabin<code>'s</code> probabilistic primality test (reference: Knuth Volume 2 Semi Numerical Algorithms). If <code>prime? n</code> returns <code>false</code>, <code>n</code> is proven composite. If <code>prime? n</code> returns <code>true</code>, prime? may be in error however, the probability of error is very low. and is zero below 25*10^9 (due to a result of Pomerance et al), below 10^12 and 10^13 due to results of Pinch, and below 341550071728321 due to a result of Jaeschke. Specifically, this implementation does at least 10 pseudo prime tests and so the probability of error is <code>&lt; 4^(-10)</code>. The running time of this method is cubic in the length of the input <code>n</code>, that is <code>O( (log n)^3 )</code>, for <code>n&lt;10^20</code>. beyond that, the algorithm is quartic, <code>O( (log n)^4 )</code>. Two improvements due to Davenport have been incorporated which catches some trivial strong pseudo-primes, such as [Jaeschke, 1991] 1377161253229053 * 413148375987157, which the original algorithm regards as prime</p>
+</dd></dl>
+<a name="f_primes"></a><dl><dt>primes : (I, I) -&gt <a href="List.html">List</a>(I)</dt><dd><p>
+<code>primes(a, b)</code> returns a list of all primes <code>p</code> with <code>a &lt;= p &lt;= b</code></p>
+</dd></dl>
+</body>
+</html>

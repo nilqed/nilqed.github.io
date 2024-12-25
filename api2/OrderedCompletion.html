@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OrderedCompletion</title>
+</head>
+<body>
+<h1>OrderedCompletion(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/complet.spad#L1">complet.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/complet.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+Adjunction of two real infinites quantities to a set. Date Created: 4 Oct 1989</p>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt % if R has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : % -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(R)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt % if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_finite_63"></a><dl><dt>finite? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>finite?(x)</code> tests if <code>x</code> is finite.</p>
+</dd></dl>
+<a name="f_infinite_63"></a><dl><dt>infinite? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>infinite?(x)</code> tests if <code>x</code> is +infinity or -infinity,</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_minusInfinity"></a><dl><dt>minusInfinity : () -&gt %</dt><dd><p>
+<code>minusInfinity()</code> returns -infinity.</p>
+</dd></dl>
+<a name="f_plusInfinity"></a><dl><dt>plusInfinity : () -&gt %</dt><dd><p>
+<code>plusInfinity()</code> returns +infinity.</p>
+</dd></dl>
+<a name="f_rational"></a><dl><dt>rational : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>rational(x)</code> returns <code>x</code> as a finite rational number. Error: if <code>x</code> cannot be so converted.</p>
+</dd></dl>
+<a name="f_rational_63"></a><dl><dt>rational? : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>rational?(x)</code> tests if <code>x</code> is a finite rational number.</p>
+</dd></dl>
+<a name="f_rationalIfCan"></a><dl><dt>rationalIfCan : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>rationalIfCan(x)</code> returns <code>x</code> as a finite rational number if it is one and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_whatInfinity"></a><dl><dt>whatInfinity : % -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd><p>
+<code>whatInfinity(x)</code> returns 0 if <code>x</code> is finite, 1 if <code>x</code> is +infinity, and <code>-1</code> if <code>x</code> is -infinity.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+</body>
+</html>

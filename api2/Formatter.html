@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Formatter</title>
+</head>
+<body>
+<h1>Formatter(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fmt.spad#L1541">fmt.spad line 1541</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fmt.spad#L1541">[edit on github]</a></p>
+<ul>
+<li>F : <a href="FormatterCategory.html">FormatterCategory</a></ul>
+<p>
+undocumented</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="OutputForm.html">OutputForm</a> -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="OutputFormatterCategory.html#f_convert">convert</a> : (<a href="OutputForm.html">OutputForm</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="OutputFormatterCategory.html">OutputFormatterCategory</a></dd></dl>
+<a name="f_display"></a><dl><dt><a href="OutputFormatterCategory.html#f_display">display</a> : % -&gt <a href="Void.html">Void</a></dt><dd> from <a href="OutputFormatterCategory.html">OutputFormatterCategory</a></dd></dl>
+<a name="f_epilogue"></a><dl><dt>epilogue : % -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>epilogue(t)</code> extracts the epilogue section of the form <code>t</code>. This is a function <code>f</code> such that <code>f</code>(<code>l</code>) returns a box with label <code>l</code>.</p>
+</dd></dl>
+<a name="f_format"></a><dl><dt>format : <a href="OutputForm.html">OutputForm</a> -&gt %</dt><dd><p>
+<code>format(o)</code> creates a formatted form of the <code>OutputForm</code> <code>o</code>.</p>
+</dd></dl>
+<dl><dt>format : % -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>format(t)</code> extracts the <code>fmt</code> section of a 2D-form <code>t</code>.</p>
+</dd></dl>
+<a name="f_formatStep"></a><dl><dt>formatStep : (<a href="OutputForm.html">OutputForm</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>format(o, n)</code> creates a formatted form of the <code>OutputForm</code> <code>o</code> with step number <code>n</code>.</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : () -&gt %</dt><dd><p>
+<code>new()</code> create a new, empty object with defaultPrologue(<code>""</code>) and defaultEpilogue(<code>""</code>). Use <span class="spadfun">setPrologue!</span>, <span class="spadfun">setFormat!</span> and <span class="spadfun">setEpilogue!</span> to set the various components of this object.</p>
+</dd></dl>
+<a name="f_operatorHandlers"></a><dl><dt>operatorHandlers : () -&gt <a href="OperatorHandlers.html">OperatorHandlers</a>(Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)))</dt><dd><p>
+<code>operatorHandlers()</code> returns an internal data structure that is used for the selection of respective handlers.</p>
+</dd></dl>
+<a name="f_prologue"></a><dl><dt>prologue : % -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>prologue(t)</code> extracts the prologue section of the form <code>t</code>.</p>
+</dd></dl>
+<a name="f_setDefault_33"></a><dl><dt>setDefault! : (Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="String.html">String</a>), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="String.html">String</a>)) -&gt Record(prolog : Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="String.html">String</a>), epilog : Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="String.html">String</a>))</dt><dd><p>
+Set the prologue and epilogue that is used by default. Between the elements of the list the stepnumber will be inserted. The old values are returned.</p>
+</dd></dl>
+<a name="f_setEpilogue_33"></a><dl><dt>setEpilogue! : (%, <a href="OutputBox.html">OutputBox</a>) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>setEpilogue!(t, epi)</code> sets the epilogue section of the form <code>t</code> to epi and returns the previous epilogue.</p>
+</dd></dl>
+<a name="f_setFormat_33"></a><dl><dt>setFormat! : (%, <a href="OutputBox.html">OutputBox</a>) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>setFormat!(t, box)</code> sets the <code>fmt</code> section of a form <code>t</code> and returns the previous box.</p>
+</dd></dl>
+<a name="f_setPrologue_33"></a><dl><dt>setPrologue! : (%, <a href="OutputBox.html">OutputBox</a>) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>setPrologue!(t, pro)</code> sets the prologue section of the form <code>t</code> to pro and returns the previous prologue.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OutputFormatterCategory.html">OutputFormatterCategory</a>
+</body>
+</html>

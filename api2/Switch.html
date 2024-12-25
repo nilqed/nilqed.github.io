@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Switch</title>
+</head>
+<body>
+<h1>Switch</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortran.spad#L1255">fortran.spad line 1255</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortran.spad#L1255">[edit on github]</a></p>
+<p>
+This domain builds representations of boolean expressions for use with the FortranCode domain.</p>
+<a name="f_AND"></a><dl><dt>AND : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>AND(x, y)</code> returns the Switch expression representing <code>x and y</code>.</p>
+</dd></dl>
+<a name="f_EQ"></a><dl><dt>EQ : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>EQ(x, y)</code> returns the Switch expression representing <code>x = y</code>.</p>
+</dd></dl>
+<a name="f_GE"></a><dl><dt>GE : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>GE(x, y)</code> returns the Switch expression representing <code>x&gt;=y</code>.</p>
+</dd></dl>
+<a name="f_GT"></a><dl><dt>GT : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>GT(x, y)</code> returns the Switch expression representing <code>x&gt;y</code>.</p>
+</dd></dl>
+<a name="f_LE"></a><dl><dt>LE : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>LE(x, y)</code> returns the Switch expression representing <code>x&lt;=y</code>.</p>
+</dd></dl>
+<a name="f_LT"></a><dl><dt>LT : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>LT(x, y)</code> returns the Switch expression representing <code>x&lt;y</code>.</p>
+</dd></dl>
+<a name="f_NOT"></a><dl><dt>NOT : % -&gt %</dt><dd><p>
+<code>NOT(x)</code> returns the Switch expression representing <code>~x</code>.</p>
+</dd></dl>
+<dl><dt>NOT : Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)) -&gt %</dt><dd><p>
+<code>NOT(x)</code> returns the Switch expression representing <code>~x</code>.</p>
+</dd></dl>
+<a name="f_OR"></a><dl><dt>OR : (Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %)), Union(:(I, <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), :(F, <a href="Expression.html">Expression</a>(<a href="Float.html">Float</a>)), :(CF, <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>))), :(switch, %))) -&gt %</dt><dd><p>
+<code>OR(x, y)</code> returns the Switch expression representing <code>x or y</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>coerce(s)</code> is undocumented</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

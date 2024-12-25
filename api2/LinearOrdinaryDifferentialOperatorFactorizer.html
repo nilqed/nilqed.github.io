@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearOrdinaryDifferentialOperatorFactorizer</title>
+</head>
+<body>
+<h1>LinearOrdinaryDifferentialOperatorFactorizer(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lodof.spad#L344">lodof.spad line 344</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lodof.spad#L344">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+LinearOrdinaryDifferentialOperatorFactorizer provides a factorizer for linear ordinary differential operators whose coefficients are rational functions.</p>
+<a name="f_factor"></a><dl><dt>factor : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)) -&gt <a href="List.html">List</a>(<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP))) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>factor(a)</code> returns the factorisation of a.</p>
+</dd></dl>
+<dl><dt>factor : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="List.html">List</a>(F), UP)) -&gt <a href="List.html">List</a>(<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)))</dt><dd><p>
+<code>factor(a, zeros)</code> returns the factorisation of a. <code>zeros</code> is a zero finder in <code>UP</code>.</p>
+</dd></dl>
+<a name="f_factor1"></a><dl><dt>factor1 : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)) -&gt <a href="List.html">List</a>(<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP))) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>factor1(a)</code> returns the factorisation of a, assuming that a has no first-order right factor.</p>
+</dd></dl>
+</body>
+</html>

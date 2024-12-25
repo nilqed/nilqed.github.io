@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AnyFunctions1</title>
+</head>
+<body>
+<h1>AnyFunctions1(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/any.spad#L125">any.spad line 125</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/any.spad#L125">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+AnyFunctions1 implements several utility functions for working with Any. These functions are used to go back and forth between objects of Any and objects of other types.</p>
+<a name="f_coerce"></a><dl><dt>coerce : S -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>coerce(s)</code> creates an object of Any from the object <code>s</code> of type <code>S</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt>retract : <a href="Any.html">Any</a> -&gt S</dt><dd><p>
+<code>retract(a)</code> tries to convert <code>a</code> into an object of type <code>S</code>. If possible, it returns the object. Error: if no such retraction is possible.</p>
+</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt>retractIfCan : <a href="Any.html">Any</a> -&gt Union(S, "failed")</dt><dd><p>
+<code>retractIfCan(a)</code> tries change <code>a</code> into an object of type <code>S</code>. If it can, then such an object is returned. Otherwise, "failed" is returned.</p>
+</dd></dl>
+<a name="f_retractable_63"></a><dl><dt>retractable? : <a href="Any.html">Any</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>retractable?(a)</code> tests if <code>a</code> can be converted into an object of type <code>S</code>.</p>
+</dd></dl>
+</body>
+</html>

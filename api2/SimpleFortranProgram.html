@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SimpleFortranProgram</title>
+</head>
+<body>
+<h1>SimpleFortranProgram(R, FS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortran.spad#L1193">fortran.spad line 1193</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortran.spad#L1193">[edit on github]</a></p>
+<ul>
+<li>R : <a href="OrderedSet.html">OrderedSet</a><li>FS : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+SimpleFortranProgram provides a simple model of some FORTRAN subprograms, making it possible to coerce objects of various domains into a FORTRAN subprogram called <code>f</code>. These can then be translated into legal FORTRAN code.</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_fortran"></a><dl><dt>fortran : (<a href="Symbol.html">Symbol</a>, <a href="FortranScalarType.html">FortranScalarType</a>, FS) -&gt %</dt><dd><p>
+<code>fortran(fname, ftype, body)</code> builds an object of type FortranProgramCategory. The three arguments specify the name, the type and the body of the program.</p>
+</dd></dl>
+<a name="f_outputAsFortran"></a><dl><dt><a href="FortranProgramCategory.html#f_outputAsFortran">outputAsFortran</a> : % -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FortranProgramCategory.html">FortranProgramCategory</a></dd></dl>
+<p><a href="FortranProgramCategory.html">FortranProgramCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SceneIFS</title>
+</head>
+<body>
+<h1>SceneIFS(PT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L1837">scene.spad line 1837</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L1837">[edit on github]</a></p>
+<ul>
+<li>PT : <a href="SPointCategory.html">SPointCategory</a></ul>
+<p>
+Generates various surfaces (2 dimensional subsets of 3D space). When 1 dimensional subspace (a line) needs to be represented in a 3D editor then we convert the line into a tube. Many of the functions here are from NumericTubePlot and related packages. However <code>I</code> needed them to be defined over SPointCategory so <code>I</code> adapted them here.</p>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(me)</code> list this instance to the command line</p>
+</dd></dl>
+<a name="f_curveLoops"></a><dl><dt>curveLoops : (<a href="List.html">List</a>(PT), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(PT))</dt><dd><p>
+<code>curveLoops(pts1, r, nn)</code> generates ifs from line given by <code>pts1</code></p>
+</dd></dl>
+<a name="f_indexes"></a><dl><dt>indexes : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>indexes(me)</code> returns indexes into pointList(<code>me</code>)</p>
+</dd></dl>
+<a name="f_pointList"></a><dl><dt>pointList : % -&gt <a href="List.html">List</a>(PT)</dt><dd><p>
+<code>pointList(me)</code> returns points at vertices of this mesh.</p>
+</dd></dl>
+<a name="f_sierpinskiDivide"></a><dl><dt>sierpinskiDivide : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>sierpinskiDivide(me, level)</code> for each edge of each face calculate a new point in the centre of the edge, then build a new set of faces which include the new points.</p>
+</dd></dl>
+<a name="f_singleFace"></a><dl><dt>singleFace : <a href="List.html">List</a>(PT) -&gt %</dt><dd><p>
+<code>singleFace(ptin)</code> constructs a ifs representation of a face from an array of points</p>
+</dd></dl>
+<a name="f_smesh"></a><dl><dt>smesh : (<a href="List.html">List</a>(<a href="List.html">List</a>(PT)), <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>smesh(ptin, clos)</code> constructs a ifs representation of a mesh from a 2 dimensional array of points</p>
+</dd></dl>
+<a name="f_stube"></a><dl><dt>stube : (<a href="List.html">List</a>(Record(source : Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>), ranges : <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)), knots : <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), points : <a href="List.html">List</a>(PT))), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>stube(functions: List Clipd, r, n)</code> creates a tube of radius <code>r</code> around the curve functions.</p>
+</dd></dl>
+<a name="f_subdivide"></a><dl><dt>subdivide : % -&gt %</dt><dd><p>
+<code>subdivide(me)</code> for each face calculate a new point in the centre of the face, then build a new set of faces which include the new point.</p>
+</dd></dl>
+</body>
+</html>

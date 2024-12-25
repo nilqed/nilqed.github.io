@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GeneralizedFiniteMoebiusFunction</title>
+</head>
+<body>
+<h1>GeneralizedFiniteMoebiusFunction(P, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/logic.spad#L520">logic.spad line 520</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/logic.spad#L520">[edit on github]</a></p>
+<ul>
+<li>P : Join(<a href="PartialOrder.html">PartialOrder</a>, <a href="SetCategory.html">SetCategory</a>)<li>R : <a href="Field.html">Field</a></ul>
+<p>
+A domain for generalized Moebius functions of explicit subposets.</p>
+<a name="f_apply"></a><dl><dt>apply : (%, P, P) -&gt R</dt><dd><p>
+<code>mf(<code>pi</code>, <code>si</code>)</code> evaluates the Moebius function <code>mf</code> at <code>pi</code> and <code>si</code></p>
+</dd></dl>
+<a name="f_canonicalMoebiusFunction"></a><dl><dt>canonicalMoebiusFunction : <a href="List.html">List</a>(P) -&gt %</dt><dd><p>
+<code>canonicalMoebiusFunction(pp)</code> inverts the canonical zeta function</p>
+</dd></dl>
+<a name="f_generalizedMoebiusFunction"></a><dl><dt>generalizedMoebiusFunction : (<a href="List.html">List</a>(P), Mapping(R, P, P)) -&gt %</dt><dd><p>
+<code>generalizedMoebiusFunction(pp, zeta)</code> inverts the given zeta function</p>
+</dd></dl>
+<a name="f_members"></a><dl><dt>members : % -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>members(mf)</code> returns the elements of the subposet</p>
+</dd></dl>
+<a name="f_moebiusMatrix"></a><dl><dt>moebiusMatrix : % -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>moebiusMatrix()</code> returns the Moebius matrix</p>
+</dd></dl>
+</body>
+</html>

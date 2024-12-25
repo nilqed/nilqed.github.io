@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PermutationGroupExamples</title>
+</head>
+<body>
+<h1>PermutationGroupExamples</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/permgrps.spad#L1007">permgrps.spad line 1007</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/permgrps.spad#L1007">[edit on github]</a></p>
+<p>
+PermutationGroupExamples provides permutation groups for some classes of groups: symmetric, alternating, dihedral, cyclic, direct products of cyclic, which are in fact the finite abelian groups of symmetric groups called Young subgroups. Furthermore, Rubik<code>'s</code> group as permutation group of 48 integers and a list of sporadic simple groups derived from the atlas of finite groups.</p>
+<a name="f_abelianGroup"></a><dl><dt>abelianGroup : <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>abelianGroup([n1, ..., nk])</code> constructs the abelian group that is the direct product of cyclic groups with order  <code>ni</code>.</p>
+</dd></dl>
+<a name="f_alternatingGroup"></a><dl><dt>alternatingGroup : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>alternatingGroup(<code>li</code>)</code> constructs the alternating group acting on the integers in the list  <code>li</code>, generators are in general the  n-2-cycle  (<code>li</code>.3, ..., <code>li</code>.n) and the 3-cycle  (<code>li</code>.1, <code>li</code>.2, <code>li</code>.3), if <code>n</code> is odd and product of the 2-cycle  (<code>li</code>.1, <code>li</code>.2) with  n-2-cycle  (<code>li</code>.3, ..., <code>li</code>.n) and the 3-cycle  (<code>li</code>.1, <code>li</code>.2, <code>li</code>.3), if <code>n</code> is even. Note: duplicates in the list will be removed.</p>
+</dd></dl>
+<dl><dt>alternatingGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>alternatingGroup(n)</code> constructs the alternating group  An acting on the integers 1, ..., <code>n</code>, generators are in general the  n-2-cycle  (3, ..., n) and the 3-cycle  (1, 2, 3) if <code>n</code> is odd and the product of the 2-cycle  (1, 2) with  n-2-cycle  (3, ..., n) and the 3-cycle  (1, 2, 3) if <code>n</code> is even.</p>
+</dd></dl>
+<a name="f_cyclicGroup"></a><dl><dt>cyclicGroup : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>cyclicGroup([i1, ..., ik])</code> constructs the cyclic group of order <code>k</code> acting on the integers  i1, ...,  ik. Note: duplicates in the list will be removed.</p>
+</dd></dl>
+<dl><dt>cyclicGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>cyclicGroup(n)</code> constructs the cyclic group of order <code>n</code> acting on the integers 1, ..., <code>n</code>.</p>
+</dd></dl>
+<a name="f_dihedralGroup"></a><dl><dt>dihedralGroup : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>dihedralGroup([i1, ..., ik])</code> constructs the dihedral group of order 2k acting on the integers out of  i1, ...,  ik. Note: duplicates in the list will be removed.</p>
+</dd></dl>
+<dl><dt>dihedralGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>dihedralGroup(n)</code> constructs the dihedral group of order 2n acting on integers 1, ..., <code>N</code>.</p>
+</dd></dl>
+<a name="f_janko2"></a><dl><dt>janko2 : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>janko2 constructs</code> the janko group acting on the integers 1, ..., 100.</p>
+</dd></dl>
+<dl><dt>janko2 : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>janko2(<code>li</code>)</code> constructs the janko group acting on the 100 integers given in the list  <code>li</code>. Note: duplicates in the list will be removed. Error: if  <code>li</code> has less or more than 100 different entries</p>
+</dd></dl>
+<a name="f_mathieu11"></a><dl><dt>mathieu11 : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu11 constructs</code> the mathieu group acting on the integers 1, ..., 11.</p>
+</dd></dl>
+<dl><dt>mathieu11 : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu11(<code>li</code>)</code> constructs the mathieu group acting on the 11 integers given in the list  <code>li</code>. Note: duplicates in the list will be removed. error, if  <code>li</code> has less or more than 11 different entries.</p>
+</dd></dl>
+<a name="f_mathieu12"></a><dl><dt>mathieu12 : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu12 constructs</code> the mathieu group acting on the integers 1, ..., 12.</p>
+</dd></dl>
+<dl><dt>mathieu12 : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu12(<code>li</code>)</code> constructs the mathieu group acting on the 12 integers given in the list  <code>li</code>. Note: duplicates in the list will be removed Error: if  <code>li</code> has less or more than 12 different entries.</p>
+</dd></dl>
+<a name="f_mathieu22"></a><dl><dt>mathieu22 : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu22 constructs</code> the mathieu group acting on the integers 1, ..., 22.</p>
+</dd></dl>
+<dl><dt>mathieu22 : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu22(<code>li</code>)</code> constructs the mathieu group acting on the 22 integers given in the list  <code>li</code>. Note: duplicates in the list will be removed. Error: if  <code>li</code> has less or more than 22 different entries.</p>
+</dd></dl>
+<a name="f_mathieu23"></a><dl><dt>mathieu23 : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu23 constructs</code> the mathieu group acting on the integers 1, ..., 23.</p>
+</dd></dl>
+<dl><dt>mathieu23 : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu23(<code>li</code>)</code> constructs the mathieu group acting on the 23 integers given in the list  <code>li</code>. Note: duplicates in the list will be removed. Error: if  <code>li</code> has less or more than 23 different entries.</p>
+</dd></dl>
+<a name="f_mathieu24"></a><dl><dt>mathieu24 : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu24 constructs</code> the mathieu group acting on the integers 1, ..., 24.</p>
+</dd></dl>
+<dl><dt>mathieu24 : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>mathieu24(<code>li</code>)</code> constructs the mathieu group acting on the 24 integers given in the list  <code>li</code>. Note: duplicates in the list will be removed. Error: if  <code>li</code> has less or more than 24 different entries.</p>
+</dd></dl>
+<a name="f_rubiksGroup"></a><dl><dt>rubiksGroup : () -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>rubiksGroup constructs</code> the permutation group representing Rubic<code>'s</code> Cube acting on integers  10*i+j for  1 &lt;= i &lt;= 6,  1 &lt;= j &lt;= 8. The faces of Rubik<code>'s</code> Cube are labelled in the obvious way Front, Right, Up, Down, Left, Back and numbered from 1 to 6 in this given ordering, the pieces on each face (except the unmoveable center piece) are clockwise numbered from 1 to 8 starting with the piece in the upper left corner. The moves of the cube are represented as permutations on these pieces, represented as a two digit integer  ij where <code>i</code> is the numer of theface (1 to 6) and <code>j</code> is the number of the piece on this face. The remaining ambiguities are resolved by looking at the 6 generators, which represent a 90 degree turns of the faces, or from the following pictorial description. Permutation group representing Rubic<code>'s</code> Cube acting on integers 10*i+j for 1 <code>&lt;=</code> <code>i</code> <code>&lt;=</code> 6, 1 <code>&lt;=</code> <code>j</code> <code>&lt;=8</code>. Rubik's Cube:   +-----+ +-- B   where: marks Side # :               / U   /|/              /     / |         F(ront)    &lt;-&gt;    1      L --&gt;  +-----+ R|         R(ight)    &lt;-&gt;    2             |     |  +         U(p)       &lt;-&gt;    3             |  F  | /          D(own)     &lt;-&gt;    4             |     |/           L(eft)     &lt;-&gt;    5             +-----+            B(ack)     &lt;-&gt;    6                ^                |                DThe Cube's surface:                               The pieces on each side            +---+              (except the unmoveable center            |567|              piece) are clockwise numbered            |4U8|              from 1 to 8 starting with the            |321|              piece in the upper left        +---+---+---+          corner (see figure on the        |781|123|345|          left).  The moves of the cube        |6L2|8F4|2R6|          are represented as        |543|765|187|          permutations on these pieces.        +---+---+---+          Each of the pieces is            |123|              represented as a two digit            |8D4|              integer ij where i is the            |765|              # of the side ( 1 to 6 for            +---+              F to B (see table above ))            |567|              and j is the # of the piece.            |4B8|            |321|            +---+</p>
+</dd></dl>
+<a name="f_symmetricGroup"></a><dl><dt>symmetricGroup : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>symmetricGroup(<code>li</code>)</code> constructs the symmetric group acting on the integers in the list  <code>li</code>, generators are the cycle given by  <code>li</code> and the 2-cycle  (<code>li</code>.1, <code>li</code>.2). Note: duplicates in the list will be removed.</p>
+</dd></dl>
+<dl><dt>symmetricGroup : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>symmetricGroup(n)</code> constructs the symmetric group  Sn acting on the integers 1, ..., <code>n</code>, generators are the  n-cycle  (1, ..., n) and the 2-cycle  (1, 2).</p>
+</dd></dl>
+<a name="f_youngGroup"></a><dl><dt>youngGroup : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>youngGroup([n1, ..., nk])</code> constructs the direct product of the symmetric groups  Sn1, ...,  Snk.</p>
+</dd></dl>
+<dl><dt>youngGroup : <a href="Partition.html">Partition</a> -&gt <a href="PermutationGroup.html">PermutationGroup</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>youngGroup(lambda)</code> constructs the direct product of the symmetric groups given by the parts of the partition  lambda.</p>
+</dd></dl>
+</body>
+</html>

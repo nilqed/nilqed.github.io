@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialToUnivariatePolynomial</title>
+</head>
+<body>
+<h1>PolynomialToUnivariatePolynomial(x, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/poly.spad#L979">poly.spad line 979</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/poly.spad#L979">[edit on github]</a></p>
+<ul>
+<li>x : <a href="Symbol.html">Symbol</a><li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+This package is primarily to help the interpreter do coercions. It allows you to view a polynomial as a univariate polynomial in one of its variables with coefficients which are again a polynomial in all the other variables.</p>
+<a name="f_univariate"></a><dl><dt>univariate : (<a href="Polynomial.html">Polynomial</a>(R), <a href="Variable.html">Variable</a>(x)) -&gt <a href="UnivariatePolynomial.html">UnivariatePolynomial</a>(x, <a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>univariate(p, x)</code> converts the polynomial <code>p</code> to a one of type <code>UnivariatePolynomial(x, Polynomial(R))</code>, ie. as a member of <code>R[...][x]</code>.</p>
+</dd></dl>
+</body>
+</html>

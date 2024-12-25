@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchFunctionSpace</title>
+</head>
+<body>
+<h1>PatternMatchFunctionSpace(S, R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L807">patmatch1.spad line 807</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L807">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="PatternMatchable.html">PatternMatchable</a>(S))<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(S)), <a href="PatternMatchable.html">PatternMatchable</a>(S), <a href="RetractableTo.html">RetractableTo</a>(<a href="Kernel.html">Kernel</a>(%)))</ul>
+<p>
+This package provides pattern matching functions on function spaces.</p>
+<a name="f_patternMatch"></a><dl><dt>patternMatch : (F, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, F)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, F)</dt><dd><p>
+<code>patternMatch(expr, pat, res)</code> matches the pattern <code>pat</code> to the expression <code>expr</code>; res contains the variables of <code>pat</code> which are already matched and their matches.</p>
+</dd></dl>
+</body>
+</html>

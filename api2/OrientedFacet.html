@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OrientedFacet</title>
+</head>
+<body>
+<h1>OrientedFacet</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L263">alg_top.spad line 263</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L263">[edit on github]</a></p>
+<p>
+A single vertex, edge, triangle... for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/ Date Created: March 2016 Basic Operations: Related packages: Related categories: FacetCategory Related Domains: Also See: AMS Classifications:</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_addVertex"></a><dl><dt>addVertex : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+used by cone. Adds a vertex to face.</p>
+</dd></dl>
+<a name="f_allSubsets"></a><dl><dt>allSubsets : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>allSubsets of</code> a given facet returned in reverse order subsets returned are not oriented</p>
+</dd></dl>
+<dl><dt>allSubsets : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>allSubsets of</code> a given length returned in reverse order subsets returned are not oriented</p>
+</dd></dl>
+<a name="f_boolWordPermute"></a><dl><dt>boolWordPermute : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>)), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>))</dt><dd><p>
+recursive part of boolWordPermute</p>
+</dd></dl>
+<dl><dt>boolWordPermute : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>))</dt><dd><p>
+boolean word permutation find all permutations of numZeros and numOnes used by product to calculate all paths through lattice</p>
+</dd></dl>
+<a name="f_boundary"></a><dl><dt>boundary : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+construct the boundary. This is like hollowing out the facet.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="FacetCategory.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_getIndexes"></a><dl><dt>getIndexes : % -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+returns indexes in face</p>
+</dd></dl>
+<a name="f_getIndexesSigned"></a><dl><dt>getIndexesSigned : % -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+returns indexes in face with sign to give orientation</p>
+</dd></dl>
+<a name="f_getMult"></a><dl><dt><a href="FacetCategory.html#f_getMult">getMult</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_isSubsetOf_63"></a><dl><dt>isSubsetOf? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if face 'a' is contained in face <code>'b'</code>. <code>true</code> subset only : returns <code>false</code> if a=b</p>
+</dd></dl>
+<a name="f_join"></a><dl><dt>join : (%, %) -&gt %</dt><dd><p>
+used by simplicialJoin. Returns join (union) of 'a' and <code>'b'</code>. That is: returns a facet containing indexes in both 'a' and <code>'b'</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_maxIndex"></a><dl><dt>maxIndex : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+returns maximum index</p>
+</dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_minIndex"></a><dl><dt>minIndex : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+returns minimum index</p>
+</dd></dl>
+<a name="f_order"></a><dl><dt><a href="FacetCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_orientedFacet"></a><dl><dt>orientedFacet : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+Constructor for oriented facet oriented facet is always stored in vertex order orientation is calculated by the number of edges that have to be flipped to put it in order.</p>
+</dd></dl>
+<dl><dt>orientedFacet : (<a href="Integer.html">Integer</a>, <a href="OrientedFacet.html">OrientedFacet</a>) -&gt %</dt><dd><p>
+Copy constructor which can change mul</p>
+</dd></dl>
+<a name="f_orientedFacetIfCan"></a><dl><dt>orientedFacetIfCan : <a href="List.html">List</a>(%) -&gt Union(%, "failed")</dt><dd><p>
+Constructor for oriented face from its boundary. This is like filling-in the boundary, in that sense it is the inverse of 'boundary'. May fail, for instance in 'implied' loops, where both ends of an edge are the same point. Also similar cases for higher order facets.</p>
+</dd></dl>
+<a name="f_orientedFacetSigned"></a><dl><dt>orientedFacetSigned : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+Constructor for oriented face which removes duplicates If the face is positive then we expect the sequence to be: + - + - ...</p>
+</dd></dl>
+<a name="f_orientedFacetUnsigned"></a><dl><dt>orientedFacetUnsigned : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+Constructor for oriented face which removes duplicates and ignores orientation</p>
+</dd></dl>
+<a name="f_position"></a><dl><dt>position : (%, <a href="List.html">List</a>(%)) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+return index of <code>e</code> in <code>lst</code>. Index will be negative if <code>e</code> has negative multiplier.</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, %) -&gt <a href="List.html">List</a>(<a href="ProductFacet.html">ProductFacet</a>)</dt><dd><p>
+This function returns the product of two facets. For more detailed explanation of simplex product code see: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/</a> Also see Hatcher [9]. page 277 - The simplicial cross product. page 278 - The cohomology cross product. Returns list, each entry is a 'lattice path' from (0, 0) to (<code>x</code>, <code>y</code>) where <code>x</code> is number of entries in sa and <code>y</code> is number of entries in <code>sb</code>.</p>
+</dd></dl>
+<a name="f_refactorIndexes"></a><dl><dt>refactorIndexes : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+adds <code>'n'</code> to each index. Used to refactor simplexes so that they don<code>'t</code> overlap.</p>
+</dd></dl>
+<a name="f_reindex"></a><dl><dt>reindex : % -&gt %</dt><dd><p>
+re-index so that indexes start at 1 and are then consecutive.</p>
+</dd></dl>
+<a name="f_sameFace_63"></a><dl><dt>sameFace? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>true</code> if this is the same face although the orientation may be different</p>
+</dd></dl>
+<a name="f_setMult_33"></a><dl><dt>setMult! : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+sets multiplier of face</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtract"></a><dl><dt>subtract : (%, %) -&gt %</dt><dd><p>
+used by link. Returns face 'a' minus the vertices in face <code>'b'</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="FacetCategory.html">FacetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+</body>
+</html>

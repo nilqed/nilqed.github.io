@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalFunctionLimitPackage</title>
+</head>
+<body>
+<h1>RationalFunctionLimitPackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sign.spad#L174">sign.spad line 174</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sign.spad#L174">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a></ul>
+<p>
+Computation of limits for rational functions.</p>
+<a name="f_complexLimit"></a><dl><dt>complexLimit : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="OnePointCompletion.html">OnePointCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>complexLimit(f(x), x = a)</code> computes the complex limit of <code>f</code> as its argument <code>x</code> approaches <code>a</code>.</p>
+</dd></dl>
+<dl><dt>complexLimit : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Equation.html">Equation</a>(<a href="OnePointCompletion.html">OnePointCompletion</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="OnePointCompletion.html">OnePointCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>complexLimit(f(x), x = a)</code> computes the complex limit of <code>f</code> as its argument <code>x</code> approaches <code>a</code>.</p>
+</dd></dl>
+<a name="f_limit"></a><dl><dt>limit : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="String.html">String</a>) -&gt Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), "failed")</dt><dd><p>
+<code>limit(f(x),x,a,"left")</code> computes the real limit of <code>f</code> as its argument <code>x</code> approaches <code>a</code> from the left; limit(<code>f</code>(<code>x</code>),<code>x</code>,a,"right") computes the corresponding limit as <code>x</code> approaches <code>a</code> from the right.</p>
+</dd></dl>
+<dl><dt>limit : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), Record(leftHandLimit : Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), "failed"), rightHandLimit : Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), "failed")), "failed")</dt><dd><p>
+<code>limit(f(x), x = a)</code> computes the real two-sided limit of <code>f</code> as its argument <code>x</code> approaches <code>a</code>.</p>
+</dd></dl>
+<dl><dt>limit : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Equation.html">Equation</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), Record(leftHandLimit : Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), "failed"), rightHandLimit : Union(<a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), "failed")), "failed")</dt><dd><p>
+<code>limit(f(x), x = a)</code> computes the real two-sided limit of <code>f</code> as its argument <code>x</code> approaches <code>a</code>.</p>
+</dd></dl>
+</body>
+</html>

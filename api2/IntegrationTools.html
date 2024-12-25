@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegrationTools</title>
+</head>
+<body>
+<h1>IntegrationTools(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intaux.spad#L227">intaux.spad line 227</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intaux.spad#L227">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Comparable.html">Comparable</a><li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+Tools for the integrator.</p>
+<a name="f_kmax"></a><dl><dt>kmax : <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)) -&gt <a href="Kernel.html">Kernel</a>(F)</dt><dd><p>
+<code>kmax([k1, ..., kn])</code> returns the top-level <code>ki</code> for integration.</p>
+</dd></dl>
+<a name="f_ksec"></a><dl><dt>ksec : (<a href="Kernel.html">Kernel</a>(F), <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), <a href="Symbol.html">Symbol</a>) -&gt <a href="Kernel.html">Kernel</a>(F)</dt><dd><p>
+<code>ksec(k, [k1, ..., kn], x)</code> returns the second top-level <code>ki</code> after <code>k</code> involving <code>x</code>.</p>
+</dd></dl>
+<a name="f_mkPrim"></a><dl><dt>mkPrim : (F, <a href="Symbol.html">Symbol</a>) -&gt F if R has <a href="GcdDomain.html">GcdDomain</a> and F has <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dt><dd><p>
+<code>mkPrim(f, x)</code> makes the logs in <code>f</code> which are linear in <code>x</code> primitive with respect to <code>x</code>.</p>
+</dd></dl>
+<a name="f_removeConstantTerm"></a><dl><dt>removeConstantTerm : (F, <a href="Symbol.html">Symbol</a>) -&gt F if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>removeConstantTerm(f, x)</code> returns <code>f</code> minus any additive constant with respect to <code>x</code>.</p>
+</dd></dl>
+<a name="f_union"></a><dl><dt>union : (<a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F))) -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F))</dt><dd><p>
+<code>union(l1, l2)</code> returns set-theoretic union of <code>l1</code> and <code>l2</code>.</p>
+</dd></dl>
+<a name="f_vark"></a><dl><dt>vark : (<a href="List.html">List</a>(F), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F))</dt><dd><p>
+<code>vark([f1, ..., fn], x)</code> returns the set-theoretic union of <code>(varselect(f1, x), ..., varselect(fn, x))</code>.</p>
+</dd></dl>
+<a name="f_varselect"></a><dl><dt>varselect : (<a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F))</dt><dd><p>
+<code>varselect([k1, ..., kn], x)</code> returns the <code>ki</code> which involve <code>x</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FGLMIfCanPackage</title>
+</head>
+<body>
+<h1>FGLMIfCanPackage(R, ls)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/zerodim.spad#L1">zerodim.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/zerodim.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>ls : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+This is just an interface between several packages and domains. The goal is to compute lexicographical Groebner bases of sets of polynomial with type Polynomial R by the  FGLM algorithm if this is possible (i.e. if the input system generates a zero-dimensional ideal).</p>
+<a name="f_fglmIfCan"></a><dl><dt>fglmIfCan : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt Union(<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), "failed")</dt><dd><p>
+<code>fglmIfCan(lq1)</code> returns the lexicographical Groebner basis of <code>lq1</code> by using the  FGLM strategy, if <code>zeroDimensional?(lq1)</code> holds.</p>
+</dd></dl>
+<a name="f_groebner"></a><dl><dt>groebner : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>groebner(lq1)</code> returns the lexicographical Groebner basis of <code>lq1</code>. If <code>lq1</code> generates a zero-dimensional ideal then the  FGLM strategy is used, otherwise the  Sugar strategy is used.</p>
+</dd></dl>
+<a name="f_zeroDimensional_63"></a><dl><dt>zeroDimensional? : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zeroDimensional?(lq1)</code> returns <code>true</code> iff <code>lq1</code> generates a zero-dimensional ideal <code>w</code>.<code>r</code>.<code>t</code>. the variables of <code>ls</code>.</p>
+</dd></dl>
+</body>
+</html>

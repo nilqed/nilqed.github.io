@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>XmlElement</title>
+</head>
+<body>
+<h1>XmlElement</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L3780">scene.spad line 3780</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L3780">[edit on github]</a></p>
+<p>
+This package provides support for <code>XML</code> files an <code>XML</code> element is something which either has the form: &lt;tagname attributes&gt; content &lt;/tagname&gt; or &lt;tagname attributes/&gt; where content may be a sequence of sub-elements or unstructured text</p>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>coerce(x)</code> outputs <code>x</code> as a list of strings. Each element in the list represents a new line. This is an alternative to creating a long single string with 'newline' embedded in it.</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty?(el)</code> returns <code>true</code> is this element does not contain anything</p>
+</dd></dl>
+<a name="f_outputVRML"></a><dl><dt>outputVRML : (%, <a href="TextFile.html">TextFile</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputVRML(rp, f1)</code> writes the element as <code>VRML2</code>. <code>VRML2</code> is not <code>xml</code> but it has the same semantics and node names as <code>X3D</code> but a different syntax so it makes sense to create an <code>XML</code> structure and then format the output differently.</p>
+</dd></dl>
+<a name="f_xmlElement"></a><dl><dt>xmlElement : (<a href="String.html">String</a>, <a href="List.html">List</a>(%), <a href="List.html">List</a>(<a href="XmlAttribute.html">XmlAttribute</a>)) -&gt %</dt><dd><p>
+<code>xmlElement(name, elements, attributes)</code> construct an element with structured <code>elements</code></p>
+</dd></dl>
+<dl><dt>xmlElement : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="List.html">List</a>(<a href="XmlAttribute.html">XmlAttribute</a>)) -&gt %</dt><dd><p>
+<code>xmlElement(name, txt, attributes)</code> construct an element with unstructured text</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MultivariateFactorize</title>
+</head>
+<body>
+<h1>MultivariateFactorize(OV, E, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/multfact.spad#L437">multfact.spad line 437</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/multfact.spad#L437">[edit on github]</a></p>
+<ul>
+<li>OV : <a href="OrderedSet.html">OrderedSet</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+This is the top level package for doing multivariate factorization over basic domains like Integer or Fraction Integer.</p>
+<a name="f_factor"></a><dl><dt>factor : P -&gt <a href="Factored.html">Factored</a>(P)</dt><dd><p>
+<code>factor(p)</code> factors the multivariate polynomial <code>p</code> over its coefficient domain</p>
+</dd></dl>
+<dl><dt>factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P))</dt><dd><p>
+<code>factor(p)</code> factors the multivariate polynomial <code>p</code> over its coefficient domain where <code>p</code> is represented as a univariate polynomial with multivariate coefficients</p>
+</dd></dl>
+</body>
+</html>

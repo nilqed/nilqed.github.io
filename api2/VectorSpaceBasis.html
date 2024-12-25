@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>VectorSpaceBasis</title>
+</head>
+<body>
+<h1>VectorSpaceBasis(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/vsbasis.spad#L1">vsbasis.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/vsbasis.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Field.html">Field</a></ul>
+<p>
+The domain <code>VectorSpaceBasis F</code> implements subspaces of finite dimensional vector spaces over a field <code>F</code>. A subspace is represented by a list of linearly independent coordinate vectors which constitute a basis. The empty list represents the space of dimension 0.</p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>b1*b2</code> computes a basis of the intersection of two subspaces.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>B1+B2</code> computes a basis of the sum of two subspaces.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt>0 : () -&gt %</dt><dd><p>
+<code>0</code> creates the empty basis describing the space with the zero vector. The length of this zero vector is undefined.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_basis"></a><dl><dt>basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)) -&gt %</dt><dd><p>
+<code>basis LV</code> extracts a basis of the subspace spanned by the list of vectors <code>LV</code>.</p>
+</dd></dl>
+<a name="f_canonicalBasis"></a><dl><dt>canonicalBasis : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>canonicalBasis n</code> builds the canonical basis of the vector space of dimension <code>n</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R))</dt><dd><p>
+<code>coerce b</code> returns the basis as a list of vectors.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_columnSpace"></a><dl><dt>columnSpace : <a href="Matrix.html">Matrix</a>(R) -&gt %</dt><dd><p>
+<code>columnSpace M</code> builds a basis of the image space of the linear transformation defined by the matrix <code>M</code>. This function calls the <code>columnSpace</code> from the <code>Matrix</code> domain. Only the signature changes.</p>
+</dd></dl>
+<a name="f_complementSpace"></a><dl><dt>complementSpace : % -&gt %</dt><dd><p>
+<code>complementSpace B</code> builds a complement space of the basis <code>B</code> from some vectors of the canonical basis. This function fails with the empty basis.</p>
+</dd></dl>
+<dl><dt>complementSpace : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>complementSpace(B, n)</code> builds a complement space of the basis <code>B</code> from some vectors of the canonical basis <code>B</code>. The integer <code>n</code> provides the length of the vectors in the case of the empty basis.</p>
+</dd></dl>
+<dl><dt>complementSpace : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)) -&gt %</dt><dd><p>
+<code>complementSpace Lv</code> builds a complement space of the subspace spanned by the list of vectors <code>LV</code>. This function fails with the empty basis.</p>
+</dd></dl>
+<dl><dt>complementSpace : (<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>complementSpace(Lv, n)</code> builds a complement space of the subspace spanned by the list of vectors <code>LV</code>. The integer <code>n</code> provides the length of the vectors in the case of the empty basis.</p>
+</dd></dl>
+<a name="f_coordinates"></a><dl><dt>coordinates : (<a href="Vector.html">Vector</a>(R), %) -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>coordinates(v, B)</code> computes the coordinates of the vector <code>v</code> in the basis <code>B</code> if possible and produces an error otherwise.</p>
+</dd></dl>
+<a name="f_coordinatesIfCan"></a><dl><dt>coordinatesIfCan : (<a href="Vector.html">Vector</a>(R), %) -&gt Union(<a href="Vector.html">Vector</a>(R), "failed")</dt><dd><p>
+<code>coordinatesIfCan(v, B)</code> computes the coordinates of the vector <code>v</code> in the basis <code>B</code> if possible and returns <code>"failed"</code> otherwise.</p>
+</dd></dl>
+<a name="f_intBasis"></a><dl><dt>intBasis : (%, %) -&gt %</dt><dd><p>
+<code>intBasis(B1, B2)</code> computes a basis of the intersection of the two subspaces.</p>
+</dd></dl>
+<dl><dt>intBasis : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>intBasis Lb</code> computes a basis of the intersection of the list of subspaces represented by <code>LLv</code>.</p>
+</dd></dl>
+<dl><dt>intBasis : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R))) -&gt %</dt><dd><p>
+<code>intBasis LLv</code> computes a basis of the intersection of the list of subspaces represented by <code>LLv</code>.</p>
+</dd></dl>
+<dl><dt>intBasis : (<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R))) -&gt %</dt><dd><p>
+<code>intBasis(Lv1, Lv2)</code> computes a basis of the intersection of the two subspaces spanned by the vectors of <code>Lv1</code> and <code>Lv2</code>.</p>
+</dd></dl>
+<a name="f_isBasis_63"></a><dl><dt>isBasis? : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isBasis? Lv</code> tests for linear independence of a list of vectors.</p>
+</dd></dl>
+<a name="f_member_63"></a><dl><dt>member? : (<a href="Vector.html">Vector</a>(R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>member?(v, B)</code> tests if the vector <code>v</code> is in the subspace spanned by <code>B</code>.</p>
+</dd></dl>
+<a name="f_nullSpace"></a><dl><dt>nullSpace : <a href="Matrix.html">Matrix</a>(R) -&gt %</dt><dd><p>
+<code>nullSpace M</code> builds a basis of the kernel of the linear transformation defined by the matrix <code>M</code>. This function calls the function <code>nullSpace</code> from the <code>Matrix</code> domain. Only the signature changes.</p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rank b</code> computes the rank of a basis, i.e. the number of vectors in the basis.</p>
+</dd></dl>
+<dl><dt>rank : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rank Lv</code> computes the rank of a list of vectors.</p>
+</dd></dl>
+<a name="f_subspace_63"></a><dl><dt>subspace? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subspace?(B1, B2)</code> tests if the first space is included in the second.</p>
+</dd></dl>
+<a name="f_sumBasis"></a><dl><dt>sumBasis : (%, %) -&gt %</dt><dd><p>
+<code>sumBasis(B1, B2)</code> computes a basis of the sum of the two subspaces.</p>
+</dd></dl>
+<dl><dt>sumBasis : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>sumBasis Lb</code> computes a basis of the sum of list of subspaces. This function is slightly more efficient than <code>reduce(sumBasis, Lb)</code>.</p>
+</dd></dl>
+<dl><dt>sumBasis : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R))) -&gt %</dt><dd><p>
+<code>sumBasis LLv</code> computes a basis of the sum of the list of subspaces represented by <code>LLv</code>. This function is slightly more efficient than <code>reduce(sumBasis, LLv)</code>.</p>
+</dd></dl>
+<dl><dt>sumBasis : (<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R)), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(R))) -&gt %</dt><dd><p>
+<code>sumBasis(Lv1, Lv2)</code> computes a basis of the sum of the two subspaces spanned by the vectors of <code>Lv1</code> and <code>Lv2</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

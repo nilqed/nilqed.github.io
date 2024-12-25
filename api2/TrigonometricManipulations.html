@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TrigonometricManipulations</title>
+</head>
+<body>
+<h1>TrigonometricManipulations(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/efstruc.spad#L1029">efstruc.spad line 1029</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/efstruc.spad#L1029">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+TrigonometricManipulations provides transformations from trigonometric functions to complex exponentials and logarithms, and back.</p>
+<a name="f_complexElementary"></a><dl><dt>complexElementary : F -&gt F</dt><dd><p>
+<code>complexElementary(f)</code> rewrites <code>f</code> in terms of the 2 fundamental complex transcendental elementary functions: <code>log, exp</code>.</p>
+</dd></dl>
+<dl><dt>complexElementary : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>complexElementary(f, x)</code> rewrites the kernels of <code>f</code> involving <code>x</code> in terms of the 2 fundamental complex transcendental elementary functions: <code>log, exp</code>.</p>
+</dd></dl>
+<a name="f_complexForm"></a><dl><dt>complexForm : F -&gt <a href="Complex.html">Complex</a>(F)</dt><dd><p>
+<code>complexForm(f)</code> returns <code>[real f, imag f]</code>.</p>
+</dd></dl>
+<a name="f_complexNormalize"></a><dl><dt>complexNormalize : F -&gt F</dt><dd><p>
+<code>complexNormalize(f)</code> rewrites <code>f</code> using the least possible number of complex independent kernels.</p>
+</dd></dl>
+<dl><dt>complexNormalize : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>complexNormalize(f, x)</code> rewrites <code>f</code> using the least possible number of complex independent kernels involving <code>x</code>.</p>
+</dd></dl>
+<a name="f_imag"></a><dl><dt>imag : F -&gt F</dt><dd><p>
+<code>imag(f)</code> returns the imaginary part of <code>f</code> where <code>f</code> is a complex function.</p>
+</dd></dl>
+<a name="f_real"></a><dl><dt>real : F -&gt F</dt><dd><p>
+<code>real(f)</code> returns the real part of <code>f</code> where <code>f</code> is a complex function.</p>
+</dd></dl>
+<a name="f_real_63"></a><dl><dt>real? : F -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>real?(f)</code> returns <code>true</code> if <code>f = real f</code>.</p>
+</dd></dl>
+<a name="f_trigs"></a><dl><dt>trigs : F -&gt F</dt><dd><p>
+<code>trigs(f)</code> rewrites all the complex logs and exponentials appearing in <code>f</code> in terms of trigonometric functions.</p>
+</dd></dl>
+</body>
+</html>

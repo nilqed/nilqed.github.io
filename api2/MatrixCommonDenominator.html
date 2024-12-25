@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MatrixCommonDenominator</title>
+</head>
+<body>
+<h1>MatrixCommonDenominator(R, Q)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cden.spad#L134">cden.spad line 134</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cden.spad#L134">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>Q : <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(R)</ul>
+<p>
+MatrixCommonDenominator provides functions to compute the common denominator of a matrix of elements of the quotient field of an integral domain.</p>
+<a name="f_clearDenominator"></a><dl><dt>clearDenominator : <a href="Matrix.html">Matrix</a>(Q) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>clearDenominator(q)</code> returns <code>p</code> such that <code>q = p/d</code> where <code>d</code> is a common denominator for the elements of <code>q</code>.</p>
+</dd></dl>
+<a name="f_commonDenominator"></a><dl><dt>commonDenominator : <a href="Matrix.html">Matrix</a>(Q) -&gt R</dt><dd><p>
+<code>commonDenominator(q)</code> returns a common denominator <code>d</code> for the elements of <code>q</code>.</p>
+</dd></dl>
+<a name="f_splitDenominator"></a><dl><dt>splitDenominator : <a href="Matrix.html">Matrix</a>(Q) -&gt Record(num : <a href="Matrix.html">Matrix</a>(R), den : R)</dt><dd><p>
+<code>splitDenominator(q)</code> returns <code>[p, d]</code> such that <code>q = p/d</code> and <code>d</code> is a common denominator for the elements of <code>q</code>.</p>
+</dd></dl>
+</body>
+</html>

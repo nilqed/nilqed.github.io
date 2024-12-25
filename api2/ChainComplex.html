@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ChainComplex</title>
+</head>
+<body>
+<h1>ChainComplex</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L1362">alg_top.spad line 1362</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L1362">[edit on github]</a></p>
+<p>
+Delta Complexes are defined by a sequence of 'face maps', These can be represented by a list of matrices. for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/ Date Created: March 2016 Basic Operations: Related packages: Related categories: Related Domains: CoChainComplex Also See: AMS Classifications:</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_chainComplex"></a><dl><dt>chainComplex : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+constructor</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_homology"></a><dl><dt>homology : % -&gt <a href="List.html">List</a>(<a href="Homology.html">Homology</a>)</dt><dd><p>
+calculate homology using SmithNormalForm</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_transition_95matrices"></a><dl><dt>transition_matrices : % -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>transition_matrices(a)</code> gives list of transition matrices of a.</p>
+</dd></dl>
+<a name="f_validate"></a><dl><dt>validate : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>true</code> if this is a valid chain complex, that is: 1. maps compose 2. product of adjacent maps is zero</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

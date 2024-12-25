@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExpressionSpace2</title>
+</head>
+<body>
+<h1>ExpressionSpace2(K)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fspace.spad#L1">fspace.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fspace.spad#L1">[edit on github]</a></p>
+<ul>
+<li>K : <a href="KernelCategory.html">KernelCategory</a>(%)</ul>
+<p>
+An expression space is a set which is closed under certain operators.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_belong_63"></a><dl><dt>belong? : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>belong?(op)</code> tests if % accepts <code>op</code> as applicable to its elements.</p>
+</dd></dl>
+<a name="f_box"></a><dl><dt>box : % -&gt %</dt><dd><p>
+<code>box(f)</code> returns <code>f</code> with a 'box' around it that prevents <code>f</code> from being evaluated when operators are applied to it. For example, <code>log(1)</code> returns 0, but <code>log(box 1)</code> returns the formal kernel log(1).</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : K -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(K)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_definingPolynomial"></a><dl><dt>definingPolynomial : % -&gt % if % has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>definingPolynomial(x)</code> returns an expression <code>p</code> such that <code>p(x) = 0</code>.</p>
+</dd></dl>
+<a name="f_distribute"></a><dl><dt>distribute : % -&gt %</dt><dd><p>
+<code>distribute(f)</code> expands all the kernels in <code>f</code> that are formally enclosed by a <span class="std std-ref">box</span> or <span class="std std-ref">paren</span> expression.</p>
+</dd></dl>
+<dl><dt>distribute : (%, %) -&gt %</dt><dd><p>
+<code>distribute(f, g)</code> expands all the kernels in <code>f</code> that contain <code>g</code> in their arguments and that are formally enclosed by a <span class="std std-ref">box</span> or a <span class="std std-ref">paren</span> expression.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %) -&gt %</dt><dd><p>
+<code>elt(op, x)</code> or <code>op</code>(<code>x</code>) applies the unary operator <code>op</code> to <code>x</code>.</p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y)</code> or <code>op</code>(<code>x</code>, <code>y</code>) applies the binary operator <code>op</code> to <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z)</code> or <code>op</code>(<code>x</code>, <code>y</code>, <code>z</code>) applies the ternary operator <code>op</code> to <code>x</code>, <code>y</code> and <code>z</code>.</p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z, t)</code> or <code>op</code>(<code>x</code>, <code>y</code>, <code>z</code>, <code>t</code>) applies the 4-ary operator <code>op</code> to <code>x</code>, <code>y</code>, <code>z</code> and <code>t</code>.</p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z, t, s)</code> applies the 5-ary operator <code>op</code> to <code>x</code>, <code>y</code>, <code>z</code>, <code>t</code> and <code>s</code></p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z, t, s, r)</code> applies the 6-ary operator <code>op</code> to <code>x</code>, <code>y</code>, <code>z</code>, <code>t</code>, <code>s</code> and <code>r</code></p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z, t, s, r, q)</code> applies the 7-ary operator <code>op</code> to <code>x</code>, <code>y</code>, <code>z</code>, <code>t</code>, <code>s</code>, <code>r</code> and <code>q</code></p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z, t, s, r, q, p)</code> applies the 8-ary operator <code>op</code> to <code>x</code>, <code>y</code>, <code>z</code>, <code>t</code>, <code>s</code>, <code>r</code>, <code>q</code> and <code>p</code></p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>elt(op, x, y, z, t, s, r, q, p, o)</code> applies the 9-ary operator <code>op</code> to <code>x</code>, <code>y</code>, <code>z</code>, <code>t</code>, <code>s</code>, <code>r</code>, <code>q</code>, <code>p</code> and <code>o</code></p>
+</dd></dl>
+<dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>elt(op, [x1, ..., xn])</code> or <code>op</code>([<code>x1</code>, ..., <code>xn</code>]) applies the <code>n</code>-ary operator <code>op</code> to <code>x1</code>, ..., <code>xn</code>.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, %, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, K, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(K, %)</dd></dl>
+<dl><dt>eval : (%, <a href="BasicOperator.html">BasicOperator</a>, Mapping(%, %)) -&gt %</dt><dd><p>
+<code>eval(x, s, f)</code> replaces every <code>s(a)</code> in <code>x</code> by <code>f(a)</code> for any <code>a</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="BasicOperator.html">BasicOperator</a>, Mapping(%, <a href="List.html">List</a>(%))) -&gt %</dt><dd><p>
+<code>eval(x, s, f)</code> replaces every <code>s(a1, .., am)</code> in <code>x</code> by <code>f(a1, .., am)</code> for any <code>a1</code>, ..., <code>am</code>.</p>
+</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(%)) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(K), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(K, %)</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="List.html">List</a>(Mapping(%, %))) -&gt %</dt><dd><p>
+<code>eval(x, [s1, ..., sm], [f1, ..., fm])</code> replaces every <code><code>si</code>(a)</code> in <code>x</code> by <code><code>fi</code>(a)</code> for any <code>a</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="List.html">List</a>(Mapping(%, <a href="List.html">List</a>(%)))) -&gt %</dt><dd><p>
+<code>eval(x, [s1, ..., sm], [f1, ..., fm])</code> replaces every <code><code>si</code>(a1, ..., an)</code> in <code>x</code> by <code><code>fi</code>(a1, ..., an)</code> for any <code>a1</code>, ..., <code>an</code>.</p>
+</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(Mapping(%, %))) -&gt %</dt><dd><p>
+<code>eval(x, [s1, ..., sm], [f1, ..., fm])</code> replaces every <code><code>si</code>(a)</code> in <code>x</code> by <code><code>fi</code>(a)</code> for any <code>a</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(Mapping(%, <a href="List.html">List</a>(%)))) -&gt %</dt><dd><p>
+<code>eval(x, [s1, ..., sm], [f1, ..., fm])</code> replaces every <code><code>si</code>(a1, ..., an)</code> in <code>x</code> by <code><code>fi</code>(a1, ..., an)</code> for any <code>a1</code>, ..., <code>an</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="Symbol.html">Symbol</a>, Mapping(%, %)) -&gt %</dt><dd><p>
+<code>eval(x, s, f)</code> replaces every <code>s(a)</code> in <code>x</code> by <code>f(a)</code> for any <code>a</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="Symbol.html">Symbol</a>, Mapping(%, <a href="List.html">List</a>(%))) -&gt %</dt><dd><p>
+<code>eval(x, s, f)</code> replaces every <code>s(a1, .., am)</code> in <code>x</code> by <code>f(a1, .., am)</code> for any <code>a1</code>, ..., <code>am</code>.</p>
+</dd></dl>
+<a name="f_even_63"></a><dl><dt>even? : % -&gt <a href="Boolean.html">Boolean</a> if % has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>even? x</code> is <code>true</code> if <code>x</code> is an even integer.</p>
+</dd></dl>
+<a name="f_freeOf_63"></a><dl><dt>freeOf? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>freeOf?(x, y)</code> tests if <code>x</code> does not contain any occurrence of <code>y</code>, where <code>y</code> is a single kernel.</p>
+</dd></dl>
+<dl><dt>freeOf? : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>freeOf?(x, s)</code> tests if <code>x</code> does not contain any operator whose name is <code>s</code>.</p>
+</dd></dl>
+<a name="f_height"></a><dl><dt>height : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>height(f)</code> returns the highest nesting level appearing in <code>f</code>. Constants have height 0. Symbols have height 1. For any operator op and expressions <code>f1</code>, ..., <code>fn</code>, <code>op(f1, ..., fn)</code> has height equal to <code>1 + max(height(f1), ..., height(fn))</code>.</p>
+</dd></dl>
+<a name="f_is_63"></a><dl><dt>is? : (%, <a href="BasicOperator.html">BasicOperator</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?(x, op)</code> tests if <code>x</code> is a kernel and if its operator is op.</p>
+</dd></dl>
+<dl><dt>is? : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?(x, s)</code> tests if <code>x</code> is a kernel and if the name of its operator is <code>s</code>.</p>
+</dd></dl>
+<a name="f_kernel"></a><dl><dt>kernel : (<a href="BasicOperator.html">BasicOperator</a>, %) -&gt %</dt><dd><p>
+<code>kernel(op, x)</code> constructs <code>op</code>(<code>x</code>) without evaluating it.</p>
+</dd></dl>
+<dl><dt>kernel : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>kernel(op, [f1, ..., fn])</code> constructs <code>op(f1, ..., fn)</code> without evaluating it.</p>
+</dd></dl>
+<a name="f_kernels"></a><dl><dt>kernels : % -&gt <a href="List.html">List</a>(K)</dt><dd><p>
+<code>kernels(f)</code> returns the list of all the top-level kernels appearing in <code>f</code>, but not the ones appearing in the arguments of the top-level kernels.</p>
+</dd></dl>
+<dl><dt>kernels : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(K)</dt><dd><p>
+<code>kernels([f1,...,fn])</code> returns the list of all the top-level kernels appearing in <code>f1</code>, ..., <code>fn</code> but not the ones appearing in the arguments of the top-level kernels.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_mainKernel"></a><dl><dt>mainKernel : % -&gt Union(K, "failed")</dt><dd><p>
+<code>mainKernel(f)</code> returns a kernel of <code>f</code> with maximum nesting level, or "failed" if <code>f</code> has no kernels (i.e. <code>f</code> is a constant).</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(%, %), K) -&gt %</dt><dd><p>
+<code>map(f, k)</code> returns <code>op(f(x1), ..., f(xn))</code> where <code>k = op(x1, ..., xn)</code>.</p>
+</dd></dl>
+<a name="f_minPoly"></a><dl><dt>minPoly : K -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) if % has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>minPoly(k)</code> returns <code>p</code> such that <code>p(k) = 0</code>.</p>
+</dd></dl>
+<a name="f_odd_63"></a><dl><dt>odd? : % -&gt <a href="Boolean.html">Boolean</a> if % has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>odd? x</code> is <code>true</code> if <code>x</code> is an odd integer.</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>operator(op)</code> returns a copy of <code>op</code> with the domain-dependent properties appropriate for %.</p>
+</dd></dl>
+<a name="f_operators"></a><dl><dt>operators : % -&gt <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>)</dt><dd><p>
+<code>operators(f)</code> returns all the basic operators appearing in <code>f</code>, no matter what their levels are.</p>
+</dd></dl>
+<a name="f_paren"></a><dl><dt>paren : % -&gt %</dt><dd><p>
+<code>paren(f)</code> returns (<code>f</code>). This prevents <code>f</code> from being evaluated when operators are applied to it. For example, <code>log(1)</code> returns 0, but <code>log(paren 1)</code> returns the formal kernel log((1)).</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt K</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(K)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(K, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(K)</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subst"></a><dl><dt>subst : (%, <a href="Equation.html">Equation</a>(%)) -&gt %</dt><dd><p>
+<code>subst(f, k = g)</code> replaces the kernel <code>k</code> by <code>g</code> formally in <code>f</code>.</p>
+</dd></dl>
+<dl><dt>subst : (%, <a href="List.html">List</a>(K), <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>subst(f, [k1..., kn], [g1, ..., gn])</code> replaces the kernels <code>k1</code>, ..., <code>kn</code> by <code>g1</code>, ..., <code>gn</code> formally in <code>f</code>.</p>
+</dd></dl>
+<dl><dt>subst : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt %</dt><dd><p>
+<code>subst(f, [k1 = g1, ..., kn = gn])</code> replaces the kernels <code>k1</code>, ..., <code>kn</code> by <code>g1</code>, ..., <code>gn</code> formally in <code>f</code>.</p>
+</dd></dl>
+<a name="f_tower"></a><dl><dt>tower : % -&gt <a href="List.html">List</a>(K)</dt><dd><p>
+<code>tower(f)</code> returns all the kernels appearing in <code>f</code>, no matter what their levels are.</p>
+</dd></dl>
+<dl><dt>tower : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(K)</dt><dd><p>
+<code>tower([f1,...,fn])</code> returns all the kernels appearing in <code>f1</code>, ..., <code>fn</code> no matter what their levels are.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Evalable.html">Evalable</a>(%)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(K, %)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(%, %)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(K)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(K)
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalFunctionSign</title>
+</head>
+<body>
+<h1>RationalFunctionSign(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sign.spad#L88">sign.spad line 88</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sign.spad#L88">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a></ul>
+<p>
+Find the sign of a rational function around a point or infinity.</p>
+<a name="f_sign"></a><dl><dt>sign : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>sign f</code> returns the sign of <code>f</code> if it is constant everywhere.</p>
+</dd></dl>
+<dl><dt>sign : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>, <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="String.html">String</a>) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>sign(f, x, a, s)</code> returns the sign of <code>f</code> as <code>x</code> nears <code>a</code> from the left (below) if <code>s</code> is the string <code>"left"</code>, or from the right (above) if <code>s</code> is the string <code>"right"</code>.</p>
+</dd></dl>
+<dl><dt>sign : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>, <a href="OrderedCompletion.html">OrderedCompletion</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>sign(f, x, a)</code> returns the sign of <code>f</code> as <code>x</code> approaches <code>a</code>, from both sides if <code>a</code> is finite.</p>
+</dd></dl>
+</body>
+</html>

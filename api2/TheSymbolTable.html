@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TheSymbolTable</title>
+</head>
+<body>
+<h1>TheSymbolTable</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/forttyp.spad#L430">forttyp.spad line 430</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/forttyp.spad#L430">[edit on github]</a></p>
+<p>
+Creates and manipulates one global symbol table for FORTRAN code generation, containing details of types, dimensions, and argument lists.</p>
+<a name="f_argumentList_33"></a><dl><dt>argumentList! : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>argumentList!(l)</code> declares that the argument list for the current subprogram in the global symbol table is <code>l</code>.</p>
+</dd></dl>
+<dl><dt>argumentList! : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>argumentList!(f, l)</code> declares that the argument list for subprogram <code>f</code> in the global symbol table is <code>l</code>.</p>
+</dd></dl>
+<dl><dt>argumentList! : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>argumentList!(f, l, tab)</code> declares that the argument list for subprogram <code>f</code> in symbol table tab is <code>l</code>.</p>
+</dd></dl>
+<a name="f_argumentListOf"></a><dl><dt>argumentListOf : (<a href="Symbol.html">Symbol</a>, %) -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>argumentListOf(f, tab)</code> returns the argument list of <code>f</code></p>
+</dd></dl>
+<a name="f_clearTheSymbolTable"></a><dl><dt>clearTheSymbolTable : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>clearTheSymbolTable()</code> clears the current symbol table.</p>
+</dd></dl>
+<dl><dt>clearTheSymbolTable : <a href="Symbol.html">Symbol</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>clearTheSymbolTable(x)</code> removes the symbol <code>x</code> from the table</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_currentSubProgram"></a><dl><dt>currentSubProgram : () -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>currentSubProgram()</code> returns the name of the current subprogram being processed</p>
+</dd></dl>
+<a name="f_declare_33"></a><dl><dt>declare! : (<a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="FortranType.html">FortranType</a>, <a href="Symbol.html">Symbol</a>, %) -&gt <a href="FortranType.html">FortranType</a></dt><dd><p>
+<code>declare!(u, t, asp, tab)</code> declares the parameters <code>u</code> of subprogram <code>asp</code> to have type <code>t</code> in symbol table tab.</p>
+</dd></dl>
+<dl><dt>declare! : (<a href="Symbol.html">Symbol</a>, <a href="FortranType.html">FortranType</a>) -&gt <a href="FortranType.html">FortranType</a></dt><dd><p>
+<code>declare!(u, t)</code> declares the parameter <code>u</code> to have type <code>t</code> in the current level of the symbol table.</p>
+</dd></dl>
+<dl><dt>declare! : (<a href="Symbol.html">Symbol</a>, <a href="FortranType.html">FortranType</a>, <a href="Symbol.html">Symbol</a>) -&gt <a href="FortranType.html">FortranType</a></dt><dd><p>
+<code>declare!(u, t, asp)</code> declares the parameter <code>u</code> to have type <code>t</code> in asp.</p>
+</dd></dl>
+<dl><dt>declare! : (<a href="Symbol.html">Symbol</a>, <a href="FortranType.html">FortranType</a>, <a href="Symbol.html">Symbol</a>, %) -&gt <a href="FortranType.html">FortranType</a></dt><dd><p>
+<code>declare!(u, t, asp, tab)</code> declares the parameter <code>u</code> of subprogram <code>asp</code> to have type <code>t</code> in symbol table tab.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : () -&gt %</dt><dd><p>
+<code>empty()</code> creates a new, empty symbol table.</p>
+</dd></dl>
+<a name="f_endSubProgram"></a><dl><dt>endSubProgram : () -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>endSubProgram()</code> asserts that we are no longer processing the current subprogram.</p>
+</dd></dl>
+<a name="f_newSubProgram"></a><dl><dt>newSubProgram : <a href="Symbol.html">Symbol</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>newSubProgram(f)</code> asserts that from now on type declarations are part of subprogram <code>f</code>.</p>
+</dd></dl>
+<a name="f_printHeader"></a><dl><dt>printHeader : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printHeader()</code> produces the FORTRAN header for the current subprogram in the global symbol table on the current FORTRAN output stream.</p>
+</dd></dl>
+<dl><dt>printHeader : <a href="Symbol.html">Symbol</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printHeader(f)</code> produces the FORTRAN header for subprogram <code>f</code> in the global symbol table on the current FORTRAN output stream.</p>
+</dd></dl>
+<dl><dt>printHeader : (<a href="Symbol.html">Symbol</a>, %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printHeader(f, tab)</code> produces the FORTRAN header for subprogram <code>f</code> in symbol table tab on the current FORTRAN output stream.</p>
+</dd></dl>
+<a name="f_printTypes"></a><dl><dt>printTypes : <a href="Symbol.html">Symbol</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printTypes(tab)</code> produces FORTRAN type declarations from <code>tab</code>, on the current FORTRAN output stream</p>
+</dd></dl>
+<a name="f_returnType_33"></a><dl><dt>returnType! : (<a href="Symbol.html">Symbol</a>, Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void"))) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>returnType!(f, t)</code> declares that the return type of subprogram <code>f</code> in the global symbol table is <code>t</code>.</p>
+</dd></dl>
+<dl><dt>returnType! : (<a href="Symbol.html">Symbol</a>, Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void")), %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>returnType!(f, t, tab)</code> declares that the return type of subprogram <code>f</code> in symbol table tab is <code>t</code>.</p>
+</dd></dl>
+<dl><dt>returnType! : Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void")) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>returnType!(t)</code> declares that the return type of he current subprogram in the global symbol table is <code>t</code>.</p>
+</dd></dl>
+<a name="f_returnTypeOf"></a><dl><dt>returnTypeOf : (<a href="Symbol.html">Symbol</a>, %) -&gt Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void"))</dt><dd><p>
+<code>returnTypeOf(f, tab)</code> returns the type of the object returned by <code>f</code></p>
+</dd></dl>
+<a name="f_showTheSymbolTable"></a><dl><dt>showTheSymbolTable : () -&gt %</dt><dd><p>
+<code>showTheSymbolTable()</code> returns the current symbol table.</p>
+</dd></dl>
+<a name="f_symbolTableOf"></a><dl><dt>symbolTableOf : (<a href="Symbol.html">Symbol</a>, %) -&gt <a href="SymbolTable.html">SymbolTable</a></dt><dd><p>
+<code>symbolTableOf(f, tab)</code> returns the symbol table of <code>f</code></p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

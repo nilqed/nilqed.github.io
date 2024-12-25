@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariateFiniteFieldFactorize</title>
+</head>
+<body>
+<h1>UnivariateFiniteFieldFactorize(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffact.spad#L993">ffact.spad line 993</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffact.spad#L993">[edit on github]</a></p>
+<ul>
+<li>F : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+undocumented</p>
+<a name="f_factor"></a><dl><dt>factor : UP -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factor(p)</code> factorizes <code>p</code> into prime factors.</p>
+</dd></dl>
+<a name="f_factorSquareFree"></a><dl><dt>factorSquareFree : UP -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>factorSquareFree(p)</code> factorizes <code>p</code> into prime factors. <code>p</code> must be square free.</p>
+</dd></dl>
+<a name="f_irreducible_63"></a><dl><dt>irreducible? : UP -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>irreducible?(p)</code> tests if <code>p</code> is irreducible.</p>
+</dd></dl>
+<a name="f_su_95irreducible_63"></a><dl><dt>su_irreducible? : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>su_irreducible?(p)</code> tests if <code>p</code> is irreducible. <code>p</code> must be monic and square free.</p>
+</dd></dl>
+<a name="f_sufactor"></a><dl><dt>sufactor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F) -&gt Record(cont : F, factors : <a href="List.html">List</a>(Record(factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd><p>
+<code>sufactor(p)</code> factorizes <code>p</code> into prime factors.</p>
+</dd></dl>
+<a name="f_sufactor_95square_95free"></a><dl><dt>sufactor_square_free : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F) -&gt <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))</dt><dd><p>
+<code>sufactor_square_free(p)</code> factorizes <code>p</code> into prime factors. <code>p</code> must be square free.</p>
+</dd></dl>
+</body>
+</html>

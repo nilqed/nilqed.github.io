@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NPCoef</title>
+</head>
+<body>
+<h1>NPCoef(BP, E, OV, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/npcoef.spad#L1">npcoef.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/npcoef.spad#L1">[edit on github]</a></p>
+<ul>
+<li>BP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+Package for the determination of the coefficients in the lifting process. Used by MultivariateLifting. This package will work for every integral domain <code>R</code>. The same method is described in [1] section 2.3.4.</p>
+<a name="f_npcoef"></a><dl><dt>npcoef : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(BP), <a href="List.html">List</a>(P)) -&gt Record(deter : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)), dterm : <a href="List.html">List</a>(<a href="List.html">List</a>(Record(expt : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, pcoef : P))), nfacts : <a href="List.html">List</a>(BP), nlead : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>npcoef(p, lmf, lcf)</code> tries to determine some coefficients of factors of <code>p</code> assuming that <code>lcf</code> gives <code>true</code> leading coefficients of the factors and that sparsity pattern of modular factors <code>lmf</code> is the same as sparsity pattern of <code>true</code> factors. If <code>res</code> is the result, then <code>res.deter</code> gives fully determined factors, <code>res.dterm</code> gives determined terms of partially determinaed factors, <code>res.nfacts</code> and <code>res.nlead</code> give modular factors and leading coefficients corresponding to undetermined factors.</p>
+</dd></dl>
+</body>
+</html>

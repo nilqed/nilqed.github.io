@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RepresentationPackage1</title>
+</head>
+<body>
+<h1>RepresentationPackage1(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/rep1.spad#L1">rep1.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/rep1.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+<code>RepresentationPackage1</code> provides functions for representation theory for finite groups and algebras. The package creates permutation representations and uses tensor products and its symmetric and antisymmetric components to create new representations of larger degree from given ones. Note: instead of having parameters from Permutation this package allows list notation of permutations as well: e.g. <code>[1, 4, 3, 2]</code> denotes permutes 2 and 4 and fixes 1 and 3.</p>
+<a name="f_antisymmetricTensors"></a><dl><dt>antisymmetricTensors : (<a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)) if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>antisymmetricTensors(la, n)</code> applies to each <code>m</code>-by-<code>m</code> square matrix in the list  la the irreducible, polynomial representation of the general linear group  GLm which corresponds to the partition  (1, 1, ..., 1, 0, 0, ..., 0) of <code>n</code>. Error: if <code>n</code> is greater than <code>m</code>. Note: this corresponds to the symmetrization of the representation with the sign representation of the symmetric group  Sn. The carrier spaces of the representation are the antisymmetric tensors of the <code>n</code>-fold tensor product.</p>
+</dd></dl>
+<dl><dt>antisymmetricTensors : (<a href="Matrix.html">Matrix</a>(R), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(R) if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>antisymmetricTensors(a, n)</code> applies to the square matrix  a the irreducible, polynomial representation of the general linear group  GLm, where <code>m</code> is the number of rows of  a, which corresponds to the partition  (1, 1, ..., 1, 0, 0, ..., 0) of <code>n</code>. Error: if <code>n</code> is greater than <code>m</code>. Note: this corresponds to the symmetrization of the representation with the sign representation of the symmetric group  Sn. The carrier spaces of the representation are the antisymmetric tensors of the <code>n</code>-fold tensor product.</p>
+</dd></dl>
+<a name="f_createGenericMatrix"></a><dl><dt>createGenericMatrix : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>createGenericMatrix(m)</code> creates a square matrix of dimension <code>k</code> whose entry at the <code>i</code>-th row and <code>j</code>-th column is the indeterminate  x[i, j] (double subscripted).</p>
+</dd></dl>
+<a name="f_permutationRepresentation"></a><dl><dt>permutationRepresentation : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>permutationRepresentation([pi1, ..., pik], n)</code> returns the list of matrices  [(deltai, pi1(i)), ..., (deltai, pik(i))] if the permutations  pi1, ...,  pik are in list notation and are permuting  1, 2, ..., n.</p>
+</dd></dl>
+<dl><dt>permutationRepresentation : (<a href="List.html">List</a>(<a href="Permutation.html">Permutation</a>(<a href="Integer.html">Integer</a>)), <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>permutationRepresentation([pi1, ..., pik], n)</code> returns the list of matrices  [(deltai, pi1(i)), ..., (deltai, pik(i))] (Kronecker delta) for the permutations  pi1, ..., pik of  1, 2, ..., n.</p>
+</dd></dl>
+<dl><dt>permutationRepresentation : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>permutationRepresentation(<code>pi</code>, n)</code> returns the matrix  (deltai, <code>pi</code>(i)) (Kronecker delta) if the permutation  <code>pi</code> is in list notation and permutes  1, 2, ..., n.</p>
+</dd></dl>
+<dl><dt>permutationRepresentation : (<a href="Permutation.html">Permutation</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>permutationRepresentation(<code>pi</code>, n)</code> returns the matrix  (deltai, <code>pi</code>(i)) (Kronecker delta) for a permutation  <code>pi</code> of  1, 2, ..., n.</p>
+</dd></dl>
+<a name="f_symmetricTensors"></a><dl><dt>symmetricTensors : (<a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>symmetricTensors(la, n)</code> applies to each <code>m</code>-by-<code>m</code> square matrix in the list  la the irreducible, polynomial representation of the general linear group  GLm which corresponds to the partition  (n, 0, ..., 0) of <code>n</code>. Error: if the matrices in  la are not square matrices. Note: this corresponds to the symmetrization of the representation with the trivial representation of the symmetric group  Sn. The carrier spaces of the representation are the symmetric tensors of the <code>n</code>-fold tensor product.</p>
+</dd></dl>
+<dl><dt>symmetricTensors : (<a href="Matrix.html">Matrix</a>(R), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>symmetricTensors(a, n)</code> applies to the <code>m</code>-by-<code>m</code> square matrix  a the irreducible, polynomial representation of the general linear group  GLm which corresponds to the partition  (n, 0, ..., 0) of <code>n</code>. Error: if  a is not a square matrix. Note: this corresponds to the symmetrization of the representation with the trivial representation of the symmetric group  Sn. The carrier spaces of the representation are the symmetric tensors of the <code>n</code>-fold tensor product.</p>
+</dd></dl>
+<a name="f_tensorProduct"></a><dl><dt>tensorProduct : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>tensorProduct([a1, ...ak])</code> calculates the list of Kronecker products of each matrix  <code>ai</code> with itself for 1 <code>&lt;=</code> <code>i</code> <code>&lt;=</code> <code>k</code>. Note: If the list of matrices corresponds to a group representation (repr. of generators) of one group, then these matrices correspond to the tensor product of the representation with itself.</p>
+</dd></dl>
+<dl><dt>tensorProduct : (<a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)), <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>tensorProduct([a1, ..., ak], [b1, ..., bk])</code> calculates the list of Kronecker products of the matrices  <code>ai</code> and  <code>bi</code> for 1 <code>&lt;=</code> <code>i</code> <code>&lt;=</code> <code>k</code>. Note: If each list of matrices corresponds to a group representation (repr. of generators) of one group, then these matrices correspond to the tensor product of the two representations.</p>
+</dd></dl>
+<dl><dt>tensorProduct : <a href="Matrix.html">Matrix</a>(R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>tensorProduct(a)</code> calculates the Kronecker product of the matrix  a with itself.</p>
+</dd></dl>
+<dl><dt>tensorProduct : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>tensorProduct(a, b)</code> calculates the Kronecker product of the matrices  a and <code>b</code>. Note: if each matrix corresponds to a group representation (repr. of generators) of one group, then these matrices correspond to the tensor product of the two representations.</p>
+</dd></dl>
+</body>
+</html>

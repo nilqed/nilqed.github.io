@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RealPolynomialUtilitiesPackage</title>
+</head>
+<body>
+<h1>RealPolynomialUtilitiesPackage(TheField, ThePols)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/reclos.spad#L60">reclos.spad line 60</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/reclos.spad#L60">[edit on github]</a></p>
+<ul>
+<li>TheField : <a href="Field.html">Field</a><li>ThePols : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(TheField)</ul>
+<p>
+RealPolynomialUtilitiesPackage provides common functions used by interval coding.</p>
+<a name="f_boundOfCauchy"></a><dl><dt>boundOfCauchy : ThePols -&gt TheField if TheField has <a href="OrderedRing.html">OrderedRing</a></dt><dd><p>
+<code>boundOfCauchy(p)</code> bounds the roots of <code>p</code></p>
+</dd></dl>
+<a name="f_lazyVariations"></a><dl><dt>lazyVariations : (<a href="List.html">List</a>(TheField), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if TheField has <a href="OrderedRing.html">OrderedRing</a></dt><dd><p>
+<code>lazyVariations(l, s1, sn)</code> is the number of sign variations in the list of non null numbers [s1::l]<code>@sn</code>,</p>
+</dd></dl>
+<a name="f_sturmSequence"></a><dl><dt>sturmSequence : ThePols -&gt <a href="List.html">List</a>(ThePols)</dt><dd><p>
+<code>sturmSequence(p) = sylvesterSequence(p, p')</code></p>
+</dd></dl>
+<a name="f_sturmVariationsOf"></a><dl><dt>sturmVariationsOf : <a href="List.html">List</a>(TheField) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if TheField has <a href="OrderedRing.html">OrderedRing</a></dt><dd><p>
+<code>sturmVariationsOf(l)</code> is the number of sign variations in the list of numbers <code>l</code>, note that the first term counts as a sign</p>
+</dd></dl>
+<a name="f_sylvesterSequence"></a><dl><dt>sylvesterSequence : (ThePols, ThePols) -&gt <a href="List.html">List</a>(ThePols)</dt><dd><p>
+<code>sylvesterSequence(p, q)</code> is the negated remainder sequence of <code>p</code> and <code>q</code> divided by the last computed term</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialSolveByFormulas</title>
+</head>
+<body>
+<h1>PolynomialSolveByFormulas(UP, F, RR)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/solverad.spad#L1">solverad.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/solverad.spad#L1">[edit on github]</a></p>
+<ul>
+<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>F : <a href="Field.html">Field</a> with
+<p>^ : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %<li>RR : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)</ul>
+<p>
+This package factors the formulas out of the general solve code, allowing their recursive use over different domains. Care is taken to introduce few radicals so that radical extension domains can more easily simplify the results.</p>
+<a name="f_aCubic"></a><dl><dt>aCubic : (F, F, F, F) -&gt F</dt><dd><p>
+<code>aCubic(f, g, h, j)</code> is undocumented</p>
+</dd></dl>
+<a name="f_aLinear"></a><dl><dt>aLinear : (F, F) -&gt F</dt><dd><p>
+<code>aLinear(f, g)</code> is undocumented</p>
+</dd></dl>
+<a name="f_aQuadratic"></a><dl><dt>aQuadratic : (F, F, F) -&gt F</dt><dd><p>
+<code>aQuadratic(f, g, h)</code> is undocumented</p>
+</dd></dl>
+<a name="f_aQuartic"></a><dl><dt>aQuartic : (F, F, F, F, F) -&gt F</dt><dd><p>
+<code>aQuartic(f, g, h, i, k)</code> is undocumented</p>
+</dd></dl>
+<a name="f_cubic"></a><dl><dt>cubic : (F, F, F, F) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>cubic(f, g, h, i)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>cubic : UP -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>cubic(u)</code> is undocumented</p>
+</dd></dl>
+<a name="f_linear"></a><dl><dt>linear : (F, F) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>linear(f, g)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>linear : UP -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>linear(u)</code> is undocumented</p>
+</dd></dl>
+<a name="f_particularSolution"></a><dl><dt>particularSolution : UP -&gt F</dt><dd><p>
+<code>particularSolution(u)</code> is undocumented</p>
+</dd></dl>
+<a name="f_quadratic"></a><dl><dt>quadratic : (F, F, F) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>quadratic(f, g, h)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>quadratic : UP -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>quadratic(u)</code> is undocumented</p>
+</dd></dl>
+<a name="f_quartic"></a><dl><dt>quartic : (F, F, F, F, F) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>quartic(f, g, h, i, j)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>quartic : UP -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>quartic(u)</code> is undocumented</p>
+</dd></dl>
+<a name="f_solve"></a><dl><dt>solve : UP -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>solve(u)</code> is undocumented</p>
+</dd></dl>
+</body>
+</html>

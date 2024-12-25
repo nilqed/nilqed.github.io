@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SymmetricGroupCombinatoricFunctions</title>
+</head>
+<body>
+<h1>SymmetricGroupCombinatoricFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sgcf.spad#L1">sgcf.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sgcf.spad#L1">[edit on github]</a></p>
+<p>
+SymmetricGroupCombinatoricFunctions contains combinatoric functions concerning symmetric groups and representation theory: list young tableaus, improper partitions, subsets bijection of Coleman.</p>
+<a name="f_coleman"></a><dl><dt>coleman : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>coleman(alpha, beta, <code>pi</code>)</code>: there is a bijection from the set of matrices having nonnegative entries and row sums  alpha, column sums  beta to the set of  Salpha - Sbeta double cosets of the symmetric group  Sn. ( Salpha is the Young subgroup corresponding to the improper partition  alpha). For a representing element  <code>pi</code> of such a double coset, coleman(<code>alpha</code>, <code>beta</code>, <code>pi</code>) generates the Coleman-matrix corresponding to  alpha, beta, <code>pi</code>. Note: The permutation  <code>pi</code> of  1, 2, ..., n has to be given in list form. Note: the inverse of this map is  inverseColeman (if  <code>pi</code> is the lexicographical smallest permutation in the coset). For details see James/Kerber.</p>
+</dd></dl>
+<a name="f_inverseColeman"></a><dl><dt>inverseColeman : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>inverseColeman(alpha, beta, C)</code>: there is a bijection from the set of matrices having nonnegative entries and row sums  alpha, column sums  beta to the set of  Salpha - Sbeta double cosets of the symmetric group  Sn. ( Salpha is the Young subgroup corresponding to the improper partition  alpha). For such a matrix <code>C</code>, inverseColeman(<code>alpha</code>, <code>beta</code>, <code>C</code>) calculates the lexicographical smallest  <code>pi</code> in the corresponding double coset. Note: the resulting permutation  <code>pi</code> of  1, 2, ..., n is given in list form. Notes: the inverse of this map is  coleman. For details, see James/Kerber.</p>
+</dd></dl>
+<a name="f_listYoungTableaus"></a><dl><dt>listYoungTableaus : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>listYoungTableaus(lambda)</code> where  lambda is a proper partition generates the list of all standard tableaus of shape  lambda by means of lattice permutations. The numbers of the lattice permutation are interpreted as column labels. Hence the contents of these lattice permutations are the conjugate of  lambda. Notes: the functions  nextLatticePermutation and  makeYoungTableau are used. The entries are from  0, ..., n-1.</p>
+</dd></dl>
+<a name="f_makeYoungTableau"></a><dl><dt>makeYoungTableau : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>makeYoungTableau(lambda, gitter)</code> computes for a given lattice permutation  gitter and for an improper partition  lambda the corresponding standard tableau of shape  lambda. Notes: see  listYoungTableaus. The entries are from  0, ..., n-1.</p>
+</dd></dl>
+<a name="f_nextColeman"></a><dl><dt>nextColeman : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>nextColeman(alpha, beta, C)</code> generates the next Coleman matrix of column sums  alpha and row sums  beta according to the lexicographical order from bottom-to-top. The first Coleman matrix is achieved by  C=new(1, 1, 0). Also,  new(1, 1, 0) indicates that <code>C</code> is the last Coleman matrix.</p>
+</dd></dl>
+<a name="f_nextLatticePermutation"></a><dl><dt>nextLatticePermutation : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>nextLatticePermutation(lambda, lattP, constructNotFirst)</code> generates the lattice permutation according to the proper partition  lambda succeeding the lattice permutation  lattP in lexicographical order as long as  constructNotFirst is <code>true</code>. If  constructNotFirst is <code>false</code>, the first lattice permutation is returned. The result  [] indicates that  lattP has no successor.</p>
+</dd></dl>
+<a name="f_nextPartition"></a><dl><dt>nextPartition : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>nextPartition(gamma, part, number)</code> generates the partition of  number which follows  part according to the right-to-left lexicographical order. The partition has the property that its components do not exceed the corresponding components of  gamma. the first partition is achieved by  part=[]. Also,  [] indicates that  part is the last partition.</p>
+</dd></dl>
+<dl><dt>nextPartition : (<a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>nextPartition(gamma, part, number)</code> generates the partition of  number which follows  part according to the right-to-left lexicographical order. The partition has the property that its components do not exceed the corresponding components of  gamma. The first partition is achieved by  part=[]. Also,  [] indicates that  part is the last partition.</p>
+</dd></dl>
+<a name="f_numberOfImproperPartitions"></a><dl><dt>numberOfImproperPartitions : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>numberOfImproperPartitions(n, m)</code> computes the number of partitions of the nonnegative integer <code>n</code> in <code>m</code> nonnegative parts with regarding the order (improper partitions). Example:  numberOfImproperPartitions (3, 3) is 10, since  [0, 0, 3], [0, 1, 2], [0, 2, 1], [0, 3, 0], [1, 0, 2], [1, 1, 1], [1, 2, 0], [2, 0, 1], [2, 1, 0], [3, 0, 0] are the possibilities. Note: this operation has a recursive implementation.</p>
+</dd></dl>
+<a name="f_subSet"></a><dl><dt>subSet : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>subSet(n, m, k)</code> calculates the  k<code>-</code>th  m-subset of the set  0, 1, ..., (n-1) in the lexicographic order considered as a decreasing map from  0, ..., (m-1) into  0, ..., (n-1). See <code>S</code>.<code>G</code>. Williamson: Theorem 1.60. Error: if not  (0 &lt;= m &lt;= n and 0 &lt; = k &lt; (n choose m)).</p>
+</dd></dl>
+<a name="f_unrankImproperPartitions0"></a><dl><dt>unrankImproperPartitions0 : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>unrankImproperPartitions0(n, m, k)</code> computes the  k<code>-</code>th improper partition of nonnegative <code>n</code> in <code>m</code> nonnegative parts in reverse lexicographical order. Example:  [0, 0, 3] &lt; [0, 1, 2] &lt; [0, 2, 1] &lt; [0, 3, 0] &lt; [1, 0, 2] &lt; [1, 1, 1] &lt; [1, 2, 0] &lt; [2, 0, 1] &lt; [2, 1, 0] &lt; [3, 0, 0]. Error: if <code>k</code> is negative or too big. Note: counting of subtrees is done by <span class="std std-ref">numberOfImproperPartitions</span>.</p>
+</dd></dl>
+<a name="f_unrankImproperPartitions1"></a><dl><dt>unrankImproperPartitions1 : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>unrankImproperPartitions1(n, m, k)</code> computes the  k<code>-</code>th improper partition of nonnegative <code>n</code> in at most <code>m</code> nonnegative parts ordered as follows: first, in reverse lexicographically according to their non-zero parts, then according to their positions (i.e. lexicographical order using  subSet:  [3, 0, 0] &lt; [0, 3, 0] &lt; [0, 0, 3] &lt; [2, 1, 0] &lt; [2, 0, 1] &lt; [0, 2, 1] &lt; [1, 2, 0] &lt; [1, 0, 2] &lt; [0, 1, 2] &lt; [1, 1, 1]). Note: counting of subtrees is done by  numberOfImproperPartitionsInternal.</p>
+</dd></dl>
+</body>
+</html>

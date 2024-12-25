@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnittestCount</title>
+</head>
+<body>
+<h1>UnittestCount</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/unittest.spad#L66">unittest.spad line 66</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/unittest.spad#L66">[edit on github]</a></p>
+<p>
+UnittestCount is a package that keeps track of statistics collected during testing.It is separate from UnittestAux because the latter takes an argument, and we want the state to be common for all arguments.</p>
+<a name="f_addWarning"></a><dl><dt>addWarning : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>addWarning s</code> is an internal function that adds <code>s</code>, together with an indication of the current testcase and the current testsuite to the list of warnings.</p>
+</dd></dl>
+<a name="f_incFail"></a><dl><dt>incFail : (<a href="String.html">String</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>incFail(s, o)</code> is an internal function that steps the number of failed tests and records in- and output.</p>
+</dd></dl>
+<a name="f_incFatal"></a><dl><dt>incFatal : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>incFatal s</code> is an internal function that steps the number of fatal tests and records input.</p>
+</dd></dl>
+<a name="f_incLibraryError"></a><dl><dt>incLibraryError : (<a href="String.html">String</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+incLibraryError is an internal function that steps the number of failed tests, but not the number of tests.</p>
+</dd></dl>
+<a name="f_incPass"></a><dl><dt>incPass : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+incPass is an internal function that steps the number of passed tests.</p>
+</dd></dl>
+<a name="f_incTest"></a><dl><dt>incTest : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+incTest is an internal function that steps the test number.</p>
+</dd></dl>
+<a name="f_incXfFail"></a><dl><dt>incXfFail : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>incXfFail()</code> is an internal function that steps the number expected failures.</p>
+</dd></dl>
+<a name="f_incXfFatal"></a><dl><dt>incXfFatal : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+incXfFatal is like incFatal, but for expected failures.</p>
+</dd></dl>
+<a name="f_incXfLibraryError"></a><dl><dt>incXfLibraryError : (<a href="String.html">String</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+incXfLibraryError is like incLibraryError, but using expected failures.</p>
+</dd></dl>
+<a name="f_incXfPass"></a><dl><dt>incXfPass : (<a href="String.html">String</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>incXfPass(s, o)</code> is an internal function that steps the number of tests that passed but were expected to fail and records in- and output.</p>
+</dd></dl>
+<a name="f_statistics"></a><dl><dt>statistics : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>statistics()</code> prints out a summary of the outcome of the testcases so far. Use <code>clear completely</code> to reset the statistics.</p>
+</dd></dl>
+<a name="f_testcase"></a><dl><dt>testcase : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testcase s</code> starts a new testcase with <code>s</code> as title. It also calls <code>clear all</code>. A testcase is composed of several tests.</p>
+</dd></dl>
+<a name="f_testcaseNoClear"></a><dl><dt>testcaseNoClear : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testcaseNoClear s</code>, starts a new testcase with <code>s</code> as title, without calling <code>clear all</code>. A testcase is composed of several tests.</p>
+</dd></dl>
+<a name="f_testsuite"></a><dl><dt>testsuite : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testsuite s</code> starts a new testsuite with <code>s</code> as title. It also calls <code>clear all</code>. A testsuite is composed of several testcases.</p>
+</dd></dl>
+<a name="f_testsuiteNoClear"></a><dl><dt>testsuiteNoClear : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testsuiteNoClear s</code> starts a new testsuite with <code>s</code> as title, without calling <code>clear all</code>. A testsuite is composed of several testcases.</p>
+</dd></dl>
+</body>
+</html>

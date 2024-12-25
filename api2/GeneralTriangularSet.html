@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GeneralTriangularSet</title>
+</head>
+<body>
+<h1>GeneralTriangularSet(R, E, V, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/triset.spad#L474">triset.spad line 474</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/triset.spad#L474">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)</ul>
+<p>
+A domain constructor of the category TriangularSetCategory. The only requirement for a list of polynomials to be a member of such a domain is the following: no polynomial is constant and two distinct polynomials have distinct main variables. Such a triangular set may not be auto-reduced or consistent. Triangular sets are stored as sorted lists <code>w</code>.<code>r</code>.<code>t</code>. the main variables of their members but they are displayed in reverse order.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_algebraic_63"></a><dl><dt><a href="TriangularSetCategory.html#f_algebraic_63">algebraic?</a> : (V, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_algebraicVariables"></a><dl><dt><a href="TriangularSetCategory.html#f_algebraicVariables">algebraicVariables</a> : % -&gt <a href="List.html">List</a>(V)</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_autoReduced_63"></a><dl><dt><a href="TriangularSetCategory.html#f_autoReduced_63">autoReduced?</a> : (%, Mapping(<a href="Boolean.html">Boolean</a>, P, <a href="List.html">List</a>(P))) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_basicSet"></a><dl><dt><a href="TriangularSetCategory.html#f_basicSet">basicSet</a> : (<a href="List.html">List</a>(P), Mapping(<a href="Boolean.html">Boolean</a>, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt Union(Record(bas : %, top : <a href="List.html">List</a>(P)), "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<dl><dt><a href="TriangularSetCategory.html#f_basicSet">basicSet</a> : (<a href="List.html">List</a>(P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt Union(Record(bas : %, top : <a href="List.html">List</a>(P)), "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_coHeight"></a><dl><dt><a href="TriangularSetCategory.html#f_coHeight">coHeight</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if V has <a href="Finite.html">Finite</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="List.html">List</a>(P))</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_collect"></a><dl><dt><a href="PolynomialSetCategory.html#f_collect">collect</a> : (%, V) -&gt %</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_collectQuasiMonic"></a><dl><dt><a href="TriangularSetCategory.html#f_collectQuasiMonic">collectQuasiMonic</a> : % -&gt %</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_collectUnder"></a><dl><dt><a href="PolynomialSetCategory.html#f_collectUnder">collectUnder</a> : (%, V) -&gt %</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_collectUpper"></a><dl><dt><a href="PolynomialSetCategory.html#f_collectUpper">collectUpper</a> : (%, V) -&gt %</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="Collection.html#f_construct">construct</a> : <a href="List.html">List</a>(P) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (P, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="TriangularSetCategory.html#f_degree">degree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, P, P) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(P, P)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(P)) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="Evalable.html">Evalable</a>(P)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(P, P)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(P))) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="Evalable.html">Evalable</a>(P)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_extend"></a><dl><dt><a href="TriangularSetCategory.html#f_extend">extend</a> : (%, P) -&gt %</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_extendIfCan"></a><dl><dt><a href="TriangularSetCategory.html#f_extendIfCan">extendIfCan</a> : (%, P) -&gt Union(%, "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_find"></a><dl><dt><a href="Collection.html#f_find">find</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt Union(P, "failed")</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_first"></a><dl><dt><a href="TriangularSetCategory.html#f_first">first</a> : % -&gt Union(P, "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_headReduce"></a><dl><dt><a href="TriangularSetCategory.html#f_headReduce">headReduce</a> : (P, %) -&gt P</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_headReduced_63"></a><dl><dt><a href="TriangularSetCategory.html#f_headReduced_63">headReduced?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<dl><dt><a href="TriangularSetCategory.html#f_headReduced_63">headReduced?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_headRemainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_headRemainder">headRemainder</a> : (P, %) -&gt Record(num : P, den : R)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_iexactQuo"></a><dl><dt><a href="PolynomialSetCategory.html#f_iexactQuo">iexactQuo</a> : (R, R) -&gt R</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_infRittWu_63"></a><dl><dt><a href="TriangularSetCategory.html#f_infRittWu_63">infRittWu?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_initiallyReduce"></a><dl><dt><a href="TriangularSetCategory.html#f_initiallyReduce">initiallyReduce</a> : (P, %) -&gt P</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_initiallyReduced_63"></a><dl><dt><a href="TriangularSetCategory.html#f_initiallyReduced_63">initiallyReduced?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<dl><dt><a href="TriangularSetCategory.html#f_initiallyReduced_63">initiallyReduced?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_initials"></a><dl><dt><a href="TriangularSetCategory.html#f_initials">initials</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_last"></a><dl><dt><a href="TriangularSetCategory.html#f_last">last</a> : % -&gt Union(P, "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_mainVariable_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_mainVariable_63">mainVariable?</a> : (V, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_mainVariables"></a><dl><dt><a href="PolynomialSetCategory.html#f_mainVariables">mainVariables</a> : % -&gt <a href="List.html">List</a>(V)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(P, P), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(P, P), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt P if P has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P, P), %) -&gt P</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt P if P has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_mvar"></a><dl><dt><a href="PolynomialSetCategory.html#f_mvar">mvar</a> : % -&gt V</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_normalized_63"></a><dl><dt><a href="TriangularSetCategory.html#f_normalized_63">normalized?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<dl><dt><a href="TriangularSetCategory.html#f_normalized_63">normalized?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_quasiComponent"></a><dl><dt><a href="TriangularSetCategory.html#f_quasiComponent">quasiComponent</a> : % -&gt Record(close : <a href="List.html">List</a>(P), open : <a href="List.html">List</a>(P))</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_reduce"></a><dl><dt><a href="TriangularSetCategory.html#f_reduce">reduce</a> : (P, %, Mapping(P, P, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt P</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %, P) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %, P, P) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_reduceByQuasiMonic"></a><dl><dt><a href="TriangularSetCategory.html#f_reduceByQuasiMonic">reduceByQuasiMonic</a> : (P, %) -&gt P</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_reduced_63"></a><dl><dt><a href="TriangularSetCategory.html#f_reduced_63">reduced?</a> : (P, %, Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_remainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_remainder">remainder</a> : (P, %) -&gt Record(rnum : R, polnum : P, den : R)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_remove"></a><dl><dt><a href="Collection.html#f_remove">remove</a> : (P, %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_remove">remove</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_removeDuplicates"></a><dl><dt><a href="Collection.html#f_removeDuplicates">removeDuplicates</a> : % -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_removeZero"></a><dl><dt><a href="TriangularSetCategory.html#f_removeZero">removeZero</a> : (P, %) -&gt P</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_rest"></a><dl><dt><a href="TriangularSetCategory.html#f_rest">rest</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableFrom.html#f_retract">retract</a> : <a href="List.html">List</a>(P) -&gt %</dt><dd> from <a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableFrom.html#f_retractIfCan">retractIfCan</a> : <a href="List.html">List</a>(P) -&gt Union(%, "failed")</dt><dd> from <a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))</dd></dl>
+<a name="f_rewriteIdealWithHeadRemainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_rewriteIdealWithHeadRemainder">rewriteIdealWithHeadRemainder</a> : (<a href="List.html">List</a>(P), %) -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_rewriteIdealWithRemainder"></a><dl><dt><a href="PolynomialSetCategory.html#f_rewriteIdealWithRemainder">rewriteIdealWithRemainder</a> : (<a href="List.html">List</a>(P), %) -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_rewriteSetWithReduction"></a><dl><dt><a href="TriangularSetCategory.html#f_rewriteSetWithReduction">rewriteSetWithReduction</a> : (<a href="List.html">List</a>(P), %, Mapping(P, P, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P)) -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughBase_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughBase_63">roughBase?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughEqualIdeals_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughEqualIdeals_63">roughEqualIdeals?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughSubIdeal_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughSubIdeal_63">roughSubIdeal?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_roughUnitIdeal_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_roughUnitIdeal_63">roughUnitIdeal?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_select"></a><dl><dt><a href="Collection.html#f_select">select</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="TriangularSetCategory.html#f_select">select</a> : (%, V) -&gt Union(P, "failed")</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_sort"></a><dl><dt><a href="PolynomialSetCategory.html#f_sort">sort</a> : (%, V) -&gt Record(under : %, floor : %, upper : %)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_stronglyReduce"></a><dl><dt><a href="TriangularSetCategory.html#f_stronglyReduce">stronglyReduce</a> : (P, %) -&gt P</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_stronglyReduced_63"></a><dl><dt><a href="TriangularSetCategory.html#f_stronglyReduced_63">stronglyReduced?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<dl><dt><a href="TriangularSetCategory.html#f_stronglyReduced_63">stronglyReduced?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_triangular_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_triangular_63">triangular?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_trivialIdeal_63"></a><dl><dt><a href="PolynomialSetCategory.html#f_trivialIdeal_63">trivialIdeal?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_variables"></a><dl><dt><a href="PolynomialSetCategory.html#f_variables">variables</a> : % -&gt <a href="List.html">List</a>(V)</dt><dd> from <a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_zeroSetSplit"></a><dl><dt><a href="TriangularSetCategory.html#f_zeroSetSplit">zeroSetSplit</a> : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f_zeroSetSplitIntoTriangularSystems"></a><dl><dt><a href="TriangularSetCategory.html#f_zeroSetSplitIntoTriangularSystems">zeroSetSplitIntoTriangularSystems</a> : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(Record(close : %, open : <a href="List.html">List</a>(P)))</dt><dd> from <a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="Collection.html">Collection</a>(P)
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PolynomialSetCategory.html">PolynomialSetCategory</a>(R, E, V, P)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="List.html">List</a>(P))
+<p><a href="InnerEvalable.html">InnerEvalable</a>(P, P)
+<p><a href="Evalable.html">Evalable</a>(P)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="TriangularSetCategory.html">TriangularSetCategory</a>(R, E, V, P)
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+</body>
+</html>

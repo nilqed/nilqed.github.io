@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>BasicOperatorFunctions1</title>
+</head>
+<body>
+<h1>BasicOperatorFunctions1(A)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/op.spad#L183">op.spad line 183</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/op.spad#L183">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This package exports functions to set some commonly used properties of operators, including properties which contain functions.</p>
+<a name="f_constantOpIfCan"></a><dl><dt>constantOpIfCan : <a href="BasicOperator.html">BasicOperator</a> -&gt Union(A, "failed")</dt><dd><p>
+<code>constantOpIfCan(op)</code> returns <code>a</code> if <code>op</code> is the constant nullary operator always returning <code>a</code>, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_constantOperator"></a><dl><dt>constantOperator : A -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>constantOperator(a)</code> returns a nullary operator op such that <code>op()</code> always evaluate to <code>a</code>.</p>
+</dd></dl>
+<a name="f_derivative"></a><dl><dt>derivative : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(Mapping(A, <a href="List.html">List</a>(A)))) -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>derivative(op, [foo1, ..., foon])</code> attaches [<code>foo1</code>, ..., foon] as the "%diff" property of <code>op</code>. If <code>op</code> has an "%diff" property <code>[f1, ..., fn]</code> then applying a derivation <code>D</code> to <code>op(a1, ..., an)</code> returns <code>f1(a1, ..., an) * D(a1) + ... + fn(a1, ..., an) * D(an)</code>.</p>
+</dd></dl>
+<dl><dt>derivative : (<a href="BasicOperator.html">BasicOperator</a>, Mapping(A, A)) -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>derivative(op, foo)</code> attaches foo as the "%diff" property of <code>op</code>. If <code>op</code> has an "%diff" property <code>f</code>, then applying a derivation <code>D</code> to <code>op</code>(a) returns <code>f(a) * D(a)</code>. Argument <code>op</code> must be unary.</p>
+</dd></dl>
+<dl><dt>derivative : <a href="BasicOperator.html">BasicOperator</a> -&gt Union(<a href="List.html">List</a>(Mapping(A, <a href="List.html">List</a>(A))), "failed")</dt><dd><p>
+<code>derivative(op)</code> returns the value of the "%diff" property of <code>op</code> if it has one, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_evaluate"></a><dl><dt>evaluate : (<a href="BasicOperator.html">BasicOperator</a>, Mapping(A, A)) -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>evaluate(op, foo)</code> attaches foo as the "%eval" property of <code>op</code>. If <code>op</code> has an "%eval" property <code>f</code>, then applying <code>op</code> to a returns the result of <code>f(a)</code>. Argument <code>op</code> must be unary.</p>
+</dd></dl>
+<dl><dt>evaluate : (<a href="BasicOperator.html">BasicOperator</a>, Mapping(A, <a href="List.html">List</a>(A))) -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>evaluate(op, foo)</code> attaches foo as the "%eval" property of <code>op</code>. If <code>op</code> has an "%eval" property <code>f</code>, then applying <code>op</code> to <code>(a1, ..., an)</code> returns the result of <code>f(a1, ..., an)</code>.</p>
+</dd></dl>
+<dl><dt>evaluate : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(A)) -&gt Union(A, "failed")</dt><dd><p>
+<code>evaluate(op, [a1,...,an])</code> checks if <code>op</code> has an "%eval" property <code>f</code>. If it has, then <code>f(a1, ..., an)</code> is returned, and "failed" otherwise.</p>
+</dd></dl>
+<dl><dt>evaluate : <a href="BasicOperator.html">BasicOperator</a> -&gt Union(Mapping(A, <a href="List.html">List</a>(A)), "failed")</dt><dd><p>
+<code>evaluate(op)</code> returns the value of the "%eval" property of <code>op</code> if it has one, and "failed" otherwise.</p>
+</dd></dl>
+</body>
+</html>

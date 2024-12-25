@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GeneralSparseTable</title>
+</head>
+<body>
+<h1>GeneralSparseTable(Key, Entry, Tbl, dent)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/table.spad#L134">table.spad line 134</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/table.spad#L134">[edit on github]</a></p>
+<ul>
+<li>Key : <a href="SetCategory.html">SetCategory</a><li>Entry : <a href="BasicType.html">BasicType</a><li>Tbl : <a href="TableAggregate.html">TableAggregate</a>(Key, Entry)<li>dent : Entry</ul>
+<p>
+A sparse table has a default entry, which is returned if no other value has been explicitly stored for a key.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> or Entry has <a href="SetCategory.html">SetCategory</a> or Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if Record(key : Key, entry : Entry) has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>) or Entry has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="Collection.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(key : Key, entry : Entry)) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if Record(key : Key, entry : Entry) has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Record(key : Key, entry : Entry), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if Record(key : Key, entry : Entry) has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_dictionary"></a><dl><dt><a href="DictionaryOperations.html#f_dictionary">dictionary</a> : () -&gt %</dt><dd> from <a href="DictionaryOperations.html">DictionaryOperations</a>(Record(key : Key, entry : Entry))</dd></dl>
+<dl><dt><a href="DictionaryOperations.html#f_dictionary">dictionary</a> : <a href="List.html">List</a>(Record(key : Key, entry : Entry)) -&gt %</dt><dd> from <a href="DictionaryOperations.html">DictionaryOperations</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, Key) -&gt Entry</dt><dd> from <a href="Eltable.html">Eltable</a>(Key, Entry)</dd></dl>
+<dl><dt><a href="EltableAggregate.html#f_elt">elt</a> : (%, Key, Entry) -&gt Entry</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_entries"></a><dl><dt><a href="IndexedAggregate.html#f_entries">entries</a> : % -&gt <a href="List.html">List</a>(Entry)</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, Entry, Entry) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Entry, Entry)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(Entry)) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="Evalable.html">Evalable</a>(Entry)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(Record(key : Key, entry : Entry))) -&gt % if Record(key : Key, entry : Entry) has <a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry)) and Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry))</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(Entry), <a href="List.html">List</a>(Entry)) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Entry, Entry)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(Entry))) -&gt % if Entry has <a href="SetCategory.html">SetCategory</a> and Entry has <a href="Evalable.html">Evalable</a>(Entry)</dt><dd> from <a href="Evalable.html">Evalable</a>(Entry)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(Record(key : Key, entry : Entry)))) -&gt % if Record(key : Key, entry : Entry) has <a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry)) and Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry))</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(Record(key : Key, entry : Entry)), <a href="List.html">List</a>(Record(key : Key, entry : Entry))) -&gt % if Record(key : Key, entry : Entry) has <a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry)) and Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Record(key : Key, entry : Entry), Record(key : Key, entry : Entry))</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, Record(key : Key, entry : Entry), Record(key : Key, entry : Entry)) -&gt % if Record(key : Key, entry : Entry) has <a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry)) and Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Record(key : Key, entry : Entry), Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_extract_33"></a><dl><dt><a href="BagAggregate.html#f_extract_33">extract!</a> : % -&gt Record(key : Key, entry : Entry)</dt><dd> from <a href="BagAggregate.html">BagAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_fill_33"></a><dl><dt><a href="IndexedAggregate.html#f_fill_33">fill!</a> : (%, Entry) -&gt %</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_find"></a><dl><dt><a href="Collection.html#f_find">find</a> : (Mapping(<a href="Boolean.html">Boolean</a>, Record(key : Key, entry : Entry)), %) -&gt Union(Record(key : Key, entry : Entry), "failed")</dt><dd> from <a href="Collection.html">Collection</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_first"></a><dl><dt><a href="IndexedAggregate.html#f_first">first</a> : % -&gt Entry if Key has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_index_63"></a><dl><dt><a href="IndexedAggregate.html#f_index_63">index?</a> : (Key, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_indices"></a><dl><dt><a href="IndexedAggregate.html#f_indices">indices</a> : % -&gt <a href="List.html">List</a>(Key)</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_insert_33"></a><dl><dt><a href="BagAggregate.html#f_insert_33">insert!</a> : (Record(key : Key, entry : Entry), %) -&gt %</dt><dd> from <a href="BagAggregate.html">BagAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_inspect"></a><dl><dt><a href="BagAggregate.html#f_inspect">inspect</a> : % -&gt Record(key : Key, entry : Entry)</dt><dd> from <a href="BagAggregate.html">BagAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_key_63"></a><dl><dt><a href="KeyedDictionary.html#f_key_63">key?</a> : (Key, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="KeyedDictionary.html">KeyedDictionary</a>(Key, Entry)</dd></dl>
+<a name="f_keys"></a><dl><dt><a href="KeyedDictionary.html#f_keys">keys</a> : % -&gt <a href="List.html">List</a>(Key)</dt><dd> from <a href="KeyedDictionary.html">KeyedDictionary</a>(Key, Entry)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a> or Entry has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(Entry, Entry), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<dl><dt><a href="TableAggregate.html#f_map">map</a> : (Mapping(Entry, Entry, Entry), %, %) -&gt %</dt><dd> from <a href="TableAggregate.html">TableAggregate</a>(Key, Entry)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(Record(key : Key, entry : Entry), Record(key : Key, entry : Entry)), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(Entry, Entry), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(Record(key : Key, entry : Entry), Record(key : Key, entry : Entry)), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt Entry if Entry has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt Record(key : Key, entry : Entry) if Record(key : Key, entry : Entry) has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_maxIndex"></a><dl><dt><a href="IndexedAggregate.html#f_maxIndex">maxIndex</a> : % -&gt Key if Key has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (Record(key : Key, entry : Entry), %) -&gt <a href="Boolean.html">Boolean</a> if Record(key : Key, entry : Entry) has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt Entry if Entry has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt Record(key : Key, entry : Entry) if Record(key : Key, entry : Entry) has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_minIndex"></a><dl><dt><a href="IndexedAggregate.html#f_minIndex">minIndex</a> : % -&gt Key if Key has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_qelt"></a><dl><dt><a href="EltableAggregate.html#f_qelt">qelt</a> : (%, Key) -&gt Entry</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_qsetelt_33"></a><dl><dt><a href="EltableAggregate.html#f_qsetelt_33">qsetelt!</a> : (%, Key, Entry) -&gt Entry</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_reduce"></a><dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(Record(key : Key, entry : Entry), Record(key : Key, entry : Entry), Record(key : Key, entry : Entry)), %, Record(key : Key, entry : Entry), Record(key : Key, entry : Entry)) -&gt Record(key : Key, entry : Entry) if Record(key : Key, entry : Entry) has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="Collection.html">Collection</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_remove"></a><dl><dt><a href="Collection.html#f_remove">remove</a> : (Record(key : Key, entry : Entry), %) -&gt % if Record(key : Key, entry : Entry) has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="Collection.html">Collection</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_remove_33"></a><dl><dt><a href="DictionaryOperations.html#f_remove_33">remove!</a> : (Record(key : Key, entry : Entry), %) -&gt % if Record(key : Key, entry : Entry) has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="DictionaryOperations.html">DictionaryOperations</a>(Record(key : Key, entry : Entry))</dd></dl>
+<dl><dt><a href="KeyedDictionary.html#f_remove_33">remove!</a> : (Key, %) -&gt Union(Entry, "failed")</dt><dd> from <a href="KeyedDictionary.html">KeyedDictionary</a>(Key, Entry)</dd></dl>
+<a name="f_removeDuplicates"></a><dl><dt><a href="Collection.html#f_removeDuplicates">removeDuplicates</a> : % -&gt % if Record(key : Key, entry : Entry) has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="Collection.html">Collection</a>(Record(key : Key, entry : Entry))</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_search"></a><dl><dt><a href="KeyedDictionary.html#f_search">search</a> : (Key, %) -&gt Union(Entry, "failed")</dt><dd> from <a href="KeyedDictionary.html">KeyedDictionary</a>(Key, Entry)</dd></dl>
+<a name="f_setelt_33"></a><dl><dt><a href="TableAggregate.html#f_setelt_33">setelt!</a> : (%, Key, Entry) -&gt Entry</dt><dd> from <a href="TableAggregate.html">TableAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_swap_33"></a><dl><dt><a href="IndexedAggregate.html#f_swap_33">swap!</a> : (%, Key, Key) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)</dd></dl>
+<a name="f_table"></a><dl><dt><a href="TableAggregate.html#f_table">table</a> : () -&gt %</dt><dd> from <a href="TableAggregate.html">TableAggregate</a>(Key, Entry)</dd></dl>
+<dl><dt><a href="TableAggregate.html#f_table">table</a> : <a href="List.html">List</a>(Record(key : Key, entry : Entry)) -&gt %</dt><dd> from <a href="TableAggregate.html">TableAggregate</a>(Key, Entry)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> or Entry has <a href="SetCategory.html">SetCategory</a> or Record(key : Key, entry : Entry) has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Record(key : Key, entry : Entry))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Collection.html">Collection</a>(Record(key : Key, entry : Entry))
+<p><a href="KeyedDictionary.html">KeyedDictionary</a>(Key, Entry)
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(Entry)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(Record(key : Key, entry : Entry), Record(key : Key, entry : Entry))
+<p><a href="EltableAggregate.html">EltableAggregate</a>(Key, Entry)
+<p><a href="DictionaryOperations.html">DictionaryOperations</a>(Record(key : Key, entry : Entry))
+<p><a href="Evalable.html">Evalable</a>(Record(key : Key, entry : Entry))
+<p><a href="Evalable.html">Evalable</a>(Entry)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Dictionary.html">Dictionary</a>(Record(key : Key, entry : Entry))
+<p><a href="Eltable.html">Eltable</a>(Key, Entry)
+<p><a href="IndexedAggregate.html">IndexedAggregate</a>(Key, Entry)
+<p><a href="BagAggregate.html">BagAggregate</a>(Record(key : Key, entry : Entry))
+<p><a href="InnerEvalable.html">InnerEvalable</a>(Entry, Entry)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+<p><a href="TableAggregate.html">TableAggregate</a>(Key, Entry)
+</body>
+</html>

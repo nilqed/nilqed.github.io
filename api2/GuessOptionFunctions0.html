@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GuessOptionFunctions0</title>
+</head>
+<body>
+<h1>GuessOptionFunctions0</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mantepse.spad#L229">mantepse.spad line 229</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mantepse.spad#L229">[edit on github]</a></p>
+<p>
+<code>GuessOptionFunctions0</code> provides operations that extract the values of options for Guess.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_Somos"></a><dl><dt>Somos : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="PositiveInteger.html">PositiveInteger</a>, <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>Somos returns</code> whether we allow only Somos-like operators, default being <code>false</code></p>
+</dd></dl>
+<a name="f_allDegrees"></a><dl><dt>allDegrees : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>allDegrees returns</code> whether all possibilities of the degree vector should be tried, the default being <code>false</code>.</p>
+</dd></dl>
+<a name="f_check"></a><dl><dt>check : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union("skip", "MonteCarlo", "deterministic")</dt><dd><p>
+<code>check(d)</code> specifies how we want to check the solution. If the value is "skip", we return the solutions found by the interpolation routine without checking. If the value is "MonteCarlo", we use a probabilistic check. The default is "deterministic".</p>
+</dd></dl>
+<a name="f_checkExtraValues"></a><dl><dt>checkExtraValues : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>checkExtraValues(d)</code> specifies whether we want to check the solution beyond the order given by the degree bounds. The default is <code>true</code>.</p>
+</dd></dl>
+<a name="f_checkOptions"></a><dl><dt>checkOptions : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>checkOptions checks</code> whether the given options are consistent, and yields an error otherwise</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_debug"></a><dl><dt>debug : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>debug returns</code> whether we want additional output on the progress, default being <code>false</code></p>
+</dd></dl>
+<a name="f_displayKind"></a><dl><dt>displayKind : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>displayKind(d)</code> specifies kind of the result: generating function, recurrence or equation. This option should not be set by the user, but rather by the <code>HP</code>-specification.</p>
+</dd></dl>
+<a name="f_functionName"></a><dl><dt>functionName : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>functionName returns</code> the name of the function given by the algebraic differential equation, default being <code>f</code></p>
+</dd></dl>
+<a name="f_functionNames"></a><dl><dt>functionNames : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>functionNames returns</code> the names for the function in the algebraic dependence, default being %<code>f1</code>, %<code>f2</code>, ...</p>
+</dd></dl>
+<a name="f_homogeneous"></a><dl><dt>homogeneous : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="PositiveInteger.html">PositiveInteger</a>, <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>homogeneous returns</code> whether we allow only homogeneous algebraic differential equations, default being <code>false</code></p>
+</dd></dl>
+<a name="f_indexName"></a><dl><dt>indexName : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>indexName returns</code> the name of the index variable used for the formulas, default being <code>n</code></p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_maxDegree"></a><dl><dt>maxDegree : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary")</dt><dd><p>
+<code>maxDegree returns</code> the specified maxDegree.</p>
+</dd></dl>
+<a name="f_maxDerivative"></a><dl><dt>maxDerivative : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary")</dt><dd><p>
+<code>maxDerivative returns</code> the specified maxDerivative.</p>
+</dd></dl>
+<a name="f_maxLevel"></a><dl><dt>maxLevel : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary")</dt><dd><p>
+<code>maxLevel returns</code> the specified maxLevel.</p>
+</dd></dl>
+<a name="f_maxMixedDegree"></a><dl><dt>maxMixedDegree : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>maxMixedDegree returns</code> the specified maxMixedDegree.</p>
+</dd></dl>
+<a name="f_maxPower"></a><dl><dt>maxPower : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="PositiveInteger.html">PositiveInteger</a>, "arbitrary")</dt><dd><p>
+<code>maxPower returns</code> the specified maxPower.</p>
+</dd></dl>
+<a name="f_maxShift"></a><dl><dt>maxShift : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary")</dt><dd><p>
+<code>maxShift returns</code> the specified maxShift.</p>
+</dd></dl>
+<a name="f_maxSubst"></a><dl><dt>maxSubst : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt Union(<a href="PositiveInteger.html">PositiveInteger</a>, "arbitrary")</dt><dd><p>
+<code>maxSubst returns</code> the specified maxSubst.</p>
+</dd></dl>
+<a name="f_one"></a><dl><dt>one : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>one returns</code> whether we need only one solution, default being <code>true</code>.</p>
+</dd></dl>
+<a name="f_safety"></a><dl><dt>safety : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>safety returns</code> the specified safety or 1 as default.</p>
+</dd></dl>
+<a name="f_variableName"></a><dl><dt>variableName : <a href="List.html">List</a>(<a href="GuessOption.html">GuessOption</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>variableName returns</code> the name of the variable used in by the algebraic differential equation, default being <code>x</code></p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

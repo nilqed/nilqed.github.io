@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FullPartialFractionExpansion</title>
+</head>
+<body>
+<h1>FullPartialFractionExpansion(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fparfrac.spad#L1">fparfrac.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fparfrac.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+Full partial fraction expansion of rational functions.</p>
+<a name="f__43"></a><dl><dt>+ : (UP, %) -&gt %</dt><dd><p>
+<code>p + x</code> returns the sum of <code>p</code> and <code>x</code></p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt>D : % -&gt %</dt><dd><p>
+<code>D(f)</code> returns the derivative of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>D : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>D(f, n)</code> returns the <code>n</code>-th derivative of <code>f</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : <a href="List.html">List</a>(Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, center : UP, num : UP)) -&gt %</dt><dd><p>
+<code>construct(l)</code> is the inverse of fracPart.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Fraction.html">Fraction</a>(UP)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Fraction.html">Fraction</a>(UP))</dd></dl>
+<a name="f_differentiate"></a><dl><dt>differentiate : % -&gt %</dt><dd><p>
+<code>differentiate(f)</code> returns the derivative of <code>f</code>.</p>
+</dd></dl>
+<dl><dt>differentiate : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>differentiate(f, n)</code> returns the <code>n</code>-th derivative of <code>f</code>.</p>
+</dd></dl>
+<a name="f_fracPart"></a><dl><dt>fracPart : % -&gt <a href="List.html">List</a>(Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, center : UP, num : UP))</dt><dd><p>
+<code>fracPart(f)</code> returns the list of summands of the fractional part of <code>f</code>.</p>
+</dd></dl>
+<a name="f_fullPartialFraction"></a><dl><dt>fullPartialFraction : <a href="Fraction.html">Fraction</a>(UP) -&gt %</dt><dd><p>
+<code>fullPartialFraction(f)</code> returns <code>[p, [[j, Dj, Hj]...]]</code> such that <code>f = p(x) + \sum_[j, Dj, Hj] in l \sum_Dj(a)=0 Hj(a)/(x - a)^j</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_polyPart"></a><dl><dt>polyPart : % -&gt UP</dt><dd><p>
+<code>polyPart(f)</code> returns the polynomial part of <code>f</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Fraction.html">Fraction</a>(UP))
+</body>
+</html>

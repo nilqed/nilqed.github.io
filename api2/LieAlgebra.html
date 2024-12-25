@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LieAlgebra</title>
+</head>
+<body>
+<h1>LieAlgebra(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L299">xlpoly.spad line 299</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L299">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+The category of Lie Algebras. It is used by the following domains of non-commutative algebra: LiePolynomial and XPBWPolynomial.  Author : Michel Petitot (petitot@lifl.<code>fr</code>).</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt>/ : (%, R) -&gt % if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>x/r</code> returns the division of <code>x</code> by <code>r</code>.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : (%, %) -&gt %</dt><dd><p>
+<code>construct(x, y)</code> returns the Lie bracket of <code>x</code> and <code>y</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+</body>
+</html>

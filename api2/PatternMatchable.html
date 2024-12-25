@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchable</title>
+</head>
+<body>
+<h1>PatternMatchable(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L165">patmatch1.spad line 165</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L165">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+A set <code>R</code> is PatternMatchable over <code>S</code> if elements of <code>R</code> can be matched to patterns over <code>S</code>.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_patternMatch"></a><dl><dt>patternMatch : (%, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, %)</dt><dd><p>
+<code>patternMatch(expr, pat, res)</code> matches the pattern <code>pat</code> to the expression <code>expr</code>. res contains the variables of <code>pat</code> which are already matched and their matches (necessary for recursion). Initially, res is just the result of <span class="spadfun">new</span> which is an empty list of matches.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryFunctionStructurePackage</title>
+</head>
+<body>
+<h1>ElementaryFunctionStructurePackage(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/efstruc.spad#L78">efstruc.spad line 78</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/efstruc.spad#L78">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+ElementaryFunctionStructurePackage provides functions to test the algebraic independence of various elementary functions, using the Risch structure theorem (real and complex versions). It also provides transformations on elementary functions which are not considered simplifications.</p>
+<a name="f_irootDep"></a><dl><dt>irootDep : <a href="Kernel.html">Kernel</a>(F) -&gt Union(:(vec, <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))), :(func, F), :(fail, <a href="Boolean.html">Boolean</a>))</dt><dd><p>
+<code>irootDep(k)</code> is a local function with a conditional implementation.</p>
+</dd></dl>
+<a name="f_normalize"></a><dl><dt>normalize : F -&gt F</dt><dd><p>
+<code>normalize(f)</code> rewrites <code>f</code> using the least possible number of real algebraically independent kernels.</p>
+</dd></dl>
+<dl><dt>normalize : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>normalize(f, x)</code> is normalize([<code>f</code>], [<code>x</code>])</p>
+</dd></dl>
+<dl><dt>normalize : <a href="List.html">List</a>(F) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>normalize(lf)</code> is normalize(<code>lf</code>, [])</p>
+</dd></dl>
+<dl><dt>normalize : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>normalize([f1, ..., fn], lx)</code> rewrites <code>f1, ..., fn</code> using the least possible number of real algebraically independent kernels. Additionally, it tries to ensure that any expression in resulting kernels which syntactically depends on a variable <code>x</code> from <code>lx</code> has nonzero derivative with respect to <code>x</code>.</p>
+</dd></dl>
+<a name="f_realElementary"></a><dl><dt>realElementary : F -&gt F</dt><dd><p>
+<code>realElementary(f)</code> rewrites <code>f</code> in terms of the 4 fundamental real transcendental elementary functions: <code>log, exp, tan, atan</code>.</p>
+</dd></dl>
+<dl><dt>realElementary : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>realElementary(f, x)</code> rewrites the kernels of <code>f</code> involving <code>x</code> in terms of the 4 fundamental real transcendental elementary functions: <code>log, exp, tan, atan</code>.</p>
+</dd></dl>
+<a name="f_realLiouvillian"></a><dl><dt>realLiouvillian : F -&gt F</dt><dd><p>
+<code>realLiouvillian(f)</code> rewrites <code>f</code> elementary kernels of <code>f</code> in terms 4 fundamental real elementary functions: <code>log, exp, tan, atan</code>. Additionally, it rewrites Liouvillian functions as indefinite integrals to support better normalization.</p>
+</dd></dl>
+<dl><dt>realLiouvillian : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>realLiouvillian(f, x)</code> rewrites <code>f</code> elementary kernels of <code>f</code> in terms 4 fundamental real elementary functions: <code>log, exp, tan, atan</code>. Additionally, it rewrites Liouvillian functions of <code>x</code> as indefinite integrals to support better normalization.</p>
+</dd></dl>
+<a name="f_rischNormalize"></a><dl><dt>rischNormalize : (F, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt Record(func : F, kers : <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), vals : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>rischNormalize(f, lx)</code> is rischNormalize([<code>f</code>], <code>lx</code>)</p>
+</dd></dl>
+<dl><dt>rischNormalize : (F, <a href="Symbol.html">Symbol</a>) -&gt Record(func : F, kers : <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), vals : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>rischNormalize(f, x)</code> is rischNormalize([<code>f</code>], [<code>x</code>]) rischNormalize(<code>f</code>, <code>x</code>) returns <code>[g, [k1, ..., kn], [h1, ..., hn]]</code> such that <code>g = normalize(f, x)</code> and each <code><code>ki</code></code> was rewritten as <code><code>hi</code></code> during the normalization.</p>
+</dd></dl>
+<dl><dt>rischNormalize : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt Record(funcs : <a href="List.html">List</a>(F), kers : <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), vals : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>rischNormalize(lf, lx)</code> returns <code>[lg, [k1, ..., kn], [h1, ..., hn]]</code> such that <code>lg = normalize(lf, lx)</code> and each <code><code>ki</code></code> was rewritten as <code><code>hi</code></code> during the normalization.</p>
+</dd></dl>
+<a name="f_rmap"></a><dl><dt>rmap : (Mapping(F, <a href="Kernel.html">Kernel</a>(F)), F) -&gt F</dt><dd><p>
+<code>rmap(f, e)</code> rewrites <code>e</code> replacing each kernel <code>k</code> in <code>e</code> by <code>f</code>(<code>k</code>)</p>
+</dd></dl>
+<a name="f_rootNormalize"></a><dl><dt>rootNormalize : (F, <a href="Kernel.html">Kernel</a>(F)) -&gt F</dt><dd><p>
+<code>rootNormalize(f, k)</code> returns <code>f</code> rewriting either <code>k</code> which must be an <code>n</code>th-root in terms of radicals already in <code>f</code>, or some radicals in <code>f</code> in terms of <code>k</code>.</p>
+</dd></dl>
+<a name="f_tanQ"></a><dl><dt>tanQ : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), F) -&gt F</dt><dd><p>
+<code>tanQ(q, a)</code> is a local function with a conditional implementation.</p>
+</dd></dl>
+<a name="f_validExponential"></a><dl><dt>validExponential : (<a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F)), F, <a href="Symbol.html">Symbol</a>) -&gt Union(F, "failed")</dt><dd><p>
+<code>validExponential([k1, ..., kn], f, x)</code> returns <code>g</code> if <code>exp(f)=g</code> and <code>g</code> involves only <code>k1...kn</code>, and "failed" otherwise.</p>
+</dd></dl>
+</body>
+</html>

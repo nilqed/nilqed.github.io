@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IrrRepSymNatPackage</title>
+</head>
+<body>
+<h1>IrrRepSymNatPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/irsn.spad#L1">irsn.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/irsn.spad#L1">[edit on github]</a></p>
+<p>
+IrrRepSymNatPackage contains functions for computing the ordinary irreducible representations of symmetric groups on <code>n</code> letters  1, 2, ..., n in Young<code>'s</code> natural form and their dimensions. These representations can be labelled by number partitions of <code>n</code>, i.e. a weakly decreasing sequence of integers summing up to <code>n</code>, e.g.  [3, 3, 3, 1] labels an irreducible representation for <code>n</code> equals 10. Note: whenever a List Integer appears in a signature, a partition required.</p>
+<a name="f_dimensionOfIrreducibleRepresentation"></a><dl><dt>dimensionOfIrreducibleRepresentation : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>dimensionOfIrreducibleRepresentation(lambda)</code> is the dimension of the ordinary irreducible representation of the symmetric group corresponding to  lambda. Note: the Robinson-Thrall hook formula is implemented.</p>
+</dd></dl>
+<a name="f_irreducibleRepresentation"></a><dl><dt>irreducibleRepresentation : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>irreducibleRepresentation(lambda)</code> is the list of the two irreducible representations corresponding to the partition  lambda in Young<code>'s</code> natural form for the following two generators of the symmetric group, whose elements permute  1, 2, ..., n, namely  (1 2) (2-cycle) and  (1 2 ... n) (<code>n</code>-cycle).</p>
+</dd></dl>
+<dl><dt>irreducibleRepresentation : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Permutation.html">Permutation</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>irreducibleRepresentation(lambda, listOfPerm)</code> is the list of the irreducible representations corresponding to  lambda in Young<code>'s</code> natural form for the list of permutations given by  listOfPerm.</p>
+</dd></dl>
+<dl><dt>irreducibleRepresentation : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Permutation.html">Permutation</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>irreducibleRepresentation(lambda, <code>pi</code>)</code> is the irreducible representation corresponding to partition  lambda in Young<code>'s</code> natural form of the permutation  <code>pi</code> in the symmetric group, whose elements permute  1, 2, ..., n.</p>
+</dd></dl>
+</body>
+</html>

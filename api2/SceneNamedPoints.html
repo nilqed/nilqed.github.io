@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SceneNamedPoints</title>
+</head>
+<body>
+<h1>SceneNamedPoints(PT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L2200">scene.spad line 2200</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L2200">[edit on github]</a></p>
+<ul>
+<li>PT : <a href="SPointCategory.html">SPointCategory</a></ul>
+<p>
+Associates points or nodes in Scene structure with names (or a hierarchy of names). The aim is, where a point or node is used in several different constructions, it only needs to be specified once.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addNode_33"></a><dl><dt>addNode! : (%, <a href="String.html">String</a>, <a href="Scene.html">Scene</a>(PT)) -&gt %</dt><dd><p>
+<code>addNode!(n, ptName, sc)</code> adds a scene node.</p>
+</dd></dl>
+<a name="f_addPoints_33"></a><dl><dt>addPoints! : (%, <a href="String.html">String</a>, %) -&gt %</dt><dd><p>
+<code>addPoints!(n, ptName, pts)</code> adds a points node.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_findNode"></a><dl><dt>findNode : (%, <a href="String.html">String</a>) -&gt <a href="Scene.html">Scene</a>(PT)</dt><dd><p>
+<code>findNode(n, ptName)</code> finds a scene node</p>
+</dd></dl>
+<a name="f_findPoint"></a><dl><dt>findPoint : (%, <a href="String.html">String</a>) -&gt PT</dt><dd><p>
+<code>findPoint(n, ptName)</code> find the point associated with a given string.</p>
+</dd></dl>
+<a name="f_getNames"></a><dl><dt>getNames : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>getNames(n)</code> returns a list of names for this node</p>
+</dd></dl>
+<a name="f_isNodeBranch_63"></a><dl><dt>isNodeBranch? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isNodeBranch?(n)</code> returns <code>true</code> if this is a branch.</p>
+</dd></dl>
+<a name="f_isNodeLeaf_63"></a><dl><dt>isNodeLeaf? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isNodeLeaf?(n)</code> returns <code>true</code> if this is a leaf which holds Scene nodes.</p>
+</dd></dl>
+<a name="f_isPointLeaf_63"></a><dl><dt>isPointLeaf? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isPointLeaf?(n)</code> returns <code>true</code> if this is a <code>pt</code> node, that is, if this node contains points</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_namedBranch"></a><dl><dt>namedBranch : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt %</dt><dd><p>
+<code>namedBranch(chin, nmin)</code> constructs a branch in the tree structure</p>
+</dd></dl>
+<a name="f_namedPoints"></a><dl><dt>namedPoints : (<a href="List.html">List</a>(PT), <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt %</dt><dd><p>
+<code>namedPoints(ptin, nmin)</code> constructs a list of named points.</p>
+</dd></dl>
+<dl><dt>namedPoints : (<a href="List.html">List</a>(<a href="Scene.html">Scene</a>(PT)), <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt %</dt><dd><p>
+<code>namedPoints(scin, nmin)</code> constructs a list of named nodes.</p>
+</dd></dl>
+<a name="f_toString"></a><dl><dt>toString : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>toString(n)</code> returns string representation for debug purposes.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

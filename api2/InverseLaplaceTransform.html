@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InverseLaplaceTransform</title>
+</head>
+<body>
+<h1>InverseLaplaceTransform(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/laplace.spad#L253">laplace.spad line 253</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/laplace.spad#L253">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="EuclideanDomain.html">EuclideanDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>, <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a>, <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R))</ul>
+<p>
+This package computes the inverse Laplace Transform.</p>
+<a name="f_inverseLaplace"></a><dl><dt>inverseLaplace : (F, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>) -&gt Union(F, "failed")</dt><dd><p>
+<code>inverseLaplace(f, s, t)</code> returns the Inverse Laplace transform of <code>f(s)</code> using <code>t</code> as the new variable or "failed" if unable to find a closed form. Handles only rational <code>f(s)</code>.</p>
+</dd></dl>
+</body>
+</html>

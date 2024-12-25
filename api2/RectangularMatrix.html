@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RectangularMatrix</title>
+</head>
+<body>
+<h1>RectangularMatrix(m, n, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matrix.spad#L230">matrix.spad line 230</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matrix.spad#L230">[edit on github]</a></p>
+<ul>
+<li>m : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>n : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>R : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)</ul>
+<p>
+RectangularMatrix is a matrix domain where the number of rows and the number of columns are parameters of the domain.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="RectangularMatrixCategory.html#f__47">/</a> : (%, R) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_antisymmetric_63"></a><dl><dt><a href="RectangularMatrixCategory.html#f_antisymmetric_63">antisymmetric?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>coerce(m)</code> converts a matrix of type RectangularMatrix to a matrix of type <code>Matrix</code>.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_column"></a><dl><dt><a href="RectangularMatrixCategory.html#f_column">column</a> : (%, <a href="Integer.html">Integer</a>) -&gt <a href="DirectProduct.html">DirectProduct</a>(m, R)</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_columnSpace"></a><dl><dt><a href="RectangularMatrixCategory.html#f_columnSpace">columnSpace</a> : % -&gt <a href="List.html">List</a>(<a href="DirectProduct.html">DirectProduct</a>(m, R)) if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (R, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_diagonal_63"></a><dl><dt><a href="RectangularMatrixCategory.html#f_diagonal_63">diagonal?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="RectangularMatrixCategory.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<dl><dt><a href="RectangularMatrixCategory.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_enumerate"></a><dl><dt><a href="Finite.html#f_enumerate">enumerate</a> : () -&gt <a href="List.html">List</a>(%) if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="RectangularMatrixCategory.html#f_exquo">exquo</a> : (%, R) -&gt Union(%, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_index"></a><dl><dt><a href="Finite.html#f_index">index</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt % if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_listOfLists"></a><dl><dt><a href="RectangularMatrixCategory.html#f_listOfLists">listOfLists</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(R))</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_lookup"></a><dl><dt><a href="Finite.html#f_lookup">lookup</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="RectangularMatrixCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<dl><dt><a href="RectangularMatrixCategory.html#f_map">map</a> : (Mapping(R, R, R), %, %) -&gt %</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_matrix"></a><dl><dt><a href="RectangularMatrixCategory.html#f_matrix">matrix</a> : <a href="List.html">List</a>(<a href="List.html">List</a>(R)) -&gt %</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt R if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt R</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_maxColIndex"></a><dl><dt><a href="RectangularMatrixCategory.html#f_maxColIndex">maxColIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_maxRowIndex"></a><dl><dt><a href="RectangularMatrixCategory.html#f_maxRowIndex">maxRowIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (R, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt R if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_minColIndex"></a><dl><dt><a href="RectangularMatrixCategory.html#f_minColIndex">minColIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_minRowIndex"></a><dl><dt><a href="RectangularMatrixCategory.html#f_minRowIndex">minRowIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_ncols"></a><dl><dt><a href="RectangularMatrixCategory.html#f_ncols">ncols</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_nrows"></a><dl><dt><a href="RectangularMatrixCategory.html#f_nrows">nrows</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_nullSpace"></a><dl><dt><a href="RectangularMatrixCategory.html#f_nullSpace">nullSpace</a> : % -&gt <a href="List.html">List</a>(<a href="DirectProduct.html">DirectProduct</a>(m, R)) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_nullity"></a><dl><dt><a href="RectangularMatrixCategory.html#f_nullity">nullity</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_qelt"></a><dl><dt><a href="RectangularMatrixCategory.html#f_qelt">qelt</a> : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_random"></a><dl><dt><a href="Finite.html#f_random">random</a> : () -&gt % if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_rank"></a><dl><dt><a href="RectangularMatrixCategory.html#f_rank">rank</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_rectangularMatrix"></a><dl><dt>rectangularMatrix : <a href="Matrix.html">Matrix</a>(R) -&gt %</dt><dd><p>
+<code>rectangularMatrix(m)</code> converts a matrix of type Matrix to a matrix of type <code>RectangularMatrix</code>.</p>
+</dd></dl>
+<a name="f_row"></a><dl><dt><a href="RectangularMatrixCategory.html#f_row">row</a> : (%, <a href="Integer.html">Integer</a>) -&gt <a href="DirectProduct.html">DirectProduct</a>(n, R)</dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_rowEchelon"></a><dl><dt><a href="RectangularMatrixCategory.html#f_rowEchelon">rowEchelon</a> : % -&gt % if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_size"></a><dl><dt><a href="Finite.html#f_size">size</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_square_63"></a><dl><dt><a href="RectangularMatrixCategory.html#f_square_63">square?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed") if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_symmetric_63"></a><dl><dt><a href="RectangularMatrixCategory.html#f_symmetric_63">symmetric?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R, <a href="DirectProduct.html">DirectProduct</a>(n, R), <a href="DirectProduct.html">DirectProduct</a>(m, R))
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="Matrix.html">Matrix</a>(R))
+<p><a href="Finite.html">Finite</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="Module.html">Module</a>(R)
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)
+</body>
+</html>

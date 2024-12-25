@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerNumericFloatSolvePackage</title>
+</head>
+<body>
+<h1>InnerNumericFloatSolvePackage(K, F, Par)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numsolve.spad#L62">numsolve.spad line 62</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numsolve.spad#L62">[edit on github]</a></p>
+<ul>
+<li>K : <a href="GcdDomain.html">GcdDomain</a><li>F : <a href="Field.html">Field</a><li>Par : Join(<a href="Field.html">Field</a>, <a href="OrderedRing.html">OrderedRing</a>)</ul>
+<p>
+This is an internal package for computing approximate solutions to systems of polynomial equations. The parameter <code>K</code> specifies the coefficient field of the input polynomials and must be either <code>Fraction(Integer)</code> or <code>Complex(Fraction Integer)</code>. The parameter <code>F</code> specifies where the solutions must lie and can be one of the following: <code>Float</code>, <code>Fraction(Integer)</code>, <code>Complex(Float)</code>, <code>Complex(Fraction Integer)</code>. The last parameter specifies the type of the precision operand and must be either <code>Fraction(Integer)</code> or <code>Float</code>.</p>
+<a name="f_innerSolve"></a><dl><dt>innerSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(K)), <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(K)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), Par) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(F))</dt><dd><p>
+<code>innerSolve(lnum, lden, lvar, eps)</code> returns a list of solutions of the system of polynomials <code>lnum</code>, with the side condition that none of the members of <code>lden</code> vanish identically on any solution. Each solution is expressed as a list corresponding to the list of variables in <code>lvar</code> and with precision specified by eps.</p>
+</dd></dl>
+<a name="f_innerSolve1"></a><dl><dt>innerSolve1 : (<a href="Polynomial.html">Polynomial</a>(K), Par) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>innerSolve1(p, eps)</code> returns the list of the zeros of the polynomial <code>p</code> with precision eps.</p>
+</dd></dl>
+<dl><dt>innerSolve1 : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(K), Par) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>innerSolve1(up, eps)</code> returns the list of the zeros of the univariate polynomial <code>up</code> with precision eps.</p>
+</dd></dl>
+<a name="f_makeEq"></a><dl><dt>makeEq : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(F)))</dt><dd><p>
+<code>makeEq(lsol, lvar)</code> returns a list of equations formed by corresponding members of lvar and <code>lsol</code>.</p>
+</dd></dl>
+</body>
+</html>

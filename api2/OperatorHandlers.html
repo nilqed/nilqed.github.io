@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OperatorHandlers</title>
+</head>
+<body>
+<h1>OperatorHandlers(HANDLER)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fmt.spad#L322">fmt.spad line 322</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fmt.spad#L322">[edit on github]</a></p>
+<ul>
+<li>HANDLER : <a href="Type.html">Type</a></ul>
+<p>
+OperatorHandlers is an auxiliary domain. It is used holds functions for each operator of <code>OutputForm</code>, classified by the arity and the name of that operator.</p>
+<a name="f_handler"></a><dl><dt>handler : (%, <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt HANDLER</dt><dd><p>
+<code>handler(x, n, op)</code> is only valid if <code>knownHandler?(n, op)</code> is <code>true</code>. It returns the respective handler stored in <code>x</code>.</p>
+</dd></dl>
+<a name="f_knownHandler_63"></a><dl><dt>knownHandler? : (%, <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>knownHandler?(x, n, op)</code> checks whether a handler for operator <code>op</code> is known. The number <code>n</code> denotes the number of arguments that the operator can take. It is OK if both <code>knownOperator?(m, op)</code> and <code>knownOperator?(n, op)</code> return <code>true</code> for different <code>m</code> and <code>n</code>.</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : () -&gt %</dt><dd><p>
+<code>new()</code> creates an empty structure of handlers.</p>
+</dd></dl>
+<a name="f_removeHandler_33"></a><dl><dt>removeHandler! : (%, <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>removeHandler!(n, op)</code> removes any handler from an internal data structure (for the pair <code>(n, op)</code> such that afterwards <code>knownHandler?(x, n, op)</code> returns <code>false</code>.</p>
+</dd></dl>
+<a name="f_setHandler_33"></a><dl><dt>setHandler! : (%, <a href="Integer.html">Integer</a>, <a href="String.html">String</a>, HANDLER) -&gt HANDLER</dt><dd><p>
+<code>setHandler!(x, n, op, hdl)</code> puts <code>hdl</code> into the data structure <code>x</code> such that it can be queried afterwards.</p>
+</dd></dl>
+</body>
+</html>

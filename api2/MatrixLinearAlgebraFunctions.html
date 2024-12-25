@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MatrixLinearAlgebraFunctions</title>
+</head>
+<body>
+<h1>MatrixLinearAlgebraFunctions(R, Row, Col, M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matfuns.spad#L456">matfuns.spad line 456</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matfuns.spad#L456">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a><li>Row : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>Col : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(R, Row, Col)</ul>
+<p>
+MatrixLinearAlgebraFunctions provides functions to compute inverses and canonical forms.</p>
+<a name="f_adjoint"></a><dl><dt>adjoint : M -&gt Record(adjMat : M, detMat : R) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>adjoint(m)</code> returns the ajoint matrix of <code>m</code> (i.e. the matrix <code>n</code> such that <code>m*n</code> = determinant(<code>m</code>)*id) and the detrminant of <code>m</code>.</p>
+</dd></dl>
+<a name="f_determinant"></a><dl><dt>determinant : M -&gt R</dt><dd><p>
+<code>determinant(m)</code> returns the determinant of the matrix <code>m</code>. an error message is returned if the matrix is not square.</p>
+</dd></dl>
+<a name="f_elColumn2_33"></a><dl><dt>elColumn2! : (M, R, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt M</dt><dd><p>
+<code>elColumn2!(m, a, i, j)</code> adds to column <code>i</code> a*column(<code>m</code>, <code>j</code>) : elementary operation of second kind. (<code>i</code> <code>~=j</code>)</p>
+</dd></dl>
+<a name="f_elRow1_33"></a><dl><dt>elRow1! : (M, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt M</dt><dd><p>
+<code>elRow1!(m, i, j)</code> swaps rows <code>i</code> and <code>j</code> of matrix <code>m</code> : elementary operation of first kind</p>
+</dd></dl>
+<a name="f_elRow2_33"></a><dl><dt>elRow2! : (M, R, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt M</dt><dd><p>
+<code>elRow2!(m, a, i, j)</code> adds to row <code>i</code> a*row(<code>m</code>, <code>j</code>) : elementary operation of second kind. (<code>i</code> <code>~=j</code>)</p>
+</dd></dl>
+<a name="f_fractionFreeGauss_33"></a><dl><dt>fractionFreeGauss! : M -&gt M if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>fractionFreeGauss(m)</code> performs the fraction free gaussian elimination on the matrix <code>m</code>, also known as Bareiss algorithm.</p>
+</dd></dl>
+<a name="f_inverse"></a><dl><dt>inverse : M -&gt Union(M, "failed") if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>inverse(m)</code> returns the inverse of the matrix. If the matrix is not invertible, "failed" is returned. Error: if the matrix is not square.</p>
+</dd></dl>
+<a name="f_invertIfCan"></a><dl><dt>invertIfCan : M -&gt Union(M, "failed") if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>invertIfCan(m)</code> returns the inverse of <code>m</code> over <code>R</code></p>
+</dd></dl>
+<a name="f_minordet"></a><dl><dt>minordet : M -&gt R</dt><dd><p>
+<code>minordet(m)</code> computes the determinant of the matrix <code>m</code> using minors. Error: if the matrix is not square.</p>
+</dd></dl>
+<a name="f_normalizedDivide"></a><dl><dt>normalizedDivide : (R, R) -&gt Record(quotient : R, remainder : R) if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd><p>
+<code>normalizedDivide(n, d)</code> returns a normalized quotient and remainder such that consistently unique representatives for the residue class are chosen, e.g. positive remainders</p>
+</dd></dl>
+<a name="f_nullSpace"></a><dl><dt>nullSpace : M -&gt <a href="List.html">List</a>(Col) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>nullSpace(m)</code> returns a basis for the null space of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_nullity"></a><dl><dt>nullity : M -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>nullity(m)</code> returns the mullity of the matrix <code>m</code>. This is the dimension of the null space of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : M -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rank(m)</code> returns the rank of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_rowEchelon"></a><dl><dt>rowEchelon : M -&gt M if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd><p>
+<code>rowEchelon(m)</code> returns the row echelon form of the matrix <code>m</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FractionFreeFastGaussian</title>
+</head>
+<body>
+<h1>FractionFreeFastGaussian(D, V)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fffg.spad#L45">fffg.spad line 45</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fffg.spad#L45">[edit on github]</a></p>
+<ul>
+<li>D : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="GcdDomain.html">GcdDomain</a>)<li>V : <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</ul>
+<p>
+This package implements the interpolation algorithm proposed in Beckermann, Bernhard and Labahn, George, Fraction-free computation of matrix rational interpolants and matrix GCDs, SIAM Journal on Matrix Analysis and Applications 22.</p>
+<a name="f_DiffAction"></a><dl><dt>DiffAction : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V) -&gt D</dt><dd><p>
+<code>DiffAction(k, l, g)</code> gives the coefficient of <code>x^k</code> in <code>z^l</code> <code>g</code>(<code>x</code>), where <code>z*</code>(a+b*x+c*x^2+d*x^3+...) = (a*x+b*x^2+c*x^3+...), i.e. multiplication with <code>x</code>.</p>
+</dd></dl>
+<a name="f_DiffC"></a><dl><dt>DiffC : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>DiffC</code> gives the coefficients <code>c_</code><code>k</code>, <code>k</code> in the expansion &lt;x^k&gt; <code>z</code> <code>g</code>(<code>x</code>) = sum_<code>i=0</code><code>^k</code> <code>c_</code><code>k</code>, <code>i</code> &lt;x^i&gt; <code>g</code>(<code>x</code>), where <code>z</code> acts on <code>g</code>(<code>x</code>) by shifting. In fact, the result is [0, 0, 0, ...]</p>
+</dd></dl>
+<a name="f_ShiftAction"></a><dl><dt>ShiftAction : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V) -&gt D</dt><dd><p>
+<code>ShiftAction(k, l, g)</code> gives the coefficient of <code>x^k</code> in <code>z^l</code> <code>g</code>(<code>x</code>), where <code>z*(a+b*x+c*x^2+d*x^3+...) = (b*x+2*c*x^2+3*d*x^3+...)</code>. In terms of sequences, z*u(<code>n</code>)=n*u(<code>n</code>).</p>
+</dd></dl>
+<a name="f_ShiftC"></a><dl><dt>ShiftC : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>ShiftC</code> gives the coefficients <code>c_</code><code>k</code>, <code>k</code> in the expansion &lt;x^k&gt; <code>z</code> <code>g</code>(<code>x</code>) = sum_<code>i=0</code><code>^k</code> <code>c_</code><code>k</code>, <code>i</code> &lt;x^i&gt; <code>g</code>(<code>x</code>), where <code>z</code> acts on <code>g</code>(<code>x</code>) by shifting. In fact, the result is [0, 1, 2, ...]</p>
+</dd></dl>
+<a name="f_fffg"></a><dl><dt>fffg : (<a href="List.html">List</a>(D), Mapping(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>fffg(C, c, eta)</code> is version of fffg which uses sum of eta as order</p>
+</dd></dl>
+<dl><dt>fffg : (<a href="List.html">List</a>(D), Mapping(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>fffg(C, c, vd, K)</code> is the general algorithm as proposed by Beckermann and Labahn.  The first argument is the list of <code>c_</code><code>i</code>, <code>i</code>. These are the only values of <code>C</code> explicitly needed in <code>fffg</code>.  The second argument <code>c</code>, computes <code>c_k</code>(<code>M</code>), i.e. <code>c_k</code>(.) is the dual basis of the vector space <code>V</code>, but also knows about the special multiplication rule as described in Equation (2). Note that the information about <code>f</code> is therefore encoded in <code>c</code>.  <code>vd</code> is modified by the routine, on input it is the vector of degree bounds <code>n</code>, as introduced in Definition 2.1. On output it is vector of defects (degree bound minus degree of solution).  <code>K</code> is requested order of solution.</p>
+</dd></dl>
+<a name="f_genVectorStream"></a><dl><dt>genVectorStream : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>genVectorStream(sumEta, maxEta, k)</code> generates stream of all possible non-increasing lists <code>eta</code> with maximal entry <code>maxEta</code> and sum of entries at most <code>sumEta</code>.</p>
+</dd></dl>
+<a name="f_genVectorStream2"></a><dl><dt>genVectorStream2 : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Stream.html">Stream</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>genVectorStream2</code> is like genVectorStream, but skips every second vector.</p>
+</dd></dl>
+<a name="f_generalCoefficient"></a><dl><dt>generalCoefficient : (Mapping(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V), <a href="Vector.html">Vector</a>(V), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))) -&gt D</dt><dd><p>
+<code>generalCoefficient(action, f, k, p)</code> gives the coefficient of <code>x^k</code> in <code>p</code>(<code>z</code>). <code>f</code>(<code>x</code>), where the <code>action</code> of <code>z^l</code> on a polynomial in <code>x</code> is given by <code>action</code>, i.e. <code>action</code>(<code>k</code>, <code>l</code>, <code>f</code>) should return the coefficient of <code>x^k</code> in <code>z^l</code> <code>f</code>(<code>x</code>).</p>
+</dd></dl>
+<a name="f_generalInterpolation"></a><dl><dt>generalInterpolation : (<a href="List.html">List</a>(D), Mapping(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V), <a href="Vector.html">Vector</a>(V), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>generalInterpolation(C, CA, f, eta)</code> performs Hermite-Pade approximation using the given action <code>CA</code> of polynomials on the elements of <code>f</code>. The result is guaranteed to be correct up to order |eta|-1. Given that eta is a "normal" point, the degrees on the diagonal are given by eta. The degrees of column <code>i</code> are in this case eta + <code>e</code>.<code>i</code> - [1, 1, ..., 1], where the degree of zero is <code>-1</code>.  The first argument <code>C</code> is the list of coefficients <code>c_</code><code>k</code>, <code>k</code> in the expansion &lt;x^k&gt; <code>z</code> <code>g</code>(<code>x</code>) = sum_<code>i=0</code><code>^k</code> <code>c_</code><code>k</code>, <code>i</code> &lt;x^i&gt; <code>g</code>(<code>x</code>).  The second argument, <code>CA</code>(<code>k</code>, <code>l</code>, <code>f</code>), should return the coefficient of <code>x^k</code> in <code>z^l</code> <code>f</code>(<code>x</code>).</p>
+</dd></dl>
+<dl><dt>generalInterpolation : (<a href="List.html">List</a>(D), Mapping(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V), <a href="Vector.html">Vector</a>(V), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>generalInterpolation(C, CA, f, vd, K)</code> is like <code>generalInterpolation(C, CA, f, eta)</code> but solves up to order <code>K</code> and modifies <code>vd</code> to return defects of solutions</p>
+</dd></dl>
+<a name="f_interpolate"></a><dl><dt>interpolate : (<a href="List.html">List</a>(D), <a href="List.html">List</a>(D), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>interpolate(xlist, ylist, deg)</code> returns the rational function with numerator degree at most <code>deg</code> and denominator degree at most <code>#xlist-deg-1</code> that interpolates the given points using fraction free arithmetic. Note that rational interpolation does not guarantee that all given points are interpolated correctly: unattainable points may make this impossible.</p>
+</dd></dl>
+<dl><dt>interpolate : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(D)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(D)), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>interpolate(xlist, ylist, deg)</code> returns the rational function with numerator degree <code>deg</code> that interpolates the given points using fraction free arithmetic.</p>
+</dd></dl>
+<a name="f_qShiftAction"></a><dl><dt>qShiftAction : (D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V) -&gt D</dt><dd><p>
+<code>qShiftAction(q, k, l, g)</code> gives the coefficient of <code>x^k</code> in <code>z^l</code> <code>g</code>(<code>x</code>), where <code>z*</code>(a+b*x+c*x^2+d*x^3+...) = (a+q*b*x+q^2*c*x^2+q^3*d*x^3+...). In terms of sequences, z*u(<code>n</code>)=q^n*u(<code>n</code>).</p>
+</dd></dl>
+<a name="f_qShiftC"></a><dl><dt>qShiftC : (D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>qShiftC</code> gives the coefficients <code>c_</code><code>k</code>, <code>k</code> in the expansion &lt;x^k&gt; <code>z</code> <code>g</code>(<code>x</code>) = sum_<code>i=0</code><code>^k</code> <code>c_</code><code>k</code>, <code>i</code> &lt;x^i&gt; <code>g</code>(<code>x</code>), where <code>z</code> acts on <code>g</code>(<code>x</code>) by shifting. In fact, the result is [1, <code>q</code>, <code>q^2</code>, ...]</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraicIntegration</title>
+</head>
+<body>
+<h1>AlgebraicIntegration(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intaf.spad#L708">intaf.spad line 708</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intaf.spad#L708">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package provides functions for the integration of algebraic integrands over transcendental functions.</p>
+<a name="f_algextint"></a><dl><dt>algextint : (<a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), Mapping(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), Mapping(<a href="List.html">List</a>(Record(ratpart : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), coeffs : <a href="Vector.html">Vector</a>(F))), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))), Mapping(<a href="List.html">List</a>(Record(ratpart : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), coeffs : <a href="Vector.html">Vector</a>(F))), <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(F)) -&gt <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>algextint(x, y, d, ext, rde, csolve, [g1, ..., gn])</code> returns <code>[h, [c1, ..., cn]]</code> such that <code>f = dh/dx + sum(<code>ci</code> <code>gi</code>)</code> and dci/dx = 0, if such <code>[h, [c1, ..., cn]]</code> exist, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_algextint_95base"></a><dl><dt>algextint_base : (<a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), Mapping(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(F)) -&gt <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>algextint_base(x, y, d, csolve, [g1, ..., gn])</code> is like algextint but assumes that <code>y</code> and <code>gi</code>-<code>s</code> are purely algebraic</p>
+</dd></dl>
+<a name="f_algint"></a><dl><dt>algint : (F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), Mapping(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), Mapping(<a href="IntegrationResult.html">IntegrationResult</a>(F), F)) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>algint(f, x, y, d)</code> returns the integral of <code>f(x, y)dx</code> where <code>y</code> is an algebraic function of <code>x</code>; <code>d</code> is the derivation to use on <code>k[x]</code>.</p>
+</dd></dl>
+</body>
+</html>

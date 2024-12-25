@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DenominatorIntegration</title>
+</head>
+<body>
+<h1>DenominatorIntegration(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intden.spad#L28">intden.spad line 28</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intden.spad#L28">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a>, <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package generates logarithmic integrals and polylogs corresponding to denominator of the integrand.</p>
+<a name="f_li_95int"></a><dl><dt>li_int : (<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="Kernel.html">Kernel</a>(F), <a href="Symbol.html">Symbol</a>) -&gt Record(answer : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), logpart : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), ir : <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))))</dt><dd><p>
+<code>li_int(f, k, x)</code> generates logarithmic integrals.</p>
+</dd></dl>
+<a name="f_poly_95int"></a><dl><dt>poly_int : (<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="Kernel.html">Kernel</a>(F), <a href="Symbol.html">Symbol</a>) -&gt Record(answer : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), logpart : <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), ir : <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))))</dt><dd><p>
+<code>poly_int(f, k, x)</code> generates polylogarithms.</p>
+</dd></dl>
+<a name="f_solve_95u"></a><dl><dt>solve_u : (F, F, <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="List.html">List</a>(<a href="List.html">List</a>(F)), "failed")</dt><dd><p>
+<code>solve_u(f1, u, x)</code> returns [[<code>c1</code>, <code>k1</code>], ..., [<code>cn</code>, <code>kn</code>]] such that <code>f1</code> = <code>c1*u^k1</code> + ... + cn^kn and <code>D</code>(<code>ci</code>, <code>x</code>) = 0 or "failed".</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GaloisGroupFactorizationUtilities</title>
+</head>
+<body>
+<h1>GaloisGroupFactorizationUtilities(R, UP, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/galfact.spad#L205">galfact.spad line 205</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/galfact.spad#L205">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>F : Join(<a href="FloatingPointSystem.html">FloatingPointSystem</a>, <a href="RetractableTo.html">RetractableTo</a>(R), <a href="Field.html">Field</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a>)</ul>
+<p>
+GaloisGroupFactorizationUtilities provides functions that will be used by the factorizer.</p>
+<a name="f_beauzamyBound"></a><dl><dt>beauzamyBound : UP -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>beauzamyBound(p)</code> returns a bound on the larger coefficient of any factor of <code>p</code>.</p>
+</dd></dl>
+<a name="f_bombieriNorm"></a><dl><dt>bombieriNorm : UP -&gt F</dt><dd><p>
+<code>bombieriNorm(p)</code> returns quadratic Bombieri<code>'s</code> norm of <code>p</code>.</p>
+</dd></dl>
+<dl><dt>bombieriNorm : (UP, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt F</dt><dd><p>
+<code>bombieriNorm(p, n)</code> returns the <code>n</code>th Bombieri<code>'s</code> norm of <code>p</code>.</p>
+</dd></dl>
+<a name="f_height"></a><dl><dt>height : UP -&gt F</dt><dd><p>
+<code>height(p)</code> returns the maximal absolute value of the coefficients of the polynomial <code>p</code>.</p>
+</dd></dl>
+<a name="f_infinityNorm"></a><dl><dt>infinityNorm : UP -&gt F</dt><dd><p>
+<code>infinityNorm(f)</code> returns the maximal absolute value of the coefficients of the polynomial <code>f</code>.</p>
+</dd></dl>
+<a name="f_length"></a><dl><dt>length : UP -&gt F</dt><dd><p>
+<code>length(p)</code> returns the sum of the absolute values of the coefficients of the polynomial <code>p</code>.</p>
+</dd></dl>
+<a name="f_norm"></a><dl><dt>norm : (UP, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt F</dt><dd><p>
+<code>norm(f, p)</code> returns the <code>lp</code> norm of the polynomial <code>f</code>.</p>
+</dd></dl>
+<a name="f_quadraticNorm"></a><dl><dt>quadraticNorm : UP -&gt F</dt><dd><p>
+<code>quadraticNorm(f)</code> returns the <code>l2</code> norm of the polynomial <code>f</code>.</p>
+</dd></dl>
+<a name="f_rootBound"></a><dl><dt>rootBound : UP -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>rootBound(p)</code> returns a bound on the largest norm of the complex roots of <code>p</code>.</p>
+</dd></dl>
+<a name="f_singleFactorBound"></a><dl><dt>singleFactorBound : UP -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>singleFactorBound(p)</code> returns a bound on the infinite norm of the factor of <code>p</code> with smallest Bombieri<code>'s</code> norm. <code>p</code> shall be of degree higher or equal to 2.</p>
+</dd></dl>
+<dl><dt>singleFactorBound : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>singleFactorBound(p, r)</code> returns a bound on the infinite norm of the factor of <code>p</code> with smallest Bombieri<code>'s</code> norm. <code>r</code> is a lower bound for the number of factors of <code>p</code>. <code>p</code> shall be of degree higher or equal to 2.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialFactorizationByRecursion</title>
+</head>
+<body>
+<h1>PolynomialFactorizationByRecursion(R, E, VarSet, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pfbr.spad#L1">pfbr.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pfbr.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>VarSet : <a href="OrderedSet.html">OrderedSet</a><li>S : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, VarSet)</ul>
+<p>
+PolynomialFactorizationByRecursion(<code>R</code>, <code>E</code>, <code>VarSet</code>, <code>S</code>) is used for factorization of sparse univariate polynomials over a domain <code>S</code> of multivariate polynomials over <code>R</code>.</p>
+<a name="f_bivariateSLPEBR"></a><dl><dt>bivariateSLPEBR : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S), VarSet) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)), "failed")</dt><dd><p>
+<code>bivariateSLPEBR(lp, p, v)</code> implements the bivariate case of <span class="spadfun">solveLinearPolynomialEquationByRecursion</span>; its implementation depends on <code>R</code></p>
+</dd></dl>
+<a name="f_factorByRecursion"></a><dl><dt>factorByRecursion : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S))</dt><dd><p>
+<code>factorByRecursion(p)</code> factors polynomial <code>p</code>. This function performs the recursion step for factorPolynomial, as defined in PolynomialFactorizationExplicit category (see <span class="spadfun">factorPolynomial</span>)</p>
+</dd></dl>
+<a name="f_factorSquareFreeByRecursion"></a><dl><dt>factorSquareFreeByRecursion : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S))</dt><dd><p>
+<code>factorSquareFreeByRecursion(p)</code> returns the square free factorization of <code>p</code>. This functions performs the recursion step for factorSquareFreePolynomial, as defined in PolynomialFactorizationExplicit category (see <span class="spadfun">factorSquareFreePolynomial</span>).</p>
+</dd></dl>
+<a name="f_randomR"></a><dl><dt>randomR : <a href="Integer.html">Integer</a> -&gt R</dt><dd><p>
+<code>randomR produces</code> a random element of <code>R</code></p>
+</dd></dl>
+<a name="f_solveLinearPolynomialEquationByRecursion"></a><dl><dt>solveLinearPolynomialEquationByRecursion : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)), "failed")</dt><dd><p>
+<code>solveLinearPolynomialEquationByRecursion([p1, ..., pn], p)</code> returns the list of polynomials <code>[q1, ..., qn]</code> such that <code>sum qi/pi = p / prod <code>pi</code></code>, a recursion step for solveLinearPolynomialEquation as defined in PolynomialFactorizationExplicit category (see <span class="spadfun">solveLinearPolynomialEquation</span>). If no such list of <code>qi</code> exists, then "failed" is returned.</p>
+</dd></dl>
+</body>
+</html>

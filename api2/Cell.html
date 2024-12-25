@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Cell</title>
+</head>
+<body>
+<h1>Cell(TheField)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cyldec.spad#L174">cyldec.spad line 174</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cyldec.spad#L174">[edit on github]</a></p>
+<ul>
+<li>TheField : <a href="RealClosedField.html">RealClosedField</a></ul>
+<p>
+undocumented</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_dimension"></a><dl><dt>dimension : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>dimension(c)</code> returns dimension of <code>c</code></p>
+</dd></dl>
+<a name="f_hasDimension_63"></a><dl><dt>hasDimension? : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>hasDimension?(c)</code> returns <code>true</code> if <code>c</code> is of positive dimension. Otherwise hasDimension?(<code>c</code>) returns <code>false</code>.</p>
+</dd></dl>
+<a name="f_mainVariableOf"></a><dl><dt>mainVariableOf : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>mainVariableOf(c)</code> returns main variable of <code>c</code></p>
+</dd></dl>
+<a name="f_makeCell"></a><dl><dt>makeCell : <a href="List.html">List</a>(<a href="SimpleCell.html">SimpleCell</a>(TheField, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(TheField))) -&gt %</dt><dd><p>
+<code>makeCell(lc)</code> creates a cell from list of simple cells <code>lc</code></p>
+</dd></dl>
+<dl><dt>makeCell : (<a href="SimpleCell.html">SimpleCell</a>(TheField, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(TheField)), %) -&gt %</dt><dd><p>
+<code>makeCell(c, sc)</code> creates a cell which consists of <code>sc</code> in main variable and which has projection <code>c</code></p>
+</dd></dl>
+<a name="f_projection"></a><dl><dt>projection : % -&gt Union(%, "failed")</dt><dd><p>
+<code>projection(c)</code> projects <code>c</code> with respect to main variable</p>
+</dd></dl>
+<a name="f_samplePoint"></a><dl><dt>samplePoint : % -&gt <a href="List.html">List</a>(TheField)</dt><dd><p>
+<code>samplePoint(c)</code> returns the sample point of <code>c</code></p>
+</dd></dl>
+<a name="f_simpleCells"></a><dl><dt>simpleCells : % -&gt <a href="List.html">List</a>(<a href="SimpleCell.html">SimpleCell</a>(TheField, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(TheField)))</dt><dd><p>
+<code>simpleCells(c)</code> returns lists of simple cells determining <code>c</code>. That is <code>c</code> = makeCell(simpleCells(<code>c</code>))</p>
+</dd></dl>
+<a name="f_variablesOf"></a><dl><dt>variablesOf : % -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>variablesOf(c)</code> returns list of variables of <code>c</code></p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

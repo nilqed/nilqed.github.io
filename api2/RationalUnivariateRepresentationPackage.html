@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalUnivariateRepresentationPackage</title>
+</head>
+<body>
+<h1>RationalUnivariateRepresentationPackage(R, ls)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/zerodim.spad#L519">zerodim.spad line 519</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/zerodim.spad#L519">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>ls : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+A package for computing the rational univariate representation of a zero-dimensional algebraic variety given by a regular triangular set. This package is essentially an interface for the InternalRationalUnivariateRepresentationPackage constructor. It is used in the ZeroDimensionalSolvePackage for solving polynomial systems with finitely many solutions.</p>
+<a name="f_rur"></a><dl><dt>rur : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>rur(lp)</code> returns the same as <code>rur(lp, true)</code></p>
+</dd></dl>
+<dl><dt>rur : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>rur(lp, univ?)</code> returns a rational univariate representation of <code>lp</code>. This assumes that <code>lp</code> defines a regular triangular <code>ts</code> whose associated variety is zero-dimensional over <code>R</code>. <code>rur(lp, univ?)</code> returns a list of items <code>[u, lc]</code> where <code>u</code> is an irreducible univariate polynomial and each <code>c</code> in <code>lc</code> involves two variables: one from <code>ls</code>, called the coordinate of <code>c</code>, and an extra variable which represents any root of <code>u</code>. Every root of <code>u</code> leads to a tuple of values for the coordinates of <code>lc</code>. Moreover, a point <code>x</code> belongs to the variety associated with <code>lp</code> iff there exists an item <code>[u, lc]</code> in <code>rur(lp, univ?)</code> and a root <code>r</code> of <code>u</code> such that <code>x</code> is given by the tuple of values for the coordinates of <code>lc</code> evaluated at <code>r</code>. If <code>univ?</code> is <code>true</code> then each polynomial <code>c</code> will have a constant leading coefficient <code>w</code>.<code>r</code>.<code>t</code>. its coordinate. See the example which illustrates the ZeroDimensionalSolvePackage package constructor.</p>
+</dd></dl>
+<dl><dt>rur : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>rur(lp, univ?, check?)</code> returns the same as <code>rur(lp, true)</code>. Moreover, if <code>check?</code> is <code>true</code> then the result is checked.</p>
+</dd></dl>
+</body>
+</html>

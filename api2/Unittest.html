@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Unittest</title>
+</head>
+<body>
+<h1>Unittest</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/unittest.spad#L617">unittest.spad line 617</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/unittest.spad#L617">[edit on github]</a></p>
+<p>
+Unittest is a package that provides functions for regression testing.Note that it calls the interpreter, thus, all functions require that their arguments be passed as strings.</p>
+<a name="f_testComplexEquals"></a><dl><dt>testComplexEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testComplexEquals(ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be approximately equal as complex numbers, taking into account <span class="spadfun">testAbsolutePrecision</span> and <span class="spadfun">testRelativePrecision</span>.</p>
+</dd></dl>
+<a name="f_testEquals"></a><dl><dt>testEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testEquals(ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be equal. To sidestep the possibility that the equality function of the domain <code>R</code> performs some simplifications, we convert <code>ex1</code> and <code>ex2</code> to <code>InputForm</code>, if possible.</p>
+</dd></dl>
+<a name="f_testLibraryError"></a><dl><dt>testLibraryError : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testLibraryError ex</code> states that ex should throw an error. Such a test will never count as a fatal error.</p>
+</dd></dl>
+<a name="f_testNotEquals"></a><dl><dt>testNotEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testNotEquals(ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be different.</p>
+</dd></dl>
+<a name="f_testRealEquals"></a><dl><dt>testRealEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testRealEquals(ex1, ex2)</code> states that <code>ex1</code> and <code>ex2</code> should be approximately equal as real numbers, taking into account <span class="spadfun">testAbsolutePrecision</span> and <span class="spadfun">testRelativePrecision</span>.</p>
+</dd></dl>
+<a name="f_testTrue"></a><dl><dt>testTrue : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>testTrue(ex)</code> states that <code>ex</code> should be <code>true</code>.</p>
+</dd></dl>
+<a name="f_xftestComplexEquals"></a><dl><dt>xftestComplexEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestComplexEquals is like testComplexEquals, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestEquals"></a><dl><dt>xftestEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestEquals is like testEquals, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestLibraryError"></a><dl><dt>xftestLibraryError : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestLibraryError is like testLibraryError, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestNotEquals"></a><dl><dt>xftestNotEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestNotEquals is like testNotEquals, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestRealEquals"></a><dl><dt>xftestRealEquals : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestRealEquals is like testRealEquals, but expects failure.</p>
+</dd></dl>
+<a name="f_xftestTrue"></a><dl><dt>xftestTrue : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+xftestTrue is like testTrue, but expects failure.</p>
+</dd></dl>
+</body>
+</html>

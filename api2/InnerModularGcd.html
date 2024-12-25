@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerModularGcd</title>
+</head>
+<body>
+<h1>InnerModularGcd(R, BP, pMod, nextMod)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/modgcd.spad#L1">modgcd.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/modgcd.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="EuclideanDomain.html">EuclideanDomain</a><li>BP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>pMod : R<li>nextMod : Mapping(R, R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</ul>
+<p>
+This file contains the functions for modular <code>gcd</code> algorithm for univariate polynomials with coefficients in a non-trivial euclidean domain (i.e. not a field). The package parametrised by the coefficient domain, the polynomial domain, a prime, and a function for choosing the next prime</p>
+<a name="f_modularGcdPrimitive"></a><dl><dt>modularGcdPrimitive : <a href="List.html">List</a>(BP) -&gt BP</dt><dd><p>
+<code>modularGcdPrimitive(listf)</code> computes the <code>gcd</code> of the list of primitive polynomials <code>listf</code> by modular methods.</p>
+</dd></dl>
+<a name="f_reduction"></a><dl><dt>reduction : (BP, R) -&gt BP</dt><dd><p>
+<code>reduction(f, p)</code> reduces the coefficients of the polynomial <code>f</code> modulo the prime <code>p</code>.</p>
+</dd></dl>
+</body>
+</html>

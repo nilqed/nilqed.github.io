@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Permutation</title>
+</head>
+<body>
+<h1>Permutation(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/perm.spad#L43">perm.spad line 43</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/perm.spad#L43">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+Permutation(<code>S</code>) implements the group of all bijections on a set <code>S</code>, which move only a finite number of points. A permutation is considered as a map from <code>S</code> into <code>S</code>. In particular multiplication is defined as composition of maps:  pi1 * pi2 = pi1 o pi2. The internal representation of permutations are two lists of equal length representing preimages and images.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Group.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PermutationCategory.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PermutationCategory.html">PermutationCategory</a>(S)</dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> or S has <a href="Finite.html">Finite</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> or S has <a href="Finite.html">Finite</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> or S has <a href="Finite.html">Finite</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="Group.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="List.html">List</a>(S) -&gt %</dt><dd><p>
+<code>coerce(ls)</code> coerces a cycle  ls, i.e. a list with not repetitions to a permutation, which maps  ls.i to  ls.i+1, indices modulo the length of the list. Error: if repetitions occur.</p>
+</dd></dl>
+<dl><dt>coerce : <a href="List.html">List</a>(<a href="List.html">List</a>(S)) -&gt %</dt><dd><p>
+<code>coerce(lls)</code> coerces a list of cycles  lls to a permutation, each cycle being a list with no repetitions, is coerced to the permutation, which maps  ls.i to  ls.i+1, indices modulo the length of the list, then these permutations are multiplied. Error: if repetitions occur in one cycle.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_coerceImages"></a><dl><dt>coerceImages : <a href="List.html">List</a>(S) -&gt % if S has <a href="Finite.html">Finite</a> or S has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd><p>
+<code>coerceImages(ls)</code> coerces the list  ls to a permutation whose image is given by  ls and the preimage is fixed to be  [1, ..., n]. Note: coerceImages(<code>ls</code>)=coercePreimagesImages([1, ..., <code>n</code>], <code>ls</code>). We assume that both preimage and image do not contain repetitions.</p>
+</dd></dl>
+<a name="f_coerceListOfPairs"></a><dl><dt>coerceListOfPairs : <a href="List.html">List</a>(<a href="List.html">List</a>(S)) -&gt %</dt><dd><p>
+<code>coerceListOfPairs(lls)</code> coerces a list of pairs  lls to a permutation. Error: if not consistent, i.e. the set of the first elements coincides with the set of second elements. coerce(<code>p</code>) generates output of the permutation <code>p</code> with domain OutputForm.</p>
+</dd></dl>
+<a name="f_coercePreimagesImages"></a><dl><dt>coercePreimagesImages : <a href="List.html">List</a>(<a href="List.html">List</a>(S)) -&gt %</dt><dd><p>
+<code>coercePreimagesImages(lls)</code> coerces the representation  lls of a permutation as a list of preimages and images to a permutation. We assume that both preimage and image do not contain repetitions.</p>
+</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="Group.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="Group.html#f_conjugate">conjugate</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_cycle"></a><dl><dt><a href="PermutationCategory.html#f_cycle">cycle</a> : <a href="List.html">List</a>(S) -&gt %</dt><dd> from <a href="PermutationCategory.html">PermutationCategory</a>(S)</dd></dl>
+<a name="f_cyclePartition"></a><dl><dt>cyclePartition : % -&gt <a href="Partition.html">Partition</a></dt><dd><p>
+<code>cyclePartition(p)</code> returns the cycle structure of a permutation <code>p</code> including cycles of length 1 only if <code>S</code> is finite.</p>
+</dd></dl>
+<a name="f_cycles"></a><dl><dt><a href="PermutationCategory.html#f_cycles">cycles</a> : <a href="List.html">List</a>(<a href="List.html">List</a>(S)) -&gt %</dt><dd> from <a href="PermutationCategory.html">PermutationCategory</a>(S)</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>degree(p)</code> returns the number of points moved by the permutation <code>p</code>.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="PermutationCategory.html#f_elt">elt</a> : (%, S) -&gt S</dt><dd> from <a href="PermutationCategory.html">PermutationCategory</a>(S)</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="PermutationCategory.html#f_eval">eval</a> : (%, S) -&gt S</dt><dd> from <a href="PermutationCategory.html">PermutationCategory</a>(S)</dd></dl>
+<a name="f_even_63"></a><dl><dt>even? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>even?(p)</code> returns <code>true</code> if and only if <code>p</code> is an even permutation, i.e.  sign(p) is 1.</p>
+</dd></dl>
+<a name="f_fixedPoints"></a><dl><dt>fixedPoints : % -&gt <a href="Set.html">Set</a>(S) if S has <a href="Finite.html">Finite</a></dt><dd><p>
+<code>fixedPoints(p)</code> returns the points fixed by the permutation <code>p</code>.</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt><a href="Group.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_listRepresentation"></a><dl><dt>listRepresentation : % -&gt Record(preimage : <a href="List.html">List</a>(S), image : <a href="List.html">List</a>(S))</dt><dd><p>
+<code>listRepresentation(p)</code> produces a representation  rep of the permutation <code>p</code> as a list of preimages and images, <code>i</code>.<code>e</code> <code>p</code> maps  (rep.preimage).k to  (rep.image).k for all indices <code>k</code>. Elements of <code>S</code> not in  (rep.preimage).k are fixed points, and these are the only fixed points of the permutation.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if S has <a href="OrderedSet.html">OrderedSet</a> or S has <a href="Finite.html">Finite</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if S has <a href="OrderedSet.html">OrderedSet</a> or S has <a href="Finite.html">Finite</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_movedPoints"></a><dl><dt>movedPoints : % -&gt <a href="Set.html">Set</a>(S)</dt><dd><p>
+<code>movedPoints(p)</code> returns the set of points moved by the permutation <code>p</code>.</p>
+</dd></dl>
+<a name="f_numberOfCycles"></a><dl><dt>numberOfCycles : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>numberOfCycles(p)</code> returns the number of non-trivial cycles of the permutation <code>p</code>.</p>
+</dd></dl>
+<a name="f_odd_63"></a><dl><dt>odd? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>odd?(p)</code> returns <code>true</code> if and only if <code>p</code> is an odd permutation i.e.  sign(p) is  -1.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_orbit"></a><dl><dt><a href="PermutationCategory.html#f_orbit">orbit</a> : (%, S) -&gt <a href="Set.html">Set</a>(S)</dt><dd> from <a href="PermutationCategory.html">PermutationCategory</a>(S)</dd></dl>
+<a name="f_order"></a><dl><dt>order : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>order(p)</code> returns the order of a permutation <code>p</code> as a group element.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="MagmaWithUnit.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sign"></a><dl><dt>sign : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>sign(p)</code> returns the signum of the permutation <code>p</code>, <code>+1</code> or <code>-1</code>.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> or S has <a href="Finite.html">Finite</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_sort"></a><dl><dt>sort : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>sort(lp)</code> sorts a list of permutations  lp according to cycle structure first according to length of cycles, second, if <code>S</code> has Finite or <code>S</code> has OrderedSet according to lexicographical order of entries in cycles of equal length.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="PermutationCategory.html">PermutationCategory</a>(S)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="Group.html">Group</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+</body>
+</html>

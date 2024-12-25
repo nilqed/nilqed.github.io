@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CardinalNumber</title>
+</head>
+<body>
+<h1>CardinalNumber</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/card.spad#L1">card.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/card.spad#L1">[edit on github]</a></p>
+<p>
+Members of the domain CardinalNumber are values indicating the cardinality of sets, both finite and infinite. Arithmetic operations are defined on cardinal numbers as follows.  If <code>x = #X</code> and <code>y = #Y</code> then <code>x+y= #(X+Y)</code>disjoint union <code>x-y= #(X-Y)</code>relative complement <code>x*y= #(X*Y)</code>cartesian product <code>x^y = #(X^Y)</code><code>X^Y = {g| g: Y-&gt;X}</code>  The non-negative integers have a natural construction as cardinals <code>0 = #{}</code>, <code>1 = {0}</code>, <code>2 = {0, 1}</code>, ..., <code>n = {i| 0 &lt;= i &lt; n}</code>.  That <code>0</code> acts as a zero for the multiplication of cardinals is equivalent to the axiom of choice.  The generalized continuum hypothesis asserts <code>2^Aleph i = Aleph(i+1)</code> and is independent of the axioms of set theory [Goedel 1940].  Three commonly encountered cardinal numbers are <code>a = #Z</code>countable infinity <code>c = #R</code>the continuum <code>f = #{g| g: [0, 1]-&gt;R}</code>  In this domain, these values are obtained using <code>a := Aleph 0</code>, <code>c := 2^a</code>, <code>f := 2^c</code>. </p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt>- : (%, %) -&gt Union(%, "failed")</dt><dd><p>
+<code>x - y</code> returns an element <code>z</code> such that <code>z+y=x</code> or "failed" if no such element exists.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_Aleph"></a><dl><dt>Aleph : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>Aleph(n)</code> provides the named (infinite) cardinal number.</p>
+</dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, %) -&gt %</dt><dd><p>
+<code>x^y</code> returns <code>#(X^Y)</code> where <code>X^Y</code> is defined as <code>{g| g: Y-&gt;X}</code>.</p>
+</dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_countable_63"></a><dl><dt>countable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>countable?(<code>a</code>)</code> determines whether <code>a</code> is a countable cardinal, i.e. an integer or <code>Aleph 0</code>.</p>
+</dd></dl>
+<a name="f_finite_63"></a><dl><dt>finite? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>finite?(<code>a</code>)</code> determines whether <code>a</code> is a finite cardinal, i.e. an integer.</p>
+</dd></dl>
+<a name="f_generalizedContinuumHypothesisAssumed"></a><dl><dt>generalizedContinuumHypothesisAssumed : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>generalizedContinuumHypothesisAssumed(bool)</code> is used to dictate whether the hypothesis is to be assumed.</p>
+</dd></dl>
+<a name="f_generalizedContinuumHypothesisAssumed_63"></a><dl><dt>generalizedContinuumHypothesisAssumed? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>generalizedContinuumHypothesisAssumed?()</code> tests if the hypothesis is currently assumed.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="MagmaWithUnit.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+</body>
+</html>

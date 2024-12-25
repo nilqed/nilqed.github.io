@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MultivariateSquareFree</title>
+</head>
+<body>
+<h1>MultivariateSquareFree(E, OV, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/multsqfr.spad#L1">multsqfr.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/multsqfr.spad#L1">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="EuclideanDomain.html">EuclideanDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+This package provides the functions for the computation of the square free decomposition of a multivariate polynomial. It uses modular reduction and the package <code>MultivariateLifting</code> for the "multivariate" lifting.</p>
+<a name="f_check"></a><dl><dt>check : (<a href="List.html">List</a>(Record(factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)), <a href="List.html">List</a>(Record(factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>check should</code> be local</p>
+</dd></dl>
+<a name="f_coefChoose"></a><dl><dt>coefChoose : (<a href="Integer.html">Integer</a>, P, <a href="List.html">List</a>(Record(factor : P, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt P</dt><dd><p>
+<code>coefChoose should</code> be local</p>
+</dd></dl>
+<a name="f_compdegd"></a><dl><dt>compdegd : <a href="List.html">List</a>(Record(factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>compdegd should</code> be local</p>
+</dd></dl>
+<a name="f_consnewpol"></a><dl><dt>consnewpol : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), <a href="Integer.html">Integer</a>) -&gt Record(pol : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), polval : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dt><dd><p>
+<code>consnewpol should</code> be local</p>
+</dd></dl>
+<a name="f_intChoose"></a><dl><dt>intChoose : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(<a href="List.html">List</a>(R))) -&gt Record(upol : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), Lval : <a href="List.html">List</a>(R), Lfact : <a href="List.html">List</a>(Record(factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)), ctpol : R)</dt><dd><p>
+<code>intChoose should</code> be local</p>
+</dd></dl>
+<a name="f_lift"></a><dl><dt>lift : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), P, <a href="List.html">List</a>(OV), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(R), R) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)), "failed")</dt><dd><p>
+<code>lift should</code> be local</p>
+</dd></dl>
+<a name="f_myDegree"></a><dl><dt>myDegree : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>myDegree should</code> be local</p>
+</dd></dl>
+<a name="f_normDeriv2"></a><dl><dt>normDeriv2 : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), <a href="Integer.html">Integer</a>) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>normDeriv2 should</code> be local</p>
+</dd></dl>
+<a name="f_nsqfree"></a><dl><dt>nsqfree : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(<a href="List.html">List</a>(R))) -&gt Record(unitPart : P, suPart : <a href="List.html">List</a>(Record(factor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd><p>
+<code>nsqfree should</code> be local</p>
+</dd></dl>
+<a name="f_squareFree"></a><dl><dt>squareFree : P -&gt <a href="Factored.html">Factored</a>(P)</dt><dd><p>
+<code>squareFree(p)</code> computes the square free decomposition of a multivariate polynomial <code>p</code>.</p>
+</dd></dl>
+<dl><dt>squareFree : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P))</dt><dd><p>
+<code>squareFree(p)</code> computes the square free decomposition of a multivariate polynomial <code>p</code> presented as a univariate polynomial with multivariate coefficients.</p>
+</dd></dl>
+<a name="f_univcase"></a><dl><dt>univcase : (P, OV) -&gt <a href="Factored.html">Factored</a>(P)</dt><dd><p>
+<code>univcase should</code> be local</p>
+</dd></dl>
+</body>
+</html>

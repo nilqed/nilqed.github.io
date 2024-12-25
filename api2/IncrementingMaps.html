@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IncrementingMaps</title>
+</head>
+<body>
+<h1>IncrementingMaps(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/seg.spad#L453">seg.spad line 453</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/seg.spad#L453">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Monoid.html">Monoid</a>, <a href="AbelianSemiGroup.html">AbelianSemiGroup</a>)</ul>
+<p>
+This package provides operations to create incrementing functions.</p>
+<a name="f_increment"></a><dl><dt>increment : () -&gt Mapping(R, R)</dt><dd><p>
+<code>increment()</code> produces a function which adds <code>1</code> to whatever argument it is given. For example, if <code>f</code> <code>:=</code> increment() then <code>f x</code> is <code>x+1</code>.</p>
+</dd></dl>
+<a name="f_incrementBy"></a><dl><dt>incrementBy : R -&gt Mapping(R, R)</dt><dd><p>
+<code>incrementBy(n)</code> produces a function which adds <code>n</code> to whatever argument it is given. For example, if <code>f</code> <code>:=</code> increment(<code>n</code>) then <code>f x</code> is <code>x+n</code>.</p>
+</dd></dl>
+</body>
+</html>

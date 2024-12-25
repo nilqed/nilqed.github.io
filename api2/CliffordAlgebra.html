@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CliffordAlgebra</title>
+</head>
+<body>
+<h1>CliffordAlgebra(n, K, bLin)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/clifford.spad#L348">clifford.spad line 348</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/clifford.spad#L348">[edit on github]</a></p>
+<ul>
+<li>n : <a href="PositiveInteger.html">PositiveInteger</a><li>K : <a href="Field.html">Field</a><li>bLin : <a href="SquareMatrix.html">SquareMatrix</a>(n, K)</ul>
+<p>
+CliffordAlgebra(<code>n</code>, <code>K</code>, bLin) defines a module of dimension <code>2^n</code> over <code>K</code>, given a bilinear form bLin on <code>K^n</code>.  Examples of Clifford Algebras are: gaussians, quaternions, exterior algebras and spin algebras.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, K) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(K)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (K, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(K)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47_92"></a><dl><dt>/\ : (%, %) -&gt %</dt><dd><p>
+Implement exterior grassmann product operator need to check precedence when used as an infix operator</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__92_47"></a><dl><dt>\/ : (%, %) -&gt %</dt><dd><p>
+Implement regressive inner, meet product operator need to check precedence when used as an infix operator</p>
+</dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt>coefficient : (%, <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)) -&gt K</dt><dd><p>
+<code>coefficient(x, [i1, i2, ..., iN])</code> extracts the coefficient of <code>e(i1)*e(i2)*...*e(iN)</code> in <code>x</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : K -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(K)</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conj"></a><dl><dt>conj : % -&gt %</dt><dd><p>
+implements Clifford conjugate for a multivector by involution and reverse of each term separately using: grade: 0 1 2 3... multi: 1 <code>-1</code> <code>-1</code> 1...</p>
+</dd></dl>
+<a name="f_e"></a><dl><dt>e : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>e(n)</code> produces phi(e_i) where e_i is <code>i</code>-th basis vector in <code>K^n</code> and phi is canonical embedding of <code>K^n</code> into Clifford algebra.</p>
+</dd></dl>
+<a name="f_eFromBinaryMap"></a><dl><dt>eFromBinaryMap : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>eFromBinaryMap(n)</code> sets the appropriate Grassmann basis, for example: eFromBinaryMap(0) = 1 (scalar) eFromBinaryMap(1) = <code>e1</code> eFromBinaryMap(2) = <code>e2</code> eFromBinaryMap(3) = e1/\e2</p>
+</dd></dl>
+<a name="f_ePseudoscalar"></a><dl><dt>ePseudoscalar : () -&gt %</dt><dd><p>
+unit pseudoscalar</p>
+</dd></dl>
+<a name="f_ee"></a><dl><dt>ee : <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd><p>
+to allow entries like: ee[1, 2]</p>
+</dd></dl>
+<a name="f_grade"></a><dl><dt>grade : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+return the max grade of multivector, for example 1 is grade 0 <code>e1</code> is grade 1 e1/\e2 is grade 2 and so on</p>
+</dd></dl>
+<a name="f_gradeInvolution"></a><dl><dt>gradeInvolution : % -&gt %</dt><dd><p>
+<code>x</code> = ((<code>-1</code>)^grade(<code>x</code>))<code>*x</code></p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lc"></a><dl><dt>lc : (%, %) -&gt %</dt><dd><p>
+left contraction inner product</p>
+</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_monomial"></a><dl><dt>monomial : (K, <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)) -&gt %</dt><dd><p>
+<code>monomial(c, [i1, i2, ..., iN])</code> produces the value given by <code>c*e(i1)*e(i2)*...*e(iN)</code>.</p>
+</dd></dl>
+<a name="f_multivector"></a><dl><dt>multivector : <a href="List.html">List</a>(K) -&gt %</dt><dd><p>
+to allow entries like: 1+2*e1+3*e2+4*e1e2 = multivector[1, 2, 3, 4]</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(K)</dd></dl>
+<a name="f_rc"></a><dl><dt>rc : (%, %) -&gt %</dt><dd><p>
+right contraction inner product</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt>recip : % -&gt Union(%, "failed")</dt><dd><p>
+<code>recip(x)</code> computes the multiplicative inverse of <code>x</code> or "failed" if <code>x</code> is not invertible.</p>
+</dd></dl>
+<a name="f_reverse"></a><dl><dt>reverse : % -&gt %</dt><dd><p>
+implements reverse for a single term by using: grade: 0 1 2 3... multi: 1 1 <code>-1</code> <code>-1</code>...</p>
+</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_setMode"></a><dl><dt>setMode : (<a href="String.html">String</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>setMode(s, b)</code> allows override of parameters such as orthogonal used for debugging</p>
+</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_toTable"></a><dl><dt>toTable : Mapping(%, %) -&gt <a href="Matrix.html">Matrix</a>(%)</dt><dd><p>
+displays table of unary function such as inverse, reverse, complement, or dual basis could have returned type 'List List %' but matrix displays better</p>
+</dd></dl>
+<dl><dt>toTable : Mapping(%, %, %) -&gt <a href="Matrix.html">Matrix</a>(%)</dt><dd><p>
+displays multiplication table for binary operation which is represented as a function with two parameters. row number represents first operand in binary order column number represents second operand in binary order could have returned type 'List List %' but matrix displays better</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126"></a><dl><dt>~ : % -&gt %</dt><dd><p>
+reverse, complement, canonical dual basis</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="LeftModule.html">LeftModule</a>(K)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="RightModule.html">RightModule</a>(K)
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="Module.html">Module</a>(K)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="Algebra.html">Algebra</a>(K)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(K)
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="BiModule.html">BiModule</a>(K, K)
+<p><a href="Ring.html">Ring</a>
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SemiRing.html">SemiRing</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteCubicalComplex</title>
+</head>
+<body>
+<h1>FiniteCubicalComplex(VS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L2460">alg_top.spad line 2460</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L2460">[edit on github]</a></p>
+<ul>
+<li>VS : <a href="AbelianGroup.html">AbelianGroup</a></ul>
+<p>
+A Finite Cubical Complex for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/cubical/ Date Created: April 2016 Basic Operations: Related packages: Related categories: Related Domains: Also See: AMS Classifications:</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addCube"></a><dl><dt>addCube : (%, <a href="CubicalFacet.html">CubicalFacet</a>) -&gt %</dt><dd><p>
+Add a facet to this simplex If the facet is also in the list then, do not append, instead change the multiplier.</p>
+</dd></dl>
+<a name="f_addImpliedFaces"></a><dl><dt>addImpliedFaces : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="CubicalFacet.html">CubicalFacet</a>))</dt><dd><p>
+a function to take a set of faces and add those that are implied by the cubicalComplex conventions (if they don<code>'t</code> already exist). For example, if the input is a square [1..2, 1..2] then we would add its edges [1..1, 1..2], [2..2, 1..2], [1..2, 1..1], and [1..2, 2..2].</p>
+</dd></dl>
+<a name="f_boundary"></a><dl><dt>boundary : % -&gt %</dt><dd><p>
+Boundary operator. Step down to the next lower dimension, this is like hollowing out the complex. It takes the highest dimension entries and replaces them with their boundaries, cancelling out where it can.</p>
+</dd></dl>
+<a name="f_chain"></a><dl><dt>chain : % -&gt <a href="ChainComplex.html">ChainComplex</a></dt><dd><p>
+returns a matrix sequence representing the face maps in linear algebra form</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="DeltaComplex.html">DeltaComplex</a>(VS)</dt><dd><p>
+<code>coerce CubicalComplex</code> to DeltaComplex</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_cubicalComplex"></a><dl><dt>cubicalComplex : <a href="List.html">List</a>(VS) -&gt %</dt><dd><p>
+construct empty cubical complex</p>
+</dd></dl>
+<dl><dt>cubicalComplex : (<a href="List.html">List</a>(VS), <a href="List.html">List</a>(<a href="CubicalFacet.html">CubicalFacet</a>)) -&gt %</dt><dd><p>
+constructor where the cubes are supplied</p>
+</dd></dl>
+<dl><dt>cubicalComplex : (<a href="List.html">List</a>(VS), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>)))) -&gt %</dt><dd><p>
+constructor where the cubes are supplied</p>
+</dd></dl>
+<dl><dt>cubicalComplex : (<a href="List.html">List</a>(VS), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)))) -&gt %</dt><dd><p>
+constructor where the cubes are supplied</p>
+</dd></dl>
+<a name="f_fundamentalGroup"></a><dl><dt>fundamentalGroup : % -&gt <a href="GroupPresentation.html">GroupPresentation</a></dt><dd><p>
+Generates fundamental group from this cubical complex. This works by converting to a DeltaComplex and then generating the fundamentalGroup from that. This is not the most efficient method because the conversion generates lots of higher order faceMaps which are not used. This will attempt to simplify the group presentation, if you don<code>'t</code> want this use alternative function of same name. TODO write a faster implementation which only generates edge and square faceMaps.</p>
+</dd></dl>
+<dl><dt>fundamentalGroup : (%, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="GroupPresentation.html">GroupPresentation</a></dt><dd><p>
+Generates fundamental group from this cubical complex. This works by converting to a DeltaComplex and then generating the fundamentalGroup from that. This is not the most efficient method because the conversion generates lots of higher order faceMaps which are not used. TODO write a faster implementation which only generates edge and square faceMaps. This version has options to: simplify - if <code>true</code> attempts to simplify the group presentation trace - if <code>true</code> outputs trace of simplification rules used.</p>
+</dd></dl>
+<a name="f_grade"></a><dl><dt>grade : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="CubicalFacet.html">CubicalFacet</a>))</dt><dd><p>
+A function to grade faces according to the number of non-degenerate intervals. This nests the lists according to their order Vertices, edges, squares and so on.</p>
+</dd></dl>
+<a name="f_homology"></a><dl><dt>homology : % -&gt <a href="List.html">List</a>(<a href="Homology.html">Homology</a>)</dt><dd><p>
+calculate homology using SmithNormalForm</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_maxIndex"></a><dl><dt>maxIndex : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+find the maximum index.</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, %) -&gt %</dt><dd><p>
+Forms product of two cubical complexes.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

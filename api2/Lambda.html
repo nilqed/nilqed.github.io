@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Lambda</title>
+</head>
+<body>
+<h1>Lambda(UT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/computation.spad#L856">computation.spad line 856</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/computation.spad#L856">[edit on github]</a></p>
+<ul>
+<li>UT : <a href="VarCat.html">VarCat</a></ul>
+<p>
+An implementation of untyped lambda-calculus</p>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+return <code>true</code> if equal (deep search) that is: all terms at all levels in tree must be alpha-equivalent to return <code>true</code> That is the names, but not the deBruijn index, of the bound variables can be different. beta-equivalence is not implemented because it is not decidable.</p>
+</dd></dl>
+<a name="f_atom_63"></a><dl><dt>atom? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is an atom, that is free or bound variable otherwise return <code>false</code> if this is a compound or lambda definition</p>
+</dd></dl>
+<a name="f_bind"></a><dl><dt>bind : % -&gt %</dt><dd><p>
+if this is a lambda term then replace string name in sub-nodes with De Bruijn index</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_free_63"></a><dl><dt>free? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+if this is a lambda term then is it free, that is does its variable appear in its expression</p>
+</dd></dl>
+<a name="f_getBoundValue"></a><dl><dt>getBoundValue : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+introspection: returns deBruijn index of bound variable in bound leaf node</p>
+</dd></dl>
+<a name="f_getChildren"></a><dl><dt>getChildren : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+returns 2 child nodes if this is a compound term returns 1 child node if this is a lambda term otherwise returns []</p>
+</dd></dl>
+<a name="f_getVariable"></a><dl><dt>getVariable : % -&gt UT</dt><dd><p>
+introspection: returns value of unbound variable in unbound leaf node or bound variable in lambda term</p>
+</dd></dl>
+<a name="f_isBoundNode_63"></a><dl><dt>isBoundNode? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+introspection: returns <code>true</code> if this is a bound leaf node</p>
+</dd></dl>
+<a name="f_isCompound_63"></a><dl><dt>isCompound? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+introspection: returns <code>true</code> if this is a compound term containing two nodes</p>
+</dd></dl>
+<a name="f_isFreeNode_63"></a><dl><dt>isFreeNode? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+introspection: returns <code>true</code> if this is a unbound leaf node</p>
+</dd></dl>
+<a name="f_isLambda_63"></a><dl><dt>isLambda? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+introspection: returns <code>true</code> if this is a lambda definition</p>
+</dd></dl>
+<a name="f_lambda"></a><dl><dt>lambda : (%, %) -&gt %</dt><dd><p>
+Constructs a node containing multiple terms</p>
+</dd></dl>
+<dl><dt>lambda : (%, UT) -&gt %</dt><dd><p>
+Constructs lambda term and bind any variables with the name provided</p>
+</dd></dl>
+<dl><dt>lambda : UT -&gt %</dt><dd><p>
+Constructs a reference to a free variable</p>
+</dd></dl>
+<dl><dt>lambda : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+Constructs a reference to a bound variable from its deBruijn index</p>
+</dd></dl>
+<a name="f_parseLambda"></a><dl><dt>parseLambda : <a href="String.html">String</a> -&gt %</dt><dd><p>
+Constructs nested lambda terms from a string notation assumes format like this: &lt;term&gt; : <code>:=</code> "<code>"</code> var "."&lt;term&gt; | <code>n</code> | &lt;term&gt;&lt;term&gt; | "("&lt;term&gt;")" where:  = lambda (<code>I</code> would like to use unicode lambda symbol but <code>I</code> would also like to keep maximum compatibility with non-unicode versions of Lisp) <code>n</code> = De Bruijn index which is a integer where, 1=inside inner lambda term, 2= next outer lambda term, 3= next outer and so on. brackets can be used around whole terms.</p>
+</dd></dl>
+<a name="f_parseTerm"></a><dl><dt>parseTerm : (<a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(rft : %, pout : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+parseTerm is used by parseLambda. It would rarely be called externally but it is here to allow it to call parseLambda that is to allow circular calls</p>
+</dd></dl>
+<a name="f_redux"></a><dl><dt>redux : % -&gt %</dt><dd><p>
+beta reduction - apply beta reduction recusivly to all subnodes</p>
+</dd></dl>
+<a name="f_subst"></a><dl><dt>subst : (%, %, %) -&gt %</dt><dd><p>
+substitution of 'a' for <code>'b'</code> in <code>'n'</code></p>
+</dd></dl>
+<a name="f_toString"></a><dl><dt>toString : % -&gt <a href="String.html">String</a></dt><dd><p>
+return string representation using deBruijn index for bound variables. notation assumes association to the left, in the absence of brackets, the term to the left binds more tightly than the one on the right.</p>
+</dd></dl>
+<a name="f_toStringConven"></a><dl><dt>toStringConven : (%, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt <a href="String.html">String</a></dt><dd><p>
+return string representation using conventional notation, that is deBruijn index is replaced by name using String value for bound variables. notation assumes association to the left, in the absence of brackets, the term to the left binds more tightly than the one on the right.</p>
+</dd></dl>
+<a name="f_unbind"></a><dl><dt>unbind : % -&gt %</dt><dd><p>
+if this is a lambda term then replace De Bruijn index in sub-nodes with string name</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialEvaluationUtilities</title>
+</head>
+<body>
+<h1>PolynomialEvaluationUtilities</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/evalut.spad#L1">evalut.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/evalut.spad#L1">[edit on github]</a></p>
+<p>
+This package implements evaluation functions useful for modular algorithms.Computations work on integer polynomials, but most is done modulo a prime which is provided via parameters, either explicitly or through a state parameter (state also caches needed buffers). Some functions work on fractions.To avoid useless <code>GCD</code> computations during evaluation fractions may be represented as a record.</p>
+<a name="f_eval1"></a><dl><dt>eval1 : (<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, Record(prime : <a href="Integer.html">Integer</a>, eval1coeffbuf : <a href="U32Vector.html">U32Vector</a>, eval1expbuf : <a href="SortedExponentVector.html">SortedExponentVector</a>)) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>eval1(pol, v, pt, pss)</code> evaluates <code>pol</code> in variable <code>v</code> at <code>pt</code>, using global state form <code>pss</code>. Computations are done modulo a prime contained in <code>pss</code>.</p>
+</dd></dl>
+<dl><dt>eval1 : (Record(numer : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), denom : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, Record(prime : <a href="Integer.html">Integer</a>, eval1coeffbuf : <a href="U32Vector.html">U32Vector</a>, eval1expbuf : <a href="SortedExponentVector.html">SortedExponentVector</a>)) -&gt Union(Record(numer : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), denom : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+<code>eval1(pq, v, pt, pss)</code> evaluates fraction of polynomial <code>pq</code> in variable <code>v</code> at <code>pt</code>, using global state form <code>pss</code>. Computations are done modulo a prime contained in <code>pss</code>.</p>
+</dd></dl>
+<a name="f_eval1a"></a><dl><dt>eval1a : (<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>, Record(prime : <a href="Integer.html">Integer</a>, eval1coeffbuf : <a href="U32Vector.html">U32Vector</a>, eval1expbuf : <a href="SortedExponentVector.html">SortedExponentVector</a>)) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>eval1a(pol, pt, pss)</code> evaluates polynomial <code>pol</code> at point <code>pt</code> using global state form <code>pss</code>. Computations are done modulo a prime contained in <code>pss</code>. Note: <code>pol</code> must have at most one variable.</p>
+</dd></dl>
+<a name="f_modpeval"></a><dl><dt>modpeval : (<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>modpeval(pol, lv, lpt, p)</code> evaluates polynomial <code>pol</code> in variables form <code>lv</code> at point from <code>lpt</code> modulo a prime <code>p</code></p>
+</dd></dl>
+<a name="f_modpreduction"></a><dl><dt>modpreduction : (<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>modpreduction(pol, p)</code> reduces polynomial <code>pol</code> modulo prime <code>p</code>.</p>
+</dd></dl>
+<dl><dt>modpreduction : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Integer.html">Integer</a>) -&gt Union(Record(numer : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), denom : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+<code>modpreduction(r, p)</code> reduces a rational function <code>r</code> modulo prime <code>p</code>.</p>
+</dd></dl>
+</body>
+</html>

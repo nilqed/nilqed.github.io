@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialSetCategory</title>
+</head>
+<body>
+<h1>PolynomialSetCategory(R, E, VarSet, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/polset.spad#L1">polset.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/polset.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>VarSet : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, VarSet)</ul>
+<p>
+A category for finite subsets of a polynomial ring. Such a set is only regarded as a set of polynomials and not identified to the ideal it generates. So two distinct sets may generate the same the ideal. Furthermore, for <code>R</code> being an integral domain, a set of polynomials may be viewed as a representation of the ideal it generates in the polynomial ring <code>(R)^(-1) P</code>, or the set of its zeros (described for instance by the radical of the previous ideal, or a split of the associated affine variety) and so on. So this category provides operations about those different notions.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="List.html">List</a>(P))</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_collect"></a><dl><dt>collect : (%, VarSet) -&gt %</dt><dd><p>
+<code>collect(ps, v)</code> returns the set consisting of the polynomials of <code>ps</code> with <code>v</code> as main variable.</p>
+</dd></dl>
+<a name="f_collectUnder"></a><dl><dt>collectUnder : (%, VarSet) -&gt %</dt><dd><p>
+<code>collectUnder(ps, v)</code> returns the set consisting of the polynomials of <code>ps</code> with main variable less than <code>v</code>.</p>
+</dd></dl>
+<a name="f_collectUpper"></a><dl><dt>collectUpper : (%, VarSet) -&gt %</dt><dd><p>
+<code>collectUpper(ps, v)</code> returns the set consisting of the polynomials of <code>ps</code> with main variable greater than <code>v</code>.</p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="Collection.html#f_construct">construct</a> : <a href="List.html">List</a>(P) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (P, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, P, P) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(P, P)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(P)) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="Evalable.html">Evalable</a>(P)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(P, P)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(P))) -&gt % if P has <a href="Evalable.html">Evalable</a>(P)</dt><dd> from <a href="Evalable.html">Evalable</a>(P)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_find"></a><dl><dt><a href="Collection.html#f_find">find</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt Union(P, "failed")</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_headRemainder"></a><dl><dt>headRemainder : (P, %) -&gt Record(num : P, den : R) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>headRemainder(a, ps)</code> returns <code>[b, r]</code> such that the leading monomial of <code>b</code> is reduced in the sense of Groebner bases <code>w</code>.<code>r</code>.<code>t</code>. <code>ps</code> and <code>r*a - b</code> lies in the ideal generated by <code>ps</code>.</p>
+</dd></dl>
+<a name="f_iexactQuo"></a><dl><dt>iexactQuo : (R, R) -&gt R if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>iexactQuo(x, y)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_mainVariable_63"></a><dl><dt>mainVariable? : (VarSet, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>mainVariable?(v, ps)</code> returns <code>true</code> iff <code>v</code> is the main variable of some polynomial in <code>ps</code>.</p>
+</dd></dl>
+<a name="f_mainVariables"></a><dl><dt>mainVariables : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>mainVariables(ps)</code> returns the decreasingly sorted list of the variables which are main variables of some polynomial in <code>ps</code>.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(P, P), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(P, P), %) -&gt % if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt P if P has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P, P), %) -&gt P</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (P, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt P if P has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_mvar"></a><dl><dt>mvar : % -&gt VarSet</dt><dd><p>
+<code>mvar(ps)</code> returns the main variable of the non constant polynomial with the greatest main variable, if any, else an error is returned.</p>
+</dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(P)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)</dd></dl>
+<a name="f_reduce"></a><dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %, P) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_reduce">reduce</a> : (Mapping(P, P, P), %, P, P) -&gt P</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_remainder"></a><dl><dt>remainder : (P, %) -&gt Record(rnum : R, polnum : P, den : R) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>remainder(a, ps)</code> returns <code>[c, b, r]</code> such that <code>b</code> is fully reduced in the sense of Groebner bases <code>w</code>.<code>r</code>.<code>t</code>. <code>ps</code>, <code>r*a - c*b</code> lies in the ideal generated by <code>ps</code>. Furthermore, if <code>R</code> is a <code>gcd</code>-domain, <code>b</code> is primitive.</p>
+</dd></dl>
+<a name="f_remove"></a><dl><dt><a href="Collection.html#f_remove">remove</a> : (P, %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<dl><dt><a href="Collection.html#f_remove">remove</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_removeDuplicates"></a><dl><dt><a href="Collection.html#f_removeDuplicates">removeDuplicates</a> : % -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableFrom.html#f_retract">retract</a> : <a href="List.html">List</a>(P) -&gt %</dt><dd> from <a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableFrom.html#f_retractIfCan">retractIfCan</a> : <a href="List.html">List</a>(P) -&gt Union(%, "failed")</dt><dd> from <a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))</dd></dl>
+<a name="f_rewriteIdealWithHeadRemainder"></a><dl><dt>rewriteIdealWithHeadRemainder : (<a href="List.html">List</a>(P), %) -&gt <a href="List.html">List</a>(P) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rewriteIdealWithHeadRemainder(lp, cs)</code> returns <code>lr</code> such that the leading monomial of every polynomial in <code>lr</code> is reduced in the sense of Groebner bases <code>w</code>.<code>r</code>.<code>t</code>. <code>cs</code> and <code>(lp, cs)</code> and <code>(lr, cs)</code> generate the same ideal in <code>(R)^(-1) P</code>.</p>
+</dd></dl>
+<a name="f_rewriteIdealWithRemainder"></a><dl><dt>rewriteIdealWithRemainder : (<a href="List.html">List</a>(P), %) -&gt <a href="List.html">List</a>(P) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>rewriteIdealWithRemainder(lp, cs)</code> returns <code>lr</code> such that every polynomial in <code>lr</code> is fully reduced in the sense of Groebner bases <code>w</code>.<code>r</code>.<code>t</code>. <code>cs</code> and <code>(lp, cs)</code> and <code>(lr, cs)</code> generate the same ideal in <code>(R)^(-1) P</code>.</p>
+</dd></dl>
+<a name="f_roughBase_63"></a><dl><dt>roughBase? : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>roughBase?(ps)</code> returns <code>true</code> iff for every pair <code>p, q</code> of polynomials in <code>ps</code> their leading monomials are relatively prime.</p>
+</dd></dl>
+<a name="f_roughEqualIdeals_63"></a><dl><dt>roughEqualIdeals? : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>roughEqualIdeals?(ps1, ps2)</code> returns <code>true</code> iff it can proved that <code>ps1</code> and <code>ps2</code> generate the same ideal in <code>(R)^(-1) P</code> without computing Groebner bases.</p>
+</dd></dl>
+<a name="f_roughSubIdeal_63"></a><dl><dt>roughSubIdeal? : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>roughSubIdeal?(ps1, ps2)</code> returns <code>true</code> iff it can proved that all polynomials in <code>ps1</code> lie in the ideal generated by <code>ps2</code> in <code>(R)^(-1) P</code> without computing Groebner bases.</p>
+</dd></dl>
+<a name="f_roughUnitIdeal_63"></a><dl><dt>roughUnitIdeal? : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>roughUnitIdeal?(ps)</code> returns <code>true</code> iff <code>ps</code> contains some non null element lying in the base ring <code>R</code>.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_select"></a><dl><dt><a href="Collection.html#f_select">select</a> : (Mapping(<a href="Boolean.html">Boolean</a>, P), %) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(P)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_sort"></a><dl><dt>sort : (%, VarSet) -&gt Record(under : %, floor : %, upper : %)</dt><dd><p>
+<code>sort(v, ps)</code> returns <code>us, vs, ws</code> such that <code>us</code> is <code>collectUnder(ps, v)</code>, <code>vs</code> is <code>collect(ps, v)</code> and <code>ws</code> is <code>collectUpper(ps, v)</code>.</p>
+</dd></dl>
+<a name="f_triangular_63"></a><dl><dt>triangular? : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>triangular?(ps)</code> returns <code>true</code> iff <code>ps</code> is a triangular set, i.e. two distinct polynomials have distinct main variables and no constant lies in <code>ps</code>.</p>
+</dd></dl>
+<a name="f_trivialIdeal_63"></a><dl><dt>trivialIdeal? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>trivialIdeal?(ps)</code> returns <code>true</code> iff <code>ps</code> does not contain non-zero elements.</p>
+</dd></dl>
+<a name="f_variables"></a><dl><dt>variables : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>variables(ps)</code> returns the decreasingly sorted list of the variables which are variables of some polynomial in <code>ps</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="RetractableFrom.html">RetractableFrom</a>(<a href="List.html">List</a>(P))
+<p><a href="Collection.html">Collection</a>(P)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(P)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="List.html">List</a>(P))
+<p><a href="InnerEvalable.html">InnerEvalable</a>(P, P)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="Evalable.html">Evalable</a>(P)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerEvalable</title>
+</head>
+<body>
+<h1>InnerEvalable(A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/equation1.spad#L1">equation1.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/equation1.spad#L1">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a><li>B : <a href="Type.html">Type</a></ul>
+<p>
+This category provides <span class="spadfun">eval</span> operations. A domain may belong to this category if it is possible to make ``evaluation<code>''</code> substitutions. The difference between this and Evalable is that the operations in this category specify the substitution as a pair of arguments rather than as an equation.</p>
+<a name="f_eval"></a><dl><dt>eval : (%, A, B) -&gt %</dt><dd><p>
+<code>eval(f, x, v)</code> replaces <code>x</code> by <code>v</code> in <code>f</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(A), <a href="List.html">List</a>(B)) -&gt %</dt><dd><p>
+<code>eval(f, [x1, ..., xn], [v1, ..., vn])</code> replaces <code>xi</code> by <code>vi</code> in <code>f</code>.</p>
+</dd></dl>
+</body>
+</html>

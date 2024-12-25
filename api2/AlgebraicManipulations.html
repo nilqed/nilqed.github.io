@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraicManipulations</title>
+</head>
+<body>
+<h1>AlgebraicManipulations(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/manip.spad#L198">manip.spad line 198</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/manip.spad#L198">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>F : Join<a href="Field.html">Field</a>, <a href="ExpressionSpace.html">ExpressionSpace</a>) with
+<p>numer : % -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R, <a href="Kernel.html">Kernel</a>(%))<p>denom : % -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R, <a href="Kernel.html">Kernel</a>(%))<p>coerce : <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R, <a href="Kernel.html">Kernel</a>(%)) -&gt %</ul>
+<p>
+AlgebraicManipulations provides functions to simplify and expand expressions involving algebraic operators.</p>
+<a name="f_ratDenom"></a><dl><dt>ratDenom : F -&gt F</dt><dd><p>
+<code>ratDenom(f)</code> rationalizes the denominators appearing in <code>f</code> by moving all the algebraic quantities into the numerators.</p>
+</dd></dl>
+<dl><dt>ratDenom : (F, F) -&gt F</dt><dd><p>
+<code>ratDenom(f, a)</code> removes <code>a</code> from the denominators in <code>f</code> if <code>a</code> is an algebraic kernel.</p>
+</dd></dl>
+<dl><dt>ratDenom : (F, <a href="List.html">List</a>(F)) -&gt F</dt><dd><p>
+<code>ratDenom(f, [a1, ..., an])</code> removes the <code>ai</code><code>'s</code> which are algebraic kernels from the denominators in <code>f</code>.</p>
+</dd></dl>
+<dl><dt>ratDenom : (F, <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F))) -&gt F</dt><dd><p>
+<code>ratDenom(f, [a1, ..., an])</code> removes the <code>ai</code><code>'s</code> which are algebraic from the denominators in <code>f</code>.</p>
+</dd></dl>
+<a name="f_ratPoly"></a><dl><dt>ratPoly : F -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)</dt><dd><p>
+<code>ratPoly(f)</code> returns a polynomial <code>p</code> such that <code>p</code> has no algebraic coefficients, and <code>p(f) = 0</code>.</p>
+</dd></dl>
+<a name="f_rootFactor"></a><dl><dt>rootFactor : F -&gt F if R has <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a> and F has <a href="FunctionSpace.html">FunctionSpace</a>(R) and R has <a href="Comparable.html">Comparable</a> and R has <a href="GcdDomain.html">GcdDomain</a> and R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>rootFactor(f)</code> transforms every radical of the form <code>(a1*...*am)^(1/n)</code> appearing in <code>f</code> into <code>a^(1/n)*...*am^(1/n)</code>. This transformation is not in general valid for all complex numbers <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_rootKerSimp"></a><dl><dt>rootKerSimp : (<a href="BasicOperator.html">BasicOperator</a>, F, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>) and R has <a href="Comparable.html">Comparable</a> and F has <a href="FunctionSpace.html">FunctionSpace</a>(R) and R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>rootKerSimp(op, f, n)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_rootPower"></a><dl><dt>rootPower : F -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>) and R has <a href="Comparable.html">Comparable</a> and F has <a href="FunctionSpace.html">FunctionSpace</a>(R) and R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>rootPower(f)</code> transforms every radical power of the form <code>(a^(1/n))^m</code> into a simpler form if <code>m</code> and <code>n</code> have a common factor.</p>
+</dd></dl>
+<a name="f_rootProduct"></a><dl><dt>rootProduct : F -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>) and R has <a href="Comparable.html">Comparable</a> and F has <a href="FunctionSpace.html">FunctionSpace</a>(R) and R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>rootProduct(f)</code> combines every product of the form <code>(a^(1/n))^m * (a^(1/s))^t</code> into a single power of a root of <code>a</code>, and transforms every radical power of the form <code>(a^(1/n))^m</code> into a simpler form.</p>
+</dd></dl>
+<a name="f_rootSimp"></a><dl><dt>rootSimp : F -&gt F if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>) and R has <a href="Comparable.html">Comparable</a> and F has <a href="FunctionSpace.html">FunctionSpace</a>(R) and R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>rootSimp(f)</code> transforms every radical of the form <code>(a * b^(q*n+r))^(1/n)</code> appearing in <code>f</code> into <code>b^q * (a * b^r)^(1/n)</code>. This transformation is not in general valid for all complex numbers <code>b</code>.</p>
+</dd></dl>
+<a name="f_rootSplit"></a><dl><dt>rootSplit : F -&gt F</dt><dd><p>
+<code>rootSplit(f)</code> transforms every radical of the form <code>(a/b)^(1/n)</code> appearing in <code>f</code> into <code>a^(1/n) / b^(1/n)</code>. This transformation is not in general valid for all complex numbers <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+</body>
+</html>

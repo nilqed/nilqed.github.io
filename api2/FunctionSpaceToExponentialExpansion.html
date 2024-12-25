@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionSpaceToExponentialExpansion</title>
+</head>
+<body>
+<h1>FunctionSpaceToExponentialExpansion(R, FE, x, cen)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fs2expxp.spad#L1">fs2expxp.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fs2expxp.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>FE : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))<li>x : <a href="Symbol.html">Symbol</a><li>cen : FE</ul>
+<p>
+This package converts expressions in some function space to exponential expansions.</p>
+<a name="f_exprToXXP"></a><dl><dt>exprToXXP : (FE, <a href="Boolean.html">Boolean</a>) -&gt Union(:(%expansion, <a href="ExponentialExpansion.html">ExponentialExpansion</a>(R, FE, x, cen)), :(%problem, Record(func : <a href="String.html">String</a>, prob : <a href="String.html">String</a>)))</dt><dd><p>
+<code>exprToXXP(fcn, posCheck?)</code> converts the expression <code>fcn</code> to an exponential expansion. If <code>posCheck?</code> is <code>true</code>, log<code>'s</code> of negative numbers are not allowed nor are <code>n</code>th roots of negative numbers with <code>n</code> even. If <code>posCheck?</code> is <code>false</code>, these are allowed.</p>
+</dd></dl>
+<a name="f_localAbs"></a><dl><dt>localAbs : FE -&gt FE</dt><dd><p>
+<code>localAbs(fcn)</code> = <code>abs(fcn)</code> or <code>sqrt(fcn^2)</code> depending on whether or not FE has a function <code>abs</code>. This should be a local function, but the compiler won<code>'t</code> allow it.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TriangularMatrixOperations</title>
+</head>
+<body>
+<h1>TriangularMatrixOperations(R, Row, Col, M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intclos.spad#L1">intclos.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intclos.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>Row : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>Col : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(R, Row, Col)</ul>
+<p>
+This package provides functions that compute "fraction-free" inverses of upper and lower triangular matrices over a integral domain. By "fraction-free inverses" we mean the following: given a matrix <code>B</code> with entries in <code>R</code> and an element <code>d</code> of <code>R</code> such that <code>d</code> * inv(<code>B</code>) also has entries in <code>R</code>, we return <code>d</code> * inv(<code>B</code>). Thus, it is not necessary to pass to the quotient field in any of our computations.</p>
+<a name="f_LowTriBddDenomInv"></a><dl><dt>LowTriBddDenomInv : (M, R) -&gt M</dt><dd><p>
+<code>LowTriBddDenomInv(B, d)</code> returns <code>M</code>, where <code>B</code> is a non-singular lower triangular matrix and <code>d</code> is an element of <code>R</code> such that <code>M = d * inv(B)</code> has entries in <code>R</code>.</p>
+</dd></dl>
+<a name="f_UpTriBddDenomInv"></a><dl><dt>UpTriBddDenomInv : (M, R) -&gt M</dt><dd><p>
+<code>UpTriBddDenomInv(B, d)</code> returns <code>M</code>, where <code>B</code> is a non-singular upper triangular matrix and <code>d</code> is an element of <code>R</code> such that <code>M = d * inv(B)</code> has entries in <code>R</code>.</p>
+</dd></dl>
+</body>
+</html>

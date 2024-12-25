@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialNumberTheoryFunctions</title>
+</head>
+<body>
+<h1>PolynomialNumberTheoryFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numtheor.spad#L451">numtheor.spad line 451</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numtheor.spad#L451">[edit on github]</a></p>
+<p>
+This package provides various polynomial number theoretic functions over the integers.</p>
+<a name="f_bernoulli"></a><dl><dt>bernoulli : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>bernoulli(n)</code> returns the <code>n</code>th Bernoulli polynomial <code>B[n](x)</code>. Note: Bernoulli polynomials denoted <code>B(n, x)</code> computed by solving the differential equation <code>differentiate(B(n, x), x) = n B(n-1, x)</code> where <code>B(0, x) = 1</code> and initial condition comes from <code>B(n) = B(n, 0)</code>.</p>
+</dd></dl>
+<a name="f_chebyshevT"></a><dl><dt>chebyshevT : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>chebyshevT(n)</code> returns the <code>n</code>th Chebyshev polynomial <code>T[n](x)</code>. Note: Chebyshev polynomials of the first kind, denoted <code>T[n](x)</code>, computed from the two term recurrence. The generating function <code>(1-t*x)/(1-2*t*x+t^2) = sum(T[n](x)*t^n, n=0..infinity)</code>.</p>
+</dd></dl>
+<a name="f_chebyshevU"></a><dl><dt>chebyshevU : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>chebyshevU(n)</code> returns the <code>n</code>th Chebyshev polynomial <code>U[n](x)</code>. Note: Chebyshev polynomials of the second kind, denoted <code>U[n](x)</code>, computed from the two term recurrence. The generating function <code>1/(1-2*t*x+t^2) = sum(T[n](x)*t^n, n=0..infinity)</code>.</p>
+</dd></dl>
+<a name="f_cyclotomic"></a><dl><dt>cyclotomic : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>cyclotomic(n)</code> returns the <code>n</code>th cyclotomic polynomial <code>phi[n](x)</code>. Note: <code>phi[n](x)</code> is the factor of <code>x^n - 1</code> whose roots are the primitive <code>n</code>th roots of unity.</p>
+</dd></dl>
+<a name="f_euler"></a><dl><dt>euler : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>euler(n)</code> returns the <code>n</code>th Euler polynomial <code>E[n](x)</code>. Note: Euler polynomials denoted <code>E(n, x)</code> are computed by solving the differential equation <code>differentiate(E(n, x), x) = n E(n-1, x)</code> where <code>E(0, x) = 1</code> and initial condition comes from <code>E(n) = 2^n E(n, 1/2)</code>.</p>
+</dd></dl>
+<a name="f_fixedDivisor"></a><dl><dt>fixedDivisor : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>fixedDivisor(a)</code> for <code>a(x)</code> in <code>Z[x]</code> is the largest integer <code>f</code> such that <code>f</code> divides <code>a(x=k)</code> for all integers <code>k</code>. Note: fixed divisor of <code>a</code> is <code>reduce(gcd, [a(x=k) for k in 0..degree(a)])</code>.</p>
+</dd></dl>
+<a name="f_hermite"></a><dl><dt>hermite : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>hermite(n)</code> returns the <code>n</code>th Hermite polynomial <code>H[n](x)</code>. Note: Hermite polynomials, denoted <code>H[n](x)</code>, are computed from the two term recurrence. The generating function is: <code>exp(2*t*x-t^2) = sum(H[n](x)*t^n/n!, n=0..infinity)</code>.</p>
+</dd></dl>
+<a name="f_laguerre"></a><dl><dt>laguerre : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>laguerre(n)</code> returns the <code>n</code>th Laguerre polynomial <code>L[n](x)</code>. Note: Laguerre polynomials, denoted <code>L[n](x)</code>, are computed from the two term recurrence. The generating function is: <code>exp(x*t/(t-1))/(1-t) = sum(L[n](x)*t^n/n!, n=0..infinity)</code>.</p>
+</dd></dl>
+<a name="f_legendre"></a><dl><dt>legendre : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>legendre(n)</code> returns the <code>n</code>th Legendre polynomial <code>P[n](x)</code>. Note: Legendre polynomials, denoted <code>P[n](x)</code>, are computed from the two term recurrence. The generating function is: <code>1/sqrt(1-2*t*x+t^2) = sum(P[n](x)*t^n, n=0..infinity)</code>.</p>
+</dd></dl>
+</body>
+</html>

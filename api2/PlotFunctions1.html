@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PlotFunctions1</title>
+</head>
+<body>
+<h1>PlotFunctions1(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/plot.spad#L509">plot.spad line 509</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/plot.spad#L509">[edit on github]</a></p>
+<ul>
+<li>S : <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</ul>
+<p>
+<code>PlotFunctions1</code> provides facilities for plotting curves where functions <code>SF</code> <code>-&gt;</code> <code>SF</code> are specified by giving an expression</p>
+<a name="f_plot"></a><dl><dt>plot : (S, S, <a href="Symbol.html">Symbol</a>, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Plot.html">Plot</a></dt><dd><p>
+<code>plot(f, g, t, seg)</code> plots the graph of <code>x = f(t)</code>, <code>y = g(t)</code> as <code>t</code> ranges over an interval.</p>
+</dd></dl>
+<dl><dt>plot : (S, <a href="Symbol.html">Symbol</a>, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Plot.html">Plot</a></dt><dd><p>
+<code>plot(fcn, x, seg)</code> plots the graph of <code>y = f(x)</code> on a interval</p>
+</dd></dl>
+<a name="f_plotPolar"></a><dl><dt>plotPolar : (S, <a href="Symbol.html">Symbol</a>) -&gt <a href="Plot.html">Plot</a></dt><dd><p>
+<code>plotPolar(f, theta)</code> plots the graph of <code>r = f(theta)</code> as theta ranges from 0 to 2 <code>pi</code></p>
+</dd></dl>
+<dl><dt>plotPolar : (S, <a href="Symbol.html">Symbol</a>, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Plot.html">Plot</a></dt><dd><p>
+<code>plotPolar(f, theta, seg)</code> plots the graph of <code>r = f(theta)</code> as <code>theta</code> ranges over an interval</p>
+</dd></dl>
+</body>
+</html>

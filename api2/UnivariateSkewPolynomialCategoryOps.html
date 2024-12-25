@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariateSkewPolynomialCategoryOps</title>
+</head>
+<body>
+<h1>UnivariateSkewPolynomialCategoryOps(R, C)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ore.spad#L346">ore.spad line 346</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ore.spad#L346">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>C : <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</ul>
+<p>
+<code>UnivariateSkewPolynomialCategoryOps</code> provides products and divisions of univariate skew polynomials.</p>
+<a name="f_apply"></a><dl><dt>apply : (C, R, R, <a href="Automorphism.html">Automorphism</a>(R), Mapping(R, R)) -&gt R</dt><dd><p>
+<code>apply(p, c, m, sigma, delta)</code> returns <code>p(m)</code> where the action is given by <code>x m = c sigma(m) + delta(m)</code>.</p>
+</dd></dl>
+<a name="f_leftDivide"></a><dl><dt>leftDivide : (C, C, <a href="Automorphism.html">Automorphism</a>(R)) -&gt Record(quotient : C, remainder : C) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>leftDivide(a, b, sigma)</code> returns the pair <code>[q, r]</code> such that <code>a = b*q + r</code> and the degree of <code>r</code> is less than the degree of <code>b</code>. This process is called ``left division<code>''</code>. <code>\sigma</code> is the morphism to use.</p>
+</dd></dl>
+<a name="f_monicLeftDivide"></a><dl><dt>monicLeftDivide : (C, C, <a href="Automorphism.html">Automorphism</a>(R)) -&gt Record(quotient : C, remainder : C) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>monicLeftDivide(a, b, sigma)</code> returns the pair <code>[q, r]</code> such that <code>a = b*q + r</code> and the degree of <code>r</code> is less than the degree of <code>b</code>. <code>b</code> must be monic. This process is called ``left division<code>''</code>. <code>\sigma</code> is the morphism to use.</p>
+</dd></dl>
+<a name="f_monicRightDivide"></a><dl><dt>monicRightDivide : (C, C, <a href="Automorphism.html">Automorphism</a>(R)) -&gt Record(quotient : C, remainder : C) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>monicRightDivide(a, b, sigma)</code> returns the pair <code>[q, r]</code> such that <code>a = q*b + r</code> and the degree of <code>r</code> is less than the degree of <code>b</code>. <code>b</code> must be monic. This process is called ``right division<code>''</code>. <code>\sigma</code> is the morphism to use.</p>
+</dd></dl>
+<a name="f_rightDivide"></a><dl><dt>rightDivide : (C, C, <a href="Automorphism.html">Automorphism</a>(R)) -&gt Record(quotient : C, remainder : C) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>rightDivide(a, b, sigma)</code> returns the pair <code>[q, r]</code> such that <code>a = q*b + r</code> and the degree of <code>r</code> is less than the degree of <code>b</code>. This process is called ``right division<code>''</code>. <code>\sigma</code> is the morphism to use.</p>
+</dd></dl>
+<a name="f_times"></a><dl><dt>times : (C, C, <a href="Automorphism.html">Automorphism</a>(R), Mapping(R, R)) -&gt C</dt><dd><p>
+<code>times(p, q, sigma, delta)</code> returns <code>p * q</code>. <code>\sigma</code> and <code>\delta</code> are the maps to use.</p>
+</dd></dl>
+</body>
+</html>

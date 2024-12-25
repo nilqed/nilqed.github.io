@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LUDecomposition</title>
+</head>
+<body>
+<h1>LUDecomposition(D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L6224">jet.spad line 6224</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L6224">[edit on github]</a></p>
+<ul>
+<li>D : <a href="Field.html">Field</a></ul>
+<p>
+LUDecomposition contains procedures to solve linear systems of equations or to compute inverses using a LU decomposition.</p>
+<a name="f_LUDecomp"></a><dl><dt>LUDecomp : <a href="Matrix.html">Matrix</a>(D) -&gt Record(LU : <a href="Matrix.html">Matrix</a>(D), Perm : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), Pivots : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>LUDecomp(A)</code> computes a LU decomposition of <code>A</code> using the algorithm of Crout. <code>LU</code> contains both triangular matrices; <code>Perm</code> is the permutation used for partial pivoting and <code>Pivots</code> yields the used pivots.</p>
+</dd></dl>
+<a name="f_LUInverse"></a><dl><dt>LUInverse : <a href="Matrix.html">Matrix</a>(D) -&gt Record(Inv : <a href="Matrix.html">Matrix</a>(D), Pivots : <a href="List.html">List</a>(D))</dt><dd><p>
+<code>LUInverse(A)</code> computes the inverse of <code>A</code> using a LU decomposition.</p>
+</dd></dl>
+<a name="f_LUSolve"></a><dl><dt>LUSolve : (<a href="Matrix.html">Matrix</a>(D), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(D)) -&gt <a href="Vector.html">Vector</a>(D)</dt><dd><p>
+<code>LUSolve(LU, Perm, B)</code> uses a previously computed <code>LU</code> decomposition to solve a linear system with right hand side <code>B</code>. <code>LU</code> and <code>Perm</code> are as given by <code>LUDecomp</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariatePolynomialCategoryFunctions2</title>
+</head>
+<body>
+<h1>UnivariatePolynomialCategoryFunctions2(R, PR, S, PS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/polycat.spad#L1210">polycat.spad line 1210</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/polycat.spad#L1210">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>PR : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>S : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>PS : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(S)</ul>
+<p>
+Mapping from polynomials over <code>R</code> to polynomials over <code>S</code> given a map from <code>R</code> to <code>S</code> assumed to send zero to zero.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, R), PR) -&gt PS</dt><dd><p>
+<code>map(f, p)</code> takes a function <code>f</code> from <code>R</code> to <code>S</code>, and applies it to each (non-zero) coefficient of a polynomial <code>p</code> over <code>R</code>, getting a new polynomial over <code>S</code>. Note: since the map is not applied to zero elements, it may map zero to zero.</p>
+</dd></dl>
+</body>
+</html>

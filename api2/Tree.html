@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Tree</title>
+</head>
+<body>
+<h1>Tree(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tree.spad#L1">tree.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tree.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+Tree(S) is a basic domain of tree structures. Each tree is either empty or has a  node consisting of a value and a list of (sub)trees.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_child_63"></a><dl><dt><a href="RecursiveAggregate.html#f_child_63">child?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_children"></a><dl><dt><a href="RecursiveAggregate.html#f_children">children</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (S, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_cyclic_63"></a><dl><dt><a href="RecursiveAggregate.html#f_cyclic_63">cyclic?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_distance"></a><dl><dt><a href="RecursiveAggregate.html#f_distance">distance</a> : (%, %) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="RecursiveAggregate.html#f_elt">elt</a> : (%, "value") -&gt S</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, S, S) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(S, S)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(S)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="Evalable.html">Evalable</a>(S)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(S), <a href="List.html">List</a>(S)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(S, S)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(S))) -&gt % if S has <a href="Evalable.html">Evalable</a>(S)</dt><dd> from <a href="Evalable.html">Evalable</a>(S)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if S has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if S has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leaf_63"></a><dl><dt><a href="RecursiveAggregate.html#f_leaf_63">leaf?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_leaves"></a><dl><dt><a href="RecursiveAggregate.html#f_leaves">leaves</a> : % -&gt <a href="List.html">List</a>(S)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(S, S), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(S, S), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt S if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), %) -&gt S</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (S, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(S)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt S if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_node_63"></a><dl><dt><a href="RecursiveAggregate.html#f_node_63">node?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_nodes"></a><dl><dt><a href="RecursiveAggregate.html#f_nodes">nodes</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(S)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_setchildren_33"></a><dl><dt><a href="RecursiveAggregate.html#f_setchildren_33">setchildren!</a> : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_setelt_33"></a><dl><dt><a href="RecursiveAggregate.html#f_setelt_33">setelt!</a> : (%, "value", S) -&gt S</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_setvalue_33"></a><dl><dt><a href="RecursiveAggregate.html#f_setvalue_33">setvalue!</a> : (%, S) -&gt S</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_tree"></a><dl><dt>tree : S -&gt %</dt><dd><p>
+<code>tree(nd)</code> creates a tree with value <code>nd</code>, and no children.</p>
+</dd></dl>
+<dl><dt>tree : (S, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>tree(nd, ls)</code> creates a tree with value <code>nd</code>, and children <code>ls</code>.</p>
+</dd></dl>
+<dl><dt>tree : <a href="List.html">List</a>(S) -&gt %</dt><dd><p>
+<code>tree(ls)</code> creates a tree from a list of elements of <code>s</code>.</p>
+</dd></dl>
+<a name="f_value"></a><dl><dt><a href="RecursiveAggregate.html#f_value">value</a> : % -&gt S</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="RecursiveAggregate.html">RecursiveAggregate</a>(S)
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(S, S)
+<p><a href="Evalable.html">Evalable</a>(S)
+</body>
+</html>

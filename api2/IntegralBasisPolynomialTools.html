@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegralBasisPolynomialTools</title>
+</head>
+<body>
+<h1>IntegralBasisPolynomialTools(K, R, UP, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/padiclib.spad#L1">padiclib.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/padiclib.spad#L1">[edit on github]</a></p>
+<ul>
+<li>K : <a href="Ring.html">Ring</a><li>R : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(K)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>L : <a href="Ring.html">Ring</a></ul>
+<p>
+IntegralBasisPolynomialTools provides functions for mapping functions on the coefficients of univariate and bivariate polynomials.</p>
+<a name="f_mapBivariate"></a><dl><dt>mapBivariate : (Mapping(L, K), UP) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(L))</dt><dd><p>
+<code>mapBivariate(f, p(x, y))</code> applies the function <code>f</code> to the coefficients of <code>p(x, y)</code>.</p>
+</dd></dl>
+<a name="f_mapMatrixIfCan"></a><dl><dt>mapMatrixIfCan : (Mapping(Union(K, "failed"), L), <a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(L))) -&gt Union(<a href="Matrix.html">Matrix</a>(R), "failed")</dt><dd><p>
+<code>mapMatrixIfCan(f, mat)</code> applies the function <code>f</code> to the coefficients of the entries of <code>mat</code> if possible, and returns <code>"failed"</code> otherwise.</p>
+</dd></dl>
+<a name="f_mapUnivariate"></a><dl><dt>mapUnivariate : (Mapping(K, L), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(L)) -&gt R</dt><dd><p>
+<code>mapUnivariate(f, p(x))</code> applies the function <code>f</code> to the coefficients of <code>p(x)</code>.</p>
+</dd></dl>
+<dl><dt>mapUnivariate : (Mapping(L, K), R) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(L)</dt><dd><p>
+<code>mapUnivariate(f, p(x))</code> applies the function <code>f</code> to the coefficients of <code>p(x)</code>.</p>
+</dd></dl>
+<a name="f_mapUnivariateIfCan"></a><dl><dt>mapUnivariateIfCan : (Mapping(Union(K, "failed"), L), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(L)) -&gt Union(R, "failed")</dt><dd><p>
+<code>mapUnivariateIfCan(f, p(x))</code> applies the function <code>f</code> to the coefficients of <code>p(x)</code>, if possible, and returns <code>"failed"</code> otherwise.</p>
+</dd></dl>
+</body>
+</html>

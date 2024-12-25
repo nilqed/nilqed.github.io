@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FactoredFunctions</title>
+</head>
+<body>
+<h1>FactoredFunctions(M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/manip.spad#L1">manip.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/manip.spad#L1">[edit on github]</a></p>
+<ul>
+<li>M : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+computes various functions on factored arguments.</p>
+<a name="f_log"></a><dl><dt>log : <a href="Factored.html">Factored</a>(M) -&gt <a href="List.html">List</a>(Record(coef : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, logand : M))</dt><dd><p>
+<code>log(f)</code> returns <code>[(a1, b1), ..., (am, bm)]</code> such that the logarithm of <code>f</code> is equal to <code>a1*log(b1) + ... + am*log(bm)</code>.</p>
+</dd></dl>
+<a name="f_nthRoot"></a><dl><dt>nthRoot : (<a href="Factored.html">Factored</a>(M), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, coef : M, radicand : <a href="List.html">List</a>(M))</dt><dd><p>
+<code>nthRoot(f, n)</code> returns <code>(p, r, [r1, ..., rm])</code> such that the <code>n</code>th-root of <code>f</code> is equal to <code>r * <code>p</code>th-root(r1 * ... * rm)</code>, where <code>r1</code>, ..., <code>rm</code> are distinct factors of <code>f</code>, each of which has an exponent smaller than <code>p</code> in <code>f</code>.</p>
+</dd></dl>
+</body>
+</html>

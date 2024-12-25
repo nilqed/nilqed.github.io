@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Aggregate</title>
+</head>
+<body>
+<h1>Aggregate</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/aggcat.spad#L1">aggcat.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/aggcat.spad#L1">[edit on github]</a></p>
+<p>
+The notion of aggregate serves to model any data structure aggregate, designating any collection of objects, with heterogeneous or homogeneous members, with a finite or infinite number of members, explicitly or implicitly represented. An aggregate can in principle represent everything from a string of characters to abstract sets such as "the set of <code>x</code> satisfying relation  r(x)". An attribute finiteAggregate is used to assert that a domain has a finite number of elements.</p>
+<a name="f__35"></a><dl><dt># : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>#(u)</code> returns the number of elements in <code>u</code>.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(u)</code> returns a top-level (non-recursive) copy of <code>u</code>. Note: for collections, <code>copy(u) = [x for x in u]</code>.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : () -&gt %</dt><dd><p>
+<code>empty()</code>$<code>D</code> creates an aggregate of type <code>D</code> with 0 elements. Note: The  $D can be dropped if understood by context, e.g. <code>u: D := empty()</code>.</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty?(u)</code> tests if <code>u</code> has 0 elements.</p>
+</dd></dl>
+<a name="f_eq_63"></a><dl><dt>eq? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>eq?(u, v)</code> tests if <code>u</code> and <code>v</code> are same objects.</p>
+</dd></dl>
+<a name="f_less_63"></a><dl><dt>less? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>less?(u, n)</code> tests if <code>u</code> has less than <code>n</code> elements.</p>
+</dd></dl>
+<a name="f_more_63"></a><dl><dt>more? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>more?(u, n)</code> tests if <code>u</code> has more than <code>n</code> elements.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt>sample : () -&gt %</dt><dd><p>
+<code>sample yields</code> a value of type %</p>
+</dd></dl>
+<a name="f_size_63"></a><dl><dt>size? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>size?(u, n)</code> tests if <code>u</code> has exactly <code>n</code> elements.</p>
+</dd></dl>
+</body>
+</html>

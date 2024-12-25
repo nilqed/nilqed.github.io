@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InfiniteTuple</title>
+</head>
+<body>
+<h1>InfiniteTuple(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ituple.spad#L1">ituple.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ituple.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+This package implements 'infinite tuples' for the interpreter. The representation is a stream.</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : % -&gt <a href="Stream.html">Stream</a>(S)</dt><dd><p>
+<code>construct(t)</code> converts an infinite tuple to a stream.</p>
+</dd></dl>
+<a name="f_filterUntil"></a><dl><dt>filterUntil : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt %</dt><dd><p>
+<code>filterUntil(p, t)</code> returns <code>[x for x in t while not p(x)]</code>.</p>
+</dd></dl>
+<a name="f_filterWhile"></a><dl><dt>filterWhile : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt %</dt><dd><p>
+<code>filterWhile(p, t)</code> returns <code>[x for x in t while p(x)]</code>.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, S), %) -&gt %</dt><dd><p>
+<code>map(f, t)</code> replaces the tuple <code>t</code> by <code>[f(x) for x in t]</code>.</p>
+</dd></dl>
+<a name="f_select"></a><dl><dt>select : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt %</dt><dd><p>
+<code>select(p, t)</code> returns <code>[x for x in t | p(x)]</code>.</p>
+</dd></dl>
+<a name="f_stream"></a><dl><dt>stream : (Mapping(S, S), S) -&gt %</dt><dd><p>
+<code>stream(f, s)</code> returns <code>[s, f(s), f(f(s)), ...]</code>.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

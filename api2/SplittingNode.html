@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SplittingNode</title>
+</head>
+<body>
+<h1>SplittingNode(V, C)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/newdata.spad#L147">newdata.spad line 147</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/newdata.spad#L147">[edit on github]</a></p>
+<ul>
+<li>V : Join(<a href="SetCategory.html">SetCategory</a>, <a href="Aggregate.html">Aggregate</a>)<li>C : Join(<a href="SetCategory.html">SetCategory</a>, <a href="Aggregate.html">Aggregate</a>)</ul>
+<p>
+This domain exports a modest implementation for the vertices of splitting trees. These vertices are called here splitting nodes. Every of these nodes store 3 informations. The first one is its value, that is the current expression to evaluate. The second one is its condition, that is the hypothesis under which the value has to be evaluated. The last one is its status, that is a boolean flag which is <code>true</code> iff the value is the result of its evaluation under its condition. Two splitting vertices are equal iff they have the sane values and the same conditions (so their status do not matter).</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_condition"></a><dl><dt>condition : % -&gt C</dt><dd><p>
+<code>condition(n)</code> returns the condition of the node <code>n</code>.</p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : (V, C) -&gt %</dt><dd><p>
+<code>construct(v, t)</code> returns the same as <code>construct(v, t, false)</code></p>
+</dd></dl>
+<dl><dt>construct : (V, C, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>construct(v, t, b)</code> returns the non-empty node with value <code>v</code>, condition <code>t</code> and flag <code>b</code></p>
+</dd></dl>
+<dl><dt>construct : Record(val : V, tower : C) -&gt %</dt><dd><p>
+<code>construct(vt)</code> returns the same as <code>construct(vt.val, vt.tower)</code></p>
+</dd></dl>
+<dl><dt>construct : (V, <a href="List.html">List</a>(C)) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>construct(v, lt)</code> returns the same as <code>[construct(v, t) for t in lt]</code></p>
+</dd></dl>
+<dl><dt>construct : <a href="List.html">List</a>(Record(val : V, tower : C)) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>construct(lvt)</code> returns the same as <code>[construct(vt.val, vt.tower) for vt in lvt]</code></p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(n)</code> returns a copy of <code>n</code>.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : () -&gt %</dt><dd><p>
+<code>empty()</code> returns the same as <code>[empty()$V, empty()$C, false]$%</code></p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty?(n)</code> returns <code>true</code> iff the node <code>n</code> is <code>empty()$%</code>.</p>
+</dd></dl>
+<a name="f_infLex_63"></a><dl><dt>infLex? : (%, %, Mapping(<a href="Boolean.html">Boolean</a>, V, V), Mapping(<a href="Boolean.html">Boolean</a>, C, C)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>infLex?(n1, n2, o1, o2)</code> returns <code>true</code> iff <code>o1(value(n1), value(n2))</code> or <code>value(n1) = value(n2)</code> and <code>o2(condition(n1), condition(n2))</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_setCondition_33"></a><dl><dt>setCondition! : (%, C) -&gt %</dt><dd><p>
+<code>setCondition!(n, t)</code> returns <code>n</code> whose condition has been replaced by <code>t</code> if it is not empty, else an error is produced.</p>
+</dd></dl>
+<a name="f_setEmpty_33"></a><dl><dt>setEmpty! : % -&gt %</dt><dd><p>
+<code>setEmpty!(n)</code> replaces <code>n</code> by <code>empty()$%</code>.</p>
+</dd></dl>
+<a name="f_setStatus_33"></a><dl><dt>setStatus! : (%, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>setStatus!(n, b)</code> returns <code>n</code> whose status has been replaced by <code>b</code> if it is not empty, else an error is produced.</p>
+</dd></dl>
+<a name="f_setValue_33"></a><dl><dt>setValue! : (%, V) -&gt %</dt><dd><p>
+<code>setValue!(n, v)</code> returns <code>n</code> whose value has been replaced by <code>v</code> if it is not empty, else an error is produced.</p>
+</dd></dl>
+<a name="f_status"></a><dl><dt>status : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>status(n)</code> returns the status of the node <code>n</code>.</p>
+</dd></dl>
+<a name="f_subNode_63"></a><dl><dt>subNode? : (%, %, Mapping(<a href="Boolean.html">Boolean</a>, C, C)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subNode?(n1, n2, o2)</code> returns <code>true</code> iff <code>value(n1) = value(n2)</code> and <code>o2(condition(n1), condition(n2))</code></p>
+</dd></dl>
+<a name="f_value"></a><dl><dt>value : % -&gt V</dt><dd><p>
+<code>value(n)</code> returns the value of the node <code>n</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

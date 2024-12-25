@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ReductionOfOrder</title>
+</head>
+<body>
+<h1>ReductionOfOrder(F, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L502">odeef.spad line 502</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L502">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</ul>
+<p>
+ReductionOfOrder provides functions for reducing the order of linear ordinary differential equations once some solutions are known.</p>
+<a name="f_ReduceOrder"></a><dl><dt>ReduceOrder : (L, F) -&gt L</dt><dd><p>
+<code>ReduceOrder(op, s)</code> returns <code>op1</code> such that for any solution <code>z</code> of <code>op1 z = 0</code>, <code>y = s \int z</code> is a solution of <code>op y = 0</code>. <code>s</code> must satisfy <code>op s = 0</code>.</p>
+</dd></dl>
+<dl><dt>ReduceOrder : (L, <a href="List.html">List</a>(F)) -&gt Record(eq : L, op : <a href="List.html">List</a>(F))</dt><dd><p>
+<code>ReduceOrder(op, [f1, ..., fk])</code> returns <code>[op1, [g1, ..., gk]]</code> such that for any solution <code>z</code> of <code>op1 z = 0</code>, <code>y = gk \int(g_k-1 \int(... \int(g1 \int z)...))</code> is a solution of <code>op y = 0</code>. Each <code><code>fi</code></code> must satisfy <code>op <code>fi</code> = 0</code>.</p>
+</dd></dl>
+</body>
+</html>

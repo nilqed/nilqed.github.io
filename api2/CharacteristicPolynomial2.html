@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CharacteristicPolynomial2</title>
+</head>
+<body>
+<h1>CharacteristicPolynomial2(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/charpol.spad#L1">charpol.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/charpol.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a></ul>
+<p>
+This package computes characteristic polynomial using Danilewski method.</p>
+<a name="f_char_95pol"></a><dl><dt>char_pol : <a href="Matrix.html">Matrix</a>(F) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)</dt><dd><p>
+<code>char_pol(m)</code> computes characteristic polynomial of <code>m</code>.</p>
+</dd></dl>
+<a name="f_danilewski"></a><dl><dt>danilewski : <a href="Matrix.html">Matrix</a>(F) -&gt Record(matrix : <a href="Matrix.html">Matrix</a>(F), block_list : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>danilewski(m)</code> converts <code>m</code> to block form where each block represents transposition of multiplication by a polynomial.</p>
+</dd></dl>
+</body>
+</html>

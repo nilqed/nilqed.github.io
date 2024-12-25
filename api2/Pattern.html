@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Pattern</title>
+</head>
+<body>
+<h1>Pattern(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pattern.spad#L1">pattern.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pattern.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+Patterns for use by the pattern matcher.</p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>a * b</code> returns the pattern <code>a * b</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>a + b</code> returns the pattern <code>a + b</code>.</p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (%, %) -&gt %</dt><dd><p>
+<code>a / b</code> returns the pattern <code>a / b</code>.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt>0 : () -&gt %</dt><dd><p>
+0</p>
+</dd></dl>
+<a name="f_1"></a><dl><dt>1 : () -&gt %</dt><dd><p>
+1</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, %) -&gt %</dt><dd><p>
+<code>a ^ b</code> returns the pattern <code>a ^ b</code>.</p>
+</dd></dl>
+<dl><dt>^ : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>a ^ n</code> returns the pattern <code>a ^ n</code>.</p>
+</dd></dl>
+<a name="f_addBadValue"></a><dl><dt>addBadValue : (%, <a href="Any.html">Any</a>) -&gt %</dt><dd><p>
+<code>addBadValue(p, v)</code> adds <code>v</code> to the list of "bad values" for <code>p</code>. Note: <code>p</code> is not allowed to match any of its "bad values".</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(R)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_constant_63"></a><dl><dt>constant? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>constant?(p)</code> tests if <code>p</code> contains no matching variables.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt>convert : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>convert([a1, ..., an])</code> returns the pattern <code>[a1, ..., an]</code>.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(p)</code> returns a recursive copy of <code>p</code>.</p>
+</dd></dl>
+<a name="f_depth"></a><dl><dt>depth : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>depth(p)</code> returns the nesting level of <code>p</code>.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>elt(op, [a1, ..., an])</code> returns <code>op(a1, ..., an)</code>.</p>
+</dd></dl>
+<a name="f_generic_63"></a><dl><dt>generic? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>generic?(p)</code> tests if <code>p</code> is a single matching variable.</p>
+</dd></dl>
+<a name="f_getBadValues"></a><dl><dt>getBadValues : % -&gt <a href="List.html">List</a>(<a href="Any.html">Any</a>)</dt><dd><p>
+<code>getBadValues(p)</code> returns the list of "bad values" for <code>p</code>. Note: <code>p</code> is not allowed to match any of its "bad values".</p>
+</dd></dl>
+<a name="f_hasPredicate_63"></a><dl><dt>hasPredicate? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>hasPredicate?(p)</code> tests if <code>p</code> has predicates attached to it.</p>
+</dd></dl>
+<a name="f_hasTopPredicate_63"></a><dl><dt>hasTopPredicate? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>hasTopPredicate?(p)</code> tests if <code>p</code> has a top-level predicate.</p>
+</dd></dl>
+<a name="f_inR_63"></a><dl><dt>inR? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>inR?(p)</code> tests if <code>p</code> is an atom (i.e. an element of <code>R</code>).</p>
+</dd></dl>
+<a name="f_isExpt"></a><dl><dt>isExpt : % -&gt Union(Record(val : %, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>), "failed")</dt><dd><p>
+<code>isExpt(p)</code> returns <code>[q, n]</code> if <code>n &gt; 0</code> and <code>p = q ^ n</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_isList"></a><dl><dt>isList : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd><p>
+<code>isList(p)</code> returns <code>[a1, ..., an]</code> if <code>p = [a1, ..., an]</code>, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_isOp"></a><dl><dt>isOp : (%, <a href="BasicOperator.html">BasicOperator</a>) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd><p>
+<code>isOp(p, op)</code> returns <code>[a1, ..., an]</code> if <code>p = op(a1, ..., an)</code>, and "failed" otherwise.</p>
+</dd></dl>
+<dl><dt>isOp : % -&gt Union(Record(op : <a href="BasicOperator.html">BasicOperator</a>, arg : <a href="List.html">List</a>(%)), "failed")</dt><dd><p>
+<code>isOp(p)</code> returns <code>[op, [a1, ..., an]]</code> if <code>p = op(a1, ..., an)</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_isPlus"></a><dl><dt>isPlus : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd><p>
+<code>isPlus(p)</code> returns <code>[a1, ..., an]</code> if <code>n &gt; 1</code> and <code>p = a1 + ... + an</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_isPower"></a><dl><dt>isPower : % -&gt Union(Record(val : %, exponent : %), "failed")</dt><dd><p>
+<code>isPower(p)</code> returns <code>[a, b]</code> if <code>p = a ^ b</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_isQuotient"></a><dl><dt>isQuotient : % -&gt Union(Record(num : %, den : %), "failed")</dt><dd><p>
+<code>isQuotient(p)</code> returns <code>[a, b]</code> if <code>p = a / b</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_isTimes"></a><dl><dt>isTimes : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd><p>
+<code>isTimes(p)</code> returns <code>[a1, ..., an]</code> if <code>n &gt; 1</code> and <code>p = a1 * ... * an</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_multiple_63"></a><dl><dt>multiple? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>multiple?(p)</code> tests if <code>p</code> is a single matching variable allowing list matching or multiple term matching in a sum or product.</p>
+</dd></dl>
+<a name="f_optional_63"></a><dl><dt>optional? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>optional?(p)</code> tests if <code>p</code> is a single matching variable which can match an identity.</p>
+</dd></dl>
+<a name="f_optpair"></a><dl><dt>optpair : <a href="List.html">List</a>(%) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd><p>
+<code>optpair(l)</code> returns <code>l</code> has the form <code>[a, b]</code> and a is optional, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_patternVariable"></a><dl><dt>patternVariable : (<a href="Symbol.html">Symbol</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>patternVariable(x, c?, o?, m?)</code> creates a pattern variable <code>x</code>, which is constant if <code>c? = true</code>, optional if <code>o? = true</code>, and multiple if <code>m? = true</code>.</p>
+</dd></dl>
+<a name="f_predicates"></a><dl><dt>predicates : % -&gt <a href="List.html">List</a>(<a href="Any.html">Any</a>)</dt><dd><p>
+<code>predicates(p)</code> returns <code>[p1, ..., pn]</code> such that the predicate attached to <code>p</code> is <code>p1</code> and ... and <code>pn</code>.</p>
+</dd></dl>
+<a name="f_quoted_63"></a><dl><dt>quoted? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>quoted?(p)</code> tests if <code>p</code> is of the form <code>'s</code> for a symbol <code>s</code>.</p>
+</dd></dl>
+<a name="f_resetBadValues"></a><dl><dt>resetBadValues : % -&gt %</dt><dd><p>
+<code>resetBadValues(p)</code> initializes the list of "bad values" for <code>p</code> to <code>[]</code>. Note: <code>p</code> is not allowed to match any of its "bad values".</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Symbol.html">Symbol</a>, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_setPredicates"></a><dl><dt>setPredicates : (%, <a href="List.html">List</a>(<a href="Any.html">Any</a>)) -&gt %</dt><dd><p>
+<code>setPredicates(p, [p1, ..., pn])</code> attaches the predicate <code>p1</code> and ... and <code>pn</code> to <code>p</code>.</p>
+</dd></dl>
+<a name="f_setTopPredicate"></a><dl><dt>setTopPredicate : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Any.html">Any</a>) -&gt %</dt><dd><p>
+<code>setTopPredicate(x, [a1, ..., an], f)</code> returns <code>x</code> with the top-level predicate set to <code>f(a1, ..., an)</code>.</p>
+</dd></dl>
+<a name="f_symbol_63"></a><dl><dt>symbol? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>symbol?(p)</code> tests if <code>p</code> is a symbol.</p>
+</dd></dl>
+<a name="f_topPredicate"></a><dl><dt>topPredicate : % -&gt Record(var : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), pred : <a href="Any.html">Any</a>)</dt><dd><p>
+<code>topPredicate(x)</code> returns <code>[[a1, ..., an], f]</code> where the top-level predicate of <code>x</code> is <code>f(a1, ..., an)</code>. Note: <code>n</code> is 0 if <code>x</code> has no top-level predicate.</p>
+</dd></dl>
+<a name="f_variables"></a><dl><dt>variables : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>variables(p)</code> returns the list of matching variables appearing in <code>p</code>.</p>
+</dd></dl>
+<a name="f_withPredicates"></a><dl><dt>withPredicates : (%, <a href="List.html">List</a>(<a href="Any.html">Any</a>)) -&gt %</dt><dd><p>
+<code>withPredicates(p, [p1, ..., pn])</code> makes a copy of <code>p</code> and attaches the predicate <code>p1</code> and ... and <code>pn</code> to the copy, which is returned.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)
+</body>
+</html>

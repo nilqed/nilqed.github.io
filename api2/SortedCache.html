@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SortedCache</title>
+</head>
+<body>
+<h1>SortedCache(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/kl.spad#L14">kl.spad line 14</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/kl.spad#L14">[edit on github]</a></p>
+<ul>
+<li>S : <a href="CachableSet.html">CachableSet</a></ul>
+<p>
+A sorted cache of a cachable set <code>S</code> is a dynamic structure that keeps the elements of <code>S</code> sorted and assigns an integer to each element of <code>S</code> once it is in the cache. This way, equality and ordering on <code>S</code> are tested directly on the integers associated with the elements of <code>S</code>, once they have been entered in the cache.</p>
+<a name="f_binarySearch"></a><dl><dt>binarySearch : (S, Mapping(<a href="Integer.html">Integer</a>, S, S)) -&gt Union(S, "failed")</dt><dd><p>
+<code>binarySearch(x, f)</code> searches <code>x</code> in the cache, calling <code>f(x, y)</code> to determine order. It returns <code>y</code> from cache if <code>f</code>(<code>x</code>, <code>y</code>) is 0 or "failed" if no such <code>y</code> exists.</p>
+</dd></dl>
+<a name="f_clearCache"></a><dl><dt>clearCache : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>clearCache()</code> empties the cache.</p>
+</dd></dl>
+<a name="f_enterInCache"></a><dl><dt>enterInCache : (S, Mapping(<a href="Boolean.html">Boolean</a>, S)) -&gt S</dt><dd><p>
+<code>enterInCache(x, f)</code> enters <code>x</code> in the cache, calling <code>f(y)</code> to determine whether <code>x</code> is equal to <code>y</code>. It returns <code>x</code> with an integer associated with it.</p>
+</dd></dl>
+<dl><dt>enterInCache : (S, Mapping(<a href="Integer.html">Integer</a>, S, S)) -&gt S</dt><dd><p>
+<code>enterInCache(x, f)</code> enters <code>x</code> in the cache, calling <code>f(x, y)</code> to determine whether <code>x &lt; y (f(x, y) &lt; 0), x = y (f(x, y) = 0)</code>, or <code>x &gt; y (f(x, y) &gt; 0)</code>. It returns <code>x</code> with an integer associated with it.</p>
+</dd></dl>
+<a name="f_linearSearch"></a><dl><dt>linearSearch : (S, Mapping(<a href="Boolean.html">Boolean</a>, S)) -&gt Union(S, "failed")</dt><dd><p>
+<code>linearSearch(x, f)</code> searches <code>x</code> in the cache, calling <code>f(y)</code> to determine whether <code>x</code> is equal to <code>y</code>. It returns <code>y</code> from cache if <code>f</code>(<code>y</code>) is <code>true</code> or "failed" if no such <code>y</code> exists.</p>
+</dd></dl>
+</body>
+</html>

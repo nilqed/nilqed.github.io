@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MPolyCatPolyFactorizer</title>
+</head>
+<body>
+<h1>MPolyCatPolyFactorizer(E, OV, R, PPR)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/allfact.spad#L194">allfact.spad line 194</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/allfact.spad#L194">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a> with
+<p>convert : % -&gt <a href="Symbol.html">Symbol</a><li>R : <a href="EuclideanDomain.html">EuclideanDomain</a><li>PPR : <a href="PolynomialCategory.html">PolynomialCategory</a>(<a href="Polynomial.html">Polynomial</a>(R), E, OV)</ul>
+<p>
+This package exports a factor operation for multivariate polynomials with coefficients which are polynomials over some ring <code>R</code> over which we can factor. It is used internally by packages such as the solve package which need to work with polynomials in a specific set of variables with coefficients which are polynomials in all the other variables.</p>
+<a name="f_factor"></a><dl><dt>factor : PPR -&gt <a href="Factored.html">Factored</a>(PPR)</dt><dd><p>
+<code>factor(p)</code> factors a polynomial with polynomial coefficients.</p>
+</dd></dl>
+</body>
+</html>

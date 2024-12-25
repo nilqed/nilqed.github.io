@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Numeric</title>
+</head>
+<body>
+<h1>Numeric(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numeric.spad#L1">numeric.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numeric.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Float.html">Float</a>)</ul>
+<p>
+Numeric provides real and complex numerical evaluation functions for various symbolic types.</p>
+<a name="f_complexNumeric"></a><dl><dt>complexNumeric : S -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (S, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Complex.html">Complex</a>(S) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Complex.html">Complex</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Expression.html">Expression</a>(S) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Expression.html">Expression</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(S)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code></p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S))) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S))), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Polynomial.html">Polynomial</a>(S) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Polynomial.html">Polynomial</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>complexNumeric : <a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S)) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>complexNumeric(x)</code> returns a complex approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>complexNumeric : (<a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>) if S has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>complexNumeric(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<a name="f_complexNumericIfCan"></a><dl><dt>complexNumericIfCan : <a href="Expression.html">Expression</a>(S) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : (<a href="Expression.html">Expression</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : <a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(S)) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : (<a href="Expression.html">Expression</a>(<a href="Complex.html">Complex</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x, n)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S))) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S))), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>complexNumericIfCan(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : <a href="Polynomial.html">Polynomial</a>(S) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>complexNumericIfCan(x)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : (<a href="Polynomial.html">Polynomial</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>complexNumericIfCan(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : <a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S)) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>complexNumericIfCan(x)</code> returns a complex approximation of <code>x</code>, or "failed" if <code>x</code> is not constant.</p>
+</dd></dl>
+<dl><dt>complexNumericIfCan : (<a href="Polynomial.html">Polynomial</a>(<a href="Complex.html">Complex</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Complex.html">Complex</a>(<a href="Float.html">Float</a>), "failed") if S has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>complexNumericIfCan(x, n)</code> returns a complex approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<a name="f_numeric"></a><dl><dt>numeric : S -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>numeric(x)</code> returns a real approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>numeric : (S, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>numeric(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>numeric : <a href="Expression.html">Expression</a>(S) -&gt <a href="Float.html">Float</a> if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numeric(x)</code> returns a real approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>numeric : (<a href="Expression.html">Expression</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Float.html">Float</a> if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numeric(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>numeric : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)) -&gt <a href="Float.html">Float</a> if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numeric(x)</code> returns a real approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>numeric : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Float.html">Float</a> if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numeric(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<dl><dt>numeric : <a href="Polynomial.html">Polynomial</a>(S) -&gt <a href="Float.html">Float</a> if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>numeric(x)</code> returns a real approximation of <code>x</code>.</p>
+</dd></dl>
+<dl><dt>numeric : (<a href="Polynomial.html">Polynomial</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Float.html">Float</a> if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>numeric(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places.</p>
+</dd></dl>
+<a name="f_numericIfCan"></a><dl><dt>numericIfCan : <a href="Expression.html">Expression</a>(S) -&gt Union(<a href="Float.html">Float</a>, "failed") if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numericIfCan(x)</code> returns a real approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>numericIfCan : (<a href="Expression.html">Expression</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Float.html">Float</a>, "failed") if S has <a href="OrderedSet.html">OrderedSet</a> and S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numericIfCan(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>numericIfCan : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)) -&gt Union(<a href="Float.html">Float</a>, "failed") if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numericIfCan(x)</code> returns a real approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>numericIfCan : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(S)), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Float.html">Float</a>, "failed") if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>numericIfCan(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>numericIfCan : <a href="Polynomial.html">Polynomial</a>(S) -&gt Union(<a href="Float.html">Float</a>, "failed") if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>numericIfCan(x)</code> returns a real approximation of <code>x</code>, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+<dl><dt>numericIfCan : (<a href="Polynomial.html">Polynomial</a>(S), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(<a href="Float.html">Float</a>, "failed") if S has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>numericIfCan(x, n)</code> returns a real approximation of <code>x</code> up to <code>n</code> decimal places, or "failed" if <code>x</code> is not a constant.</p>
+</dd></dl>
+</body>
+</html>

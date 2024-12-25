@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SturmHabichtPackage</title>
+</head>
+<body>
+<h1>SturmHabichtPackage(R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sturm.spad#L1">sturm.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sturm.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="OrderedIntegralDomain.html">OrderedIntegralDomain</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+This package provides functions for counting real roots of univariate polynomials over an OrderedIntegralDomain.</p>
+<a name="f_SturmHabicht"></a><dl><dt>SturmHabicht : (UP, UP) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>SturmHabicht(p1, p2)</code> computes <code>c_</code>+<code>-c_</code>- where <code>c_</code>+ is the number of real roots of <code>p1</code> with <code>p2&gt;0</code> and <code>c_</code>- is the number of real roots of <code>p1</code> with <code>p2&lt;0</code>. If <code>p2=1</code> what you get is the number of real roots of <code>p1</code>.</p>
+</dd></dl>
+<a name="f_SturmHabichtCoefficients"></a><dl><dt>SturmHabichtCoefficients : (UP, UP) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>SturmHabichtCoefficients(p1, p2)</code> computes the principal Sturm-Habicht coefficients of <code>p1</code> and <code>p2</code></p>
+</dd></dl>
+<a name="f_SturmHabichtMultiple"></a><dl><dt>SturmHabichtMultiple : (UP, UP) -&gt <a href="Integer.html">Integer</a> if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>SturmHabichtMultiple(p1, p2)</code> computes <code>c_</code>+<code>-c_</code>- where <code>c_</code>+ is the number of real roots of <code>p1</code> with <code>p2&gt;0</code> and <code>c_</code>- is the number of real roots of <code>p1</code> with <code>p2&lt;0</code>. If <code>p2=1</code> what you get is the number of real roots of <code>p1</code>.</p>
+</dd></dl>
+<a name="f_SturmHabichtSequence"></a><dl><dt>SturmHabichtSequence : (UP, UP) -&gt <a href="List.html">List</a>(UP)</dt><dd><p>
+<code>SturmHabichtSequence(p1, p2)</code> computes the Sturm-Habicht sequence of <code>p1</code> and <code>p2</code></p>
+</dd></dl>
+<a name="f_countRealRoots"></a><dl><dt>countRealRoots : UP -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>countRealRoots(p)</code> says how many real roots <code>p</code> has</p>
+</dd></dl>
+<a name="f_countRealRootsMultiple"></a><dl><dt>countRealRootsMultiple : UP -&gt <a href="Integer.html">Integer</a> if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>countRealRootsMultiple(p)</code> says how many real roots <code>p</code> has, counted with multiplicity</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ListFunctions3</title>
+</head>
+<body>
+<h1>ListFunctions3(A, B, C)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/list.spad#L335">list.spad line 335</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/list.spad#L335">[edit on github]</a></p>
+<ul>
+<li>A : <a href="Type.html">Type</a><li>B : <a href="Type.html">Type</a><li>C : <a href="Type.html">Type</a></ul>
+<p>
+ListFunctions3 implements utility functions that operate on three kinds of lists, each with a possibly different type of element.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(C, A, B), <a href="List.html">List</a>(A), <a href="List.html">List</a>(B)) -&gt <a href="List.html">List</a>(C)</dt><dd><p>
+<code>map(fn, u1, u2)</code> applies the binary function <code>fn</code> to corresponding elements of lists <code>u1</code> and <code>u2</code> and returns a list of the results (in the same order). Thus <code>map(/, [1, 2, 3], [4, 5, 6]) = [1/4, 2/5, 1/2]</code>. The computation terminates when the end of either list is reached. That is, the length of the result list is equal to the minimum of the lengths of <code>u1</code> and <code>u2</code>.</p>
+</dd></dl>
+</body>
+</html>

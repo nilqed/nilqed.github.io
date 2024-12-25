@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InternalRationalUnivariateRepresentationPackage</title>
+</head>
+<body>
+<h1>InternalRationalUnivariateRepresentationPackage(R, E, V, P, TS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/zerodim.spad#L331">zerodim.spad line 331</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/zerodim.spad#L331">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="SquareFreeRegularTriangularSetCategory.html">SquareFreeRegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+An internal package for computing the rational univariate representation of a zero-dimensional algebraic variety given by a square-free triangular set. The main operation is <span class="spadop">rur</span>. It is based on the  generic algorithm description in [1].  References: [1] <code>D</code>. LAZARD "Solving Zero-dimensional Algebraic Systems" Journal of Symbolic Computation, 1992, 13, 117-131</p>
+<a name="f_checkRur"></a><dl><dt>checkRur : (TS, <a href="List.html">List</a>(TS)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>checkRur(ts, lus)</code> returns <code>true</code> if <code>lus</code> is a rational univariate representation of <code>ts</code>.</p>
+</dd></dl>
+<a name="f_rur"></a><dl><dt>rur : (TS, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+<code>rur(ts, univ?)</code> returns a rational univariate representation of <code>ts</code>. This assumes that the lowest polynomial in <code>ts</code> is a variable <code>v</code> which does not occur in the other polynomials of <code>ts</code>. This variable will be used to define the simple algebraic extension over which these other polynomials will be rewritten as univariate polynomials with degree one. If <code>univ?</code> is <code>true</code> then these polynomials will have a constant initial.</p>
+</dd></dl>
+</body>
+</html>

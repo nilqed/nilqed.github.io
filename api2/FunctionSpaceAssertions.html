@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionSpaceAssertions</title>
+</head>
+<body>
+<h1>FunctionSpaceAssertions(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/expr.spad#L972">expr.spad line 972</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/expr.spad#L972">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Comparable.html">Comparable</a><li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+Attaching assertions to symbols for pattern matching; Date Created: 21 Mar 1989</p>
+<a name="f_constant"></a><dl><dt>constant : F -&gt F</dt><dd><p>
+<code>constant(x)</code> tells the pattern matcher that <code>x</code> should match only the symbol <code>'x</code> and no other quantity. Error: if <code>x</code> is not a symbol.</p>
+</dd></dl>
+<a name="f_multiple"></a><dl><dt>multiple : F -&gt F</dt><dd><p>
+<code>multiple(x)</code> tells the pattern matcher that <code>x</code> should preferably match a multi-term quantity in a sum or product. For matching on lists, multiple(<code>x</code>) tells the pattern matcher that <code>x</code> should match a list instead of an element of a list. Error: if <code>x</code> is not a symbol.</p>
+</dd></dl>
+<a name="f_optional"></a><dl><dt>optional : F -&gt F</dt><dd><p>
+<code>optional(x)</code> tells the pattern matcher that <code>x</code> can match an identity (0 in a sum, 1 in a product or exponentiation). Error: if <code>x</code> is not a symbol.</p>
+</dd></dl>
+</body>
+</html>

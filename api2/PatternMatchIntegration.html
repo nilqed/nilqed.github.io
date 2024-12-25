@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchIntegration</title>
+</head>
+<body>
+<h1>PatternMatchIntegration(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intpm.spad#L1">intpm.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intpm.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="GcdDomain.html">GcdDomain</a>, <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+PatternMatchIntegration provides functions that use the pattern matcher to find some indefinite and definite integrals involving special functions and found in the literature.</p>
+<a name="f_pmintegrate"></a><dl><dt>pmintegrate : (F, <a href="Symbol.html">Symbol</a>, <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="OrderedCompletion.html">OrderedCompletion</a>(F)) -&gt Union(F, "failed") if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>)) and F has <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a> and R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>pmintegrate(f, x = a..b)</code> returns the integral of <code>f(x)dx</code> from a to <code>b</code> if it can be found by the built-in pattern matching rules.</p>
+</dd></dl>
+<a name="f_splitConstant"></a><dl><dt>splitConstant : (F, <a href="Symbol.html">Symbol</a>) -&gt Record(const : F, nconst : F)</dt><dd><p>
+<code>splitConstant(f, x)</code> returns <code>[c, g]</code> such that <code>f = c * g</code> and <code>c</code> does not involve <code>t</code>.</p>
+</dd></dl>
+</body>
+</html>

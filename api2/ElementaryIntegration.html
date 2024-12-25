@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryIntegration</title>
+</head>
+<body>
+<h1>ElementaryIntegration(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intef.spad#L1">intef.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intef.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package provides functions for integration, limited integration, extended integration and the risch differential equation for elemntary functions.</p>
+<a name="f_lfextendedint"></a><dl><dt>lfextendedint : (F, <a href="Symbol.html">Symbol</a>, F) -&gt Union(Record(ratpart : F, coeff : F), "failed")</dt><dd><p>
+<code>lfextendedint(f, x, g)</code> returns functions <code>[h, c]</code> such that <code>dh/dx = f - cg</code>, if (<code>h</code>, <code>c</code>) exist, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_lfintegrate"></a><dl><dt>lfintegrate : (F, <a href="Symbol.html">Symbol</a>) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>lfintegrate(f, x)</code> = <code>g</code> such that <code>dg/dx = f</code>.</p>
+</dd></dl>
+</body>
+</html>

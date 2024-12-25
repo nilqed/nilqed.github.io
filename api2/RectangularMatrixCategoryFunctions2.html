@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RectangularMatrixCategoryFunctions2</title>
+</head>
+<body>
+<h1>RectangularMatrixCategoryFunctions2(m, n, R1, Row1, Col1, M1, R2, Row2, Col2, M2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matfuns.spad#L344">matfuns.spad line 344</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matfuns.spad#L344">[edit on github]</a></p>
+<ul>
+<li>m : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>n : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>R1 : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>Row1 : <a href="DirectProductCategory.html">DirectProductCategory</a>(n, R1)<li>Col1 : <a href="DirectProductCategory.html">DirectProductCategory</a>(m, R1)<li>M1 : <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R1, Row1, Col1)<li>R2 : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>Row2 : <a href="DirectProductCategory.html">DirectProductCategory</a>(n, R2)<li>Col2 : <a href="DirectProductCategory.html">DirectProductCategory</a>(m, R2)<li>M2 : <a href="RectangularMatrixCategory.html">RectangularMatrixCategory</a>(m, n, R2, Row2, Col2)</ul>
+<p>
+RectangularMatrixCategoryFunctions2 provides functions between two matrix domains. The functions provided are <span class="spadfun">map</span> and <span class="spadfun">reduce</span>.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(R2, R1), M1) -&gt M2</dt><dd><p>
+<code>map(f, m)</code> applies the function <code>f</code> to the elements of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(R2, R1, R2), M1, R2) -&gt R2</dt><dd><p>
+<code>reduce(f, m, r)</code> returns a matrix <code>n</code> where <code>n[i, j] = f(m[i, j], r)</code> for all indices spad<code>i</code> and <code>j</code>.</p>
+</dd></dl>
+</body>
+</html>

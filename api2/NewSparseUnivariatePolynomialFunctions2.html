@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NewSparseUnivariatePolynomialFunctions2</title>
+</head>
+<body>
+<h1>NewSparseUnivariatePolynomialFunctions2(R, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/newpoly.spad#L207">newpoly.spad line 207</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/newpoly.spad#L207">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>S : <a href="Ring.html">Ring</a></ul>
+<p>
+This package lifts a mapping from coefficient rings <code>R</code> to <code>S</code> to a mapping from sparse univariate polynomial over <code>R</code> to a sparse univariate polynomial over <code>S</code>. Note that the mapping is assumed to send zero to zero, since it will only be applied to the non-zero coefficients of the polynomial.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, R), <a href="NewSparseUnivariatePolynomial.html">NewSparseUnivariatePolynomial</a>(R)) -&gt <a href="NewSparseUnivariatePolynomial.html">NewSparseUnivariatePolynomial</a>(S)</dt><dd><p>
+<code>map(func, poly)</code> creates a new polynomial by applying <code>func</code> to every non-zero coefficient of the polynomial poly.</p>
+</dd></dl>
+</body>
+</html>

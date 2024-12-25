@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LODOConvertions</title>
+</head>
+<body>
+<h1>LODOConvertions(Coeff, Ab, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lodo.spad#L239">lodo.spad line 239</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lodo.spad#L239">[edit on github]</a></p>
+<ul>
+<li>Coeff : <a href="Ring.html">Ring</a><li>Ab : <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coeff, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)<li>R : Join(<a href="DifferentialRing.html">DifferentialRing</a>, <a href="LeftModule.html">LeftModule</a>(Ab))</ul>
+<p>
+LODOConvertions implements conversion between LinearOrdinaryDifferentialOperator1 and LinearOrdinaryDifferentialOperator3 and back.</p>
+<a name="f_convert"></a><dl><dt>convert : <a href="LinearOrdinaryDifferentialOperator3.html">LinearOrdinaryDifferentialOperator3</a>(Coeff, Ab, R) -&gt <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(R)</dt><dd><p>
+<code>convert(l3)</code> converts an operator <code>l3</code> from LinearOrdinaryDifferentialOperator3 to LinearOrdinaryDifferentialOperator1 such that the resultant operator gives the same result as the original one on application to an element of domain <code>R</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(R) -&gt <a href="LinearOrdinaryDifferentialOperator3.html">LinearOrdinaryDifferentialOperator3</a>(Coeff, Ab, R)</dt><dd><p>
+<code>convert(l1)</code> converts an operator <code>l1</code> from LinearOrdinaryDifferentialOperator1 to LinearOrdinaryDifferentialOperator3 such that the resultant operator gives the same result as the original one on application to an element of domain <code>R</code>.</p>
+</dd></dl>
+</body>
+</html>

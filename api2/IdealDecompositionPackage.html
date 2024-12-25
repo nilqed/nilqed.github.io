@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IdealDecompositionPackage</title>
+</head>
+<body>
+<h1>IdealDecompositionPackage(vl)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/idecomp.spad#L1">idecomp.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/idecomp.spad#L1">[edit on github]</a></p>
+<ul>
+<li>vl : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+This package provides functions for the primary decomposition of polynomial ideals over the rational numbers. The ideals are members of the PolynomialIdeal domain, and the polynomial generators are required to be from the DistributedMultivariatePolynomial domain.</p>
+<a name="f_contract"></a><dl><dt>contract : (<a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))), <a href="List.html">List</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(vl))) -&gt <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>contract(I, lvar)</code> contracts the ideal <code>I</code> to the polynomial ring <code>F[lvar]</code>.</p>
+</dd></dl>
+<a name="f_primaryDecomp"></a><dl><dt>primaryDecomp : <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(<a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))))</dt><dd><p>
+<code>primaryDecomp(I)</code> returns a list of primary ideals such that their intersection is the ideal <code>I</code>.</p>
+</dd></dl>
+<a name="f_prime_63"></a><dl><dt>prime? : <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>prime?(I)</code> tests if the ideal <code>I</code> is prime.</p>
+</dd></dl>
+<a name="f_radical"></a><dl><dt>radical : <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>radical(I)</code> returns the radical of the ideal <code>I</code>.</p>
+</dd></dl>
+<a name="f_zeroDimPrimary_63"></a><dl><dt>zeroDimPrimary? : <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zeroDimPrimary?(I)</code> tests if the ideal <code>I</code> is 0-dimensional primary.</p>
+</dd></dl>
+<a name="f_zeroDimPrime_63"></a><dl><dt>zeroDimPrime? : <a href="PolynomialIdeal.html">PolynomialIdeal</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="DirectProduct.html">DirectProduct</a>(#(vl), <a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="OrderedVariableList.html">OrderedVariableList</a>(vl), <a href="DistributedMultivariatePolynomial.html">DistributedMultivariatePolynomial</a>(vl, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zeroDimPrime?(I)</code> tests if the ideal <code>I</code> is a 0-dimensional prime.</p>
+</dd></dl>
+</body>
+</html>

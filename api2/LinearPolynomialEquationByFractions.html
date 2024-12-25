@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearPolynomialEquationByFractions</title>
+</head>
+<body>
+<h1>LinearPolynomialEquationByFractions(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fraction.spad#L552">fraction.spad line 552</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fraction.spad#L552">[edit on github]</a></p>
+<ul>
+<li>R : <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></ul>
+<p>
+Given a PolynomialFactorizationExplicit ring, this package provides a defaulting rule for the <code>solveLinearPolynomialEquation</code> operation, by moving into the field of fractions, and solving it there via the <code>multiEuclidean</code> operation.</p>
+<a name="f_solveLinearPolynomialEquationByFractions"></a><dl><dt>solveLinearPolynomialEquationByFractions : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), "failed")</dt><dd><p>
+<code>solveLinearPolynomialEquationByFractions([f1, ..., fn], g)</code> (where the <code>fi</code> are relatively prime to each other) returns a list of <code>ai</code> such that <code>g/prod <code>fi</code> = sum ai/fi</code> or returns "failed" if no such exists.</p>
+</dd></dl>
+</body>
+</html>

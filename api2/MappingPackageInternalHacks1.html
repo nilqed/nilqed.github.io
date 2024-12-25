@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MappingPackageInternalHacks1</title>
+</head>
+<body>
+<h1>MappingPackageInternalHacks1(A)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mappkg.spad#L1">mappkg.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mappkg.spad#L1">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+various Currying operations.</p>
+<a name="f_iter"></a><dl><dt>iter : (Mapping(A, A), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, A) -&gt A</dt><dd><p>
+<code>iter(f, n, x)</code> applies <code>f</code> <code>n</code> times to <code>x</code>.</p>
+</dd></dl>
+<a name="f_recur"></a><dl><dt>recur : (Mapping(A, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, A), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, A) -&gt A</dt><dd><p>
+<code>recur(g, n, x)</code> is <code>g(n, g(n-1, ..g(1, x)..))</code>.</p>
+</dd></dl>
+</body>
+</html>

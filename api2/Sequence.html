@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Sequence</title>
+</head>
+<body>
+<h1>Sequence(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/distro.spad#L41">distro.spad line 41</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/distro.spad#L41">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+A domain for infinite sequences over a commutative ring. It is implemented as stream with arithmetics.</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_apply"></a><dl><dt><a href="SequenceCategory.html#f_apply">apply</a> : (%, <a href="Partition.html">Partition</a>) -&gt R</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<a name="f_child_63"></a><dl><dt><a href="RecursiveAggregate.html#f_child_63">child?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_children"></a><dl><dt><a href="RecursiveAggregate.html#f_children">children</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="SequenceCategory.html#f_coerce">coerce</a> : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_complete"></a><dl><dt><a href="LazyStreamAggregate.html#f_complete">complete</a> : % -&gt %</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_concat"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_concat">concat</a> : (%, %) -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_concat">concat</a> : (%, R) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="UnaryRecursiveAggregate.html#f_concat">concat</a> : (R, %) -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_concat">concat</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_cons"></a><dl><dt><a href="SequenceCategory.html#f_cons">cons</a> : (R, %) -&gt %</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="Collection.html#f_construct">construct</a> : <a href="List.html">List</a>(R) -&gt %</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_copyInto_33"></a><dl><dt><a href="LinearAggregate.html#f_copyInto_33">copyInto!</a> : (%, %, <a href="Integer.html">Integer</a>) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_cycleEntry"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_cycleEntry">cycleEntry</a> : % -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_cycleLength"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_cycleLength">cycleLength</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_cycleTail"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_cycleTail">cycleTail</a> : % -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_cyclic_63"></a><dl><dt><a href="RecursiveAggregate.html#f_cyclic_63">cyclic?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_delete"></a><dl><dt><a href="LinearAggregate.html#f_delete">delete</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_delete">delete</a> : (%, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_dilate"></a><dl><dt><a href="SequenceCategory.html#f_dilate">dilate</a> : (R, %) -&gt %</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<a name="f_distance"></a><dl><dt><a href="RecursiveAggregate.html#f_distance">distance</a> : (%, %) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_elt">elt</a> : (%, "rest") -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="Eltable.html">Eltable</a>(<a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>), %)</dd></dl>
+<dl><dt><a href="UnaryRecursiveAggregate.html#f_elt">elt</a> : (%, "first") -&gt R</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="UnaryRecursiveAggregate.html#f_elt">elt</a> : (%, "last") -&gt R</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="RecursiveAggregate.html#f_elt">elt</a> : (%, "value") -&gt R</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="SequenceCategory.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>) -&gt R</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<dl><dt><a href="EltableAggregate.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_entries"></a><dl><dt><a href="IndexedAggregate.html#f_entries">entries</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<a name="f_explicitEntries_63"></a><dl><dt><a href="LazyStreamAggregate.html#f_explicitEntries_63">explicitEntries?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_explicitlyEmpty_63"></a><dl><dt><a href="LazyStreamAggregate.html#f_explicitlyEmpty_63">explicitlyEmpty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_explicitlyFinite_63"></a><dl><dt><a href="StreamAggregate.html#f_explicitlyFinite_63">explicitlyFinite?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="StreamAggregate.html">StreamAggregate</a>(R)</dd></dl>
+<a name="f_extend"></a><dl><dt><a href="LazyStreamAggregate.html#f_extend">extend</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_find"></a><dl><dt><a href="Collection.html#f_find">find</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt Union(R, "failed")</dt><dd> from <a href="Collection.html">Collection</a>(R)</dd></dl>
+<a name="f_first"></a><dl><dt><a href="SequenceCategory.html#f_first">first</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<dl><dt><a href="UnaryRecursiveAggregate.html#f_first">first</a> : % -&gt R</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_firstn"></a><dl><dt><a href="SequenceCategory.html#f_firstn">firstn</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<a name="f_frst"></a><dl><dt><a href="LazyStreamAggregate.html#f_frst">frst</a> : % -&gt R</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_index_63"></a><dl><dt><a href="IndexedAggregate.html#f_index_63">index?</a> : (<a href="Integer.html">Integer</a>, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_indices"></a><dl><dt><a href="IndexedAggregate.html#f_indices">indices</a> : % -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_insert"></a><dl><dt><a href="LinearAggregate.html#f_insert">insert</a> : (%, %, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_insert">insert</a> : (R, %, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_last"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_last">last</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="UnaryRecursiveAggregate.html#f_last">last</a> : % -&gt R</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lazy_63"></a><dl><dt><a href="LazyStreamAggregate.html#f_lazy_63">lazy?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_lazyEvaluate"></a><dl><dt><a href="LazyStreamAggregate.html#f_lazyEvaluate">lazyEvaluate</a> : % -&gt %</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_leaf_63"></a><dl><dt><a href="RecursiveAggregate.html#f_leaf_63">leaf?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_leaves"></a><dl><dt><a href="RecursiveAggregate.html#f_leaves">leaves</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_map">map</a> : (Mapping(R, R, R), %, %) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt R if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_maxIndex"></a><dl><dt><a href="IndexedAggregate.html#f_maxIndex">maxIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_merge"></a><dl><dt><a href="LinearAggregate.html#f_merge">merge</a> : (%, %) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt R if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_minIndex"></a><dl><dt><a href="IndexedAggregate.html#f_minIndex">minIndex</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_new"></a><dl><dt><a href="LinearAggregate.html#f_new">new</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_node_63"></a><dl><dt><a href="RecursiveAggregate.html#f_node_63">node?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_nodes"></a><dl><dt><a href="RecursiveAggregate.html#f_nodes">nodes</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_numberOfComputedEntries"></a><dl><dt><a href="LazyStreamAggregate.html#f_numberOfComputedEntries">numberOfComputedEntries</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_possiblyInfinite_63"></a><dl><dt><a href="StreamAggregate.html#f_possiblyInfinite_63">possiblyInfinite?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="StreamAggregate.html">StreamAggregate</a>(R)</dd></dl>
+<a name="f_qelt"></a><dl><dt><a href="EltableAggregate.html#f_qelt">qelt</a> : (%, <a href="Integer.html">Integer</a>) -&gt R</dt><dd> from <a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)</dd></dl>
+<a name="f_remove"></a><dl><dt><a href="LazyStreamAggregate.html#f_remove">remove</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt %</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_rest"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_rest">rest</a> : % -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<dl><dt><a href="UnaryRecursiveAggregate.html#f_rest">rest</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_reverse_33"></a><dl><dt><a href="LinearAggregate.html#f_reverse_33">reverse!</a> : % -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_rst"></a><dl><dt><a href="LazyStreamAggregate.html#f_rst">rst</a> : % -&gt %</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_second"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_second">second</a> : % -&gt R</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_select"></a><dl><dt><a href="LazyStreamAggregate.html#f_select">select</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt %</dt><dd> from <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)</dd></dl>
+<a name="f_sequence"></a><dl><dt><a href="SequenceCategory.html#f_sequence">sequence</a> : (Mapping(R, R), R) -&gt %</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<dl><dt><a href="SequenceCategory.html#f_sequence">sequence</a> : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a> or R has <a href="Comparable.html">Comparable</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_sort"></a><dl><dt><a href="LinearAggregate.html#f_sort">sort</a> : % -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_sort_33"></a><dl><dt><a href="LinearAggregate.html#f_sort_33">sort!</a> : % -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<dl><dt><a href="LinearAggregate.html#f_sort_33">sort!</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a> and % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_sorted_63"></a><dl><dt><a href="LinearAggregate.html#f_sorted_63">sorted?</a> : % -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="LinearAggregate.html">LinearAggregate</a>(R)</dd></dl>
+<a name="f_stream"></a><dl><dt><a href="SequenceCategory.html#f_stream">stream</a> : % -&gt <a href="Stream.html">Stream</a>(R)</dt><dd> from <a href="SequenceCategory.html">SequenceCategory</a>(R)</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_tail"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_tail">tail</a> : % -&gt %</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_third"></a><dl><dt><a href="UnaryRecursiveAggregate.html#f_third">third</a> : % -&gt R</dt><dd> from <a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)</dd></dl>
+<a name="f_value"></a><dl><dt><a href="RecursiveAggregate.html#f_value">value</a> : % -&gt R</dt><dd> from <a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="Collection.html">Collection</a>(R)
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="RecursiveAggregate.html">RecursiveAggregate</a>(R)
+<p><a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(R)
+<p><a href="EltableAggregate.html">EltableAggregate</a>(<a href="Integer.html">Integer</a>, R)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="StreamAggregate.html">StreamAggregate</a>(R)
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="Eltable.html">Eltable</a>(<a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>), %)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="UnaryRecursiveAggregate.html">UnaryRecursiveAggregate</a>(R)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="SequenceCategory.html">SequenceCategory</a>(R)
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="LinearAggregate.html">LinearAggregate</a>(R)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Eltable.html">Eltable</a>(<a href="Integer.html">Integer</a>, R)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+</body>
+</html>

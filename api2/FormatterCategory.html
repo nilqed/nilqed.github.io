@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FormatterCategory</title>
+</head>
+<body>
+<h1>FormatterCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fmt.spad#L416">fmt.spad line 416</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fmt.spad#L416">[edit on github]</a></p>
+<p>
+undocumented</p>
+<a name="f_altsupersub"></a><dl><dt>altsupersub : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>altsupersub(p)</code> returns a handler such that <code>altsupersub(p)(prec, args)</code> formats the first argument with respect to the precedence <code>p</code>. The remaining arguments are formatted without parentheses and interpreted as subscript, superscript, subscript, superscript, etc. where the subscripts and superscripts are pairwise aligned. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_binary"></a><dl><dt>binary : (Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>binary(h1, h2)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the first argument according to <code>h1</code> and the second argument by <code>h2</code>. Both boxes will be horizontally concatenated. binary(<code>h1</code>, <code>h2</code>) is equal to infix(<code>""</code>, maxPrecedence(), <code>h1</code>, <code>h2</code>)</p>
+</dd></dl>
+<a name="f_binomial"></a><dl><dt>binomial : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>binomial</code> is a handler such that <code>binomial(prec,args)</code> formats a binomial expression of the first two arguments.</p>
+</dd></dl>
+<a name="f_box"></a><dl><dt>box : Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>box(hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the arguments via <code>hh(prec, args)</code> and then draws a box frame around the resulting box.</p>
+</dd></dl>
+<a name="f_bracket"></a><dl><dt>bracket : (<a href="String.html">String</a>, <a href="String.html">String</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>bracket(lb, rb, hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats its first argument according to <code>hh</code> and then put left and right brackets given by <code>lb</code> and <code>rb</code> around the resulting box.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_defaultEpilogue"></a><dl><dt>defaultEpilogue : <a href="String.html">String</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>defaultEpilogue(label)</code> returns a box that is used at the end of every format.</p>
+</dd></dl>
+<a name="f_defaultPrologue"></a><dl><dt>defaultPrologue : <a href="String.html">String</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>defaultPrologue(label)</code> returns a box that is used at the beginning of every format.</p>
+</dd></dl>
+<a name="f_formatConstant"></a><dl><dt>formatConstant : <a href="String.html">String</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>formatConstant(op)</code> is a handler to format constant operators.</p>
+</dd></dl>
+<a name="f_formatExpression"></a><dl><dt>formatExpression : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>formatExpression(p)</code> returns a handler <code>h</code> that <code>h(prec, args)</code> returns <code>formatExpression(first args, p)</code>. This handler is used to change the precedence context in which the argument is formatted.</p>
+</dd></dl>
+<dl><dt>formatExpression : <a href="OutputForm.html">OutputForm</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatExpression(o)</code> returns <code>formatExpression(o, minPrecedence())</code>.</p>
+</dd></dl>
+<dl><dt>formatExpression : (<a href="OutputForm.html">OutputForm</a>, <a href="Integer.html">Integer</a>) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatExpression(o, p)</code> returns an OutputBox that represent the expression <code>o</code> in the respective format when considered in a context with outer precedence <code>p</code>. This function is the main dispatcher function. It first checks whether <code>o</code> is an integer or a string and treats these cases. Then, if the number <code>n</code> of arguments is less than 3, it tries to find a handler for the top-level operator of <code>o</code>. If none is found, it checks for a handler of an <code>n</code>-ary operator. If no handler is found, the operator is treated as a function symbol and formatted as such.</p>
+</dd></dl>
+<a name="f_formatFloat"></a><dl><dt>formatFloat : <a href="String.html">String</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatFloat(s)</code> formats a floating point number from it string representation in OutputForm.</p>
+</dd></dl>
+<a name="f_formatFunction"></a><dl><dt>formatFunction : (<a href="OutputBox.html">OutputBox</a>, <a href="List.html">List</a>(<a href="OutputBox.html">OutputBox</a>)) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatFunction(b, args)</code> is supposed to create a box for <code>"b</code>(args)", i.e. format the list of arguments given by args an put it into a format that represents a function application.</p>
+</dd></dl>
+<a name="f_formatFunctionSymbol"></a><dl><dt>formatFunctionSymbol : <a href="String.html">String</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatFunctionSymbol(s)</code> formats an otherwise unknown function symbol.</p>
+</dd></dl>
+<a name="f_formatInteger"></a><dl><dt>formatInteger : <a href="Integer.html">Integer</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatInteger(n)</code> formats an integer.</p>
+</dd></dl>
+<a name="f_formatString"></a><dl><dt>formatString : <a href="String.html">String</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatString(s)</code> formats a string.</p>
+</dd></dl>
+<a name="f_formatSymbol"></a><dl><dt>formatSymbol : <a href="String.html">String</a> -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>formatSymbol(s)</code> formats a symbol.</p>
+</dd></dl>
+<a name="f_fraction"></a><dl><dt>fraction : (<a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+Format a fraction. <code>fraction(p, h1, h2)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the first argument by <code>h1</code> and the second argument by <code>h2</code>. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_function"></a><dl><dt>function : (<a href="String.html">String</a>, <a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>function(s, p, hh)</code> is meant to typeset function applications. It defaults to prefix(<code>s</code>,<code>p</code>,bracket("(",")",<code>hh</code>)).</p>
+</dd></dl>
+<a name="f_infix"></a><dl><dt>infix : (<a href="String.html">String</a>, <a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>infix(op, p, h1, h2)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the first argument by <code>h1</code> and the second argument by <code>h2</code>. Both boxes will be horizontally concatenated with <code>box op</code> in the middle. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_integral"></a><dl><dt>integral : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>integral(p)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the expression as an integral with integral sign and respective limits. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_matrix"></a><dl><dt>matrix : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>matrix(left, right)</code> returns a handler that typesets a matrix with parentheses given by <code>left</code> and right where rows are formatted using <code>h</code>.</p>
+</dd></dl>
+<a name="f_maxPrecedence"></a><dl><dt>maxPrecedence : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>maxPrecedence()</code> returns the maximal precedence value,</p>
+</dd></dl>
+<a name="f_minPrecedence"></a><dl><dt>minPrecedence : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>minPrecedence()</code> returns the minimal precedence value.</p>
+</dd></dl>
+<a name="f_nary"></a><dl><dt>nary : (<a href="String.html">String</a>, <a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>nary(s, p, hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats each argument according to <code>hh</code>. All resulting boxes will be horizontally concatenated with <code>box s</code> inbetween. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_naryPlus"></a><dl><dt>naryPlus : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>nary(plus, minus, p, hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats each argument according to <code>hh</code>. All resulting boxes will be horizontally concatenated with <code>box minus</code> or <code>box plus</code> inbetween depending on whether the respective argument starts with a unary <code>minus</code> or not. Outer parentheses are added if <code>p &lt; prec</code>. This is a special handler that treats the case that a sum is represented as a nary expression that contains unary subexpressions that are unary <code>minus</code> expressions. This handler transforms something like (+ a (- <code>b</code>)) into a - <code>b</code>.</p>
+</dd></dl>
+<a name="f_nothing"></a><dl><dt>nothing : () -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>nothing()</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> returns an empty box. This corresponds to NOTHING in <code>OutputForm</code>.</p>
+</dd></dl>
+<a name="f_nthRoot"></a><dl><dt>nthRoot : (<a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+Format square roots and <code>n</code>th roots. <code>nthRoot(p, h1, h2)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the first argument according to <code>h1</code>. If there is no second argument, then the <code>n</code>th root is a square root and formatted accordingly. Otherwise the second argument is formatted by <code>h2</code>. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_numberOfPrimes"></a><dl><dt>numberOfPrimes : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>numberOfPrimes(e)</code> counts the number of commas in <code>e</code> and returns it. If <code>s</code> does not only contain commas, but has a parenthesis at the beginning and the end of the string, then the part between the parentheses is interpreted as a roman numeral and translated into an integer. For any other format the function returns <code>-1</code>.</p>
+</dd></dl>
+<a name="f_operatorHandlers"></a><dl><dt>operatorHandlers : () -&gt <a href="OperatorHandlers.html">OperatorHandlers</a>(Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)))</dt><dd><p>
+<code>operatorHandlers()</code> returns an internal data structure that is used for the selection of respective handlers.</p>
+</dd></dl>
+<a name="f_overbar"></a><dl><dt>overbar : (<a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>overbar(p, hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats arguments via <code>hh(p, args)</code> and then draws a bar over the resulting box. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_parenthesize"></a><dl><dt>parenthesize : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="OutputBox.html">OutputBox</a>) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>parenthesize(lb, rb, bx)</code> returns the box <code>bx</code> with left and right brackets (<code>lb</code> and <code>rb</code>) around it.</p>
+</dd></dl>
+<a name="f_parenthesizeIf"></a><dl><dt>parenthesizeIf : (<a href="Boolean.html">Boolean</a>, <a href="OutputBox.html">OutputBox</a>) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>parenthesizeIf(paren?, bx)</code> returns parentheses (of appropriate size if <code>paren?</code> is <code>true</code>. Otherwise, <code>bx</code> is returned.</p>
+</dd></dl>
+<a name="f_pile"></a><dl><dt>pile : Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>pile()</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats args according to <code>hh</code> and then puts them on top of each other left adjusted. The baseline corresponds to the baseline of the first argument.</p>
+</dd></dl>
+<a name="f_power"></a><dl><dt>power : (<a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>power(op, p, h1, h2)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats <code>args.1</code> and <code>args.2</code> according to <code>h1</code> and <code>h2</code>, respectively. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_precedence"></a><dl><dt>precedence : (<a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>precedence(p, hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> returns <code>hh(p, args)</code>. This handler can be used to change the context in which an expression is formatted.</p>
+</dd></dl>
+<a name="f_prefix"></a><dl><dt>prefix : (<a href="String.html">String</a>, <a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>prefix(s, p, hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats args according to <code>hh</code> and then prefixes this box by <code>box s</code>. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_prime"></a><dl><dt>prime : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>prime(p)</code> returns a handler that treats the typesetting of primes. Note that differentiate(a, 3) gives the following <code>s</code>-expression in OutputForm: (PRIME a ",,,") whereas differentiate(a+b, 4) gives: (PRIME (+ a <code>b</code>) (PAREN "iv")). the precedence <code>p1</code>. Outer parentheses are added if <code>p &lt; prec</code>. See also the auxiliary function <code>numberOfPrimes</code>.</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>product(p)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats a product with product sign and respective limits. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_scripts"></a><dl><dt>scripts : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+Formats super- and subscripts also presuper and presub. <code>scripts(p)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the first argument with respect to the precedence <code>p</code>. The other arguments are interpreted as subscript, superscript, presuperscript, and presubscript (in this order). Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_slash"></a><dl><dt>slash : (<a href="Integer.html">Integer</a>, Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+Format a fraction linearly. <code>slash(p, h1, h2)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats the first argument according to <code>h1</code> and the second argument by <code>h2</code>. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_subscript"></a><dl><dt>subscript : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>subscript(p)</code> returns a handler such that <code>subscript(p)(prec, args)</code> formats the first argument with respect to the precedence <code>p</code>. The other arguments are formatted without parentheses and interpreted as subscripts separated by commas. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_sum"></a><dl><dt>sum : <a href="Integer.html">Integer</a> -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>sum(p)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats a sum expression with summation sign and respective limits. Outer parentheses are added if <code>p &lt; prec</code>.</p>
+</dd></dl>
+<a name="f_theMap"></a><dl><dt>theMap : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>theMap</code> is a special handler to format a function.</p>
+</dd></dl>
+<a name="f_vconcat"></a><dl><dt>vconcat : Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt Mapping(<a href="OutputBox.html">OutputBox</a>, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))</dt><dd><p>
+<code>vconcat(hh)</code> returns a handler <code>h</code> such that <code>h(prec, args)</code> formats args according to <code>hh</code> and then puts them on top of each other where the lines are centered. The baseline corresponds to the baseline of the first argument.</p>
+</dd></dl>
+<a name="f_zag"></a><dl><dt>zag : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)) -&gt <a href="OutputBox.html">OutputBox</a></dt><dd><p>
+<code>zag</code> is a handler such that <code>zag(prec, args)</code> formats one part of a continued fraction.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

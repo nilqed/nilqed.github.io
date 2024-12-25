@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>File</title>
+</head>
+<body>
+<h1>File(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/files.spad#L59">files.spad line 59</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/files.spad#L59">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This domain provides a basic model of files to save arbitrary values. The operations provide sequential access to the contents.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_close_33"></a><dl><dt><a href="FileCategory.html#f_close_33">close!</a> : % -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_flush"></a><dl><dt><a href="FileCategory.html#f_flush">flush</a> : % -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_iomode"></a><dl><dt><a href="FileCategory.html#f_iomode">iomode</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_name"></a><dl><dt><a href="FileCategory.html#f_name">name</a> : % -&gt <a href="FileName.html">FileName</a></dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_open"></a><dl><dt><a href="FileCategory.html#f_open">open</a> : <a href="FileName.html">FileName</a> -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<dl><dt><a href="FileCategory.html#f_open">open</a> : (<a href="FileName.html">FileName</a>, <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_read_33"></a><dl><dt><a href="FileCategory.html#f_read_33">read!</a> : % -&gt S</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_readIfCan_33"></a><dl><dt>readIfCan! : % -&gt Union(S, "failed")</dt><dd><p>
+<code>readIfCan!(f)</code> returns a value from the file <code>f</code>, if possible. If <code>f</code> is not open for reading, or if <code>f</code> is at the end of file then <code>"failed"</code> is the result.</p>
+</dd></dl>
+<a name="f_reopen_33"></a><dl><dt><a href="FileCategory.html#f_reopen_33">reopen!</a> : (%, <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f_write_33"></a><dl><dt><a href="FileCategory.html#f_write_33">write!</a> : (%, S) -&gt S</dt><dd> from <a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="FileCategory.html">FileCategory</a>(<a href="FileName.html">FileName</a>, S)
+</body>
+</html>

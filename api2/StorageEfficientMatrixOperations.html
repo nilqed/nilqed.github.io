@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>StorageEfficientMatrixOperations</title>
+</head>
+<body>
+<h1>StorageEfficientMatrixOperations(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matstor.spad#L1">matstor.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matstor.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+This package provides standard arithmetic operations on matrices. The functions in this package store the results of computations in existing matrices, rather than creating new matrices. This package works only for matrices of type Matrix and uses the internal representation of this type.</p>
+<a name="f__94"></a><dl><dt>^ : (<a href="Matrix.html">Matrix</a>(R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>x ^ n</code> computes the <code>n</code>-th power of a square matrix. The power <code>n</code> is assumed greater than 1.</p>
+</dd></dl>
+<a name="f_copy_33"></a><dl><dt>copy! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>copy!(c, a)</code> copies the matrix <code>a</code> into the matrix <code>c</code>. Error: if <code>a</code> and <code>c</code> do not have the same dimensions.</p>
+</dd></dl>
+<a name="f_leftScalarTimes_33"></a><dl><dt>leftScalarTimes! : (<a href="Matrix.html">Matrix</a>(R), R, <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>leftScalarTimes!(c, r, a)</code> computes the scalar product <code>r * a</code> and stores the result in the matrix <code>c</code>. Error: if <code>a</code> and <code>c</code> do not have the same dimensions.</p>
+</dd></dl>
+<a name="f_minus_33"></a><dl><dt>minus! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>minus!(c, a)</code> computes <code>-a</code> and stores the result in the matrix <code>c</code>. Error: if a and <code>c</code> do not have the same dimensions.</p>
+</dd></dl>
+<dl><dt>minus! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>!minus!(c, a, b)</code> computes the matrix difference <code>a - b</code> and stores the result in the matrix <code>c</code>. Error: if <code>a</code>, <code>b</code>, and <code>c</code> do not have the same dimensions.</p>
+</dd></dl>
+<a name="f_plus_33"></a><dl><dt>plus! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>plus!(c, a, b)</code> computes the matrix sum <code>a + b</code> and stores the result in the matrix <code>c</code>. Error: if <code>a</code>, <code>b</code>, and <code>c</code> do not have the same dimensions.</p>
+</dd></dl>
+<a name="f_power_33"></a><dl><dt>power! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>power!(a, b, c, m, n)</code> computes <code>m</code> ^ <code>n</code> and stores the result in <code>a</code>. The matrices <code>b</code> and <code>c</code> are used to store intermediate results. Error: if <code>a</code>, <code>b</code>, <code>c</code>, and <code>m</code> are not square and of the same dimensions.</p>
+</dd></dl>
+<a name="f_rightScalarTimes_33"></a><dl><dt>rightScalarTimes! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rightScalarTimes!(c, a, r)</code> computes the scalar product <code>a * r</code> and stores the result in the matrix <code>c</code>. Error: if <code>a</code> and <code>c</code> do not have the same dimensions.</p>
+</dd></dl>
+<a name="f_times_33"></a><dl><dt>times! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>times!(c, a, b)</code> computes the matrix product <code>a * b</code> and stores the result in the matrix <code>c</code>. Error: if <code>a</code>, <code>b</code>, and <code>c</code> do not have compatible dimensions.</p>
+</dd></dl>
+</body>
+</html>

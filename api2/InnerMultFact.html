@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerMultFact</title>
+</head>
+<body>
+<h1>InnerMultFact(OV, E, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/multfact.spad#L1">multfact.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/multfact.spad#L1">[edit on github]</a></p>
+<ul>
+<li>OV : <a href="OrderedSet.html">OrderedSet</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>R : Join(<a href="EuclideanDomain.html">EuclideanDomain</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+This is an inner package for factoring multivariate polynomials over various coefficient domains in characteristic 0. The univariate factor operation is passed as a parameter. Multivariate hensel lifting is used to lift the univariate factorization</p>
+<a name="f_factor"></a><dl><dt>factor : (P, Mapping(<a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))) -&gt <a href="Factored.html">Factored</a>(P)</dt><dd><p>
+<code>factor(p, ufact)</code> factors the multivariate polynomial <code>p</code> by specializing variables and calling the univariate factorizer ufact.</p>
+</dd></dl>
+<dl><dt>factor : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), Mapping(<a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P))</dt><dd><p>
+<code>factor(p, ufact)</code> factors the multivariate polynomial <code>p</code> by specializing variables and calling the univariate factorizer ufact. <code>p</code> is represented as a univariate polynomial with multivariate coefficients.</p>
+</dd></dl>
+</body>
+</html>

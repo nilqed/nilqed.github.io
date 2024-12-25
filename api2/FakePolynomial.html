@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FakePolynomial</title>
+</head>
+<body>
+<h1>FakePolynomial</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/evalut.spad#L234">evalut.spad line 234</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/evalut.spad#L234">[edit on github]</a></p>
+<p>
+FakePolynomial is a domain of univariate polynomials with coefficients being fractions of multivariate integer polynomials.Coefficients are kept in unsimplified form. This domain exists to avoid cost of recursive <code>GCD</code> calls during polynomial evaluation.</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_ground"></a><dl><dt>ground : % -&gt Record(numer : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), denom : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), Record(var : <a href="Symbol.html">Symbol</a>, coef : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))))) -&gt %</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>map : (Mapping(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), %) -&gt Union(%, "failed")</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>map : (Mapping(Union(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), "failed"), Record(numer : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), denom : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))), %) -&gt Union(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_subst_95var"></a><dl><dt>subst_var : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_to_95UP"></a><dl><dt>to_UP : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

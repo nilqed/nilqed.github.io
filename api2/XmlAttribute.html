@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>XmlAttribute</title>
+</head>
+<body>
+<h1>XmlAttribute</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L3712">scene.spad line 3712</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L3712">[edit on github]</a></p>
+<p>
+This package provides support for <code>XML</code> files <code>XML</code> attributes are inside the opening tag: &lt;tagname attributes&gt; and usually have the form: name=value</p>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>coerce(x)</code> outputs <code>x</code> as a string</p>
+</dd></dl>
+<a name="f_outputVRML"></a><dl><dt>outputVRML : (%, <a href="TextFile.html">TextFile</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputVRML(rp, f1)</code> writes the attribute as <code>VRML2</code>. <code>VRML2</code> is not <code>xml</code> but it has the same semantics and node names as <code>X3D</code> but a different syntax so it makes sense to create an <code>XML</code> structure and then format the output differently.</p>
+</dd></dl>
+<a name="f_xmlAttribute"></a><dl><dt>xmlAttribute : (<a href="String.html">String</a>, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt %</dt><dd><p>
+<code>xmlAttribute(name, values)</code> constructs a xmlAttribute from its <code>name</code> and list of values</p>
+</dd></dl>
+<dl><dt>xmlAttribute : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>xmlAttribute(name, value)</code> construct a xmlAttribute from its <code>name</code> and value</p>
+</dd></dl>
+</body>
+</html>

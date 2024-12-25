@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PrimitiveRatDE</title>
+</head>
+<body>
+<h1>PrimitiveRatDE(F, UP, L, LQ)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/oderf.spad#L73">oderf.spad line 73</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/oderf.spad#L73">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(UP)<li>LQ : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(<a href="Fraction.html">Fraction</a>(UP))</ul>
+<p>
+<code>PrimitiveRatDE</code> provides functions for in-field solutions of linear ordinary differential equations, in the transcendental case. The derivation to use is given by the parameter <code>L</code>.</p>
+<a name="f_denomLODE"></a><dl><dt>denomLODE : (L, <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt UP</dt><dd><p>
+<code>denomLODE(op, [g1, ..., gm])</code> returns a polynomial <code>d</code> such that any rational solution of <code>op y = c1 g1 + ... + cm gm</code> is of the form <code>p/d</code> for some polynomial <code>p</code>.</p>
+</dd></dl>
+<dl><dt>denomLODE : (L, <a href="Fraction.html">Fraction</a>(UP)) -&gt Union(UP, "failed")</dt><dd><p>
+<code>denomLODE(op, g)</code> returns a polynomial <code>d</code> such that any rational solution of <code>op y = g</code> is of the form <code>p/d</code> for some polynomial <code>p</code>, and "failed", if the equation has no rational solution.</p>
+</dd></dl>
+<a name="f_indicialEquation"></a><dl><dt>indicialEquation : (L, F) -&gt UP</dt><dd><p>
+<code>indicialEquation(op, a)</code> returns the indicial equation of <code>op</code> at <code>a</code>.</p>
+</dd></dl>
+<dl><dt>indicialEquation : (LQ, F) -&gt UP</dt><dd><p>
+<code>indicialEquation(op, a)</code> returns the indicial equation of <code>op</code> at <code>a</code>.</p>
+</dd></dl>
+<a name="f_indicialEquations"></a><dl><dt>indicialEquations : L -&gt <a href="List.html">List</a>(Record(center : UP, equation : UP))</dt><dd><p>
+<code>indicialEquations op</code> returns <code>[[d1, e1], ..., [dq, eq]]</code> where the <code>d_i</code><code>'s</code> are the affine singularities of <code>op</code>, and the <code>e_i</code><code>'s</code> are the indicial equations at each <code>d_i</code>.</p>
+</dd></dl>
+<dl><dt>indicialEquations : (L, UP) -&gt <a href="List.html">List</a>(Record(center : UP, equation : UP))</dt><dd><p>
+<code>indicialEquations(op, p)</code> returns <code>[[d1, e1], ..., [dq, eq]]</code> where the <code>d_i</code><code>'s</code> are the affine singularities of <code>op</code> above the roots of <code>p</code>, and the <code>e_i</code><code>'s</code> are the indicial equations at each <code>d_i</code>.</p>
+</dd></dl>
+<dl><dt>indicialEquations : LQ -&gt <a href="List.html">List</a>(Record(center : UP, equation : UP))</dt><dd><p>
+<code>indicialEquations op</code> returns <code>[[d1, e1], ..., [dq, eq]]</code> where the <code>d_i</code><code>'s</code> are the affine singularities of <code>op</code>, and the <code>e_i</code><code>'s</code> are the indicial equations at each <code>d_i</code>.</p>
+</dd></dl>
+<dl><dt>indicialEquations : (LQ, UP) -&gt <a href="List.html">List</a>(Record(center : UP, equation : UP))</dt><dd><p>
+<code>indicialEquations(op, p)</code> returns <code>[[d1, e1], ..., [dq, eq]]</code> where the <code>d_i</code><code>'s</code> are the affine singularities of <code>op</code> above the roots of <code>p</code>, and the <code>e_i</code><code>'s</code> are the indicial equations at each <code>d_i</code>.</p>
+</dd></dl>
+<a name="f_splitDenominator"></a><dl><dt>splitDenominator : (LQ, <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt Record(eq : L, rh : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)))</dt><dd><p>
+<code>splitDenominator(op, [g1, ..., gm])</code> returns <code>op0, [h1, ..., hm]</code> such that the equations <code>op y = c1 g1 + ... + cm gm</code> and <code>op0 y = c1 h1 + ... + cm hm</code> have the same solutions.</p>
+</dd></dl>
+</body>
+</html>

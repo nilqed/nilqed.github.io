@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryFunctionLODESolver</title>
+</head>
+<body>
+<h1>ElementaryFunctionLODESolver(R, F, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L563">odeef.spad line 563</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L563">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>), <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>F : Join(<a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R), <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>)<li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</ul>
+<p>
+<code>ElementaryFunctionLODESolver</code> provides the top-level functions for finding closed form solutions of linear ordinary differential equations and initial value problems.</p>
+<a name="f_solve"></a><dl><dt>solve : (L, F, <a href="Symbol.html">Symbol</a>, F, <a href="List.html">List</a>(F)) -&gt Union(F, "failed")</dt><dd><p>
+<code>solve(op, g, x, a, [y0, ..., ym])</code> returns either the solution of the initial value problem <code>op y = g, y(a) = y0, y'(a) = y1, ...</code> or "failed" if the solution cannot be found; <code>x</code> is the dependent variable.</p>
+</dd></dl>
+<dl><dt>solve : (L, F, <a href="Symbol.html">Symbol</a>) -&gt Union(Record(particular : F, basis : <a href="List.html">List</a>(F)), "failed")</dt><dd><p>
+<code>solve(op, g, x)</code> returns either a solution of the ordinary differential equation <code>op y = g</code> or "failed" if no non-trivial solution can be found; When found, the solution is returned in the form <code>[h, [b1, ..., bm]]</code> where <code>h</code> is a particular solution and and <code>[b1, ...bm]</code> are linearly independent solutions of the associated homogeneous equation <code>op y = 0</code>. A full basis for the solutions of the homogeneous equation is not always returned, only the solutions which were found; <code>x</code> is the dependent variable.</p>
+</dd></dl>
+</body>
+</html>

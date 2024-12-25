@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ComplexIntegerSolveLinearPolynomialEquation</title>
+</head>
+<body>
+<h1>ComplexIntegerSolveLinearPolynomialEquation(R, CR)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/gaussian.spad#L620">gaussian.spad line 620</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/gaussian.spad#L620">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegerNumberSystem.html">IntegerNumberSystem</a><li>CR : <a href="ComplexCategory.html">ComplexCategory</a>(R)</ul>
+<p>
+This package provides the generalized euclidean algorithm which is needed as the basic step for factoring polynomials.</p>
+<a name="f_solveLinearPolynomialEquation"></a><dl><dt>solveLinearPolynomialEquation : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(CR)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(CR)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(CR)), "failed")</dt><dd><p>
+<code>solveLinearPolynomialEquation([f1, ..., fn], g)</code> where (<code>fi</code> relatively prime to each other) returns a list of <code>ai</code> such that <code>g</code> = sum <code>ai</code> prod <code>fj</code> (<code>j</code> <code>=</code> <code>i</code>) or equivalently g/prod <code>fj</code> = sum (ai/fi) or returns "failed" if no such list exists</p>
+</dd></dl>
+</body>
+</html>

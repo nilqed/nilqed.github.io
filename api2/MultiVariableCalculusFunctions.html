@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MultiVariableCalculusFunctions</title>
+</head>
+<body>
+<h1>MultiVariableCalculusFunctions(S, F, FLAF, FLAS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortpak.spad#L245">fortpak.spad line 245</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortpak.spad#L245">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>F : <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(S)<li>FLAF : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(F)<li>FLAS : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(S)</ul>
+<p>
+MultiVariableCalculusFunctions Package provides several functions for multivariable calculus. These include gradient, hessian and jacobian, divergence and laplacian. Various forms for banded and sparse storage of matrices are included.</p>
+<a name="f_bandedHessian"></a><dl><dt>bandedHessian : (F, FLAS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>bandedHessian(v, xlist, k)</code> computes the hessian, the matrix of second partial derivatives, of the scalar field <code>v</code>, <code>v</code> a function of the variables listed in <code>xlist</code>, <code>k</code> is the semi-bandwidth, the number of nonzero subdiagonals, 2*k+1 being actual bandwidth. Stores the nonzero band in lower triangle in a matrix, dimensions <code>k+1</code> by #xlist, whose rows are the vectors formed by diagonal, subdiagonal, etc. of the real, full-matrix, hessian. (The notation conforms to LAPACK/NAG-<code>F07</code> conventions.)</p>
+</dd></dl>
+<a name="f_bandedJacobian"></a><dl><dt>bandedJacobian : (FLAF, FLAS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>bandedJacobian(vf, xlist, kl, ku)</code> computes the jacobian, the matrix of first partial derivatives, of the vector field <code>vf</code>, <code>vf</code> a vector function of the variables listed in <code>xlist</code>, <code>kl</code> is the number of nonzero subdiagonals, ku is the number of nonzero superdiagonals, <code>kl+ku+1</code> being actual bandwidth. Stores the nonzero band in a matrix, dimensions <code>kl+ku+1</code> by #xlist. The upper triangle is in the top ku rows, the diagonal is in row <code>ku+1</code>, the lower triangle in the last <code>kl</code> rows. Entries in a column in the band store correspond to entries in same column of full store. (The notation conforms to LAPACK/NAG-<code>F07</code> conventions.)</p>
+</dd></dl>
+<a name="f_divergence"></a><dl><dt>divergence : (FLAF, FLAS) -&gt F</dt><dd><p>
+<code>divergence(vf, xlist)</code> computes the divergence of the vector field <code>vf</code>, <code>vf</code> a vector function of the variables listed in xlist.</p>
+</dd></dl>
+<a name="f_gradient"></a><dl><dt>gradient : (F, FLAS) -&gt <a href="Vector.html">Vector</a>(F)</dt><dd><p>
+<code>gradient(v, xlist)</code> computes the gradient, the vector of first partial derivatives, of the scalar field <code>v</code>, <code>v</code> a function of the variables listed in xlist.</p>
+</dd></dl>
+<a name="f_hessian"></a><dl><dt>hessian : (F, FLAS) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>hessian(v, xlist)</code> computes the hessian, the matrix of second partial derivatives, of the scalar field <code>v</code>, <code>v</code> a function of the variables listed in xlist.</p>
+</dd></dl>
+<a name="f_jacobian"></a><dl><dt>jacobian : (FLAF, FLAS) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>jacobian(vf, xlist)</code> computes the jacobian, the matrix of first partial derivatives, of the vector field <code>vf</code>, <code>vf</code> a vector function of the variables listed in xlist.</p>
+</dd></dl>
+<a name="f_laplacian"></a><dl><dt>laplacian : (F, FLAS) -&gt F</dt><dd><p>
+<code>laplacian(v, xlist)</code> computes the laplacian of the scalar field <code>v</code>, <code>v</code> a function of the variables listed in xlist.</p>
+</dd></dl>
+</body>
+</html>

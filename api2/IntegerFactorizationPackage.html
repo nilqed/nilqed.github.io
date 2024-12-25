@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerFactorizationPackage</title>
+</head>
+<body>
+<h1>IntegerFactorizationPackage(I)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intfact.spad#L310">intfact.spad line 310</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intfact.spad#L310">[edit on github]</a></p>
+<ul>
+<li>I : <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></ul>
+<p>
+This Package contains basic methods for integer factorization. The factor operation employs trial division up to 10, 000. It then tests to see if <code>n</code> is a perfect power before using Pollards rho method. Because Pollards method may fail, the result of factor may contain composite factors. We should also employ Lenstra<code>'s</code> elliptic curve method.</p>
+<a name="f_BasicMethod"></a><dl><dt>BasicMethod : I -&gt <a href="Factored.html">Factored</a>(I)</dt><dd><p>
+<code>BasicMethod(n)</code> returns the factorization of integer <code>n</code> by trial division</p>
+</dd></dl>
+<a name="f_PollardSmallFactor"></a><dl><dt>PollardSmallFactor : I -&gt Union(I, "failed")</dt><dd><p>
+<code>PollardSmallFactor(n)</code> returns a factor of <code>n</code> or "failed" if no one is found</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : I -&gt <a href="Factored.html">Factored</a>(I)</dt><dd><p>
+<code>factor(n)</code> returns the full factorization of integer <code>n</code></p>
+</dd></dl>
+<a name="f_squareFree"></a><dl><dt>squareFree : I -&gt <a href="Factored.html">Factored</a>(I)</dt><dd><p>
+<code>squareFree(n)</code> returns the square free factorization of integer <code>n</code></p>
+</dd></dl>
+</body>
+</html>

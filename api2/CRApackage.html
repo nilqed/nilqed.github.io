@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CRApackage</title>
+</head>
+<body>
+<h1>CRApackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cra.spad#L1">cra.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cra.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="EuclideanDomain.html">EuclideanDomain</a></ul>
+<p>
+This package implements asymptotically efficient Chinese reconstruction</p>
+<a name="f_chineseRemainder"></a><dl><dt>chineseRemainder : (<a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt R</dt><dd><p>
+<code>chineseRemainder(lv, lm)</code> returns a value <code>v</code> such that, if <code>x</code> is <code>lv.i</code> modulo <code>lm.i</code> for all <code>i</code>, then <code>x</code> is <code>v</code> modulo <code>lm(1)*lm(2)*...*lm(n)</code>.</p>
+</dd></dl>
+<dl><dt>chineseRemainder : (<a href="List.html">List</a>(<a href="List.html">List</a>(R)), <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>chineseRemainder(llv, lm)</code> returns a list of values, each of which corresponds to the Chinese remainder of the associated element of <code>llv</code> and <code>lm</code>. This is more efficient than applying chineseRemainder several times.</p>
+</dd></dl>
+<a name="f_modTree"></a><dl><dt>modTree : (R, <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>modTree(r, l)</code> is undocumented</p>
+</dd></dl>
+<a name="f_multiEuclideanTree"></a><dl><dt>multiEuclideanTree : (<a href="List.html">List</a>(R), R) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>multiEuclideanTree(l, r)</code> is undocumented</p>
+</dd></dl>
+</body>
+</html>

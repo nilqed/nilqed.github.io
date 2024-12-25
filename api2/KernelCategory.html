@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>KernelCategory</title>
+</head>
+<body>
+<h1>KernelCategory(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/kl.spad#L226">kl.spad line 226</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/kl.spad#L226">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Comparable.html">Comparable</a></ul>
+<p>
+A kernel over a set <code>S</code> is an operator applied to a given list of arguments from <code>S</code>.</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_argument"></a><dl><dt>argument : % -&gt <a href="List.html">List</a>(S)</dt><dd><p>
+<code>argument(op(a1, ..., an))</code> returns <code>[a1, ..., an]</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>) if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>) if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<a name="f_height"></a><dl><dt>height : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>height(k)</code> returns the nesting level of <code>k</code>.</p>
+</dd></dl>
+<a name="f_is_63"></a><dl><dt>is? : (%, <a href="BasicOperator.html">BasicOperator</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?(op(a1, ..., an), f)</code> tests if op = <code>f</code>.</p>
+</dd></dl>
+<dl><dt>is? : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?(op(a1, ..., an), s)</code> tests if the name of op is <code>s</code>.</p>
+</dd></dl>
+<a name="f_kernel"></a><dl><dt>kernel : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(S), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>kernel(op, [a1, ..., an], m)</code> returns the kernel <code>op(a1, ..., an)</code> of nesting level <code>m</code>. Error: if <code>op</code> is <code>k</code>-ary for some <code>k</code> not equal to <code>n</code>.</p>
+</dd></dl>
+<dl><dt>kernel : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>kernel(x)</code> returns <code>x</code> viewed as a kernel.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_name"></a><dl><dt>name : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>name(op(a1, ..., an))</code> returns the name of op.</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : % -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>operator(op(a1, ..., an))</code> returns the operator op.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_symbolIfCan"></a><dl><dt>symbolIfCan : % -&gt Union(<a href="Symbol.html">Symbol</a>, "failed")</dt><dd><p>
+<code>symbolIfCan(k)</code> returns <code>k</code> viewed as a symbol if <code>k</code> is a symbol, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Patternable.html">Patternable</a>(S)
+</body>
+</html>

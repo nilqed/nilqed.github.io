@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularFactorizationGeneral</title>
+</head>
+<body>
+<h1>ModularFactorizationGeneral(PA, MMT, MD, PMD, MO)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffact.spad#L392">ffact.spad line 392</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffact.spad#L392">[edit on github]</a></p>
+<ul>
+<li>PA : <a href="Type.html">Type</a><li>MMT : <a href="Type.html">Type</a><li>MD : <a href="Type.html">Type</a><li>PMD : <a href="Type.html">Type</a><li>MO : <a href="ModularFactorizationOperations.html">ModularFactorizationOperations</a>(PA, MMT, MD, PMD)</ul>
+<p>
+This package implements factorization of polynomials over finite fields using a variant of Kaltofen-Shoup method. Nontrivial data have abstract representation, operations are provided by matching package.</p>
+<a name="f_ddfact"></a><dl><dt>ddfact : (PA, MD) -&gt <a href="List.html">List</a>(Record(poly : PA, degree : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, separate_factors : Mapping(<a href="List.html">List</a>(PA))))</dt><dd><p>
+<code>ddfact(pv, md)</code> computes distinct degree factorization of <code>pv</code>. <code>pv</code> is assumed square-free and monic, <code>md</code> is info representing finite field.</p>
+</dd></dl>
+<a name="f_irreducible_63"></a><dl><dt>irreducible? : (PA, MD) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>irreducible?(pv, md)</code> checks if <code>pv</code> is irreducible. <code>pv</code> is assumed square-free and monic, <code>md</code> is info representing finite field.</p>
+</dd></dl>
+<a name="f_mfactor"></a><dl><dt>mfactor : (PA, MD) -&gt <a href="List.html">List</a>(PA)</dt><dd><p>
+<code>mfactor(pv, md)</code> computes factorization of <code>pv</code> into irreducibles over field described by <code>md</code>. <code>pv</code> is assumed square-free and monic, <code>md</code> is info representing finite field.</p>
+</dd></dl>
+</body>
+</html>

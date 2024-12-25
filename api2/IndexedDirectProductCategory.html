@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IndexedDirectProductCategory</title>
+</head>
+<body>
+<h1>IndexedDirectProductCategory(A, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/indexedp.spad#L81">indexedp.spad line 81</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/indexedp.spad#L81">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a><li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This category represents the direct product of some set with respect to an ordered indexing set. The ordered set <code>S</code> is considered as the ``basis elements<code>''</code> and the elements from <code>A</code> as ``coefficients<code>''</code>.</p>
+<a name="f__42"></a><dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt % if A has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt % if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt % if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt % if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt % if A has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt % if A has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt % if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if A has <a href="AbelianMonoid.html">AbelianMonoid</a> or A has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if A has <a href="AbelianMonoid.html">AbelianMonoid</a> or A has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : S, c : A)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : S, c : A)) -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if A has <a href="AbelianMonoid.html">AbelianMonoid</a> or A has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt A if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt S if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : S, c : A) if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt>listOfTerms : % -&gt <a href="List.html">List</a>(Record(k : S, c : A))</dt><dd><p>
+<code>listOfTerms(x)</code> returns a list <code>lt</code> of terms with type <code>Record(k: S, c: R)</code> such that <code>x</code> equals <code>construct(lt)</code>. If <code>S has Comparable</code> than <code>x</code> equals <code>constructOrdered(lt)</code>.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(A, A), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (A, S) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt>numberOfMonomials : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>numberOfMonomials(x)</code> returns the number of monomials of <code>x</code>.</p>
+</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt % if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if A has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed") if A has <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a> if A has <a href="AbelianMonoid.html">AbelianMonoid</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if A has <a href="AbelianMonoid.html">AbelianMonoid</a> or A has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(A, S)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(A)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+</body>
+</html>

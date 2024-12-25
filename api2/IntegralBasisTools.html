@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegralBasisTools</title>
+</head>
+<body>
+<h1>IntegralBasisTools(R, UP, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intclos.spad#L62">intclos.spad line 62</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intclos.spad#L62">[edit on github]</a></p>
+<ul>
+<li>R : <a href="EuclideanDomain.html">EuclideanDomain</a> with
+<p>squareFree : % -&gt <a href="Factored.html">Factored</a>(%)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>F : <a href="FramedAlgebra.html">FramedAlgebra</a>(R, UP)</ul>
+<p>
+This package contains functions used in the packages FunctionFieldIntegralBasis and NumberFieldIntegralBasis.</p>
+<a name="f_diagonalProduct"></a><dl><dt>diagonalProduct : <a href="Matrix.html">Matrix</a>(R) -&gt R</dt><dd><p>
+<code>diagonalProduct(m)</code> returns the product of the elements on the diagonal of the matrix <code>m</code></p>
+</dd></dl>
+<a name="f_divideIfCan_33"></a><dl><dt>divideIfCan! : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), R, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>divideIfCan!(matrix, matrixOut, prime, n)</code> attempts to divide the entries of <code>matrix</code> by <code>prime</code> and store the result in <code>matrixOut</code>. If it is successful, 1 is returned and if not, <code>prime</code> is returned. Here both <code>matrix</code> and <code>matrixOut</code> are <code>n</code>-by-<code>n</code> upper triangular matrices.</p>
+</dd></dl>
+<a name="f_idealiser"></a><dl><dt>idealiser : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>idealiser(m1, m2)</code> computes the order of an ideal defined by <code>m1</code> and <code>m2</code></p>
+</dd></dl>
+<dl><dt>idealiser : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R), R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>idealiser(m1, m2, d)</code> computes the order of an ideal defined by <code>m1</code> and <code>m2</code> where <code>d</code> is the known part of the denominator</p>
+</dd></dl>
+<a name="f_idealiserMatrix"></a><dl><dt>idealiserMatrix : (<a href="Matrix.html">Matrix</a>(R), <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>idealiserMatrix(m1, m2)</code> returns the matrix representing the linear conditions on the Ring associated with an ideal defined by <code>m1</code> and <code>m2</code>.</p>
+</dd></dl>
+<a name="f_leastPower"></a><dl><dt>leastPower : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>leastPower(p, n)</code> returns <code>e</code>, where <code>e</code> is the smallest integer such that <code>p ^e &gt;= n</code></p>
+</dd></dl>
+<a name="f_matrixGcd"></a><dl><dt>matrixGcd : (<a href="Matrix.html">Matrix</a>(R), R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>matrixGcd(mat, sing, n)</code> is <code>gcd(sing, g)</code> where <code>g</code> is the <code>gcd</code> of the entries of the <code>n</code>-by-<code>n</code> upper-triangular matrix <code>mat</code>.</p>
+</dd></dl>
+<a name="f_moduleSum"></a><dl><dt>moduleSum : (Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R)), Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R))) -&gt Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>moduleSum(m1, m2)</code> returns the sum of two modules in the framed algebra <code>F</code>. Each module <code><code>mi</code></code> is represented as follows: <code>F</code> is a framed algebra with <code>R</code>-module basis <code>w1, w2, ..., wn</code> and <code><code>mi</code></code> is a record <code>[basis, basisDen, basisInv]</code>. If <code>basis</code> is the matrix <code>(aij, i = 1..n, j = 1..n)</code>, then a basis <code>v1, ..., vn</code> for <code><code>mi</code></code> is given by <code><code>vi</code> = (1/basisDen) * sum(aij * wj, j = 1..n)</code>, i.e. the <code>i</code>th row of 'basis' contains the coordinates of the <code>i</code>th basis vector. Similarly, the <code>i</code>th row of the matrix <code>basisInv</code> contains the coordinates of <code><code>wi</code></code> with respect to the basis <code>v1, ..., vn</code>: if <code>basisInv</code> is the matrix <code>(bij, i = 1..n, j = 1..n)</code>, then <code><code>wi</code> = sum(bij * vj, j = 1..n)</code>.</p>
+</dd></dl>
+</body>
+</html>

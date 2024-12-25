@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerCommonDenominator</title>
+</head>
+<body>
+<h1>InnerCommonDenominator(R, Q, A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cden.spad#L1">cden.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cden.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>Q : <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(R)<li>A : Join(<a href="LinearAggregate.html">LinearAggregate</a>(R), <a href="finiteAggregate.html">finiteAggregate</a>)<li>B : Join(<a href="LinearAggregate.html">LinearAggregate</a>(Q), <a href="finiteAggregate.html">finiteAggregate</a>)</ul>
+<p>
+InnerCommonDenominator provides functions to compute the common denominator of a finite linear aggregate of elements of the quotient field of an integral domain.</p>
+<a name="f_clearDenominator"></a><dl><dt>clearDenominator : B -&gt A</dt><dd><p>
+<code>clearDenominator([q1, ..., qn])</code> returns <code>[p1, ..., pn]</code> such that <code><code>qi</code> = pi/d</code> where <code>d</code> is a common denominator for the <code>qi</code><code>'s</code>.</p>
+</dd></dl>
+<a name="f_commonDenominator"></a><dl><dt>commonDenominator : B -&gt R</dt><dd><p>
+<code>commonDenominator([q1, ..., qn])</code> returns a common denominator <code>d</code> for <code>q1</code>, ..., <code>qn</code>.</p>
+</dd></dl>
+<a name="f_splitDenominator"></a><dl><dt>splitDenominator : B -&gt Record(num : A, den : R)</dt><dd><p>
+<code>splitDenominator([q1, ..., qn])</code> returns <code>[[p1, ..., pn], d]</code> such that <code><code>qi</code> = pi/d</code> and <code>d</code> is a common denominator for the <code>qi</code><code>'s</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Plot3D</title>
+</head>
+<body>
+<h1>Plot3D</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/plot3d.spad#L1">plot3d.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/plot3d.spad#L1">[edit on github]</a></p>
+<p>
+Plot3D supports parametric plots defined over a real number system. A real number system is a model for the real numbers and as such may be an approximation. For example, floating point numbers and infinite continued fractions are real number systems. The facilities at this point are limited to 3-dimensional parametric plots.</p>
+<a name="f_adaptive3D_63"></a><dl><dt>adaptive3D? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>adaptive3D?()</code> determines whether plotting be done adaptively.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_debug3D"></a><dl><dt>debug3D : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>debug3D(true)</code> turns debug mode on; debug3D(<code>false</code>) turns debug mode off.</p>
+</dd></dl>
+<a name="f_listBranches"></a><dl><dt><a href="PlottableSpaceCurveCategory.html#f_listBranches">listBranches</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)))</dt><dd> from <a href="PlottableSpaceCurveCategory.html">PlottableSpaceCurveCategory</a></dd></dl>
+<a name="f_maxPoints3D"></a><dl><dt>maxPoints3D : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>maxPoints3D()</code> returns the maximum number of points in a plot.</p>
+</dd></dl>
+<a name="f_minPoints3D"></a><dl><dt>minPoints3D : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>minPoints3D()</code> returns the minimum number of points in a plot.</p>
+</dd></dl>
+<a name="f_numFunEvals3D"></a><dl><dt>numFunEvals3D : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>numFunEvals3D()</code> returns the number of points computed.</p>
+</dd></dl>
+<a name="f_plot"></a><dl><dt>plot : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(x, r)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>plot : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(f, g, h, a..b)</code> plots <code>x</code> = <code>f</code>(<code>t</code>), <code>y</code> = <code>g</code>(<code>t</code>), <code>z</code> = <code>h</code>(<code>t</code>) as <code>t</code> ranges over [a, <code>b</code>].</p>
+</dd></dl>
+<dl><dt>plot : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(f1, f2, f3, f4, x, y, z, w)</code> is undocumented</p>
+</dd></dl>
+<a name="f_pointPlot"></a><dl><dt>pointPlot : (Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>pointPlot(f, g, h, a..b)</code> plots <code>x</code> = <code>f</code>(<code>t</code>), <code>y</code> = <code>g</code>(<code>t</code>), <code>z</code> = <code>h</code>(<code>t</code>) as <code>t</code> ranges over [a, <code>b</code>].</p>
+</dd></dl>
+<dl><dt>pointPlot : (Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>pointPlot(f, x, y, z, w)</code> is undocumented</p>
+</dd></dl>
+<a name="f_refine"></a><dl><dt>refine : % -&gt %</dt><dd><p>
+<code>refine(x)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>refine : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>refine(x, r)</code> is undocumented</p>
+</dd></dl>
+<a name="f_screenResolution3D"></a><dl><dt>screenResolution3D : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>screenResolution3D()</code> returns the screen resolution for a 3d graph.</p>
+</dd></dl>
+<a name="f_setAdaptive3D"></a><dl><dt>setAdaptive3D : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>setAdaptive3D(true)</code> turns adaptive plotting on; setAdaptive3D(<code>false</code>) turns adaptive plotting off.</p>
+</dd></dl>
+<a name="f_setMaxPoints3D"></a><dl><dt>setMaxPoints3D : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>setMaxPoints3D(i)</code> sets the maximum number of points in a plot to <code>i</code>.</p>
+</dd></dl>
+<a name="f_setMinPoints3D"></a><dl><dt>setMinPoints3D : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>setMinPoints3D(i)</code> sets the minimum number of points in a plot to <code>i</code>.</p>
+</dd></dl>
+<a name="f_setScreenResolution3D"></a><dl><dt>setScreenResolution3D : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>setScreenResolution3D(i)</code> sets the screen resolution for a 3d graph to <code>i</code>.</p>
+</dd></dl>
+<a name="f_tRange"></a><dl><dt>tRange : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>tRange(p)</code> returns the range of the parameter in a parametric plot <code>p</code>.</p>
+</dd></dl>
+<a name="f_tValues"></a><dl><dt>tValues : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>tValues(p)</code> returns a list of lists of the values of the parameter for which a point is computed, one list for each curve in the plot <code>p</code>.</p>
+</dd></dl>
+<a name="f_xRange"></a><dl><dt><a href="PlottableSpaceCurveCategory.html#f_xRange">xRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottableSpaceCurveCategory.html">PlottableSpaceCurveCategory</a></dd></dl>
+<a name="f_yRange"></a><dl><dt><a href="PlottableSpaceCurveCategory.html#f_yRange">yRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottableSpaceCurveCategory.html">PlottableSpaceCurveCategory</a></dd></dl>
+<a name="f_zRange"></a><dl><dt><a href="PlottableSpaceCurveCategory.html#f_zRange">zRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottableSpaceCurveCategory.html">PlottableSpaceCurveCategory</a></dd></dl>
+<a name="f_zoom"></a><dl><dt>zoom : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>zoom(x, r, s, t)</code> is undocumented</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="PlottableSpaceCurveCategory.html">PlottableSpaceCurveCategory</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DrawNumericHack</title>
+</head>
+<body>
+<h1>DrawNumericHack(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numeric.spad#L434">numeric.spad line 434</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numeric.spad#L434">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="OrderedSet.html">OrderedSet</a>, <a href="IntegralDomain.html">IntegralDomain</a>, <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Float.html">Float</a>))</ul>
+<p>
+Hack for the draw interface. DrawNumericHack provides a "coercion" from something of the form <code>x = a..b</code> where <code>a</code> and <code>b</code> are formal expressions to a binding of the form <code>x = c..d</code> where <code>c</code> and <code>d</code> are the numerical values of <code>a</code> and <code>b</code>. This "coercion" fails if <code>a</code> and <code>b</code> contains symbolic variables, but is meant for expressions involving %<code>pi</code>.</p>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Expression.html">Expression</a>(R)) -&gt <a href="SegmentBinding.html">SegmentBinding</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>coerce(x = a..b)</code> returns <code>x = c..d</code> where <code>c</code> and <code>d</code> are the numerical values of <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+</body>
+</html>

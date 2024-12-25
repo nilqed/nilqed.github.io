@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LaplaceTransform</title>
+</head>
+<body>
+<h1>LaplaceTransform(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/laplace.spad#L1">laplace.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/laplace.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>, <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R))</ul>
+<p>
+This package computes the forward Laplace Transform.</p>
+<a name="f_laplace"></a><dl><dt>laplace : (F, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>laplace(f, t, s)</code> returns the Laplace transform of <code>f(t)</code> using <code>s</code> as the new variable. This is <code>integral(exp(-s*t)*f(t), t = 0..%plusInfinity)</code>. Returns the formal object <code>laplace(f, t, s)</code> if it cannot compute the transform.</p>
+</dd></dl>
+</body>
+</html>

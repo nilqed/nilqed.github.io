@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CartesianTensor</title>
+</head>
+<body>
+<h1>CartesianTensor(minix, dim, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/carten.spad#L85">carten.spad line 85</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/carten.spad#L85">[edit on github]</a></p>
+<ul>
+<li>minix : <a href="Integer.html">Integer</a><li>dim : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+CartesianTensor(minix, dim, <code>R</code>) provides Cartesian tensors with components belonging to a commutative ring <code>R</code>. These tensors can have any number of indices. Each index takes values from <code>minix</code> to <code>minix + dim - 1</code>.</p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>s*t</code> is the inner product of the tensors <code>s</code> and <code>t</code> which contracts the last index of <code>s</code> with the first index of <code>t</code>, i.e. <code>t*s = contract(t, rank t, s, 1)</code> <code>t*s = sum(k=1..N, t[i1, .., iN, k]*s[k, j1, .., jM])</code> This is compatible with the use of <code>M*v</code> to denote the matrix-vector inner product.</p>
+</dd></dl>
+<dl><dt><a href="GradedModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<dl><dt><a href="GradedModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(<a href="Integer.html">Integer</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<dl><dt><a href="GradedModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<dl><dt><a href="GradedModule.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(<a href="Integer.html">Integer</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f__43"></a><dl><dt><a href="GradedModule.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f__45"></a><dl><dt><a href="GradedModule.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<dl><dt><a href="GradedModule.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="GradedModule.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_1"></a><dl><dt><a href="GradedAlgebra.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="GradedAlgebra.html">GradedAlgebra</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(R)</dd></dl>
+<dl><dt>coerce : <a href="DirectProduct.html">DirectProduct</a>(dim, R) -&gt %</dt><dd><p>
+<code>coerce(v)</code> views a vector as a rank 1 tensor.</p>
+</dd></dl>
+<dl><dt>coerce : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>coerce([t_1, ..., t_dim])</code> allows tensors to be constructed using lists.</p>
+</dd></dl>
+<dl><dt>coerce : <a href="List.html">List</a>(R) -&gt %</dt><dd><p>
+<code>coerce([r_1, ..., r_dim])</code> allows tensors to be constructed using lists.</p>
+</dd></dl>
+<dl><dt>coerce : <a href="SquareMatrix.html">SquareMatrix</a>(dim, R) -&gt %</dt><dd><p>
+<code>coerce(m)</code> views a matrix as a rank 2 tensor.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_contract"></a><dl><dt>contract : (%, <a href="Integer.html">Integer</a>, %, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>contract(t, i, s, j)</code> is the inner product of tenors <code>s</code> and <code>t</code> which sums along the <code>k1</code><code>-</code>th index of <code>t</code> and the <code>k2</code><code>-</code>th index of <code>s</code>. For example, if <code>r = contract(s, 2, t, 1)</code> for rank 3 tensors rank 3 tensors <code>s</code> and <code>t</code>, then <code>r</code> is the rank 4 <code>(= 3 + 3 - 2)</code> tensor given by <code>r(i, j, k, l) = sum(h=1..dim, s(i, h, j)*t(h, k, l))</code>.</p>
+</dd></dl>
+<dl><dt>contract : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>contract(t, i, j)</code> is the contraction of tensor <code>t</code> which sums along the <code>i</code><code>-</code>th and <code>j</code><code>-</code>th indices. For example, if <code>r = contract(t, 1, 3)</code> for a rank 4 tensor <code>t</code>, then <code>r</code> is the rank 2 <code>(= 4 - 2)</code> tensor given by <code>r(i, j) = sum(h=1..dim, t(h, i, h, j))</code>.</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="GradedModule.html#f_degree">degree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : % -&gt R</dt><dd><p>
+<code>elt(t)</code> gives the component of a rank 0 tensor.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>elt(t, i)</code> gives a component of a rank 1 tensor.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>elt(t, i, j)</code> gives a component of a rank 2 tensor.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>elt(t, i, j, k)</code> gives a component of a rank 3 tensor.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>elt(t, i, j, k, l)</code> gives a component of a rank 4 tensor.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt R</dt><dd><p>
+<code>elt(t, [i1, ..., iN])</code> gives a component of a rank <code>N</code> tensor.</p>
+</dd></dl>
+<a name="f_kroneckerDelta"></a><dl><dt>kroneckerDelta : () -&gt %</dt><dd><p>
+<code>kroneckerDelta()</code> is the rank 2 tensor defined by <code>kroneckerDelta()(i, j)</code> <code>= 1if i = j</code> <code>= 0 ifi = j</code></p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leviCivitaSymbol"></a><dl><dt>leviCivitaSymbol : () -&gt %</dt><dd><p>
+<code>leviCivitaSymbol()</code> is the rank <code>dim</code> tensor defined by <code>leviCivitaSymbol()(i1, ...idim) = +1/0/-1</code> if <code>i1, ..., idim</code> is an even/is nota /is an odd permutation of <code>minix, ..., minix+dim-1</code>.</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, %) -&gt %</dt><dd><p>
+<code>product(s, t)</code> is the outer product of the tensors <code>s</code> and <code>t</code>. For example, if <code>r = product(s, t)</code> for rank 2 tensors <code>s</code> and <code>t</code>, then <code>r</code> is a rank 4 tensor given by <code>r(i, j, k, l) = s(i, j)*t(k, l)</code>.</p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rank(t)</code> returns the tensorial rank of <code>t</code> (that is, the number of indices). This is the same as the graded module degree.</p>
+</dd></dl>
+<a name="f_ravel"></a><dl><dt>ravel : % -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>ravel(t)</code> produces a list of components from a tensor such that <code>unravel(ravel(t)) = t</code>.</p>
+</dd></dl>
+<a name="f_reindex"></a><dl><dt>reindex : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>reindex(t, [i1, ..., idim])</code> permutes the indices of <code>t</code>. For example, if <code>r = reindex(t, [4, 1, 2, 3])</code> for a rank 4 tensor <code>t</code>, then <code>r</code> is the rank for tensor given by <code>r(i, j, k, l) = t(l, i, j, k)</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<a name="f_sample"></a><dl><dt>sample : () -&gt %</dt><dd><p>
+<code>sample()</code> returns an object of type %.</p>
+</dd></dl>
+<a name="f_transpose"></a><dl><dt>transpose : % -&gt %</dt><dd><p>
+<code>transpose(t)</code> exchanges the first and last indices of <code>t</code>. For example, if <code>r = transpose(t)</code> for a rank 4 tensor <code>t</code>, then <code>r</code> is the rank 4 tensor given by <code>r(i, j, k, l) = t(l, j, k, i)</code>.</p>
+</dd></dl>
+<dl><dt>transpose : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>transpose(t, i, j)</code> exchanges the <code>i</code><code>-</code>th and <code>j</code><code>-</code>th indices of <code>t</code>. For example, if <code>r = transpose(t, 2, 3)</code> for a rank 4 tensor <code>t</code>, then <code>r</code> is the rank 4 tensor given by <code>r(i, j, k, l) = t(i, k, j, l)</code>.</p>
+</dd></dl>
+<a name="f_unravel"></a><dl><dt>unravel : <a href="List.html">List</a>(R) -&gt %</dt><dd><p>
+<code>unravel(t)</code> produces a tensor from a list of components such that <code>unravel(ravel(t)) = t</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="GradedAlgebra.html">GradedAlgebra</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="GradedModule.html">GradedModule</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="GradedModule.html">GradedModule</a>(<a href="Integer.html">Integer</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+</body>
+</html>

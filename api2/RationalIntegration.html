@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalIntegration</title>
+</head>
+<body>
+<h1>RationalIntegration(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intrf.spad#L550">intrf.spad line 550</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intrf.spad#L550">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+This package provides functions for the base case of the Risch algorithm.</p>
+<a name="f_infieldint"></a><dl><dt>infieldint : <a href="Fraction.html">Fraction</a>(UP) -&gt Union(<a href="Fraction.html">Fraction</a>(UP), "failed")</dt><dd><p>
+<code>infieldint(f)</code> returns <code>g</code> such that <code>g' = f</code> or "failed" if the integral of <code>f</code> is not a rational function.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : <a href="Fraction.html">Fraction</a>(UP) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(<a href="Fraction.html">Fraction</a>(UP))</dt><dd><p>
+<code>integrate(f)</code> returns <code>g</code> such that <code>g' = f</code>.</p>
+</dd></dl>
+</body>
+</html>

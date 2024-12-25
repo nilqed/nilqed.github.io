@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TabulatedComputationPackage</title>
+</head>
+<body>
+<h1>TabulatedComputationPackage(Key, Entry)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/newdata.spad#L25">newdata.spad line 25</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/newdata.spad#L25">[edit on github]</a></p>
+<ul>
+<li>Key : <a href="SetCategory.html">SetCategory</a><li>Entry : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+<code>TabulatedComputationPackage(Key , Entry)</code> provides some modest support for dealing with operations with type <code>Key -&gt; Entry</code>. The result of such operations can be stored and retrieved with this package by using a hash-table. The user does not need to worry about the management of this hash-table. However, only one hash-table is built by calling <code>TabulatedComputationPackage(Key , Entry)</code>.</p>
+<a name="f_clearTable_33"></a><dl><dt>clearTable! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>clearTable!()</code> clears the hash-table and assumes that it will no longer be used.</p>
+</dd></dl>
+<a name="f_extractIfCan"></a><dl><dt>extractIfCan : Key -&gt Union(Entry, "failed")</dt><dd><p>
+<code>extractIfCan(x)</code> searches the item whose key is <code>x</code>.</p>
+</dd></dl>
+<a name="f_initTable_33"></a><dl><dt>initTable! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>initTable!()</code> initializes the hash-table.</p>
+</dd></dl>
+<a name="f_insert_33"></a><dl><dt>insert! : (Key, Entry) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>insert!(x, y)</code> stores the item whose key is <code>x</code> and whose entry is <code>y</code>.</p>
+</dd></dl>
+<a name="f_makingStats_63"></a><dl><dt>makingStats? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>makingStats?()</code> returns <code>true</code> iff the statistics process is running.</p>
+</dd></dl>
+<a name="f_printInfo_33"></a><dl><dt>printInfo! : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printInfo!(x, y)</code> initializes the messages to be printed when manipulating items from the hash-table. If a key is retrieved then <code>x</code> is displayed. If an item is stored then <code>y</code> is displayed.</p>
+</dd></dl>
+<a name="f_printStats_33"></a><dl><dt>printStats! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>printStats!()</code> prints the statistics.</p>
+</dd></dl>
+<a name="f_printingInfo_63"></a><dl><dt>printingInfo? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>printingInfo?()</code> returns <code>true</code> iff messages are printed when manipulating items from the hash-table.</p>
+</dd></dl>
+<a name="f_startStats_33"></a><dl><dt>startStats! : <a href="String.html">String</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>startStats!(x)</code> initializes the statistics process and sets the comments to display when statistics are printed</p>
+</dd></dl>
+<a name="f_usingTable_63"></a><dl><dt>usingTable? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>usingTable?()</code> returns <code>true</code> iff the hash-table is used</p>
+</dd></dl>
+</body>
+</html>

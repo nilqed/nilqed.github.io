@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SystemODESolver</title>
+</head>
+<body>
+<h1>SystemODESolver(F, LO)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L1">odeef.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>LO : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</ul>
+<p>
+SystemODESolver provides tools for triangulating and solving some systems of linear ordinary differential equations.</p>
+<a name="f_solve"></a><dl><dt>solve : (<a href="Matrix.html">Matrix</a>(F), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), Mapping(Record(particular : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(F)), LO, <a href="List.html">List</a>(F))) -&gt Record(particular : <a href="List.html">List</a>(Record(ratpart : <a href="Vector.html">Vector</a>(F), coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>solve(m, lv, solve)</code> is a parametric version of solve(<code>m</code>, <code>v</code>, solve)</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Matrix.html">Matrix</a>(F), <a href="Vector.html">Vector</a>(F), Mapping(Union(Record(particular : F, basis : <a href="List.html">List</a>(F)), "failed"), LO, F)) -&gt Union(Record(particular : <a href="Vector.html">Vector</a>(F), basis : <a href="Matrix.html">Matrix</a>(F)), "failed")</dt><dd><p>
+<code>solve(m, v, solve)</code> returns <code>[v_p, bm]</code> such that the solutions in <code>F</code> of the system <code>D x = m x + v</code> are <code>v_p + c_1 v_1 + ... + c_m v_m</code> where the <code>c_i's</code> are constants, and the <code>v_i's</code> are columns of <code>bm</code> and form a basis for the solutions of <code>D x = m x</code>. Argument <code>solve</code> is a function for solving a single linear ordinary differential equation in <code>F</code>.</p>
+</dd></dl>
+<a name="f_solveInField"></a><dl><dt>solveInField : (<a href="Matrix.html">Matrix</a>(LO), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), Mapping(Record(particular : <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(F)), LO, <a href="List.html">List</a>(F))) -&gt Record(particular : <a href="List.html">List</a>(Record(ratpart : <a href="Vector.html">Vector</a>(F), coeffs : <a href="Vector.html">Vector</a>(F))), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>solveInField(m, lv, solve)</code> is a parametric version of solveInField(<code>m</code>, <code>v</code>, solve)</p>
+</dd></dl>
+<dl><dt>solveInField : (<a href="Matrix.html">Matrix</a>(LO), <a href="Vector.html">Vector</a>(F), Mapping(Record(particular : Union(F, "failed"), basis : <a href="List.html">List</a>(F)), LO, F)) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(F), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>solveInField(m, v, solve)</code> returns <code>[[v_1, ..., v_m], v_p]</code> such that the solutions in <code>F</code> of the system <code>m x = v</code> are <code>v_p + c_1 v_1 + ... + c_m v_m</code> where the <code>c_i's</code> are constants, and the <code>v_i's</code> form a basis for the solutions of <code>m x = 0</code>. Argument <code>solve</code> is a function for solving a single linear ordinary differential equation in <code>F</code>.</p>
+</dd></dl>
+<a name="f_triangulate"></a><dl><dt>triangulate : (<a href="Matrix.html">Matrix</a>(F), <a href="Vector.html">Vector</a>(F)) -&gt Record(A : <a href="Matrix.html">Matrix</a>(F), eqs : <a href="List.html">List</a>(Record(C : <a href="Matrix.html">Matrix</a>(F), g : <a href="Vector.html">Vector</a>(F), eq : LO, rh : F)))</dt><dd><p>
+<code>triangulate(M, v)</code> returns <code>A, [[C_1, g_1, L_1, h_1], ..., [C_k, g_k, L_k, h_k]]</code> such that under the change of variable <code>y = A z</code>, the first order linear system <code>D y = M y + v</code> is uncoupled as <code>D z_i = C_i z_i + g_i</code> and each <code>C_i</code> is a companion matrix corresponding to the scalar equation <code>L_i z_j = h_i</code>.</p>
+</dd></dl>
+<dl><dt>triangulate : (<a href="Matrix.html">Matrix</a>(F), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))) -&gt Record(A : <a href="Matrix.html">Matrix</a>(F), eqs : <a href="List.html">List</a>(Record(C : <a href="Matrix.html">Matrix</a>(F), lg : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), eq : LO, lrh : <a href="List.html">List</a>(F))))</dt><dd><p>
+<code>triangulate(A, lv)</code> is a parametric version of triangulate(A, <code>v</code>).</p>
+</dd></dl>
+<dl><dt>triangulate : (<a href="Matrix.html">Matrix</a>(LO), <a href="Vector.html">Vector</a>(F)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(LO), vec : <a href="Vector.html">Vector</a>(F))</dt><dd><p>
+<code>triangulate(m, v)</code> returns <code>[m_0, v_0]</code> such that <code>m_0</code> is upper triangular and the system <code>m_0 x = v_0</code> is equivalent to <code>m x = v</code>.</p>
+</dd></dl>
+<dl><dt>triangulate : (<a href="Matrix.html">Matrix</a>(LO), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(LO), vecs : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>triangulate(m, [v1, ..., vn])</code> returns <code>[m_0, [w1, ..., wn]]</code> such that for any constant <code>c1, ..., cn</code> the system <code>m_0 x = c1*w1 + ... + cn*wn</code> is equivalent to to <code>m x = c1*v1 + ... + cn*vn</code></p>
+</dd></dl>
+</body>
+</html>

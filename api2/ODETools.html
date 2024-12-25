@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ODETools</title>
+</head>
+<body>
+<h1>ODETools(F, LODO)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/oderf.spad#L535">oderf.spad line 535</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/oderf.spad#L535">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>LODO : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</ul>
+<p>
+<code>ODETools</code> provides tools for the linear ODE solver.</p>
+<a name="f_particularSolution"></a><dl><dt>particularSolution : (LODO, F, <a href="List.html">List</a>(F), Mapping(F, F)) -&gt Union(F, "failed")</dt><dd><p>
+<code>particularSolution(op, g, [f1, ..., fm], I)</code> returns a particular solution <code>h</code> of the equation <code>op y = g</code> where <code>[f1, ..., fm]</code> are linearly independent and <code>op(<code>fi</code>)=0</code>. The value "failed" is returned if no particular solution is found. Note: the method of variations of parameters is used.</p>
+</dd></dl>
+<a name="f_variationOfParameters"></a><dl><dt>variationOfParameters : (LODO, F, <a href="List.html">List</a>(F)) -&gt Union(<a href="Vector.html">Vector</a>(F), "failed")</dt><dd><p>
+<code>variationOfParameters(op, g, [f1, ..., fm])</code> returns <code>[u1, ..., um]</code> such that a particular solution of the equation <code>op y = g</code> is <code>f1 int(u1) + ... + fm int(um)</code> where <code>[f1, ..., fm]</code> are linearly independent and <code>op(<code>fi</code>)=0</code>. The value "failed" is returned if <code>m &lt; n</code> and no particular solution is found.</p>
+</dd></dl>
+<a name="f_wronskianMatrix"></a><dl><dt>wronskianMatrix : <a href="List.html">List</a>(F) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>wronskianMatrix([f1, ..., fn])</code> returns the <code>n x n</code> matrix <code>m</code> whose i^th row is <code>[f1^(i-1), ..., fn^(i-1)]</code>.</p>
+</dd></dl>
+<dl><dt>wronskianMatrix : (<a href="List.html">List</a>(F), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>wronskianMatrix([f1, ..., fn], q)</code> returns the <code>q x n</code> matrix <code>m</code> whose i^th row is <code>[f1^(i-1), ..., fn^(i-1)]</code>.</p>
+</dd></dl>
+</body>
+</html>

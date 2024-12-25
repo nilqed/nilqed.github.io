@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ReduceLODE</title>
+</head>
+<body>
+<h1>ReduceLODE(F, L, UP, A, LO)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L189">odeef.spad line 189</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L189">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>A : <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(F, UP)<li>LO : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(A)</ul>
+<p>
+Elimination of an algebraic from the coefficients of a linear ordinary differential equation.</p>
+<a name="f_reduceLODE"></a><dl><dt>reduceLODE : (LO, A) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(L), vec : <a href="Vector.html">Vector</a>(F))</dt><dd><p>
+<code>reduceLODE(op, g)</code> returns <code>[m, v]</code> such that any solution in <code>A</code> of <code>op z = g</code> is of the form <code>z = (z_1, ..., z_m) . (b_1, ..., b_m)</code> where the <code>b_i's</code> are the basis of <code>A</code> over <code>F</code> returned by <span class="spadfun">basis</span>() from <code>A</code>, and the <code>z_i's</code> satisfy the differential system <code>M.z = v</code>.</p>
+</dd></dl>
+<dl><dt>reduceLODE : (LO, <a href="List.html">List</a>(A)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(L), vecs : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>reduceLODE(op, [g1, ..., gn])</code> returns <code>[m, [v1, ..., vn]]</code> such that any solution in <code>A</code> of <code>op z = c1*g1 + ... + cn*gn</code> where <code>ci</code> are constants satisfy the differential system <code>M.z = c1*v1 + ... + cn*vn</code></p>
+</dd></dl>
+</body>
+</html>

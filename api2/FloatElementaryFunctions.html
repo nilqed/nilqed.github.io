@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FloatElementaryFunctions</title>
+</head>
+<body>
+<h1>FloatElementaryFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/flopak.spad#L36">flopak.spad line 36</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/flopak.spad#L36">[edit on github]</a></p>
+<p>
+undocumented</p>
+<a name="f_exp"></a><dl><dt>exp : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>exp(x, b)</code> computes approximation to exp(<code>x</code>) accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_exp1"></a><dl><dt>exp1 : <a href="PositiveInteger.html">PositiveInteger</a> -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>exp1(b)</code> computes approximation to exp(1) accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_exp_95frac"></a><dl><dt>exp_frac : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_exp_95series"></a><dl><dt>exp_series : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_log"></a><dl><dt>log : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>log(x, b)</code> computes approximation to exp(<code>x</code>) accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_log10"></a><dl><dt>log10 : <a href="PositiveInteger.html">PositiveInteger</a> -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>log10(b)</code> computes approximation to log(10) accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_log2"></a><dl><dt>log2 : <a href="PositiveInteger.html">PositiveInteger</a> -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>log2(b)</code> computes approximation to log(2) accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_log_95series"></a><dl><dt>log_series : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_minus"></a><dl><dt>minus : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>minus(x, y, b)</code> computes approximation to <code>x - y</code> accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_plus"></a><dl><dt>plus : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>plus(x, y, b)</code> computes approximation to <code>x + y</code> accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_quotient"></a><dl><dt>quotient : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>quotient(x, y, b)</code> computes approximation to <code>x/y</code> accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+<a name="f_round"></a><dl><dt>round : Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>round(x)</code> returns integer closest to <code>x</code>.</p>
+</dd></dl>
+<a name="f_times"></a><dl><dt>times : (Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mantissa : <a href="Integer.html">Integer</a>, exponent : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>times(x, y, b)</code> computes approximation to <code>x*y</code> accurate to at least <code>b</code> bits.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeGroup</title>
+</head>
+<body>
+<h1>FreeGroup(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/free.spad#L383">free.spad line 383</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/free.spad#L383">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+The free group on a set <code>S</code> is the group of finite products of the form <code>reduce(*, [<code>si</code> ^ <code>ni</code>])</code> where the <code>si</code><code>'s</code> are in <code>S</code>, and the <code>ni</code><code>'s</code> are integers. The multiplication is not commutative.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt>* : (%, S) -&gt %</dt><dd><p>
+<code>x * s</code> returns the product of <code>x</code> by <code>s</code> on the right.</p>
+</dd></dl>
+<dl><dt>* : (S, %) -&gt %</dt><dd><p>
+<code>s * x</code> returns the product of <code>x</code> by <code>s</code> on the left.</p>
+</dd></dl>
+<a name="f__47"></a><dl><dt><a href="Group.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="Group.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt>^ : (S, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>s ^ n</code> returns the product of <code>s</code> by itself <code>n</code> times.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : S -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(S)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="Group.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="Group.html#f_conjugate">conjugate</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_factors"></a><dl><dt>factors : % -&gt <a href="List.html">List</a>(Record(gen : S, exp : <a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>factors(a1^e1, ..., an^en)</code> returns <code>[[a1, e1], ..., [an, en]]</code>.</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt><a href="Group.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_mapExpon"></a><dl><dt>mapExpon : (Mapping(<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>mapExpon(f, a1^e1 ... an^en)</code> returns <code>a1^f(e1) ... an^f(en)</code>.</p>
+</dd></dl>
+<a name="f_mapGen"></a><dl><dt>mapGen : (Mapping(S, S), %) -&gt %</dt><dd><p>
+<code>mapGen(f, a1^e1 ... an^en)</code> returns <code>f(a1)^e1 ... f(an)^en</code>.</p>
+</dd></dl>
+<a name="f_nthExpon"></a><dl><dt>nthExpon : (%, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>nthExpon(x, n)</code> returns the exponent of the n^th monomial of <code>x</code>.</p>
+</dd></dl>
+<a name="f_nthFactor"></a><dl><dt>nthFactor : (%, <a href="Integer.html">Integer</a>) -&gt S</dt><dd><p>
+<code>nthFactor(x, n)</code> returns the factor of the n^th monomial of <code>x</code>.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt S</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(S, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="MagmaWithUnit.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_size"></a><dl><dt>size : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>size(x)</code> returns the number of monomials in <code>x</code>.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(S)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Group.html">Group</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+</body>
+</html>

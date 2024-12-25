@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetBundle</title>
+</head>
+<body>
+<h1>JetBundle(IVar, DVar)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L2056">jet.spad line 2056</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L2056">[edit on github]</a></p>
+<ul>
+<li>IVar : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)<li>DVar : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+<code>JetBundle</code> implements a jet bundle of arbitrary order with given names for the independent and dependent variables. It supports only repeated index notation.</p>
+<a name="f_1"></a><dl><dt><a href="JetBundleCategory.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="JetBundleCategory.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_D"></a><dl><dt>D : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd><p>
+<code>D(U, [X1, ..., Xq])</code> generates a derivative. <code>U</code> must be in <code>DVar</code>; all other symbols in <code>IVar</code>.</p>
+</dd></dl>
+<a name="f_P"></a><dl><dt><a href="JetBundleCategory.html#f_P">P</a> : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_P">P</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_P">P</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_P">P</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_Pm"></a><dl><dt><a href="JetBundleCategory.html#f_Pm">Pm</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_Pr"></a><dl><dt><a href="JetBundleCategory.html#f_Pr">Pr</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_U"></a><dl><dt><a href="JetBundleCategory.html#f_U">U</a> : () -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_U">U</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_X"></a><dl><dt><a href="JetBundleCategory.html#f_X">X</a> : () -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_X">X</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_allRepeated"></a><dl><dt><a href="JetBundleCategory.html#f_allRepeated">allRepeated</a> : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>))</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_class"></a><dl><dt><a href="JetBundleCategory.html#f_class">class</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_class">class</a> : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>coerce(sy)</code> allows for the input of jet variables as symbols. Yields an error, if the symbol is not contained in <code>IVar</code> or <code>DVar</code>.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_derivativeOf_63"></a><dl><dt><a href="JetBundleCategory.html#f_derivativeOf_63">derivativeOf?</a> : (%, %) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="JetBundleCategory.html#f_differentiate">differentiate</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(%, "0")</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_dimJ"></a><dl><dt><a href="JetBundleCategory.html#f_dimJ">dimJ</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_dimS"></a><dl><dt><a href="JetBundleCategory.html#f_dimS">dimS</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_getNotation"></a><dl><dt><a href="JetBundleCategory.html#f_getNotation">getNotation</a> : () -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_index"></a><dl><dt><a href="JetBundleCategory.html#f_index">index</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_integrate"></a><dl><dt><a href="JetBundleCategory.html#f_integrate">integrate</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_integrateIfCan"></a><dl><dt><a href="JetBundleCategory.html#f_integrateIfCan">integrateIfCan</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(%, "failed")</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_m2r"></a><dl><dt><a href="JetBundleCategory.html#f_m2r">m2r</a> : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_multiIndex"></a><dl><dt><a href="JetBundleCategory.html#f_multiIndex">multiIndex</a> : % -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_name"></a><dl><dt><a href="JetBundleCategory.html#f_name">name</a> : % -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_numDepVar"></a><dl><dt><a href="JetBundleCategory.html#f_numDepVar">numDepVar</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_numIndVar"></a><dl><dt><a href="JetBundleCategory.html#f_numIndVar">numIndVar</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="JetBundleCategory.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="JetBundleCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_r2m"></a><dl><dt><a href="JetBundleCategory.html#f_r2m">r2m</a> : <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_repeatedIndex"></a><dl><dt><a href="JetBundleCategory.html#f_repeatedIndex">repeatedIndex</a> : % -&gt <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_setNotation"></a><dl><dt><a href="JetBundleCategory.html#f_setNotation">setNotation</a> : <a href="Symbol.html">Symbol</a> -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_type"></a><dl><dt><a href="JetBundleCategory.html#f_type">type</a> : % -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_variables"></a><dl><dt><a href="JetBundleCategory.html#f_variables">variables</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<dl><dt><a href="JetBundleCategory.html#f_variables">variables</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f_weight"></a><dl><dt><a href="JetBundleCategory.html#f_weight">weight</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleCategory.html">JetBundleCategory</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="JetBundleCategory.html">JetBundleCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

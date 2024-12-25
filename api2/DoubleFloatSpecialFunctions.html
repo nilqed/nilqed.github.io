@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DoubleFloatSpecialFunctions</title>
+</head>
+<body>
+<h1>DoubleFloatSpecialFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/special.spad#L1">special.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/special.spad#L1">[edit on github]</a></p>
+<p>
+This package provides special functions for double precision real and complex floating point.</p>
+<a name="f_besselI"></a><dl><dt>besselI : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>besselI(v, x)</code> is the modified Bessel function of the first kind, <code>I(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) - (x^2+v^2)w(x) = 0</code>.</p>
+</dd></dl>
+<dl><dt>besselI : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>besselI(v, x)</code> is the modified Bessel function of the first kind, <code>I(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) - (x^2+v^2)w(x) = 0</code>.</p>
+</dd></dl>
+<a name="f_besselJ"></a><dl><dt>besselJ : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>besselJ(v, x)</code> is the Bessel function of the first kind, <code>J(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) + (x^2-v^2)w(x) = 0</code>.</p>
+</dd></dl>
+<dl><dt>besselJ : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>besselJ(v, x)</code> is the Bessel function of the first kind, <code>J(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) + (x^2-v^2)w(x) = 0</code>.</p>
+</dd></dl>
+<a name="f_besselK"></a><dl><dt>besselK : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>besselK(v, x)</code> is the modified Bessel function of the second kind, <code>K(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) - (x^2+v^2)w(x) = 0</code>. Note: The default implementation uses the relation <code>K(v, x) = %pi/2*(I(-v, x) - I(v, x))/sin(v*%<code>pi</code>)</code> so is not valid for integer values of <code>v</code>.</p>
+</dd></dl>
+<dl><dt>besselK : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>besselK(v, x)</code> is the modified Bessel function of the second kind, <code>K(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) - (x^2+v^2)w(x) = 0</code>. Note: The default implementation uses the relation <code>K(v, x) = %pi/2*(I(-v, x) - I(v, x))/sin(v*%<code>pi</code>)</code>. so is not valid for integer values of <code>v</code>.</p>
+</dd></dl>
+<a name="f_besselY"></a><dl><dt>besselY : (<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>besselY(v, x)</code> is the Bessel function of the second kind, <code>Y(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) + (x^2-v^2)w(x) = 0</code>. Note: The default implementation uses the relation <code>Y(v, x) = (J(v, x) cos(v*%<code>pi</code>) - J(-v, x))/sin(v*%<code>pi</code>)</code> so is not valid for integer values of <code>v</code>.</p>
+</dd></dl>
+<dl><dt>besselY : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>besselY(v, x)</code> is the Bessel function of the second kind, <code>Y(v, x)</code>. This function satisfies the differential equation: <code>x^2 w''(x) + x w'(x) + (x^2-v^2)w(x) = 0</code>. Note: The default implementation uses the relation <code>Y(v, x) = (J(v, x) cos(v*%<code>pi</code>) - J(-v, x))/sin(v*%<code>pi</code>)</code> so is not valid for integer values of <code>v</code>.</p>
+</dd></dl>
+</body>
+</html>

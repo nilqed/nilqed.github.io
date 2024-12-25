@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CycleIndicators</title>
+</head>
+<body>
+<h1>CycleIndicators</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cycles.spad#L1">cycles.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cycles.spad#L1">[edit on github]</a></p>
+<p>
+Enumeration by cycle indices.</p>
+<a name="f_SFunction"></a><dl><dt>SFunction : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>) -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>SFunction(<code>li</code>)</code> is the <code>S</code>-function of the partition <code><code>li</code></code> expressed in terms of power sum symmetric functions.</p>
+</dd></dl>
+<a name="f_alternating"></a><dl><dt>alternating : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>alternating n</code> is the cycle index of the alternating group of degree <code>n</code>.</p>
+</dd></dl>
+<a name="f_cap"></a><dl><dt>cap : (<a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>cap(s1, s2)</code>, introduced by Redfield, is the scalar product of two cycle indices.</p>
+</dd></dl>
+<a name="f_complete"></a><dl><dt>complete : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>complete n</code> is the <code>n</code> th complete homogeneous symmetric function expressed in terms of power sums. Alternatively it is the cycle index of the symmetric group of degree <code>n</code>.</p>
+</dd></dl>
+<a name="f_cup"></a><dl><dt>cup : (<a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cup(s1, s2)</code>, introduced by Redfield, is the scalar product of two cycle indices, in which the power sums are retained to produce a cycle index.</p>
+</dd></dl>
+<a name="f_cyclic"></a><dl><dt>cyclic : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cyclic n</code> is the cycle index of the cyclic group of degree <code>n</code>.</p>
+</dd></dl>
+<a name="f_dihedral"></a><dl><dt>dihedral : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>dihedral n</code> is the cycle index of the dihedral group of degree <code>n</code>.</p>
+</dd></dl>
+<a name="f_elementary"></a><dl><dt>elementary : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>elementary n</code> is the <code>n</code> th elementary symmetric function expressed in terms of power sums.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>eval s</code> is the sum of the coefficients of a cycle index.</p>
+</dd></dl>
+<a name="f_graphs"></a><dl><dt>graphs : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>graphs n</code> is the cycle index of the group induced on the edges of a graph by applying the symmetric function to the <code>n</code> nodes.</p>
+</dd></dl>
+<a name="f_powerSum"></a><dl><dt>powerSum : <a href="Integer.html">Integer</a> -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>powerSum n</code> is the <code>n</code> th power sum symmetric function.</p>
+</dd></dl>
+<a name="f_skewSFunction"></a><dl><dt>skewSFunction : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>skewSFunction(li1, li2)</code> is the <code>S</code>-function of the partition difference <code>li1 - li2</code> expressed in terms of power sum symmetric functions.</p>
+</dd></dl>
+<a name="f_wreath"></a><dl><dt>wreath : (<a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="SymmetricPolynomial.html">SymmetricPolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>wreath(s1, s2)</code> is the cycle index of the wreath product of the two groups whose cycle indices are <code>s1</code> and <code>s2</code>.</p>
+</dd></dl>
+</body>
+</html>

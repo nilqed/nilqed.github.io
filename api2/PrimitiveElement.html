@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PrimitiveElement</title>
+</head>
+<body>
+<h1>PrimitiveElement(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/primelt.spad#L1">primelt.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/primelt.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)</ul>
+<p>
+PrimitiveElement provides functions to compute primitive elements in algebraic extensions.</p>
+<a name="f_primitiveElement"></a><dl><dt>primitiveElement : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt Record(coef : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), poly : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), prim : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))</dt><dd><p>
+<code>primitiveElement([p1, ..., pn], [a1, ..., an])</code> returns <code>[[c1, ..., cn], [q1, ..., qn], q]</code> such that then <code>k(a1, ..., an) = k(a)</code>, where <code>a = a1 c1 + ... + an cn</code>, <code><code>ai</code> = <code>qi</code>(a)</code>, and <code>q(a) = 0</code>. The <code>pi</code><code>'s</code> are the defining polynomials for the <code>ai</code><code>'s</code>. This operation uses the technique of Groebner basis.</p>
+</dd></dl>
+<dl><dt>primitiveElement : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(F)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Symbol.html">Symbol</a>) -&gt Record(coef : <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), poly : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), prim : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))</dt><dd><p>
+<code>primitiveElement([p1, ..., pn], [a1, ..., an], a)</code> returns <code>[[c1, ..., cn], [q1, ..., qn], q]</code> such that then <code>k(a1, ..., an) = k(a)</code>, where <code>a = a1 c1 + ... + an cn</code>, <code><code>ai</code> = <code>qi</code>(a)</code>, and <code>q(a) = 0</code>. The <code>pi</code><code>'s</code> are the defining polynomials for the <code>ai</code><code>'s</code>. This operation uses the technique of Groebner basis.</p>
+</dd></dl>
+<dl><dt>primitiveElement : (<a href="Polynomial.html">Polynomial</a>(F), <a href="Symbol.html">Symbol</a>, <a href="Polynomial.html">Polynomial</a>(F), <a href="Symbol.html">Symbol</a>) -&gt Record(coef1 : <a href="Integer.html">Integer</a>, coef2 : <a href="Integer.html">Integer</a>, prim : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))</dt><dd><p>
+<code>primitiveElement(p1, a1, p2, a2)</code> returns <code>[c1, c2, q]</code> such that <code>k(a1, a2) = k(a)</code> where <code>a = c1 a1 + c2 a2, and q(a) = 0</code>. The <code>pi</code><code>'s</code> are the defining polynomials for the <code>ai</code><code>'s</code>. The <code>p2</code> may involve <code>a1</code>, but <code>p1</code> must not involve <code>a2</code>. This operation uses <span class="spadfun">resultant</span>.</p>
+</dd></dl>
+</body>
+</html>

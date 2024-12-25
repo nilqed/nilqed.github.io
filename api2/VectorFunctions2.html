@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>VectorFunctions2</title>
+</head>
+<body>
+<h1>VectorFunctions2(A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/vector.spad#L192">vector.spad line 192</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/vector.spad#L192">[edit on github]</a></p>
+<ul>
+<li>A : <a href="Type.html">Type</a><li>B : <a href="Type.html">Type</a></ul>
+<p>
+This package provides operations which all take as arguments vectors of elements of some type <code>A</code> and functions from <code>A</code> to another of type <code>B</code>. The operations all iterate over their vector argument and either return a value of type <code>B</code> or a vector over <code>B</code>.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(Union(B, "failed"), A), <a href="Vector.html">Vector</a>(A)) -&gt Union(<a href="Vector.html">Vector</a>(B), "failed")</dt><dd><p>
+<code>map(f, v)</code> applies the function <code>f</code> to every element of the vector <code>v</code> producing a new vector containing the values or <code>"failed"</code>.</p>
+</dd></dl>
+<dl><dt>map : (Mapping(B, A), <a href="Vector.html">Vector</a>(A)) -&gt <a href="Vector.html">Vector</a>(B)</dt><dd><p>
+<code>map(f, v)</code> applies the function <code>f</code> to every element of the vector <code>v</code> producing a new vector containing the values.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(B, A, B), <a href="Vector.html">Vector</a>(A), B) -&gt B</dt><dd><p>
+<code>reduce(func, vec, ident)</code> combines the elements in <code>vec</code> using the binary function <code>func</code>. Argument ident is returned if <code>vec</code> is empty.</p>
+</dd></dl>
+<a name="f_scan"></a><dl><dt>scan : (Mapping(B, A, B), <a href="Vector.html">Vector</a>(A), B) -&gt <a href="Vector.html">Vector</a>(B)</dt><dd><p>
+<code>scan(func, vec, ident)</code> creates a new vector whose elements are the result of applying reduce to the binary function <code>func</code>, increasing initial subsequences of the vector <code>vec</code>, and the element ident.</p>
+</dd></dl>
+</body>
+</html>

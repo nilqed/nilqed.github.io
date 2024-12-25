@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Reference</title>
+</head>
+<body>
+<h1>Reference(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/boolean.spad#L1">boolean.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/boolean.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+Reference is for making a changeable instance of something.</p>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>a=b</code> tests if <code>a</code> and <code>b</code> are the same pointer/reference.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_deref"></a><dl><dt>deref : % -&gt S</dt><dd><p>
+<code>deref(n)</code> is equivalent to <code>elt(n)</code>.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : % -&gt S</dt><dd><p>
+<code>elt(n)</code> returns the object <code>n</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_ref"></a><dl><dt>ref : S -&gt %</dt><dd><p>
+<code>ref(n)</code> creates a pointer (reference) to the object <code>n</code>.</p>
+</dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, S) -&gt S</dt><dd><p>
+<code>setelt!(n, m)</code> changes the value of the object <code>n</code> to <code>m</code>.</p>
+</dd></dl>
+<a name="f_setref"></a><dl><dt>setref : (%, S) -&gt S</dt><dd><p>
+<code>setref(n, m)</code> same as <code>setelt!(n, m)</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LyndonWord</title>
+</head>
+<body>
+<h1>LyndonWord(VarSet)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L141">xlpoly.spad line 141</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L141">[edit on github]</a></p>
+<ul>
+<li>VarSet : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+Lyndon words over arbitrary (ordered) symbols: see Free Lie Algebras by <code>C</code>. Reutenauer (Oxford science publications). A Lyndon word is a word which is smaller than any of its right factors <code>w</code>.<code>r</code>.<code>t</code>. the pure lexicographical ordering. If <code>a</code> and <code>b</code> are two Lyndon words such that <code>a &lt; b</code> holds <code>w</code>.<code>r</code>.<code>t</code> lexicographical ordering then <code>a*b</code> is a Lyndon word. Parenthesized Lyndon words can be generated from symbols by using the following rule: <code>[[a, b], c]</code> is a Lyndon word iff <code>a*b &lt; c &lt;= b</code> holds. Lyndon words are internally represented by binary trees using the FreeMagma domain constructor. Two ordering are provided: lexicographic and length-lexicographic.  Author : Michel Petitot (petitot@lifl.<code>fr</code>).</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_LyndonWordsList"></a><dl><dt>LyndonWordsList : (<a href="List.html">List</a>(VarSet), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>LyndonWordsList(vl, n)</code> returns the list of Lyndon words over the alphabet <code>vl</code>, up to order <code>n</code>.</p>
+</dd></dl>
+<a name="f_LyndonWordsList1"></a><dl><dt>LyndonWordsList1 : (<a href="List.html">List</a>(VarSet), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="OneDimensionalArray.html">OneDimensionalArray</a>(<a href="List.html">List</a>(%))</dt><dd><p>
+<code>LyndonWordsList1(vl, n)</code> returns an array of lists of Lyndon words over the alphabet <code>vl</code>, up to order <code>n</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : VarSet -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(VarSet)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="FreeMagma.html">FreeMagma</a>(VarSet)</dt><dd><p>
+<code>coerce(x)</code> returns the element of FreeMagma(VarSet) corresponding to <code>x</code>.</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="FreeMonoid.html">FreeMonoid</a>(VarSet)</dt><dd><p>
+<code>coerce(x)</code> returns the element of FreeMonoid(VarSet) corresponding to <code>x</code>.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : <a href="FreeMonoid.html">FreeMonoid</a>(VarSet) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>factor(x)</code> returns the decreasing factorization into Lyndon words.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_left"></a><dl><dt>left : % -&gt %</dt><dd><p>
+<code>left(x)</code> returns left subtree of <code>x</code> or error if <span class="spadop">retractable?</span>(<code>x</code>) is <code>true</code>.</p>
+</dd></dl>
+<a name="f_length"></a><dl><dt>length : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>length(x)</code> returns the number of entries in <code>x</code>.</p>
+</dd></dl>
+<a name="f_lexico"></a><dl><dt>lexico : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lexico(x, y)</code> returns <code>true</code> iff <code>x</code> is smaller than <code>y</code> <code>w</code>.<code>r</code>.<code>t</code>. the lexicographical ordering induced by <code>VarSet</code>.</p>
+</dd></dl>
+<a name="f_lyndon"></a><dl><dt>lyndon : <a href="FreeMonoid.html">FreeMonoid</a>(VarSet) -&gt %</dt><dd><p>
+<code>lyndon(w)</code> convert <code>w</code> into a Lyndon word, error if <code>w</code> is not a Lyndon word.</p>
+</dd></dl>
+<a name="f_lyndon_63"></a><dl><dt>lyndon? : <a href="FreeMonoid.html">FreeMonoid</a>(VarSet) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lyndon?(w)</code> test if <code>w</code> is a Lyndon word.</p>
+</dd></dl>
+<a name="f_lyndonIfCan"></a><dl><dt>lyndonIfCan : <a href="FreeMonoid.html">FreeMonoid</a>(VarSet) -&gt Union(%, "failed")</dt><dd><p>
+<code>lyndonIfCan(w)</code> convert <code>w</code> into a Lyndon word.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt VarSet</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(VarSet)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(VarSet, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(VarSet)</dd></dl>
+<a name="f_retractable_63"></a><dl><dt>retractable? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>retractable?(x)</code> tests if <code>x</code> is a tree with only one entry.</p>
+</dd></dl>
+<a name="f_right"></a><dl><dt>right : % -&gt %</dt><dd><p>
+<code>right(x)</code> returns right subtree of <code>x</code> or error if <span class="spadop">retractable?</span>(<code>x</code>) is <code>true</code>.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_varList"></a><dl><dt>varList : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>varList(x)</code> returns the list of distinct entries of <code>x</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(VarSet)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(VarSet)
+</body>
+</html>

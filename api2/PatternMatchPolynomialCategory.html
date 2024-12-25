@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchPolynomialCategory</title>
+</head>
+<body>
+<h1>PatternMatchPolynomialCategory(S, E, V, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L725">patmatch1.spad line 725</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L725">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>R : Join(<a href="Ring.html">Ring</a>, <a href="Comparable.html">Comparable</a>, <a href="PatternMatchable.html">PatternMatchable</a>(S))<li>P : Join(<a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V), <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(S)))</ul>
+<p>
+This package provides pattern matching functions on polynomials.</p>
+<a name="f_patternMatch"></a><dl><dt>patternMatch : (P, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P) if V has <a href="PatternMatchable.html">PatternMatchable</a>(S)</dt><dd><p>
+<code>patternMatch(p, pat, res)</code> matches the pattern <code>pat</code> to the polynomial <code>p</code>; res contains the variables of <code>pat</code> which are already matched and their matches.</p>
+</dd></dl>
+<dl><dt>patternMatch : (P, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P), Mapping(<a href="PatternMatchResult.html">PatternMatchResult</a>(S, P), V, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P))) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P)</dt><dd><p>
+<code>patternMatch(p, pat, res, vmatch)</code> matches the pattern <code>pat</code> to the polynomial <code>p</code>. <code>res</code> contains the variables of <code>pat</code> which are already matched and their matches; vmatch is the matching function to use on the variables.</p>
+</dd></dl>
+</body>
+</html>

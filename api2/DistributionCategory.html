@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DistributionCategory</title>
+</head>
+<body>
+<h1>DistributionCategory(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/distro.spad#L595">distro.spad line 595</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/distro.spad#L595">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+Category of distributions formally given by moments.</p>
+<a name="f_0"></a><dl><dt>0 : () -&gt %</dt><dd><p>
+<code>0</code> is the Dirac distribution</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd><p>
+<code>x^k</code> constructs the distribution of the <code>k</code>th power of the random variable with distribution <code>X</code> by picking every <code>k</code>-th moment.</p>
+</dd></dl>
+<a name="f_booleanConvolution"></a><dl><dt>booleanConvolution : (%, %) -&gt %</dt><dd><p>
+<code>booleanConvolution(x, y)</code> returns the boolean convolution of the distributions <code>x</code> and <code>y</code></p>
+</dd></dl>
+<a name="f_booleanCumulant"></a><dl><dt>booleanCumulant : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt R</dt><dd><p>
+<code>booleanCumulant(x, n)</code> returns the <code>n</code>-th boolean cumulant of the distribution <code>x</code></p>
+</dd></dl>
+<a name="f_booleanCumulants"></a><dl><dt>booleanCumulants : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>booleanCumulants(x)</code> returns the sequence of boolean cumulants of the distribution <code>x</code>.</p>
+</dd></dl>
+<a name="f_classicalConvolution"></a><dl><dt>classicalConvolution : (%, %) -&gt %</dt><dd><p>
+<code>classicalConvolution(x, y)</code> returns the classical convolution of the distributions <code>x</code> and <code>y</code></p>
+</dd></dl>
+<a name="f_classicalCumulant"></a><dl><dt>classicalCumulant : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt R</dt><dd><p>
+<code>classicalCumulant(x, n)</code> returns the <code>n</code>-th classical cumulant of the distribution <code>x</code></p>
+</dd></dl>
+<a name="f_classicalCumulants"></a><dl><dt>classicalCumulants : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>classicalCumulants(x)</code> returns sequence of classical cumulants of the distribution <code>x</code></p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_freeConvolution"></a><dl><dt>freeConvolution : (%, %) -&gt %</dt><dd><p>
+<code>freeConvolution(x, y)</code> returns the free convolution of the distributions <code>x</code> and <code>y</code></p>
+</dd></dl>
+<a name="f_freeCumulant"></a><dl><dt>freeCumulant : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt R</dt><dd><p>
+<code>freeCumulant(x, n)</code> returns the <code>n</code>-th free cumulant of the distribution <code>x</code></p>
+</dd></dl>
+<a name="f_freeCumulants"></a><dl><dt>freeCumulants : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>freeCumulants(x)</code> returns the sequence of free cumulants of the distribution <code>x</code>.</p>
+</dd></dl>
+<a name="f_hankelDeterminants"></a><dl><dt>hankelDeterminants : % -&gt <a href="Stream.html">Stream</a>(R)</dt><dd><p>
+<code>hankelDeterminants(x)</code> returns the stream of hankel determinants of the distribution <code>x</code>.</p>
+</dd></dl>
+<a name="f_jacobiParameters"></a><dl><dt>jacobiParameters : % -&gt Record(an : <a href="Stream.html">Stream</a>(R), bn : <a href="Stream.html">Stream</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>jacobiParameters(x)</code> returns the pair of streams of Jacobi parameters of the distribution <code>x</code>.</p>
+</dd></dl>
+<dl><dt>jacobiParameters : % -&gt Record(an : <a href="Stream.html">Stream</a>(<a href="Fraction.html">Fraction</a>(R)), bn : <a href="Stream.html">Stream</a>(<a href="Fraction.html">Fraction</a>(R))) if R has <a href="IntegralDomain.html">IntegralDomain</a> and R hasn't <a href="Field.html">Field</a></dt><dd><p>
+<code>jacobiParameters(x)</code> returns the pair of streams of Jacobi parameters of the distribution <code>x</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_moment"></a><dl><dt>moment : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>moment(x, n)</code> returns the <code>n</code>-th moment of the distribution <code>x</code></p>
+</dd></dl>
+<a name="f_moments"></a><dl><dt>moments : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>moments(x)</code> returns the sequence of moments of the distribution <code>x</code></p>
+</dd></dl>
+<a name="f_monotoneConvolution"></a><dl><dt>monotoneConvolution : (%, %) -&gt %</dt><dd><p>
+<code>monotoneConvolution(x, y)</code> returns the monotone convolution of the distributions <code>x</code> and <code>y</code></p>
+</dd></dl>
+<a name="f_monotoneCumulants"></a><dl><dt>monotoneCumulants : % -&gt <a href="Sequence.html">Sequence</a>(R) if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>monotoneCumulants(x)</code> returns the sequence of monotone cumulants of the distribution <code>x</code>.</p>
+</dd></dl>
+<a name="f_orthogonalConvolution"></a><dl><dt>orthogonalConvolution : (%, %) -&gt %</dt><dd><p>
+<code>orthogonalConvolution(x, y)</code> returns the orthogonal convolution of the distributions <code>x</code> and <code>y</code></p>
+</dd></dl>
+<a name="f_orthogonalPolynomials"></a><dl><dt>orthogonalPolynomials : % -&gt <a href="Stream.html">Stream</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>orthogonalPolynomials(x)</code> returns the stream of orthogonal polynomials.</p>
+</dd></dl>
+<dl><dt>orthogonalPolynomials : % -&gt <a href="Stream.html">Stream</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(R))) if R has <a href="IntegralDomain.html">IntegralDomain</a> and R hasn't <a href="Field.html">Field</a></dt><dd><p>
+<code>orthogonalPolynomials(x)</code> returns the stream of orthogonal polynomials.</p>
+</dd></dl>
+<a name="f_subordinationConvolution"></a><dl><dt>subordinationConvolution : (%, %) -&gt %</dt><dd><p>
+<code>subordinationConvolution(x, y)</code> returns the subordination convolution of the distributions <code>x</code> and <code>y</code></p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

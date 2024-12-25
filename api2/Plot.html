@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Plot</title>
+</head>
+<body>
+<h1>Plot</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/plot.spad#L1">plot.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/plot.spad#L1">[edit on github]</a></p>
+<p>
+The Plot domain supports plotting of functions defined over a real number system. A real number system is a model for the real numbers and as such may be an approximation. For example floating point numbers and infinite continued fractions. The facilities at this point are limited to 2-dimensional plots or either a single function or a parametric function.</p>
+<a name="f_adaptive_63"></a><dl><dt>adaptive? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>adaptive?()</code> determines whether plotting be done adaptively</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_debug"></a><dl><dt>debug : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>debug(true)</code> turns debug mode on <code>debug(false)</code> turns debug mode off</p>
+</dd></dl>
+<a name="f_listBranches"></a><dl><dt><a href="PlottablePlaneCurveCategory.html#f_listBranches">listBranches</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)))</dt><dd> from <a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a></dd></dl>
+<a name="f_maxPoints"></a><dl><dt>maxPoints : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>maxPoints()</code> returns the maximum number of points in a plot</p>
+</dd></dl>
+<a name="f_minPoints"></a><dl><dt>minPoints : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>minPoints()</code> returns the minimum number of points in a plot</p>
+</dd></dl>
+<a name="f_numFunEvals"></a><dl><dt>numFunEvals : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>numFunEvals()</code> returns the number of points computed</p>
+</dd></dl>
+<a name="f_parametric_63"></a><dl><dt>parametric? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>parametric? determines</code> whether it is a parametric plot?</p>
+</dd></dl>
+<a name="f_plot"></a><dl><dt>plot : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(x, r)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>plot : (<a href="List.html">List</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot([f1, ..., fm], a..b)</code> plots the functions <code>y = f1(x)</code>, ..., <code>y = fm(x)</code> on the interval <code>a..b</code>.</p>
+</dd></dl>
+<dl><dt>plot : (<a href="List.html">List</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot([f1, ..., fm], a..b, c..d)</code> plots the functions <code>y = f1(x)</code>, ..., <code>y = fm(x)</code> on the interval <code>a..b</code>; <code>y</code>-range of <code>[c, d]</code> is noted in Plot object.</p>
+</dd></dl>
+<dl><dt>plot : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(f, g, a..b)</code> plots the parametric curve <code>x = f(t)</code>, <code>y = g(t)</code> as <code>t</code> ranges over the interval <code>[a, b]</code>.</p>
+</dd></dl>
+<dl><dt>plot : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(f, g, a..b, c..d, e..f)</code> plots the parametric curve <code>x = f(t)</code>, <code>y = g(t)</code> as <code>t</code> ranges over the interval <code>[a, b]</code>; <code>x</code>-range of <code>[c, d]</code> and <code>y</code>-range of <code>[e, f]</code> are noted in Plot object.</p>
+</dd></dl>
+<dl><dt>plot : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(f, a..b)</code> plots the function <code>f(x)</code> on the interval <code>[a, b]</code>.</p>
+</dd></dl>
+<dl><dt>plot : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plot(f, a..b, c..d)</code> plots the function <code>f(x)</code> on the interval <code>[a, b]</code>; <code>y</code>-range of <code>[c, d]</code> is noted in Plot object.</p>
+</dd></dl>
+<a name="f_plotPolar"></a><dl><dt>plotPolar : Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>plotPolar(f)</code> plots the polar curve <code>r = f(theta)</code> as theta ranges over the interval <code>[0, 2*%<code>pi</code>]</code>; this is the same as the parametric curve <code>x = f(t) * cos(t)</code>, <code>y = f(t) * sin(t)</code>.</p>
+</dd></dl>
+<dl><dt>plotPolar : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>plotPolar(f, a..b)</code> plots the polar curve <code>r = f(theta)</code> as theta ranges over the interval <code>[a, b]</code>; this is the same as the parametric curve <code>x = f(t) * cos(t)</code>, <code>y = f(t) * sin(t)</code>.</p>
+</dd></dl>
+<a name="f_pointPlot"></a><dl><dt>pointPlot : (Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>pointPlot(t +-&gt; (f(t), g(t)), a..b)</code> plots the parametric curve <code>x = f(t)</code>, <code>y = g(t)</code> as <code>t</code> ranges over the interval <code>[a, b]</code>.</p>
+</dd></dl>
+<dl><dt>pointPlot : (Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>pointPlot(t +-&gt; (f(t), g(t)), a..b, c..d, e..f)</code> plots the parametric curve <code>x = f(t)</code>, <code>y = g(t)</code> as <code>t</code> ranges over the interval <code>[a, b]</code>; <code>x</code>-range of <code>[c, d]</code> and <code>y</code>-range of <code>[e, f]</code> are noted in Plot object.</p>
+</dd></dl>
+<a name="f_refine"></a><dl><dt>refine : % -&gt %</dt><dd><p>
+<code>refine(p)</code> performs a refinement on the plot <code>p</code></p>
+</dd></dl>
+<dl><dt>refine : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>refine(x, r)</code> is undocumented</p>
+</dd></dl>
+<a name="f_screenResolution"></a><dl><dt>screenResolution : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>screenResolution()</code> returns the screen resolution</p>
+</dd></dl>
+<a name="f_setAdaptive"></a><dl><dt>setAdaptive : <a href="Boolean.html">Boolean</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>setAdaptive(true)</code> turns adaptive plotting on <code>setAdaptive(false)</code> turns adaptive plotting off</p>
+</dd></dl>
+<a name="f_setMaxPoints"></a><dl><dt>setMaxPoints : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>setMaxPoints(i)</code> sets the maximum number of points in a plot to <code>i</code></p>
+</dd></dl>
+<a name="f_setMinPoints"></a><dl><dt>setMinPoints : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>setMinPoints(i)</code> sets the minimum number of points in a plot to <code>i</code></p>
+</dd></dl>
+<a name="f_setScreenResolution"></a><dl><dt>setScreenResolution : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>setScreenResolution(i)</code> sets the screen resolution to <code>i</code></p>
+</dd></dl>
+<a name="f_tRange"></a><dl><dt>tRange : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>tRange(p)</code> returns the range of the parameter in a parametric plot <code>p</code></p>
+</dd></dl>
+<a name="f_xRange"></a><dl><dt><a href="PlottablePlaneCurveCategory.html#f_xRange">xRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a></dd></dl>
+<a name="f_yRange"></a><dl><dt><a href="PlottablePlaneCurveCategory.html#f_yRange">yRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a></dd></dl>
+<a name="f_zoom"></a><dl><dt>zoom : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>zoom(x, r)</code> is undocumented</p>
+</dd></dl>
+<dl><dt>zoom : (%, <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>zoom(x, r, s)</code> is undocumented</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a>
+</body>
+</html>

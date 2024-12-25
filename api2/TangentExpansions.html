@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TangentExpansions</title>
+</head>
+<body>
+<h1>TangentExpansions(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/efstruc.spad#L28">efstruc.spad line 28</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/efstruc.spad#L28">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Field.html">Field</a></ul>
+<p>
+Expands tangents of sums and scalar products.</p>
+<a name="f_tanAn"></a><dl><dt>tanAn : (R, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>tanAn(a, n)</code> returns <code>P(x)</code> such that if <code>a = tan(u)</code> then <code>P(tan(u/n)) = 0</code>.</p>
+</dd></dl>
+<a name="f_tanNa"></a><dl><dt>tanNa : (R, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>tanNa(a, n)</code> returns <code>f(a)</code> such that if <code>a = tan(u)</code> then <code>f(a) = tan(n * u)</code>.</p>
+</dd></dl>
+<a name="f_tanSum"></a><dl><dt>tanSum : <a href="List.html">List</a>(R) -&gt R</dt><dd><p>
+<code>tanSum([a1, ..., an])</code> returns <code>f(a1, ..., an)</code> such that if <code><code>ai</code> = tan(<code>ui</code>)</code> then <code>f(a1, ..., an) = tan(u1 + ... + un)</code>.</p>
+</dd></dl>
+</body>
+</html>

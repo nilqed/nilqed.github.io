@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Equation</title>
+</head>
+<body>
+<h1>Equation(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/equation1.spad#L48">equation1.spad line 48</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/equation1.spad#L48">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+Equations as mathematical objects. All properties of the basis domain, e.g. being an abelian group are carried over the equation domain, by performing the structural operations on the left and on the right hand side.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt % if S has <a href="SemiGroup.html">SemiGroup</a></dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt>* : (%, S) -&gt % if S has <a href="SemiGroup.html">SemiGroup</a></dt><dd><p>
+<code>eqn*x</code> produces a new equation by multiplying both sides of equation eqn by <code>x</code>.</p>
+</dd></dl>
+<dl><dt>* : (S, %) -&gt % if S has <a href="SemiGroup.html">SemiGroup</a></dt><dd><p>
+<code>x*eqn</code> produces a new equation by multiplying both sides of equation eqn by <code>x</code>.</p>
+</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<dl><dt>+ : (%, S) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd><p>
+<code>eqn+x</code> produces a new equation by adding <code>x</code> to both sides of equation eqn.</p>
+</dd></dl>
+<dl><dt>+ : (S, %) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd><p>
+<code>x+eqn</code> produces a new equation by adding <code>x</code> to both sides of equation eqn.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt>- : (%, S) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>eqn-x</code> produces a new equation by subtracting <code>x</code> from both sides of equation eqn.</p>
+</dd></dl>
+<dl><dt>- : (S, %) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>x-eqn</code> produces a new equation by subtracting both sides of equation eqn from <code>x</code>.</p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (%, %) -&gt % if S has <a href="Group.html">Group</a> or S has <a href="Field.html">Field</a></dt><dd><p>
+<code>e1/e2</code> produces a new equation by dividing the left and right hand sides of equations <code>e1</code> and <code>e2</code>.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt % if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt>= : (S, S) -&gt %</dt><dd><p>
+<code>a=b</code> creates an equation.</p>
+</dd></dl>
+<dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="Group.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if S has <a href="Group.html">Group</a></dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if S has <a href="SemiGroup.html">SemiGroup</a></dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="Ring.html">Ring</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt % if S has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt % if S has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if S has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt % if S has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="Boolean.html">Boolean</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="Group.html#f_commutator">commutator</a> : (%, %) -&gt % if S has <a href="Ring.html">Ring</a> or S has <a href="Group.html">Group</a></dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="Group.html#f_conjugate">conjugate</a> : (%, %) -&gt % if S has <a href="Group.html">Group</a></dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if S has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_equation"></a><dl><dt>equation : (S, S) -&gt %</dt><dd><p>
+<code>equation(a, b)</code> creates an equation.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (%, %) -&gt % if S has <a href="Evalable.html">Evalable</a>(S) and S has <a href="SetCategory.html">SetCategory</a></dt><dd><p>
+<code>eval(eqn, x=f)</code> replaces <code>x</code> by <code>f</code> in equation <code>eqn</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(%)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S) and S has <a href="SetCategory.html">SetCategory</a></dt><dd><p>
+<code>eval(eqn, [x1=v1, ... xn=vn])</code> replaces <code>xi</code> by <code>vi</code> in equation <code>eqn</code>.</p>
+</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(S)) -&gt % if S has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, S)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, S)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, S) -&gt % if S has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, S)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, S)</dd></dl>
+<a name="f_factorAndSplit"></a><dl><dt>factorAndSplit : % -&gt <a href="List.html">List</a>(%) if S has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>factorAndSplit(eq)</code> make the right hand side 0 and factors the new left hand side. Each factor is equated to 0 and put into the resulting list without repetitions.</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt>inv : % -&gt % if S has <a href="Group.html">Group</a> or S has <a href="Field.html">Field</a></dt><dd><p>
+<code>inv(x)</code> returns the multiplicative inverse of <code>x</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftOne"></a><dl><dt>leftOne : % -&gt Union(%, "failed") if S has <a href="Monoid.html">Monoid</a></dt><dd><p>
+<code>leftOne(eq)</code> divides by the left hand side, if possible.</p>
+</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if S has <a href="SemiGroup.html">SemiGroup</a></dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed") if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_leftZero"></a><dl><dt>leftZero : % -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>leftZero(eq)</code> subtracts the left hand side.</p>
+</dd></dl>
+<a name="f_lhs"></a><dl><dt>lhs : % -&gt S</dt><dd><p>
+<code>lhs(eqn)</code> returns the left hand side of equation <code>eqn</code>.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, S), %) -&gt %</dt><dd><p>
+<code>map(f, eqn)</code> constructs a new equation by applying <code>f</code> to both sides of eqn.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a> if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed") if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rhs"></a><dl><dt>rhs : % -&gt S</dt><dd><p>
+<code>rhs(eqn)</code> returns the right hand side of equation <code>eqn</code>.</p>
+</dd></dl>
+<a name="f_rightOne"></a><dl><dt>rightOne : % -&gt Union(%, "failed") if S has <a href="Monoid.html">Monoid</a></dt><dd><p>
+<code>rightOne(eq)</code> divides by the right hand side, if possible.</p>
+</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if S has <a href="SemiGroup.html">SemiGroup</a></dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed") if S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rightZero"></a><dl><dt>rightZero : % -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd><p>
+<code>rightZero(eq)</code> subtracts the right hand side.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a> or S has <a href="Monoid.html">Monoid</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_subst"></a><dl><dt>subst : (%, %) -&gt % if S has <a href="ExpressionSpace.html">ExpressionSpace</a></dt><dd><p>
+<code>subst(eq1, eq2)</code> substitutes <code>eq2</code> into both sides of <code>eq1</code> the <code>lhs</code> of <code>eq2</code> should be a kernel</p>
+</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed") if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_swap"></a><dl><dt>swap : % -&gt %</dt><dd><p>
+<code>swap(eq)</code> interchanges left and right hand side of equation <code>eq</code>.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a> if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="LeftModule.html">LeftModule</a>(S)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="Module.html">Module</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="BiModule.html">BiModule</a>(S, S)
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="Boolean.html">Boolean</a>)
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="RightModule.html">RightModule</a>(S)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, S)
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="Group.html">Group</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

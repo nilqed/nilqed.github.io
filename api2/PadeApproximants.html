@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PadeApproximants</title>
+</head>
+<body>
+<h1>PadeApproximants(R, PS, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pade.spad#L48">pade.spad line 48</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pade.spad#L48">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Field.html">Field</a><li>PS : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(R)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+This package computes reliable Pade approximants using a generalized Viskovatov continued fraction algorithm.</p>
+<a name="f_pade"></a><dl><dt>pade : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PS, PS) -&gt Union(<a href="Fraction.html">Fraction</a>(UP), "failed")</dt><dd><p>
+<code>pade(nd, dd, ns, ds)</code> computes the approximant as a quotient of polynomials (if it exists) for arguments <code>nd</code> (numerator degree of approximant), <code>dd</code> (denominator degree of approximant), <code>ns</code> (numerator series of function), and <code>ds</code> (denominator series of function).</p>
+</dd></dl>
+<a name="f_padecf"></a><dl><dt>padecf : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PS, PS) -&gt Union(<a href="ContinuedFraction.html">ContinuedFraction</a>(UP), "failed")</dt><dd><p>
+<code>padecf(nd, dd, ns, ds)</code> computes the approximant as a continued fraction of polynomials (if it exists) for arguments <code>nd</code> (numerator degree of approximant), <code>dd</code> (denominator degree of approximant), <code>ns</code> (numerator series of function), and <code>ds</code> (denominator series of function).</p>
+</dd></dl>
+</body>
+</html>

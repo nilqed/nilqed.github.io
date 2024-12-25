@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MultivariateLifting</title>
+</head>
+<body>
+<h1>MultivariateLifting(E, OV, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mlift.spad#L1">mlift.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mlift.spad#L1">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+This package provides the functions for the multivariate "lifting", using an algorithm of Paul Wang. This package will work for every euclidean domain <code>R</code> which has property <code>F</code>, i.e. there exists a factor operation in <code>R[x]</code>.</p>
+<a name="f_corrPoly"></a><dl><dt>corrPoly : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(R), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)), Mapping(Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), "failed"), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)), "failed")</dt><dd><p>
+<code>corrPoly(u, lv, lr, ln, lu, bsolv)</code> solves polynomial equation system u/f = sum(ai/lu(<code>i</code>)) where <code>f</code> is product of <code>lu</code>(<code>i</code>) and deg(<code>ai</code>) &lt; deg(<code>lu</code>(<code>i</code>)) using modular method. corrPoly returns "failed" if there are no solution. <code>lv</code> is list of variables, <code>lr</code> is list of corresponding evaluation points, bsolv is solver over <code>R</code> specialized for modular images of <code>lu</code>.</p>
+</dd></dl>
+<a name="f_lifting"></a><dl><dt>lifting : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), <a href="List.html">List</a>(R), <a href="List.html">List</a>(P), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), R) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)), "failed") if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd><p>
+<code>lifting(u, lv, lu, lr, lp, ln, r)</code> is lifting(<code>u</code>, <code>lv</code>, <code>lu</code>, <code>lr</code>, <code>lp</code>, <code>ln</code>, solv(<code>r</code>)) where solv(<code>r</code>) is solver using reduction modulo <code>r</code> and lifting. Memberes of <code>lu</code> must be relatively prime modulo <code>r</code></p>
+</dd></dl>
+<dl><dt>lifting : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), <a href="List.html">List</a>(R), <a href="List.html">List</a>(P), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), Mapping(Union(Mapping(Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), "failed"), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)), "failed"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)))) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)), "failed")</dt><dd><p>
+<code>lifting(u, lv, lu, lr, lp, ln, gen_solv)</code> lifts univariate factorization, returning recovered factors or "failed" in case of bad reduction. <code>u</code> is multivariate polynomial to factor, <code>lu</code> is list of univariate factors, <code>lv</code> is list of variables, <code>ln</code> is list of degrees corresponding to variables, <code>lr</code> is list of evaluation points, <code>lp</code> is list of leading coefficients of factors if known, empty otherwise, gen_solv delivers solver for polynomial equations</p>
+</dd></dl>
+</body>
+</html>

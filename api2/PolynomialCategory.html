@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialCategory</title>
+</head>
+<body>
+<h1>PolynomialCategory(R, E, VarSet)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/polycat.spad#L271">polycat.spad line 271</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/polycat.spad#L271">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>VarSet : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+The category for general multi-variate polynomials over a ring <code>R</code>, in variables from VarSet, with exponents from the OrderedAbelianMonoidSup. Here variables commute with the coefficients.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a> or % has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a> or % has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a> or % has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="AbelianMonoidRing.html#f__47">/</a> : (%, R) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, VarSet) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, VarSet, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(VarSet)) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_binomThmExpt"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_binomThmExpt">binomThmExpt</a> : (%, %, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if % has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> or R has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_coefficient">coefficient</a> : (%, VarSet, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_coefficient">coefficient</a> : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<dl><dt><a href="AbelianMonoidRing.html#f_coefficient">coefficient</a> : (%, E) -&gt R</dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_coefficients"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficients">coefficients</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(R)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : VarSet -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(VarSet)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) or R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt % if R has <a href="Ring.html">Ring</a> or R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conditionP"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_conditionP">conditionP</a> : <a href="Matrix.html">Matrix</a>(%) -&gt Union(<a href="Vector.html">Vector</a>(%), "failed") if % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> and R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : E, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : E, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_content"></a><dl><dt>content : (%, VarSet) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>content(p, v)</code> is the <code>gcd</code> of the coefficients of the polynomial <code>p</code> when <code>p</code> is viewed as a univariate polynomial with respect to the variable <code>v</code>. Thus, for polynomial 7*x^2*y + 14*x*y^2, the <code>gcd</code> of the coefficients with respect to <code>x</code> is 7*y.</p>
+</dd></dl>
+<dl><dt><a href="FiniteAbelianMonoidRing.html#f_content">content</a> : % -&gt R if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if VarSet has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>) and R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>) if VarSet has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>)) and R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>)) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>) if VarSet has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>)) and R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>)) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="AbelianMonoidRing.html#f_degree">degree</a> : % -&gt E</dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_degree">degree</a> : (%, <a href="List.html">List</a>(VarSet)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_degree">degree</a> : (%, VarSet) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, VarSet) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, VarSet, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(VarSet)) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)</dd></dl>
+<a name="f_discriminant"></a><dl><dt>discriminant : (%, VarSet) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>discriminant(p, v)</code> returns the disriminant of the polynomial <code>p</code> with respect to the variable <code>v</code>.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, %, %) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, VarSet, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(VarSet, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, VarSet, R) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(VarSet, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(%)) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(VarSet, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(R)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(VarSet, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<dl><dt><a href="FiniteAbelianMonoidRing.html#f_exquo">exquo</a> : (%, R) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_factor"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_factor">factor</a> : % -&gt <a href="Factored.html">Factored</a>(%) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_factorPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorPolynomial">factorPolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_factorSquareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorSquareFreePolynomial">factorSquareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_fmecg"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_fmecg">fmecg</a> : (%, E, R, %) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_ground"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_ground">ground</a> : % -&gt R</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_ground_63"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_ground_63">ground?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if VarSet has <a href="Hashable.html">Hashable</a> and R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if VarSet has <a href="Hashable.html">Hashable</a> and R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_isExpt"></a><dl><dt>isExpt : % -&gt Union(Record(var : VarSet, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>), "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd><p>
+<code>isExpt(p)</code> returns <code>[x, n]</code> if polynomial <code>p</code> has the form <code>x^n</code> and <code>n &gt; 0</code>.</p>
+</dd></dl>
+<a name="f_isPlus"></a><dl><dt>isPlus : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd><p>
+<code>isPlus(p)</code> returns <code>[m1, ..., mn]</code> if polynomial <code>p = m1 + ... + mn</code> and <code>n &gt;= 2</code> and each <code>mi</code> is a nonzero monomial.</p>
+</dd></dl>
+<a name="f_isTimes"></a><dl><dt>isTimes : % -&gt Union(<a href="List.html">List</a>(%), "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd><p>
+<code>isTimes(p)</code> returns <code>[a1, ..., an]</code> if polynomial <code>p = a1 ... an</code> and <code>n &gt;= 2</code>, and, for each <code>i</code>, <code>ai</code> is either a nontrivial constant in <code>R</code> or else of the form <code>x^e</code>, where <code>e &gt; 0</code> is an integer and <code>x</code> is a member of VarSet.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt R</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt E</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : E, c : R)</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_linearExtend"></a><dl><dt><a href="FreeModuleCategory.html#f_linearExtend">linearExtend</a> : (Mapping(R, E), %) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_listOfTerms">listOfTerms</a> : % -&gt <a href="List.html">List</a>(Record(k : E, c : R))</dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, E)</dd></dl>
+<a name="f_mainVariable"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_mainVariable">mainVariable</a> : % -&gt Union(VarSet, "failed")</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_mapExponents"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_mapExponents">mapExponents</a> : (Mapping(E, E), %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_minimumDegree"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_minimumDegree">minimumDegree</a> : % -&gt E</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<dl><dt>minimumDegree : (%, <a href="List.html">List</a>(VarSet)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>minimumDegree(p, lv)</code> gives the list of minimum degrees of the polynomial <code>p</code> with respect to each of the variables in the list <code>lv</code></p>
+</dd></dl>
+<dl><dt>minimumDegree : (%, VarSet) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>minimumDegree(p, v)</code> gives the minimum degree of polynomial <code>p</code> with respect to <code>v</code>, i.e. viewed a univariate polynomial in <code>v</code></p>
+</dd></dl>
+<a name="f_monicDivide"></a><dl><dt>monicDivide : (%, %, VarSet) -&gt Record(quotient : %, remainder : %) if R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>monicDivide(a, b, v)</code> divides the polynomial a by the polynomial <code>b</code>, with each viewed as a univariate polynomial in <code>v</code> returning both the quotient and remainder. Error: if <code>b</code> is not monic with respect to <code>v</code>.</p>
+</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomial">monomial</a> : (%, VarSet, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomial">monomial</a> : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (R, E) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_monomials"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomials">monomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_multivariate"></a><dl><dt>multivariate : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), VarSet) -&gt %</dt><dd><p>
+<code>multivariate(sup, v)</code> converts an anonymous univariable polynomial <code>sup</code> to a polynomial in the variable <code>v</code>.</p>
+</dd></dl>
+<dl><dt>multivariate : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), VarSet) -&gt %</dt><dd><p>
+<code>multivariate(sup, v)</code> converts an anonymous univariable polynomial <code>sup</code> to a polynomial in the variable <code>v</code>.</p>
+</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_numberOfMonomials">numberOfMonomials</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, E)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_patternMatch"></a><dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %) if VarSet has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>) and R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %) if VarSet has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>) and R has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a> or R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)</dd></dl>
+<a name="f_pomopo_33"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_pomopo_33">pomopo!</a> : (%, R, E, %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)</dd></dl>
+<a name="f_prime_63"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_prime_63">prime?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_primitiveMonomials"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_primitiveMonomials">primitiveMonomials</a> : % -&gt <a href="List.html">List</a>(%) if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_primitivePart"></a><dl><dt>primitivePart : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>primitivePart(p)</code> returns the unitCanonical associate of the polynomial <code>p</code> with its content divided out.</p>
+</dd></dl>
+<dl><dt>primitivePart : (%, VarSet) -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>primitivePart(p, v)</code> returns the unitCanonical associate of the polynomial <code>p</code> with its content with respect to the variable <code>v</code> divided out.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R) if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(R), vec : <a href="Vector.html">Vector</a>(R)) if R has <a href="Ring.html">Ring</a></dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>) and R has <a href="Ring.html">Ring</a></dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)</dd></dl>
+<a name="f_resultant"></a><dl><dt>resultant : (%, %, VarSet) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>resultant(p, q, v)</code> returns the resultant of the polynomials <code>p</code> and <code>q</code> with respect to the variable <code>v</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt VarSet if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(VarSet)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(VarSet, "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(VarSet)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_solveLinearPolynomialEquation"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_solveLinearPolynomialEquation">solveLinearPolynomialEquation</a> : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), "failed") if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_squareFree"></a><dl><dt>squareFree : % -&gt <a href="Factored.html">Factored</a>(%) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>squareFree(p)</code> returns the square free factorization of the polynomial <code>p</code>.</p>
+</dd></dl>
+<a name="f_squareFreePart"></a><dl><dt>squareFreePart : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>squareFreePart(p)</code> returns product of all the irreducible factors of polynomial <code>p</code> each taken with multiplicity one.</p>
+</dd></dl>
+<a name="f_squareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_squareFreePolynomial">squareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_support"></a><dl><dt><a href="FreeModuleCategory.html#f_support">support</a> : % -&gt <a href="List.html">List</a>(E)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)</dd></dl>
+<a name="f_totalDegree"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegree">totalDegree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegree">totalDegree</a> : (%, <a href="List.html">List</a>(VarSet)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_totalDegreeSorted"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegreeSorted">totalDegreeSorted</a> : (%, <a href="List.html">List</a>(VarSet)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_univariate"></a><dl><dt>univariate : (%, VarSet) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd><p>
+<code>univariate(p, v)</code> converts the multivariate polynomial <code>p</code> into a univariate polynomial in <code>v</code>, whose coefficients are still multivariate polynomials (in all the other variables).</p>
+</dd></dl>
+<dl><dt>univariate : % -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>univariate(p)</code> converts the multivariate polynomial <code>p</code>, which should actually involve only one variable, into a univariate polynomial in that variable, whose coefficients are in the ground ring. Error: if polynomial is genuinely multivariate</p>
+</dd></dl>
+<a name="f_variables"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_variables">variables</a> : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, E)
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(VarSet)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(R)
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(VarSet, R)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, E, VarSet)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(R)
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="Magma.html">Magma</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a>
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, E)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="Algebra.html">Algebra</a>(R)
+<p><a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, E)
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(VarSet, %)
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(%, %)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a>
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(VarSet)
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(R)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(VarSet)
+<p><a href="Module.html">Module</a>(%)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, E)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, E)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Evalable.html">Evalable</a>(%)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+</body>
+</html>

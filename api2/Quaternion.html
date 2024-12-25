@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Quaternion</title>
+</head>
+<body>
+<h1>Quaternion(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/quat.spad#L209">quat.spad line 209</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/quat.spad#L209">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+Quaternion implements Hamilton quaternions over a commutative ring.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="DifferentialRing.html#f_D">D</a> : % -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_D">D</a> : (%, Mapping(R, R)) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_D">D</a> : (%, Mapping(R, R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_D">D</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="DivisionRing.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_abs"></a><dl><dt><a href="QuaternionCategory.html#f_abs">abs</a> : % -&gt R if R has <a href="RealNumberSystem.html">RealNumberSystem</a></dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if R has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(R)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="Field.html">Field</a> or R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="QuaternionCategory.html#f_conjugate">conjugate</a> : % -&gt %</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if R has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : % -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_differentiate">differentiate</a> : (%, Mapping(R, R)) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_differentiate">differentiate</a> : (%, Mapping(R, R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(R)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, R) -&gt % if R has <a href="Eltable.html">Eltable</a>(R, R)</dt><dd> from <a href="Eltable.html">Eltable</a>(R, %)</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(R)) -&gt % if R has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, R) -&gt % if R has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_imagI"></a><dl><dt><a href="QuaternionCategory.html#f_imagI">imagI</a> : % -&gt R</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_imagJ"></a><dl><dt><a href="QuaternionCategory.html#f_imagJ">imagJ</a> : % -&gt R</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_imagK"></a><dl><dt><a href="QuaternionCategory.html#f_imagK">imagK</a> : % -&gt R</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_inv"></a><dl><dt><a href="DivisionRing.html#f_inv">inv</a> : % -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="FullyEvalableOver.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="FullyEvalableOver.html">FullyEvalableOver</a>(R)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_norm"></a><dl><dt><a href="QuaternionCategory.html#f_norm">norm</a> : % -&gt R</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)</dd></dl>
+<a name="f_quatern"></a><dl><dt><a href="QuaternionCategory.html#f_quatern">quatern</a> : (R, R, R, R) -&gt %</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_rational"></a><dl><dt><a href="QuaternionCategory.html#f_rational">rational</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_rational_63"></a><dl><dt><a href="QuaternionCategory.html#f_rational_63">rational?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_rationalIfCan"></a><dl><dt><a href="QuaternionCategory.html#f_rationalIfCan">rationalIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_real"></a><dl><dt><a href="QuaternionCategory.html#f_real">real</a> : % -&gt R</dt><dd> from <a href="QuaternionCategory.html">QuaternionCategory</a>(R)</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(R), vec : <a href="Vector.html">Vector</a>(R))</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="Algebra.html">Algebra</a>(R)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="QuaternionCategory.html">QuaternionCategory</a>(R)
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="DifferentialExtension.html">DifferentialExtension</a>(R)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(R)
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="FullyEvalableOver.html">FullyEvalableOver</a>(R)
+<p><a href="DivisionRing.html">DivisionRing</a>
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="Eltable.html">Eltable</a>(R, %)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="DifferentialRing.html">DifferentialRing</a>
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(R)
+</body>
+</html>

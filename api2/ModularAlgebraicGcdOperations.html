@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularAlgebraicGcdOperations</title>
+</head>
+<body>
+<h1>ModularAlgebraicGcdOperations(MP, MPT, MD)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/amodgcd.spad#L23">amodgcd.spad line 23</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/amodgcd.spad#L23">[edit on github]</a></p>
+<ul>
+<li>MP : <a href="Type.html">Type</a><li>MPT : <a href="Type.html">Type</a><li>MD : <a href="Type.html">Type</a></ul>
+<p>
+This category specifies operations needed by ModularAlgebraicGcd package.Since we have multiple implementations we specify interface here and put implementations in separate packages.Most operations are done using special purpose abstract representation. Appropriate types are passed as parameters: <code>MPT</code> is type of modular polynomials in one variable with coefficients in some algebraic extension.<code>MD</code> is type of modulus. Final results are converted to packed representation, with coefficients (from prime field) stored in one array and exponents (in main variable and in auxiliary variables representing generators of algebrac extension) stored in parallel array.</p>
+<a name="f_MPtoMPT"></a><dl><dt>MPtoMPT : (MP, <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), MD) -&gt Union(MPT, "failed")</dt><dd><p>
+<code>MPtoMPT(p, s, ls, m)</code> converts <code>p</code> to packed representation.</p>
+</dd></dl>
+<a name="f_canonicalIfCan"></a><dl><dt>canonicalIfCan : (MPT, MD) -&gt Union(MPT, "failed")</dt><dd><p>
+<code>canonicalIfCan(x, m)</code> tries to divide <code>x</code> by its leading coefficient modulo <code>m</code>.</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : MPT -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>degree(x)</code> gives degree of <code>x</code>.</p>
+</dd></dl>
+<a name="f_pack_95exps"></a><dl><dt>pack_exps : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, MD) -&gt <a href="SortedExponentVector.html">SortedExponentVector</a></dt><dd><p>
+<code>pack_exps(d, s, m)</code> produces vector of exponents up to degree <code>d</code>. <code>s</code> is size (degree) of algebraic extension. Use together with <code>repack1</code>.</p>
+</dd></dl>
+<a name="f_pack_95modulus"></a><dl><dt>pack_modulus : (<a href="List.html">List</a>(MP), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Integer.html">Integer</a>) -&gt Union(MD, "failed")</dt><dd><p>
+<code>pack_modulus(lp, ls, p)</code> converts <code>lp</code>, <code>ls</code> and prime <code>p</code> which together describe algebraic extension to packed representation.</p>
+</dd></dl>
+<a name="f_pseudoRem"></a><dl><dt>pseudoRem : (MPT, MPT, MD) -&gt MPT</dt><dd><p>
+<code>pseudoRem(x, y, m)</code> computes pseudoremainder of <code>x</code> by <code>y</code> modulo <code>m</code>.</p>
+</dd></dl>
+<a name="f_repack1"></a><dl><dt>repack1 : (MPT, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, MD) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>repack1(x, a, d, m)</code> stores coefficients of <code>x</code> in a. <code>d</code> is degree of <code>x</code>. Corresponding exponents are given by pack_exps.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt>zero? : MPT -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zero?(x)</code> checks if <code>x</code> is zero.</p>
+</dd></dl>
+</body>
+</html>

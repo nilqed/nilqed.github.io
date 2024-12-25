@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TwoDimensionalArrayCategory</title>
+</head>
+<body>
+<h1>TwoDimensionalArrayCategory(R, Row, Col)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/array2.spad#L1">array2.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/array2.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Type.html">Type</a><li>Row : <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)<li>Col : <a href="IndexedAggregate.html">IndexedAggregate</a>(<a href="Integer.html">Integer</a>, R)</ul>
+<p>
+TwoDimensionalArrayCategory is a general array category which allows different representations and indexing schemes. Rows and columns may be extracted with rows returned as objects of type Row and columns returned as objects of type Col. The index of the 'first' row may be obtained by calling the function 'minRowIndex'. The index of the 'first' column may be obtained by calling the function 'minColIndex'. The index of the first element of a 'Row' is the same as the index of the first column in an array and vice versa.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_array2"></a><dl><dt>array2 : <a href="List.html">List</a>(<a href="List.html">List</a>(R)) -&gt %</dt><dd><p>
+<code>array2(ll)</code> constructs a 2-dimensional array, the inner list being the rows.</p>
+</dd></dl>
+<a name="f_blockConcat"></a><dl><dt>blockConcat : <a href="List.html">List</a>(<a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>blockConcat(ll)</code> concatenates arrays row and column wise, building a array from blocks. The order is row major as in <code>matrix</code>.</p>
+</dd></dl>
+<a name="f_blockSplit"></a><dl><dt>blockSplit : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(%))</dt><dd><p>
+<code>blockSplit(a, [n1,...,<code>ni</code>], [m1,...,<code>mi</code>])</code> splits a into multiple subarraus row and column wise, such that element at position <code>k</code>, <code>l</code> has <code>nk</code> rows and <code>ml</code> columns. Error: if number of rows of a is different than <code>n1</code> + ... + <code>ni</code> or number of columns of a is different than <code>m1</code> + ... + <code>mj</code></p>
+</dd></dl>
+<dl><dt>blockSplit : (%, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(%))</dt><dd><p>
+<code>blockSplit(a, n, m)</code> splits a into <code>n*m</code> subarrays of equal size row and column wise, dividing a into blocks. Error: if number of rows of a is not divisible by <code>n</code> or number of columns of a is not divisible by <code>m</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if R has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_colSlice"></a><dl><dt>colSlice : % -&gt <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>colSlice(m)</code> returns a segment <code>s</code> such that for <code>m</code> the access <code>m</code>(<code>i</code>, <code>s</code>) gives the <code>i</code>-th row.</p>
+</dd></dl>
+<a name="f_column"></a><dl><dt>column : (%, <a href="Integer.html">Integer</a>) -&gt Col</dt><dd><p>
+<code>column(m, j)</code> returns the <code>j</code>th column of <code>m</code> error check to determine if index is in proper ranges</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (R, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(x, row, colList)</code> returns an 1-by-<code>n</code> array consisting of elements of <code>x</code>, where <code>n = # colList</code>. If <code>colList = [j&lt;1&gt;, j&lt;2&gt;, ..., j&lt;n&gt;]</code>, then the <code>(k, l)</code>th entry of <code>elt(x, row, colList)</code> is <code>x(row, j&lt;l&gt;)</code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>elt(x, row, ls2)</code> is equivalent to <code>elt(x, row, l2)</code> where <code>l2</code> is obtained appending expansions of elements of <code>ls2</code>, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>elt(x, rowList, col)</code> returns an <code>m</code>-by-1 array consisting of elements of <code>x</code>, where <code>m = # rowList</code>. If <code>rowList = [i&lt;1&gt;, i&lt;2&gt;, ..., i&lt;m&gt;]</code>, then the <code>(k, l)</code>th entry of <code>elt(x, rowList, col)</code> is <code>x(i&lt;k&gt;, col)</code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(x, rowList, colList)</code> returns an <code>m</code>-by-<code>n</code> array consisting of elements of <code>x</code>, where <code>m = # rowList</code> and <code>n = # colList</code>. If <code>rowList = [i&lt;1&gt;, i&lt;2&gt;, ..., i&lt;m&gt;]</code> and <code>colList = [j&lt;1&gt;, j&lt;2&gt;, ..., j&lt;n&gt;]</code>, then the <code>(k, l)</code>th entry of <code>elt(x, rowList, colList)</code> is <code>x(i&lt;k&gt;, j&lt;l&gt;)</code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(x, rowList, s)</code> is equivalent to <code>elt(x, rowList, expand(s))</code> but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>elt(x, ls1, col)</code> is equivalent to <code>elt(x, l1, col)</code> where <code>l1</code> is obtained appending expansions of elements of <code>ls1</code>, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>elt(x, ls1, ls2)</code> is equivalent to <code>elt(x, l1, l2)</code> where <code>li</code> is obtained appending expansions of elements of lsi, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(x, ls1, s2)</code> is equivalent to <code>elt(x, l1, l2)</code> where <code>li</code> is obtained appending expansions of elements of lsi, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(x, s, colList)</code> is equivalent to <code>elt(x, expand(s), colList)</code> but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>elt(x, s1, ls2)</code> is equivalent to <code>elt(x, l1, l2)</code> where <code>li</code> is obtained appending expansions of elements of lsi, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd><p>
+<code>elt(x, s1, s2)</code> is equivalent to <code>elt(x, expand(s1), expand(s2))</code> but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>elt(m, i, j)</code> returns the element in the <code>i</code>th row and <code>j</code>th column of the array <code>m</code> error check to determine if indices are in proper ranges</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd><p>
+<code>elt(m, i, j, r)</code> returns the element in the <code>i</code>th row and <code>j</code>th column of the array <code>m</code>, if <code>m</code> has an <code>i</code>th row and a <code>j</code>th column, and returns <code>r</code> otherwise</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R) and R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R), %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_fill_33"></a><dl><dt>fill! : (%, R) -&gt %</dt><dd><p>
+<code>fill!(m, r)</code> fills <code>m</code> with <code>r</code><code>'s</code></p>
+</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_horizConcat"></a><dl><dt>horizConcat : (%, %) -&gt %</dt><dd><p>
+<code>horizConcat(x, y)</code> horizontally concatenates two arrays with an equal number of rows. The entries of <code>y</code> appear to the right of the entries of <code>x</code>. Error: if the arrays do not have the same number of rows.</p>
+</dd></dl>
+<dl><dt>horizConcat : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>horizConcat(l)</code> horizontally concatenates all members of <code>l</code> Error: if the arrays do not have the same number of rows.</p>
+</dd></dl>
+<a name="f_horizSplit"></a><dl><dt>horizSplit : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>horizSplit(a, [n1, n2, ..., <code>ni</code>])</code> splits a into arrays having <code>n1</code>, ..., <code>ni</code> columns. Error: if number of columns of a is different than <code>n1</code> + ... + <code>ni</code>.</p>
+</dd></dl>
+<dl><dt>horizSplit : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>horizSplit(a, n)</code> splits a into <code>n</code> arrays of equal size column wise. Error: if number of columns of a is not divisible by <code>n</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if R has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_listOfLists"></a><dl><dt>listOfLists : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(R))</dt><dd><p>
+<code>listOfLists(m)</code> returns the rows of the array <code>m</code> as a list of lists.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(R, R), %) -&gt %</dt><dd><p>
+<code>map(f, a)</code> returns <code>b</code>, where <code>b(i, j) = f(a(i, j))</code> for all <code>i, j</code></p>
+</dd></dl>
+<dl><dt>map : (Mapping(R, R, R), %, %) -&gt %</dt><dd><p>
+<code>map(f, a, b)</code> returns <code>c</code>, where <code>c(i, j) = f(a(i, j), b(i, j))</code> for all <code>i, j</code></p>
+</dd></dl>
+<dl><dt>map : (Mapping(R, R, R), %, %, R) -&gt %</dt><dd><p>
+<code>map(f, a, b, r)</code> returns <code>c</code>, where <code>c(i, j) = f(a(i, j), b(i, j))</code> when both <code>a(i, j)</code> and <code>b(i, j)</code> exist; else <code>c(i, j) = f(r, b(i, j))</code> when <code>a(i, j)</code> does not exist; else <code>c(i, j) = f(a(i, j), r)</code> when <code>b(i, j)</code> does not exist; otherwise <code>c(i, j) = f(r, r)</code>.</p>
+</dd></dl>
+<a name="f_map_33"></a><dl><dt>map! : (Mapping(R, R), %) -&gt %</dt><dd><p>
+<code>map!(f, a)</code> assign <code>a(i, j)</code> to <code>f(a(i, j))</code> for all <code>i, j</code></p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt R if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, R, R), %) -&gt R</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_maxColIndex"></a><dl><dt>maxColIndex : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>maxColIndex(m)</code> returns the index of the 'last' column of the array <code>m</code></p>
+</dd></dl>
+<a name="f_maxRowIndex"></a><dl><dt>maxRowIndex : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>maxRowIndex(m)</code> returns the index of the 'last' row of the array <code>m</code></p>
+</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (R, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt R if R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_minColIndex"></a><dl><dt>minColIndex : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>minColIndex(m)</code> returns the index of the 'first' column of the array <code>m</code></p>
+</dd></dl>
+<a name="f_minRowIndex"></a><dl><dt>minRowIndex : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>minRowIndex(m)</code> returns the index of the 'first' row of the array <code>m</code></p>
+</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_ncols"></a><dl><dt>ncols : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>ncols(m)</code> returns the number of columns in the array <code>m</code></p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>new(m, n, r)</code> is an <code>m</code>-by-<code>n</code> array all of whose entries are <code>r</code></p>
+</dd></dl>
+<a name="f_nrows"></a><dl><dt>nrows : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>nrows(m)</code> returns the number of rows in the array <code>m</code></p>
+</dd></dl>
+<a name="f_parts"></a><dl><dt>parts : % -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>parts(m)</code> returns a list of the elements of <code>m</code> in row major order</p>
+</dd></dl>
+<a name="f_qelt"></a><dl><dt>qelt : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt R</dt><dd><p>
+<code>qelt(m, i, j)</code> returns the element in the <code>i</code>th row and <code>j</code>th column of the array <code>m</code> NO error check to determine if indices are in proper ranges</p>
+</dd></dl>
+<a name="f_qnew"></a><dl><dt>qnew : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>qnew(m, n)</code> is is an <code>m</code>-by-<code>n</code> uninitilized array</p>
+</dd></dl>
+<a name="f_qsetelt_33"></a><dl><dt>qsetelt! : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd><p>
+<code>qsetelt!(m, i, j, r)</code> sets the element in the <code>i</code>th row and <code>j</code>th column of <code>m</code> to <code>r</code> NO error check to determine if indices are in proper ranges</p>
+</dd></dl>
+<a name="f_row"></a><dl><dt>row : (%, <a href="Integer.html">Integer</a>) -&gt Row</dt><dd><p>
+<code>row(m, i)</code> returns the <code>i</code>th row of <code>m</code> error check to determine if index is in proper ranges</p>
+</dd></dl>
+<a name="f_rowSlice"></a><dl><dt>rowSlice : % -&gt <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>rowSlice(m)</code> returns a segment <code>s</code> such that for <code>m</code> the access <code>m</code>(<code>s</code>, <code>j</code>) gives the <code>j</code>-th column.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_setColumn_33"></a><dl><dt>setColumn! : (%, <a href="Integer.html">Integer</a>, Col) -&gt %</dt><dd><p>
+<code>setColumn!(m, j, v)</code> sets to <code>j</code>th column of <code>m</code> to <code>v</code></p>
+</dd></dl>
+<a name="f_setRow_33"></a><dl><dt>setRow! : (%, <a href="Integer.html">Integer</a>, Row) -&gt %</dt><dd><p>
+<code>setRow!(m, i, v)</code> sets to <code>i</code>th row of <code>m</code> to <code>v</code></p>
+</dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>setelt!(x, row, colList)</code> assigns to an 1-by-<code>n</code> selection of the array, where <code>n = # colList</code>.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), %) -&gt %</dt><dd><p>
+<code>setelt!(x, row, ls2)</code> is equivalent to <code>setelt!(x, row, l2)</code> where <code>l2</code> is obtained appending expansions of elements of <code>ls2</code>, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>, %) -&gt %</dt><dd><p>
+<code>setelt!(x, rowList, col)</code> assigns to an <code>m</code>-by-1 selection of the array, where <code>m = # rowList</code>.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>setelt!(x, rowList, colList, y)</code> destructively alters the array <code>x</code>. If <code>y</code> is <code>m</code>-by-<code>n</code>, <code>rowList = [i&lt;1&gt;, i&lt;2&gt;, ..., i&lt;m&gt;]</code> and <code>colList = [j&lt;1&gt;, j&lt;2&gt;, ..., j&lt;n&gt;]</code>, then <code>x(i&lt;k&gt;, j&lt;l&gt;)</code> is set to <code>y(k, l)</code> for <code>k = 1, ..., m</code> and <code>l = 1, ..., n</code>.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>setelt!(x, l1, s2)</code> is equivalent to <code>setelt!(x, l1, expand(s2))</code> but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), <a href="Integer.html">Integer</a>, %) -&gt %</dt><dd><p>
+<code>setelt!(x, ls1, col)</code> is equivalent to <code>setelt!(x, l1, col)</code> where <code>l1</code> is obtained appending expansions of elements of <code>ls1</code>, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), %) -&gt %</dt><dd><p>
+<code>setelt!(x, ls1, ls1)</code> is equivalent to <code>setelt!(x, l1, l2)</code> where <code>li</code> is obtained appending expansions of elements of lsi, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>setelt!(x, ls1, s2)</code> is equivalent to <code>setelt!(x, l1, l2)</code> where <code>li</code> is obtained appending expansions of elements of lsi, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>setelt!(x, s1, l2)</code> is equivalent to <code>setelt!(x, expand(s1), l2)</code> but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>)), %) -&gt %</dt><dd><p>
+<code>setelt!(x, s1, ls2)</code> is equivalent to <code>setelt!(x, l1, l2)</code> where <code>li</code> is obtained appending expansions of elements of lsi, but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), <a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd><p>
+<code>setelt!(x, s1, s2)</code> is equivalent to <code>setelt!(x, expand(s1), expand(s2))</code> but should be more convenient and more efficient.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, R) -&gt R</dt><dd><p>
+<code>setelt!(m, i, j, r)</code> sets the element in the <code>i</code>th row and <code>j</code>th column of <code>m</code> to <code>r</code> error check to determine if indices are in proper ranges</p>
+</dd></dl>
+<a name="f_setsubMatrix_33"></a><dl><dt>setsubMatrix! : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, %) -&gt %</dt><dd><p>
+<code>setsubMatrix(x, i1, j1, y)</code> destructively alters the array <code>x</code>. Here <code>x(i, j)</code> is set to <code>y(i-i1+1, j-j1+1)</code> for <code>i = i1, ..., i1-1+nrows y</code> and <code>j = j1, ..., j1-1+ncols y</code>.</p>
+</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_squareTop"></a><dl><dt>squareTop : % -&gt %</dt><dd><p>
+<code>squareTop(m)</code> returns an <code>n</code>-by-<code>n</code> array consisting of the first <code>n</code> rows of the <code>m</code>-by-<code>n</code> array <code>m</code>. Error: if <code>m &lt; n</code>.</p>
+</dd></dl>
+<a name="f_subMatrix"></a><dl><dt>subMatrix : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>subMatrix(x, i1, i2, j1, j2)</code> extracts the submatrix <code>[x(i, j)]</code> where the index <code>i</code> ranges from <code>i1</code> to <code>i2</code> and the index <code>j</code> ranges from <code>j1</code> to <code>j2</code>.</p>
+</dd></dl>
+<a name="f_swapColumns_33"></a><dl><dt>swapColumns! : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>swapColumns!(m, i, j)</code> interchanges the <code>i</code>th and <code>j</code>th columns of <code>m</code>. This destructively alters the array.</p>
+</dd></dl>
+<a name="f_swapRows_33"></a><dl><dt>swapRows! : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>swapRows!(m, i, j)</code> interchanges the <code>i</code>th and <code>j</code>th rows of <code>m</code>. This destructively alters the array.</p>
+</dd></dl>
+<a name="f_transpose"></a><dl><dt>transpose : % -&gt %</dt><dd><p>
+<code>transpose(m)</code> returns the transpose of the array <code>m</code>.</p>
+</dd></dl>
+<a name="f_vertConcat"></a><dl><dt>vertConcat : (%, %) -&gt %</dt><dd><p>
+<code>vertConcat(x, y)</code> vertically concatenates two arrays with an equal number of columns. The entries of <code>y</code> appear below of the entries of <code>x</code>. Error: if the arrays do not have the same number of columns.</p>
+</dd></dl>
+<dl><dt>vertConcat : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>vertConcat(l)</code> vertically concatenates all members of <code>l</code> Error: if the arrays do not have the same number of columns.</p>
+</dd></dl>
+<a name="f_vertSplit"></a><dl><dt>vertSplit : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>vertSplit(a, [n1, ..., <code>ni</code>])</code> splits a into arrays having <code>n1</code>, ..., <code>ni</code> rows. Error: if number of rows of a is different than <code>n1+</code> ... + <code>ni</code>.</p>
+</dd></dl>
+<dl><dt>vertSplit : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>vertSplit(a, n)</code> splits a into <code>n</code> arrays of equal size row wise. Error: if number of rows of a is not divisible by <code>n</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="BasicType.html">BasicType</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="shallowlyMutable.html">shallowlyMutable</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="finiteAggregate.html">finiteAggregate</a>
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)
+</body>
+</html>

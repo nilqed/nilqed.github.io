@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GaloisGroupPolynomialUtilities</title>
+</head>
+<body>
+<h1>GaloisGroupPolynomialUtilities(R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/galfact.spad#L116">galfact.spad line 116</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/galfact.spad#L116">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+GaloisGroupPolynomialUtilities provides useful functions for univariate polynomials which should be added to UnivariatePolynomialCategory or to Factored (July 1994).</p>
+<a name="f_degreePartition"></a><dl><dt>degreePartition : <a href="Factored.html">Factored</a>(UP) -&gt <a href="Multiset.html">Multiset</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>degreePartition(f)</code> returns the degree partition (i.e. the multiset of the degrees of the irreducible factors) of the polynomial <code>f</code>.</p>
+</dd></dl>
+<a name="f_factorOfDegree"></a><dl><dt>factorOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="Factored.html">Factored</a>(UP)) -&gt UP</dt><dd><p>
+<code>factorOfDegree(d, f)</code> returns a factor of degree <code>d</code> of the factored polynomial <code>f</code>. Such a factor shall exist.</p>
+</dd></dl>
+<a name="f_factorsOfDegree"></a><dl><dt>factorsOfDegree : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="Factored.html">Factored</a>(UP)) -&gt <a href="List.html">List</a>(UP)</dt><dd><p>
+<code>factorsOfDegree(d, f)</code> returns the factors of degree <code>d</code> of the factored polynomial <code>f</code>.</p>
+</dd></dl>
+<a name="f_monic_63"></a><dl><dt>monic? : UP -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>monic?(p)</code> tests if <code>p</code> is monic (i.e. leading coefficient equal to 1).</p>
+</dd></dl>
+<a name="f_reverse"></a><dl><dt>reverse : UP -&gt UP</dt><dd><p>
+<code>reverse(p)</code> returns the reverse polynomial of <code>p</code>.</p>
+</dd></dl>
+<a name="f_scaleRoots"></a><dl><dt>scaleRoots : (UP, R) -&gt UP</dt><dd><p>
+<code>scaleRoots(p, c)</code> returns the polynomial which has <code>c</code> times the roots of <code>p</code>.</p>
+</dd></dl>
+<a name="f_shiftRoots"></a><dl><dt>shiftRoots : (UP, R) -&gt UP</dt><dd><p>
+<code>shiftRoots(p, c)</code> returns the polynomial which has for roots <code>c</code> added to the roots of <code>p</code>.</p>
+</dd></dl>
+</body>
+</html>

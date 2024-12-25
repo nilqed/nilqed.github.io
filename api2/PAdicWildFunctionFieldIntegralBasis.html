@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PAdicWildFunctionFieldIntegralBasis</title>
+</head>
+<body>
+<h1>PAdicWildFunctionFieldIntegralBasis(K, R, UP, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/padiclib.spad#L261">padiclib.spad line 261</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/padiclib.spad#L261">[edit on github]</a></p>
+<ul>
+<li>K : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a><li>R : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(K)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>F : <a href="MonogenicAlgebra.html">MonogenicAlgebra</a>(R, UP)</ul>
+<p>
+In this package <code>K</code> is a finite field, <code>R</code> is a ring of univariate polynomials over <code>K</code>, and <code>F</code> is a monogenic algebra over <code>R</code>. We require that <code>F</code> is monogenic, i.e. that <code>F = K[x, y]/(f(x, y))</code>, because the integral basis algorithm used will factor the polynomial <code>f(x, y)</code>. The package provides a function to compute the integral closure of <code>R</code> in the quotient field of <code>F</code> as well as a function to compute a "local integral basis" at a specific prime.</p>
+<a name="f_integralBasis"></a><dl><dt>integralBasis : () -&gt Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>integralBasis()</code> returns a record <code>[basis, basisDen, basisInv] </code> containing information regarding the integral closure of <code>R</code> in the quotient field of the framed algebra <code>F</code>. <code>F</code> is a framed algebra with <code>R</code>-module basis <code>w1, w2, ..., wn</code>. If 'basis' is the matrix <code>(aij, i = 1..n, j = 1..n)</code>, then the <code>i</code>th element of the integral basis is <code><code>vi</code> = (1/basisDen) * sum(aij * wj, j = 1..n)</code>, i.e. the <code>i</code>th row of 'basis' contains the coordinates of the <code>i</code>th basis vector. Similarly, the <code>i</code>th row of the matrix 'basisInv' contains the coordinates of <code><code>wi</code></code> with respect to the basis <code>v1, ..., vn</code>: if 'basisInv' is the matrix <code>(bij, i = 1..n, j = 1..n)</code>, then <code><code>wi</code> = sum(bij * vj, j = 1..n)</code>.</p>
+</dd></dl>
+<a name="f_localIntegralBasis"></a><dl><dt>localIntegralBasis : R -&gt Record(basis : <a href="Matrix.html">Matrix</a>(R), basisDen : R, basisInv : <a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>integralBasis(p)</code> returns a record <code>[basis, basisDen, basisInv] </code> containing information regarding the local integral closure of <code>R</code> at the prime <code>p</code> in the quotient field of the framed algebra <code>F</code>. <code>F</code> is a framed algebra with <code>R</code>-module basis <code>w1, w2, ..., wn</code>. If 'basis' is the matrix <code>(aij, i = 1..n, j = 1..n)</code>, then the <code>i</code>th element of the local integral basis is <code><code>vi</code> = (1/basisDen) * sum(aij * wj, j = 1..n)</code>, i.e. the <code>i</code>th row of 'basis' contains the coordinates of the <code>i</code>th basis vector. Similarly, the <code>i</code>th row of the matrix 'basisInv' contains the coordinates of <code><code>wi</code></code> with respect to the basis <code>v1, ..., vn</code>: if 'basisInv' is the matrix <code>(bij, i = 1..n, j = 1..n)</code>, then <code><code>wi</code> = sum(bij * vj, j = 1..n)</code>.</p>
+</dd></dl>
+<a name="f_reducedDiscriminant"></a><dl><dt>reducedDiscriminant : UP -&gt R</dt><dd><p>
+<code>reducedDiscriminant(up)</code> is undocumented</p>
+</dd></dl>
+</body>
+</html>

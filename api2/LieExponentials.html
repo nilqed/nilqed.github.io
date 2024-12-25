@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LieExponentials</title>
+</head>
+<body>
+<h1>LieExponentials(VarSet, R, Order)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L982">xlpoly.spad line 982</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L982">[edit on github]</a></p>
+<ul>
+<li>VarSet : <a href="OrderedSet.html">OrderedSet</a><li>R : Join(<a href="CommutativeRing.html">CommutativeRing</a>, <a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>Order : <a href="PositiveInteger.html">PositiveInteger</a></ul>
+<p>
+Management of the Lie Group associated with a free nilpotent Lie algebra. Every Lie bracket with length greater than <code>Order</code> are assumed to be null. The implementation inherits from the XPBWPolynomial domain constructor: Lyndon coordinates are exponential coordinates of the second kind.  Author: Michel Petitot (petitot@lifl.<code>fr</code>).</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Group.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_LyndonBasis"></a><dl><dt>LyndonBasis : <a href="List.html">List</a>(VarSet) -&gt <a href="List.html">List</a>(<a href="LiePolynomial.html">LiePolynomial</a>(VarSet, R))</dt><dd><p>
+<code>LyndonBasis(lv)</code> returns the Lyndon basis of the nilpotent free Lie algebra.</p>
+</dd></dl>
+<a name="f_LyndonCoordinates"></a><dl><dt>LyndonCoordinates : % -&gt <a href="List.html">List</a>(Record(k : <a href="LyndonWord.html">LyndonWord</a>(VarSet), c : R))</dt><dd><p>
+<code>LyndonCoordinates(g)</code> returns the exponential coordinates of <code>g</code>.</p>
+</dd></dl>
+<a name="f__94"></a><dl><dt><a href="Group.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VarSet, R)</dt><dd><p>
+<code>coerce(g)</code> returns the internal representation of <code>g</code>.</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="XPBWPolynomial.html">XPBWPolynomial</a>(VarSet, R)</dt><dd><p>
+<code>coerce(g)</code> returns the internal representation of <code>g</code>.</p>
+</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="Group.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="Group.html#f_conjugate">conjugate</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_exp"></a><dl><dt>exp : <a href="LiePolynomial.html">LiePolynomial</a>(VarSet, R) -&gt %</dt><dd><p>
+<code>exp(p)</code> returns the exponential of <code>p</code>.</p>
+</dd></dl>
+<a name="f_identification"></a><dl><dt>identification : (%, %) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))</dt><dd><p>
+<code>identification(g, h)</code> returns the list of equations <code>g_i = h_i</code>, where <code>g_i</code> (resp. <code>h_i</code>) are exponential coordinates of <code>g</code> (resp. <code>h</code>).</p>
+</dd></dl>
+<a name="f_inv"></a><dl><dt><a href="Group.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_listOfTerms"></a><dl><dt>listOfTerms : % -&gt <a href="List.html">List</a>(Record(k : <a href="PoincareBirkhoffWittLyndonBasis.html">PoincareBirkhoffWittLyndonBasis</a>(VarSet), c : R))</dt><dd><p>
+<code>listOfTerms(p)</code> returns the internal representation of <code>p</code>.</p>
+</dd></dl>
+<a name="f_log"></a><dl><dt>log : % -&gt <a href="LiePolynomial.html">LiePolynomial</a>(VarSet, R)</dt><dd><p>
+<code>log(p)</code> returns the logarithm of <code>p</code>.</p>
+</dd></dl>
+<a name="f_mirror"></a><dl><dt>mirror : % -&gt %</dt><dd><p>
+<code>mirror(g)</code> is the mirror of the internal representation of <code>g</code>.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="MagmaWithUnit.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_varList"></a><dl><dt>varList : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>varList(g)</code> returns the list of variables of <code>g</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Group.html">Group</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionSpaceSum</title>
+</head>
+<body>
+<h1>FunctionSpaceSum(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/combfunc.spad#L2739">combfunc.spad line 2739</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/combfunc.spad#L2739">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a>, <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>)</ul>
+<p>
+computes sums of top-level expressions.</p>
+<a name="f_sum"></a><dl><dt>sum : (F, <a href="SegmentBinding.html">SegmentBinding</a>(F)) -&gt F</dt><dd><p>
+<code>sum(f(n), n = a..b)</code> returns <code>f</code>(a) + <code>f</code>(<code>a+1</code>) + ... + <code>f</code>(<code>b</code>).</p>
+</dd></dl>
+<dl><dt>sum : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>sum(a(n), n)</code> returns A(<code>n</code>) such that A(<code>n+1</code>) - A(<code>n</code>) = a(<code>n</code>).</p>
+</dd></dl>
+</body>
+</html>

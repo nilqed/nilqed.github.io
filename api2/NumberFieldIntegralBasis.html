@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NumberFieldIntegralBasis</title>
+</head>
+<body>
+<h1>NumberFieldIntegralBasis(UP, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intclos.spad#L512">intclos.spad line 512</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intclos.spad#L512">[edit on github]</a></p>
+<ul>
+<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Integer.html">Integer</a>)<li>F : <a href="FramedAlgebra.html">FramedAlgebra</a>(<a href="Integer.html">Integer</a>, UP)</ul>
+<p>
+In this package <code>F</code> is a framed algebra over the integers (typically <code>F = Z[a]</code> for some algebraic integer a). The package provides functions to compute the integral closure of <code>Z</code> in the quotient field of <code>F</code>.</p>
+<a name="f_discriminant"></a><dl><dt>discriminant : () -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>discriminant()</code> returns the discriminant of the integral closure of <code>Z</code> in the quotient field of the framed algebra <code>F</code>.</p>
+</dd></dl>
+<a name="f_integralBasis"></a><dl><dt>integralBasis : () -&gt Record(basis : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), basisDen : <a href="Integer.html">Integer</a>, basisInv : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>integralBasis()</code> returns a record <code>[basis, basisDen, basisInv]</code> containing information regarding the integral closure of <code>Z</code> in the quotient field of <code>F</code>, where <code>F</code> is a framed algebra with <code>Z</code>-module basis <code>w1, w2, ..., wn</code>. If <code>basis</code> is the matrix <code>(aij, i = 1..n, j = 1..n)</code>, then the <code>i</code>th element of the integral basis is <code><code>vi</code> = (1/basisDen) * sum(aij * wj, j = 1..n)</code>, i.e. the <code>i</code>th row of <code>basis</code> contains the coordinates of the <code>i</code>th basis vector. Similarly, the <code>i</code>th row of the matrix <code>basisInv</code> contains the coordinates of <code><code>wi</code></code> with respect to the basis <code>v1, ..., vn</code>: if <code>basisInv</code> is the matrix <code>(bij, i = 1..n, j = 1..n)</code>, then <code><code>wi</code> = sum(bij * vj, j = 1..n)</code>.</p>
+</dd></dl>
+<a name="f_localIntegralBasis"></a><dl><dt>localIntegralBasis : <a href="Integer.html">Integer</a> -&gt Record(basis : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), basisDen : <a href="Integer.html">Integer</a>, basisInv : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>integralBasis(p)</code> returns a record <code>[basis, basisDen, basisInv]</code> containing information regarding the local integral closure of <code>Z</code> at the prime <code>p</code> in the quotient field of <code>F</code>, where <code>F</code> is a framed algebra with <code>Z</code>-module basis <code>w1, w2, ..., wn</code>. If <code>basis</code> is the matrix <code>(aij, i = 1..n, j = 1..n)</code>, then the <code>i</code>th element of the integral basis is <code><code>vi</code> = (1/basisDen) * sum(aij * wj, j = 1..n)</code>, i.e. the <code>i</code>th row of <code>basis</code> contains the coordinates of the <code>i</code>th basis vector. Similarly, the <code>i</code>th row of the matrix <code>basisInv</code> contains the coordinates of <code><code>wi</code></code> with respect to the basis <code>v1, ..., vn</code>: if <code>basisInv</code> is the matrix <code>(bij, i = 1..n, j = 1..n)</code>, then <code><code>wi</code> = sum(bij * vj, j = 1..n)</code>.</p>
+</dd></dl>
+</body>
+</html>

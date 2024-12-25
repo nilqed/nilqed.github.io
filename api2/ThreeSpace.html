@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ThreeSpace</title>
+</head>
+<body>
+<h1>ThreeSpace(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/space.spad#L278">space.spad line 278</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/space.spad#L278">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+The domain ThreeSpace is used for creating three dimensional objects using functions for defining points, curves, polygons, constructs and the subspaces containing them.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_check"></a><dl><dt><a href="ThreeSpaceCategory.html#f_check">check</a> : % -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_closedCurve"></a><dl><dt><a href="ThreeSpaceCategory.html#f_closedCurve">closedCurve</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_closedCurve">closedCurve</a> : (%, <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_closedCurve">closedCurve</a> : <a href="List.html">List</a>(<a href="Point.html">Point</a>(R)) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_closedCurve">closedCurve</a> : % -&gt <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_closedCurve_63"></a><dl><dt><a href="ThreeSpaceCategory.html#f_closedCurve_63">closedCurve?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="ThreeSpaceCategory.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_components"></a><dl><dt><a href="ThreeSpaceCategory.html#f_components">components</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_composite"></a><dl><dt><a href="ThreeSpaceCategory.html#f_composite">composite</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_composites"></a><dl><dt><a href="ThreeSpaceCategory.html#f_composites">composites</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="ThreeSpaceCategory.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_create3Space"></a><dl><dt><a href="ThreeSpaceCategory.html#f_create3Space">create3Space</a> : () -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_create3Space">create3Space</a> : <a href="SubSpace.html">SubSpace</a>(3, R) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_curve"></a><dl><dt><a href="ThreeSpaceCategory.html#f_curve">curve</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_curve">curve</a> : (%, <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_curve">curve</a> : <a href="List.html">List</a>(<a href="Point.html">Point</a>(R)) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_curve">curve</a> : % -&gt <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_curve_63"></a><dl><dt><a href="ThreeSpaceCategory.html#f_curve_63">curve?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_enterPointData"></a><dl><dt><a href="ThreeSpaceCategory.html#f_enterPointData">enterPointData</a> : (%, <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lllip"></a><dl><dt><a href="ThreeSpaceCategory.html#f_lllip">lllip</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_lllp"></a><dl><dt><a href="ThreeSpaceCategory.html#f_lllp">lllp</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(R))))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_llprop"></a><dl><dt><a href="ThreeSpaceCategory.html#f_llprop">llprop</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_lp"></a><dl><dt><a href="ThreeSpaceCategory.html#f_lp">lp</a> : % -&gt <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_lprop"></a><dl><dt><a href="ThreeSpaceCategory.html#f_lprop">lprop</a> : % -&gt <a href="List.html">List</a>(<a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>)</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_merge"></a><dl><dt><a href="ThreeSpaceCategory.html#f_merge">merge</a> : (%, %) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_merge">merge</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_mesh"></a><dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(R))), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(R))), <a href="List.html">List</a>(<a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>), <a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(R))), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(R))), <a href="List.html">List</a>(<a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>), <a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(R))), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_mesh">mesh</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(R)))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_mesh_63"></a><dl><dt><a href="ThreeSpaceCategory.html#f_mesh_63">mesh?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_modifyPointData"></a><dl><dt><a href="ThreeSpaceCategory.html#f_modifyPointData">modifyPointData</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Point.html">Point</a>(R)) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_numberOfComponents"></a><dl><dt><a href="ThreeSpaceCategory.html#f_numberOfComponents">numberOfComponents</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_numberOfComposites"></a><dl><dt><a href="ThreeSpaceCategory.html#f_numberOfComposites">numberOfComposites</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_objects"></a><dl><dt><a href="ThreeSpaceCategory.html#f_objects">objects</a> : % -&gt Record(points : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, curves : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, polygons : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, constructs : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_point"></a><dl><dt><a href="ThreeSpaceCategory.html#f_point">point</a> : (%, <a href="List.html">List</a>(R)) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_point">point</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_point">point</a> : (%, <a href="Point.html">Point</a>(R)) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_point">point</a> : <a href="Point.html">Point</a>(R) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_point">point</a> : % -&gt <a href="Point.html">Point</a>(R)</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_point_63"></a><dl><dt><a href="ThreeSpaceCategory.html#f_point_63">point?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_polygon"></a><dl><dt><a href="ThreeSpaceCategory.html#f_polygon">polygon</a> : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_polygon">polygon</a> : (%, <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_polygon">polygon</a> : <a href="List.html">List</a>(<a href="Point.html">Point</a>(R)) -&gt %</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<dl><dt><a href="ThreeSpaceCategory.html#f_polygon">polygon</a> : % -&gt <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_polygon_63"></a><dl><dt><a href="ThreeSpaceCategory.html#f_polygon_63">polygon?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f_subspace"></a><dl><dt><a href="ThreeSpaceCategory.html#f_subspace">subspace</a> : % -&gt <a href="SubSpace.html">SubSpace</a>(3, R)</dt><dd> from <a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="ThreeSpaceCategory.html">ThreeSpaceCategory</a>(R)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

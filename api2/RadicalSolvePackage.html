@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RadicalSolvePackage</title>
+</head>
+<body>
+<h1>RadicalSolvePackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/solverad.spad#L325">solverad.spad line 325</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/solverad.spad#L325">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)</ul>
+<p>
+This package tries to find solutions expressed in terms of radicals for systems of equations of rational functions with coefficients in an integral domain <code>R</code>.</p>
+<a name="f_contractSolve"></a><dl><dt>contractSolve : (<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="Symbol.html">Symbol</a>) -&gt <a href="SuchThat.html">SuchThat</a>(<a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R)), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>contractSolve(eq, x)</code> finds the solutions expressed in terms of radicals of the equation of rational functions <code>eq</code> with respect to the symbol <code>x</code>. The result contains new symbols for common subexpressions in order to reduce the size of the output.</p>
+</dd></dl>
+<dl><dt>contractSolve : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="SuchThat.html">SuchThat</a>(<a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R)), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>contractSolve(rf, x)</code> finds the solutions expressed in terms of radicals of the equation <code>rf</code> = 0 with respect to the symbol <code>x</code>, where <code>rf</code> is a rational function. The result contains new symbols for common subexpressions in order to reduce the size of the output.</p>
+</dd></dl>
+<a name="f_cyclotomic_95case_63"></a><dl><dt>cyclotomic_case? : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>cyclotomic_case?(u)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_radicalRoots"></a><dl><dt>radicalRoots : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R))</dt><dd><p>
+<code>radicalRoots(rf, x)</code> finds the roots expressed in terms of radicals of the rational function <code>rf</code> with respect to the symbol <code>x</code>.</p>
+</dd></dl>
+<dl><dt>radicalRoots : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>radicalRoots(lrf, lvar)</code> finds the roots expressed in terms of radicals of the list of rational functions <code>lrf</code> with respect to the list of symbols lvar.</p>
+</dd></dl>
+<a name="f_radicalSolve"></a><dl><dt>radicalSolve : <a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>radicalSolve(eq)</code> finds the solutions expressed in terms of radicals of the equation of rational functions <code>eq</code> with respect to the unique symbol <code>x</code> appearing in <code>eq</code>.</p>
+</dd></dl>
+<dl><dt>radicalSolve : (<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>radicalSolve(eq, x)</code> finds the solutions expressed in terms of radicals of the equation of rational functions <code>eq</code> with respect to the symbol <code>x</code>.</p>
+</dd></dl>
+<dl><dt>radicalSolve : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>radicalSolve(rf)</code> finds the solutions expressed in terms of radicals of the equation <code>rf</code> = 0, where <code>rf</code> is a univariate rational function.</p>
+</dd></dl>
+<dl><dt>radicalSolve : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>radicalSolve(rf, x)</code> finds the solutions expressed in terms of radicals of the equation <code>rf</code> = 0 with respect to the symbol <code>x</code>, where <code>rf</code> is a rational function.</p>
+</dd></dl>
+<dl><dt>radicalSolve : <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>radicalSolve(leq)</code> finds the solutions expressed in terms of radicals of the system of equations of rational functions <code>leq</code> with respect to all symbols appearing in <code>leq</code>.</p>
+</dd></dl>
+<dl><dt>radicalSolve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>radicalSolve(leq, lvar)</code> finds the solutions expressed in terms of radicals of the system of equations of rational functions <code>leq</code> with respect to the list of symbols lvar.</p>
+</dd></dl>
+<dl><dt>radicalSolve : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>radicalSolve(lrf)</code> finds the solutions expressed in terms of radicals of the system of equations <code>lrf</code> = 0, where <code>lrf</code> is a list of rational functions.</p>
+</dd></dl>
+<dl><dt>radicalSolve : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>radicalSolve(lrf, lvar)</code> finds the solutions expressed in terms of radicals of the system of equations <code>lrf</code> = 0 with respect to the list of symbols lvar, where <code>lrf</code> is a list of rational functions.</p>
+</dd></dl>
+<a name="f_radical_95solve"></a><dl><dt>radical_solve : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt Union(<a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R)), "failed")</dt><dd><p>
+<code>radical_solve(p)</code> should be local but conditional</p>
+</dd></dl>
+</body>
+</html>

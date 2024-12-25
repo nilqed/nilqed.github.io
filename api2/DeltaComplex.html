@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DeltaComplex</title>
+</head>
+<body>
+<h1>DeltaComplex(VS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L2909">alg_top.spad line 2909</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L2909">[edit on github]</a></p>
+<ul>
+<li>VS : <a href="AbelianGroup.html">AbelianGroup</a></ul>
+<p>
+Similar to Simplicial Complex but faces (edges, triangles, etc.) are indexed by 'face maps' into the next lower face map until we get down to the vertices. for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/delta/ Date Created: Feb 2016 Basic Operations: Related packages: Related categories: Related Domains: FiniteSimplicialComplex is a simpler and more compact representation which can be used if edges, triangles, etc. don<code>'t</code> need to be indexed. Also See: AMS Classifications:</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_chain"></a><dl><dt>chain : % -&gt <a href="ChainComplex.html">ChainComplex</a></dt><dd><p>
+returns a matrix sequence representing the face maps in linear algebra form</p>
+</dd></dl>
+<a name="f_coChain"></a><dl><dt>coChain : % -&gt <a href="CoChainComplex.html">CoChainComplex</a>(VS)</dt><dd><p>
+returns a matrix sequence representing the face maps in linear algebra form</p>
+</dd></dl>
+<a name="f_coHomology"></a><dl><dt>coHomology : % -&gt <a href="List.html">List</a>(<a href="Homology.html">Homology</a>)</dt><dd><p>
+calculate cohomology using SmithNormalForm</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="FiniteSimplicialComplex.html">FiniteSimplicialComplex</a>(VS)</dt><dd><p>
+<code>coerce DeltaComplex</code> to FiniteSimplicialComplex</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_deltaComplex"></a><dl><dt>deltaComplex : <a href="FiniteCubicalComplex.html">FiniteCubicalComplex</a>(VS) -&gt %</dt><dd><p>
+construct from FiniteCubicalComplex. This builds indexes of edges, squares and so on.</p>
+</dd></dl>
+<dl><dt>deltaComplex : <a href="FiniteSimplicialComplex.html">FiniteSimplicialComplex</a>(VS) -&gt %</dt><dd><p>
+construct from FiniteSimplicialComplex. This builds indexes of edges, triangles and so on.</p>
+</dd></dl>
+<dl><dt>deltaComplex : (<a href="FiniteSimplicialComplex.html">FiniteSimplicialComplex</a>(VS), <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>deltaComplex : (<a href="List.html">List</a>(VS), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>)))) -&gt %</dt><dd><p>
+constructor where the simplices are supplied</p>
+</dd></dl>
+<a name="f_faceMap"></a><dl><dt>faceMap : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+returns an individual face map specified by <code>n</code>. Where <code>'n'</code> is the dimension required, so <code>n=1</code> returns one dimensional faces (edges), <code>n=2</code> returns two dimensional faces (triamgles), and so on. used by fundamentalGroup.</p>
+</dd></dl>
+<a name="f_fundamentalGroup"></a><dl><dt>fundamentalGroup : % -&gt <a href="GroupPresentation.html">GroupPresentation</a></dt><dd><p>
+Generates fundamental group from this simplicial complex.</p>
+</dd></dl>
+<dl><dt>fundamentalGroup : (%, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="GroupPresentation.html">GroupPresentation</a></dt><dd><p>
+Generates fundamental group from this simplicial complex.</p>
+</dd></dl>
+<a name="f_homology"></a><dl><dt>homology : % -&gt <a href="List.html">List</a>(<a href="Homology.html">Homology</a>)</dt><dd><p>
+calculate homology using SmithNormalForm</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_link"></a><dl><dt>link : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+a simplicial complex with one link</p>
+</dd></dl>
+<a name="f_oneSkeleton"></a><dl><dt>oneSkeleton : % -&gt <a href="UndirectedGraph.html">UndirectedGraph</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+generates graph AKA 1-skeleton</p>
+</dd></dl>
+<a name="f_triangle"></a><dl><dt>triangle : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+a simplicial complex with one triangle</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

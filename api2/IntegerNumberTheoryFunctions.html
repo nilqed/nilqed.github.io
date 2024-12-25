@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerNumberTheoryFunctions</title>
+</head>
+<body>
+<h1>IntegerNumberTheoryFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numtheor.spad#L182">numtheor.spad line 182</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numtheor.spad#L182">[edit on github]</a></p>
+<p>
+This package provides various number theoretic functions on the integers.</p>
+<a name="f_bernoulli"></a><dl><dt>bernoulli : <a href="Integer.html">Integer</a> -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>bernoulli(n)</code> returns the <code>n</code>th Bernoulli number. this is <code>B(n, 0)</code>, where <code>B(n, x)</code> is the <code>n</code>th Bernoulli polynomial.</p>
+</dd></dl>
+<a name="f_carmichaelLambda"></a><dl><dt>carmichaelLambda : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>carmichaelLambda(n)</code> returns exponent of the multiplicative group of integers modulo <code>n</code>, that is smallest positive integer <code>k</code> such that <code>i^k rem n = 1</code> for all <code>i</code> relatively prime to <code>n</code>.</p>
+</dd></dl>
+<a name="f_chineseRemainder"></a><dl><dt>chineseRemainder : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>chineseRemainder(x1, m1, x2, m2)</code> returns <code>w</code>, where <code>w</code> is such that <code>w = x1 mod m1</code> and <code>w = x2 mod m2</code>. Note: <code>m1</code> and <code>m2</code> must be relatively prime.</p>
+</dd></dl>
+<a name="f_divisors"></a><dl><dt>divisors : <a href="Integer.html">Integer</a> -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>divisors(n)</code> returns a list of the divisors of <code>n</code>.</p>
+</dd></dl>
+<a name="f_euler"></a><dl><dt>euler : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>euler(n)</code> returns the <code>n</code>th Euler number. This is <code>2^n E(n, 1/2)</code>, where <code>E(n, x)</code> is the <code>n</code>th Euler polynomial.</p>
+</dd></dl>
+<a name="f_eulerPhi"></a><dl><dt>eulerPhi : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>eulerPhi(n)</code> returns the number of integers between 1 and <code>n</code> (including 1) which are relatively prime to <code>n</code>. This is the Euler phi function <code>phi(n)</code> is also called the totient function.</p>
+</dd></dl>
+<a name="f_fibonacci"></a><dl><dt>fibonacci : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>fibonacci(n)</code> returns the <code>n</code>th Fibonacci number, <code>F[n]</code>. The Fibonacci numbers are defined by <code>F[0] = 0</code>, <code>F[1] = 1</code> and <code>F[n] = F[n-1] + F[n-2]</code>. The algorithm has running time <code>O(log(n)^3)</code>. Reference: Knuth, The Art of Computer Programming Vol 2, Semi-Numerical Algorithms.</p>
+</dd></dl>
+<a name="f_harmonic"></a><dl><dt>harmonic : <a href="Integer.html">Integer</a> -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>harmonic(n)</code> returns the <code>n</code>th harmonic number. This is <code>H[n] = sum(1/k, k=1..n)</code>.</p>
+</dd></dl>
+<a name="f_jacobi"></a><dl><dt>jacobi : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>jacobi(a, b)</code> returns the Jacobi symbol <code>J(a/b)</code>. When <code>b</code> is odd, <code>J(a/b) = product(L(a/p) for p in factor b )</code>. Note: by convention, 0 is returned if <code>gcd(a, b) ~= 1</code>. Iterative <code>O(log(b)^2)</code> version coded by Michael Monagan June 1987.</p>
+</dd></dl>
+<a name="f_legendre"></a><dl><dt>legendre : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>legendre(a, p)</code> returns the Legendre symbol <code>L(a/p)</code>. <code>L(a/p) = (-1)^((p-1)/2) mod p</code> (<code>p</code> prime), which is 0 if <code>a</code> is 0, 1 if <code>a</code> is a quadratic residue <code>mod p</code> and <code>-1</code> otherwise. Note: because the primality test is expensive, if it is known that <code>p</code> is prime then use <code>jacobi(a, p)</code>.</p>
+</dd></dl>
+<a name="f_moebiusMu"></a><dl><dt>moebiusMu : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>moebiusMu(n)</code> returns the Moebius function <code>mu(n)</code>. <code>mu(n)</code> is either <code>-1</code>, 0 or 1 as follows: <code>mu(n) = 0</code> if <code>n</code> is divisible by a square &gt; 1, <code>mu(n) = (-1)^k</code> if <code>n</code> is square-free and has <code>k</code> distinct prime divisors.</p>
+</dd></dl>
+<a name="f_numberOfDivisors"></a><dl><dt>numberOfDivisors : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>numberOfDivisors(n)</code> returns the number of integers between 1 and <code>n</code> (inclusive) which divide <code>n</code>. The number of divisors of <code>n</code> is often denoted by <code>tau(n)</code>.</p>
+</dd></dl>
+<a name="f_sumOfDivisors"></a><dl><dt>sumOfDivisors : <a href="Integer.html">Integer</a> -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>sumOfDivisors(n)</code> returns the sum of the integers between 1 and <code>n</code> (inclusive) which divide <code>n</code>. The sum of the divisors of <code>n</code> is often denoted by <code>sigma(n)</code>.</p>
+</dd></dl>
+<a name="f_sumOfKthPowerDivisors"></a><dl><dt>sumOfKthPowerDivisors : (<a href="Integer.html">Integer</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>sumOfKthPowerDivisors(n, k)</code> returns the sum of the <code>k</code>th powers of the integers between 1 and <code>n</code> (inclusive) which divide <code>n</code>. the sum of the <code>k</code>th powers of the divisors of <code>n</code> is often denoted by <code>sigma_k(n)</code>.</p>
+</dd></dl>
+</body>
+</html>

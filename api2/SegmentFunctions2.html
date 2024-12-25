@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SegmentFunctions2</title>
+</head>
+<body>
+<h1>SegmentFunctions2(R, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/seg.spad#L176">seg.spad line 176</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/seg.spad#L176">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Type.html">Type</a><li>S : <a href="Type.html">Type</a></ul>
+<p>
+This package provides operations for mapping functions onto segments.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, R), <a href="Segment.html">Segment</a>(R)) -&gt <a href="List.html">List</a>(S) if R has <a href="OrderedRing.html">OrderedRing</a></dt><dd><p>
+<code>map(f, s)</code> expands the segment <code>s</code>, applying <code>f</code> to each value. For example, if <code>s = l..h by k</code>, then the list <code>[f(l), f(l+k), ..., f(lN)]</code> is computed, where <code>lN &lt;= h &lt; lN+k</code>.</p>
+</dd></dl>
+<dl><dt>map : (Mapping(S, R), <a href="Segment.html">Segment</a>(R)) -&gt <a href="Segment.html">Segment</a>(S)</dt><dd><p>
+<code>map(f, l..h)</code> returns a new segment <code>f(l)..f(h)</code>.</p>
+</dd></dl>
+</body>
+</html>

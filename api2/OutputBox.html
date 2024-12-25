@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OutputBox</title>
+</head>
+<body>
+<h1>OutputBox</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fmt.spad#L180">fmt.spad line 180</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fmt.spad#L180">[edit on github]</a></p>
+<p>
+The domain <code>OutputBox</code> represents the two-dimensional form of an expression by a number of strings (lines). Such a box has a baseline (at which such boxes will be horizontally aligned, a height (size above and including the baseline), a depth (size below the baseline), and a width (horizontal size).</p>
+<a name="f_box"></a><dl><dt>box : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>box(s)</code> creates a box that contains the string <code>s</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_depth"></a><dl><dt>depth : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>depth(box)</code> returns the height of the <code>box</code> below the baseline.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : () -&gt %</dt><dd><p>
+Create an empty box of size 0.</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty?(b)</code> returns <code>true</code> of the box has height and depth equal to 0.</p>
+</dd></dl>
+<a name="f_hcenter"></a><dl><dt>hcenter : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt Mapping(%, %)</dt><dd><p>
+<code>hcenter(w)(box)</code> centers the box horizontally inside a box of width <code>w</code>.</p>
+</dd></dl>
+<a name="f_hconcat"></a><dl><dt>hconcat : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>hconcat(lbox)</code> aligns the boxes at their baseline and concats those boxes horizontally from left to right.</p>
+</dd></dl>
+<a name="f_height"></a><dl><dt>height : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>height(box)</code> returns the height of the <code>box</code> (above the baseline) including the baseline.</p>
+</dd></dl>
+<a name="f_lines"></a><dl><dt>lines : % -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>lines(box)</code> returns the contents of the <code>box</code> as strings (all of the same length (width(<code>box</code>)).</p>
+</dd></dl>
+<a name="f_pad"></a><dl><dt>pad : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Mapping(%, %)</dt><dd><p>
+<code>pad(t, b, l, r)(box)</code> returns a new box that is padded by <code>t</code> empty lines at the top, <code>b</code> empty lines at the bottom, <code>l</code> space characters at the left, <code>r</code> space characters at the right. If <code>w</code>, <code>h</code>, <code>d</code> are the width, height and depth of box then the resulting box will have width l+w+r and height <code>t+h</code> and depth <code>d+b</code>.</p>
+</dd></dl>
+<a name="f_vconcat"></a><dl><dt>vconcat : (<a href="List.html">List</a>(%), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>vconcat(lbox, h)</code> returns <code>vconcat(lbox,h, 0)</code>,</p>
+</dd></dl>
+<dl><dt>vconcat : (<a href="List.html">List</a>(%), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>vconcat(lbox, h, adjust)</code> computes the maximal width of the boxes in the list <code>lbox</code>; then if <code>adjust&lt;0</code>, left adjusts, if <code>adjust&gt;0</code>, right adjusts, and otherwise centers each smaller box in a new box of this maximal width and returns a box by putting all the boxes vertically on top of each other. The height of the new box is given by <code>h</code>, the depth results from the difference of the number of lines and <code>h</code>.</p>
+</dd></dl>
+<a name="f_width"></a><dl><dt>width : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>width(box)</code> returns the width of the <code>box</code>.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

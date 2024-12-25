@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>XPolynomialFactor</title>
+</head>
+<body>
+<h1>XPolynomialFactor(vl, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xpfact.spad#L1">xpfact.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xpfact.spad#L1">[edit on github]</a></p>
+<ul>
+<li>vl : <a href="OrderedSet.html">OrderedSet</a><li>F : <a href="Field.html">Field</a></ul>
+<p>
+undocumented</p>
+<a name="f_factor"></a><dl><dt>factor : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F) -&gt <a href="List.html">List</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F)) if F has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>factor(p)</code> returns a factorization of <code>p</code> into irreducible factors. Note: in general there are finitely many nonequivalent factorizations into irreducible factors, this routine returns only one.</p>
+</dd></dl>
+<a name="f_homo_95fact"></a><dl><dt>homo_fact : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F) -&gt <a href="List.html">List</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F))</dt><dd><p>
+<code>homo_fact(p)</code> factors homogeneous polynomial <code>p</code> into irreducible factors.</p>
+</dd></dl>
+<a name="f_ldivide"></a><dl><dt>ldivide : (<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F)) -&gt Record(quotient : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), remainder : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F))</dt><dd><p>
+<code>ldivide(a, b)</code> returns [<code>c</code>, <code>r</code>] such that a = <code>b*c</code> + <code>r</code>, <code>r</code> is is of minimal possible degree and homogeneous part of of <code>r</code> of maximal degree contains no terms divisible from left by leading term of <code>b</code>.</p>
+</dd></dl>
+<a name="f_left_95ext_95GCD"></a><dl><dt>left_ext_GCD : (<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F)) -&gt Union(Record(g : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), c1 : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), c2 : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), cu : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F), cv : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F)), "failed")</dt><dd><p>
+<code>left_ext_GCD(a, b)</code> returns [<code>g</code>, <code>u0</code>, <code>v0</code>, <code>u</code>, <code>v</code>] where <code>g</code> is left <code>GCD</code> of a and <code>b</code>, <code>g</code> = <code>a*u0</code> + <code>b*v0</code> and au = - <code>bv</code> is least common right multiple of a and <code>b</code> when a and <code>b</code> have least common right multiple. Otherwise left_ext_GCD(a, <code>b</code>) returns "failed".</p>
+</dd></dl>
+<a name="f_top_95split"></a><dl><dt>top_split : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F) -&gt <a href="List.html">List</a>(<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(vl, F))</dt><dd><p>
+<code>top_split(p)</code> returns [<code>p1</code>, <code>p2</code>] where <code>p1</code> is homogeneous part of <code>p</code> of maximal degree and <code>p2</code> is sum of lower order terms of <code>p</code>.</p>
+</dd></dl>
+</body>
+</html>

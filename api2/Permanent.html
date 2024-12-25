@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Permanent</title>
+</head>
+<body>
+<h1>Permanent(n, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/perman.spad#L73">perman.spad line 73</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/perman.spad#L73">[edit on github]</a></p>
+<ul>
+<li>n : <a href="PositiveInteger.html">PositiveInteger</a><li>R : Join(<a href="Ring.html">Ring</a>, <a href="CommutativeStar.html">CommutativeStar</a>)</ul>
+<p>
+Permanent implements the functions  permanent, the permanent for square matrices.</p>
+<a name="f_permanent"></a><dl><dt>permanent : <a href="SquareMatrix.html">SquareMatrix</a>(n, R) -&gt R</dt><dd><p>
+<code>permanent(x)</code> computes the permanent of a square matrix <code>x</code>. The  permanent is equivalent to the <span class="spadfun">determinant</span> except that coefficients have no change of sign. This function is much more difficult to compute than the  determinant. The formula used is by <code>H</code>.<code>J</code>. Ryser, improved by [Nijenhuis and Wilf, <code>Ch</code>. 19]. Note: permanent(<code>x</code>) choose one of three algorithms, depending on the underlying ring <code>R</code> and on <code>n</code>, the number of rows (and columns) of <code>x:</code>   1. if 2 has an inverse in <code>R</code> we can use the algorithm of [Nijenhuis and Wilf, <code>ch</code>.19, <code>p</code>.158]; if 2 has no inverse, some modifications are necessary:  2. if  n &gt; 6 and <code>R</code> is an integral domain with characteristic different from 2 (the algorithm works if and only 2 is not a zero-divisor of <code>R</code> and  characteristic()$R ~= 2, but how to check that for any given <code>R</code> ?), the local function  permanent2 is called;  3. else, the local function  permanent3 is called (works for all commutative rings <code>R</code>). </p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NumberFormats</title>
+</head>
+<body>
+<h1>NumberFormats</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/outform.spad#L2">outform.spad line 2</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/outform.spad#L2">[edit on github]</a></p>
+<p>
+NumberFormats provides function to format and read arabic and roman numbers, to convert numbers to strings and to read floating-point numbers.</p>
+<a name="f_FormatArabic"></a><dl><dt>FormatArabic : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="String.html">String</a></dt><dd><p>
+<code>FormatArabic(n)</code> forms an Arabic numeral string from an integer <code>n</code>.</p>
+</dd></dl>
+<a name="f_FormatRadix"></a><dl><dt>FormatRadix : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>FormatRadix(n, r)</code> forms a string from an integer <code>n</code> in radix <code>r</code>.</p>
+</dd></dl>
+<a name="f_FormatRoman"></a><dl><dt>FormatRoman : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="String.html">String</a></dt><dd><p>
+<code>FormatRoman(n)</code> forms a Roman numeral string from an integer <code>n</code>.</p>
+</dd></dl>
+<a name="f_ScanArabic"></a><dl><dt>ScanArabic : <a href="String.html">String</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>ScanArabic(s)</code> forms an integer from an Arabic numeral string <code>s</code>.</p>
+</dd></dl>
+<a name="f_ScanFloatIgnoreSpaces"></a><dl><dt>ScanFloatIgnoreSpaces : <a href="String.html">String</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>ScanFloatIgnoreSpaces(s)</code> forms a floating point number from the string <code>s</code> ignoring any spaces. Error is generated if the string is not recognised as a floating point number.</p>
+</dd></dl>
+<a name="f_ScanFloatIgnoreSpacesIfCan"></a><dl><dt>ScanFloatIgnoreSpacesIfCan : <a href="String.html">String</a> -&gt Union(<a href="Float.html">Float</a>, "failed")</dt><dd><p>
+<code>ScanFloatIgnoreSpacesIfCan(s)</code> tries to form a floating point number from the string <code>s</code> ignoring any spaces.</p>
+</dd></dl>
+<a name="f_ScanRoman"></a><dl><dt>ScanRoman : <a href="String.html">String</a> -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>ScanRoman(s)</code> forms an integer from a Roman numeral string <code>s</code>.</p>
+</dd></dl>
+</body>
+</html>

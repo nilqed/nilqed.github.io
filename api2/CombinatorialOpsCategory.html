@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CombinatorialOpsCategory</title>
+</head>
+<body>
+<h1>CombinatorialOpsCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/combfunc.spad#L1">combfunc.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/combfunc.spad#L1">[edit on github]</a></p>
+<p>
+CombinatorialOpsCategory is the category obtaining by adjoining summations and products to the usual combinatorial operations.</p>
+<a name="f_binomial"></a><dl><dt><a href="CombinatorialFunctionCategory.html#f_binomial">binomial</a> : (%, %) -&gt %</dt><dd> from <a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a></dd></dl>
+<a name="f_factorial"></a><dl><dt><a href="CombinatorialFunctionCategory.html#f_factorial">factorial</a> : % -&gt %</dt><dd> from <a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a></dd></dl>
+<a name="f_factorials"></a><dl><dt>factorials : % -&gt %</dt><dd><p>
+<code>factorials(f)</code> rewrites the permutations and binomials in <code>f</code> in terms of factorials.</p>
+</dd></dl>
+<dl><dt>factorials : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>factorials(f, x)</code> rewrites the permutations and binomials in <code>f</code> involving <code>x</code> in terms of factorials.</p>
+</dd></dl>
+<a name="f_permutation"></a><dl><dt><a href="CombinatorialFunctionCategory.html#f_permutation">permutation</a> : (%, %) -&gt %</dt><dd> from <a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a></dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, <a href="SegmentBinding.html">SegmentBinding</a>(%)) -&gt %</dt><dd><p>
+<code>product(f(n), n = a..b)</code> returns <code>f</code>(a) * ... * <code>f</code>(<code>b</code>) as a formal product.</p>
+</dd></dl>
+<dl><dt>product : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>product(f(n), n)</code> returns the formal product <code>P</code>(<code>n</code>) which verifies <code>P</code>(<code>n+1</code>)<code>/P</code>(<code>n</code>) = <code>f</code>(<code>n</code>).</p>
+</dd></dl>
+<a name="f_summation"></a><dl><dt>summation : (%, <a href="SegmentBinding.html">SegmentBinding</a>(%)) -&gt %</dt><dd><p>
+<code>summation(f(n), n = a..b)</code> returns <code>f</code>(a) + ... + <code>f</code>(<code>b</code>) as a formal sum.</p>
+</dd></dl>
+<dl><dt>summation : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>summation(f(n), n)</code> returns the formal sum <code>S</code>(<code>n</code>) which verifies <code>S</code>(<code>n+1</code>) - <code>S</code>(<code>n</code>) = <code>f</code>(<code>n</code>).</p>
+</dd></dl>
+<p><a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a>
+</body>
+</html>

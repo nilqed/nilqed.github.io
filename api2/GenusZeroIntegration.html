@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GenusZeroIntegration</title>
+</head>
+<body>
+<h1>GenusZeroIntegration(R, F, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intaf.spad#L1">intaf.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intaf.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>)<li>L : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This internal package rationalises integrands on curves of the form: <code>y^2 = a x^2 + b x + c</code> <code>y^2 = (a x + b) / (c x + d)</code> <code>f(x, y) = 0</code> where <code>f</code> has degree 1 in <code>x</code> The rationalization is done for integration, limited integration, extended integration and the risch differential equation.</p>
+<a name="f_lift"></a><dl><dt>lift : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="Kernel.html">Kernel</a>(F)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>lift(u, k)</code> is undocumented</p>
+</dd></dl>
+<a name="f_multivariate"></a><dl><dt>multivariate : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))), <a href="Kernel.html">Kernel</a>(F), F) -&gt F</dt><dd><p>
+<code>multivariate(u, k, f)</code> is undocumented</p>
+</dd></dl>
+<a name="f_palgLODE0"></a><dl><dt>palgLODE0 : (L, F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) -&gt Record(particular : Union(F, "failed"), basis : <a href="List.html">List</a>(F)) if L has <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</dt><dd><p>
+<code>palgLODE0(op, g, x, y, d, p)</code> returns the solution of <code>op f = g</code>. Argument <code>y</code> is an algebraic function of <code>x</code> satisfying <code>d(x)^2y(x)^2 = P(x)</code>.</p>
+</dd></dl>
+<dl><dt>palgLODE0 : (L, F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), F, <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), F) -&gt Record(particular : Union(F, "failed"), basis : <a href="List.html">List</a>(F)) if L has <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(F)</dt><dd><p>
+<code>palgLODE0(op, g, x, y, z, t, c)</code> returns the solution of <code>op f = g</code>. Argument <code>y</code> is an algebraic function of <code>x</code> satisfying <code>x = eval(t, z, ry)</code> and <code>c = d/dz t</code>; <code>r</code> is rational function of <code>x</code>, <code>c</code> and <code>t</code> are rational functions of <code>z</code>.</p>
+</dd></dl>
+<a name="f_palgRDE0"></a><dl><dt>palgRDE0 : (F, F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), Mapping(Union(F, "failed"), F, F, <a href="Symbol.html">Symbol</a>), F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) -&gt Union(F, "failed")</dt><dd><p>
+<code>palgRDE0(f, g, x, y, foo, d, p)</code> returns a function <code>z(x, y)</code> such that <code>dz/dx + n * df/dx z(x, y) = g(x, y)</code> if such a <code>z</code> exists, and "failed" otherwise. Argument <code>y</code> is an algebraic function of <code>x</code> satisfying <code>d(x)^2y(x)^2 = P(x)</code>. Argument <code>foo</code>, called by <code>foo(a, b, x)</code>, is a function that solves <code>du/dx + n * da/dx u(x) = u(x)</code> for an unknown <code>u(x)</code> not involving <code>y</code>.</p>
+</dd></dl>
+<dl><dt>palgRDE0 : (F, F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), Mapping(Union(F, "failed"), F, F, <a href="Symbol.html">Symbol</a>), <a href="Kernel.html">Kernel</a>(F), F, <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), F) -&gt Union(F, "failed")</dt><dd><p>
+<code>palgRDE0(f, g, x, y, foo, t, c)</code> returns a function <code>z(x, y)</code> such that <code>dz/dx + n * df/dx z(x, y) = g(x, y)</code> if such a <code>z</code> exists, and "failed" otherwise. Argument <code>y</code> is an algebraic function of <code>x</code> satisfying <code>x = eval(t, z, ry)</code> and <code>c = d/dz t</code>; <code>r</code> is rational function of <code>x</code>, <code>c</code> and <code>t</code> are rational functions of <code>z</code>. Argument <code>foo</code>, called by <code>foo(a, b, x)</code>, is a function that solves <code>du/dx + n * da/dx u(x) = u(x)</code> for an unknown <code>u(x)</code> not involving <code>y</code>.</p>
+</dd></dl>
+<a name="f_palgint0"></a><dl><dt>palgint0 : (F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>palgint0(f, x, y, d, p)</code> returns the integral of <code>f(x, y)dx</code> where <code>y</code> is an algebraic function of <code>x</code> satisfying <code>d(x)^2 y(x)^2 = P(x)</code>.</p>
+</dd></dl>
+<dl><dt>palgint0 : (F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), F, <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), F) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>palgint0(f, x, y, z, t, c)</code> returns the integral of <code>f(x, y)dx</code> where <code>y</code> is an algebraic function of <code>x</code> satisfying <code>x = eval(t, z, ry)</code> and <code>c = d/dz t</code>; <code>r</code> is rational function of <code>x</code>, <code>c</code> and <code>t</code> are rational functions of <code>z</code>. Argument <code>z</code> is a dummy variable not appearing in <code>f(x, y)</code>.</p>
+</dd></dl>
+<a name="f_rationalize_95ir"></a><dl><dt>rationalize_ir : (<a href="IntegrationResult.html">IntegrationResult</a>(F), <a href="Kernel.html">Kernel</a>(F)) -&gt <a href="IntegrationResult.html">IntegrationResult</a>(F)</dt><dd><p>
+<code>rationalize_ir(irf, k1)</code> eliminates square root <code>k1</code> from the integration result.</p>
+</dd></dl>
+<a name="f_univariate"></a><dl><dt>univariate : (F, <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>univariate(f, k, k, p)</code> is undocumented</p>
+</dd></dl>
+</body>
+</html>

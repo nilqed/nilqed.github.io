@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JFriCASSupport</title>
+</head>
+<body>
+<h1>JFriCASSupport</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fmtjfricas.spad#L137">fmtjfricas.spad line 137</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fmtjfricas.spad#L137">[edit on github]</a></p>
+<p>
+The package <code>JFriCASSupport</code> provides a number of service functions to more easily switch on/off certain formats, in particular the use of the FormatMathJax formatter. Use <code>setFormat! FormatMathJax</code> to switch on MathJax output or <code>setFormats [FormatMathJax, Format1D]</code> to enable several output formats.</p>
+<a name="f_setFormat_33"></a><dl><dt>setFormat! : <a href="Type.html">Type</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setFormat! f</code> returns <code>setFormats! [f]</code>.</p>
+</dd></dl>
+<a name="f_setFormats_33"></a><dl><dt>setFormats! : <a href="List.html">List</a>(<a href="Type.html">Type</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setFormats!(l)</code> takes a list <code>l</code> of formatters and sets this for future output in a session. It also issues a command equivalent to ")set output formatted on" if the given list is non-empty and ")set output formatted off" if the input list is empty.</p>
+</dd></dl>
+</body>
+</html>

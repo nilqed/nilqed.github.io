@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CyclicStreamTools</title>
+</head>
+<body>
+<h1>CyclicStreamTools(S, ST)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/stream.spad#L487">stream.spad line 487</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/stream.spad#L487">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a><li>ST : <a href="LazyStreamAggregate.html">LazyStreamAggregate</a>(S)</ul>
+<p>
+This package provides tools for working with cyclic streams.</p>
+<a name="f_computeCycleEntry"></a><dl><dt>computeCycleEntry : (ST, ST) -&gt ST</dt><dd><p>
+<code>computeCycleEntry(x, cycElt)</code>, where cycElt is a pointer to a node in the cyclic part of the cyclic stream <code>x</code>, returns a pointer to the first node in the cycle</p>
+</dd></dl>
+<a name="f_computeCycleLength"></a><dl><dt>computeCycleLength : ST -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>computeCycleLength(s)</code> returns the length of the cycle of a cyclic stream <code>t</code>, where <code>s</code> is a pointer to a node in the cyclic part of <code>t</code>.</p>
+</dd></dl>
+<a name="f_cycleElt"></a><dl><dt>cycleElt : ST -&gt Union(ST, "failed")</dt><dd><p>
+<code>cycleElt(s)</code> returns a pointer to a node in the cycle if the stream <code>s</code> is cyclic and returns "failed" if <code>s</code> is not cyclic</p>
+</dd></dl>
+</body>
+</html>

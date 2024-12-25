@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Poset</title>
+</head>
+<body>
+<h1>Poset(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/logic.spad#L612">logic.spad line 612</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/logic.spad#L612">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+holds a complete set together with a structure to codify the partial order. for more documentation see: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/index.<code>htm</code></a></p>
+<a name="f__43"></a><dl><dt><a href="FiniteGraph.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addArrow_33"></a><dl><dt>addArrow! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addArrow!(s, nm, n1, n2)</code> adds an arrow to the graph <code>s</code>, where: <code>n1</code> is the index of the start object <code>n2</code> is the index of the end object This is done in a non-mutable way, that is, the original poset is not changed instead a new one is constructed.</p>
+</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, <a href="String.html">String</a>, S, S) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_addObject_33"></a><dl><dt>addObject! : (%, S) -&gt %</dt><dd><p>
+<code>addObject!(s, n)</code> adds object with coordinates <code>n</code> to the graph <code>s</code>. This is done in a non-mutable way, that is, the original poset is not changed instead a new one is constructed.</p>
+</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addObject_33">addObject!</a> : (%, Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_adjacencyMatrix"></a><dl><dt><a href="FiniteGraph.html#f_adjacencyMatrix">adjacencyMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowName"></a><dl><dt><a href="FiniteGraph.html#f_arrowName">arrowName</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="String.html">String</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsFromArrow"></a><dl><dt><a href="FiniteGraph.html#f_arrowsFromArrow">arrowsFromArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsFromNode"></a><dl><dt><a href="FiniteGraph.html#f_arrowsFromNode">arrowsFromNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsToArrow"></a><dl><dt><a href="FiniteGraph.html#f_arrowsToArrow">arrowsToArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsToNode"></a><dl><dt><a href="FiniteGraph.html#f_arrowsToNode">arrowsToNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_completeReflexivity"></a><dl><dt>completeReflexivity : % -&gt %</dt><dd><p>
+Reflexivity requires forall(<code>x</code>): x&lt;=x This function enforces this by making sure that every element has arrow to itself. That is, the leading diagonal is <code>true</code>.</p>
+</dd></dl>
+<a name="f_completeTransitivity"></a><dl><dt>completeTransitivity : % -&gt %</dt><dd><p>
+Transitivity requires forall(<code>x</code>, <code>y</code>, <code>z</code>): x&lt;=y and y&lt;=z implies x&lt;=z This function enforces this by making sure that the composition of any two arrows is also an arrow.</p>
+</dd></dl>
+<a name="f_coverMatrix"></a><dl><dt>coverMatrix : % -&gt <a href="IncidenceAlgebra.html">IncidenceAlgebra</a>(<a href="Integer.html">Integer</a>, S)</dt><dd><p>
+the covering matrix of a list of elements from a comparison function the list is assumed to be topologically sorted, i.e. <code>w</code>.<code>r</code>. to a linear extension of the comparison function <code>f</code> This function is based on code by Franz Lehner. Notes by Martin Baker on the webpage here: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/moebius/"<http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/moebius/</a></p>
+</dd></dl>
+<a name="f_createWidth"></a><dl><dt><a href="FiniteGraph.html#f_createWidth">createWidth</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_createX"></a><dl><dt><a href="FiniteGraph.html#f_createX">createX</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_createY"></a><dl><dt><a href="FiniteGraph.html#f_createY">createY</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_cycleClosed"></a><dl><dt><a href="FiniteGraph.html#f_cycleClosed">cycleClosed</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_cycleOpen"></a><dl><dt><a href="FiniteGraph.html#f_cycleOpen">cycleOpen</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_deepDiagramSvg"></a><dl><dt><a href="FiniteGraph.html#f_deepDiagramSvg">deepDiagramSvg</a> : (<a href="String.html">String</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramHeight"></a><dl><dt><a href="FiniteGraph.html#f_diagramHeight">diagramHeight</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramSvg"></a><dl><dt><a href="FiniteGraph.html#f_diagramSvg">diagramSvg</a> : (<a href="String.html">String</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramWidth"></a><dl><dt><a href="FiniteGraph.html#f_diagramWidth">diagramWidth</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramsSvg"></a><dl><dt><a href="FiniteGraph.html#f_diagramsSvg">diagramsSvg</a> : (<a href="String.html">String</a>, <a href="List.html">List</a>(%), <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_distance"></a><dl><dt><a href="FiniteGraph.html#f_distance">distance</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_distanceMatrix"></a><dl><dt><a href="FiniteGraph.html#f_distanceMatrix">distanceMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_finitePoset"></a><dl><dt>finitePoset : (<a href="List.html">List</a>(S), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>))) -&gt %</dt><dd><p>
+<code>finitePoset(c, s)</code> constructs a finite poset where the set and structure is supplied.</p>
+</dd></dl>
+<dl><dt>finitePoset : (<a href="List.html">List</a>(S), Mapping(<a href="Boolean.html">Boolean</a>, S, S)) -&gt %</dt><dd><p>
+<code>finitePoset(c, p)</code> constructs a finite poset where the set and structure is supplied. The structure is supplied as a predicate function.</p>
+</dd></dl>
+<a name="f_flatten"></a><dl><dt><a href="FiniteGraph.html#f_flatten">flatten</a> : <a href="DirectedGraph.html">DirectedGraph</a>(%) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getArr"></a><dl><dt>getArr : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>))</dt><dd><p>
+<code>getArr(s)</code> returns a list of all the arrows (or edges) Note: different from getArrows(<code>s</code>) which is inherited from FiniteGraph(<code>S</code>)</p>
+</dd></dl>
+<a name="f_getArrowIndex"></a><dl><dt><a href="FiniteGraph.html#f_getArrowIndex">getArrowIndex</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getArrows"></a><dl><dt><a href="FiniteGraph.html#f_getArrows">getArrows</a> : % -&gt <a href="List.html">List</a>(Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getVert"></a><dl><dt>getVert : % -&gt <a href="List.html">List</a>(S)</dt><dd><p>
+<code>getVert(s)</code> returns a list of all the vertices (or objects) of the graph <code>s</code>. Note: different from getVertices(<code>s</code>) which is inherited from FiniteGraph(<code>S</code>)</p>
+</dd></dl>
+<a name="f_getVertexIndex"></a><dl><dt><a href="FiniteGraph.html#f_getVertexIndex">getVertexIndex</a> : (%, S) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getVertices"></a><dl><dt><a href="FiniteGraph.html#f_getVertices">getVertices</a> : % -&gt <a href="List.html">List</a>(Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_glb"></a><dl><dt>glb : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>glb(s, l)</code> 'greatest lower bound' or 'infimum' of <code>l</code>. In this version of <code>glb</code> nodes are represented as index values. Not every subset of a poset will have a <code>glb</code> in which case "failed" will be returned as an error indication.</p>
+</dd></dl>
+<a name="f_implies"></a><dl><dt>implies : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_inDegree"></a><dl><dt><a href="FiniteGraph.html#f_inDegree">inDegree</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_incidenceMatrix"></a><dl><dt><a href="FiniteGraph.html#f_incidenceMatrix">incidenceMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_indexToObject"></a><dl><dt>indexToObject : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt S</dt><dd><p>
+<code>indexToObject returns</code> the object at a given index.</p>
+</dd></dl>
+<a name="f_initial"></a><dl><dt><a href="FiniteGraph.html#f_initial">initial</a> : () -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isAcyclic_63"></a><dl><dt><a href="FiniteGraph.html#f_isAcyclic_63">isAcyclic?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isAntiChain_63"></a><dl><dt>isAntiChain? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isAntiChain?(s)</code> checks if <code>s</code> is an antichain, that is any two elements in <code>s</code> are incomparable.</p>
+</dd></dl>
+<a name="f_isAntisymmetric_63"></a><dl><dt>isAntisymmetric? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+Antisymmetric requires forall(<code>x</code>, <code>y</code>): x&lt;=y and y&lt;=x iff x=y Returns <code>true</code> if this is the case for every element.</p>
+</dd></dl>
+<a name="f_isChain_63"></a><dl><dt>isChain? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isChain?(s)</code> checks if <code>s</code> is a chain, that is any two elements in <code>s</code> are comparable.</p>
+</dd></dl>
+<a name="f_isDirectSuccessor_63"></a><dl><dt><a href="FiniteGraph.html#f_isDirectSuccessor_63">isDirectSuccessor?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isDirected_63"></a><dl><dt><a href="FiniteGraph.html#f_isDirected_63">isDirected?</a> : () -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isFixPoint_63"></a><dl><dt><a href="FiniteGraph.html#f_isFixPoint_63">isFixPoint?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isFunctional_63"></a><dl><dt><a href="FiniteGraph.html#f_isFunctional_63">isFunctional?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isGreaterThan_63"></a><dl><dt><a href="FiniteGraph.html#f_isGreaterThan_63">isGreaterThan?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_joinIfCan"></a><dl><dt>joinIfCan : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>joinIfCan returns</code> the join of a subset of lattice given by list of elements.</p>
+</dd></dl>
+<dl><dt>joinIfCan : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>joinIfCan(s, a, b)</code> returns the join of 'a' and <code>'b'</code> In this version of join nodes are represented as index values. In the general case, not every poset will have a join in which case "failed" will be returned as an error indication.</p>
+</dd></dl>
+<a name="f_kgraph"></a><dl><dt><a href="FiniteGraph.html#f_kgraph">kgraph</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_laplacianMatrix"></a><dl><dt><a href="FiniteGraph.html#f_laplacianMatrix">laplacianMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_le"></a><dl><dt><a href="Preorder.html#f_le">le</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Preorder.html">Preorder</a>(S)</dd></dl>
+<a name="f_loopsArrows"></a><dl><dt><a href="FiniteGraph.html#f_loopsArrows">loopsArrows</a> : % -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_loopsAtNode"></a><dl><dt><a href="FiniteGraph.html#f_loopsAtNode">loopsAtNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_loopsNodes"></a><dl><dt><a href="FiniteGraph.html#f_loopsNodes">loopsNodes</a> : % -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_looseEquals"></a><dl><dt><a href="FiniteGraph.html#f_looseEquals">looseEquals</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_lowerSet"></a><dl><dt>lowerSet : % -&gt %</dt><dd><p>
+a subset <code>U</code> with the property that, if <code>x</code> is in <code>U</code> and <code>x</code> <code>&gt;=</code> <code>y</code>, then <code>y</code> is in <code>U</code></p>
+</dd></dl>
+<a name="f_lub"></a><dl><dt>lub : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>lub(s, l)</code> is 'least upper bound' or 'supremum' of <code>l</code>. In this version of lub nodes are represented as index values. Not every subset of a poset will have a lub in which case "failed" will be returned as an error indication.</p>
+</dd></dl>
+<a name="f_map"></a><dl><dt><a href="FiniteGraph.html#f_map">map</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(S), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_mapContra"></a><dl><dt><a href="FiniteGraph.html#f_mapContra">mapContra</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(S), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="FiniteGraph.html#f_max">max</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_max">max</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_meetIfCan"></a><dl><dt>meetIfCan : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>meetIfCan returns</code> the meet of a subset of lattice given by list of elements.</p>
+</dd></dl>
+<dl><dt>meetIfCan : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>meetIfCan(s, a, b)</code> returns the meet of 'a' and <code>'b'</code> In this version of meet nodes are represented as index values. In the general case, not every poset will have a meet in which case "failed" will be returned as an error indication.</p>
+</dd></dl>
+<a name="f_merge"></a><dl><dt><a href="FiniteGraph.html#f_merge">merge</a> : (%, %) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="FiniteGraph.html#f_min">min</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_min">min</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_moebius"></a><dl><dt>moebius : % -&gt <a href="IncidenceAlgebra.html">IncidenceAlgebra</a>(<a href="Integer.html">Integer</a>, S)</dt><dd><p>
+<code>moebius incidence</code> matrix for this poset This function is based on code by Franz Lehner. Notes by Martin Baker on the webpage here: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/moebius/"<http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/moebius/</a></p>
+</dd></dl>
+<a name="f_nodeFromArrow"></a><dl><dt><a href="FiniteGraph.html#f_nodeFromArrow">nodeFromArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeFromNode"></a><dl><dt><a href="FiniteGraph.html#f_nodeFromNode">nodeFromNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeToArrow"></a><dl><dt><a href="FiniteGraph.html#f_nodeToArrow">nodeToArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeToNode"></a><dl><dt><a href="FiniteGraph.html#f_nodeToNode">nodeToNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_objectToIndex"></a><dl><dt>objectToIndex : (%, S) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>objectToIndex returns</code> the index of a given object.</p>
+</dd></dl>
+<a name="f_opposite"></a><dl><dt>opposite : % -&gt %</dt><dd><p>
+<code>opposite(s)</code> constructs the opposite in the category theory sense of reversing all the arrows.</p>
+</dd></dl>
+<a name="f_outDegree"></a><dl><dt><a href="FiniteGraph.html#f_outDegree">outDegree</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_powerSetStructure"></a><dl><dt>powerSetStructure : S -&gt %</dt><dd><p>
+<code>powerSetStructure(set)</code> is a constructor for a Poset where each element is a <code>set</code> (implemented as a list) and with a subset structure. requires <code>S</code> to be a list.</p>
+</dd></dl>
+<a name="f_routeArrows"></a><dl><dt><a href="FiniteGraph.html#f_routeArrows">routeArrows</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_routeNodes"></a><dl><dt><a href="FiniteGraph.html#f_routeNodes">routeNodes</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_setArr"></a><dl><dt>setArr : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>))) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setArr(s, la)</code> sets the list of all arrows (or edges)</p>
+</dd></dl>
+<a name="f_setVert"></a><dl><dt>setVert : (%, <a href="List.html">List</a>(S)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setVert(s, lv)</code> sets the list of all vertices (or objects)</p>
+</dd></dl>
+<a name="f_spanningForestArrow"></a><dl><dt><a href="FiniteGraph.html#f_spanningForestArrow">spanningForestArrow</a> : % -&gt <a href="List.html">List</a>(<a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningForestNode"></a><dl><dt><a href="FiniteGraph.html#f_spanningForestNode">spanningForestNode</a> : % -&gt <a href="List.html">List</a>(<a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningTreeArrow"></a><dl><dt><a href="FiniteGraph.html#f_spanningTreeArrow">spanningTreeArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningTreeNode"></a><dl><dt><a href="FiniteGraph.html#f_spanningTreeNode">spanningTreeNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_subdiagramSvg"></a><dl><dt><a href="FiniteGraph.html#f_subdiagramSvg">subdiagramSvg</a> : (<a href="Scene.html">Scene</a>(<a href="SCartesian.html">SCartesian</a>(2)), %, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_terminal"></a><dl><dt><a href="FiniteGraph.html#f_terminal">terminal</a> : S -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_unit"></a><dl><dt><a href="FiniteGraph.html#f_unit">unit</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_upperSet"></a><dl><dt>upperSet : % -&gt %</dt><dd><p>
+a subset <code>U</code> with the property that, if <code>x</code> is in <code>U</code> and <code>x</code> <code>&lt;=</code> <code>y</code>, then <code>y</code> is in <code>U</code></p>
+</dd></dl>
+<a name="f_zetaMatrix"></a><dl><dt>zetaMatrix : % -&gt <a href="IncidenceAlgebra.html">IncidenceAlgebra</a>(<a href="Integer.html">Integer</a>, S)</dt><dd><p>
+<code>zetaMatrix(P)</code> returns the matrix of the zeta function This function is based on code by Franz Lehner. Notes by Martin Baker on the webpage here: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/moebius/"<http://www.euclideanspace.com/prog/scratchpad/mycode/discrete/logic/moebius/</a></p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="FiniteGraph.html">FiniteGraph</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Preorder.html">Preorder</a>(S)
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

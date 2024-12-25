@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>XDistributedPolynomialFunctions</title>
+</head>
+<body>
+<h1>XDistributedPolynomialFunctions(VAR, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xdpolyf.spad#L5">xdpolyf.spad line 5</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xdpolyf.spad#L5">[edit on github]</a></p>
+<ul>
+<li>VAR : <a href="OrderedSet.html">OrderedSet</a><li>F : <a href="Field.html">Field</a></ul>
+<p>
+Using the Hankel matrix of a noncommutative polynomial one can determine the rank (Matrices de Hankel by Fliess). The extended Ho-Algorithmus (Fornasini+Marchesini) is used to create a minimal linear representation. Another approach is implemented in NonCommutativeRationalFunctions.</p>
+<a name="f_display"></a><dl><dt>display : Record(rows : <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR)), cols : <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR)), H : <a href="Matrix.html">Matrix</a>(F)) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>display(sys)</code> prints the Hankel matrix in an extended form with row-indices as column 0 and column-indices as row 0.</p>
+</dd></dl>
+<a name="f_findNonZeroEntry"></a><dl><dt>findNonZeroEntry : (<a href="Matrix.html">Matrix</a>(F), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>findNonZeroEntry(A,i,j)</code> returns the indices [<code>k</code>,<code>l</code>] with i&lt;=k&lt;=m and j&lt;=l&lt;=n such that A(<code>k</code>,<code>l</code>) is non-zero and [0,0] otherwise. A is of size <code>m</code> <code>x</code> <code>n</code>.</p>
+</dd></dl>
+<a name="f_hankelIndices"></a><dl><dt>hankelIndices : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F) -&gt <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR))</dt><dd><p>
+<code>hankelIndices(p)</code> returns a list of all left and right factors of the monomials of a given multivariate noncommutative polynomial. Factorization: <code>w</code> = u*v</p>
+</dd></dl>
+<a name="f_hankelMatrix"></a><dl><dt>hankelMatrix : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>hankelMatrix(p)</code> returns the Hankel matrix <code>H</code>(<code>p</code>) of given polynomial <code>p</code>, i.e. the entries at (<code>u</code>,<code>v</code>) are the coefficients of the monomials <code>w</code> = u*v. Rows and columns are indexed by words.</p>
+</dd></dl>
+<dl><dt>hankelMatrix : (<a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F), VAR) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>hankelMatrix(p,x)</code> returns a matrix with the entries of the coefficients of <code>p</code> at (<code>u</code>,<code>v</code>) where the monomials factorizes through <code>w</code> = u*x*v. This matrix is indexed by all words of the Hankel matrix.</p>
+</dd></dl>
+<a name="f_hankelSystem"></a><dl><dt>hankelSystem : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F) -&gt Record(rows : <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR)), cols : <a href="List.html">List</a>(<a href="FreeMonoid.html">FreeMonoid</a>(VAR)), H : <a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>hankelSystem(p)</code> creates a Hankel-matrix for the polynomial <code>p</code> with respect to the basis of all factors in <code>p</code>. Row- and column-indices can be different.</p>
+</dd></dl>
+<a name="f_minimalMatrix"></a><dl><dt>minimalMatrix : (<a href="Matrix.html">Matrix</a>(F), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(F)</dt><dd><p>
+<code>minimalMatrix(A,r)</code> returns the minimal (upper-left) submatrix of A such that the rank corresponds to the given.</p>
+</dd></dl>
+<a name="f_minimalRepresentation"></a><dl><dt>minimalRepresentation : <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VAR, F) -&gt Record(alpha : <a href="Matrix.html">Matrix</a>(F), mu : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F)), var : <a href="List.html">List</a>(VAR), beta : <a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>minimalRepresentation(p)</code> returns a minimal representation using the generalized Ho algorithm [Fornasini, 1978] <code>p</code> = sum_w alpha*mu(<code>w</code>)*beta*w [Theorem 3.3, Salomaa--Soittola 1978]</p>
+</dd></dl>
+<a name="f_transformationMatrices"></a><dl><dt>transformationMatrices : <a href="Matrix.html">Matrix</a>(F) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>transformationMatrices(A)</code> returns a list of two matrices <code>P</code> and <code>Q</code> such that P*A*Q = <code>J</code> where the upper diagonal block of <code>J</code> is I_k for <code>k</code> = rank(A).</p>
+</dd></dl>
+</body>
+</html>

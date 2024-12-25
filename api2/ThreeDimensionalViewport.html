@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ThreeDimensionalViewport</title>
+</head>
+<body>
+<h1>ThreeDimensionalViewport</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/view3D.spad#L1">view3D.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/view3D.spad#L1">[edit on github]</a></p>
+<p>
+ThreeDimensionalViewport creates viewports to display graphs</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_axes"></a><dl><dt>axes : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>axes(v, s)</code> displays the axes of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, if <code>s</code> is "on", or does not display the axes if <code>s</code> is "off".</p>
+</dd></dl>
+<a name="f_clipSurface"></a><dl><dt>clipSurface : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>clipSurface(v, s)</code> displays the graph with the specified clipping region removed if <code>s</code> is "on", or displays the graph without clipping implemented if <code>s</code> is "off", for the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_close"></a><dl><dt>close : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>close(v)</code> closes the viewport window of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, and terminates the corresponding process ID.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_colorDef"></a><dl><dt>colorDef : (%, <a href="Color.html">Color</a>, <a href="Color.html">Color</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>colorDef(v, c1, c2)</code> sets the range of colors along the colormap so that the lower end of the colormap is defined by <code>c1</code> and the top end of the colormap is defined by <code>c2</code>, for the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_controlPanel"></a><dl><dt>controlPanel : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>controlPanel(v, s)</code> displays the control panel of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, if <code>s</code> is "on", or hides the control panel if <code>s</code> is "off".</p>
+</dd></dl>
+<a name="f_diagonals"></a><dl><dt>diagonals : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>diagonals(v, s)</code> displays the diagonals of the polygon outline showing a triangularized surface instead of a quadrilateral surface outline, for the given three-dimensional viewport <code>v</code> which is of domain ThreeDimensionalViewport, if <code>s</code> is "on", or does not display the diagonals if <code>s</code> is "off".</p>
+</dd></dl>
+<a name="f_dimensions"></a><dl><dt>dimensions : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>dimensions(v, x, y, width, height)</code> sets the position of the upper left-hand corner of the three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, to the window coordinate <code>x</code>, <code>y</code>, and sets the dimensions of the window to that of <code>width</code>, <code>height</code>. The new dimensions are not displayed until the function <span class="spadfun">makeViewport3D</span> is executed again for <code>v</code>.</p>
+</dd></dl>
+<a name="f_drawStyle"></a><dl><dt>drawStyle : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>drawStyle(v, s)</code> displays the surface for the given three-dimensional viewport <code>v</code> which is of domain ThreeDimensionalViewport in the style of drawing indicated by <code>s</code>. If <code>s</code> is not a valid drawing style the style is wireframe by default. Possible styles are <code>"shade"</code>, <code>"solid"</code> or <code>"opaque"</code>, <code>"smooth"</code>, and <code>"wireMesh"</code>.</p>
+</dd></dl>
+<a name="f_eyeDistance"></a><dl><dt>eyeDistance : (%, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>eyeDistance(v, d)</code> sets the distance of the observer from the center of the graph to <code>d</code>, for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_hitherPlane"></a><dl><dt>hitherPlane : (%, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>hitherPlane(v, h)</code> sets the hither clipping plane of the graph to <code>h</code>, for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_intensity"></a><dl><dt>intensity : (%, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>intensity(v, i)</code> sets the intensity of the light source to <code>i</code>, for the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_key"></a><dl><dt>key : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>key(v)</code> returns the process ID number of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lighting"></a><dl><dt>lighting : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>lighting(v, x, y, z)</code> sets the position of the light source to the coordinates <code>x</code>, <code>y</code>, and <code>z</code> and displays the graph for the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_makeViewport3D"></a><dl><dt>makeViewport3D : % -&gt %</dt><dd><p>
+<code>makeViewport3D(v)</code> takes the given three-dimensional viewport, <code>v</code>, of the domain ThreeDimensionalViewport and displays a viewport window on the screen which contains the contents of <code>v</code>.</p>
+</dd></dl>
+<dl><dt>makeViewport3D : (<a href="ThreeSpace.html">ThreeSpace</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt %</dt><dd><p>
+<code>makeViewport3D(sp, lopt)</code> takes the given space, <code>sp</code> which is of the domain ThreeSpace and displays a viewport window on the screen which contains the contents of <code>sp</code>, and whose draw options are indicated by the list <code>lopt</code>, which is a list of options from the domain <code>DrawOption</code>.</p>
+</dd></dl>
+<dl><dt>makeViewport3D : (<a href="ThreeSpace.html">ThreeSpace</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>makeViewport3D(sp, s)</code> takes the given space, <code>sp</code> which is of the domain ThreeSpace and displays a viewport window on the screen which contains the contents of <code>sp</code>, and whose title is given by <code>s</code>.</p>
+</dd></dl>
+<a name="f_modifyPointData"></a><dl><dt>modifyPointData : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>modifyPointData(v, ind, pt)</code> takes the viewport, <code>v</code>, which is of the domain ThreeDimensionalViewport, and places the data point, <code>pt</code> into the list of points database of <code>v</code> at the index location given by <code>ind</code>.</p>
+</dd></dl>
+<a name="f_move"></a><dl><dt>move : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>move(v, x, y)</code> displays the three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, with the upper left-hand corner of the viewport window at the screen coordinate position <code>x</code>, <code>y</code>.</p>
+</dd></dl>
+<a name="f_options"></a><dl><dt>options : (%, <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt %</dt><dd><p>
+<code>options(v, lopt)</code> takes the viewport, <code>v</code>, which is of the domain ThreeDimensionalViewport and sets the draw options being used by <code>v</code> to those indicated in the list, <code>lopt</code>, which is a list of options from the domain <code>DrawOption</code>.</p>
+</dd></dl>
+<dl><dt>options : % -&gt <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)</dt><dd><p>
+<code>options(v)</code> takes the viewport, <code>v</code>, which is of the domain ThreeDimensionalViewport and returns a list of all the draw options from the domain <code>DrawOption</code> which are being used by <code>v</code>.</p>
+</dd></dl>
+<a name="f_outlineRender"></a><dl><dt>outlineRender : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outlineRender(v, s)</code> displays the polygon outline showing either triangularized surface or a quadrilateral surface outline depending on the whether the <span class="spadfun">diagonals</span> function has been set, for the given three-dimensional viewport <code>v</code> which is of domain ThreeDimensionalViewport, if <code>s</code> is "on", or does not display the polygon outline if <code>s</code> is "off".</p>
+</dd></dl>
+<a name="f_perspective"></a><dl><dt>perspective : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>perspective(v,s)</code> displays the graph in perspective if <code>s</code> is "on", or does not display perspective if <code>s</code> is "off" for the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_reset"></a><dl><dt>reset : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>reset(v)</code> sets the current state of the graph characteristics of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, back to their initial settings.</p>
+</dd></dl>
+<a name="f_resize"></a><dl><dt>resize : (%, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>resize(v, w, h)</code> displays the three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, with a width of <code>w</code> and a height of <code>h</code>, keeping the upper left-hand corner position unchanged.</p>
+</dd></dl>
+<a name="f_rotate"></a><dl><dt>rotate : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>rotate(v, th, phi)</code> rotates the graph to the longitudinal view angle <code>th</code> radians and the latitudinal view angle <code>phi</code> radians for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<dl><dt>rotate : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>rotate(v, th, phi)</code> rotates the graph to the longitudinal view angle <code>th</code> degrees and the latitudinal view angle <code>phi</code> degrees for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport. The new rotation position is not displayed until the function <span class="spadfun">makeViewport3D</span> is executed again for <code>v</code>.</p>
+</dd></dl>
+<a name="f_showClipRegion"></a><dl><dt>showClipRegion : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>showClipRegion(v, s)</code> displays the clipping region of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, if <code>s</code> is "on", or does not display the region if <code>s</code> is "off".</p>
+</dd></dl>
+<a name="f_showRegion"></a><dl><dt>showRegion : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>showRegion(v, s)</code> displays the bounding box of the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, if <code>s</code> is "on", or does not display the box if <code>s</code> is "off".</p>
+</dd></dl>
+<a name="f_subspace"></a><dl><dt>subspace : (%, <a href="ThreeSpace.html">ThreeSpace</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>subspace(v, sp)</code> places the contents of the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport, in the subspace <code>sp</code>, which is of the domain <code>ThreeSpace</code>.</p>
+</dd></dl>
+<dl><dt>subspace : % -&gt <a href="ThreeSpace.html">ThreeSpace</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>subspace(v)</code> returns the contents of the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport, as a subspace of the domain <code>ThreeSpace</code>.</p>
+</dd></dl>
+<a name="f_title"></a><dl><dt>title : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>title(v, s)</code> changes the title which is shown in the three-dimensional viewport window, <code>v</code> of domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_translate"></a><dl><dt>translate : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>translate(v, dx, dy)</code> sets the horizontal viewport offset to <code>dx</code> and the vertical viewport offset to <code>dy</code>, for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f_viewDeltaXDefault"></a><dl><dt>viewDeltaXDefault : () -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewDeltaXDefault()</code> returns the current default horizontal offset from the center of the viewport window.</p>
+</dd></dl>
+<dl><dt>viewDeltaXDefault : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewDeltaXDefault(dx)</code> sets the current default horizontal offset from the center of the viewport window to be <code>dx</code> and returns <code>dx</code>.</p>
+</dd></dl>
+<a name="f_viewDeltaYDefault"></a><dl><dt>viewDeltaYDefault : () -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewDeltaYDefault()</code> returns the current default vertical offset from the center of the viewport window.</p>
+</dd></dl>
+<dl><dt>viewDeltaYDefault : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewDeltaYDefault(dy)</code> sets the current default vertical offset from the center of the viewport window to be <code>dy</code> and returns <code>dy</code>.</p>
+</dd></dl>
+<a name="f_viewPhiDefault"></a><dl><dt>viewPhiDefault : () -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewPhiDefault()</code> returns the current default latitudinal view angle in radians.</p>
+</dd></dl>
+<dl><dt>viewPhiDefault : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewPhiDefault(p)</code> sets the current default latitudinal view angle in radians to the value <code>p</code> and returns <code>p</code>.</p>
+</dd></dl>
+<a name="f_viewThetaDefault"></a><dl><dt>viewThetaDefault : () -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewThetaDefault()</code> returns the current default longitudinal view angle in radians.</p>
+</dd></dl>
+<dl><dt>viewThetaDefault : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewThetaDefault(t)</code> sets the current default longitudinal view angle in radians to the value <code>t</code> and returns <code>t</code>.</p>
+</dd></dl>
+<a name="f_viewZoomDefault"></a><dl><dt>viewZoomDefault : () -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewZoomDefault()</code> returns the current default graph scaling value.</p>
+</dd></dl>
+<dl><dt>viewZoomDefault : <a href="Float.html">Float</a> -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>viewZoomDefault(s)</code> sets the current default graph scaling value to <code>s</code> and returns <code>s</code>.</p>
+</dd></dl>
+<a name="f_viewpoint"></a><dl><dt>viewpoint : % -&gt Record(theta : <a href="DoubleFloat.html">DoubleFloat</a>, phi : <a href="DoubleFloat.html">DoubleFloat</a>, scale : <a href="DoubleFloat.html">DoubleFloat</a>, scaleX : <a href="DoubleFloat.html">DoubleFloat</a>, scaleY : <a href="DoubleFloat.html">DoubleFloat</a>, scaleZ : <a href="DoubleFloat.html">DoubleFloat</a>, deltaX : <a href="DoubleFloat.html">DoubleFloat</a>, deltaY : <a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>viewpoint(v)</code> returns the current viewpoint setting of the given viewport, <code>v</code>. This function is useful in the situation where the user has created a viewport, proceeded to interact with it via the control panel and desires to save the values of the viewpoint as the default settings for another viewport to be created using the system.</p>
+</dd></dl>
+<dl><dt>viewpoint : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>viewpoint(v, th, phi)</code> sets the longitudinal view angle to <code>th</code> radians and the latitudinal view angle to <code>phi</code> radians for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport. The new viewpoint position is not displayed until the function <span class="spadfun">makeViewport3D</span> is executed again for <code>v</code>.</p>
+</dd></dl>
+<dl><dt>viewpoint : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>viewpoint(v, rotx, roty, rotz)</code> sets the rotation about the <code>x</code>-axis to be <code>rotx</code> radians, sets the rotation about the <code>y</code>-axis to be <code>roty</code> radians, and sets the rotation about the <code>z</code>-axis to be <code>rotz</code> radians, for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport and displays <code>v</code> with the new view position.</p>
+</dd></dl>
+<dl><dt>viewpoint : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>viewpoint(v, th, phi, s, dx, dy)</code> sets the longitudinal view angle to <code>th</code> radians, the latitudinal view angle to <code>phi</code> radians, the scale factor to <code>s</code>, the horizontal viewport offset to <code>dx</code>, and the vertical viewport offset to <code>dy</code> for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport. The new viewpoint position is not displayed until the function <span class="spadfun">makeViewport3D</span> is executed again for <code>v</code>.</p>
+</dd></dl>
+<dl><dt>viewpoint : (%, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>viewpoint(v, th, phi, s, dx, dy)</code> sets the longitudinal view angle to <code>th</code> degrees, the latitudinal view angle to <code>phi</code> degrees, the scale factor to <code>s</code>, the horizontal viewport offset to <code>dx</code>, and the vertical viewport offset to <code>dy</code> for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport. The new viewpoint position is not displayed until the function <span class="spadfun">makeViewport3D</span> is executed again for <code>v</code>.</p>
+</dd></dl>
+<dl><dt>viewpoint : (%, Record(theta : <a href="DoubleFloat.html">DoubleFloat</a>, phi : <a href="DoubleFloat.html">DoubleFloat</a>, scale : <a href="DoubleFloat.html">DoubleFloat</a>, scaleX : <a href="DoubleFloat.html">DoubleFloat</a>, scaleY : <a href="DoubleFloat.html">DoubleFloat</a>, scaleZ : <a href="DoubleFloat.html">DoubleFloat</a>, deltaX : <a href="DoubleFloat.html">DoubleFloat</a>, deltaY : <a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>viewpoint(v, viewpt)</code> sets the viewpoint for the viewport. The viewport record consists of the latitudal and longitudal angles, the zoom factor, the <code>X</code>, <code>Y</code>, and <code>Z</code> scales, and the <code>X</code> and <code>Y</code> displacements.</p>
+</dd></dl>
+<a name="f_viewport3D"></a><dl><dt>viewport3D : () -&gt %</dt><dd><p>
+<code>viewport3D()</code> returns an undefined three-dimensional viewport of the domain ThreeDimensionalViewport whose contents are empty.</p>
+</dd></dl>
+<a name="f_write"></a><dl><dt>write : (%, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>write(v, s)</code> takes the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, and creates a directory indicated by <code>s</code>, which contains the graph data file for <code>v</code>.</p>
+</dd></dl>
+<dl><dt>write : (%, <a href="String.html">String</a>, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>write(v, s, lf)</code> takes the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, and creates a directory indicated by <code>s</code>, which contains the graph data file for <code>v</code> and the optional file types indicated by the list <code>lf</code>.</p>
+</dd></dl>
+<dl><dt>write : (%, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>write(v, s, f)</code> takes the given three-dimensional viewport, <code>v</code>, which is of domain ThreeDimensionalViewport, and creates a directory indicated by <code>s</code>, which contains the graph data file for <code>v</code> and an optional file type <code>f</code>.</p>
+</dd></dl>
+<a name="f_zoom"></a><dl><dt>zoom : (%, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>zoom(v, s)</code> sets the graph scaling factor to <code>s</code>, for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<dl><dt>zoom : (%, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>, <a href="Float.html">Float</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>zoom(v, sx, sy, sz)</code> sets the graph scaling factors for the <code>x</code>-coordinate axis to <code>sx</code>, the <code>y</code>-coordinate axis to <code>sy</code> and the <code>z</code>-coordinate axis to <code>sz</code> for the viewport <code>v</code>, which is of the domain ThreeDimensionalViewport.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

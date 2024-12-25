@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LLLReduction</title>
+</head>
+<body>
+<h1>LLLReduction</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lll.spad#L1">lll.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lll.spad#L1">[edit on github]</a></p>
+<p>
+This package implements <code>LLL</code> reduction. Before use user must set appropriate floating point precision.Too low precision may cause nontermination.Higher precisions require more compute time.</p>
+<a name="f_LLL"></a><dl><dt>LLL : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>LLL(m)</code> computes <code>LLL</code> reduction of <code>m</code> <code>LLL</code>(<code>m</code>) is the same as extendedLLL!(copy <code>m</code>, ncols <code>m</code>).</p>
+</dd></dl>
+<a name="f_extendedLLL"></a><dl><dt>extendedLLL : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) -&gt Record(lll : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), trf : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>extendedLLL(m)</code> returns the <code>LLL</code> reductions of <code>m</code> together with the transformation matrix, i.e. if [<code>l</code>, <code>t</code>] is returned then it holds <code>l</code> = <code>t*m</code>.</p>
+</dd></dl>
+<a name="f_extendedLLL_33"></a><dl><dt>extendedLLL! : (<a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>extendedLLL!(m, n)</code> with 1 <code>&lt;=</code> <code>n</code> <code>&lt;=</code> ncols(<code>m</code>) performs the <code>LLL</code> reduction of <code>m</code> where only the first <code>n</code> columns are considered significant. All matrix transformations, however, will be executed on the full matrix. <code>m</code> is destructively modified and will be lost after this call.</p>
+</dd></dl>
+<a name="f_find_95relation"></a><dl><dt>find_relation : (<a href="List.html">List</a>(<a href="Float.html">Float</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>find_relation(lf, k)</code> finds short integer relation between elements of <code>lf</code> rounded to <code>k</code> decimal places.</p>
+</dd></dl>
+</body>
+</html>

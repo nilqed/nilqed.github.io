@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalRicDE</title>
+</head>
+<body>
+<h1>RationalRicDE(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/riccati.spad#L254">riccati.spad line 254</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/riccati.spad#L254">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+In-field solution of Riccati equations, rational case.</p>
+<a name="f_polyRicDE"></a><dl><dt>polyRicDE : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="List.html">List</a>(F), UP)) -&gt <a href="List.html">List</a>(Record(poly : UP, eq : <a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP))))</dt><dd><p>
+<code>polyRicDE(op, zeros)</code> returns <code>[[p1, L1], [p2, L2], ... , [pk, Lk]]</code> such that the polynomial part of any rational solution of the associated Riccati equation of <code>op y = 0</code> must be one of the <code>pi</code><code>'s</code> (up to the constant coefficient), in which case the equation for <code>z = y e^-int p</code> is <code><code>Li</code> z = 0</code>. <code>zeros</code> is a zero finder in <code>UP</code>.</p>
+</dd></dl>
+<a name="f_ricDsolve"></a><dl><dt>ricDsolve : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>ricDsolve(op)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>.</p>
+</dd></dl>
+<dl><dt>ricDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>ricDsolve(op, ezfactor)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+<dl><dt>ricDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="List.html">List</a>(F), UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))</dt><dd><p>
+<code>ricDsolve(op, zeros)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>. <code>zeros</code> is a zero finder in <code>UP</code>.</p>
+</dd></dl>
+<dl><dt>ricDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="List.html">List</a>(F), UP), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))</dt><dd><p>
+<code>ricDsolve(op, zeros, ezfactor)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>. <code>zeros</code> is a zero finder in <code>UP</code>. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+<dl><dt>ricDsolve : <a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>ricDsolve(op)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>.</p>
+</dd></dl>
+<dl><dt>ricDsolve : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>ricDsolve(op, ezfactor)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+<dl><dt>ricDsolve : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="List.html">List</a>(F), UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))</dt><dd><p>
+<code>ricDsolve(op, zeros)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>. <code>zeros</code> is a zero finder in <code>UP</code>.</p>
+</dd></dl>
+<dl><dt>ricDsolve : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="List.html">List</a>(F), UP), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))</dt><dd><p>
+<code>ricDsolve(op, zeros, ezfactor)</code> returns the rational solutions of the associated Riccati equation of <code>op y = 0</code>. <code>zeros</code> is a zero finder in <code>UP</code>. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+<a name="f_singRicDE"></a><dl><dt>singRicDE : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), Mapping(<a href="Factored.html">Factored</a>(UP), UP)) -&gt <a href="List.html">List</a>(Record(frac : <a href="Fraction.html">Fraction</a>(UP), eq : <a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP))))</dt><dd><p>
+<code>singRicDE(op, ezfactor)</code> returns <code>[[f1, L1], [f2, L2], ..., [fk, Lk]]</code> such that the singular <code>++</code> part of any rational solution of the associated Riccati equation of <code>op y = 0</code> must be one of the <code>fi</code><code>'s</code> (up to the constant coefficient), in which case the equation for <code>z = y e^-int <code>ai</code></code> is <code><code>Li</code> z = 0</code>. Argument <code>ezfactor</code> is a factorisation in <code>UP</code>, not necessarily into irreducibles.</p>
+</dd></dl>
+</body>
+</html>

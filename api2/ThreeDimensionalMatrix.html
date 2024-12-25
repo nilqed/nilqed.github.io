@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ThreeDimensionalMatrix</title>
+</head>
+<body>
+<h1>ThreeDimensionalMatrix(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fortran.spad#L948">fortran.spad line 948</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fortran.spad#L948">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This domain represents three dimensional matrices over a general object type</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(R))) -&gt %</dt><dd><p>
+<code>coerce(p)</code> moves from the representation type (PrimitiveArray PrimitiveArray PrimitiveArray <code>R</code>) to the domain</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(R)))</dt><dd><p>
+<code>coerce(x)</code> moves from the domain to the representation type</p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(R))) -&gt %</dt><dd><p>
+<code>construct(lll)</code> creates a 3-<code>D</code> matrix from a List List List <code>R</code> <code>lll</code></p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>elt(x, i, j, k)</code> extract an element from the matrix <code>x</code></p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<a name="f_identityMatrix"></a><dl><dt>identityMatrix : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt % if R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>identityMatrix(n)</code> create an identity matrix we note that this must be square</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_matrixConcat3D"></a><dl><dt>matrixConcat3D : (<a href="Symbol.html">Symbol</a>, %, %) -&gt %</dt><dd><p>
+<code>matrixConcat3D(s, x, y)</code> concatenates two 3-<code>D</code> matrices along a specified axis</p>
+</dd></dl>
+<a name="f_matrixDimensions"></a><dl><dt>matrixDimensions : % -&gt <a href="Vector.html">Vector</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>matrixDimensions(x)</code> returns the dimensions of a matrix</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt R if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt R if % has <a href="finiteAggregate.html">finiteAggregate</a> and R has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_plus"></a><dl><dt>plus : (%, %) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>plus(x, y)</code> adds two matrices, term by term we note that they must be the same size</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>setelt!(x, i, j, k, s)</code> (or <code>x</code>.<code>i</code>.<code>j</code>.<code>k</code> <code>:=</code> <code>s</code>) sets a specific element of the array to some value of type <code>R</code></p>
+</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_zeroMatrix"></a><dl><dt>zeroMatrix : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if R has <a href="Ring.html">Ring</a></dt><dd><p>
+<code>zeroMatrix(i, j, k)</code> create a matrix with all zero terms</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(R)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+<p><a href="Aggregate.html">Aggregate</a>
+</body>
+</html>

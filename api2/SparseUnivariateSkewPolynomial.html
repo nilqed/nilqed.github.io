@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SparseUnivariateSkewPolynomial</title>
+</head>
+<body>
+<h1>SparseUnivariateSkewPolynomial(R, sigma, delta)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ore.spad#L480">ore.spad line 480</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ore.spad#L480">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>sigma : <a href="Automorphism.html">Automorphism</a>(R)<li>delta : Mapping(R, R)</ul>
+<p>
+This is the domain of sparse univariate skew polynomials over an Ore coefficient field. The multiplication is given by <code>x a = \sigma(a) x + \delta a</code>.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="AbelianMonoidRing.html#f__47">/</a> : (%, R) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_apply"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_apply">apply</a> : (%, R, R) -&gt R</dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_binomThmExpt"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_binomThmExpt">binomThmExpt</a> : (%, %, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if % has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if R has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_coefficient">coefficient</a> : (%, <a href="List.html">List</a>(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_coefficient">coefficient</a> : (%, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<dl><dt><a href="FreeModuleCategory.html#f_coefficient">coefficient</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_coefficients"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficients">coefficients</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a> and % has <a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a> or R has <a href="IntegralDomain.html">IntegralDomain</a> and % has <a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a></dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(R)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) or R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_content"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_content">content</a> : % -&gt R if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_degree">degree</a> : (%, <a href="List.html">List</a>(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<dl><dt><a href="AbelianMonoidRing.html#f_degree">degree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_degree">degree</a> : (%, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_exquo">exquo</a> : (%, R) -&gt Union(%, "failed") if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_fmecg"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_fmecg">fmecg</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R, %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_ground"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_ground">ground</a> : % -&gt R</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_ground_63"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_ground_63">ground?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt R</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, c : R)</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_leftDivide"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftDivide">leftDivide</a> : (%, %) -&gt Record(quotient : %, remainder : %) if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_leftExactQuotient"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftExactQuotient">leftExactQuotient</a> : (%, %) -&gt Union(%, "failed") if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_leftExtendedGcd"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftExtendedGcd">leftExtendedGcd</a> : (%, %) -&gt Record(coef1 : %, coef2 : %, generator : %) if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_leftGcd"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftGcd">leftGcd</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_leftLcm"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftLcm">leftLcm</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftQuotient"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftQuotient">leftQuotient</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_leftRemainder"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_leftRemainder">leftRemainder</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_linearExtend"></a><dl><dt><a href="FreeModuleCategory.html#f_linearExtend">linearExtend</a> : (Mapping(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>), %) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_listOfTerms">listOfTerms</a> : % -&gt <a href="List.html">List</a>(Record(k : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, c : R))</dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_mainVariable"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_mainVariable">mainVariable</a> : % -&gt Union(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>, "failed")</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_mapExponents"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_mapExponents">mapExponents</a> : (Mapping(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>), %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_minimumDegree"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_minimumDegree">minimumDegree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_monicLeftDivide"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_monicLeftDivide">monicLeftDivide</a> : (%, %) -&gt Record(quotient : %, remainder : %) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_monicRightDivide"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_monicRightDivide">monicRightDivide</a> : (%, %) -&gt Record(quotient : %, remainder : %) if R has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomial">monomial</a> : (%, <a href="List.html">List</a>(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomial">monomial</a> : (%, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_monomials"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_monomials">monomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_numberOfMonomials">numberOfMonomials</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_outputForm"></a><dl><dt>outputForm : (%, <a href="OutputForm.html">OutputForm</a>) -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>outputForm(p, x)</code> returns the output form of <code>p</code> using <code>x</code> for the otherwise anonymous variable.</p>
+</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) or R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)</dd></dl>
+<a name="f_pomopo_33"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_pomopo_33">pomopo!</a> : (%, R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_primitiveMonomials"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_primitiveMonomials">primitiveMonomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_primitivePart"></a><dl><dt><a href="FiniteAbelianMonoidRing.html#f_primitivePart">primitivePart</a> : % -&gt % if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd> from <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(R), vec : <a href="Vector.html">Vector</a>(R))</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) if R has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if R has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rightDivide"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightDivide">rightDivide</a> : (%, %) -&gt Record(quotient : %, remainder : %) if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_rightExactQuotient"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightExactQuotient">rightExactQuotient</a> : (%, %) -&gt Union(%, "failed") if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_rightExtendedGcd"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightExtendedGcd">rightExtendedGcd</a> : (%, %) -&gt Record(coef1 : %, coef2 : %, generator : %) if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_rightGcd"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightGcd">rightGcd</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_rightLcm"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightLcm">rightLcm</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightQuotient"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightQuotient">rightQuotient</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rightRemainder"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_rightRemainder">rightRemainder</a> : (%, %) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_right_95ext_95ext_95GCD"></a><dl><dt><a href="UnivariateSkewPolynomialCategory.html#f_right_95ext_95ext_95GCD">right_ext_ext_GCD</a> : (%, %) -&gt Record(generator : %, coef1 : %, coef2 : %, coefu : %, coefv : %) if R has <a href="Field.html">Field</a></dt><dd> from <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if R has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_support"></a><dl><dt><a href="FreeModuleCategory.html#f_support">support</a> : % -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dd></dl>
+<a name="f_totalDegree"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegree">totalDegree</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegree">totalDegree</a> : (%, <a href="List.html">List</a>(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_totalDegreeSorted"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_totalDegreeSorted">totalDegreeSorted</a> : (%, <a href="List.html">List</a>(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if R has <a href="EntireRing.html">EntireRing</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_variables"></a><dl><dt><a href="MaybeSkewPolynomialCategory.html#f_variables">variables</a> : % -&gt <a href="List.html">List</a>(<a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dt><dd> from <a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(R)
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="Module.html">Module</a>(R)
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(R)
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Algebra.html">Algebra</a>(R)
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(R)
+<p><a href="Module.html">Module</a>(%)
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(R)
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)
+<p><a href="MaybeSkewPolynomialCategory.html">MaybeSkewPolynomialCategory</a>(R, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SingletonAsOrderedSet.html">SingletonAsOrderedSet</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+</body>
+</html>

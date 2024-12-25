@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RealRootCharacterizationCategory</title>
+</head>
+<body>
+<h1>RealRootCharacterizationCategory(TheField, ThePols)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/reclos.spad#L170">reclos.spad line 170</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/reclos.spad#L170">[edit on github]</a></p>
+<ul>
+<li>TheField : Join(<a href="OrderedRing.html">OrderedRing</a>, <a href="Field.html">Field</a>)<li>ThePols : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(TheField)</ul>
+<p>
+RealRootCharacterizationCategory provides common access functions for all real root codings.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_allRootsOf"></a><dl><dt>allRootsOf : ThePols -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>allRootsOf(pol)</code> creates all the roots of <code>pol</code> in the Real Closure, assumed in order.</p>
+</dd></dl>
+<a name="f_approximate"></a><dl><dt>approximate : (ThePols, %, TheField) -&gt TheField</dt><dd><p>
+<code>approximate(term, root, prec)</code> gives an approximation of <code>term</code> over <code>root</code> with precision <code>prec</code></p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_definingPolynomial"></a><dl><dt>definingPolynomial : % -&gt ThePols</dt><dd><p>
+<code>definingPolynomial(aRoot)</code> gives a polynomial such that <code>definingPolynomial(aRoot).aRoot = 0</code></p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_negative_63"></a><dl><dt>negative? : (ThePols, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>negative?(pol, aRoot)</code> answers if <code>pol</code> interpreted as <code>aRoot</code> is negative</p>
+</dd></dl>
+<a name="f_positive_63"></a><dl><dt>positive? : (ThePols, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>positive?(pol, aRoot)</code> answers if <code>pol</code> interpreted as <code>aRoot</code> is positive</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt>recip : (ThePols, %) -&gt Union(ThePols, "failed")</dt><dd><p>
+<code>recip(pol, aRoot)</code> tries to inverse <code>pol</code> interpreted as <code>aRoot</code></p>
+</dd></dl>
+<a name="f_relativeApprox"></a><dl><dt>relativeApprox : (ThePols, %, TheField) -&gt TheField</dt><dd><p>
+<code>approximate(term, root, prec)</code> gives an approximation of <code>term</code> over <code>root</code> with precision <code>prec</code></p>
+</dd></dl>
+<a name="f_rootOf"></a><dl><dt>rootOf : (ThePols, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(%, "failed")</dt><dd><p>
+<code>rootOf(pol, n)</code> gives the <code>n</code>th root for the order of the Real Closure</p>
+</dd></dl>
+<a name="f_sign"></a><dl><dt>sign : (ThePols, %) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>sign(pol, aRoot)</code> gives the sign of <code>pol</code> interpreted as <code>aRoot</code></p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt>zero? : (ThePols, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zero?(pol, aRoot)</code> answers if <code>pol</code> interpreted as <code>aRoot</code> is <code>0</code></p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

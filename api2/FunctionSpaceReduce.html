@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionSpaceReduce</title>
+</head>
+<body>
+<h1>FunctionSpaceReduce(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pfo.spad#L196">pfo.spad line 196</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pfo.spad#L196">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+This package provides function which replaces transcendental kernels in a function space by random integers. The correspondence between the kernels and the integers is fixed between calls to newReduc().</p>
+<a name="f_bringDown"></a><dl><dt>bringDown : F -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>bringDown(f)</code> replaces transcendental kernels in <code>f</code> by random integers. Error if <code>f</code> contains algebraic kernel.</p>
+</dd></dl>
+<dl><dt>bringDown : (F, <a href="Kernel.html">Kernel</a>(F)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>bringDown(f, k)</code> is like bringDown(<code>f</code>) but <code>k</code> is algebraic kernel and the result is reduced modulo minimal polynomial of <code>k</code>.</p>
+</dd></dl>
+<a name="f_newReduc"></a><dl><dt>newReduc : <a href="Integer.html">Integer</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>newReduc(n)</code> empties reduction state. <code>n</code> is size of random integers to use during next reduction.</p>
+</dd></dl>
+</body>
+</html>

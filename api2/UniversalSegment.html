@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UniversalSegment</title>
+</head>
+<body>
+<h1>UniversalSegment(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/seg.spad#L288">seg.spad line 288</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/seg.spad#L288">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+This domain provides segments which may be half open. That is, ranges of the form <code>a..</code> or <code>a..b</code>.</p>
+<a name="f__43"></a><dl><dt><a href="SegmentCategory.html#f__43">+</a> : (%, S) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<dl><dt><a href="SegmentCategory.html#f__43">+</a> : (S, %) -&gt % if S has <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f__45"></a><dl><dt><a href="SegmentCategory.html#f__45">-</a> : (%, S) -&gt % if S has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_BY"></a><dl><dt><a href="SegmentCategory.html#f_BY">BY</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_SEGMENT"></a><dl><dt>SEGMENT : S -&gt %</dt><dd><p>
+<code>l..</code> produces a half open segment, that is, one with no upper bound.</p>
+</dd></dl>
+<dl><dt><a href="SegmentCategory.html#f_SEGMENT">SEGMENT</a> : (S, S) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="Segment.html">Segment</a>(S) -&gt %</dt><dd><p>
+<code>coerce(x)</code> allows Segment values to be used as %.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="SegmentCategory.html#f_convert">convert</a> : S -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_expand"></a><dl><dt><a href="SegmentExpansionCategory.html#f_expand">expand</a> : % -&gt <a href="Stream.html">Stream</a>(S) if S has <a href="OrderedRing.html">OrderedRing</a></dt><dd> from <a href="SegmentExpansionCategory.html">SegmentExpansionCategory</a>(S, <a href="Stream.html">Stream</a>(S))</dd></dl>
+<dl><dt><a href="SegmentExpansionCategory.html#f_expand">expand</a> : <a href="List.html">List</a>(%) -&gt <a href="Stream.html">Stream</a>(S) if S has <a href="OrderedRing.html">OrderedRing</a></dt><dd> from <a href="SegmentExpansionCategory.html">SegmentExpansionCategory</a>(S, <a href="Stream.html">Stream</a>(S))</dd></dl>
+<a name="f_hasHi"></a><dl><dt>hasHi : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>hasHi(s)</code> tests whether the segment <code>s</code> has an upper bound.</p>
+</dd></dl>
+<a name="f_high"></a><dl><dt><a href="SegmentCategory.html#f_high">high</a> : % -&gt S</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_incr"></a><dl><dt><a href="SegmentCategory.html#f_incr">incr</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_low"></a><dl><dt><a href="SegmentCategory.html#f_low">low</a> : % -&gt S</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="SegmentExpansionCategory.html#f_map">map</a> : (Mapping(S, S), %) -&gt <a href="Stream.html">Stream</a>(S) if S has <a href="OrderedRing.html">OrderedRing</a></dt><dd> from <a href="SegmentExpansionCategory.html">SegmentExpansionCategory</a>(S, <a href="Stream.html">Stream</a>(S))</dd></dl>
+<a name="f_reverse"></a><dl><dt><a href="SegmentCategory.html#f_reverse">reverse</a> : % -&gt % if S has <a href="OrderedRing.html">OrderedRing</a></dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_segment"></a><dl><dt>segment : S -&gt %</dt><dd><p>
+<code>segment(l)</code> is an alternate way to construct the segment <code>l..</code>.</p>
+</dd></dl>
+<dl><dt><a href="SegmentCategory.html#f_segment">segment</a> : (S, S) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SegmentExpansionCategory.html">SegmentExpansionCategory</a>(S, <a href="Stream.html">Stream</a>(S))
+<p><a href="SegmentCategory.html">SegmentCategory</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

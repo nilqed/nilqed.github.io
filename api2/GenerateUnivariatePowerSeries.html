@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GenerateUnivariatePowerSeries</title>
+</head>
+<body>
+<h1>GenerateUnivariatePowerSeries(R, FE)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/genups.spad#L278">genups.spad line 278</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/genups.spad#L278">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>FE : Join(<a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>), <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package is to restrict interpreter choice of signatures, and force Expression when no types are declared</p>
+<a name="f_laurent"></a><dl><dt>laurent : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>laurent : (Mapping(FE, <a href="Integer.html">Integer</a>), <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_puiseux"></a><dl><dt>puiseux : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>puiseux : (Mapping(FE, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_series"></a><dl><dt>series : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>series : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>series : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>series : (Mapping(FE, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>series : (Mapping(FE, <a href="Integer.html">Integer</a>), <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>series : (Mapping(FE, <a href="Integer.html">Integer</a>), <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_taylor"></a><dl><dt>taylor : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>taylor : (FE, <a href="Symbol.html">Symbol</a>, <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Any.html">Any</a> if FE has <a href="Evalable.html">Evalable</a>(FE)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>taylor : (Mapping(FE, <a href="Integer.html">Integer</a>), <a href="Equation.html">Equation</a>(FE)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>taylor : (Mapping(FE, <a href="Integer.html">Integer</a>), <a href="Equation.html">Equation</a>(FE), <a href="UniversalSegment.html">UniversalSegment</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+</p>
+</dd></dl>
+</body>
+</html>

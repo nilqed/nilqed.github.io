@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerModularHermitePade</title>
+</head>
+<body>
+<h1>InnerModularHermitePade</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/modhpsol.spad#L359">modhpsol.spad line 359</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/modhpsol.spad#L359">[edit on github]</a></p>
+<p>
+This package solves Hermite-Pade interpolation problem over ring of integer polynomials.We use reduction modulo primes and modular reconstruction to reduce problem to polynomials modulo $<code>Z_p</code>$.Then we use evaluation and Lagrange interpolation to reduce problem to solving over $<code>Z_p</code>$.</p>
+<a name="f_do_95modular_95solve"></a><dl><dt>do_modular_solve : (<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Symbol.html">Symbol</a>) -&gt Union(Record(basis : <a href="TwoDimensionalArray.html">TwoDimensionalArray</a>(<a href="U32Vector.html">U32Vector</a>), defects : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), cinds : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)), "no_solution")</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_do_95poly_95integer"></a><dl><dt>do_poly_integer : (<a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>)) -&gt Union(Record(defects : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), cinds : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), rowlen : <a href="Integer.html">Integer</a>, offsetdata : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), expdata : <a href="SortedExponentVector.html">SortedExponentVector</a>, coeffdata : <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="Integer.html">Integer</a>)), "no_solution")</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_merge2"></a><dl><dt>merge2 : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>, <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>) -&gt Record(offsetdata : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), expdata : <a href="SortedExponentVector.html">SortedExponentVector</a>)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_merge_95exponents"></a><dl><dt>merge_exponents : (<a href="Integer.html">Integer</a>, <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>, <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+</p>
+</dd></dl>
+</body>
+</html>

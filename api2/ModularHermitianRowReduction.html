@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularHermitianRowReduction</title>
+</head>
+<body>
+<h1>ModularHermitianRowReduction(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/divisor.spad#L210">divisor.spad line 210</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/divisor.spad#L210">[edit on github]</a></p>
+<ul>
+<li>R : <a href="EuclideanDomain.html">EuclideanDomain</a></ul>
+<p>
+Modular hermitian row reduction.</p>
+<a name="f_normalizedDivide"></a><dl><dt>normalizedDivide : (R, R) -&gt Record(quotient : R, remainder : R)</dt><dd><p>
+<code>normalizedDivide(n, d)</code> returns a normalized quotient and remainder such that consistently unique representatives for the residue class are chosen, e.g. positive remainders</p>
+</dd></dl>
+<a name="f_rowEch"></a><dl><dt>rowEch : <a href="Matrix.html">Matrix</a>(R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rowEch(m)</code> computes a modular row-echelon form of <code>m</code>, finding an appropriate modulus.</p>
+</dd></dl>
+<a name="f_rowEchLocal"></a><dl><dt>rowEchLocal : (<a href="Matrix.html">Matrix</a>(R), R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rowEchLocal(m, p)</code> computes a modular row-echelon form of <code>m</code>, finding an appropriate modulus over a local ring where <code>p</code> is the only prime.</p>
+</dd></dl>
+<a name="f_rowEchelon"></a><dl><dt>rowEchelon : (<a href="Matrix.html">Matrix</a>(R), R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rowEchelon(m, d)</code> computes a modular row-echelon form mod <code>d</code> of [<code>d</code>] [<code>d</code>] [. ] [<code>d</code>] [<code>M</code>] where <code>M = m mod d</code>.</p>
+</dd></dl>
+<a name="f_rowEchelonLocal"></a><dl><dt>rowEchelonLocal : (<a href="Matrix.html">Matrix</a>(R), R, R) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rowEchelonLocal(m, d, p)</code> computes the row-echelon form of <code>m</code> concatenated with <code>d</code> times the identity matrix over a local ring where <code>p</code> is the only prime.</p>
+</dd></dl>
+</body>
+</html>

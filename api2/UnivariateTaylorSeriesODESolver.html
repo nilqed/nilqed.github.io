@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariateTaylorSeriesODESolver</title>
+</head>
+<body>
+<h1>UnivariateTaylorSeriesODESolver(Coef, UTS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/utsode.spad#L1">utsode.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/utsode.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))<li>UTS : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(Coef)</ul>
+<p>
+This package provides Taylor series solutions to regular linear or non-linear ordinary differential equations of arbitrary order.</p>
+<a name="f_fixedPointExquo"></a><dl><dt>fixedPointExquo : (UTS, UTS) -&gt UTS</dt><dd><p>
+<code>fixedPointExquo(f, g)</code> computes the exact quotient of <code>f</code> and <code>g</code> using a fixed point computation.</p>
+</dd></dl>
+<a name="f_mpsode"></a><dl><dt>mpsode : (<a href="List.html">List</a>(Coef), <a href="List.html">List</a>(Mapping(UTS, <a href="List.html">List</a>(UTS)))) -&gt <a href="List.html">List</a>(UTS)</dt><dd><p>
+<code>mpsode(r, f)</code> solves the system of differential equations <code>dy[i]/dx =f[i] [x, y[1], y[2], ..., y[n]]</code>, <code>y[i](a) = r[i]</code> for <code>i</code> in 1..<code>n</code>.</p>
+</dd></dl>
+<a name="f_ode"></a><dl><dt>ode : (Mapping(UTS, <a href="List.html">List</a>(UTS)), <a href="List.html">List</a>(Coef)) -&gt UTS</dt><dd><p>
+<code>ode(f, cl)</code> is the solution to <code>y&lt;n&gt;=f(y, y', .., y&lt;n-1&gt;)</code> such that <code>y&lt;i&gt;(a) = cl.(i+1)</code> for <code>i</code> in 0..(<code>n</code> - 1).</p>
+</dd></dl>
+<a name="f_ode1"></a><dl><dt>ode1 : (Mapping(UTS, UTS), Coef) -&gt UTS</dt><dd><p>
+<code>ode1(f, c)</code> is the solution to <code>y' = f(y)</code> such that <code>y(a) = c</code>.</p>
+</dd></dl>
+<a name="f_ode2"></a><dl><dt>ode2 : (Mapping(UTS, UTS, UTS), Coef, Coef) -&gt UTS</dt><dd><p>
+<code>ode2(f, c0, c1)</code> is the solution to <code>y'' = f(y, y')</code> such that <code>y(a) = c0</code> and <code>y'(a) = c1</code>.</p>
+</dd></dl>
+<a name="f_stFunc1"></a><dl><dt>stFunc1 : Mapping(UTS, UTS) -&gt Mapping(<a href="Stream.html">Stream</a>(Coef), <a href="Stream.html">Stream</a>(Coef))</dt><dd><p>
+<code>stFunc1(f)</code> is a local function exported due to compiler problem. This function is of no interest to the top-level user.</p>
+</dd></dl>
+<a name="f_stFunc2"></a><dl><dt>stFunc2 : Mapping(UTS, UTS, UTS) -&gt Mapping(<a href="Stream.html">Stream</a>(Coef), <a href="Stream.html">Stream</a>(Coef), <a href="Stream.html">Stream</a>(Coef))</dt><dd><p>
+<code>stFunc2(f)</code> is a local function exported due to compiler problem. This function is of no interest to the top-level user.</p>
+</dd></dl>
+<a name="f_stFuncN"></a><dl><dt>stFuncN : Mapping(UTS, <a href="List.html">List</a>(UTS)) -&gt Mapping(<a href="Stream.html">Stream</a>(Coef), <a href="List.html">List</a>(<a href="Stream.html">Stream</a>(Coef)))</dt><dd><p>
+<code>stFuncN(f)</code> is a local function xported due to compiler problem. This function is of no interest to the top-level user.</p>
+</dd></dl>
+</body>
+</html>

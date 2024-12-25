@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DirectProductFunctions2</title>
+</head>
+<body>
+<h1>DirectProductFunctions2(dim, A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/vector.spad#L493">vector.spad line 493</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/vector.spad#L493">[edit on github]</a></p>
+<ul>
+<li>dim : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>A : <a href="Type.html">Type</a><li>B : <a href="Type.html">Type</a></ul>
+<p>
+This package provides operations which all take as arguments direct products of elements of some type <code>A</code> and functions from <code>A</code> to another type <code>B</code>. The operations all iterate over their vector argument and either return a value of type <code>B</code> or a direct product over <code>B</code>.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(B, A), <a href="DirectProduct.html">DirectProduct</a>(dim, A)) -&gt <a href="DirectProduct.html">DirectProduct</a>(dim, B)</dt><dd><p>
+<code>map(f, v)</code> applies the function <code>f</code> to every element of the vector <code>v</code> producing a new vector containing the values.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(B, A, B), <a href="DirectProduct.html">DirectProduct</a>(dim, A), B) -&gt B</dt><dd><p>
+<code>reduce(func, vec, ident)</code> combines the elements in <code>vec</code> using the binary function <code>func</code>. Argument ident is returned if the vector is empty.</p>
+</dd></dl>
+<a name="f_scan"></a><dl><dt>scan : (Mapping(B, A, B), <a href="DirectProduct.html">DirectProduct</a>(dim, A), B) -&gt <a href="DirectProduct.html">DirectProduct</a>(dim, B)</dt><dd><p>
+<code>scan(func, vec, ident)</code> creates a new vector whose elements are the result of applying reduce to the binary function <code>func</code>, increasing initial subsequences of the vector <code>vec</code>, and the element ident.</p>
+</dd></dl>
+</body>
+</html>

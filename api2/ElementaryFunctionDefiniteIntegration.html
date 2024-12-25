@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryFunctionDefiniteIntegration</title>
+</head>
+<body>
+<h1>ElementaryFunctionDefiniteIntegration(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/defintef.spad#L1">defintef.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/defintef.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>, <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R))</ul>
+<p>
+ElementaryFunctionDefiniteIntegration provides functions to compute definite integrals of elementary functions.</p>
+<a name="f_innerint"></a><dl><dt>innerint : (F, <a href="Symbol.html">Symbol</a>, <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="OrderedCompletion.html">OrderedCompletion</a>(F), <a href="Boolean.html">Boolean</a>) -&gt Union(:(f1, <a href="OrderedCompletion.html">OrderedCompletion</a>(F)), :(f2, <a href="List.html">List</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(F))), :(fail, "failed"), :(pole, "potentialPole"))</dt><dd><p>
+<code>innerint(f, x, a, b, ignore?)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : (F, <a href="SegmentBinding.html">SegmentBinding</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(F))) -&gt Union(:(f1, <a href="OrderedCompletion.html">OrderedCompletion</a>(F)), :(f2, <a href="List.html">List</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(F))), :(fail, "failed"), :(pole, "potentialPole"))</dt><dd><p>
+<code>integrate(f, x = a..b)</code> returns the integral of <code>f(x)dx</code> from a to <code>b</code>. Error: if <code>f</code> has a pole for <code>x</code> between a and <code>b</code>.</p>
+</dd></dl>
+<dl><dt>integrate : (F, <a href="SegmentBinding.html">SegmentBinding</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(F)), <a href="String.html">String</a>) -&gt Union(:(f1, <a href="OrderedCompletion.html">OrderedCompletion</a>(F)), :(f2, <a href="List.html">List</a>(<a href="OrderedCompletion.html">OrderedCompletion</a>(F))), :(fail, "failed"), :(pole, "potentialPole"))</dt><dd><p>
+<code>integrate(f, x = a..b, "noPole")</code> returns the integral of <code>f(x)dx</code> from a to <code>b</code>. If it is not possible to check whether <code>f</code> has a pole for <code>x</code> between a and <code>b</code> (because of parameters), then this function will assume that <code>f</code> has no such pole. Error: if <code>f</code> has a pole for <code>x</code> between a and <code>b</code> or if the last argument is not "noPole".</p>
+</dd></dl>
+</body>
+</html>

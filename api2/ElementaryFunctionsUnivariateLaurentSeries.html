@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryFunctionsUnivariateLaurentSeries</title>
+</head>
+<body>
+<h1>ElementaryFunctionsUnivariateLaurentSeries(Coef, UTS, ULS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/efuls.spad#L1">efuls.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/efuls.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))<li>UTS : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(Coef)<li>ULS : <a href="UnivariateLaurentSeriesConstructorCategory.html">UnivariateLaurentSeriesConstructorCategory</a>(Coef, UTS)</ul>
+<p>
+This package provides elementary functions on any Laurent series domain over a field which was constructed from a Taylor series domain. These functions are implemented by calling the corresponding functions on the Taylor series domain. We also provide 'partial functions' which compute transcendental functions of Laurent series when possible and return "failed" when this is not possible.</p>
+<a name="f__94"></a><dl><dt>^ : (ULS, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt ULS if Coef has <a href="Field.html">Field</a></dt><dd><p>
+<code>s ^ r</code> raises a Laurent series <code>s</code> to a rational power <code>r</code></p>
+</dd></dl>
+<a name="f_acos"></a><dl><dt>acos : ULS -&gt ULS</dt><dd><p>
+<code>acos(z)</code> returns the arc-cosine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_acosIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_acosIfCan">acosIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_acosh"></a><dl><dt>acosh : ULS -&gt ULS</dt><dd><p>
+<code>acosh(z)</code> returns the inverse hyperbolic cosine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_acoshIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_acoshIfCan">acoshIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_acot"></a><dl><dt>acot : ULS -&gt ULS</dt><dd><p>
+<code>acot(z)</code> returns the arc-cotangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_acotIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_acotIfCan">acotIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_acoth"></a><dl><dt>acoth : ULS -&gt ULS</dt><dd><p>
+<code>acoth(z)</code> returns the inverse hyperbolic cotangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_acothIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_acothIfCan">acothIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_acsc"></a><dl><dt>acsc : ULS -&gt ULS</dt><dd><p>
+<code>acsc(z)</code> returns the arc-cosecant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_acscIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_acscIfCan">acscIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_acsch"></a><dl><dt>acsch : ULS -&gt ULS</dt><dd><p>
+<code>acsch(z)</code> returns the inverse hyperbolic cosecant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_acschIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_acschIfCan">acschIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_asec"></a><dl><dt>asec : ULS -&gt ULS</dt><dd><p>
+<code>asec(z)</code> returns the arc-secant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_asecIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_asecIfCan">asecIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_asech"></a><dl><dt>asech : ULS -&gt ULS</dt><dd><p>
+<code>asech(z)</code> returns the inverse hyperbolic secant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_asechIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_asechIfCan">asechIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_asin"></a><dl><dt>asin : ULS -&gt ULS</dt><dd><p>
+<code>asin(z)</code> returns the arc-sine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_asinIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_asinIfCan">asinIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_asinh"></a><dl><dt>asinh : ULS -&gt ULS</dt><dd><p>
+<code>asinh(z)</code> returns the inverse hyperbolic sine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_asinhIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_asinhIfCan">asinhIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_atan"></a><dl><dt>atan : ULS -&gt ULS</dt><dd><p>
+<code>atan(z)</code> returns the arc-tangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_atanIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_atanIfCan">atanIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_atanh"></a><dl><dt>atanh : ULS -&gt ULS</dt><dd><p>
+<code>atanh(z)</code> returns the inverse hyperbolic tangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_atanhIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_atanhIfCan">atanhIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_cos"></a><dl><dt>cos : ULS -&gt ULS</dt><dd><p>
+<code>cos(z)</code> returns the cosine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_cosIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_cosIfCan">cosIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_cosh"></a><dl><dt>cosh : ULS -&gt ULS</dt><dd><p>
+<code>cosh(z)</code> returns the hyperbolic cosine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_coshIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_coshIfCan">coshIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_cot"></a><dl><dt>cot : ULS -&gt ULS</dt><dd><p>
+<code>cot(z)</code> returns the cotangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_cotIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_cotIfCan">cotIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_coth"></a><dl><dt>coth : ULS -&gt ULS</dt><dd><p>
+<code>coth(z)</code> returns the hyperbolic cotangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_cothIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_cothIfCan">cothIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_csc"></a><dl><dt>csc : ULS -&gt ULS</dt><dd><p>
+<code>csc(z)</code> returns the cosecant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_cscIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_cscIfCan">cscIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_csch"></a><dl><dt>csch : ULS -&gt ULS</dt><dd><p>
+<code>csch(z)</code> returns the hyperbolic cosecant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_cschIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_cschIfCan">cschIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_exp"></a><dl><dt>exp : ULS -&gt ULS</dt><dd><p>
+<code>exp(z)</code> returns the exponential of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_expIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_expIfCan">expIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_log"></a><dl><dt>log : ULS -&gt ULS</dt><dd><p>
+<code>log(z)</code> returns the logarithm of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_logIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_logIfCan">logIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_nthRootIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_nthRootIfCan">nthRootIfCan</a> : (ULS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_sec"></a><dl><dt>sec : ULS -&gt ULS</dt><dd><p>
+<code>sec(z)</code> returns the secant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_secIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_secIfCan">secIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_sech"></a><dl><dt>sech : ULS -&gt ULS</dt><dd><p>
+<code>sech(z)</code> returns the hyperbolic secant of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_sechIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_sechIfCan">sechIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_sin"></a><dl><dt>sin : ULS -&gt ULS</dt><dd><p>
+<code>sin(z)</code> returns the sine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_sinIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_sinIfCan">sinIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_sinh"></a><dl><dt>sinh : ULS -&gt ULS</dt><dd><p>
+<code>sinh(z)</code> returns the hyperbolic sine of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_sinhIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_sinhIfCan">sinhIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_tan"></a><dl><dt>tan : ULS -&gt ULS</dt><dd><p>
+<code>tan(z)</code> returns the tangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_tanIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_tanIfCan">tanIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<a name="f_tanh"></a><dl><dt>tanh : ULS -&gt ULS</dt><dd><p>
+<code>tanh(z)</code> returns the hyperbolic tangent of Laurent series <code>z</code>.</p>
+</dd></dl>
+<a name="f_tanhIfCan"></a><dl><dt><a href="PartialTranscendentalFunctions.html#f_tanhIfCan">tanhIfCan</a> : ULS -&gt Union(ULS, "failed")</dt><dd> from <a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)</dd></dl>
+<p><a href="PartialTranscendentalFunctions.html">PartialTranscendentalFunctions</a>(ULS)
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RegularSetDecompositionPackage</title>
+</head>
+<body>
+<h1>RegularSetDecompositionPackage(R, E, V, P, TS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/regset.spad#L1071">regset.spad line 1071</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/regset.spad#L1071">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="RegularTriangularSetCategory.html">RegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+A package providing a new algorithm for solving polynomial systems by means of regular chains. Two ways of solving are proposed: in the sense of Zariski closure (like in Kalkbrener<code>'s</code> algorithm) or in the sense of the regular zeros (like in Wu, Wang or Lazard methods). This algorithm is valid for nay type of regular set. It does not care about the way a polynomial is added in an regular set, or how two quasi-components are compared (by an inclusion-test), or how the invertibility test is made in the tower of simple extensions associated with a regular set. These operations are realized respectively by the domain <code>TS</code> and the packages QCMPACK(<code>R</code>, <code>E</code>, <code>V</code>, <code>P</code>, <code>TS</code>) and RSETGCD(<code>R</code>, <code>E</code>, <code>V</code>, <code>P</code>, <code>TS</code>). The same way it does not care about the way univariate polynomial <code>gcd</code> (with coefficients in the tower of simple extensions associated with a regular set) are computed. The only requirement is that these <code>gcd</code> need to have invertible initials (normalized or not). WARNING. There is no need for a user to call directly any operation of this package since they can be accessed by the domain <code>TS</code>. Thus, the operations of this package are not documented.</p>
+<a name="f_KrullNumber"></a><dl><dt>KrullNumber : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(TS)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_algebraicDecompose"></a><dl><dt>algebraicDecompose : (P, TS, <a href="Boolean.html">Boolean</a>) -&gt Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt>convert : Record(val : <a href="List.html">List</a>(P), tower : TS) -&gt <a href="String.html">String</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_decompose"></a><dl><dt>decompose : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(TS), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>decompose : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(TS), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_internalDecompose"></a><dl><dt>internalDecompose : (P, TS) -&gt Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)))</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>internalDecompose : (P, TS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)))</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>internalDecompose : (P, TS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>) -&gt Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_numberOfVariables"></a><dl><dt>numberOfVariables : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(TS)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_printInfo"></a><dl><dt>printInfo : (<a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_transcendentalDecompose"></a><dl><dt>transcendentalDecompose : (P, TS) -&gt Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)))</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>transcendentalDecompose : (P, TS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_upDateBranches"></a><dl><dt>upDateBranches : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(TS), <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)), Record(done : <a href="List.html">List</a>(TS), todo : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS))), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+</body>
+</html>

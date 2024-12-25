@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TopLevelDrawFunctionsForPoints</title>
+</head>
+<body>
+<h1>TopLevelDrawFunctionsForPoints</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/draw.spad#L1084">draw.spad line 1084</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/draw.spad#L1084">[edit on github]</a></p>
+<p>
+TopLevelDrawFunctionsForPoints provides top level functions for drawing curves and surfaces described by sets of points.</p>
+<a name="f_draw"></a><dl><dt>draw : (<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="ThreeDimensionalViewport.html">ThreeDimensionalViewport</a></dt><dd><p>
+<code>draw(lx, ly, lz)</code> draws the surface constructed by projecting the values in the <code>lz</code> list onto the rectangular grid formed by the <code>lx X ly</code>.</p>
+</dd></dl>
+<dl><dt>draw : (<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="ThreeDimensionalViewport.html">ThreeDimensionalViewport</a></dt><dd><p>
+<code>draw(lx, ly, lz, l)</code> draws the surface constructed by projecting the values in the <code>lz</code> list onto the rectangular grid formed by the The options contained in the list <code>l</code> of the domain <code>DrawOption</code> are applied.</p>
+</dd></dl>
+<dl><dt>draw : (<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>draw(lx, ly)</code> plots the curve constructed of points (<code>x</code>, <code>y</code>) for <code>x</code> in <code>lx</code> for <code>y</code> in <code>ly</code>.</p>
+</dd></dl>
+<dl><dt>draw : (<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>draw(lx, ly, l)</code> plots the curve constructed of points (<code>x</code>, <code>y</code>) for <code>x</code> in <code>lx</code> for <code>y</code> in <code>ly</code>. The options contained in the list <code>l</code> of the domain <code>DrawOption</code> are applied.</p>
+</dd></dl>
+<dl><dt>draw : <a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>draw(lp)</code> plots the curve constructed from the list of points <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>draw : (<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt <a href="TwoDimensionalViewport.html">TwoDimensionalViewport</a></dt><dd><p>
+<code>draw(lp, l)</code> plots the curve constructed from the list of points <code>lp</code>. The options contained in the list <code>l</code> of the domain <code>DrawOption</code> are applied.</p>
+</dd></dl>
+</body>
+</html>

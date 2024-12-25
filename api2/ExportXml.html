@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExportXml</title>
+</head>
+<body>
+<h1>ExportXml</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L3896">scene.spad line 3896</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L3896">[edit on github]</a></p>
+<p>
+This package provides support for <code>XML</code> files</p>
+<a name="f_writeVRML"></a><dl><dt>writeVRML : (<a href="XmlElement.html">XmlElement</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>writeVRML(content, filename)</code> writes the element as <code>VRML2</code>. <code>VRML2</code> is not <code>xml</code> but it has the same semantics and node names as <code>X3D</code> but a different syntax so it makes sense to create an <code>XML</code> structure and then format the output differently.</p>
+</dd></dl>
+<a name="f_writeXml"></a><dl><dt>writeXml : (<a href="XmlElement.html">XmlElement</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>writeXml(content, filename)</code> writes an <code>xml</code> element and all the elements below it to an <code>xml</code> file. This assumes that all elements, in a file, have a single root which is usually the case.</p>
+</dd></dl>
+</body>
+</html>

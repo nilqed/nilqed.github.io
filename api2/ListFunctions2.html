@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ListFunctions2</title>
+</head>
+<body>
+<h1>ListFunctions2(A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/list.spad#L292">list.spad line 292</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/list.spad#L292">[edit on github]</a></p>
+<ul>
+<li>A : <a href="Type.html">Type</a><li>B : <a href="Type.html">Type</a></ul>
+<p>
+ListFunctions2 implements utility functions that operate on two kinds of lists, each with a possibly different type of element.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(B, A), <a href="List.html">List</a>(A)) -&gt <a href="List.html">List</a>(B)</dt><dd><p>
+<code>map(fn, u)</code> applies <code>fn</code> to each element of list <code>u</code> and returns a new list with the results. For example <code>map(square, [1, 2, 3]) = [1, 4, 9]</code>.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(B, A, B), <a href="List.html">List</a>(A), B) -&gt B</dt><dd><p>
+<code>reduce(fn, u, ident)</code> successively uses the binary function <code>fn</code> on the elements of list <code>u</code> and the result of previous applications. <code>ident</code> is returned if the <code>u</code> is empty. Note the order of application in the following examples: <code>reduce(fn, [1, 2, 3], 0) = fn(3, fn(2, fn(1, 0)))</code> and <code>reduce(*, [2, 3], 1) = 3 * (2 * 1)</code>.</p>
+</dd></dl>
+<a name="f_scan"></a><dl><dt>scan : (Mapping(B, A, B), <a href="List.html">List</a>(A), B) -&gt <a href="List.html">List</a>(B)</dt><dd><p>
+<code>scan(fn, u, ident)</code> successively uses the binary function <code>fn</code> to reduce more and more of list <code>u</code>. <code>ident</code> is returned if the <code>u</code> is empty. The result is a list of the reductions at each step. See <span class="spadfun">reduce</span> for more information. Examples: <code>scan(fn, [1, 2], 0) = [fn(2, fn(1, 0)), fn(1, 0)]</code> and <code>scan(*, [2, 3], 1) = [2 * 1, 3 * (2 * 1)]</code>.</p>
+</dd></dl>
+</body>
+</html>

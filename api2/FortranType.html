@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FortranType</title>
+</head>
+<body>
+<h1>FortranType</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/forttyp.spad#L147">forttyp.spad line 147</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/forttyp.spad#L147">[edit on github]</a></p>
+<p>
+Creates and manipulates objects which correspond to FORTRAN data types, including array dimensions.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="FortranScalarType.html">FortranScalarType</a> -&gt %</dt><dd><p>
+<code>coerce(t)</code> creates an element from a scalar type</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(x)</code> provides a printable form for <code>x</code></p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : (Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void")), <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>construct(type, dims)</code> creates an element of FortranType</p>
+</dd></dl>
+<dl><dt>construct : (Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void")), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>construct(type, dims)</code> creates an element of FortranType</p>
+</dd></dl>
+<a name="f_dimensionsOf"></a><dl><dt>dimensionsOf : % -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>dimensionsOf(t)</code> returns the dimensions of <code>t</code></p>
+</dd></dl>
+<a name="f_external_63"></a><dl><dt>external? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>external?(u)</code> returns <code>true</code> if <code>u</code> is declared to be EXTERNAL</p>
+</dd></dl>
+<a name="f_fortranCharacter"></a><dl><dt>fortranCharacter : () -&gt %</dt><dd><p>
+<code>fortranCharacter()</code> returns CHARACTER, an element of FortranType</p>
+</dd></dl>
+<a name="f_fortranComplex"></a><dl><dt>fortranComplex : () -&gt %</dt><dd><p>
+<code>fortranComplex()</code> returns COMPLEX, an element of FortranType</p>
+</dd></dl>
+<a name="f_fortranDouble"></a><dl><dt>fortranDouble : () -&gt %</dt><dd><p>
+<code>fortranDouble()</code> returns DOUBLE PRECISION, an element of FortranType</p>
+</dd></dl>
+<a name="f_fortranDoubleComplex"></a><dl><dt>fortranDoubleComplex : () -&gt %</dt><dd><p>
+<code>fortranDoubleComplex()</code> returns DOUBLE COMPLEX, an element of FortranType</p>
+</dd></dl>
+<a name="f_fortranInteger"></a><dl><dt>fortranInteger : () -&gt %</dt><dd><p>
+<code>fortranInteger()</code> returns INTEGER, an element of FortranType</p>
+</dd></dl>
+<a name="f_fortranLogical"></a><dl><dt>fortranLogical : () -&gt %</dt><dd><p>
+<code>fortranLogical()</code> returns LOGICAL, an element of FortranType</p>
+</dd></dl>
+<a name="f_fortranReal"></a><dl><dt>fortranReal : () -&gt %</dt><dd><p>
+<code>fortranReal()</code> returns REAL, an element of FortranType</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_scalarTypeOf"></a><dl><dt>scalarTypeOf : % -&gt Union(:(fst, <a href="FortranScalarType.html">FortranScalarType</a>), :(void, "void"))</dt><dd><p>
+<code>scalarTypeOf(t)</code> returns the FORTRAN data type of <code>t</code></p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

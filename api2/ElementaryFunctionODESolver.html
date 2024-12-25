@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryFunctionODESolver</title>
+</head>
+<body>
+<h1>ElementaryFunctionODESolver(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/odeef.spad#L831">odeef.spad line 831</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/odeef.spad#L831">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>), <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>F : Join(<a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(R), <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>)</ul>
+<p>
+<code>ElementaryFunctionODESolver</code> provides the top-level functions for finding closed form solutions of ordinary differential equations and initial value problems.</p>
+<a name="f_solve"></a><dl><dt>solve : (F, <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(F)) -&gt Union(F, "failed")</dt><dd><p>
+<code>solve(eq, y, x = a, [y0, ..., ym])</code> returns either the solution of the initial value problem <code>eq, y(a) = y0, y'(a) = y1, ...</code> or "failed" if the solution cannot be found; error if the equation is not one linear ordinary or of the form <code>dy/dx = f(x, y)</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Equation.html">Equation</a>(F), <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(F)) -&gt Union(F, "failed")</dt><dd><p>
+<code>solve(eq, y, x = a, [y0, ..., ym])</code> returns either the solution of the initial value problem <code>eq, y(a) = y0, y'(a) = y1, ...</code> or "failed" if the solution cannot be found; error if the equation is not one linear ordinary or of the form <code>dy/dx = f(x, y)</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Matrix.html">Matrix</a>(F), <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), "failed")</dt><dd><p>
+<code>solve(m, x)</code> returns a basis for the solutions of <code>D y = m y</code>. <code>x</code> is the dependent variable.</p>
+</dd></dl>
+<dl><dt>solve : (F, <a href="BasicOperator.html">BasicOperator</a>, <a href="Symbol.html">Symbol</a>) -&gt Union(Record(particular : F, basis : <a href="List.html">List</a>(F)), F, "failed")</dt><dd><p>
+<code>solve(eq, y, x)</code> returns either a solution of the ordinary differential equation <code>eq</code> or "failed" if no non-trivial solution can be found; If the equation is linear ordinary, a solution is of the form <code>[h, [b1, ..., bm]]</code> where <code>h</code> is a particular solution and and <code>[b1, ...bm]</code> are linearly independent solutions of the associated homogeneous equation <code>f(x, y) = 0</code>; A full basis for the solutions of the homogeneous equation is not always returned, only the solutions which were found; If the equation is of the form dy/dx = <code>f</code>(<code>x</code>, <code>y</code>), a solution is of the form <code>h(x, y)</code> where <code>h(x, y) = c</code> is a first integral of the equation for any constant <code>c</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Equation.html">Equation</a>(F), <a href="BasicOperator.html">BasicOperator</a>, <a href="Symbol.html">Symbol</a>) -&gt Union(Record(particular : F, basis : <a href="List.html">List</a>(F)), F, "failed")</dt><dd><p>
+<code>solve(eq, y, x)</code> returns either a solution of the ordinary differential equation <code>eq</code> or "failed" if no non-trivial solution can be found; If the equation is linear ordinary, a solution is of the form <code>[h, [b1, ..., bm]]</code> where <code>h</code> is a particular solution and <code>[b1, ...bm]</code> are linearly independent solutions of the associated homogeneous equation <code>f(x, y) = 0</code>; A full basis for the solutions of the homogeneous equation is not always returned, only the solutions which were found; If the equation is of the form dy/dx = <code>f</code>(<code>x</code>, <code>y</code>), a solution is of the form <code>h(x, y)</code> where <code>h(x, y) = c</code> is a first integral of the equation for any constant <code>c</code>; error if the equation is not one of those 2 forms.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="Symbol.html">Symbol</a>) -&gt Union(Record(particular : <a href="Vector.html">Vector</a>(F), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))), "failed")</dt><dd><p>
+<code>solve([eq_1,...,eq_n], [y_1,...,y_n], x)</code> returns either "failed" or, if the equations form a fist order linear system, a solution of the form <code>[y_p, [b_1, ..., b_n]]</code> where <code>h_p</code> is a particular solution and <code>[b_1, ...b_m]</code> are linearly independent solutions of the associated homogeneous system. error if the equations do not form a first order linear system</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(F)), <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="Symbol.html">Symbol</a>) -&gt Union(Record(particular : <a href="Vector.html">Vector</a>(F), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))), "failed")</dt><dd><p>
+<code>solve([eq_1,...,eq_n], [y_1,...,y_n], x)</code> returns either "failed" or, if the equations form a fist order linear system, a solution of the form <code>[y_p, [b_1, ..., b_n]]</code> where <code>h_p</code> is a particular solution and <code>[b_1, ...b_m]</code> are linearly independent solutions of the associated homogeneous system. error if the equations do not form a first order linear system</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Matrix.html">Matrix</a>(F), <a href="Vector.html">Vector</a>(F), <a href="Symbol.html">Symbol</a>) -&gt Union(Record(particular : <a href="Vector.html">Vector</a>(F), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F))), "failed")</dt><dd><p>
+<code>solve(m, v, x)</code> returns <code>[v_p, [v_1, ..., v_m]]</code> such that the solutions of the system <code>D y = m y + v</code> are <code>v_p + c_1 v_1 + ... + c_m v_m</code> where the <code>c_i's</code> are constants, and the <code>v_i's</code> form a basis for the solutions of <code>D y = m y</code>. <code>x</code> is the dependent variable.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NumericRealEigenPackage</title>
+</head>
+<body>
+<h1>NumericRealEigenPackage(Par)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numeigen.spad#L193">numeigen.spad line 193</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numeigen.spad#L193">[edit on github]</a></p>
+<ul>
+<li>Par : Join(<a href="Field.html">Field</a>, <a href="OrderedRing.html">OrderedRing</a>)</ul>
+<p>
+This package computes explicitly eigenvalues and eigenvectors of matrices with entries over the Rational Numbers. The results are expressed as floating numbers or as rational numbers depending on the type of the parameter Par.</p>
+<a name="f_characteristicPolynomial"></a><dl><dt>characteristicPolynomial : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>characteristicPolynomial(m)</code> returns the characteristic polynomial of the matrix <code>m</code> expressed as polynomial over <code>RN</code> with a new symbol as variable.</p>
+</dd></dl>
+<dl><dt>characteristicPolynomial : (<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Symbol.html">Symbol</a>) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>characteristicPolynomial(m, x)</code> returns the characteristic polynomial of the matrix <code>m</code> expressed as polynomial over <code>RN</code> with variable <code>x</code>.</p>
+</dd></dl>
+<a name="f_realEigenvalues"></a><dl><dt>realEigenvalues : (<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), Par) -&gt <a href="List.html">List</a>(Par)</dt><dd><p>
+<code>realEigenvalues(m, eps)</code> computes the eigenvalues of the matrix <code>m</code> to precision eps. The eigenvalues are expressed as floats or rational numbers depending on the type of eps (float or rational).</p>
+</dd></dl>
+<a name="f_realEigenvectors"></a><dl><dt>realEigenvectors : (<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), Par) -&gt <a href="List.html">List</a>(Record(outval : Par, outmult : <a href="Integer.html">Integer</a>, outvect : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(Par))))</dt><dd><p>
+<code>realEigenvectors(m, eps)</code> returns a list of records each one containing a real eigenvalue, its algebraic multiplicity, and a list of associated eigenvectors. All these results are computed to precision eps as floats or rational numbers depending on the type of eps .</p>
+</dd></dl>
+</body>
+</html>

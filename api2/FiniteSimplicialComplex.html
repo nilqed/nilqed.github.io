@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteSimplicialComplex</title>
+</head>
+<body>
+<h1>FiniteSimplicialComplex(VS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L1711">alg_top.spad line 1711</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L1711">[edit on github]</a></p>
+<ul>
+<li>VS : <a href="AbelianGroup.html">AbelianGroup</a></ul>
+<p>
+A Finite Simplicial Complex for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/ Date Created: Dec 2015 Basic Operations: star, link, cone, product Related packages: Related categories: Related Domains: DeltaComplex is an alternative representation which is less compact but allows edges, triangles, etc to be indexed. Also See: AMS Classifications:</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addImpliedFaces"></a><dl><dt>addImpliedFaces : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="OrientedFacet.html">OrientedFacet</a>))</dt><dd><p>
+a function to take a set of faces and add those that are implied by the simplecicalComplex conventions (if they don<code>'t</code> already exist). For example, if the input is a triangle ((1, 2, 3)) then we would add: its points ((1), (2), (3)). and its edges ((1, 2), (1, 3), (2, 3)).</p>
+</dd></dl>
+<a name="f_addSimplex"></a><dl><dt>addSimplex : (%, <a href="OrientedFacet.html">OrientedFacet</a>) -&gt %</dt><dd><p>
+Add a facet to this simplex If the facet is also in the list then, do not append, instead change the multiplier. Used by boundary function</p>
+</dd></dl>
+<a name="f_boundary"></a><dl><dt>boundary : % -&gt %</dt><dd><p>
+Step down to the next lower dimension, this is like hollowing out the complex. It takes the highest dimension entries and replaces them with their boundaries, cancelling out where it can.</p>
+</dd></dl>
+<a name="f_chain"></a><dl><dt>chain : % -&gt <a href="ChainComplex.html">ChainComplex</a></dt><dd><p>
+returns a matrix sequence representing the face maps in linear algebra form For more information: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/index.<code>htm</code></a></p>
+</dd></dl>
+<a name="f_coChain"></a><dl><dt>coChain : % -&gt <a href="CoChainComplex.html">CoChainComplex</a>(VS)</dt><dd><p>
+returns a matrix sequence representing the face maps in linear algebra form For more information: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/cochain/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/cochain/index.<code>htm</code></a></p>
+</dd></dl>
+<a name="f_coHomology"></a><dl><dt>coHomology : % -&gt <a href="List.html">List</a>(<a href="Homology.html">Homology</a>)</dt><dd><p>
+calculate cohomology using SmithNormalForm <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/cohomol/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/cohomol/index.<code>htm</code></a></p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="DeltaComplex.html">DeltaComplex</a>(VS)</dt><dd><p>
+<code>coerce SimplicialComplex</code> to DeltaComplex</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_cone"></a><dl><dt>cone : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+The 'cone' of a simplicial complex is formed by adding the vertex to every facet. 'vertex' should not already be included in existing faces, this is not checked and so will lead to simplexes with duplicate vertices.</p>
+</dd></dl>
+<a name="f_fundamentalGroup"></a><dl><dt>fundamentalGroup : % -&gt <a href="GroupPresentation.html">GroupPresentation</a></dt><dd><p>
+Generates fundamental group from this simplicial complex. This works by converting to a DeltaComplex and then generating the fundamentalGroup from that. This is not the most efficient method because the conversion generates lots of higher order faceMaps which are not used. This will attempt to simplify the group presentation, if you don<code>'t</code> want this use alternative function of same name. For more information: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index.<code>htm</code></a></p>
+</dd></dl>
+<dl><dt>fundamentalGroup : (%, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="GroupPresentation.html">GroupPresentation</a></dt><dd><p>
+Generates fundamental group from this simplicial complex. This works by converting to a DeltaComplex and then generating the fundamentalGroup from that. This is not the most efficient method because the conversion generates lots of higher order faceMaps which are not used. This version has options to: simplify - if <code>true</code> attempts to simplify the group presentation trace - if <code>true</code> outputs trace of simplification rules used. For more information: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index.<code>htm</code></a></p>
+</dd></dl>
+<a name="f_grade"></a><dl><dt>grade : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="OrientedFacet.html">OrientedFacet</a>))</dt><dd><p>
+a function to grade simplexes according to their lengths. This nests the lists according to their length. Vertices, edges, triangles and so on. The list is returned in reverse order, that is, it starts at highest grade and works down.</p>
+</dd></dl>
+<a name="f_homology"></a><dl><dt>homology : % -&gt <a href="List.html">List</a>(<a href="Homology.html">Homology</a>)</dt><dd><p>
+calculate homology using SmithNormalForm For more information: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/index.<code>htm</code></a></p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_link"></a><dl><dt>link : (%, <a href="OrientedFacet.html">OrientedFacet</a>) -&gt %</dt><dd><p>
+The 'link' of a simplicial complex and a vertex contains the boundary of the simplexes of <code>s</code> which include simplex.</p>
+</dd></dl>
+<a name="f_makeDisjoint"></a><dl><dt>makeDisjoint : (%, %) -&gt %</dt><dd><p>
+If index numbers of <code>'b'</code> overlap with index numbers of 'a' then refactor <code>'b'</code> so that it does not overlap.</p>
+</dd></dl>
+<a name="f_maxIndex"></a><dl><dt>maxIndex : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+find the maximum index.</p>
+</dd></dl>
+<a name="f_merge"></a><dl><dt>merge : (%, %) -&gt %</dt><dd><p>
+Forms union of two simplicial complexes.</p>
+</dd></dl>
+<a name="f_minIndex"></a><dl><dt>minIndex : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+find the minimum index.</p>
+</dd></dl>
+<a name="f_oneSkeleton"></a><dl><dt>oneSkeleton : % -&gt <a href="DirectedGraph.html">DirectedGraph</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+generates graph AKA 1-skeleton</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, %) -&gt %</dt><dd><p>
+Forms product of two simplicial complexes. For more detailed explanation of simplex product code see: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/</a> Also see Hatcher [9]. page 277 - The simplicial cross product. page 278 - The cohomology cross product. Returns list, each entry is a 'lattice path' from (0, 0) to (<code>x</code>, <code>y</code>) where <code>x</code> is number of entries in sa and <code>y</code> is number of entries in <code>sb</code>.</p>
+</dd></dl>
+<a name="f_refactorIndexes"></a><dl><dt>refactorIndexes : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+add <code>'n'</code> to all indexes without changing the structure of this simplicial complex.</p>
+</dd></dl>
+<a name="f_simplicialComplex"></a><dl><dt>simplicialComplex : <a href="List.html">List</a>(VS) -&gt %</dt><dd><p>
+construct empty simplex</p>
+</dd></dl>
+<dl><dt>simplicialComplex : (<a href="List.html">List</a>(VS), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd><p>
+constructor where the simplices are supplied</p>
+</dd></dl>
+<dl><dt>simplicialComplex : (<a href="List.html">List</a>(VS), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd><p>
+constructor where the simplices are supplied</p>
+</dd></dl>
+<a name="f_simplicialComplexIfCan"></a><dl><dt>simplicialComplexIfCan : <a href="DeltaComplex.html">DeltaComplex</a>(VS) -&gt Union(%, "failed")</dt><dd><p>
+construct FiniteSimplicialComplex from DeltaComplex. If there are 'implied' loops, such as facets with multiple entries with the same index, then this function may fail.</p>
+</dd></dl>
+<dl><dt>simplicialComplexIfCan : (<a href="DeltaComplex.html">DeltaComplex</a>(VS), <a href="Boolean.html">Boolean</a>) -&gt Union(%, "failed")</dt><dd><p>
+construct FiniteSimplicialComplex from DeltaComplex with trace. If there are 'implied' loops, such as facets with multiple entries with the same index, then this function may fail.</p>
+</dd></dl>
+<a name="f_simplicialJoin"></a><dl><dt>simplicialJoin : (%, %, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+Forms join of two simplicial complexes. The join <code>S*T</code> of two simplicial sets <code>S</code> and <code>T</code> is a new simplicial set that may geometrically be thought of as a cone over <code>T</code> with tip of shape <code>S</code>. simplicialJoin is commutative and associative. For more information: <a href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/join/index.<code>htm</code>"<http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/join/index.<code>htm</code></a></p>
+</dd></dl>
+<a name="f_sort"></a><dl><dt>sort : % -&gt %</dt><dd><p>
+sort</p>
+</dd></dl>
+<a name="f_star"></a><dl><dt>star : (%, <a href="OrientedFacet.html">OrientedFacet</a>) -&gt %</dt><dd><p>
+The 'star' of a simplicial complex and a facet contains only the faces of <code>s</code> which include simplex.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Boolean</title>
+</head>
+<body>
+<h1>Boolean</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/boolean.spad#L40">boolean.spad line 40</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/boolean.spad#L40">[edit on github]</a></p>
+<p>
+Boolean is the elementary logic with 2 values: <code>true</code> and <code>false</code></p>
+<a name="f__47_92"></a><dl><dt><a href="MeetSemilattice.html#f__47_92">/\</a> : (%, %) -&gt %</dt><dd> from <a href="MeetSemilattice.html">MeetSemilattice</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_T"></a><dl><dt><a href="BoundedMeetSemilattice.html#f_T">T</a> : () -&gt %</dt><dd> from <a href="BoundedMeetSemilattice.html">BoundedMeetSemilattice</a></dd></dl>
+<a name="f__92_47"></a><dl><dt><a href="JoinSemilattice.html#f__92_47">\/</a> : (%, %) -&gt %</dt><dd> from <a href="JoinSemilattice.html">JoinSemilattice</a></dd></dl>
+<a name="f__95_124_95"></a><dl><dt><a href="BoundedJoinSemilattice.html#f__95_124_95">_|_</a> : () -&gt %</dt><dd> from <a href="BoundedJoinSemilattice.html">BoundedJoinSemilattice</a></dd></dl>
+<a name="f_and"></a><dl><dt>and : (%, %) -&gt %</dt><dd><p>
+<code>a and b</code> returns the logical  and of Boolean <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_enumerate"></a><dl><dt><a href="Finite.html#f_enumerate">enumerate</a> : () -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_false"></a><dl><dt><a href="Logic.html#f_false">false</a> : () -&gt %</dt><dd> from <a href="Logic.html">Logic</a></dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_implies"></a><dl><dt>implies : (%, %) -&gt %</dt><dd><p>
+<code>implies(a, b)</code> returns the logical implication of Boolean <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_index"></a><dl><dt><a href="Finite.html#f_index">index</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lookup"></a><dl><dt><a href="Finite.html#f_lookup">lookup</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_nand"></a><dl><dt>nand : (%, %) -&gt %</dt><dd><p>
+<code>nand(a, b)</code> returns the logical negation of <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_nor"></a><dl><dt>nor : (%, %) -&gt %</dt><dd><p>
+<code>nor(a, b)</code> returns the logical negation of <code>a</code> or <code>b</code>.</p>
+</dd></dl>
+<a name="f_not"></a><dl><dt>not : % -&gt %</dt><dd><p>
+<code>not n</code> returns the negation of <code>n</code>.</p>
+</dd></dl>
+<a name="f_or"></a><dl><dt>or : (%, %) -&gt %</dt><dd><p>
+<code>a or b</code> returns the logical inclusive  or of Boolean <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f_random"></a><dl><dt><a href="Finite.html#f_random">random</a> : () -&gt %</dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_size"></a><dl><dt><a href="Finite.html#f_size">size</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_test"></a><dl><dt>test : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>test(b)</code> returns <code>b</code> and is provided for compatibility with the new compiler.</p>
+</dd></dl>
+<a name="f_true"></a><dl><dt><a href="Logic.html#f_true">true</a> : () -&gt %</dt><dd> from <a href="Logic.html">Logic</a></dd></dl>
+<a name="f_xor"></a><dl><dt>xor : (%, %) -&gt %</dt><dd><p>
+<code>xor(a, b)</code> returns the logical exclusive  or of Boolean <code>a</code> and <code>b</code>.</p>
+</dd></dl>
+<a name="f__126"></a><dl><dt><a href="Logic.html#f__126">~</a> : % -&gt %</dt><dd> from <a href="Logic.html">Logic</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Finite.html">Finite</a>
+<p><a href="Lattice.html">Lattice</a>
+<p><a href="MeetSemilattice.html">MeetSemilattice</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="BoundedJoinSemilattice.html">BoundedJoinSemilattice</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="JoinSemilattice.html">JoinSemilattice</a>
+<p><a href="DistributiveLattice.html">DistributiveLattice</a>
+<p><a href="BoundedLattice.html">BoundedLattice</a>
+<p><a href="BoundedDistributiveLattice.html">BoundedDistributiveLattice</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="Logic.html">Logic</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="BoundedMeetSemilattice.html">BoundedMeetSemilattice</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+</body>
+</html>

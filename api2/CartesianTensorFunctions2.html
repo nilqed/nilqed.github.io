@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CartesianTensorFunctions2</title>
+</head>
+<body>
+<h1>CartesianTensorFunctions2(minix, dim, S, T)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/carten.spad#L580">carten.spad line 580</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/carten.spad#L580">[edit on github]</a></p>
+<ul>
+<li>minix : <a href="Integer.html">Integer</a><li>dim : <a href="NonNegativeInteger.html">NonNegativeInteger</a><li>S : <a href="CommutativeRing.html">CommutativeRing</a><li>T : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+This package provides functions to enable conversion of tensors given conversion of the components.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(T$, S), <a href="CartesianTensor.html">CartesianTensor</a>(minix, dim, S)) -&gt <a href="CartesianTensor.html">CartesianTensor</a>(minix, dim, T$)</dt><dd><p>
+<code>map(f, ts)</code> does a componentwise conversion of the tensor <code>ts</code> to a tensor with components of type <code>T</code>.</p>
+</dd></dl>
+<a name="f_reshape"></a><dl><dt>reshape : (<a href="List.html">List</a>(T$), <a href="CartesianTensor.html">CartesianTensor</a>(minix, dim, S)) -&gt <a href="CartesianTensor.html">CartesianTensor</a>(minix, dim, T$)</dt><dd><p>
+<code>reshape(lt, ts)</code> organizes the list of components <code>lt</code> into a tensor with the same shape as <code>ts</code>.</p>
+</dd></dl>
+</body>
+</html>

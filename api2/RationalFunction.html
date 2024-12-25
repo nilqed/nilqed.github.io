@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalFunction</title>
+</head>
+<body>
+<h1>RationalFunction(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/rf.spad#L153">rf.spad line 153</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/rf.spad#L153">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+Utilities that provide the same top-level manipulations on fractions than on polynomials.</p>
+<a name="f_coerce"></a><dl><dt>coerce : R -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>coerce(r)</code> returns <code>r</code> viewed as a rational function over <code>R</code>.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>eval(f, v = g)</code> returns <code>f</code> with <code>v</code> replaced by <code>g</code>. Error: if <code>v</code> is not a symbol.</p>
+</dd></dl>
+<dl><dt>eval : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>eval(f, [v1 = g1, ..., vn = gn])</code> returns <code>f</code> with each <code>vi</code> replaced by <code>gi</code> in parallel, i.e. <code>vi</code><code>'s</code> appearing inside the <code>gi</code><code>'s</code> are not replaced. Error: if any <code>vi</code> is not a symbol.</p>
+</dd></dl>
+<dl><dt>eval : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>eval(f, [v1, ..., vn], [g1, ..., gn])</code> returns <code>f</code> with each <code>vi</code> replaced by <code>gi</code> in parallel, i.e. <code>vi</code><code>'s</code> appearing inside the <code>gi</code><code>'s</code> are not replaced.</p>
+</dd></dl>
+<dl><dt>eval : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>, <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>eval(f, v, g)</code> returns <code>f</code> with <code>v</code> replaced by <code>g</code>.</p>
+</dd></dl>
+<a name="f_mainVariable"></a><dl><dt>mainVariable : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt Union(<a href="Symbol.html">Symbol</a>, "failed")</dt><dd><p>
+<code>mainVariable(f)</code> returns the highest variable appearing in the numerator or the denominator of <code>f</code>, "failed" if <code>f</code> has no variables.</p>
+</dd></dl>
+<a name="f_multivariate"></a><dl><dt>multivariate : (<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))), <a href="Symbol.html">Symbol</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>multivariate(f, v)</code> applies both the numerator and denominator of <code>f</code> to <code>v</code>.</p>
+</dd></dl>
+<a name="f_univariate"></a><dl><dt>univariate : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>univariate(f, v)</code> returns <code>f</code> viewed as a univariate rational function in <code>v</code>.</p>
+</dd></dl>
+<a name="f_variables"></a><dl><dt>variables : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+<code>variables(f)</code> returns the list of variables appearing in the numerator or the denominator of <code>f</code>.</p>
+</dd></dl>
+</body>
+</html>

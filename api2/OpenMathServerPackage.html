@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OpenMathServerPackage</title>
+</head>
+<body>
+<h1>OpenMathServerPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/omserver.spad#L1">omserver.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/omserver.spad#L1">[edit on github]</a></p>
+<p>
+OpenMathServerPackage provides the necessary operations to run FriCAS as an OpenMath server, reading/writing objects to/from a port. Please note the facilities available here are very basic. The idea is that a user calls e.g. <code>Omserve(4000, 60)</code> and then another process sends OpenMath objects to port 4000 and reads the result.</p>
+<a name="f_OMreceive"></a><dl><dt>OMreceive : <a href="OpenMathConnection.html">OpenMathConnection</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>OMreceive(c)</code> reads an OpenMath object from connection <code>c</code> and returns the appropriate FriCAS object.</p>
+</dd></dl>
+<a name="f_OMsend"></a><dl><dt>OMsend : (<a href="OpenMathConnection.html">OpenMathConnection</a>, <a href="Any.html">Any</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMsend(c, u)</code> attempts to output <code>u</code> on <code>c</code> in OpenMath.</p>
+</dd></dl>
+<a name="f_OMserve"></a><dl><dt>OMserve : (<a href="SingleInteger.html">SingleInteger</a>, <a href="SingleInteger.html">SingleInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMserve(portnum, timeout)</code> puts FriCAS into server mode on port number <code>portnum</code>. The parameter <code>timeout</code> specifies the timeout period for the connection.</p>
+</dd></dl>
+</body>
+</html>

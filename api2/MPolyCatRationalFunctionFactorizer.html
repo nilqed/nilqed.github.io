@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MPolyCatRationalFunctionFactorizer</title>
+</head>
+<body>
+<h1>MPolyCatRationalFunctionFactorizer(E, OV, R, PRF)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/allfact.spad#L51">allfact.spad line 51</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/allfact.spad#L51">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a> with
+<p>convert : % -&gt <a href="Symbol.html">Symbol</a><li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>PRF : <a href="PolynomialCategory.html">PolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), E, OV)</ul>
+<p>
+This package exports a factor operation for multivariate polynomials with coefficients which are rational functions over some ring <code>R</code> over which we can factor. It is used internally by packages such as primary decomposition which need to work with polynomials with rational function coefficients, i.e. themselves fractions of polynomials.</p>
+<a name="f_factor"></a><dl><dt>factor : PRF -&gt <a href="Factored.html">Factored</a>(PRF)</dt><dd><p>
+<code>factor(prf)</code> factors a polynomial with rational function coefficients.</p>
+</dd></dl>
+<a name="f_pushdown"></a><dl><dt>pushdown : (PRF, OV) -&gt PRF</dt><dd><p>
+<code>pushdown(prf, var)</code> pushes all top level occurrences of the variable var into the coefficient domain for the polynomial <code>prf</code>.</p>
+</dd></dl>
+<a name="f_pushdterm"></a><dl><dt>pushdterm : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(PRF), OV) -&gt PRF</dt><dd><p>
+<code>pushdterm(monom, var)</code> pushes all top level occurrences of the variable var into the coefficient domain for the monomial <code>monom</code>.</p>
+</dd></dl>
+<a name="f_pushucoef"></a><dl><dt>pushucoef : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(R)), OV) -&gt PRF</dt><dd><p>
+<code>pushucoef(upoly, var)</code> converts the anonymous univariate polynomial <code>upoly</code> to a polynomial in var over rational functions.</p>
+</dd></dl>
+<a name="f_pushuconst"></a><dl><dt>pushuconst : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), OV) -&gt PRF</dt><dd><p>
+<code>pushuconst(r, var)</code> takes a rational function and raises all occurrences of the variable var to the polynomial level.</p>
+</dd></dl>
+<a name="f_pushup"></a><dl><dt>pushup : (PRF, OV) -&gt PRF</dt><dd><p>
+<code>pushup(prf, var)</code> raises all occurrences of the variable var in the coefficients of the polynomial <code>prf</code> back to the polynomial level.</p>
+</dd></dl>
+<a name="f_totalfract"></a><dl><dt>totalfract : PRF -&gt Record(sup : <a href="Polynomial.html">Polynomial</a>(R), inf : <a href="Polynomial.html">Polynomial</a>(R))</dt><dd><p>
+<code>totalfract(prf)</code> takes a polynomial whose coefficients are themselves fractions of polynomials and returns a record containing the numerator and denominator resulting from putting <code>prf</code> over a common denominator.</p>
+</dd></dl>
+</body>
+</html>

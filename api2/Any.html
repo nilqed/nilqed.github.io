@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Any</title>
+</head>
+<body>
+<h1>Any</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/any.spad#L40">any.spad line 40</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/any.spad#L40">[edit on github]</a></p>
+<p>
+Any implements a type that packages up objects and their types in objects of Any. Roughly speaking that means that if <code>s : S</code> then when converted to Any, the new object will include both the original object and its type. This is a way of converting arbitrary objects into a single type without losing any of the original information. Any object can be converted to one of Any.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any"></a><dl><dt>any : (<a href="SExpression.html">SExpression</a>, <a href="None.html">None</a>) -&gt %</dt><dd><p>
+<code>any(type, object)</code> is a technical function for creating an object of Any. Argument <code>type</code> is a LISP form for the <code>type</code> of <code>object</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_dom"></a><dl><dt>dom : % -&gt <a href="SExpression.html">SExpression</a></dt><dd><p>
+<code>dom(a)</code> returns a LISP form of the type of the original object that was converted to Any.</p>
+</dd></dl>
+<a name="f_domainOf"></a><dl><dt>domainOf : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>domainOf(a)</code> returns a printable form of the type of the original object that was converted to Any.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_obj"></a><dl><dt>obj : % -&gt <a href="None.html">None</a></dt><dd><p>
+<code>obj(a)</code> essentially returns the original object that was converted to Any except that the type is forced to be None.</p>
+</dd></dl>
+<a name="f_objectOf"></a><dl><dt>objectOf : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>objectOf(a)</code> returns a printable form of the original object that was converted to Any.</p>
+</dd></dl>
+<a name="f_showTypeInOutput"></a><dl><dt>showTypeInOutput : <a href="Boolean.html">Boolean</a> -&gt <a href="String.html">String</a></dt><dd><p>
+<code>showTypeInOutput(bool)</code> affects the way objects of Any are displayed. If <code>bool</code> is <code>true</code> then the type of the original object that was converted to Any will be printed. If <code>bool</code> is <code>false</code>, it will not be printed.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

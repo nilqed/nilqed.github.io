@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchPushDown</title>
+</head>
+<body>
+<h1>PatternMatchPushDown(S, A, B)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L311">patmatch1.spad line 311</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L311">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>A : <a href="PatternMatchable.html">PatternMatchable</a>(S)<li>B : Join(<a href="SetCategory.html">SetCategory</a>, <a href="RetractableTo.html">RetractableTo</a>(A))</ul>
+<p>
+This packages provides tools for matching recursively in type towers.</p>
+<a name="f_fixPredicate"></a><dl><dt>fixPredicate : Mapping(<a href="Boolean.html">Boolean</a>, B) -&gt Mapping(<a href="Boolean.html">Boolean</a>, A)</dt><dd><p>
+<code>fixPredicate(f)</code> returns <code>g</code> defined by <code>g</code>(a) = <code>f</code>(a::B).</p>
+</dd></dl>
+<a name="f_patternMatch"></a><dl><dt>patternMatch : (A, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, B)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, B)</dt><dd><p>
+<code>patternMatch(expr, pat, res)</code> matches the pattern <code>pat</code> to the expression <code>expr</code>; res contains the variables of <code>pat</code> which are already matched and their matches. Note: this function handles type towers by changing the predicates and calling the matching function provided by <code>A</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SubResultantPackage</title>
+</head>
+<body>
+<h1>SubResultantPackage(R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intrf.spad#L1">intrf.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intrf.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+This package computes the subresultants of two polynomials which is needed for the `Lazard Rioboo' enhancement to Tragers integrations formula. For efficiency reasons this has been rewritten to call Lionel Ducos package which is currently the best one. </p>
+<a name="f_primitivePart"></a><dl><dt>primitivePart : (UP, R) -&gt UP if R has <a href="EuclideanDomain.html">EuclideanDomain</a></dt><dd><p>
+<code>primitivePart(p, q)</code> reduces the coefficient of <code>p</code> modulo <code>q</code>, takes the primitive part of the result, and ensures that the leading coefficient of that result is monic.</p>
+</dd></dl>
+<a name="f_subresultantVector"></a><dl><dt>subresultantVector : (UP, UP) -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(UP)</dt><dd><p>
+<code>subresultantVector(p, q)</code> returns <code>[p0, ..., pn]</code> where <code>pi</code> is the <code>i</code>-th subresultant of <code>p</code> and <code>q</code>. In particular, <code>p0 = resultant(p, q)</code>.</p>
+</dd></dl>
+</body>
+</html>

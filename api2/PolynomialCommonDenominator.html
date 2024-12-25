@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialCommonDenominator</title>
+</head>
+<body>
+<h1>PolynomialCommonDenominator(R, Q, E, VarSet, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cden.spad#L86">cden.spad line 86</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cden.spad#L86">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>Q : <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(R)<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>VarSet : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(Q, E, VarSet)</ul>
+<p>
+PolynomialCommonDenominator provides functions to compute and clear the common denominator of the coefficients of polynomials over the quotient field.</p>
+<a name="f_clearDenominator"></a><dl><dt>clearDenominator : P -&gt P</dt><dd><p>
+<code>clearDenominator(q)</code> returns <code>p</code> such that <code>q = p/d</code> where <code>d</code> is a common denominator for the coefficients of <code>q</code>.</p>
+</dd></dl>
+<a name="f_commonDenominator"></a><dl><dt>commonDenominator : P -&gt R</dt><dd><p>
+<code>commonDenominator(q)</code> returns a common denominator <code>d</code> for the coefficients of <code>q</code>.</p>
+</dd></dl>
+<a name="f_splitDenominator"></a><dl><dt>splitDenominator : P -&gt Record(num : P, den : R)</dt><dd><p>
+<code>splitDenominator(q)</code> returns <code>[p, d]</code> such that <code>q = p/d</code> and <code>d</code> is a common denominator for the coefficients of <code>q</code>.</p>
+</dd></dl>
+</body>
+</html>

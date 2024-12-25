@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerEigenPackage</title>
+</head>
+<body>
+<h1>InnerEigenPackage(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/eigen.spad#L1">eigen.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/eigen.spad#L1">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a></ul>
+<p>
+This is a package for the exact computation of eigenvalues and eigenvectors. This package works for matrices with coefficients from a field over which we can factor polynomials. Eigenvalues in base field are always explicitly computed while the other are expressed in terms of their minimal polynomial.</p>
+<a name="f_characteristicPolynomial"></a><dl><dt>characteristicPolynomial : <a href="Matrix.html">Matrix</a>(F) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)</dt><dd><p>
+<code>characteristicPolynomial(m)</code> returns the characteristic polynomial of the matrix <code>m</code></p>
+</dd></dl>
+<a name="f_eigenvalues"></a><dl><dt>eigenvalues : <a href="Matrix.html">Matrix</a>(F) -&gt <a href="List.html">List</a>(Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))) if F has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>eigenvalues(m)</code> returns the eigenvalues of the matrix <code>m</code>.</p>
+</dd></dl>
+<dl><dt>eigenvalues : (<a href="Matrix.html">Matrix</a>(F), Mapping(<a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))) -&gt <a href="List.html">List</a>(Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>eigenvalues(m, fac)</code> returns the eigenvalues of the matrix <code>m</code>. Eigenvalues in base field are given explicitly, other are represented by minimal polynomial. fac is a factorizer for polynomials over <code>F</code>.</p>
+</dd></dl>
+<a name="f_eigenvector"></a><dl><dt>eigenvector : (Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="Matrix.html">Matrix</a>(F)) -&gt <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>eigenvector(eigval, m)</code> returns the eigenvectors belonging to the eigenvalue <code>eigval</code> for the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_eigenvectors"></a><dl><dt>eigenvectors : <a href="Matrix.html">Matrix</a>(F) -&gt <a href="List.html">List</a>(Record(eigval : Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), eigmult : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eigvec : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))))) if F has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>eigenvectors(m)</code> returns the eigenvalues and eigenvectors for the matrix <code>m</code>. The eigenvalues in base field and corresponding eigenvectors are explicitly computed, while the non rational ones are given via their minimal polynomial and the corresponding eigenvectors are expressed in terms of a "generic" root of such a polynomial.</p>
+</dd></dl>
+<dl><dt>eigenvectors : (<a href="Matrix.html">Matrix</a>(F), Mapping(<a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))) -&gt <a href="List.html">List</a>(Record(eigval : Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), eigmult : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eigvec : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))))</dt><dd><p>
+<code>eigenvectors(m, fac)</code> returns the eigenvalues and eigenvectors for the matrix <code>m</code>. The eigenvalues in base field and corresponding eigenvectors are explicitly computed, while the other eigenvalues are given via their minimal polynomial and the corresponding eigenvectors are expressed in terms of a "generic" root of such a polynomial. fac is a factorizer for polynomials over <code>F</code>.</p>
+</dd></dl>
+<a name="f_generalizedEigenvector"></a><dl><dt>generalizedEigenvector : (Record(eigval : Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), eigmult : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, eigvec : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))), <a href="Matrix.html">Matrix</a>(F)) -&gt <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>generalizedEigenvector(eigen, m)</code> returns the generalized eigenvectors of the matrix relative to the eigenvalue <code>eigen</code>, as returned by the function eigenvectors.</p>
+</dd></dl>
+<dl><dt>generalizedEigenvector : (Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="Matrix.html">Matrix</a>(F), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))</dt><dd><p>
+<code>generalizedEigenvector(alpha, m, k, g)</code> returns the generalized eigenvectors of the matrix relative to the eigenvalue <code>alpha</code>. The integers <code>k</code> and <code>g</code> are respectively the algebraic and the geometric multiplicity of the eigenvalue <code>alpha</code>.</p>
+</dd></dl>
+<a name="f_generalizedEigenvectors"></a><dl><dt>generalizedEigenvectors : <a href="Matrix.html">Matrix</a>(F) -&gt <a href="List.html">List</a>(Record(eigval : Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), geneigvec : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))))) if F has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd><p>
+<code>generalizedEigenvectors(m)</code> returns the generalized eigenvectors of the matrix <code>m</code>.</p>
+</dd></dl>
+<dl><dt>generalizedEigenvectors : (<a href="Matrix.html">Matrix</a>(F), Mapping(<a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))) -&gt <a href="List.html">List</a>(Record(eigval : Union(F, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), geneigvec : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)))))</dt><dd><p>
+<code>generalizedEigenvectors(m, fac)</code> returns the generalized eigenvectors of the matrix <code>m</code>. fac is a factorizer for polynomials over <code>F</code>.</p>
+</dd></dl>
+</body>
+</html>

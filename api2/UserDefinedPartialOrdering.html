@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UserDefinedPartialOrdering</title>
+</head>
+<body>
+<h1>UserDefinedPartialOrdering(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/setorder.spad#L1">setorder.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/setorder.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+Provides functions to force a partial ordering on any set.</p>
+<a name="f_getOrder"></a><dl><dt>getOrder : () -&gt Record(low : <a href="List.html">List</a>(S), high : <a href="List.html">List</a>(S))</dt><dd><p>
+<code>getOrder()</code> returns <code>[[b1, ..., bm], [a1, ..., an]]</code> such that the partial ordering on <code>S</code> was given by <code>setOrder([b1, ..., bm], [a1, ..., an])</code>.</p>
+</dd></dl>
+<a name="f_largest"></a><dl><dt>largest : <a href="List.html">List</a>(S) -&gt S if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>largest l</code> returns the largest element of <code>l</code> where the partial ordering induced by setOrder is completed into a total one by the ordering on <code>S</code>.</p>
+</dd></dl>
+<dl><dt>largest : (<a href="List.html">List</a>(S), Mapping(<a href="Boolean.html">Boolean</a>, S, S)) -&gt S</dt><dd><p>
+<code>largest(l, fn)</code> returns the largest element of <code>l</code> where the partial ordering induced by setOrder is completed into a total one by <code>fn</code>.</p>
+</dd></dl>
+<a name="f_less_63"></a><dl><dt>less? : (S, S, Mapping(<a href="Boolean.html">Boolean</a>, S, S)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>less?(a, b, fn)</code> compares <code>a</code> and <code>b</code> in the partial ordering induced by setOrder, and returns <code>fn(a, b)</code> if <code>a</code> and <code>b</code> are not comparable in that ordering.</p>
+</dd></dl>
+<dl><dt>less? : (S, S) -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>less?(a, b)</code> compares <code>a</code> and <code>b</code> in the partial ordering induced by setOrder.</p>
+</dd></dl>
+<a name="f_more_63"></a><dl><dt>more? : (S, S) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>more?(a, b)</code> compares <code>a</code> and <code>b</code> in the partial ordering induced by setOrder, and uses the ordering on <code>S</code> if <code>a</code> and <code>b</code> are not comparable in the partial ordering.</p>
+</dd></dl>
+<a name="f_setOrder"></a><dl><dt>setOrder : <a href="List.html">List</a>(S) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setOrder([a1, ..., an])</code> defines a partial ordering on <code>S</code> given <code>by:</code> (1)<code>a1 &lt; a2 &lt; ... &lt; an</code>. (2)<code>b &lt; <code>ai</code>for i = 1..n</code> and <code>b</code> not among the <code>ai</code><code>'s</code>. (3)undefined on <code>(b, c)</code> if neither is among the <code>ai</code><code>'s</code>.</p>
+</dd></dl>
+<dl><dt>setOrder : (<a href="List.html">List</a>(S), <a href="List.html">List</a>(S)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setOrder([b1, ..., bm], [a1, ..., an])</code> defines a partial ordering on <code>S</code> given <code>by:</code> (1)<code>b1 &lt; b2 &lt; ... &lt; bm &lt; a1 &lt; a2 &lt; ... &lt; an</code>. (2)<code>bj &lt; c &lt; <code>ai</code></code>for <code>c</code> not among the <code>ai</code><code>'s</code> and <code>bj</code><code>'s</code>. (3)undefined on <code>(c, d)</code> if neither is among the <code>ai</code><code>'s</code>, <code>bj</code><code>'s</code>.</p>
+</dd></dl>
+<a name="f_userOrdered_63"></a><dl><dt>userOrdered? : () -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>userOrdered?()</code> tests if the partial ordering induced by <span class="std std-ref">setOrder</span> is not empty.</p>
+</dd></dl>
+</body>
+</html>

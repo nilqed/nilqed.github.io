@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearMultivariateMatrixPencil</title>
+</head>
+<body>
+<h1>LinearMultivariateMatrixPencil(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/linpen.spad#L9">linpen.spad line 9</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/linpen.spad#L9">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+Linear matrix pencil with multivariate coefficients.</p>
+<a name="f__42"></a><dl><dt>* : (%, <a href="Matrix.html">Matrix</a>(R)) -&gt %</dt><dd><p>
+<code>p * U</code> column transformation ...</p>
+</dd></dl>
+<dl><dt>* : (<a href="Matrix.html">Matrix</a>(R), %) -&gt %</dt><dd><p>
+<code>T * P</code> row transformation ...</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>p = q</code> entrywise equality.</p>
+</dd></dl>
+<a name="f_addColumns_33"></a><dl><dt>addColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>addColumns!(p, i, j, alpha)</code> adds alpha*column(<code>i</code>) to column(<code>j</code>) in all matrices of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_addRows_33"></a><dl><dt>addRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>addRows!(p, i, j, alpha)</code> adds alpha*row(<code>i</code>) to row(<code>j</code>) in all matrices of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_append"></a><dl><dt>append : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>append(p, l)</code> appends <code>l</code> matrices to the linear pencil.</p>
+</dd></dl>
+<a name="f_append_33"></a><dl><dt>append! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>append!(p, l)</code> appends <code>l</code> matrices to the linear pencil.</p>
+</dd></dl>
+<a name="f_blockElimination"></a><dl><dt>blockElimination : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>blockElimination(p, rsrc, rdst, rext, csrc, cdst, cext)</code> r___ rows, c___ columns _src source, _dst destination, _ext extra (zeros) Uses a linear system of equations to determine row and column transformation matrices to eliminate the entries in rdst+rext times cdst+cext and returns an empty list if there is no solution.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(p)</code> prints the linear pencil <code>p</code> in list form.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(p)</code> returns a copy of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_diagonal"></a><dl><dt>diagonal : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>diagonal(p, l)</code> returns the entries along the diagonal in a list.</p>
+</dd></dl>
+<a name="f_diagonal_63"></a><dl><dt>diagonal? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>diagonal?(p, l)</code> is the matrix <code>l</code> diagonal?</p>
+</dd></dl>
+<a name="f_eliminationEquations"></a><dl><dt>eliminationEquations : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationEquations(p, row_P, col_P, row_Q, col_Q, rdst, cdst)</code> returns a list of matrices with equations to eliminate the entries in rows/columns rdst/cdst.</p>
+</dd></dl>
+<dl><dt>eliminationEquations : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationEquations(p, row_P, col_P, row_Q, col_Q, rdst, cdst, rex1, cex1, rex2, cex2)</code> returns a list of matrices with equations to eliminate the entries in rows/columns rdst/cdst, <code>rex1/cex1</code> and <code>rex2/cex2</code>.</p>
+</dd></dl>
+<dl><dt>eliminationEquations : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationEquations(p, row_P, col_P, row_Q, col_Q, rdst, cdst, rex1, cex1, rex2, cex2)</code> returns a list of equations with equations to eliminate the entries in rows/columns rdst/cdst, <code>rex1/cex1</code> and <code>rex2/cex2</code>, including det(<code>P</code>)<code>-1</code> and det(<code>Q</code>)<code>-1</code>.</p>
+</dd></dl>
+<a name="f_eliminationGroebner"></a><dl><dt>eliminationGroebner : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationGroebner(p, row_P, col_P, row_Q, col_Q, rdst, cdst, rex1, cex1, rex2, cex2)</code> computes a Groebner--Shirshov basis for the ideal generated by the equations from eliminationEquations(...) using the domain DistributedMultivariatePolynomial.</p>
+</dd></dl>
+<a name="f_eliminationSolve"></a><dl><dt>eliminationSolve : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationSolve(lst_eqn)</code> calls eliminationSolve(<code>lst_eqn</code>, [0,1], []).</p>
+</dd></dl>
+<dl><dt>eliminationSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="List.html">List</a>(R), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R))))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationSolve(lst_eqn, lst_val, lst_sub)</code> computes all solutions of the first equation of <code>lst_eqn</code> by trying the values of <code>lst_val</code> for undetermined variables with respect to given subsolutions lst_sub and return those which fulfill all other equations in <code>lst_eqn</code>.</p>
+</dd></dl>
+<dl><dt>eliminationSolve : (<a href="Polynomial.html">Polynomial</a>(R), <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationSolve(eqn, lst_val)</code> computes all solutions of equation <code>eqn</code> by trying the values of lst_val for undetermined variables.</p>
+</dd></dl>
+<dl><dt>eliminationSolve : (<a href="Polynomial.html">Polynomial</a>(R), <a href="List.html">List</a>(R), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationSolve(eqn, lst_val, sub)</code> computes all solutions of equation <code>eqn</code> by trying the values of <code>lst_val</code> for undetermined variables with respect to given subsolution sub.</p>
+</dd></dl>
+<dl><dt>eliminationSolve : (<a href="Polynomial.html">Polynomial</a>(R), <a href="List.html">List</a>(R), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R))))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationSolve(eqn, lst_val, lst_sub)</code> computes all solutions of equation <code>eqn</code> by trying the values of <code>lst_val</code> for undetermined variables with respect to given subsolutions lst_sub.</p>
+</dd></dl>
+<a name="f_eliminationTransformations"></a><dl><dt>eliminationTransformations : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationTransformations(p, row_P, col_P, row_Q, col_Q, sol)</code> Uses eval to set the values in sol into the variables in the transformation matrices.</p>
+</dd></dl>
+<dl><dt>eliminationTransformations : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationTransformations(p, row_P, col_P, row_Q, col_Q)</code> returns a pair of transformation matrices with commutative variables 'a[<code>i</code>] in rows/columns row_P/col_P respectively <code>'b</code>[<code>i</code>] in rows/columns row_Q/col_Q.</p>
+</dd></dl>
+<dl><dt>eliminationTransformations : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R))) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>eliminationTransformations(p, row_P, col_P, sym_P, row_Q, col_Q, sym_Q)</code> returns a pair of transformation matrices with commutative variables <code>sym_P</code>[<code>i</code>] in rows/columns row_P/col_P respectively sym_Q[<code>i</code>] in rows/columns row_Q/col_Q.</p>
+</dd></dl>
+<a name="f_elt"></a><dl><dt>elt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>elt(p, i, j, l)</code> returns the element (<code>i</code>,<code>j</code>) in matrix <code>l</code> of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<dl><dt>elt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>elt(p, i, j)</code> returns the elements (<code>i</code>,<code>j</code>) from the linear pencil <code>p</code> as a list.</p>
+</dd></dl>
+<a name="f_equal_63"></a><dl><dt>equal? : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), %, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>equal?(p, pos_p, q, pos_q)</code> checks, if the matrices <code>pos_p</code> in <code>p</code> are equal to the pos_q in <code>q</code>. Not specified matrices have to be zero.</p>
+</dd></dl>
+<a name="f_insertRowsColumns"></a><dl><dt>insertRowsColumns : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>insertRowsColumns(p, lst_row, lst_col)</code> returns a new pencil with additional rows and columns after the specified indices. addRowsColumns(<code>p</code>, [0,0,1], [0,0,3]) would insert 2 rows and columns at the beginning an one row and column between rows 1 and 2 and columns 3 and 4 respectively.</p>
+</dd></dl>
+<a name="f_leftIdentity"></a><dl><dt>leftIdentity : % -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>leftIdentity(p)</code> returns the left identity matrix.</p>
+</dd></dl>
+<a name="f_matrix"></a><dl><dt>matrix : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>matrix(p, l)</code> returns matrix <code>l</code> in the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_multiplyColumn_33"></a><dl><dt>multiplyColumn! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>multiplyColumn!(p, j, alphat)</code> multiplies column(<code>j</code>) by alpha.</p>
+</dd></dl>
+<a name="f_multiplyRow_33"></a><dl><dt>multiplyRow! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>multiplyRow!(p, i, alpha)</code> multiplies row(<code>i</code>) by alpha.</p>
+</dd></dl>
+<a name="f_ncols"></a><dl><dt>ncols : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>ncols(p)</code> returns the number of columns.</p>
+</dd></dl>
+<a name="f_nelem"></a><dl><dt>nelem : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>nelem(p)</code> returns the number of elements.</p>
+</dd></dl>
+<a name="f_nrows"></a><dl><dt>nrows : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>nrows(p)</code> returns the number of rows.</p>
+</dd></dl>
+<a name="f_qaddColumns_33"></a><dl><dt>qaddColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>addColumns!(p, i, j, alpha)</code> adds alpha*column(<code>i</code>) to column(<code>j</code>) in all matrices of the linear pencil <code>p</code>. (no index check)</p>
+</dd></dl>
+<a name="f_qaddRows_33"></a><dl><dt>qaddRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>qaddRows!(p, i, j, alpha)</code> adds alpha*row(<code>i</code>) to row(<code>j</code>) in all matrices of the linear pencil <code>p</code> (no index check). (no index check)</p>
+</dd></dl>
+<a name="f_qcolumnIndices"></a><dl><dt>qcolumnIndices : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>qcolumnIndices(p, off)</code> returns a list of column indices for nozero elements for every row starting at the specified offset. (no range check)</p>
+</dd></dl>
+<dl><dt>qcolumnIndices : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>qcolumnIndices(p, off, l)</code> returns a list of column indices for nonzero elements in matrix <code>l</code> for every row starting at the specified offset. (no range check)</p>
+</dd></dl>
+<dl><dt>qcolumnIndices : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>qcolumnIndices(p, off, i, l)</code> returns a list of column indices for nonzero elements in the specified row of matrix <code>l</code> for starting at the specified offset. (no range check)</p>
+</dd></dl>
+<a name="f_qdiagonal"></a><dl><dt>qdiagonal : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>qdiagonal(p, k_min, k_max, l)</code> returns the entries along the diagonal between <code>k_min</code> and <code>k_max</code>. (no range check)</p>
+</dd></dl>
+<a name="f_qdiagonal_63"></a><dl><dt>qdiagonal? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qdiagonal?(p, k_min, k_max, l)</code> is the matrix <code>l</code> diagonal between <code>k_min</code> and k_max? (no range check)</p>
+</dd></dl>
+<a name="f_qelt"></a><dl><dt>qelt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>elt(p, i, j, l)</code> returns the element (<code>i</code>,<code>j</code>) in matrix <code>l</code> of the linear pencil <code>p</code> (no index-check).</p>
+</dd></dl>
+<dl><dt>qelt : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>elt(p, i, j)</code> returns the elements (<code>i</code>,<code>j</code>) from the linear pencil <code>p</code> as a list (no check).</p>
+</dd></dl>
+<a name="f_qequal_63"></a><dl><dt>qequal? : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), %, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qequal?(p, pos_p, q, pos_q, offset)</code> checks, if the matrices are equal starting at offset.</p>
+</dd></dl>
+<a name="f_qmultiplyColumn_33"></a><dl><dt>qmultiplyColumn! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>multiplyColumn!(p, j, alphat)</code> multiplies column(<code>j</code>) by alpha.</p>
+</dd></dl>
+<a name="f_qmultiplyRow_33"></a><dl><dt>qmultiplyRow! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>qmultiplyRow!(p, i, alpha)</code> multiplies row(<code>i</code>) by alpha. (no index check)</p>
+</dd></dl>
+<a name="f_qnew"></a><dl><dt>qnew : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>qnew(m, n, l)</code> creates an empty linear pencil with <code>l</code> matrices with <code>m</code> rows and <code>n</code> columns.</p>
+</dd></dl>
+<a name="f_qnilpotent_63"></a><dl><dt>qnilpotent? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qnilpotent?(p, k_min, k_max, l)</code> ist the matrix <code>l</code> nilpotent with respect to the specified block? (no range check)</p>
+</dd></dl>
+<a name="f_qrowIndices"></a><dl><dt>qrowIndices : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>qrowIndices(p, off)</code> returns a list of row indices for nonzero elements for every column starting at the specified offset. (no range check)</p>
+</dd></dl>
+<dl><dt>qrowIndices : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd><p>
+<code>qrowIndices(p, off, l)</code> returns a list of row indices for nonzero elements in matrix <code>l</code> for every column starting at the specified offset. (no range check)</p>
+</dd></dl>
+<dl><dt>qrowIndices : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>qrowIndices(p, off, j, l)</code> returns a list of row indices for nozero elements in column <code>j</code> in matrix <code>l</code> (no range check)</p>
+</dd></dl>
+<a name="f_qscaleBlock_33"></a><dl><dt>qscaleBlock! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt %</dt><dd><p>
+<code>qscalesubMatrix!(p, i_min, i_max, j_min, j_max, l, alpha)</code> multiplies the entries in the specified block of matrix <code>l</code> with alpha.</p>
+</dd></dl>
+<a name="f_qsemizero_63"></a><dl><dt>qsemizero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qsemizero?(p, i_min, i_max, j_min, j_max, l)</code> checks, if the specified submatrix is zero except for matrix <code>l</code> (no index check).</p>
+</dd></dl>
+<a name="f_qsetelt_33"></a><dl><dt>qsetelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>qselelt!(p, i, j, l, alpha)</code> sets the element (<code>i</code>,<code>j</code>) in matrix <code>l</code> of the linear pencil <code>p</code> to alpha.</p>
+</dd></dl>
+<dl><dt>qsetelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>qsetelt!(p, i, j, lst)</code> sets the element (<code>i</code>,<code>j</code>) in the matrices of the linear pencil <code>p</code> according to the elements in <code>lst</code>.</p>
+</dd></dl>
+<a name="f_qswapColumns_33"></a><dl><dt>qswapColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>qswapColumns!(p, i, j)</code> exchanges columns <code>i</code> and <code>j</code> in all matrices of the linear pencil <code>p</code> (no index check)</p>
+</dd></dl>
+<a name="f_qswapRows_33"></a><dl><dt>qswapRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>qswapRows!(p, i, j)</code> exchanges rows <code>i</code> and <code>j</code> in all matrices of the linear pencil <code>p</code> (no index check).</p>
+</dd></dl>
+<a name="f_quppertriangular_63"></a><dl><dt>quppertriangular? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>quppertriangular?(p, k_min, k_max, l)</code> is the matrix <code>l</code> upper triangular with respect to the specified block? (no range check)</p>
+</dd></dl>
+<a name="f_qzero_63"></a><dl><dt>qzero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qzero?(p, i, j)</code> checks if all the entries (<code>i</code>,<code>j</code>) of the linear pencil <code>p</code> are zero. (no index check)</p>
+</dd></dl>
+<dl><dt>qzero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qzero?(p, i_min, i_max, j_min, j_max)</code> checks if the specified block of the linear pencil <code>p</code> is zero for all matrices. (no index check)</p>
+</dd></dl>
+<dl><dt>qzero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>qzero?(p, i_min, i_max, j_min, j_max, l)</code> checks if the specified block of matrix <code>l</code> of the linear pencil <code>p</code> is zero (no index check)</p>
+</dd></dl>
+<a name="f_removeRowsColumns"></a><dl><dt>removeRowsColumns : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>removeRowsColumns(p, lst_row, lst_col)</code> returns a new pencil with submatrices specified by the complement of the list of rows and columns.</p>
+</dd></dl>
+<a name="f_rightIdentity"></a><dl><dt>rightIdentity : % -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>rightIdentity(p)</code> returns the right identity matrix.</p>
+</dd></dl>
+<a name="f_setelt_33"></a><dl><dt>setelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt R</dt><dd><p>
+<code>selelt!(p, i, j, l, alpha)</code> sets the element (<code>i</code>,<code>j</code>) in matrix <code>l</code> of the linear pencil <code>p</code> to alpha.</p>
+</dd></dl>
+<dl><dt>setelt! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(R)) -&gt <a href="List.html">List</a>(R)</dt><dd><p>
+<code>setelt!(p, i, j, lst)</code> sets the element (<code>i</code>,<code>j</code>) in the matrices of the linear pencil <code>p</code> according to the elements in <code>lst</code>.</p>
+</dd></dl>
+<a name="f_setsubMatrix_33"></a><dl><dt>setsubMatrix! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>setsubMatrix!(p, i, j, l, a)</code> sets the matrix a into the matrix <code>l</code> of <code>p</code> in position (<code>i</code>,<code>j</code>).</p>
+</dd></dl>
+<a name="f_setsubPencil_33"></a><dl><dt>setsubPencil! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd><p>
+<code>setsubPencil!(p, i, j, q)</code> sets the matrices of pencil <code>q</code> into the matrices of <code>p</code> in position (<code>i</code>,<code>j</code>).</p>
+</dd></dl>
+<a name="f_subMatrix"></a><dl><dt>subMatrix : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Matrix.html">Matrix</a>(R)</dt><dd><p>
+<code>subMatrix(p, r_min, r_max, c_min, c_max, l)</code> returns the specified submatrix <code>l</code> of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_subPencil"></a><dl><dt>subPencil : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>subPencil(p, lst_row, lst_col)</code> returns a pencil with submatrices specified by a list of rows and columns.</p>
+</dd></dl>
+<dl><dt>subPencil : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>subPencil(p, r_min, r_max, c_min, c_max)</code> returns a pencil with the specified submatrices.</p>
+</dd></dl>
+<a name="f_swapColumns_33"></a><dl><dt>swapColumns! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapColumns!(p, i, j)</code> exchanges columns <code>i</code> and <code>j</code> in all matrices of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_swapRows_33"></a><dl><dt>swapRows! : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>swapRows!(p, i, j)</code> exchanges rows <code>i</code> and <code>j</code> in all matrices of the linear pencil <code>p</code>.</p>
+</dd></dl>
+<a name="f_transformColumns_33"></a><dl><dt>transformColumns! : (%, <a href="Matrix.html">Matrix</a>(R)) -&gt %</dt><dd><p>
+<code>transformColumns!(p, U)</code> multiplies the matrices of the linear pencil from the right by <code>U</code>.</p>
+</dd></dl>
+<a name="f_transformRows_33"></a><dl><dt>transformRows! : (%, <a href="Matrix.html">Matrix</a>(R)) -&gt %</dt><dd><p>
+<code>transformRows!(p, T)</code> multiplies the matrices of the linear pencil from the left by <code>T</code>.</p>
+</dd></dl>
+<a name="f_uppertriangular_63"></a><dl><dt>uppertriangular? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>uppertriangular?(p, l)</code> is the matrix <code>l</code> upper triangular?</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt>zero? : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zero?(p, i, j)</code> checks if all the entries (<code>i</code>,<code>j</code>) of the linear pencil <code>p</code> are zero.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExpressionSpaceODESolver</title>
+</head>
+<body>
+<h1>ExpressionSpaceODESolver(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/utsode.spad#L125">utsode.spad line 125</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/utsode.spad#L125">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>, <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>))<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+Taylor series solutions of explicit ODE<code>'s</code>.</p>
+<a name="f_seriesSolve"></a><dl><dt>seriesSolve : (F, <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), F) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve(eq, y, x = a, b)</code> is equivalent to <code>seriesSolve(eq = 0, y, x = a, y a = b)</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (F, <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), <a href="Equation.html">Equation</a>(F)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve(eq, y, x = a, y a = b)</code> is equivalent to <code>seriesSolve(eq=0, y, x=a, y a = b)</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (F, <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(F)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve(eq, y, x = a, [b0, ..., bn])</code> is equivalent to <code>seriesSolve(eq = 0, y, x = a, [b0, ..., b(n-1)])</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="Equation.html">Equation</a>(F), <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), F) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve(eq, y, x=a, b)</code> is equivalent to <code>seriesSolve(eq, y, x=a, y a = b)</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="Equation.html">Equation</a>(F), <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), <a href="Equation.html">Equation</a>(F)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve(eq, y, x=a, y a = b)</code> returns a Taylor series solution of <code>eq</code> around <code>x</code> = a with initial condition <code>y(a) = b</code>. Note: <code>eq</code> must be of the form <code>f(x, y x) y'(x) + g(x, y x) = h(x, y x)</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="Equation.html">Equation</a>(F), <a href="BasicOperator.html">BasicOperator</a>, <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(F)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve(eq, y, x=a, [b0, ..., b(n-1)])</code> returns a Taylor series solution of <code>eq</code> around <code>x = a</code> with initial conditions <code>y(a) = b0</code>, <code>y'(a) = b1</code>, <code>y''(a) = b2</code>, ..., <code>y(n-1)(a) = b(n-1)</code> <code>eq</code> must be of the form <code>f(x, y x, y'(x), ..., y(n-1)(x)) y(n)(x) + g(x, y x, y'(x), ..., y(n-1)(x)) = h(x, y x, y'(x), ..., y(n-1)(x))</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(F)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve([eq1, ..., eqn], [y1, ..., yn], x=a, [b1, ..., bn])</code> is equivalent to <code>seriesSolve([eq1=0, ..., eqn=0], [y1, ..., yn], x=a, [b1, ..., bn])</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="List.html">List</a>(F), <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(F))) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve([eq1, ..., eqn], [y1, ..., yn], x = a, [y1 a = b1, ..., yn a = bn])</code> is equivalent to <code>seriesSolve([eq1=0, ..., eqn=0], [y1, ..., yn], x = a, [y1 a = b1, ..., yn a = bn])</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(F)), <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(F)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve([eq1, ..., eqn], [y1, ..., yn], x=a, [b1, ..., bn])</code> is equivalent to <code>seriesSolve([eq1, ..., eqn], [y1, ..., yn], x = a, [y1 a = b1, ..., yn a = bn])</code>.</p>
+</dd></dl>
+<dl><dt>seriesSolve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(F)), <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="Equation.html">Equation</a>(F), <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(F))) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>seriesSolve([eq1, ..., eqn], [y1, ..., yn], x = a, [y1 a = b1, ..., yn a = bn])</code> returns a taylor series solution of <code>[eq1, ..., eqn]</code> around <code>x = a</code> with initial conditions <code><code>yi</code>(a) = <code>bi</code></code>. Note: eqi must be of the form <code><code>fi</code>(x, y1 x, y2 x, ..., yn x) y1'(x) + <code>gi</code>(x, y1 x, y2 x, ..., yn x) = h(x, y1 x, y2 x, ..., yn x)</code>.</p>
+</dd></dl>
+</body>
+</html>

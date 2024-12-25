@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteFieldPolynomialPackage2</title>
+</head>
+<body>
+<h1>FiniteFieldPolynomialPackage2(F, GF)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffdoms.spad#L1202">ffdoms.spad line 1202</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffdoms.spad#L1202">[edit on github]</a></p>
+<ul>
+<li>F : <a href="FieldOfPrimeCharacteristic.html">FieldOfPrimeCharacteristic</a> with
+<p>coerce : GF -&gt %<p>lookup : % -&gt <a href="PositiveInteger.html">PositiveInteger</a><p>basis : <a href="PositiveInteger.html">PositiveInteger</a> -&gt <a href="Vector.html">Vector</a>(%)<p>Frobenius : % -&gt %<li>GF : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a></ul>
+<p>
+<code>FiniteFieldPolynomialPackage2</code>(<code>F</code>, <code>GF</code>) exports some functions concerning finite fields, which depend on a finite field  GF and an algebraic extension <code>F</code> of  GF, e.g. a zero of a polynomial over  GF in <code>F</code>.</p>
+<a name="f_rootOfIrreduciblePoly"></a><dl><dt>rootOfIrreduciblePoly : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(GF) -&gt F</dt><dd><p>
+<code>rootOfIrreduciblePoly(f)</code> computes one root of the monic, irreducible polynomial <code>f</code>, which degree must divide the extension degree of  F over  GF, i.e. <code>f</code> splits into linear factors over  F.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NonLinearSolvePackage</title>
+</head>
+<body>
+<h1>NonLinearSolvePackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/nlinsol.spad#L63">nlinsol.spad line 63</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/nlinsol.spad#L63">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+NonLinearSolvePackage is an interface to SystemSolvePackage that attempts to retract the coefficients of the equations before solving. The solutions are given in the algebraic closure of <code>R</code> whenever possible.</p>
+<a name="f_solve"></a><dl><dt>solve : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solve(lp)</code> finds the solution in the algebraic closure of <code>R</code> of the list <code>lp</code> of rational functions with respect to all the symbols appearing in <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solve(lp, lv)</code> finds the solutions in the algebraic closure of <code>R</code> of the list <code>lp</code> of rational functions with respect to the list of symbols <code>lv</code>.</p>
+</dd></dl>
+<a name="f_solveInField"></a><dl><dt>solveInField : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solveInField(lp)</code> finds the solution of the list <code>lp</code> of rational functions with respect to all the symbols appearing in <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>solveInField : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solveInField(lp, lv)</code> finds the solutions of the list <code>lp</code> of rational functions with respect to the list of symbols <code>lv</code>.</p>
+</dd></dl>
+</body>
+</html>

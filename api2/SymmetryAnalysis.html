@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SymmetryAnalysis</title>
+</head>
+<body>
+<h1>SymmetryAnalysis(JB1, xi, eta)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L5153">jet.spad line 5153</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L5153">[edit on github]</a></p>
+<ul>
+<li>JB1 : <a href="JetBundleCategory.html">JetBundleCategory</a><li>xi : Union(<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>))<li>eta : Union(<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>))</ul>
+<p>
+<code>SymmetryAnalysis(JB, <code>xi</code>, eta)</code> provides procedures for the symmetry analysis of differential equations over a given jet bundle. Currently there exist only some procedures to set up the determining system for the symmetry generators of Lie point symmetries.</p>
+<a name="f_ansatz"></a><dl><dt>ansatz : () -&gt <a href="JetVectorField.html">JetVectorField</a>(JB1, <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))</dt><dd><p>
+<code>ansatz()</code> returns a general ansatz for a symmetry generator.</p>
+</dd></dl>
+<a name="f_detSys"></a><dl><dt>detSys : (<a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)), <a href="JetVectorField.html">JetVectorField</a>(JB1, <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))</dt><dd><p>
+<code>detSys(sys, vf)</code> computes the determining system for symmetry generators of the system <code>sys</code> with a given ansatz for the generators. It is assumed that each equation can be solved for its leading derivative.</p>
+</dd></dl>
+<dl><dt>detSys : (<a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)), <a href="List.html">List</a>(JB1), <a href="JetVectorField.html">JetVectorField</a>(JB1, <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))</dt><dd><p>
+<code>detSys(sys, sjb, vf)</code> computes the determining system for symmetry generators of the system <code>sys</code> with a given ansatz for the generators. <code>sjb</code> contains jet variables for which the individual equations can be solved.</p>
+</dd></dl>
+<dl><dt>detSys : <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta)))</dt><dd><p>
+<code>detSys(sys)</code> computes the determining system for symmetry generators of the system <code>sys</code>. It is assumed that each equation can be solved for its leading derivative.</p>
+</dd></dl>
+<a name="f_detSysNS"></a><dl><dt>detSysNS : (<a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)), <a href="JetVectorField.html">JetVectorField</a>(JB1, <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))</dt><dd><p>
+<code>detSysNS(sys, vf)</code> computes the determining system for symmetry generators without assuming solvability of the equations for some derivatives.</p>
+</dd></dl>
+<dl><dt>detSysNS : <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta)))</dt><dd><p>
+<code>detSysNS(sys, vf)</code> computes the determining system for symmetry generators without assuming solvability of the equations for some derivatives.</p>
+</dd></dl>
+<a name="f_linearize"></a><dl><dt>linearize : <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta))) -&gt <a href="List.html">List</a>(<a href="JetBundleLinearFunction.html">JetBundleLinearFunction</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta), <a href="JetBundleXExpression.html">JetBundleXExpression</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta))))</dt><dd><p>
+<code>linearize(sys)</code> tries to retract all equations in <code>sys</code> to a linear one. If that is not possible, an error occurs.</p>
+</dd></dl>
+<a name="f_ncDetSys"></a><dl><dt>ncDetSys : (<a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)), <a href="JetVectorField.html">JetVectorField</a>(JB1, <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))</dt><dd><p>
+<code>ncDetSys(sys, vf)</code> computes the determining system for generators of conditional symmetries of <code>sys</code> with a given ansatz for the vector fields.</p>
+</dd></dl>
+<dl><dt>ncDetSys : (<a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)), <a href="List.html">List</a>(JB1), <a href="JetVectorField.html">JetVectorField</a>(JB1, <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1))</dt><dd><p>
+<code>ncDetSys(sys, sjb, vf)</code> computes the determining system for generators of conditional symmetries of <code>sys</code>. The meaning of the further arguments is the same as in <code>detSys</code>.</p>
+</dd></dl>
+<dl><dt>ncDetSys : <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB1)) -&gt <a href="List.html">List</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta)))</dt><dd><p>
+<code>ncDetSys(sys)</code> computes the determining system for generators of conditional symmetries of <code>sys</code>. It makes the same assumptions as <code>detSys</code>.</p>
+</dd></dl>
+<a name="f_transform"></a><dl><dt>transform : <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1) -&gt <a href="JetBundleExpression.html">JetBundleExpression</a>(<a href="JetBundleSymAna.html">JetBundleSymAna</a>(JB1, xi, eta))</dt><dd><p>
+<code>transform(f)</code> transforms expressions between the different function types involved.</p>
+</dd></dl>
+</body>
+</html>

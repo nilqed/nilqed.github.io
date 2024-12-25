@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ApplyRules</title>
+</head>
+<body>
+<h1>ApplyRules(Base, R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/rule.spad#L130">rule.spad line 130</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/rule.spad#L130">[edit on github]</a></p>
+<ul>
+<li>Base : <a href="SetCategory.html">SetCategory</a><li>R : Join(<a href="Ring.html">Ring</a>, <a href="PatternMatchable.html">PatternMatchable</a>(Base), <a href="Comparable.html">Comparable</a>, <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(Base)))<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="PatternMatchable.html">PatternMatchable</a>(Base), <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(Base)))</ul>
+<p>
+This package apply rewrite rules to expressions, calling the pattern matcher.</p>
+<a name="f_applyRules"></a><dl><dt>applyRules : (<a href="List.html">List</a>(<a href="RewriteRule.html">RewriteRule</a>(Base, R, F)), F) -&gt F</dt><dd><p>
+<code>applyRules([r1, ..., rn], expr)</code> applies the rules <code>r1</code>, ..., <code>rn</code> to <code>f</code> an unlimited number of times, i.e. until none of <code>r1</code>, ..., <code>rn</code> is applicable to the expression.</p>
+</dd></dl>
+<dl><dt>applyRules : (<a href="List.html">List</a>(<a href="RewriteRule.html">RewriteRule</a>(Base, R, F)), F, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt F</dt><dd><p>
+<code>applyRules([r1, ..., rn], expr, n)</code> applies the rules <code>r1</code>, ..., <code>rn</code> to <code>f</code> a most <code>n</code> times.</p>
+</dd></dl>
+</body>
+</html>

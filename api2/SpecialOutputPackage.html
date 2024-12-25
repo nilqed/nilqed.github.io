@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SpecialOutputPackage</title>
+</head>
+<body>
+<h1>SpecialOutputPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/out.spad#L53">out.spad line 53</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/out.spad#L53">[edit on github]</a></p>
+<p>
+SpecialOutputPackage allows FORTRAN, Tex and MathML Formatter output from programs.</p>
+<a name="f_outputAsFortran"></a><dl><dt>outputAsFortran : <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsFortran(l)</code> sends (for each expression in the list <code>l</code>) output in FORTRAN format to the destination defined by )set output fortran.</p>
+</dd></dl>
+<dl><dt>outputAsFortran : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsFortran(o)</code> sends output <code>o</code> in FORTRAN format.</p>
+</dd></dl>
+<dl><dt>outputAsFortran : (<a href="String.html">String</a>, <a href="OutputForm.html">OutputForm</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsFortran(v, o)</code> sends output <code>v</code> = <code>o</code> in FORTRAN format to the destination defined by )set output fortran.</p>
+</dd></dl>
+<a name="f_outputAsMathML"></a><dl><dt>outputAsMathML : <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsMathML(l)</code> sends (for each expression in the list <code>l</code>) output in MathML format to the destination as defined by )set output mathml.</p>
+</dd></dl>
+<dl><dt>outputAsMathML : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsMathML(o)</code> sends output <code>o</code> in MathML format to the destination as defined by )set output mathml.</p>
+</dd></dl>
+<a name="f_outputAsTex"></a><dl><dt>outputAsTex : <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsTex(l)</code> sends (for each expression in the list <code>l</code>) output in Tex format to the destination as defined by )set output tex.</p>
+</dd></dl>
+<dl><dt>outputAsTex : <a href="OutputForm.html">OutputForm</a> -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputAsTex(o)</code> sends output <code>o</code> in Tex format to the destination defined by )set output tex.</p>
+</dd></dl>
+</body>
+</html>

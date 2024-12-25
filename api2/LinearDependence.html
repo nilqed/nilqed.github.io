@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearDependence</title>
+</head>
+<body>
+<h1>LinearDependence(S, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lindep.spad#L1">lindep.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lindep.spad#L1">[edit on github]</a></p>
+<ul>
+<li>S : <a href="IntegralDomain.html">IntegralDomain</a><li>R : <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(S)</ul>
+<p>
+Test for linear dependence.</p>
+<a name="f_linearDependence"></a><dl><dt>linearDependence : <a href="Vector.html">Vector</a>(R) -&gt Union(<a href="Vector.html">Vector</a>(S), "failed")</dt><dd><p>
+<code>linearDependence([v1, ..., vn])</code> returns <code>[c1, ..., cn]</code> if <code>c1*v1 + ... + cn*vn = 0</code> and not all the <code>ci</code><code>'s</code> are 0, "failed" if the <code>vi</code><code>'s</code> are linearly independent over <code>S</code>.</p>
+</dd></dl>
+<a name="f_linearlyDependent_63"></a><dl><dt>linearlyDependent? : <a href="Vector.html">Vector</a>(R) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>linearlyDependent?([v1, ..., vn])</code> returns <code>true</code> if the <code>vi</code><code>'s</code> are linearly dependent over <code>S</code>, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_particularSolution"></a><dl><dt>particularSolution : (<a href="Matrix.html">Matrix</a>(R), <a href="Vector.html">Vector</a>(R)) -&gt Union(<a href="Vector.html">Vector</a>(S), "failed") if S has <a href="Field.html">Field</a></dt><dd><p>
+<code>particularSolution([v1, ..., vn], u)</code> returns <code>[c1, ..., cn]</code> such that <code>c1*v1 + ... + cn*vn = u</code>, "failed" if no such <code>ci</code><code>'s</code> exist in <code>S</code>.</p>
+</dd></dl>
+<dl><dt>particularSolution : (<a href="Vector.html">Vector</a>(R), R) -&gt Union(<a href="Vector.html">Vector</a>(S), "failed") if S has <a href="Field.html">Field</a></dt><dd><p>
+<code>particularSolution([v1, ..., vn], u)</code> returns <code>[c1, ..., cn]</code> such that <code>c1*v1 + ... + cn*vn = u</code>, "failed" if no such <code>ci</code><code>'s</code> exist in <code>S</code>.</p>
+</dd></dl>
+<dl><dt>particularSolution : (<a href="Matrix.html">Matrix</a>(R), <a href="Vector.html">Vector</a>(R)) -&gt Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(S)), "failed") if S hasn't <a href="Field.html">Field</a></dt><dd><p>
+<code>particularSolution([v1, ..., vn], u)</code> returns <code>[c1, ..., cn]</code> such that <code>c1*v1 + ... + cn*vn = u</code>, "failed" if no such <code>ci</code><code>'s</code> exist in the quotient field of <code>S</code>.</p>
+</dd></dl>
+<dl><dt>particularSolution : (<a href="Vector.html">Vector</a>(R), R) -&gt Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(S)), "failed") if S hasn't <a href="Field.html">Field</a></dt><dd><p>
+<code>particularSolution([v1, ..., vn], u)</code> returns <code>[c1, ..., cn]</code> such that <code>c1*v1 + ... + cn*vn = u</code>, "failed" if no such <code>ci</code><code>'s</code> exist in the quotient field of <code>S</code>.</p>
+</dd></dl>
+<a name="f_solveLinear"></a><dl><dt>solveLinear : (<a href="Matrix.html">Matrix</a>(R), <a href="Vector.html">Vector</a>(R)) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(S), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(S))) if S has <a href="Field.html">Field</a></dt><dd><p>
+<code>solveLinear([v1, ..., vn], u)</code> returns solution of the system <code>c1*v1 + ... + cn*vn = u</code> and and a basis of the associated homogeneous system <code>c1*v1 + ... + cn*vn = 0</code></p>
+</dd></dl>
+<dl><dt>solveLinear : (<a href="Vector.html">Vector</a>(R), R) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(S), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(S))) if S has <a href="Field.html">Field</a></dt><dd><p>
+<code>solveLinear([v1, ..., vn], u)</code> returns solution of the system <code>c1*v1 + ... + cn*vn = u</code> and and a basis of the associated homogeneous system <code>c1*v1 + ... + cn*vn = 0</code></p>
+</dd></dl>
+<dl><dt>solveLinear : (<a href="Matrix.html">Matrix</a>(R), <a href="Vector.html">Vector</a>(R)) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(S)), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(S)))) if S hasn't <a href="Field.html">Field</a></dt><dd><p>
+<code>solveLinear([v1, ..., vn], u)</code> returns solution of the system <code>c1*v1 + ... + cn*vn = u</code> and and a basis of the associated homogeneous system <code>c1*v1 + ... + cn*vn = 0</code></p>
+</dd></dl>
+<dl><dt>solveLinear : (<a href="Vector.html">Vector</a>(R), R) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(S)), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(S)))) if S hasn't <a href="Field.html">Field</a></dt><dd><p>
+<code>solveLinear([v1, ..., vn], u)</code> returns solution of the system <code>c1*v1 + ... + cn*vn = u</code> and and a basis of the associated homogeneous system <code>c1*v1 + ... + cn*vn = 0</code></p>
+</dd></dl>
+</body>
+</html>

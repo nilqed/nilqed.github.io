@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeLieAlgebra</title>
+</head>
+<body>
+<h1>FreeLieAlgebra(VarSet, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L325">xlpoly.spad line 325</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L325">[edit on github]</a></p>
+<ul>
+<li>VarSet : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+The category of free Lie algebras. It is used by domains of non-commutative algebra: LiePolynomial and XPBWPolynomial.  Author: Michel Petitot (petitot@lifl.<code>fr</code>)</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="LieAlgebra.html#f__47">/</a> : (%, R) -&gt % if R has <a href="Field.html">Field</a></dt><dd> from <a href="LieAlgebra.html">LieAlgebra</a>(R)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_LiePoly"></a><dl><dt>LiePoly : <a href="LyndonWord.html">LyndonWord</a>(VarSet) -&gt %</dt><dd><p>
+<code>LiePoly(l)</code> returns the bracketed form of <code>l</code> as a Lie polynomial.</p>
+</dd></dl>
+<a name="f_coef"></a><dl><dt>coef : (<a href="XRecursivePolynomial.html">XRecursivePolynomial</a>(VarSet, R), %) -&gt R</dt><dd><p>
+<code>coef(x, y)</code> returns the scalar product of <code>x</code> by <code>y</code>, the set of words being regarded as an orthogonal basis.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : VarSet -&gt %</dt><dd><p>
+<code>coerce(x)</code> returns <code>x</code> as a Lie polynomial.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="XDistributedPolynomial.html">XDistributedPolynomial</a>(VarSet, R)</dt><dd><p>
+<code>coerce(x)</code> returns <code>x</code> as distributed polynomial.</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="XRecursivePolynomial.html">XRecursivePolynomial</a>(VarSet, R)</dt><dd><p>
+<code>coerce(x)</code> returns <code>x</code> as a recursive polynomial.</p>
+</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="LieAlgebra.html#f_construct">construct</a> : (%, %) -&gt %</dt><dd> from <a href="LieAlgebra.html">LieAlgebra</a>(R)</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>degree(x)</code> returns the greatest length of a word in the support of <code>x</code>.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (%, VarSet, %) -&gt %</dt><dd><p>
+<code>eval(p, x, v)</code> replaces <code>x</code> by <code>v</code> in <code>p</code>.</p>
+</dd></dl>
+<dl><dt>eval : (%, <a href="List.html">List</a>(VarSet), <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>eval(p, [x1, ..., xn], [v1, ..., vn])</code> replaces <code><code>xi</code></code> by <code><code>vi</code></code> in <code>p</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lquo"></a><dl><dt>lquo : (<a href="XRecursivePolynomial.html">XRecursivePolynomial</a>(VarSet, R), %) -&gt <a href="XRecursivePolynomial.html">XRecursivePolynomial</a>(VarSet, R)</dt><dd><p>
+<code>lquo(x, y)</code> returns the left simplification of <code>x</code> by <code>y</code>.</p>
+</dd></dl>
+<a name="f_mirror"></a><dl><dt>mirror : % -&gt %</dt><dd><p>
+<code>mirror(x)</code> returns <code>Sum(r_i mirror(w_i))</code> if <code>x</code> is <code>Sum(r_i w_i)</code>.</p>
+</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_rquo"></a><dl><dt>rquo : (<a href="XRecursivePolynomial.html">XRecursivePolynomial</a>(VarSet, R), %) -&gt <a href="XRecursivePolynomial.html">XRecursivePolynomial</a>(VarSet, R)</dt><dd><p>
+<code>rquo(x, y)</code> returns the right simplification of <code>x</code> by <code>y</code>.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_trunc"></a><dl><dt>trunc : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>trunc(p, n)</code> returns the polynomial <code>p</code> truncated at order <code>n</code>.</p>
+</dd></dl>
+<a name="f_varList"></a><dl><dt>varList : % -&gt <a href="List.html">List</a>(VarSet)</dt><dd><p>
+<code>varList(x)</code> returns the list of distinct entries of <code>x</code>.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="LieAlgebra.html">LieAlgebra</a>(R)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>STransform</title>
+</head>
+<body>
+<h1>STransform(PT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L2931">scene.spad line 2931</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L2931">[edit on github]</a></p>
+<ul>
+<li>PT : <a href="SPointCategory.html">SPointCategory</a></ul>
+<p>
+Domains for transform from SPoint to SPoint STransform transform domain can by used to represent linear transforms for instance when working with SCartesian where its Representation is a matrix of DoubleFloat Other transform domains may not necessarily be linear and will have different representations</p>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(tr)</code> output</p>
+</dd></dl>
+<a name="f_compound"></a><dl><dt>compound : (%, %) -&gt %</dt><dd><p>
+<code>compound(tr, inpt)</code> combine two transforms</p>
+</dd></dl>
+<a name="f_identity"></a><dl><dt>identity : () -&gt %</dt><dd><p>
+<code>identity()</code> returns the identity element which is do nothing transform</p>
+</dd></dl>
+<a name="f_stransform"></a><dl><dt>stransform : <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>stransform(m)</code> construct transform using a multivector</p>
+</dd></dl>
+<dl><dt>stransform : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>stransform(m)</code> constructs transform with given matrix elements</p>
+</dd></dl>
+<dl><dt>stransform : Mapping(PT, PT) -&gt %</dt><dd><p>
+<code>stransform(gen)</code> construct transform in general form as a mapping from <code>PT</code> to <code>PT</code></p>
+</dd></dl>
+<dl><dt>stransform : Mapping(<a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Complex.html">Complex</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>stransform(cpx)</code> construct transform as function of complex variable can only be used when <code>PT</code> is SArgand so this can be converted to <code>PT</code> <code>-&gt;</code> <code>PT</code></p>
+</dd></dl>
+<a name="f_stranslate"></a><dl><dt>stranslate : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>stranslate(offsetx, offsety, offsetz, scalex, scaley, scalez)</code> constructs a transform which represents pure translation we can also combine with scale which, for instance, is useful when writing to <code>SVG</code> file because the <code>y</code> dimension is inverted</p>
+</dd></dl>
+<a name="f_xform"></a><dl><dt>xform : (%, PT) -&gt PT</dt><dd><p>
+<code>xform(tr, inpt)</code> apply transform to a point producing another point</p>
+</dd></dl>
+</body>
+</html>

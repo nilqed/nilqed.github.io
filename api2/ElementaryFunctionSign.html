@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryFunctionSign</title>
+</head>
+<body>
+<h1>ElementaryFunctionSign(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/limitps.spad#L673">limitps.spad line 673</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/limitps.spad#L673">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>), <a href="GcdDomain.html">GcdDomain</a>)<li>F : Join(<a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package provides functions to determine the sign of an elementary function around a point or infinity.</p>
+<a name="f_sign"></a><dl><dt>sign : F -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>sign(f)</code> returns 1 if <code>f</code> is always non-negative; returns <code>-1</code> is <code>f</code> is always non-positive; returns 0 if <code>f</code> is always 0; returns "failed" if the sign of <code>f</code> varies or can<code>'t</code> be determined.</p>
+</dd></dl>
+<dl><dt>sign : (F, <a href="Symbol.html">Symbol</a>, F, <a href="String.html">String</a>) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>sign(f, x, a, s)</code> returns the sign of <code>f</code> as <code>x</code> nears <code>a</code> from below if <code>s</code> is "left", or above if <code>s</code> is "right".</p>
+</dd></dl>
+<dl><dt>sign : (F, <a href="Symbol.html">Symbol</a>, <a href="OrderedCompletion.html">OrderedCompletion</a>(F)) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>sign(f, x, a)</code> returns the sign of <code>f</code> as <code>x</code> nears <code>a</code>, from both sides if <code>a</code> is finite.</p>
+</dd></dl>
+</body>
+</html>

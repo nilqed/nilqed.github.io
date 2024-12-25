@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerMatrixLinearAlgebraFunctions</title>
+</head>
+<body>
+<h1>InnerMatrixLinearAlgebraFunctions(R, Row, Col, M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matfuns.spad#L1">matfuns.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matfuns.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="DivisionRing.html">DivisionRing</a><li>Row : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>Col : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(R, Row, Col)</ul>
+<p>
+InnerMatrixLinearAlgebraFunctions is an internal package which provides standard linear algebra functions on domains in <code>MatrixCategory</code></p>
+<a name="f_determinant"></a><dl><dt>determinant : M -&gt R if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>determinant(m)</code> returns the determinant of the matrix <code>m</code>. an error message is returned if the matrix is not square.</p>
+</dd></dl>
+<a name="f_generalizedInverse"></a><dl><dt>generalizedInverse : M -&gt M if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>generalizedInverse(m)</code> returns the generalized (Moore--Penrose) inverse of the matrix <code>m</code>, i.e. the matrix <code>h</code> such that m*h*m=h, h*m*h=m, <code>m*h</code> and <code>h*m</code> are both symmetric matrices.</p>
+</dd></dl>
+<a name="f_inverse"></a><dl><dt>inverse : M -&gt Union(M, "failed")</dt><dd><p>
+<code>inverse(m)</code> returns the inverse of the matrix <code>m</code>. If the matrix is not invertible, "failed" is returned. Error: if the matrix is not square.</p>
+</dd></dl>
+<a name="f_nullSpace"></a><dl><dt>nullSpace : M -&gt <a href="List.html">List</a>(Col) if Col has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd><p>
+<code>nullSpace(m)</code> returns a basis for the null space of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_nullity"></a><dl><dt>nullity : M -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>nullity(m)</code> returns the mullity of the matrix <code>m</code>. This is the dimension of the null space of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_rank"></a><dl><dt>rank : M -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>rank(m)</code> returns the rank of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_rowEchelon"></a><dl><dt>rowEchelon : M -&gt M</dt><dd><p>
+<code>rowEchelon(m)</code> returns the row echelon form of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_row_95operation_95base"></a><dl><dt>row_operation_base : (M, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, R) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>row_operation_base should</code> be local, but conditional</p>
+</dd></dl>
+<a name="f_row_95operation_95modular"></a><dl><dt>row_operation_modular : (M, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, R, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>row_operation_modular should</code> be local, but conditional</p>
+</dd></dl>
+</body>
+</html>

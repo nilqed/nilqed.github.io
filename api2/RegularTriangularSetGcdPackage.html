@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RegularTriangularSetGcdPackage</title>
+</head>
+<body>
+<h1>RegularTriangularSetGcdPackage(R, E, V, P, TS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/regset.spad#L717">regset.spad line 717</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/regset.spad#L717">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="RegularTriangularSetCategory.html">RegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+An internal package for computing gcds and resultants of univariate polynomials with coefficients in a tower of simple extensions of a field.</p>
+<a name="f_integralLastSubResultant"></a><dl><dt>integralLastSubResultant : (P, P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+<code>integralLastSubResultant(p1, p2, ts)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_internalLastSubResultant"></a><dl><dt>internalLastSubResultant : (P, P, TS, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+<code>internalLastSubResultant(p1, p2, ts, inv?, break?)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<dl><dt>internalLastSubResultant : (<a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)), V, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+<code>internalLastSubResultant(lpwt, v, flag)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_prepareSubResAlgo"></a><dl><dt>prepareSubResAlgo : (P, P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS))</dt><dd><p>
+<code>prepareSubResAlgo(p1, p2, ts)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_startTableGcd_33"></a><dl><dt>startTableGcd! : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>startTableGcd!(s1, s2, s3)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_startTableInvSet_33"></a><dl><dt>startTableInvSet! : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>startTableInvSet!(s1, s2, s3)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_stopTableGcd_33"></a><dl><dt>stopTableGcd! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>stopTableGcd!()</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_stopTableInvSet_33"></a><dl><dt>stopTableInvSet! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>stopTableInvSet!()</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_toseInvertible_63"></a><dl><dt>toseInvertible? : (P, TS) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>toseInvertible?(p1, p2, ts)</code> has the same specifications as <span class="spadop">invertible?</span>.</p>
+</dd></dl>
+<dl><dt>toseInvertible? : (P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="Boolean.html">Boolean</a>, tower : TS))</dt><dd><p>
+<code>toseInvertible?(p1, p2, ts)</code> has the same specifications as <span class="spadop">invertible?</span>.</p>
+</dd></dl>
+<a name="f_toseInvertibleSet"></a><dl><dt>toseInvertibleSet : (P, TS) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+<code>toseInvertibleSet(p1, p2, ts)</code> has the same specifications as <span class="spadop">invertibleSet</span>.</p>
+</dd></dl>
+<a name="f_toseLastSubResultant"></a><dl><dt>toseLastSubResultant : (P, P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+<code>toseLastSubResultant(p1, p2, ts)</code> has the same specifications as <span class="spadop">lastSubResultant</span>.</p>
+</dd></dl>
+<a name="f_toseSquareFreePart"></a><dl><dt>toseSquareFreePart : (P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+<code>toseSquareFreePart(p, ts)</code> has the same specifications as <span class="spadop">squareFreePart</span>.</p>
+</dd></dl>
+</body>
+</html>

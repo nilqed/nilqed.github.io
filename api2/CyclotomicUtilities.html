@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CyclotomicUtilities</title>
+</head>
+<body>
+<h1>CyclotomicUtilities</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/cyclo.spad#L1">cyclo.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/cyclo.spad#L1">[edit on github]</a></p>
+<p>
+Utilities for computations with cyclotomic polynomials.</p>
+<a name="f_cocyclotomic_95decomposition"></a><dl><dt>cocyclotomic_decomposition : <a href="Integer.html">Integer</a> -&gt <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cocyclotomic_decomposition(n)</code> computes list of irreducible factors of <code>x^n + 1</code> over integers.</p>
+</dd></dl>
+<a name="f_cyclotomic"></a><dl><dt>cyclotomic : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>cyclotomic(n)</code> computes <code>n</code>-th cyclotomic polynomial.</p>
+</dd></dl>
+<a name="f_cyclotomic_63"></a><dl><dt>cyclotomic? : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>) -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd><p>
+<code>cyclotomic?(p)</code> checks if <code>p</code> is a cyclotomic polynomial. If yes returns <code>n</code> such that <code>p = cyclotomic(n)</code>. Otherwise returns "failed".</p>
+</dd></dl>
+<a name="f_cyclotomic_95array"></a><dl><dt>cyclotomic_array : <a href="Integer.html">Integer</a> -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>cyclotomic_array(n)</code> computes pa containing lower half of coefficients of <code>n</code>-th cyclotomic polynomial. maximal index in <code>pa</code> is <code>eulerPhi(n)/2</code>. Due to symmetry this is enough to reconstruct cyclotomic polynomial from computed coefficients.</p>
+</dd></dl>
+<a name="f_cyclotomic_95decomposition"></a><dl><dt>cyclotomic_decomposition : <a href="Integer.html">Integer</a> -&gt <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>cyclotomic_decomposition(n)</code> computes list of irreducible factors of <code>x^n - 1</code> over integers.</p>
+</dd></dl>
+<a name="f_inverse_95cyclotomic"></a><dl><dt>inverse_cyclotomic : <a href="Integer.html">Integer</a> -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>inverse_cyclotomic(n)</code> computes <code>n</code>-th inverse cyclotomic polynomial, that is <code>(x^n - 1)/cyclotomic(n)</code>.</p>
+</dd></dl>
+</body>
+</html>

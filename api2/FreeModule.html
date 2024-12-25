@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FreeModule</title>
+</head>
+<body>
+<h1>FreeModule(R, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/poly.spad#L101">poly.spad line 101</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/poly.spad#L101">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>S : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+A <code>bi</code>-module is a free module over a ring with generators indexed by an ordered set. Each element can be expressed as a finite linear combination of generators. Only non-zero terms are stored. old domain <code>FreeModule1</code> was merged to it in May 2009 The description of the latter: This domain implements linear combinations of elements from the domain <code>S</code> with coefficients in the domain <code>R</code> where <code>S</code> is an ordered set and <code>R</code> is a ring (which may be non-commutative). This domain is used by domains of non-commutative algebra such as: XDistributedPolynomial, XRecursivePolynomial. Author: Michel Petitot (petitot@lifl.<code>fr</code>)</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt>* : (R, S) -&gt %</dt><dd><p>
+<code>r*b</code> returns the product of <code>r</code> by <code>b</code>.</p>
+</dd></dl>
+<dl><dt>* : (S, R) -&gt %</dt><dd><p>
+<code>s*r</code> returns the product <code>r*s</code> used by XRecursivePolynomial</p>
+</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt % if R has <a href="AbelianGroup.html">AbelianGroup</a></dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficient">coefficient</a> : (%, S) -&gt R</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, S)</dd></dl>
+<a name="f_coefficients"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficients">coefficients</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : S -&gt % if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(S)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : S, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : S, c : R)) -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if S has <a href="Hashable.html">Hashable</a> and R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if S has <a href="Hashable.html">Hashable</a> and R has <a href="Hashable.html">Hashable</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_inf"></a><dl><dt><a href="OrderedAbelianMonoidSup.html#f_inf">inf</a> : (%, %) -&gt % if R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a> and S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt R if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt S if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : S, c : R) if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_linearExtend"></a><dl><dt><a href="FreeModuleCategory.html#f_linearExtend">linearExtend</a> : (Mapping(R, S), %) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, S)</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_listOfTerms">listOfTerms</a> : % -&gt <a href="List.html">List</a>(Record(k : S, c : R))</dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, S)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (R, S) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_monomials"></a><dl><dt><a href="FreeModuleCategory.html#f_monomials">monomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, S)</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_numberOfMonomials">numberOfMonomials</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, S)</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt % if S has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt S if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(S, "failed") if R has <a href="SemiRing.html">SemiRing</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a> or R has <a href="Comparable.html">Comparable</a> and S has <a href="Comparable.html">Comparable</a> or S has <a href="OrderedSet.html">OrderedSet</a> and R has <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_sup"></a><dl><dt><a href="OrderedAbelianMonoidSup.html#f_sup">sup</a> : (%, %) -&gt % if R has <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a> and S has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a></dd></dl>
+<a name="f_support"></a><dl><dt><a href="FreeModuleCategory.html#f_support">support</a> : % -&gt <a href="List.html">List</a>(S)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, S)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a>
+<p><a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, S)
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="OrderedCancellationAbelianMonoid.html">OrderedCancellationAbelianMonoid</a>
+<p><a href="Module.html">Module</a>(R)
+<p><a href="OrderedAbelianSemiGroup.html">OrderedAbelianSemiGroup</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(S)
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(R)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, S)
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, S)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+</body>
+</html>

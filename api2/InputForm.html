@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InputForm</title>
+</head>
+<body>
+<h1>InputForm</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mkfunc.spad#L1">mkfunc.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mkfunc.spad#L1">[edit on github]</a></p>
+<p>
+Domain of parsed forms which can be passed to the interpreter. This is also the interface between algebra code and facilities in the interpreter.</p>
+<a name="f__35"></a><dl><dt><a href="SExpressionCategory.html#f__35">#</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt %</dt><dd><p>
+<code>a * b</code> returns the input form corresponding to <code>a * b</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>a + b</code> returns the input form corresponding to <code>a + b</code>.</p>
+</dd></dl>
+<a name="f__47"></a><dl><dt>/ : (%, %) -&gt %</dt><dd><p>
+<code>a / b</code> returns the input form corresponding to <code>a / b</code>.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt>0 : () -&gt %</dt><dd><p>
+<code>0</code> returns the input form corresponding to 0.</p>
+</dd></dl>
+<a name="f_1"></a><dl><dt>1 : () -&gt %</dt><dd><p>
+<code>1</code> returns the input form corresponding to 1.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt>^ : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>a ^ b</code> returns the input form corresponding to <code>a ^ b</code>.</p>
+</dd></dl>
+<dl><dt>^ : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>a ^ b</code> returns the input form corresponding to <code>a ^ b</code>.</p>
+</dd></dl>
+<a name="f_atom_63"></a><dl><dt><a href="SExpressionCategory.html#f_atom_63">atom?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_binary"></a><dl><dt>binary : (%, <a href="List.html">List</a>(%)) -&gt %</dt><dd><p>
+<code>binary(op, [a1, ..., an])</code> returns the input form corresponding to <code>a1 op a2 op ... op an</code>.</p>
+</dd></dl>
+<a name="f_car"></a><dl><dt><a href="SExpressionCategory.html#f_car">car</a> : % -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_cdr"></a><dl><dt><a href="SExpressionCategory.html#f_cdr">cdr</a> : % -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_compile"></a><dl><dt>compile : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(%)) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>compile(f, [t1, ..., tn])</code> forces the interpreter to compile the function <code>f</code> with signature <code>(t1, ..., tn) -&gt; ?</code>. returns the symbol <code>f</code> if successful. Error: if <code>f</code> was not defined beforehand in the interpreter, or if the <code>ti</code><code>'s</code> are not valid types, or if the compiler fails.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt %</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(%)</dd></dl>
+<dl><dt><a href="SExpressionCategory.html#f_convert">convert</a> : <a href="DoubleFloat.html">DoubleFloat</a> -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="SExpressionCategory.html#f_convert">convert</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="SExpressionCategory.html#f_convert">convert</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt>convert : <a href="SExpression.html">SExpression</a> -&gt %</dt><dd><p>
+<code>convert(s)</code> makes <code>s</code> into an input form.</p>
+</dd></dl>
+<dl><dt><a href="SExpressionCategory.html#f_convert">convert</a> : <a href="String.html">String</a> -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="SExpressionCategory.html#f_convert">convert</a> : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="SExpression.html">SExpression</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="SExpression.html">SExpression</a>)</dd></dl>
+<a name="f_declare"></a><dl><dt>declare : <a href="List.html">List</a>(%) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>declare(t)</code> returns a name <code>f</code> such that <code>f</code> has been declared to the interpreter to be of type <code>t</code>, but has not been assigned a value yet. Note: <code>t</code> should be created as <code>devaluate(T)$Lisp</code> where <code>T</code> is the actual type of <code>f</code> (this hack is required for the case where <code>T</code> is a mapping type).</p>
+</dd></dl>
+<a name="f_destruct"></a><dl><dt><a href="SExpressionCategory.html#f_destruct">destruct</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_elt"></a><dl><dt><a href="SExpressionCategory.html#f_elt">elt</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="SExpressionCategory.html#f_elt">elt</a> : (%, <a href="List.html">List</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_eq"></a><dl><dt><a href="SExpressionCategory.html#f_eq">eq</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_flatten"></a><dl><dt>flatten : % -&gt %</dt><dd><p>
+<code>flatten(s)</code> returns an input form corresponding to <code>s</code> with all the nested operations flattened to triples using new local variables. If <code>s</code> is a piece of code, this speeds up the compilation tremendously later on.</p>
+</dd></dl>
+<a name="f_float"></a><dl><dt><a href="SExpressionCategory.html#f_float">float</a> : % -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_float_63"></a><dl><dt><a href="SExpressionCategory.html#f_float_63">float?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_function"></a><dl><dt>function : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>function(code, [x1, ..., xn], f)</code> returns the input form corresponding to <code>f(x1, ..., xn) == code</code>.</p>
+</dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_integer"></a><dl><dt><a href="SExpressionCategory.html#f_integer">integer</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_integer_63"></a><dl><dt><a href="SExpressionCategory.html#f_integer_63">integer?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_interpret"></a><dl><dt>interpret : % -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>interpret(f)</code> passes <code>f</code> to the interpreter.</p>
+</dd></dl>
+<a name="f_interpret_95in_95new_95env"></a><dl><dt>interpret_in_new_env : % -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>interpret_in_new_env(f)</code> evaluates <code>f</code> in the interpreter using fresh environment which is discarded after evaluation</p>
+</dd></dl>
+<a name="f_lambda"></a><dl><dt>lambda : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd><p>
+<code>lambda(code, [x1, ..., xn])</code> returns the input form corresponding to <code>(x1, ..., xn) +-&gt; code</code> if <code>n &gt; 1</code>, or to <code>x1 +-&gt; code</code> if <code>n = 1</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_list_63"></a><dl><dt><a href="SExpressionCategory.html#f_list_63">list?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_null_63"></a><dl><dt><a href="SExpressionCategory.html#f_null_63">null?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_pair_63"></a><dl><dt><a href="SExpressionCategory.html#f_pair_63">pair?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_parse"></a><dl><dt>parse : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>parse(s)</code> is the inverse of unparse. It parses a string to InputForm</p>
+</dd></dl>
+<a name="f_string"></a><dl><dt><a href="SExpressionCategory.html#f_string">string</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_string_63"></a><dl><dt><a href="SExpressionCategory.html#f_string_63">string?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_symbol"></a><dl><dt><a href="SExpressionCategory.html#f_symbol">symbol</a> : % -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_symbol_63"></a><dl><dt><a href="SExpressionCategory.html#f_symbol_63">symbol?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<a name="f_unparse"></a><dl><dt>unparse : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>unparse(f)</code> returns a string <code>s</code> such that the parser would transform <code>s</code> to <code>f</code>. Error: if <code>f</code> is not the parsed form of a string.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(%)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SExpressionCategory.html">SExpressionCategory</a>(<a href="String.html">String</a>, <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="DoubleFloat.html">DoubleFloat</a>)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="SExpression.html">SExpression</a>)
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalFactorize</title>
+</head>
+<body>
+<h1>RationalFactorize(RP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ratfact.spad#L1">ratfact.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ratfact.spad#L1">[edit on github]</a></p>
+<ul>
+<li>RP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</ul>
+<p>
+Factorization of extended polynomials with rational coefficients. This package implements factorization of extended polynomials whose coefficients are rational numbers. It does this by taking the <code>lcm</code> of the coefficients of the polynomial and creating a polynomial with integer coefficients. The algorithm in GaloisGroupFactorizer is then used to factor the integer polynomial. The result is normalized with respect to the original <code>lcm</code> of the denominators.</p>
+<a name="f_factor"></a><dl><dt>factor : RP -&gt <a href="Factored.html">Factored</a>(RP)</dt><dd><p>
+<code>factor(p)</code> factors an extended polynomial <code>p</code> over the rational numbers.</p>
+</dd></dl>
+<a name="f_factorSquareFree"></a><dl><dt>factorSquareFree : RP -&gt <a href="Factored.html">Factored</a>(RP)</dt><dd><p>
+<code>factorSquareFree(p)</code> factors an extended squareFree polynomial <code>p</code> over the rational numbers.</p>
+</dd></dl>
+</body>
+</html>

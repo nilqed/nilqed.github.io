@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteFieldHomomorphisms</title>
+</head>
+<body>
+<h1>FiniteFieldHomomorphisms(F1, GF, F2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffdoms.spad#L2791">ffdoms.spad line 2791</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffdoms.spad#L2791">[edit on github]</a></p>
+<ul>
+<li>F1 : <a href="FiniteAlgebraicExtensionField.html">FiniteAlgebraicExtensionField</a>(GF)<li>GF : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a><li>F2 : <a href="FiniteAlgebraicExtensionField.html">FiniteAlgebraicExtensionField</a>(GF)</ul>
+<p>
+FiniteFieldHomomorphisms(<code>F1</code>, <code>GF</code>, <code>F2</code>) exports coercion functions of elements between the fields  F1 and  F2, which both must be finite simple algebraic extensions of the finite ground field  GF.</p>
+<a name="f_coerce"></a><dl><dt>coerce : F2 -&gt F1</dt><dd><p>
+<code>coerce(x)</code> is the homomorphic image of <code>x</code> from  F2 in  F1, where  coerce is a field homomorphism between the fields extensions  F2 and  F1 both over ground field  GF (the second argument to the package). Error: if the extension degree of  F2 doesn<code>'t</code> divide the extension degree of  F1. Note that the other coercion function in the FiniteFieldHomomorphisms is a left inverse.</p>
+</dd></dl>
+<dl><dt>coerce : F1 -&gt F2</dt><dd><p>
+<code>coerce(x)</code> is the homomorphic image of <code>x</code> from  F1 in  F2. Thus  coerce is a field homomorphism between the fields extensions  F1 and  F2 both over ground field  GF (the second argument to the package). Error: if the extension degree of  F1 doesn<code>'t</code> divide the extension degree of  F2. Note that the other coercion function in the FiniteFieldHomomorphisms is a left inverse.</p>
+</dd></dl>
+</body>
+</html>

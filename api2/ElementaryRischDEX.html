@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ElementaryRischDEX</title>
+</head>
+<body>
+<h1>ElementaryRischDEX(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/rdeefx.spad#L420">rdeefx.spad line 420</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/rdeefx.spad#L420">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>))<li>F : Join(<a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>, <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>, <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a>, <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a>, <a href="FunctionSpace.html">FunctionSpace</a>(R))</ul>
+<p>
+This package generates exponential integrals corresponding to polynomial part of the integral. </p>
+<a name="f_ei_95int"></a><dl><dt>ei_int : (<a href="Integer.html">Integer</a>, F, F, <a href="Symbol.html">Symbol</a>) -&gt Record(ans : F, right : F, primpart : F, sol? : <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>ei_int(n, f, g, x)</code> returns <code>[h, u, t, s]</code> such that <code>u*exp(n*f) = (h*exp(n*f))' + t'</code> where <code>t</code> involves special functions. When <code>s</code> is <code>true</code> then <code>g = u</code>, otherwise ei_int returns partial answer,</p>
+</dd></dl>
+<a name="f_mk_95erf"></a><dl><dt>mk_erf : (F, F) -&gt F</dt><dd><p>
+<code>mk_erf(u, f)</code> should be local but conditional</p>
+</dd></dl>
+</body>
+</html>

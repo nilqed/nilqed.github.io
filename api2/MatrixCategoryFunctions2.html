@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MatrixCategoryFunctions2</title>
+</head>
+<body>
+<h1>MatrixCategoryFunctions2(R1, Row1, Col1, M1, R2, Row2, Col2, M2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/matfuns.spad#L276">matfuns.spad line 276</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/matfuns.spad#L276">[edit on github]</a></p>
+<ul>
+<li>R1 : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>Row1 : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R1)<li>Col1 : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R1)<li>M1 : <a href="MatrixCategory.html">MatrixCategory</a>(R1, Row1, Col1)<li>R2 : Join(<a href="SemiRng.html">SemiRng</a>, <a href="AbelianMonoid.html">AbelianMonoid</a>)<li>Row2 : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R2)<li>Col2 : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R2)<li>M2 : <a href="MatrixCategory.html">MatrixCategory</a>(R2, Row2, Col2)</ul>
+<p>
+MatrixCategoryFunctions2 provides functions between two matrix domains. The functions provided are <span class="spadfun">map</span> and <span class="spadfun">reduce</span>.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(R2, R1), M1) -&gt M2</dt><dd><p>
+<code>map(f, m)</code> applies the function <code>f</code> to the elements of the matrix <code>m</code>.</p>
+</dd></dl>
+<dl><dt>map : (Mapping(Union(R2, "failed"), R1), M1) -&gt Union(M2, "failed")</dt><dd><p>
+<code>map(f, m)</code> applies the function <code>f</code> to the elements of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(R2, R1, R2), M1, R2) -&gt R2</dt><dd><p>
+<code>reduce(f, m, r)</code> traverses <code>m</code> row by row passing <code>m</code>(<code>i</code>, <code>j</code>) as first argument to <code>f</code>. The second argument to <code>f</code> works as accumulator, value from previous call is passed to next call. On first call <code>r</code> is passed as second argument to <code>f</code>. Return value is the last result returned by <code>f</code>.</p>
+</dd></dl>
+</body>
+</html>

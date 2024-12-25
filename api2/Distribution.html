@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Distribution</title>
+</head>
+<body>
+<h1>Distribution(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/distro.spad#L694">distro.spad line 694</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/distro.spad#L694">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+Domain for distributions formally given by moments. moments and different kinds of cumulants are stored in streams and computed on demand.</p>
+<a name="f_0"></a><dl><dt><a href="DistributionCategory.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="DistributionCategory.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_booleanConvolution"></a><dl><dt><a href="DistributionCategory.html#f_booleanConvolution">booleanConvolution</a> : (%, %) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_booleanCumulant"></a><dl><dt><a href="DistributionCategory.html#f_booleanCumulant">booleanCumulant</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt R</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_booleanCumulantFromJacobi"></a><dl><dt>booleanCumulantFromJacobi : (<a href="Integer.html">Integer</a>, <a href="Sequence.html">Sequence</a>(R), <a href="Sequence.html">Sequence</a>(R)) -&gt R</dt><dd><p>
+<code>booleanCumulantFromJacobi(n, aa, bb)</code> computes the <code>n</code>th Boolean cumulant from the given Jacobiparameters <code>aa</code> and <code>bb</code>.</p>
+</dd></dl>
+<a name="f_booleanCumulants"></a><dl><dt><a href="DistributionCategory.html#f_booleanCumulants">booleanCumulants</a> : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_classicalConvolution"></a><dl><dt><a href="DistributionCategory.html#f_classicalConvolution">classicalConvolution</a> : (%, %) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_classicalCumulant"></a><dl><dt><a href="DistributionCategory.html#f_classicalCumulant">classicalCumulant</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt R</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_classicalCumulants"></a><dl><dt><a href="DistributionCategory.html#f_classicalCumulants">classicalCumulants</a> : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : (<a href="Sequence.html">Sequence</a>(R), <a href="Sequence.html">Sequence</a>(R), <a href="Sequence.html">Sequence</a>(R), <a href="Sequence.html">Sequence</a>(R)) -&gt %</dt><dd><p>
+<code>construct(mom, ccum, fcum, bcum)</code> constructs a distribution with moments <code>mom</code>, classical cumulants <code>ccum</code>, free cumulants <code>fcum</code> and boolean cumulants <code>bcum</code>. The user must make sure that these are consistent, otherwise the results are unpredictable!</p>
+</dd></dl>
+<a name="f_distributionByBooleanCumulants"></a><dl><dt>distributionByBooleanCumulants : <a href="Sequence.html">Sequence</a>(R) -&gt %</dt><dd><p>
+<code>distributionByBooleanCumulants(bb)</code> initiates a distribution with given Boolean cumulants <code>bb</code>.</p>
+</dd></dl>
+<dl><dt>distributionByBooleanCumulants : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd><p>
+<code>distributionByBooleanCumulants(bb)</code> initiates a distribution with given Boolean cumulants <code>bb</code>.</p>
+</dd></dl>
+<a name="f_distributionByClassicalCumulants"></a><dl><dt>distributionByClassicalCumulants : <a href="Sequence.html">Sequence</a>(R) -&gt %</dt><dd><p>
+<code>distributionByEvenMoments(kk)</code> initiates a distribution with given classical cumulants <code>kk</code>.</p>
+</dd></dl>
+<dl><dt>distributionByClassicalCumulants : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd><p>
+<code>distributionByEvenMoments(kk)</code> initiates a distribution with given classical cumulants <code>kk</code>.</p>
+</dd></dl>
+<a name="f_distributionByEvenMoments"></a><dl><dt>distributionByEvenMoments : <a href="Sequence.html">Sequence</a>(R) -&gt %</dt><dd><p>
+<code>distributionByEvenMoments(mm)</code> initiates a distribution with given even moments <code>mm</code> and odd moments zero.</p>
+</dd></dl>
+<dl><dt>distributionByEvenMoments : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd><p>
+<code>distributionByEvenMoments(mm)</code> initiates a distribution with given even moments <code>mm</code> and odd moments zero.</p>
+</dd></dl>
+<a name="f_distributionByFreeCumulants"></a><dl><dt>distributionByFreeCumulants : <a href="Sequence.html">Sequence</a>(R) -&gt %</dt><dd><p>
+<code>distributionByFreeCumulants(cc)</code> initiates a distribution with given free cumulants <code>cc</code>.</p>
+</dd></dl>
+<dl><dt>distributionByFreeCumulants : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd><p>
+<code>distributionByFreeCumulants(cc)</code> initiates a distribution with given free cumulants <code>cc</code>.</p>
+</dd></dl>
+<a name="f_distributionByJacobiParameters"></a><dl><dt>distributionByJacobiParameters : (<a href="Sequence.html">Sequence</a>(R), <a href="Sequence.html">Sequence</a>(R)) -&gt %</dt><dd><p>
+<code>distributionByJacobiParameters(aa, bb)</code> initiates a distribution with given Jacobi parameters <code>[aa, bb]</code>.</p>
+</dd></dl>
+<dl><dt>distributionByJacobiParameters : (<a href="Stream.html">Stream</a>(R), <a href="Stream.html">Stream</a>(R)) -&gt %</dt><dd><p>
+<code>distributionByJacobiParameters(aa, bb)</code> initiates a distribution with given Jacobi parameters <code>[aa, bb]</code>.</p>
+</dd></dl>
+<a name="f_distributionByMoments"></a><dl><dt>distributionByMoments : <a href="Sequence.html">Sequence</a>(R) -&gt %</dt><dd><p>
+<code>distributionByMoments(mm)</code> initiates a distribution with given moments <code>mm</code>.</p>
+</dd></dl>
+<dl><dt>distributionByMoments : <a href="Stream.html">Stream</a>(R) -&gt %</dt><dd><p>
+<code>distributionByMoments(mm)</code> initiates a distribution with given moments <code>mm</code>.</p>
+</dd></dl>
+<a name="f_distributionByMonotoneCumulants"></a><dl><dt>distributionByMonotoneCumulants : <a href="Sequence.html">Sequence</a>(R) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>distributionByMonotoneCumulants(hh)</code> initiates a distribution with given monotone cumulants <code>hh</code>.</p>
+</dd></dl>
+<dl><dt>distributionByMonotoneCumulants : <a href="Stream.html">Stream</a>(R) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>distributionByMonotoneCumulants(hh)</code> initiates a distribution with given monotone cumulants <code>hh</code>.</p>
+</dd></dl>
+<a name="f_distributionBySTransform"></a><dl><dt>distributionBySTransform : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Sequence.html">Sequence</a>(R)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>distributionBySTransform(series)</code> initiates a distribution with given <code>S</code>-transform <code>series</code>.</p>
+</dd></dl>
+<dl><dt>distributionBySTransform : Record(puiseux : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), laurent : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), coef : <a href="Sequence.html">Sequence</a>(R)) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>distributionBySTransform(series)</code> initiates a distribution with given <code>S</code>-transform <code>series</code>.</p>
+</dd></dl>
+<a name="f_freeConvolution"></a><dl><dt><a href="DistributionCategory.html#f_freeConvolution">freeConvolution</a> : (%, %) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_freeCumulant"></a><dl><dt><a href="DistributionCategory.html#f_freeCumulant">freeCumulant</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt R</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_freeCumulants"></a><dl><dt><a href="DistributionCategory.html#f_freeCumulants">freeCumulants</a> : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_freeMultiplicativeConvolution"></a><dl><dt>freeMultiplicativeConvolution : (%, %) -&gt % if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>freeMultiplicativeConvolution(mu, nu)</code> computes the free multiplicative convolution of the distributions <code>mu</code> and <code>nu</code>.</p>
+</dd></dl>
+<a name="f_hankelDeterminants"></a><dl><dt><a href="DistributionCategory.html#f_hankelDeterminants">hankelDeterminants</a> : % -&gt <a href="Stream.html">Stream</a>(R)</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_jacobiParameters"></a><dl><dt><a href="DistributionCategory.html#f_jacobiParameters">jacobiParameters</a> : % -&gt Record(an : <a href="Stream.html">Stream</a>(R), bn : <a href="Stream.html">Stream</a>(R)) if R has <a href="Field.html">Field</a></dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<dl><dt><a href="DistributionCategory.html#f_jacobiParameters">jacobiParameters</a> : % -&gt Record(an : <a href="Stream.html">Stream</a>(<a href="Fraction.html">Fraction</a>(R)), bn : <a href="Stream.html">Stream</a>(<a href="Fraction.html">Fraction</a>(R))) if R has <a href="IntegralDomain.html">IntegralDomain</a> and R hasn't <a href="Field.html">Field</a></dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_moment"></a><dl><dt><a href="DistributionCategory.html#f_moment">moment</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_moments"></a><dl><dt><a href="DistributionCategory.html#f_moments">moments</a> : % -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_monotoneConvolution"></a><dl><dt><a href="DistributionCategory.html#f_monotoneConvolution">monotoneConvolution</a> : (%, %) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_monotoneCumulants"></a><dl><dt><a href="DistributionCategory.html#f_monotoneCumulants">monotoneCumulants</a> : % -&gt <a href="Sequence.html">Sequence</a>(R) if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_orthogonalConvolution"></a><dl><dt><a href="DistributionCategory.html#f_orthogonalConvolution">orthogonalConvolution</a> : (%, %) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_orthogonalPolynomials"></a><dl><dt><a href="DistributionCategory.html#f_orthogonalPolynomials">orthogonalPolynomials</a> : % -&gt <a href="Stream.html">Stream</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)) if R has <a href="Field.html">Field</a></dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<dl><dt><a href="DistributionCategory.html#f_orthogonalPolynomials">orthogonalPolynomials</a> : % -&gt <a href="Stream.html">Stream</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Fraction.html">Fraction</a>(R))) if R has <a href="IntegralDomain.html">IntegralDomain</a> and R hasn't <a href="Field.html">Field</a></dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f_subordinationConvolution"></a><dl><dt><a href="DistributionCategory.html#f_subordinationConvolution">subordinationConvolution</a> : (%, %) -&gt %</dt><dd> from <a href="DistributionCategory.html">DistributionCategory</a>(R)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="DistributionCategory.html">DistributionCategory</a>(R)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

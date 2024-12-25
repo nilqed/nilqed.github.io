@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MappingPackage3</title>
+</head>
+<body>
+<h1>MappingPackage3(A, B, C)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mappkg.spad#L146">mappkg.spad line 146</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mappkg.spad#L146">[edit on github]</a></p>
+<ul>
+<li>A : <a href="SetCategory.html">SetCategory</a><li>B : <a href="SetCategory.html">SetCategory</a><li>C : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+various Currying operations.</p>
+<a name="f__42"></a><dl><dt>* : (Mapping(C, B), Mapping(B, A)) -&gt Mapping(C, A)</dt><dd><p>
+<code>f*g</code> is the function <code>h</code> such that <code>h x= f(g x)</code>.</p>
+</dd></dl>
+<a name="f_constantLeft"></a><dl><dt>constantLeft : Mapping(C, B) -&gt Mapping(C, A, B)</dt><dd><p>
+<code>constantLeft(f)</code> is the function <code>g</code> such that <code>g (a, b)= f b</code>.</p>
+</dd></dl>
+<a name="f_constantRight"></a><dl><dt>constantRight : Mapping(C, A) -&gt Mapping(C, A, B)</dt><dd><p>
+<code>constantRight(f)</code> is the function <code>g</code> such that <code>g (a, b)= f a</code>.</p>
+</dd></dl>
+<a name="f_curryLeft"></a><dl><dt>curryLeft : (Mapping(C, A, B), A) -&gt Mapping(C, B)</dt><dd><p>
+<code>curryLeft(f, a)</code> is the function <code>g</code> such that <code>g b = f(a, b)</code>.</p>
+</dd></dl>
+<a name="f_curryRight"></a><dl><dt>curryRight : (Mapping(C, A, B), B) -&gt Mapping(C, A)</dt><dd><p>
+<code>curryRight(f, b)</code> is the function <code>g</code> such that <code>g a = f(a, b)</code>.</p>
+</dd></dl>
+<a name="f_twist"></a><dl><dt>twist : Mapping(C, A, B) -&gt Mapping(C, B, A)</dt><dd><p>
+<code>twist(f)</code> is the function <code>g</code> such that <code>g (a, b)= f(b, a)</code>.</p>
+</dd></dl>
+</body>
+</html>

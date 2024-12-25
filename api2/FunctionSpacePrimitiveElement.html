@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FunctionSpacePrimitiveElement</title>
+</head>
+<body>
+<h1>FunctionSpacePrimitiveElement(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/primelt.spad#L101">primelt.spad line 101</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/primelt.spad#L101">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+FunctionsSpacePrimitiveElement provides functions to compute primitive elements in functions spaces.</p>
+<a name="f_primitiveElement"></a><dl><dt>primitiveElement : (F, F) -&gt Record(primelt : F, pol1 : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), pol2 : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), prim : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)) if F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>primitiveElement(a1, a2)</code> returns <code>[a, q1, q2, q]</code> such that <code>k(a1, a2) = k(a)</code>, <code><code>ai</code> = <code>qi</code>(a)</code>, and <code>q(a) = 0</code>. The minimal polynomial for <code>a2</code> may involve <code>a1</code>, but the minimal polynomial for <code>a1</code> may not involve <code>a2</code>; This operations uses <span class="spadfun">resultant</span>.</p>
+</dd></dl>
+<dl><dt>primitiveElement : <a href="List.html">List</a>(F) -&gt Record(primelt : F, poly : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), prim : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))</dt><dd><p>
+<code>primitiveElement([a1, ..., an])</code> returns <code>[a, [q1, ..., qn], q]</code> such that then <code>k(a1, ..., an) = k(a)</code>, <code><code>ai</code> = <code>qi</code>(a)</code>, and <code>q(a) = 0</code>. This operation uses the technique of Groebner basis.</p>
+</dd></dl>
+</body>
+</html>

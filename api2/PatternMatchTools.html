@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternMatchTools</title>
+</head>
+<body>
+<h1>PatternMatchTools(S, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/patmatch1.spad#L410">patmatch1.spad line 410</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/patmatch1.spad#L410">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="Ring.html">Ring</a>)<li>P : Join(<a href="Ring.html">Ring</a>, <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(S)), <a href="RetractableTo.html">RetractableTo</a>(R))</ul>
+<p>
+This package provides tools for the pattern matcher.</p>
+<a name="f_patternMatch"></a><dl><dt>patternMatch : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(<a href="Pattern.html">Pattern</a>(S)), Mapping(P, <a href="List.html">List</a>(P)), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P), Mapping(<a href="PatternMatchResult.html">PatternMatchResult</a>(S, P), P, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P))) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P)</dt><dd><p>
+<code>patternMatch(lsubj, lpat, op, res, match)</code> matches the list of patterns <code>lpat</code> to the list of subjects <code>lsubj</code>, allowing for commutativity; <code>op</code> is the operator such that <code>op</code>(<code>lpat</code>) should match <code>op</code>(<code>lsubj</code>) at the end, <code>r</code> contains the previous matches, and match is a pattern-matching function on <code>P</code>.</p>
+</dd></dl>
+<a name="f_patternMatchTimes"></a><dl><dt>patternMatchTimes : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(<a href="Pattern.html">Pattern</a>(S)), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P), Mapping(<a href="PatternMatchResult.html">PatternMatchResult</a>(S, P), P, <a href="Pattern.html">Pattern</a>(S), <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P))) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(S, P)</dt><dd><p>
+<code>patternMatchTimes(lsubj, lpat, res, match)</code> matches the product of patterns <code>reduce(*, lpat)</code> to the product of subjects <code>reduce(*, lsubj)</code>; <code>r</code> contains the previous matches and match is a pattern-matching function on <code>P</code>.</p>
+</dd></dl>
+</body>
+</html>

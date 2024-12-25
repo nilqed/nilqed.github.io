@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>STransformPackage</title>
+</head>
+<body>
+<h1>STransformPackage(R, UTSR, ULSR, UPSR)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/distro.spad#L513">distro.spad line 513</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/distro.spad#L513">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="CommutativeRing.html">CommutativeRing</a>, <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UTSR : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(R)<li>ULSR : <a href="UnivariateLaurentSeriesConstructorCategory.html">UnivariateLaurentSeriesConstructorCategory</a>(R, UTSR)<li>UPSR : <a href="UnivariatePuiseuxSeriesConstructorCategory.html">UnivariatePuiseuxSeriesConstructorCategory</a>(R, ULSR)</ul>
+<p>
+A package to compute Taylor and Puiseux series of <code>S</code>-transforms.</p>
+<a name="f_STransform"></a><dl><dt>STransform : <a href="Distribution.html">Distribution</a>(R) -&gt UPSR</dt><dd><p>
+<code>STransform(x)</code> returns the Puiseux expansion of the <code>S</code>-transform <code>S(z)</code>.</p>
+</dd></dl>
+<a name="f_STransform1"></a><dl><dt>STransform1 : <a href="Distribution.html">Distribution</a>(R) -&gt UTSR</dt><dd><p>
+<code>STransform(x)</code> returns the Taylor expansion of the <code>S</code>-transform <code>S(z)</code> of the distribution <code>x</code> if the mean is nonzero.</p>
+</dd></dl>
+<a name="f_STransform2"></a><dl><dt>STransform2 : <a href="Distribution.html">Distribution</a>(R) -&gt UPSR</dt><dd><p>
+<code>STransform(x)</code> returns the Puiseux expansion of the <code>S</code>-transform <code>S(z)</code> if the mean is zero.</p>
+</dd></dl>
+<a name="f_distributionBySTransform"></a><dl><dt>distributionBySTransform : UPSR -&gt <a href="Distribution.html">Distribution</a>(R)</dt><dd><p>
+<code>distributionBySTransform(x)</code> returns the distribution with <code>S</code>-transform <code>x</code>.</p>
+</dd></dl>
+</body>
+</html>

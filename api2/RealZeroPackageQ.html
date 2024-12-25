@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RealZeroPackageQ</title>
+</head>
+<body>
+<h1>RealZeroPackageQ(Pol)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/real0q.spad#L1">real0q.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/real0q.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Pol : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</ul>
+<p>
+This package provides functions for finding the real zeros of univariate polynomials over the rational numbers to arbitrary user-specified precision. The results are returned as a list of isolating intervals, expressed as records with "left" and "right" rational number components.</p>
+<a name="f_realZeros"></a><dl><dt>realZeros : Pol -&gt <a href="List.html">List</a>(Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>realZeros(pol)</code> returns a list of isolating intervals for all the real zeros of the univariate polynomial <code>pol</code>.</p>
+</dd></dl>
+<dl><dt>realZeros : (Pol, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="List.html">List</a>(Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>realZeros(pol, eps)</code> returns a list of intervals of length less than the rational number eps for all the real roots of the polynomial <code>pol</code>.</p>
+</dd></dl>
+<dl><dt>realZeros : (Pol, Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>realZeros(pol, range)</code> returns a list of isolating intervals for all the real zeros of the univariate polynomial <code>pol</code> which lie in the interval expressed by the record range.</p>
+</dd></dl>
+<dl><dt>realZeros : (Pol, Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="List.html">List</a>(Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>realZeros(pol, int, eps)</code> returns a list of intervals of length less than the rational number eps for all the real roots of the polynomial <code>pol</code> which lie in the interval expressed by the record <code>int</code>.</p>
+</dd></dl>
+<a name="f_refine"></a><dl><dt>refine : (Pol, Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>refine(pol, int, eps)</code> refines the interval <code>int</code> containing exactly one root of the univariate polynomial <code>pol</code> to size less than the rational number eps.</p>
+</dd></dl>
+<dl><dt>refine : (Pol, Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt Union(Record(left : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), right : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+<code>refine(pol, int, range)</code> takes a univariate polynomial <code>pol</code> and and isolating interval <code>int</code> which must contain exactly one real root of <code>pol</code>, and returns an isolating interval which is contained within range, or "failed" if no such isolating interval exists.</p>
+</dd></dl>
+</body>
+</html>

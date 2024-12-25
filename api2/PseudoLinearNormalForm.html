@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PseudoLinearNormalForm</title>
+</head>
+<body>
+<h1>PseudoLinearNormalForm(K)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pseudolin.spad#L1">pseudolin.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pseudolin.spad#L1">[edit on github]</a></p>
+<ul>
+<li>K : <a href="Field.html">Field</a></ul>
+<p>
+PseudoLinearNormalForm provides a function for computing a block-companion form for pseudo-linear operators.</p>
+<a name="f_changeBase"></a><dl><dt>changeBase : (<a href="Matrix.html">Matrix</a>(K), <a href="Matrix.html">Matrix</a>(K), <a href="Automorphism.html">Automorphism</a>(K), Mapping(K, K)) -&gt <a href="Matrix.html">Matrix</a>(K)</dt><dd><p>
+<code>changeBase(M, A, sig, der)</code>: computes the new matrix of a pseudo-linear transform given by the matrix <code>M</code> under the change of base A</p>
+</dd></dl>
+<a name="f_companionBlocks"></a><dl><dt>companionBlocks : (<a href="Matrix.html">Matrix</a>(K), <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(K))) -&gt <a href="List.html">List</a>(Record(C : <a href="Matrix.html">Matrix</a>(K), lg : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(K))))</dt><dd><p>
+<code>companionBlocks(m, lv)</code> returns <code>[[C_1, lg_1], ..., [C_k, lg_k]]</code> such that each <code>C_i</code> is a companion block and <code>m = diagonal(C_1, ..., C_k)</code>.</p>
+</dd></dl>
+<a name="f_normalForm"></a><dl><dt>normalForm : (<a href="Matrix.html">Matrix</a>(K), <a href="Automorphism.html">Automorphism</a>(K), Mapping(K, K)) -&gt Record(R : <a href="Matrix.html">Matrix</a>(K), A : <a href="Matrix.html">Matrix</a>(K), Ainv : <a href="Matrix.html">Matrix</a>(K))</dt><dd><p>
+<code>normalForm(M, sig, der)</code> returns <code>[R, A, A^-1]</code> such that the pseudo-linear operator whose matrix in the basis <code>y</code> is <code>M</code> had matrix <code>R</code> in the basis <code>z = A y</code>. <code>der</code> is a <code>sig</code>-derivation.</p>
+</dd></dl>
+</body>
+</html>

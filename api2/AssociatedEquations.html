@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AssociatedEquations</title>
+</head>
+<body>
+<h1>AssociatedEquations(R, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/lodof.spad#L236">lodof.spad line 236</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/lodof.spad#L236">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(R)</ul>
+<p>
+AssociatedEquations provides functions to compute the associated equations needed for factoring operators</p>
+<a name="f_associatedEquations"></a><dl><dt>associatedEquations : (L, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(minor : <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>), eq : L, minors : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)), ops : <a href="List.html">List</a>(L)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>associatedEquations(op, m)</code> returns <code>[w, eq, lw, lop]</code> such that <code>eq(w) = 0</code> where <code>w</code> is the given minor, and <code>lw_i = lop_i(w)</code> for all the other minors.</p>
+</dd></dl>
+<a name="f_associatedSystem"></a><dl><dt>associatedSystem : (L, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(R), vec : <a href="Vector.html">Vector</a>(<a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)))</dt><dd><p>
+<code>associatedSystem(op, m)</code> returns <code>[M, w]</code> such that the <code>m</code>-th associated equation system to <code>L</code> is <code>w' = M w</code>.</p>
+</dd></dl>
+<a name="f_uncouplingMatrices"></a><dl><dt>uncouplingMatrices : <a href="Matrix.html">Matrix</a>(R) -&gt <a href="Vector.html">Vector</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>uncouplingMatrices(M)</code> returns <code>[A_1, ..., A_n]</code> such that if <code>y = [y_1, ..., y_n]</code> is a solution of <code>y' = M y</code>, then <code>[$y_j', y_j'', ..., y_j^(n)$] = $A_j y$</code> for all <code>j</code><code>'s</code>.</p>
+</dd></dl>
+</body>
+</html>

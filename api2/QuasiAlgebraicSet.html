@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>QuasiAlgebraicSet</title>
+</head>
+<body>
+<h1>QuasiAlgebraicSet(R, Var, Expon, Dpoly)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/qalgset.spad#L1">qalgset.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/qalgset.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>Var : <a href="OrderedSet.html">OrderedSet</a><li>Expon : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>Dpoly : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, Expon, Var)</ul>
+<p>
+QuasiAlgebraicSet constructs a domain representing quasi-algebraic sets, which is the intersection of a Zariski closed set, defined as the common zeros of a given list of polynomials (the defining polynomials for equations), and a principal Zariski open set, defined as the complement of the common zeros of a polynomial <code>f</code> (the defining polynomial for the inequation). This domain provides simplification of a user-given representation using groebner basis computations. There are two simplification routines: the first function <span class="spadfun">idealSimplify</span> uses groebner basis of ideals alone, while the second, <span class="spadfun">simplify</span> uses both groebner basis and factorization. The resulting defining equations <code>L</code> always form a groebner basis, and the resulting defining inequation <code>f</code> is always reduced. The function <span class="spadfun">simplify</span> may be applied several times if desired. A third simplification routine <span class="spadfun">radicalSimplify</span> is provided in QuasiAlgebraicSet2 for comparison study only, as it is inefficient compared to the other two, as well as is restricted to only certain coefficient domains. For detail analysis and a comparison of the three methods, please consult the reference cited.  A polynomial function <code>q</code> defined on the quasi-algebraic set is equivalent to its reduced form with respect to <code>L</code>. While this may be obtained using the usual normal form algorithm, there is no canonical form for <code>q</code>.  The ordering in groebner basis computation is determined by the data type of the input polynomials. If it is possible we suggest to use refinements of total degree orderings.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_definingEquations"></a><dl><dt>definingEquations : % -&gt <a href="List.html">List</a>(Dpoly)</dt><dd><p>
+<code>definingEquations(s)</code> returns a list of defining polynomials for equations, that is, for the Zariski closed part of <code>s</code>.</p>
+</dd></dl>
+<a name="f_definingInequation"></a><dl><dt>definingInequation : % -&gt Dpoly</dt><dd><p>
+<code>definingInequation(s)</code> returns a single defining polynomial for the inequation, that is, the Zariski open part of <code>s</code>.</p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : () -&gt %</dt><dd><p>
+<code>empty()</code> returns the empty quasi-algebraic set</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>empty?(s)</code> returns <code>true</code> if the quasialgebraic set <code>s</code> has no points, and <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_idealSimplify"></a><dl><dt>idealSimplify : % -&gt %</dt><dd><p>
+<code>idealSimplify(s)</code> returns a different and presumably simpler representation of <code>s</code> with the defining polynomials for the equations forming a groebner basis, and the defining polynomial for the inequation reduced with respect to the basis, using Buchberger<code>'s</code> algorithm.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_quasiAlgebraicSet"></a><dl><dt>quasiAlgebraicSet : (<a href="List.html">List</a>(Dpoly), Dpoly) -&gt %</dt><dd><p>
+<code>quasiAlgebraicSet(pl, q)</code> returns the quasi-algebraic set with defining equations <code>p</code> = 0 for <code>p</code> belonging to the list <code>pl</code>, and defining inequation <code>q</code> <code>~=</code> 0.</p>
+</dd></dl>
+<a name="f_setStatus"></a><dl><dt>setStatus : (%, Union(<a href="Boolean.html">Boolean</a>, "failed")) -&gt %</dt><dd><p>
+<code>setStatus(s, t)</code> returns the same representation for <code>s</code>, but asserts the following: if <code>t</code> is <code>true</code>, then <code>s</code> is empty, if <code>t</code> is <code>false</code>, then <code>s</code> is non-empty, and if <code>t</code> = "failed", then no assertion is made (that is, "don<code>'t</code> know"). Note: for internal use only, with care.</p>
+</dd></dl>
+<a name="f_simplify"></a><dl><dt>simplify : % -&gt % if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and R has <a href="CharacteristicZero.html">CharacteristicZero</a></dt><dd><p>
+<code>simplify(s)</code> returns a different and presumably simpler representation of <code>s</code> with the defining polynomials for the equations forming a groebner basis, and the defining polynomial for the inequation reduced with respect to the basis, using a heuristic algorithm based on factoring.</p>
+</dd></dl>
+<a name="f_status"></a><dl><dt>status : % -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>status(s)</code> returns <code>true</code> if the quasi-algebraic set is empty, <code>false</code> if it is not, and "failed" if not yet known</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SegmentExpansionCategory</title>
+</head>
+<body>
+<h1>SegmentExpansionCategory(S, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/seg.spad#L50">seg.spad line 50</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/seg.spad#L50">[edit on github]</a></p>
+<ul>
+<li>S : <a href="OrderedRing.html">OrderedRing</a><li>L : <a href="StreamAggregate.html">StreamAggregate</a>(S)</ul>
+<p>
+This category provides an interface for expanding segments to a stream of elements.</p>
+<a name="f__43"></a><dl><dt><a href="SegmentCategory.html#f__43">+</a> : (%, S) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<dl><dt><a href="SegmentCategory.html#f__43">+</a> : (S, %) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f__45"></a><dl><dt><a href="SegmentCategory.html#f__45">-</a> : (%, S) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_BY"></a><dl><dt><a href="SegmentCategory.html#f_BY">BY</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_SEGMENT"></a><dl><dt><a href="SegmentCategory.html#f_SEGMENT">SEGMENT</a> : (S, S) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="SegmentCategory.html#f_convert">convert</a> : S -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_expand"></a><dl><dt>expand : % -&gt L</dt><dd><p>
+<code>expand(l..h by k)</code> creates value of type <code>L</code> with elements <code>l, l+k, ... lN</code> where <code>lN &lt;= h &lt; lN+k</code>. For example, <code>expand(1..5 by 2) = [1, 3, 5]</code>.</p>
+</dd></dl>
+<dl><dt>expand : <a href="List.html">List</a>(%) -&gt L</dt><dd><p>
+<code>expand(l)</code> creates a new value of type <code>L</code> in which each segment <code>l..h by k</code> is replaced with <code>l, l+k, ... lN</code>, where <code>lN &lt;= h &lt; lN+k</code>. For example, <code>expand [1..4, 7..9] = [1, 2, 3, 4, 7, 8, 9]</code>.</p>
+</dd></dl>
+<a name="f_high"></a><dl><dt><a href="SegmentCategory.html#f_high">high</a> : % -&gt S</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_incr"></a><dl><dt><a href="SegmentCategory.html#f_incr">incr</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_low"></a><dl><dt><a href="SegmentCategory.html#f_low">low</a> : % -&gt S</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(S, S), %) -&gt L</dt><dd><p>
+<code>map(f, l..h by k)</code> produces a value of type <code>L</code> by applying <code>f</code> to each of the successive elements of the segment, that is, <code>[f(l), f(l+k), ..., f(lN)]</code>, where <code>lN &lt;= h &lt; lN+k</code>.</p>
+</dd></dl>
+<a name="f_reverse"></a><dl><dt><a href="SegmentCategory.html#f_reverse">reverse</a> : % -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f_segment"></a><dl><dt><a href="SegmentCategory.html#f_segment">segment</a> : (S, S) -&gt %</dt><dd> from <a href="SegmentCategory.html">SegmentCategory</a>(S)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SegmentCategory.html">SegmentCategory</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

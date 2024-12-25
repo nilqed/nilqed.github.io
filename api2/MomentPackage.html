@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MomentPackage</title>
+</head>
+<body>
+<h1>MomentPackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/distro.spad#L252">distro.spad line 252</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/distro.spad#L252">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+An auxiliary package for various moment and cumulant transformations used in <code>Distribution</code>.</p>
+<a name="f_booleanCumulant2moment"></a><dl><dt>booleanCumulant2moment : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>booleanCumulant2moment(cc)</code> computes the sequence of moments from the sequence of boolean cumulants <code>cc</code></p>
+</dd></dl>
+<a name="f_cumulant2moment"></a><dl><dt>cumulant2moment : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>cumulant2moment(cc)</code> computes the sequence of moments from the sequence of classical cumulants <code>cc</code></p>
+</dd></dl>
+<a name="f_freeCumulant2moment"></a><dl><dt>freeCumulant2moment : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>freeCumulant2moment(cc)</code> computes the sequence of moments from the sequence of free cumulants <code>cc</code></p>
+</dd></dl>
+<a name="f_hankelDeterminant"></a><dl><dt>hankelDeterminant : (<a href="Sequence.html">Sequence</a>(R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt R</dt><dd><p>
+<code>hankelDeterminant(x, n)</code> returns the <code>n</code>th Hankel determinant of the sequence <code>x</code>.</p>
+</dd></dl>
+<a name="f_jacobi2poly"></a><dl><dt>jacobi2poly : (<a href="Stream.html">Stream</a>(R), <a href="Stream.html">Stream</a>(R)) -&gt <a href="Stream.html">Stream</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dt><dd><p>
+<code>jacobi2poly(aa, bb)</code> returns the stream of orthogonal polynomials corresponding to the Jacobi parameters <code>a_n</code> and <code>b_n</code>.</p>
+</dd></dl>
+<a name="f_moment2Stransform"></a><dl><dt>moment2Stransform : <a href="Sequence.html">Sequence</a>(R) -&gt Record(puiseux : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), laurent : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), coef : <a href="Sequence.html">Sequence</a>(R)) if R has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>moment2Stransform(x)</code> returns the Puiseux and Laurent order and coefficients of the <code>S</code> transform of <code>x</code></p>
+</dd></dl>
+<a name="f_moment2booleanCumulant"></a><dl><dt>moment2booleanCumulant : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>moment2booleanCumulant(mm)</code> computes the sequence of boolean cumulants from the sequence of moments <code>mm</code></p>
+</dd></dl>
+<a name="f_moment2cumulant"></a><dl><dt>moment2cumulant : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>moment2cumulant(mm)</code> computes the sequence of classical cumulants from the sequence of moments <code>mm</code></p>
+</dd></dl>
+<a name="f_moment2freeCumulant"></a><dl><dt>moment2freeCumulant : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>moment2freeCumulant(mm)</code> computes the sequence of free cumulants from the sequence of moments <code>mm</code></p>
+</dd></dl>
+<a name="f_moment2jacobi"></a><dl><dt>moment2jacobi : <a href="Sequence.html">Sequence</a>(R) -&gt Record(an : <a href="Stream.html">Stream</a>(R), bn : <a href="Stream.html">Stream</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>moment2jacobi(mm)</code> computes the Jacobi parameters as pair of streams.</p>
+</dd></dl>
+<a name="f_moment2jacobi2"></a><dl><dt>moment2jacobi2 : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Stream.html">Stream</a>(Record(an : R, bn : R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>moment2jacobi2(mm)</code> computes the Jacobi parameters as stream of pairs $(an, <code>bn</code>)$.</p>
+</dd></dl>
+<a name="f_moment2monotoneCumulant"></a><dl><dt>moment2monotoneCumulant : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>moment2monotoneCumulant(mm)</code> computes the sequence of monotone cumulants from the sequence of moments <code>mm</code></p>
+</dd></dl>
+<a name="f_moment2nthJacobi"></a><dl><dt>moment2nthJacobi : <a href="List.html">List</a>(R) -&gt Record(an : <a href="List.html">List</a>(R), bn : <a href="List.html">List</a>(R)) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>moment2nthJacobi(mm)</code> computes the list of Jacobi parameters from the list of moments <code>mm</code> as far as possible.</p>
+</dd></dl>
+<a name="f_monotoneCumulant2moment"></a><dl><dt>monotoneCumulant2moment : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(R)</dt><dd><p>
+<code>monotoneCumulant2moment(hh)</code> computes the sequence of moments from the sequence of monotone cumulants <code>hh</code></p>
+</dd></dl>
+<a name="f_monotoneCumulant2momentPoly"></a><dl><dt>monotoneCumulant2momentPoly : <a href="Sequence.html">Sequence</a>(R) -&gt <a href="Sequence.html">Sequence</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R))</dt><dd><p>
+<code>monotoneCumulant2momentPoly(hh)</code> computes the sequence of moment polynomials $<code>m_n</code>(<code>t</code>)$ from the sequence of monotone cumulants <code>hh</code></p>
+</dd></dl>
+</body>
+</html>

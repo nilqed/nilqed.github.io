@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DrawOption</title>
+</head>
+<body>
+<h1>DrawOption</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/drawopt.spad#L1">drawopt.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/drawopt.spad#L1">[edit on github]</a></p>
+<p>
+DrawOption allows the user to specify defaults for the creation and rendering of plots.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_adaptive"></a><dl><dt>adaptive : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>adaptive(b)</code> turns adaptive 2D plotting on if <code>b</code> is <code>true</code>, or off if <code>b</code> is <code>false</code>. This option is expressed in the form <code>adaptive == b</code>.</p>
+</dd></dl>
+<a name="f_clip"></a><dl><dt>clip : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>clip(b)</code> turns 2D clipping on if <code>b</code> is <code>true</code>, or off if <code>b</code> is <code>false</code>. This option is expressed in the form <code>clip == b</code>.</p>
+</dd></dl>
+<dl><dt>clip : <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>clip([l])</code> provides ranges for user-defined clipping as specified in the list <code>l</code>. This option is expressed in the form <code>clip == [l]</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_colorFunction"></a><dl><dt>colorFunction : Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>colorFunction(f(z))</code> specifies the color based upon the <code>z</code>-component of three dimensional plots. This option is expressed in the form <code>colorFunction == f(z)</code>.</p>
+</dd></dl>
+<dl><dt>colorFunction : Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>colorFunction(f(u, v))</code> specifies the color for three dimensional plots as a function based upon the two parametric variables. This option is expressed in the form <code>colorFunction == f(u, v)</code>.</p>
+</dd></dl>
+<dl><dt>colorFunction : Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>colorFunction(f(x, y, z))</code> specifies the color for three dimensional plots as a function of <code>x</code>, <code>y</code>, and <code>z</code> coordinates. This option is expressed in the form <code>colorFunction == f(x, y, z)</code>.</p>
+</dd></dl>
+<a name="f_coord"></a><dl><dt>coord : Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>coord(p)</code> specifies a change of coordinates of point <code>p</code>. This option is expressed in the form <code>coord == p</code>.</p>
+</dd></dl>
+<a name="f_coordinates"></a><dl><dt>coordinates : Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>coordinates(p)</code> specifies a change of coordinate systems of point <code>p</code>. This option is expressed in the form <code>coordinates == p</code>.</p>
+</dd></dl>
+<a name="f_curveColor"></a><dl><dt>curveColor : <a href="Float.html">Float</a> -&gt %</dt><dd><p>
+<code>curveColor(v)</code> specifies a color, <code>v</code>, for 2D graph curves. This option is expressed in the form <code>curveColor == v</code>.</p>
+</dd></dl>
+<dl><dt>curveColor : <a href="Palette.html">Palette</a> -&gt %</dt><dd><p>
+<code>curveColor(p)</code> specifies a color index for 2D graph curves from the spadcolors palette <code>p</code>. This option is expressed in the form <code>curveColor ==p</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_option"></a><dl><dt>option : (<a href="List.html">List</a>(%), <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="Any.html">Any</a>, "failed")</dt><dd><p>
+<code>option()</code> is not to be used at the top level; option determines internally which drawing options are indicated in a draw command.</p>
+</dd></dl>
+<a name="f_option_63"></a><dl><dt>option? : (<a href="List.html">List</a>(%), <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>option?()</code> is not to be used at the top level; option? internally returns <code>true</code> for drawing options which are indicated in a draw command, or <code>false</code> for those which are not.</p>
+</dd></dl>
+<a name="f_pointColor"></a><dl><dt>pointColor : <a href="Float.html">Float</a> -&gt %</dt><dd><p>
+<code>pointColor(v)</code> specifies a color, <code>v</code>, for 2D graph points. This option is expressed in the form <code>pointColor == v</code>.</p>
+</dd></dl>
+<dl><dt>pointColor : <a href="Palette.html">Palette</a> -&gt %</dt><dd><p>
+<code>pointColor(p)</code> specifies a color index for 2D graph points from the spadcolors palette <code>p</code>. This option is expressed in the form <code>pointColor == p</code>.</p>
+</dd></dl>
+<a name="f_range"></a><dl><dt>range : <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>range([l])</code> provides a user-specified range <code>l</code>. This option is expressed in the form <code>range == [l]</code>.</p>
+</dd></dl>
+<dl><dt>range : <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>range([i])</code> provides a user-specified range <code>i</code>. This option is expressed in the form <code>range == [i]</code>.</p>
+</dd></dl>
+<a name="f_ranges"></a><dl><dt>ranges : <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>)) -&gt %</dt><dd><p>
+<code>ranges(l)</code> provides a list of user-specified ranges <code>l</code>. This option is expressed in the form <code>ranges == l</code>.</p>
+</dd></dl>
+<a name="f_space"></a><dl><dt>space : <a href="ThreeSpace.html">ThreeSpace</a>(<a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>space specifies</code> the space into which we will draw. If none is given then a new space is created.</p>
+</dd></dl>
+<a name="f_style"></a><dl><dt>style : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>style(s)</code> specifies the drawing style in which the graph will be plotted by the indicated string <code>s</code>. This option is expressed in the form <code>style == s</code>.</p>
+</dd></dl>
+<a name="f_title"></a><dl><dt>title : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>title(s)</code> specifies a title for a plot by the indicated string <code>s</code>. This option is expressed in the form <code>title == s</code>.</p>
+</dd></dl>
+<a name="f_toScale"></a><dl><dt>toScale : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>toScale(b)</code> specifies whether or not a plot is to be drawn to scale; if <code>b</code> is <code>true</code> it is drawn to scale, if <code>b</code> is <code>false</code> it is not. This option is expressed in the form <code>toScale == b</code>.</p>
+</dd></dl>
+<a name="f_tubePoints"></a><dl><dt>tubePoints : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>tubePoints(n)</code> specifies the number of points, <code>n</code>, defining the circle which creates the tube around a 3D curve, the default is 6. This option is expressed in the form <code>tubePoints == n</code>.</p>
+</dd></dl>
+<a name="f_tubeRadius"></a><dl><dt>tubeRadius : <a href="Float.html">Float</a> -&gt %</dt><dd><p>
+<code>tubeRadius(r)</code> specifies a radius, <code>r</code>, for a tube plot around a 3D curve; is expressed in the form <code>tubeRadius == 4</code>.</p>
+</dd></dl>
+<a name="f_unit"></a><dl><dt>unit : <a href="List.html">List</a>(<a href="Float.html">Float</a>) -&gt %</dt><dd><p>
+<code>unit(lf)</code> will mark off the units according to the indicated list <code>lf</code>. This option is expressed in the form <code>unit == [f1, f2]</code>.</p>
+</dd></dl>
+<a name="f_var1Steps"></a><dl><dt>var1Steps : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>var1Steps(n)</code> indicates the number of subdivisions, <code>n</code>, of the first range variable. This option is expressed in the form <code>var1Steps == n</code>.</p>
+</dd></dl>
+<a name="f_var2Steps"></a><dl><dt>var2Steps : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>var2Steps(n)</code> indicates the number of subdivisions, <code>n</code>, of the second range variable. This option is expressed in the form <code>var2Steps == n</code>.</p>
+</dd></dl>
+<a name="f_viewpoint"></a><dl><dt>viewpoint : Record(theta : <a href="DoubleFloat.html">DoubleFloat</a>, phi : <a href="DoubleFloat.html">DoubleFloat</a>, scale : <a href="DoubleFloat.html">DoubleFloat</a>, scaleX : <a href="DoubleFloat.html">DoubleFloat</a>, scaleY : <a href="DoubleFloat.html">DoubleFloat</a>, scaleZ : <a href="DoubleFloat.html">DoubleFloat</a>, deltaX : <a href="DoubleFloat.html">DoubleFloat</a>, deltaY : <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>viewpoint(vp)</code> creates a viewpoint data structure corresponding to the list of values. The values are interpreted as [theta, phi, scale, scaleX, scaleY, scaleZ, deltaX, deltaY]. This option is expressed in the form <code>viewpoint == ls</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

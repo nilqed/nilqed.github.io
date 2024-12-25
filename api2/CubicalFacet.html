@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>CubicalFacet</title>
+</head>
+<body>
+<h1>CubicalFacet</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/alg_top.spad#L944">alg_top.spad line 944</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/alg_top.spad#L944">[edit on github]</a></p>
+<p>
+A single vertex, edge, square, cube... for more documentation see: http://www.euclideanspace.com/prog/scratchpad/mycode/topology/cubical/ Date Created: April 2016 Basic Operations: Related packages: Related categories: FacetCategory Related Domains: Also See: AMS Classifications:</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_allSubsets"></a><dl><dt>allSubsets : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>allSubsets of</code> a given facet returned in reverse order subsets returned are not oriented</p>
+</dd></dl>
+<dl><dt>allSubsets : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>allSubsets of</code> a given length returned in reverse order subsets returned are not oriented</p>
+</dd></dl>
+<a name="f_boundary"></a><dl><dt>boundary : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+construct the boundary. This is like hollowing out the facet.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_cubicalFacet"></a><dl><dt>cubicalFacet : (<a href="Integer.html">Integer</a>, <a href="CubicalFacet.html">CubicalFacet</a>) -&gt %</dt><dd><p>
+Copy constructor which can change mul</p>
+</dd></dl>
+<dl><dt>cubicalFacet : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+Constructor for cubical facet</p>
+</dd></dl>
+<dl><dt>cubicalFacet : (<a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+Constructor for cubical facet intervals are always stored in low..high order orientation is calculated by the number of intervals that have to be flipped to put it in order.</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="FacetCategory.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_getIntervals"></a><dl><dt>getIntervals : % -&gt <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+returns intervals in face one for each dimension</p>
+</dd></dl>
+<a name="f_getMult"></a><dl><dt><a href="FacetCategory.html#f_getMult">getMult</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="FacetCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FacetCategory.html">FacetCategory</a></dd></dl>
+<a name="f_position"></a><dl><dt>position : (%, <a href="List.html">List</a>(%)) -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+return index of <code>e</code> in <code>lst</code>. Index will be negative if <code>e</code> has negative multiplier.</p>
+</dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, %) -&gt %</dt><dd><p>
+This function returns the product of two cubical facets. Unlike the simplex case, the product is a single facet</p>
+</dd></dl>
+<a name="f_sameFace_63"></a><dl><dt>sameFace? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>true</code> if this is the same face although the orientation may be different.</p>
+</dd></dl>
+<a name="f_setMult"></a><dl><dt>setMult : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+sets multiplier of face</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="FacetCategory.html">FacetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+</body>
+</html>

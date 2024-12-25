@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RootFSSplit</title>
+</head>
+<body>
+<h1>RootFSSplit(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L376">intpar.spad line 376</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L376">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="Comparable.html">Comparable</a>)<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R)</ul>
+<p>
+This package implements <code>alg_split_roots</code> allowing its reuse.</p>
+<a name="f_alg_95split_95root0"></a><dl><dt>alg_split_root0 : (F, <a href="Kernel.html">Kernel</a>(F), <a href="Integer.html">Integer</a>) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>alg_split_root0(f, r, n)</code> returns <code>[a1, ..., an]</code> such that <code>f = a1 + a2*r + ... an*r^(n - 1)</code>. <code>r</code> must be a root and <code>n</code> must be its degree.</p>
+</dd></dl>
+<a name="f_alg_95split_95roots"></a><dl><dt>alg_split_roots : (<a href="List.html">List</a>(F), <a href="Kernel.html">Kernel</a>(F), <a href="Kernel.html">Kernel</a>(F)) -&gt <a href="List.html">List</a>(Record(funs : <a href="List.html">List</a>(F), nroot : F, npow1 : <a href="Integer.html">Integer</a>, npow2 : <a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>alg_split_roots(lf, r1, r2)</code> splits each <code>f</code> in <code>lf</code> into linear combination of product of powers of <code>r1</code> and <code>r2</code> which must be independent roots.</p>
+</dd></dl>
+</body>
+</html>

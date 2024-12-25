@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerNumericEigenPackage</title>
+</head>
+<body>
+<h1>InnerNumericEigenPackage(K, F, Par)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/numeigen.spad#L1">numeigen.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/numeigen.spad#L1">[edit on github]</a></p>
+<ul>
+<li>K : <a href="Field.html">Field</a><li>F : <a href="Field.html">Field</a><li>Par : Join(<a href="Field.html">Field</a>, <a href="OrderedRing.html">OrderedRing</a>)</ul>
+<p>
+This package is the inner package to be used by NumericRealEigenPackage and NumericComplexEigenPackage for the computation of numeric eigenvalues and eigenvectors.</p>
+<a name="f_charpol"></a><dl><dt>charpol : <a href="Matrix.html">Matrix</a>(K) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(K)</dt><dd><p>
+<code>charpol(m)</code> computes the characteristic polynomial of a matrix <code>m</code> with entries in <code>K</code>.</p>
+</dd></dl>
+<a name="f_innerEigenvectors"></a><dl><dt>innerEigenvectors : (<a href="Matrix.html">Matrix</a>(K), Par, Mapping(<a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(K)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(K))) -&gt <a href="List.html">List</a>(Record(outval : F, outmult : <a href="Integer.html">Integer</a>, outvect : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(F))))</dt><dd><p>
+<code>innerEigenvectors(m, eps, factor)</code> computes explicitly the eigenvalues and the correspondent eigenvectors of the matrix <code>m</code>. The parameter <code>eps</code> determines the type of the output, factor is the univariate factorizer used to reduce the characteristic polynomial into irreducible factors.</p>
+</dd></dl>
+<a name="f_solve1"></a><dl><dt>solve1 : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(K), Par) -&gt <a href="List.html">List</a>(F)</dt><dd><p>
+<code>solve1(pol, eps)</code> finds the roots of the univariate polynomial polynomial <code>pol</code> to precision eps. If <code>K</code> is <code>Fraction Integer</code> then only the real roots are returned, if <code>K</code> is <code>Complex Fraction Integer</code> then all roots are found.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RightOpenIntervalRootCharacterization</title>
+</head>
+<body>
+<h1>RightOpenIntervalRootCharacterization(TheField, ThePolDom)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/reclos.spad#L410">reclos.spad line 410</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/reclos.spad#L410">[edit on github]</a></p>
+<ul>
+<li>TheField : Join(<a href="OrderedRing.html">OrderedRing</a>, <a href="Field.html">Field</a>)<li>ThePolDom : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(TheField)</ul>
+<p>
+RightOpenIntervalRootCharacterization provides work with interval root coding.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_allRootsOf"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_allRootsOf">allRootsOf</a> : ThePolDom -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_approximate"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_approximate">approximate</a> : (ThePolDom, %, TheField) -&gt TheField</dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_definingPolynomial"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_definingPolynomial">definingPolynomial</a> : % -&gt ThePolDom</dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_left"></a><dl><dt>left : % -&gt TheField</dt><dd><p>
+<code>left(rootChar)</code> is the left bound of the isolating interval</p>
+</dd></dl>
+<a name="f_middle"></a><dl><dt>middle : % -&gt TheField</dt><dd><p>
+<code>middle(rootChar)</code> is the middle of the isolating interval</p>
+</dd></dl>
+<a name="f_mightHaveRoots"></a><dl><dt>mightHaveRoots : (ThePolDom, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>mightHaveRoots(p, r)</code> is <code>false</code> if <code>p.r</code> is not 0</p>
+</dd></dl>
+<a name="f_negative_63"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_negative_63">negative?</a> : (ThePolDom, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_positive_63"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_positive_63">positive?</a> : (ThePolDom, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_recip">recip</a> : (ThePolDom, %) -&gt Union(ThePolDom, "failed")</dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_refine"></a><dl><dt>refine : % -&gt %</dt><dd><p>
+<code>refine(rootChar)</code> shrinks isolating interval around <code>rootChar</code></p>
+</dd></dl>
+<a name="f_relativeApprox"></a><dl><dt>relativeApprox : (ThePolDom, %, TheField) -&gt TheField</dt><dd><p>
+<code>relativeApprox(exp, c, p) = a</code> is relatively close to exp as a polynomial in <code>c</code> up to precision <code>p</code></p>
+</dd></dl>
+<a name="f_right"></a><dl><dt>right : % -&gt TheField</dt><dd><p>
+<code>right(rootChar)</code> is the right bound of the isolating interval</p>
+</dd></dl>
+<a name="f_rootOf"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_rootOf">rootOf</a> : (ThePolDom, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(%, "failed")</dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_sign"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_sign">sign</a> : (ThePolDom, %) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f_size"></a><dl><dt>size : % -&gt TheField</dt><dd><p>
+The size of the isolating interval</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="RealRootCharacterizationCategory.html#f_zero_63">zero?</a> : (ThePolDom, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RealRootCharacterizationCategory.html">RealRootCharacterizationCategory</a>(TheField, ThePolDom)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

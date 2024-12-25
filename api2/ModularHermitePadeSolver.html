@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularHermitePadeSolver</title>
+</head>
+<body>
+<h1>ModularHermitePadeSolver(F, S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/modhpsol.spad#L1586">modhpsol.spad line 1586</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/modhpsol.spad#L1586">[edit on github]</a></p>
+<ul>
+<li>F : <a href="CommutativeRing.html">CommutativeRing</a><li>S : <a href="CommutativeRing.html">CommutativeRing</a></ul>
+<p>
+This package provides generic interface to modular Hermite-Pade solver.</p>
+<a name="f_HP_95solve"></a><dl><dt>HP_solve : (<a href="List.html">List</a>(<a href="List.html">List</a>(F)), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)), <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>HP_solve(l, degs, kind, sigma, gen check)</code> finds a <code>sigma</code> basis with degree bounds given by <code>degs</code>. It returns <code>false</code> if there is no interpolating vector that is correct up to (and including) <code>z^</code>(<code>sigma</code>-1) with <code>sigma</code> <code>&gt;=</code> |degs+[1, 1, ..., 1]| or if check rejects all solutions. It returns <code>true</code> if it can not handle given problem.</p>
+</dd></dl>
+<a name="f_LLF_95to_95LPA"></a><dl><dt>LLF_to_LPA : (<a href="List.html">List</a>(<a href="List.html">List</a>(F)), <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt Union(<a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), "failed")</dt><dd><p>
+modular reduction</p>
+</dd></dl>
+<a name="f_VSUPS_95to_95VPA"></a><dl><dt>VSUPS_to_VPA : (<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+modular reduction</p>
+</dd></dl>
+<a name="f_gen_95Monte_95Carlo_95check"></a><dl><dt>gen_Monte_Carlo_check : (Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S))), <a href="List.html">List</a>(<a href="List.html">List</a>(F)), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>)) -&gt Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(S)))</dt><dd><p>
+<code>gen_Monte_Carlo_check(check, l, kind, qvar, sigma, gen)</code> returns Monte Carlo <code>check</code> for solutions to guessing problem. If Monte Carlo <code>check</code> is unavailable returns <code>check</code>.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SpecialFunctionCategory</title>
+</head>
+<body>
+<h1>SpecialFunctionCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/trigcat.spad#L235">trigcat.spad line 235</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/trigcat.spad#L235">[edit on github]</a></p>
+<p>
+Category for the other special functions.</p>
+<a name="f_Beta"></a><dl><dt>Beta : (%, %) -&gt %</dt><dd><p>
+<code>Beta(x, y)</code> is <code>Gamma(x) * Gamma(y)/Gamma(x+y)</code>.</p>
+</dd></dl>
+<dl><dt>Beta : (%, %, %) -&gt %</dt><dd><p>
+<code>Beta(x, a, b)</code> is the incomplete Beta function.</p>
+</dd></dl>
+<a name="f_Gamma"></a><dl><dt>Gamma : % -&gt %</dt><dd><p>
+<code>Gamma(x)</code> is the Euler Gamma function.</p>
+</dd></dl>
+<dl><dt>Gamma : (%, %) -&gt %</dt><dd><p>
+<code>Gamma(a, x)</code> is the incomplete Gamma function.</p>
+</dd></dl>
+<a name="f_abs"></a><dl><dt>abs : % -&gt %</dt><dd><p>
+<code>abs(x)</code> returns the absolute value of <code>x</code>.</p>
+</dd></dl>
+<a name="f_airyAi"></a><dl><dt>airyAi : % -&gt %</dt><dd><p>
+<code>airyAi(x)</code> is the Airy function <code><code>Ai</code>(x)</code>.</p>
+</dd></dl>
+<a name="f_airyAiPrime"></a><dl><dt>airyAiPrime : % -&gt %</dt><dd><p>
+<code>airyAiPrime(x)</code> is the derivative of the Airy function <code><code>Ai</code>(x)</code>.</p>
+</dd></dl>
+<a name="f_airyBi"></a><dl><dt>airyBi : % -&gt %</dt><dd><p>
+<code>airyBi(x)</code> is the Airy function <code><code>Bi</code>(x)</code>.</p>
+</dd></dl>
+<a name="f_airyBiPrime"></a><dl><dt>airyBiPrime : % -&gt %</dt><dd><p>
+<code>airyBiPrime(x)</code> is the derivative of the Airy function <code><code>Bi</code>(x)</code>.</p>
+</dd></dl>
+<a name="f_angerJ"></a><dl><dt>angerJ : (%, %) -&gt %</dt><dd><p>
+<code>angerJ(v, z)</code> is the Anger <code>J</code> function.</p>
+</dd></dl>
+<a name="f_besselI"></a><dl><dt>besselI : (%, %) -&gt %</dt><dd><p>
+<code>besselI(v, z)</code> is the modified Bessel function of the first kind.</p>
+</dd></dl>
+<a name="f_besselJ"></a><dl><dt>besselJ : (%, %) -&gt %</dt><dd><p>
+<code>besselJ(v, z)</code> is the Bessel function of the first kind.</p>
+</dd></dl>
+<a name="f_besselK"></a><dl><dt>besselK : (%, %) -&gt %</dt><dd><p>
+<code>besselK(v, z)</code> is the modified Bessel function of the second kind.</p>
+</dd></dl>
+<a name="f_besselY"></a><dl><dt>besselY : (%, %) -&gt %</dt><dd><p>
+<code>besselY(v, z)</code> is the Bessel function of the second kind.</p>
+</dd></dl>
+<a name="f_ceiling"></a><dl><dt>ceiling : % -&gt %</dt><dd><p>
+<code>ceiling(x)</code> returns the smallest integer above or equal <code>x</code>.</p>
+</dd></dl>
+<a name="f_charlierC"></a><dl><dt>charlierC : (%, %, %) -&gt %</dt><dd><p>
+<code>charlierC(n, a, z)</code> is the Charlier polynomial.</p>
+</dd></dl>
+<a name="f_conjugate"></a><dl><dt>conjugate : % -&gt %</dt><dd><p>
+<code>conjugate(x)</code> returns the conjugate of <code>x</code>.</p>
+</dd></dl>
+<a name="f_digamma"></a><dl><dt>digamma : % -&gt %</dt><dd><p>
+<code>digamma(x)</code> is the logarithmic derivative of <code>Gamma(x)</code> (often written <code>psi(x)</code> in the literature).</p>
+</dd></dl>
+<a name="f_diracDelta"></a><dl><dt>diracDelta : % -&gt %</dt><dd><p>
+<code>diracDelta(x)</code> is unit mass at zeros of <code>x</code>.</p>
+</dd></dl>
+<a name="f_ellipticE"></a><dl><dt>ellipticE : % -&gt %</dt><dd><p>
+<code>ellipticE(m)</code> is the complete elliptic integral of the second kind: <code>ellipticE(m) = integrate(sqrt(1-m*t^2)/sqrt(1-t^2), t = 0..1)</code>.</p>
+</dd></dl>
+<dl><dt>ellipticE : (%, %) -&gt %</dt><dd><p>
+<code>ellipticE(z, m)</code> is the incomplete elliptic integral of the second kind: <code>ellipticE(z, m) = integrate(sqrt(1-m*t^2)/sqrt(1-t^2), t = 0..z)</code>.</p>
+</dd></dl>
+<a name="f_ellipticF"></a><dl><dt>ellipticF : (%, %) -&gt %</dt><dd><p>
+<code>ellipticF(z, m)</code> is the incomplete elliptic integral of the first kind : <code>ellipticF(z, m) = integrate(1/sqrt((1-t^2)*(1-m*t^2)), t = 0..z)</code>.</p>
+</dd></dl>
+<a name="f_ellipticK"></a><dl><dt>ellipticK : % -&gt %</dt><dd><p>
+<code>ellipticK(m)</code> is the complete elliptic integral of the first kind: <code>ellipticK(m) = integrate(1/sqrt((1-t^2)*(1-m*t^2)), t = 0..1)</code>.</p>
+</dd></dl>
+<a name="f_ellipticPi"></a><dl><dt>ellipticPi : (%, %, %) -&gt %</dt><dd><p>
+<code>ellipticPi(z, n, m)</code> is the incomplete elliptic integral of the third kind: <code>ellipticPi(z, n, m) = integrate(1/((1-n*t^2)*sqrt((1-t^2)*(1-m*t^2))), t = 0..z)</code>.</p>
+</dd></dl>
+<a name="f_floor"></a><dl><dt>floor : % -&gt %</dt><dd><p>
+<code>floor(x)</code> returns the largest integer below or equal <code>x</code>.</p>
+</dd></dl>
+<a name="f_fractionPart"></a><dl><dt>fractionPart : % -&gt %</dt><dd><p>
+<code>fractionPart(x)</code> returns the fractional part of <code>x</code>. Note: fractionPart(<code>x</code>) = <code>x</code> - floor(<code>x</code>).</p>
+</dd></dl>
+<a name="f_hahnQ"></a><dl><dt>hahnQ : (%, %, %, %, %) -&gt %</dt><dd><p>
+<code>hahnQ(n, a, b, N, z)</code> <code>s</code> the Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hahnR"></a><dl><dt>hahnR : (%, %, %, %, %) -&gt %</dt><dd><p>
+<code>hahnR(n, c, d, N, z)</code> is the dual Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hahnS"></a><dl><dt>hahnS : (%, %, %, %, %) -&gt %</dt><dd><p>
+<code>hahnS(n, a, b, c, z)</code> is the continuous dual Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hahn_95p"></a><dl><dt>hahn_p : (%, %, %, %, %) -&gt %</dt><dd><p>
+<code>hahn_p(n, a, b, bar_a, bar_b, z)</code> is the continuous Hahn polynomial.</p>
+</dd></dl>
+<a name="f_hankelH1"></a><dl><dt>hankelH1 : (%, %) -&gt %</dt><dd><p>
+<code>hankelH1(v, z)</code> is first Hankel function (Bessel function of the third kind).</p>
+</dd></dl>
+<a name="f_hankelH2"></a><dl><dt>hankelH2 : (%, %) -&gt %</dt><dd><p>
+<code>hankelH2(v, z)</code> is the second Hankel function (Bessel function of the third kind).</p>
+</dd></dl>
+<a name="f_hermiteH"></a><dl><dt>hermiteH : (%, %) -&gt %</dt><dd><p>
+<code>hermiteH(n, z)</code> is the Hermite polynomial.</p>
+</dd></dl>
+<a name="f_hypergeometricF"></a><dl><dt>hypergeometricF : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%), %) -&gt % if % has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>hypergeometricF(la, lb, z)</code> is the generalized hypergeometric function.</p>
+</dd></dl>
+<a name="f_jacobiCn"></a><dl><dt>jacobiCn : (%, %) -&gt %</dt><dd><p>
+<code>jacobiCn(z, m)</code> is the Jacobi elliptic <code>cn</code> function, defined by <code>jacobiCn(z, m)^2 + jacobiSn(z, m)^2 = 1</code> and <code>jacobiCn(0, m) = 1</code>.</p>
+</dd></dl>
+<a name="f_jacobiDn"></a><dl><dt>jacobiDn : (%, %) -&gt %</dt><dd><p>
+<code>jacobiDn(z, m)</code> is the Jacobi elliptic <code>dn</code> function, defined by <code>jacobiDn(z, m)^2 + m*jacobiSn(z, m)^2 = 1</code> and <code>jacobiDn(0, m) = 1</code>.</p>
+</dd></dl>
+<a name="f_jacobiP"></a><dl><dt>jacobiP : (%, %, %, %) -&gt %</dt><dd><p>
+<code>jacobiP(n, a, b, z)</code> is the Jacobi polynomial.</p>
+</dd></dl>
+<a name="f_jacobiSn"></a><dl><dt>jacobiSn : (%, %) -&gt %</dt><dd><p>
+<code>jacobiSn(z, m)</code> is the Jacobi elliptic <code>sn</code> function, defined by the formula <code>jacobiSn(ellipticF(z, m), m) = z</code>.</p>
+</dd></dl>
+<a name="f_jacobiTheta"></a><dl><dt>jacobiTheta : (%, %) -&gt %</dt><dd><p>
+<code>jacobiTheta(z, m)</code> is the Jacobi Theta function in Jacobi notation.</p>
+</dd></dl>
+<a name="f_jacobiZeta"></a><dl><dt>jacobiZeta : (%, %) -&gt %</dt><dd><p>
+<code>jacobiZeta(z, m)</code> is the Jacobi elliptic zeta function, defined by <code>D(jacobiZeta(z, m), z) = jacobiDn(z, m)^2 - ellipticE(m)/ellipticK(m)</code> and <code>jacobiZeta(0, m) = 0</code>.</p>
+</dd></dl>
+<a name="f_kelvinBei"></a><dl><dt>kelvinBei : (%, %) -&gt %</dt><dd><p>
+<code>kelvinBei(v, z)</code> is the Kelvin bei function defined by equality <code>kelvinBei(v, z) = imag(besselJ(v, exp(3*%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_kelvinBer"></a><dl><dt>kelvinBer : (%, %) -&gt %</dt><dd><p>
+<code>kelvinBer(v, z)</code> is the Kelvin ber function defined by equality <code>kelvinBer(v, z) = real(besselJ(v, exp(3*%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_kelvinKei"></a><dl><dt>kelvinKei : (%, %) -&gt %</dt><dd><p>
+<code>kelvinKei(v, z)</code> is the Kelvin kei function defined by equality <code>kelvinKei(v, z) = imag(exp(-v*%pi*%i/2)*besselK(v, exp(%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_kelvinKer"></a><dl><dt>kelvinKer : (%, %) -&gt %</dt><dd><p>
+<code>kelvinKer(v, z)</code> is the Kelvin kei function defined by equality <code>kelvinKer(v, z) = real(exp(-v*%pi*%i/2)*besselK(v, exp(%pi*%i/4)*z))</code> for <code>z</code> and <code>v</code> real.</p>
+</dd></dl>
+<a name="f_krawtchoukK"></a><dl><dt>krawtchoukK : (%, %, %, %) -&gt %</dt><dd><p>
+<code>krawtchoukK(n, p, N, z)</code> is the Krawtchouk polynomial.</p>
+</dd></dl>
+<a name="f_kummerM"></a><dl><dt>kummerM : (%, %, %) -&gt %</dt><dd><p>
+<code>kummerM(mu, nu, z)</code> is the Kummer <code>M</code> function.</p>
+</dd></dl>
+<a name="f_kummerU"></a><dl><dt>kummerU : (%, %, %) -&gt %</dt><dd><p>
+<code>kummerU(mu, nu, z)</code> is the Kummer <code>U</code> function.</p>
+</dd></dl>
+<a name="f_laguerreL"></a><dl><dt>laguerreL : (%, %, %) -&gt %</dt><dd><p>
+<code>laguerreL(n, a, z)</code> is the Laguerre polynomial.</p>
+</dd></dl>
+<a name="f_lambertW"></a><dl><dt>lambertW : % -&gt %</dt><dd><p>
+<code>lambertW(z)</code> = <code>w</code> is the principal branch of the solution to the equation <code>we^w = z</code>.</p>
+</dd></dl>
+<a name="f_legendreP"></a><dl><dt>legendreP : (%, %, %) -&gt %</dt><dd><p>
+<code>legendreP(nu, mu, z)</code> is the Legendre <code>P</code> function.</p>
+</dd></dl>
+<a name="f_legendreQ"></a><dl><dt>legendreQ : (%, %, %) -&gt %</dt><dd><p>
+<code>legendreQ(nu, mu, z)</code> is the Legendre <code>Q</code> function.</p>
+</dd></dl>
+<a name="f_lerchPhi"></a><dl><dt>lerchPhi : (%, %, %) -&gt %</dt><dd><p>
+<code>lerchPhi(z, s, a)</code> is the Lerch Phi function.</p>
+</dd></dl>
+<a name="f_lommelS1"></a><dl><dt>lommelS1 : (%, %, %) -&gt %</dt><dd><p>
+<code>lommelS1(mu, nu, z)</code> is the Lommel <code>s</code> function.</p>
+</dd></dl>
+<a name="f_lommelS2"></a><dl><dt>lommelS2 : (%, %, %) -&gt %</dt><dd><p>
+<code>lommelS2(mu, nu, z)</code> is the Lommel <code>S</code> function.</p>
+</dd></dl>
+<a name="f_meijerG"></a><dl><dt>meijerG : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%), <a href="List.html">List</a>(%), <a href="List.html">List</a>(%), %) -&gt % if % has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>meijerG(la, lb, lc, ld, z)</code> is the meijerG function.</p>
+</dd></dl>
+<a name="f_meixnerM"></a><dl><dt>meixnerM : (%, %, %, %) -&gt %</dt><dd><p>
+<code>meixnerM(n, b, c, z)</code> is the Meixner polynomial.</p>
+</dd></dl>
+<a name="f_meixnerP"></a><dl><dt>meixnerP : (%, %, %, %) -&gt %</dt><dd><p>
+<code>meixnerP(n, phi, lambda, z)</code> is the Meixner–Pollaczek polynomial.</p>
+</dd></dl>
+<a name="f_polygamma"></a><dl><dt>polygamma : (%, %) -&gt %</dt><dd><p>
+<code>polygamma(k, x)</code> is the <code>k-th</code> derivative of <code>digamma(x)</code>, (often written <code>psi(k, x)</code> in the literature).</p>
+</dd></dl>
+<a name="f_polylog"></a><dl><dt>polylog : (%, %) -&gt %</dt><dd><p>
+<code>polylog(s, x)</code> is the polylogarithm of order <code>s</code> at <code>x</code>.</p>
+</dd></dl>
+<a name="f_racahR"></a><dl><dt>racahR : (%, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>racahR(n, a, b, c, d, z)</code> is the Racah polynomial.</p>
+</dd></dl>
+<a name="f_riemannZeta"></a><dl><dt>riemannZeta : % -&gt %</dt><dd><p>
+<code>riemannZeta(z)</code> is the Riemann Zeta function.</p>
+</dd></dl>
+<a name="f_sign"></a><dl><dt>sign : % -&gt %</dt><dd><p>
+<code>sign(x)</code> returns the sign of <code>x</code>.</p>
+</dd></dl>
+<a name="f_struveH"></a><dl><dt>struveH : (%, %) -&gt %</dt><dd><p>
+<code>struveH(v, z)</code> is the Struve <code>H</code> function.</p>
+</dd></dl>
+<a name="f_struveL"></a><dl><dt>struveL : (%, %) -&gt %</dt><dd><p>
+<code>struveL(v, z)</code> is the Struve <code>L</code> function defined by the formula <code>struveL(v, z) = -%i^exp(-v*%pi*%i/2)*struveH(v, %i*z)</code>.</p>
+</dd></dl>
+<a name="f_unitStep"></a><dl><dt>unitStep : % -&gt %</dt><dd><p>
+<code>unitStep(x)</code> is 0 for <code>x</code> less than 0, 1 for <code>x</code> bigger or equal 0.</p>
+</dd></dl>
+<a name="f_weberE"></a><dl><dt>weberE : (%, %) -&gt %</dt><dd><p>
+<code>weberE(v, z)</code> is the Weber <code>E</code> function.</p>
+</dd></dl>
+<a name="f_weierstrassP"></a><dl><dt>weierstrassP : (%, %, %) -&gt %</dt><dd><p>
+<code>weierstrassP(g2, g3, z)</code> is the Weierstrass <code>P</code> function.</p>
+</dd></dl>
+<a name="f_weierstrassPInverse"></a><dl><dt>weierstrassPInverse : (%, %, %) -&gt %</dt><dd><p>
+<code>weierstrassPInverse(g2, g3, z)</code> is the inverse of Weierstrass <code>P</code> function, defined by the formula <code>weierstrassP(g2, g3, weierstrassPInverse(g2, g3, z)) = z</code>.</p>
+</dd></dl>
+<a name="f_weierstrassPPrime"></a><dl><dt>weierstrassPPrime : (%, %, %) -&gt %</dt><dd><p>
+<code>weierstrassPPrime(g2, g3, z)</code> is the derivative of Weierstrass <code>P</code> function.</p>
+</dd></dl>
+<a name="f_weierstrassSigma"></a><dl><dt>weierstrassSigma : (%, %, %) -&gt %</dt><dd><p>
+<code>weierstrassSigma(g2, g3, z)</code> is the Weierstrass Sigma function.</p>
+</dd></dl>
+<a name="f_weierstrassZeta"></a><dl><dt>weierstrassZeta : (%, %, %) -&gt %</dt><dd><p>
+<code>weierstrassZeta(g2, g3, z)</code> is the Weierstrass Zeta function.</p>
+</dd></dl>
+<a name="f_whittakerM"></a><dl><dt>whittakerM : (%, %, %) -&gt %</dt><dd><p>
+<code>whittakerM(k, m, z)</code> is the Whittaker <code>M</code> function.</p>
+</dd></dl>
+<a name="f_whittakerW"></a><dl><dt>whittakerW : (%, %, %) -&gt %</dt><dd><p>
+<code>whittakerW(k, m, z)</code> is the Whittaker <code>W</code> function.</p>
+</dd></dl>
+<a name="f_wilsonW"></a><dl><dt>wilsonW : (%, %, %, %, %, %) -&gt %</dt><dd><p>
+<code>wilsonW(n, a, b, c, d, z)</code> is the Wilson polynomial.</p>
+</dd></dl>
+</body>
+</html>

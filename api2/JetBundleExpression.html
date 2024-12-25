@@ -1,0 +1,522 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetBundleExpression</title>
+</head>
+<body>
+<h1>JetBundleExpression(JB)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L2354">jet.spad line 2354</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L2354">[edit on github]</a></p>
+<ul>
+<li>JB : <a href="JetBundleCategory.html">JetBundleCategory</a></ul>
+<p>
+JetBundleExpression defines expressions over a jet bundle based on Expression Integer. It allows all kind of algebraic operations. <code>simplify</code> is implemented using Groebner bases in polynomials over kernels. Thus it might not work correctly for general expressions. This also affects <code>dimension</code>.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Group.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f__47">/</a> : (<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%)), <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_Beta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_Beta">Beta</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="SpecialFunctionCategory.html#f_Beta">Beta</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_Chi"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_Chi">Chi</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_Ci"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_Ci">Ci</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_Ei"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_Ei">Ei</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_Gamma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_Gamma">Gamma</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="SpecialFunctionCategory.html#f_Gamma">Gamma</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_P"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_Shi"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_Shi">Shi</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_Si"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_Si">Si</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_U"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_U">U</a> : () -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_U">U</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_X"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_X">X</a> : () -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_X">X</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="ElementaryFunctionCategory.html#f__94">^</a> : (%, %) -&gt %</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<dl><dt><a href="RadicalCategory.html#f__94">^</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<dl><dt><a href="Group.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_abs"></a><dl><dt><a href="SpecialFunctionCategory.html#f_abs">abs</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_acos"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acos">acos</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acosh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acosh">acosh</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acot"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acot">acot</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acoth"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acoth">acoth</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acsc"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acsc">acsc</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acsch"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acsch">acsch</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_airyAi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyAi">airyAi</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_airyAiPrime"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyAiPrime">airyAiPrime</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_airyBi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyBi">airyBi</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_airyBiPrime"></a><dl><dt><a href="SpecialFunctionCategory.html#f_airyBiPrime">airyBiPrime</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_algtower"></a><dl><dt><a href="FunctionSpace2.html#f_algtower">algtower</a> : % -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_algtower">algtower</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_angerJ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_angerJ">angerJ</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_applyQuote"></a><dl><dt><a href="FunctionSpace2.html#f_applyQuote">applyQuote</a> : (<a href="Symbol.html">Symbol</a>, %) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_applyQuote">applyQuote</a> : (<a href="Symbol.html">Symbol</a>, %, %) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_applyQuote">applyQuote</a> : (<a href="Symbol.html">Symbol</a>, %, %, %) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_applyQuote">applyQuote</a> : (<a href="Symbol.html">Symbol</a>, %, %, %, %) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_applyQuote">applyQuote</a> : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_asec"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asec">asec</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asech"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asech">asech</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_asin"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asin">asin</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asinh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asinh">asinh</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_atan"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_atan">atan</a> : % -&gt %</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_atanh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_atanh">atanh</a> : % -&gt %</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_autoReduce"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_autoReduce">autoReduce</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_belong_63"></a><dl><dt><a href="ExpressionSpace2.html#f_belong_63">belong?</a> : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_besselI"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselI">besselI</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_besselJ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselJ">besselJ</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_besselK"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselK">besselK</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_besselY"></a><dl><dt><a href="SpecialFunctionCategory.html#f_besselY">besselY</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_binomial"></a><dl><dt><a href="CombinatorialFunctionCategory.html#f_binomial">binomial</a> : (%, %) -&gt %</dt><dd> from <a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a></dd></dl>
+<a name="f_box"></a><dl><dt><a href="ExpressionSpace2.html#f_box">box</a> : % -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_ceiling"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ceiling">ceiling</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charlierC"></a><dl><dt><a href="SpecialFunctionCategory.html#f_charlierC">charlierC</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if <a href="Integer.html">Integer</a> has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_class"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_class">class</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_coerce">coerce</a> : JB -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="AlgebraicNumber.html">AlgebraicNumber</a> -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)</dd></dl>
+<dl><dt>coerce : <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Kernel.html">Kernel</a>(%) -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_coerce">coerce</a> : <a href="Polynomial.html">Polynomial</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt>coerce : <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), JB) -&gt %</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>coerce : <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%)) -&gt %</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conjugate"></a><dl><dt><a href="SpecialFunctionCategory.html#f_conjugate">conjugate</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="Group.html#f_conjugate">conjugate</a> : (%, %) -&gt % if <a href="Integer.html">Integer</a> has <a href="Group.html">Group</a></dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_const_63"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_const_63">const?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="FunctionSpace2.html#f_convert">convert</a> : <a href="Factored.html">Factored</a>(%) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>) if <a href="Integer.html">Integer</a> has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<a name="f_cos"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cos">cos</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_cosh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_cosh">cosh</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_cot"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cot">cot</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_coth"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_coth">coth</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_csc"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_csc">csc</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_csch"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_csch">csch</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_dSubst"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_dSubst">dSubst</a> : (%, JB, %) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_definingPolynomial"></a><dl><dt><a href="ExpressionSpace2.html#f_definingPolynomial">definingPolynomial</a> : % -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_denom"></a><dl><dt><a href="FunctionSpace2.html#f_denom">denom</a> : % -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_denominator"></a><dl><dt><a href="FunctionSpace2.html#f_denominator">denominator</a> : % -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_differentiate">differentiate</a> : (%, JB) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_digamma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_digamma">digamma</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_dilog"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_dilog">dilog</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_dimension"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_dimension">dimension</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_diracDelta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_diracDelta">diracDelta</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_distribute"></a><dl><dt><a href="ExpressionSpace2.html#f_distribute">distribute</a> : % -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_distribute">distribute</a> : (%, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_divide"></a><dl><dt><a href="EuclideanDomain.html#f_divide">divide</a> : (%, %) -&gt Record(quotient : %, remainder : %)</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_ellipticE"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticE">ellipticE</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<dl><dt><a href="SpecialFunctionCategory.html#f_ellipticE">ellipticE</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_ellipticF"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticF">ellipticF</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_ellipticK"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticK">ellipticK</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_ellipticPi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_ellipticPi">ellipticPi</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_elt"></a><dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, %, %, %, %, %, %, %, %, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_elt">elt</a> : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_erf"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_erf">erf</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_erfi"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_erfi">erfi</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_euclideanSize"></a><dl><dt><a href="EuclideanDomain.html#f_euclideanSize">euclideanSize</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, %, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_eval">eval</a> : (%, <a href="BasicOperator.html">BasicOperator</a>, %, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="BasicOperator.html">BasicOperator</a>, Mapping(%, %)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="BasicOperator.html">BasicOperator</a>, Mapping(%, <a href="List.html">List</a>(%))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(%)) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="Kernel.html">Kernel</a>(%), %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Kernel.html">Kernel</a>(%), %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="List.html">List</a>(%), <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="List.html">List</a>(Mapping(%, %))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>), <a href="List.html">List</a>(Mapping(%, <a href="List.html">List</a>(%)))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%)), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Kernel.html">Kernel</a>(%), %)</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(Mapping(%, %))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(Mapping(%, <a href="List.html">List</a>(%)))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(Mapping(%, %))) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(Mapping(%, <a href="List.html">List</a>(%)))) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, Mapping(%, %)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, Mapping(%, <a href="List.html">List</a>(%))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(%, %)) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(%, <a href="List.html">List</a>(%))) -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_even_63"></a><dl><dt><a href="ExpressionSpace2.html#f_even_63">even?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_exp"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_exp">exp</a> : % -&gt %</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_expressIdealMember"></a><dl><dt><a href="PrincipalIdealDomain.html#f_expressIdealMember">expressIdealMember</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extendedEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %) -&gt Record(coef1 : %, coef2 : %, generator : %)</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %, %) -&gt Union(Record(coef1 : %, coef2 : %), "failed")</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_extractSymbol"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_extractSymbol">extractSymbol</a> : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_factor"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_factor">factor</a> : % -&gt <a href="Factored.html">Factored</a>(%)</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_factorial"></a><dl><dt><a href="CombinatorialFunctionCategory.html#f_factorial">factorial</a> : % -&gt %</dt><dd> from <a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a></dd></dl>
+<a name="f_factorials"></a><dl><dt><a href="CombinatorialOpsCategory.html#f_factorials">factorials</a> : % -&gt %</dt><dd> from <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a></dd></dl>
+<dl><dt><a href="CombinatorialOpsCategory.html#f_factorials">factorials</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a></dd></dl>
+<a name="f_floor"></a><dl><dt><a href="SpecialFunctionCategory.html#f_floor">floor</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_formalDiff"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff">formalDiff</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff">formalDiff</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff">formalDiff</a> : (<a href="List.html">List</a>(%), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_formalDiff2"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff2">formalDiff2</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)) -&gt Record(DPhi : %, JVars : <a href="List.html">List</a>(JB))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff2">formalDiff2</a> : (<a href="List.html">List</a>(%), <a href="PositiveInteger.html">PositiveInteger</a>, <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)) -&gt Record(DSys : <a href="List.html">List</a>(%), JVars : <a href="List.html">List</a>(<a href="List.html">List</a>(JB)))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_fractionPart"></a><dl><dt><a href="SpecialFunctionCategory.html#f_fractionPart">fractionPart</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_freeOf_63"></a><dl><dt><a href="ExpressionSpace2.html#f_freeOf_63">freeOf?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_freeOf_63">freeOf?</a> : (%, JB) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_freeOf_63">freeOf?</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_fresnelC"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_fresnelC">fresnelC</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_fresnelS"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_fresnelS">fresnelS</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_function"></a><dl><dt>function : (<a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(%), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>function(f, arg, show)</code> generates a function with name <code>f</code> and arguments <code>arg</code>. In the output only the first <code>show</code> arguments are shown.</p>
+</dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="GcdDomain.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_getNotation"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_getNotation">getNotation</a> : () -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_ground"></a><dl><dt><a href="FunctionSpace2.html#f_ground">ground</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_ground_63"></a><dl><dt><a href="FunctionSpace2.html#f_ground_63">ground?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_hahnQ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahnQ">hahnQ</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hahnR"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahnR">hahnR</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hahnS"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahnS">hahnS</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hahn_95p"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hahn_95p">hahn_p</a> : (%, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hankelH1"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hankelH1">hankelH1</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hankelH2"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hankelH2">hankelH2</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_height"></a><dl><dt><a href="ExpressionSpace2.html#f_height">height</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_hermiteH"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hermiteH">hermiteH</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_hypergeometricF"></a><dl><dt><a href="SpecialFunctionCategory.html#f_hypergeometricF">hypergeometricF</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%), %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_integral"></a><dl><dt><a href="PrimitiveFunctionCategory.html#f_integral">integral</a> : (%, <a href="SegmentBinding.html">SegmentBinding</a>(%)) -&gt %</dt><dd> from <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a></dd></dl>
+<dl><dt><a href="PrimitiveFunctionCategory.html#f_integral">integral</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a></dd></dl>
+<a name="f_inv"></a><dl><dt><a href="Group.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="Group.html">Group</a></dd></dl>
+<a name="f_is_63"></a><dl><dt><a href="ExpressionSpace2.html#f_is_63">is?</a> : (%, <a href="BasicOperator.html">BasicOperator</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_is_63">is?</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_isExpt"></a><dl><dt><a href="FunctionSpace2.html#f_isExpt">isExpt</a> : % -&gt Union(Record(var : <a href="Kernel.html">Kernel</a>(%), exponent : <a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_isExpt">isExpt</a> : (%, <a href="BasicOperator.html">BasicOperator</a>) -&gt Union(Record(var : <a href="Kernel.html">Kernel</a>(%), exponent : <a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_isExpt">isExpt</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt Union(Record(var : <a href="Kernel.html">Kernel</a>(%), exponent : <a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_isMult"></a><dl><dt><a href="FunctionSpace2.html#f_isMult">isMult</a> : % -&gt Union(Record(coef : <a href="Integer.html">Integer</a>, var : <a href="Kernel.html">Kernel</a>(%)), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_isPlus"></a><dl><dt><a href="FunctionSpace2.html#f_isPlus">isPlus</a> : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_isPower"></a><dl><dt><a href="FunctionSpace2.html#f_isPower">isPower</a> : % -&gt Union(Record(val : %, exponent : <a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_isTimes"></a><dl><dt><a href="FunctionSpace2.html#f_isTimes">isTimes</a> : % -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_jacobiCn"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiCn">jacobiCn</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiDn"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiDn">jacobiDn</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiMatrix"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_jacobiMatrix">jacobiMatrix</a> : <a href="List.html">List</a>(%) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_jacobiMatrix">jacobiMatrix</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(<a href="List.html">List</a>(JB))) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_jacobiP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiP">jacobiP</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiSn"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiSn">jacobiSn</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiTheta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiTheta">jacobiTheta</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jacobiZeta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_jacobiZeta">jacobiZeta</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_jetVariables"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_jetVariables">jetVariables</a> : % -&gt <a href="List.html">List</a>(JB)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_kelvinBei"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinBei">kelvinBei</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinBer"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinBer">kelvinBer</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinKei"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinKei">kelvinKei</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kelvinKer"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kelvinKer">kelvinKer</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kernel"></a><dl><dt><a href="ExpressionSpace2.html#f_kernel">kernel</a> : (<a href="BasicOperator.html">BasicOperator</a>, %) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_kernel">kernel</a> : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_kernels"></a><dl><dt><a href="ExpressionSpace2.html#f_kernels">kernels</a> : % -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_kernels">kernels</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_krawtchoukK"></a><dl><dt><a href="SpecialFunctionCategory.html#f_krawtchoukK">krawtchoukK</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kummerM"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kummerM">kummerM</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_kummerU"></a><dl><dt><a href="SpecialFunctionCategory.html#f_kummerU">kummerU</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_laguerreL"></a><dl><dt><a href="SpecialFunctionCategory.html#f_laguerreL">laguerreL</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_lambertW"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lambertW">lambertW</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %)</dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leadingDer"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_leadingDer">leadingDer</a> : % -&gt JB</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_legendreP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_legendreP">legendreP</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_legendreQ"></a><dl><dt><a href="SpecialFunctionCategory.html#f_legendreQ">legendreQ</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_lerchPhi"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lerchPhi">lerchPhi</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_li"></a><dl><dt><a href="LiouvillianFunctionCategory.html#f_li">li</a> : % -&gt %</dt><dd> from <a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a></dd></dl>
+<a name="f_log"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_log">log</a> : % -&gt %</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_lommelS1"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lommelS1">lommelS1</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_lommelS2"></a><dl><dt><a href="SpecialFunctionCategory.html#f_lommelS2">lommelS2</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_mainKernel"></a><dl><dt><a href="ExpressionSpace2.html#f_mainKernel">mainKernel</a> : % -&gt Union(<a href="Kernel.html">Kernel</a>(%), "failed")</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_map"></a><dl><dt><a href="ExpressionSpace2.html#f_map">map</a> : (Mapping(%, %), <a href="Kernel.html">Kernel</a>(%)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_meijerG"></a><dl><dt><a href="SpecialFunctionCategory.html#f_meijerG">meijerG</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%), <a href="List.html">List</a>(%), <a href="List.html">List</a>(%), %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_meixnerM"></a><dl><dt><a href="SpecialFunctionCategory.html#f_meixnerM">meixnerM</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_meixnerP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_meixnerP">meixnerP</a> : (%, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_minPoly"></a><dl><dt><a href="ExpressionSpace2.html#f_minPoly">minPoly</a> : <a href="Kernel.html">Kernel</a>(%) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_multiEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_multiEuclidean">multiEuclidean</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_nthRoot"></a><dl><dt><a href="RadicalCategory.html#f_nthRoot">nthRoot</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_numDepVar"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_numDepVar">numDepVar</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_numIndVar"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_numIndVar">numIndVar</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_numer"></a><dl><dt><a href="FunctionSpace2.html#f_numer">numer</a> : % -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_numerJP"></a><dl><dt>numerJP : % -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), JB)</dt><dd><p>
+<code>numerJP(f)</code> writes <code>f</code> as polynomial over <code>JB</code>.</p>
+</dd></dl>
+<a name="f_numerator"></a><dl><dt><a href="FunctionSpace2.html#f_numerator">numerator</a> : % -&gt %</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_odd_63"></a><dl><dt><a href="ExpressionSpace2.html#f_odd_63">odd?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_operator"></a><dl><dt><a href="ExpressionSpace2.html#f_operator">operator</a> : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_operators"></a><dl><dt><a href="ExpressionSpace2.html#f_operators">operators</a> : % -&gt <a href="List.html">List</a>(<a href="BasicOperator.html">BasicOperator</a>)</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_orderDim"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_orderDim">orderDim</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_paren"></a><dl><dt><a href="ExpressionSpace2.html#f_paren">paren</a> : % -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_patternMatch"></a><dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %) if <a href="Integer.html">Integer</a> has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_permutation"></a><dl><dt><a href="CombinatorialFunctionCategory.html#f_permutation">permutation</a> : (%, %) -&gt %</dt><dd> from <a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a></dd></dl>
+<a name="f_pi"></a><dl><dt><a href="TranscendentalFunctionCategory.html#f_pi">pi</a> : () -&gt %</dt><dd> from <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_polygamma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_polygamma">polygamma</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_polylog"></a><dl><dt><a href="SpecialFunctionCategory.html#f_polylog">polylog</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_prime_63"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_prime_63">prime?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_principalIdeal"></a><dl><dt><a href="PrincipalIdealDomain.html#f_principalIdeal">principalIdeal</a> : <a href="List.html">List</a>(%) -&gt Record(coef : <a href="List.html">List</a>(%), generator : %)</dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_product"></a><dl><dt><a href="CombinatorialOpsCategory.html#f_product">product</a> : (%, <a href="SegmentBinding.html">SegmentBinding</a>(%)) -&gt %</dt><dd> from <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a></dd></dl>
+<dl><dt><a href="CombinatorialOpsCategory.html#f_product">product</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a></dd></dl>
+<a name="f_quo"></a><dl><dt><a href="EuclideanDomain.html#f_quo">quo</a> : (%, %) -&gt %</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_racahR"></a><dl><dt><a href="SpecialFunctionCategory.html#f_racahR">racahR</a> : (%, %, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : % -&gt %</dt><dd><p>
+<code>reduce(x)</code> reduces algebraics in <code>x</code>.</p>
+</dd></dl>
+<a name="f_reduceMod"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_reduceMod">reduceMod</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rem"></a><dl><dt><a href="EuclideanDomain.html#f_rem">rem</a> : (%, %) -&gt %</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt JB</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(JB)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="AlgebraicNumber.html">AlgebraicNumber</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Kernel.html">Kernel</a>(%)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(JB, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(JB)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="AlgebraicNumber.html">AlgebraicNumber</a>, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Kernel.html">Kernel</a>(%), "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Symbol.html">Symbol</a>, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_riemannZeta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_riemannZeta">riemannZeta</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_rootOf"></a><dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_rootOf">rootOf</a> : % -&gt %</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_rootOf">rootOf</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_rootOf">rootOf</a> : <a href="Polynomial.html">Polynomial</a>(%) -&gt %</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_rootOf">rootOf</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt %</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_rootOf">rootOf</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<a name="f_rootSum"></a><dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_rootSum">rootSum</a> : (%, <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rootsOf"></a><dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_rootsOf">rootsOf</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_rootsOf">rootsOf</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_rootsOf">rootsOf</a> : <a href="Polynomial.html">Polynomial</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_rootsOf">rootsOf</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_rootsOf">rootsOf</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sec"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sec">sec</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sech"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sech">sech</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_setNotation"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_setNotation">setNotation</a> : <a href="Symbol.html">Symbol</a> -&gt <a href="Void.html">Void</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_sign"></a><dl><dt><a href="SpecialFunctionCategory.html#f_sign">sign</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_simpMod"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_simpMod">simpMod</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_simpMod">simpMod</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), <a href="List.html">List</a>(%)) -&gt Record(Sys : <a href="List.html">List</a>(%), JM : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), Depend : Union("failed", <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_simpOne"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_simpOne">simpOne</a> : % -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_simplify"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_simplify">simplify</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)) -&gt Record(Sys : <a href="List.html">List</a>(%), JM : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), Depend : Union("failed", <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_sin"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sin">sin</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sinh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sinh">sinh</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_sizeLess_63"></a><dl><dt><a href="EuclideanDomain.html#f_sizeLess_63">sizeLess?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_solveFor"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_solveFor">solveFor</a> : (%, JB) -&gt Union(%, "failed")</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_sortLD"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_sortLD">sortLD</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_sqrt"></a><dl><dt><a href="RadicalCategory.html#f_sqrt">sqrt</a> : % -&gt %</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_squareFree"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFree">squareFree</a> : % -&gt <a href="Factored.html">Factored</a>(%)</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_squareFreePart"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFreePart">squareFreePart</a> : % -&gt %</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_struveH"></a><dl><dt><a href="SpecialFunctionCategory.html#f_struveH">struveH</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_struveL"></a><dl><dt><a href="SpecialFunctionCategory.html#f_struveL">struveL</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_subst"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_subst">subst</a> : (%, JB, %) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_subst">subst</a> : (%, <a href="Equation.html">Equation</a>(%)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_subst">subst</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_subst">subst</a> : (%, <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%)), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_summation"></a><dl><dt><a href="CombinatorialOpsCategory.html#f_summation">summation</a> : (%, <a href="SegmentBinding.html">SegmentBinding</a>(%)) -&gt %</dt><dd> from <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a></dd></dl>
+<dl><dt><a href="CombinatorialOpsCategory.html#f_summation">summation</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a></dd></dl>
+<a name="f_symbol"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_symbol">symbol</a> : <a href="List.html">List</a>(%) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_tan"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_tan">tan</a> : % -&gt %</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_tanh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_tanh">tanh</a> : % -&gt %</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_tower"></a><dl><dt><a href="ExpressionSpace2.html#f_tower">tower</a> : % -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="ExpressionSpace2.html#f_tower">tower</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(%))</dt><dd> from <a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt %</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %)</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitStep"></a><dl><dt><a href="SpecialFunctionCategory.html#f_unitStep">unitStep</a> : % -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_univariate"></a><dl><dt><a href="FunctionSpace2.html#f_univariate">univariate</a> : (%, <a href="Kernel.html">Kernel</a>(%)) -&gt <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%))</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_variables"></a><dl><dt><a href="FunctionSpace2.html#f_variables">variables</a> : % -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<dl><dt><a href="FunctionSpace2.html#f_variables">variables</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))</dd></dl>
+<a name="f_weberE"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weberE">weberE</a> : (%, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassP"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassP">weierstrassP</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassPInverse"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassPInverse">weierstrassPInverse</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassPPrime"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassPPrime">weierstrassPPrime</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassSigma"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassSigma">weierstrassSigma</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_weierstrassZeta"></a><dl><dt><a href="SpecialFunctionCategory.html#f_weierstrassZeta">weierstrassZeta</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_whittakerM"></a><dl><dt><a href="SpecialFunctionCategory.html#f_whittakerM">whittakerM</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_whittakerW"></a><dl><dt><a href="SpecialFunctionCategory.html#f_whittakerW">whittakerW</a> : (%, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_wilsonW"></a><dl><dt><a href="SpecialFunctionCategory.html#f_wilsonW">wilsonW</a> : (%, %, %, %, %, %) -&gt %</dt><dd> from <a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_zeroOf"></a><dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_zeroOf">zeroOf</a> : % -&gt %</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_zeroOf">zeroOf</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_zeroOf">zeroOf</a> : <a href="Polynomial.html">Polynomial</a>(%) -&gt %</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_zeroOf">zeroOf</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt %</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_zeroOf">zeroOf</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<a name="f_zerosOf"></a><dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_zerosOf">zerosOf</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedFunctionSpace.html#f_zerosOf">zerosOf</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_zerosOf">zerosOf</a> : <a href="Polynomial.html">Polynomial</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_zerosOf">zerosOf</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<dl><dt><a href="AlgebraicallyClosedField.html#f_zerosOf">zerosOf</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)
+<p><a href="BiModule.html">BiModule</a>(<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>)
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Kernel.html">Kernel</a>(%))
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="LiouvillianFunctionCategory.html">LiouvillianFunctionCategory</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="Patternable.html">Patternable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Kernel.html">Kernel</a>(%))
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="AlgebraicallyClosedFunctionSpace.html">AlgebraicallyClosedFunctionSpace</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="Kernel.html">Kernel</a>(%), %)
+<p><a href="CombinatorialFunctionCategory.html">CombinatorialFunctionCategory</a>
+<p><a href="FunctionSpace.html">FunctionSpace</a>(<a href="Integer.html">Integer</a>)
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="SpecialFunctionCategory.html">SpecialFunctionCategory</a>
+<p><a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a>
+<p><a href="Module.html">Module</a>(%)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="ExpressionSpace2.html">ExpressionSpace2</a>(<a href="Kernel.html">Kernel</a>(%))
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))
+<p><a href="EuclideanDomain.html">EuclideanDomain</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))
+<p><a href="CombinatorialOpsCategory.html">CombinatorialOpsCategory</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="Field.html">Field</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))
+<p><a href="FunctionSpace2.html">FunctionSpace2</a>(<a href="Integer.html">Integer</a>, <a href="Kernel.html">Kernel</a>(%))
+<p><a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a>
+<p><a href="canonicalsClosed.html">canonicalsClosed</a>
+<p><a href="DivisionRing.html">DivisionRing</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a>
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(JB)
+<p><a href="Rng.html">Rng</a>
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="FullyPatternMatchable.html">FullyPatternMatchable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="ExpressionSpace.html">ExpressionSpace</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Evalable.html">Evalable</a>(%)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a>
+<p><a href="FullyRetractableTo.html">FullyRetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="RadicalCategory.html">RadicalCategory</a>
+<p><a href="Group.html">Group</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="Module.html">Module</a>(<a href="Integer.html">Integer</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="PrimitiveFunctionCategory.html">PrimitiveFunctionCategory</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(JB)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Integer.html">Integer</a>)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(%, %)
+<p><a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a>
+<p><a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a>
+<p><a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Algebra.html">Algebra</a>(<a href="Integer.html">Integer</a>)
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="Magma.html">Magma</a>
+</body>
+</html>

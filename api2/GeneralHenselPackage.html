@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GeneralHenselPackage</title>
+</head>
+<body>
+<h1>GeneralHenselPackage(RP, TP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ghensel.spad#L1">ghensel.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ghensel.spad#L1">[edit on github]</a></p>
+<ul>
+<li>RP : <a href="EuclideanDomain.html">EuclideanDomain</a><li>TP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(RP)</ul>
+<p>
+This package is used for factorization of bivariate polynomials over a finite field and univariate polynomials with integer coefficients.</p>
+<a name="f_HenselLift"></a><dl><dt>HenselLift : (TP, <a href="List.html">List</a>(TP), RP, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Record(plist : <a href="List.html">List</a>(TP), modulo : RP)</dt><dd><p>
+<code>HenselLift(pol, lfacts, prime, bound)</code> lifts <code>lfacts</code>, that are the factors of <code>pol</code> mod <code>prime</code>, to factors of <code>pol</code> mod prime^k &gt; bound. No recombining is done .</p>
+</dd></dl>
+<a name="f_completeHensel"></a><dl><dt>completeHensel : (TP, <a href="List.html">List</a>(TP), RP, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(TP)</dt><dd><p>
+<code>completeHensel(pol, lfact, prime, bound)</code> lifts <code>lfact</code>, the factorization mod <code>prime</code> of <code>pol</code>, to the factorization mod prime^k&gt;bound. Factors are recombined on the way.</p>
+</dd></dl>
+<a name="f_reduction"></a><dl><dt>reduction : (TP, RP) -&gt TP</dt><dd><p>
+<code>reduction(u, pol)</code> computes the symmetric reduction of <code>u</code> mod pol</p>
+</dd></dl>
+</body>
+</html>

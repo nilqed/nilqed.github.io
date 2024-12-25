@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>compUtil</title>
+</head>
+<body>
+<h1>compUtil(UT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/computation.spad#L2265">computation.spad line 2265</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/computation.spad#L2265">[edit on github]</a></p>
+<ul>
+<li>UT : <a href="VarCat.html">VarCat</a></ul>
+<p>
+The compUtil package provides utilities to convert between the computational domains: Lambda, Ski and ILogic. Both Lambda are Ski are Turing complete and can be coerced to each other. Lambda and Ski are not equal and they are only isomorphic up to beta-equivalence and beta-equivalence is undecidable so there is not a direct correspondence between the nodes in their trees. Also the names of bound variables and other such constructions may be lost in Lambda <code>-&gt;</code> Ski <code>-&gt;</code> Lambda round trip. An element of ILogic cannot be coerced to the other types. However ILogic can be used to produce a theory which can be concerted to/from the other domains using Curry-Howard isomorphism.</p>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="SKICombinators.html">SKICombinators</a>(UT) -&gt <a href="ILogic.html">ILogic</a></dt><dd><p>
+<code>coerce combinators</code> to intuitionistic logic this is known as the Curry-Howard isomorphism it uses the following rules: rule SI1: Ski[Kab] <code>=&gt;</code> a <code>-&gt;</code> (<code>b</code> <code>-&gt;</code> a), rule SI2: Ski[Sabc] <code>=&gt;</code> (a <code>-&gt;</code> (<code>b</code> <code>-&gt;</code> <code>c</code>)) <code>-&gt;</code> ((a <code>-&gt;</code> <code>b</code>) <code>-&gt;</code> (a <code>-&gt;</code> <code>c</code>)), rule SI3: Ski[a a-<code>&gt;b</code>] <code>=&gt;</code> <code>b</code> the last rule is function application (modus ponens)</p>
+</dd></dl>
+<dl><dt>coerce : <a href="SKICombinators.html">SKICombinators</a>(UT) -&gt <a href="Lambda.html">Lambda</a>(UT)</dt><dd><p>
+<code>coerce SKI</code> combinators to Lambda term. this conversion is done by applying the following rules rule SL1: Ski[<code>I</code>] = <code>x</code>.0 rule SL2: Ski[<code>K</code>] = <code>x</code>.<code>y</code>.1 rule SL3: Ski[<code>S</code>] = <code>x</code>.<code>y</code>.<code>z</code>.(2 0 (1 0)) rule SL4: Ski[(<code>E1</code> <code>E2</code>)] = (Ski[<code>E1</code>] Ski[<code>E2</code>])</p>
+</dd></dl>
+<dl><dt>coerce : <a href="Lambda.html">Lambda</a>(UT) -&gt <a href="SKICombinators.html">SKICombinators</a>(UT)</dt><dd><p>
+<code>coerce Lambda</code> term to SKI combinators. this process is known as abstraction elimination. it is done by applying the following rules until all lambda terms have been eliminated. rule LS1: Lam[<code>x</code>] <code>=&gt;</code> <code>x</code> rule LS2: Lam[(<code>E1</code> <code>E2</code>)] <code>=&gt;</code> (Lam[<code>E1</code>] Lam[<code>E2</code>]) rule LS3: Lam[<code>x</code>.<code>E</code>] <code>=&gt;</code> (<code>K</code> Lam[<code>E</code>]) (if <code>x</code> does not occur free in <code>E</code>) rule LS4: Lam[<code>x</code>.<code>x</code>] <code>=&gt;</code> <code>I</code> rule LS5: Lam[<code>x</code>.<code>y</code>.<code>E</code>] <code>=&gt;</code> Lam[<code>x</code>.Lam[<code>y</code>.<code>E</code>]] (if <code>x</code> occurs free in <code>E</code>) rule LS6: Lam[<code>x</code>.(<code>E1</code> <code>E2</code>)] <code>=&gt;</code> (<code>S</code> Lam[<code>x</code>.<code>E1</code>] Lam[<code>x</code>.<code>E2</code>])</p>
+</dd></dl>
+</body>
+</html>

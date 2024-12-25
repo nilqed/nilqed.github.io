@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TubePlotTools</title>
+</head>
+<body>
+<h1>TubePlotTools</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tube.spad#L52">tube.spad line 52</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tube.spad#L52">[edit on github]</a></p>
+<p>
+Tools for constructing tubes around 3-dimensional parametric curves.</p>
+<a name="f__42"></a><dl><dt>* : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>s * p</code> returns a point whose coordinates are the scalar multiple of the point <code>p</code> by the scalar <code>s</code>, preserving the color, or fourth coordinate, of <code>p</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>p + q</code> computes and returns a point whose coordinates are the sums of the coordinates of the two points <code>p</code> and <code>q</code>, using the color, or fourth coordinate, of the first point <code>p</code> as the color also of the point <code>q</code>.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : (<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>p - q</code> computes and returns a point whose coordinates are the differences of the coordinates of two points <code>p</code> and <code>q</code>, using the color, or fourth coordinate, of the first point <code>p</code> as the color also of the point <code>q</code>.</p>
+</dd></dl>
+<a name="f_cosSinInfo"></a><dl><dt>cosSinInfo : <a href="Integer.html">Integer</a> -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>cosSinInfo(n)</code> returns the list of lists of values for <code>n</code>, in the form: <code>[[cos(n - 1) a, sin(n - 1) a], ..., [cos 2 a, sin 2 a], [cos a, sin a]]</code> where <code>a = 2 pi/n</code>. Note: <code>n</code> should be greater than 2.</p>
+</dd></dl>
+<a name="f_cross"></a><dl><dt>cross : (<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>cross(p, q)</code> computes the cross product of the two points <code>p</code> and <code>q</code> using only the first three coordinates, and keeping the color of the first point <code>p</code>. The result is returned as a point.</p>
+</dd></dl>
+<a name="f_dot"></a><dl><dt>dot : (<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>dot(p, q)</code> computes the dot product of the two points <code>p</code> and <code>q</code> using only the first three coordinates, and returns the resulting DoubleFloat.</p>
+</dd></dl>
+<a name="f_loopPoints"></a><dl><dt>loopPoints : (<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>))) -&gt <a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>loopPoints(p, n, b, r, lls)</code> creates and returns a list of points which form the loop with radius <code>r</code>, around the center point indicated by the point <code>p</code>, with the principal normal vector of the space curve at point <code>p</code> given by the point(vector) <code>n</code>, and the binormal vector given by the point(vector) <code>b</code>, and a list of lists, <code>lls</code>, which is the <span class="spadfun">cosSinInfo</span> of the number of points defining the loop.</p>
+</dd></dl>
+<a name="f_point"></a><dl><dt>point : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>point(x1, x2, x3, c)</code> creates and returns a point from the three specified coordinates <code>x1</code>, <code>x2</code>, <code>x3</code>, and also a fourth coordinate, <code>c</code>, which is generally used to specify the color of the point.</p>
+</dd></dl>
+<a name="f_unitVector"></a><dl><dt>unitVector : <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>unitVector(p)</code> creates the unit vector of the point <code>p</code> and returns the result as a point. Note: <code>unitVector(p) = p/|p|</code>.</p>
+</dd></dl>
+</body>
+</html>

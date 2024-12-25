@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FractionFreeFastGaussianFractions</title>
+</head>
+<body>
+<h1>FractionFreeFastGaussianFractions(D, V, VF)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fffg.spad#L525">fffg.spad line 525</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fffg.spad#L525">[edit on github]</a></p>
+<ul>
+<li>D : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="GcdDomain.html">GcdDomain</a>)<li>V : <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>)<li>VF : <a href="FiniteAbelianMonoidRing.html">FiniteAbelianMonoidRing</a>(<a href="Fraction.html">Fraction</a>(D), <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</ul>
+<p>
+This package lifts the interpolation functions from FractionFreeFastGaussian to fractions.</p>
+<a name="f_generalInterpolation"></a><dl><dt>generalInterpolation : (<a href="List.html">List</a>(D), Mapping(D, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, V), <a href="Vector.html">Vector</a>(VF), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(D))</dt><dd><p>
+<code>generalInterpolation(l, CA, f, eta)</code> performs Hermite-Pade approximation using the given action <code>CA</code> of polynomials on the elements of <code>f</code>. The result is guaranteed to be correct up to order |eta|-1. Given that eta is a "normal" point, the degrees on the diagonal are given by eta. The degrees of column <code>i</code> are in this case eta + <code>e</code>.<code>i</code> - [1, 1, ..., 1], where the degree of zero is <code>-1</code>.</p>
+</dd></dl>
+</body>
+</html>

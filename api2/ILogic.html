@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ILogic</title>
+</head>
+<body>
+<h1>ILogic</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/logic.spad#L2454">logic.spad line 2454</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/logic.spad#L2454">[edit on github]</a></p>
+<p>
+ILogic is an algebra with <code>true</code>, <code>false</code> and other 'unproven' values</p>
+<a name="f__47_92"></a><dl><dt><a href="MeetSemilattice.html#f__47_92">/\</a> : (%, %) -&gt %</dt><dd> from <a href="MeetSemilattice.html">MeetSemilattice</a></dd></dl>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> (boolean <code>true</code>) if Intuitionistic Logic values are the same. Translates from Intuitionistic Logic to Boolean Logic</p>
+</dd></dl>
+<a name="f_T"></a><dl><dt><a href="BoundedMeetSemilattice.html#f_T">T</a> : () -&gt %</dt><dd> from <a href="BoundedMeetSemilattice.html">BoundedMeetSemilattice</a></dd></dl>
+<a name="f__92_47"></a><dl><dt><a href="JoinSemilattice.html#f__92_47">\/</a> : (%, %) -&gt %</dt><dd> from <a href="JoinSemilattice.html">JoinSemilattice</a></dd></dl>
+<a name="f__95_124_95"></a><dl><dt><a href="BoundedJoinSemilattice.html#f__95_124_95">_|_</a> : () -&gt %</dt><dd> from <a href="BoundedJoinSemilattice.html">BoundedJoinSemilattice</a></dd></dl>
+<a name="f_atom_63"></a><dl><dt>atom? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is an atom, that is a leaf node otherwise return <code>false</code> if this is a compound term</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_deductions"></a><dl><dt>deductions : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+assumes <code>ln</code> contains a list of factors which must be <code>true</code> for the whole to be <code>true</code> (such as the list produced by factor). From this deductions attempts to produce a list of other proposition that must also be <code>true</code> by using modus ponens. This is used to determine the returned type when converting ILogic to types by using the Curry-Howard isomorphism.</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+splits <code>n</code> into a list of factors which must be <code>true</code> for the whole to be <code>true</code>. This assumes that the top level is already a set of factors separated by <code>/\</code> otherwise the result will just be a list with one entry: <code>'n'</code>. This is used when converting ILogic to types by using the Curry-Howard isomorphism.</p>
+</dd></dl>
+<a name="f_getChildren"></a><dl><dt>getChildren : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+returns child nodes if this is a compound term otherwise returns []</p>
+</dd></dl>
+<a name="f_implies"></a><dl><dt>implies : (%, %) -&gt %</dt><dd><p>
+<code>implies(a, b)</code> returns the logical implication of ILogic a and <code>b</code>. a is premise, <code>b</code> is conclusion, result is <code>false</code> (contradiction) if premise=true and conclusion=false does not mean there is a causal connection</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_logicF"></a><dl><dt>logicF : () -&gt %</dt><dd><p>
+<code>false</code> (contradiction) is a logical constant.</p>
+</dd></dl>
+<a name="f_logicT"></a><dl><dt>logicT : () -&gt %</dt><dd><p>
+<code>true</code> is a logical constant.</p>
+</dd></dl>
+<a name="f_opType"></a><dl><dt>opType : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+if this is a compound op then opType returns the type of that op: "IMPLY"::Symbol =implies "AND"::Symbol=/\ "OR"::Symbol=<code>\/</code> "NOT"::Symbol=~ "OTHER"::Symbol=not compound op</p>
+</dd></dl>
+<a name="f_parseIL"></a><dl><dt>parseIL : <a href="String.html">String</a> -&gt %</dt><dd><p>
+Constructs intuitionistic logic terms from a string notation assumes format like this: &lt;term&gt; : <code>:=</code> var | &lt;term&gt;/\spad&lt;term&gt; | &lt;term&gt;<code>\/</code>&lt;term&gt; | &lt;term&gt;-&gt;&lt;term&gt; | "("&lt;term&gt;")"</p>
+</dd></dl>
+<a name="f_parseIL2"></a><dl><dt>parseIL2 : (<a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(rft : %, pout : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+Constructs intuitionistic logic terms from a string notation assumes format like this: &lt;term2&gt; : <code>:=</code> var | "("&lt;term&gt;")" &lt;term&gt; : <code>:=</code> var | &lt;term&gt;/\spad&lt;term&gt; | &lt;term&gt;<code>\/</code>&lt;term&gt; | &lt;term&gt;-&gt;&lt;term&gt; | "("&lt;term&gt;")"</p>
+</dd></dl>
+<a name="f_parseILTerm"></a><dl><dt>parseILTerm : (<a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(rft : %, pout : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+parseTerm is used by parseIL. It would rarely be called externally but it is here to allow it to call parseIL that is to allow circular calls</p>
+</dd></dl>
+<a name="f_proposition"></a><dl><dt>proposition : <a href="String.html">String</a> -&gt %</dt><dd><p>
+Constructs a proposition</p>
+</dd></dl>
+<a name="f_redux"></a><dl><dt>redux : % -&gt %</dt><dd><p>
+attempt to simplify theory apply recursively to subnodes normally this should not be necessary since logic values are interpreted when constructed</p>
+</dd></dl>
+<a name="f_toString"></a><dl><dt>toString : % -&gt <a href="String.html">String</a></dt><dd><p>
+creates a string representation of this term and its sub-terms</p>
+</dd></dl>
+<a name="f_toStringUnwrapped"></a><dl><dt>toStringUnwrapped : % -&gt <a href="String.html">String</a></dt><dd><p>
+similar to 'toString' but does not put outer compound terms in brackets</p>
+</dd></dl>
+<a name="f_value"></a><dl><dt>value : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+returns: "T"::Symbol = <code>T</code> "F"::Symbol = <code>_|_</code> "E"::Symbol = error "P"::Symbol = proposition "C"::Symbol = compound Constructs lambda term and bind any variables with the name provided</p>
+</dd></dl>
+<a name="f__126"></a><dl><dt>~ : % -&gt %</dt><dd><p>
+<code>~(x)</code> returns the logical complement of <code>x</code>. TODO not sure if complement should be included here? intuitionistic logic can have complement but has different axioms to complement in Boolean algebra. Equivalent capability can be provided by implication.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BoundedLattice.html">BoundedLattice</a>
+<p><a href="BoundedJoinSemilattice.html">BoundedJoinSemilattice</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BoundedMeetSemilattice.html">BoundedMeetSemilattice</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="MeetSemilattice.html">MeetSemilattice</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="JoinSemilattice.html">JoinSemilattice</a>
+</body>
+</html>

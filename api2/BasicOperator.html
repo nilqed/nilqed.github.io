@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>BasicOperator</title>
+</head>
+<body>
+<h1>BasicOperator</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/op.spad#L1">op.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/op.spad#L1">[edit on github]</a></p>
+<p>
+A basic operator is an object that can be applied to a list of arguments from a set, the result being a kernel over that set.</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_arity"></a><dl><dt>arity : % -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>arity(op)</code> returns <code>n</code> if <code>op</code> is <code>n</code>-ary, and "failed" if <code>op</code> has arbitrary arity.</p>
+</dd></dl>
+<a name="f_assert"></a><dl><dt>assert : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>assert(op, s)</code> attaches property <code>s</code> to <code>op</code>. Argument <code>op</code> is modified "in place", i.e. no copy is made.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_comparison"></a><dl><dt>comparison : (%, Mapping(<a href="Boolean.html">Boolean</a>, %, %)) -&gt %</dt><dd><p>
+<code>comparison(op, foo?)</code> attaches foo? as the "%less?" property to <code>op</code>. If <code>op1</code> and <code>op2</code> have the same name, and one of them has a "%less?" property <code>f</code>, then <code>f(op1, op2)</code> is called to decide whether <code>op1 &lt; op2</code>.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(op)</code> returns a copy of <code>op</code>.</p>
+</dd></dl>
+<a name="f_deleteProperty_33"></a><dl><dt>deleteProperty! : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>deleteProperty!(op, s)</code> unattaches property <code>s</code> from <code>op</code>. Argument <code>op</code> is modified "in place", i.e. no copy is made.</p>
+</dd></dl>
+<a name="f_display"></a><dl><dt>display : (%, Mapping(<a href="OutputForm.html">OutputForm</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>))) -&gt %</dt><dd><p>
+<code>display(op, foo)</code> attaches foo as the "%display" property of <code>op</code>. If <code>op</code> has a "%display" property <code>f</code>, then <code>op(a1,...,an)</code> gets converted to OutputForm as <code>f(a1, ..., an)</code>.</p>
+</dd></dl>
+<dl><dt>display : (%, Mapping(<a href="OutputForm.html">OutputForm</a>, <a href="OutputForm.html">OutputForm</a>)) -&gt %</dt><dd><p>
+<code>display(op, foo)</code> attaches foo as the "%display" property of <code>op</code>. If <code>op</code> has a "%display" property <code>f</code>, then <code>op(a)</code> gets converted to OutputForm as <code>f(a)</code>. Argument <code>op</code> must be unary.</p>
+</dd></dl>
+<dl><dt>display : % -&gt Union(Mapping(<a href="OutputForm.html">OutputForm</a>, <a href="List.html">List</a>(<a href="OutputForm.html">OutputForm</a>)), "failed")</dt><dd><p>
+<code>display(op)</code> returns the "%display" property of <code>op</code> if it has one attached, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_equality"></a><dl><dt>equality : (%, Mapping(<a href="Boolean.html">Boolean</a>, %, %)) -&gt %</dt><dd><p>
+<code>equality(op, foo?)</code> attaches foo? as the "%equal?" property to <code>op</code>. If <code>op1</code> and <code>op2</code> have the same name, and one of them has an "%equal?" property <code>f</code>, then <code>f(op1, op2)</code> is called to decide whether <code>op1</code> and <code>op2</code> should be considered equal.</p>
+</dd></dl>
+<a name="f_has_63"></a><dl><dt>has? : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>has?(op, s)</code> tests if property <code>s</code> is attached to <code>op</code>.</p>
+</dd></dl>
+<a name="f_input"></a><dl><dt>input : (%, Mapping(<a href="InputForm.html">InputForm</a>, <a href="List.html">List</a>(<a href="InputForm.html">InputForm</a>))) -&gt %</dt><dd><p>
+<code>input(op, foo)</code> attaches foo as the "%input" property of <code>op</code>. If <code>op</code> has a "%input" property <code>f</code>, then <code>op(a1,...,an)</code> gets converted to InputForm as <code>f(a1, ..., an)</code>.</p>
+</dd></dl>
+<dl><dt>input : % -&gt Union(Mapping(<a href="InputForm.html">InputForm</a>, <a href="List.html">List</a>(<a href="InputForm.html">InputForm</a>)), "failed")</dt><dd><p>
+<code>input(op)</code> returns the "%input" property of <code>op</code> if it has one attached, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_is_63"></a><dl><dt>is? : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>is?(op, s)</code> tests if the name of <code>op</code> is <code>s</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_name"></a><dl><dt>name : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>name(op)</code> returns the name of <code>op</code>.</p>
+</dd></dl>
+<a name="f_nary_63"></a><dl><dt>nary? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>nary?(op)</code> tests if <code>op</code> has arbitrary arity.</p>
+</dd></dl>
+<a name="f_nullary_63"></a><dl><dt>nullary? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>nullary?(op)</code> tests if <code>op</code> is nullary.</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>operator(f)</code> makes <code>f</code> into an operator with arbitrary arity.</p>
+</dd></dl>
+<dl><dt>operator : (<a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>operator(f, n)</code> makes <code>f</code> into an <code>n</code>-ary operator.</p>
+</dd></dl>
+<a name="f_properties"></a><dl><dt>properties : % -&gt <a href="AssociationList.html">AssociationList</a>(<a href="Symbol.html">Symbol</a>, <a href="None.html">None</a>)</dt><dd><p>
+<code>properties(op)</code> returns the list of all the properties currently attached to <code>op</code>.</p>
+</dd></dl>
+<a name="f_property"></a><dl><dt>property : (%, <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="None.html">None</a>, "failed")</dt><dd><p>
+<code>property(op, s)</code> returns the value of property <code>s</code> if it is attached to <code>op</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_setProperties"></a><dl><dt>setProperties : (%, <a href="AssociationList.html">AssociationList</a>(<a href="Symbol.html">Symbol</a>, <a href="None.html">None</a>)) -&gt %</dt><dd><p>
+<code>setProperties(op, l)</code> sets the property list of <code>op</code> to <code>l</code>. Argument <code>op</code> is modified "in place", i.e. no copy is made.</p>
+</dd></dl>
+<a name="f_setProperty"></a><dl><dt>setProperty : (%, <a href="Symbol.html">Symbol</a>, <a href="None.html">None</a>) -&gt %</dt><dd><p>
+<code>setProperty(op, s, v)</code> attaches property <code>s</code> to <code>op</code>, and sets its value to <code>v</code>. Argument <code>op</code> is modified "in place", i.e. no copy is made.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_unary_63"></a><dl><dt>unary? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>unary?(op)</code> tests if <code>op</code> is unary.</p>
+</dd></dl>
+<a name="f_weight"></a><dl><dt>weight : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>weight(op, n)</code> attaches the weight <code>n</code> to <code>op</code>.</p>
+</dd></dl>
+<dl><dt>weight : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>weight(op)</code> returns the weight attached to <code>op</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+</body>
+</html>

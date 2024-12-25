@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MonoidRing</title>
+</head>
+<body>
+<h1>MonoidRing(R, M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mring.spad#L33">mring.spad line 33</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mring.spad#L33">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>M : <a href="Monoid.html">Monoid</a></ul>
+<p>
+MonoidRing(<code>R</code>, <code>M</code>), implements the algebra of all maps from the monoid <code>M</code> to the commutative ring <code>R</code> with finite support. Multiplication of two maps <code>f</code> and <code>g</code> is defined to map an element <code>c</code> of <code>M</code> to the (convolution) sum over  f(a)g(b) such that  ab = c. Thus <code>M</code> can be identified with a canonical basis and the maps can also be considered as formal linear combinations of the elements in <code>M</code>. Scalar multiples of a basis element are called monomials. A prominent example is the class of polynomials where the monoid is a direct product of the natural numbers with pointwise addition. When <code>M</code> is FreeMonoid Symbol, one gets polynomials in infinitely many non-commuting variables. Another application area is representation theory of finite groups <code>G</code>, where modules over MonoidRing(<code>R</code>, <code>G</code>) are studied.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(R)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(R)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if R has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficient">coefficient</a> : (%, M) -&gt R</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, M)</dd></dl>
+<a name="f_coefficients"></a><dl><dt><a href="FreeModuleCategory.html#f_coefficients">coefficients</a> : % -&gt <a href="List.html">List</a>(R)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, M)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a> and M has <a href="CommutativeStar.html">CommutativeStar</a></dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : M -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(M)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(R)</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="MonoidRingCategory.html#f_coerce">coerce</a> : <a href="List.html">List</a>(Record(k : M, c : R)) -&gt %</dt><dd> from <a href="MonoidRingCategory.html">MonoidRingCategory</a>(R, M)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : M, c : R)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : M, c : R)) -&gt % if M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_enumerate"></a><dl><dt><a href="Finite.html#f_enumerate">enumerate</a> : () -&gt <a href="List.html">List</a>(%) if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a> if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a> if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_index"></a><dl><dt><a href="Finite.html#f_index">index</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt % if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt R if M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt % if M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt M if M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : M, c : R) if M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_linearExtend"></a><dl><dt><a href="FreeModuleCategory.html#f_linearExtend">linearExtend</a> : (Mapping(R, M), %) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, M)</dd></dl>
+<a name="f_listOfTerms"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_listOfTerms">listOfTerms</a> : % -&gt <a href="List.html">List</a>(Record(k : M, c : R))</dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, M)</dd></dl>
+<a name="f_lookup"></a><dl><dt><a href="Finite.html#f_lookup">lookup</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a> if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(R, R), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (R, M) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_monomials"></a><dl><dt><a href="FreeModuleCategory.html#f_monomials">monomials</a> : % -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, M)</dd></dl>
+<a name="f_numberOfMonomials"></a><dl><dt><a href="IndexedDirectProductCategory.html#f_numberOfMonomials">numberOfMonomials</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, M)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)</dd></dl>
+<a name="f_random"></a><dl><dt><a href="Finite.html#f_random">random</a> : () -&gt % if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt % if M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt M</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(M)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(M, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(M)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_size"></a><dl><dt><a href="Finite.html#f_size">size</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if M has <a href="Finite.html">Finite</a> and R has <a href="Finite.html">Finite</a> or R has <a href="Comparable.html">Comparable</a> and M has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_support"></a><dl><dt><a href="FreeModuleCategory.html#f_support">support</a> : % -&gt <a href="List.html">List</a>(M)</dt><dd> from <a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, M)</dd></dl>
+<a name="f_terms"></a><dl><dt><a href="MonoidRingCategory.html#f_terms">terms</a> : % -&gt <a href="List.html">List</a>(Record(k : M, c : R))</dt><dd> from <a href="MonoidRingCategory.html">MonoidRingCategory</a>(R, M)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="Algebra.html">Algebra</a>(R)
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="BiModule.html">BiModule</a>(R, R)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(R)
+<p><a href="FreeModuleCategory.html">FreeModuleCategory</a>(R, M)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="RightModule.html">RightModule</a>(R)
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="LeftModule.html">LeftModule</a>(R)
+<p><a href="Module.html">Module</a>(%)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(M)
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(R, M)
+<p><a href="Rng.html">Rng</a>
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(M)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="IndexedDirectProductCategory.html">IndexedDirectProductCategory</a>(R, M)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="MonoidRingCategory.html">MonoidRingCategory</a>(R, M)
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(R)
+<p><a href="Module.html">Module</a>(R)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="Finite.html">Finite</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SemiRing.html">SemiRing</a>
+</body>
+</html>

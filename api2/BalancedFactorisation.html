@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>BalancedFactorisation</title>
+</head>
+<body>
+<h1>BalancedFactorisation(R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/oderf.spad#L1">oderf.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/oderf.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="GcdDomain.html">GcdDomain</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+This package provides balanced factorisations of polynomials.</p>
+<a name="f_balancedFactorisation"></a><dl><dt>balancedFactorisation : (UP, UP) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>balancedFactorisation(a, b)</code> returns a factorisation <code>a = p1^e1 ... pm^em</code> such that each <code><code>pi</code></code> is balanced with respect to <code>b</code>.</p>
+</dd></dl>
+<dl><dt>balancedFactorisation : (UP, <a href="List.html">List</a>(UP)) -&gt <a href="Factored.html">Factored</a>(UP)</dt><dd><p>
+<code>balancedFactorisation(a, [b1, ..., bn])</code> returns a factorisation <code>a = p1^e1 ... pm^em</code> such that each <code>pi</code> is balanced with respect to <code>[b1, ..., bm]</code>.</p>
+</dd></dl>
+</body>
+</html>

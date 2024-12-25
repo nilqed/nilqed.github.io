@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerPolySum</title>
+</head>
+<body>
+<h1>InnerPolySum(E, V, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sum.spad#L1">sum.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sum.spad#L1">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, V)</ul>
+<p>
+tools for the summation packages.</p>
+<a name="f_sum"></a><dl><dt>sum : (P, V) -&gt Record(num : P, den : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>sum(p(n), n)</code> returns <code>P(n)</code>, the indefinite sum of <code>p(n)</code> with respect to upward difference on <code>n</code>, i.e. <code>P(n+1) - P(n) = p(n)</code>.</p>
+</dd></dl>
+<dl><dt>sum : (P, V, <a href="Segment.html">Segment</a>(P)) -&gt Record(num : P, den : <a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>sum(p(n), n = a..b)</code> returns <code>p(a) + p(a+1) + ... + p(b)</code>.</p>
+</dd></dl>
+</body>
+</html>

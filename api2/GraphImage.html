@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GraphImage</title>
+</head>
+<body>
+<h1>GraphImage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/view2D.spad#L1">view2D.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/view2D.spad#L1">[edit on github]</a></p>
+<p>
+TwoDimensionalGraph creates virtual two dimensional graphs (to be displayed on TwoDimensionalViewports).</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_appendPoint"></a><dl><dt>appendPoint : (%, <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>appendPoint(<code>gi</code>, pt)</code> appends the point <code>pt</code> to the end of the list of points component for the graph, <code><code>gi</code></code>, which is of the domain GraphImage.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))) -&gt %</dt><dd><p>
+<code>coerce(llp)</code> creates and returns a graph of the domain GraphImage which is composed of the list of list of points given by <code>llp</code>, and whose point colors, line colors and point sizes are determined by the default functions <span class="spadfun">pointColorDefault</span>, <span class="spadfun">lineColorDefault</span>, and <span class="spadfun">pointSizeDefault</span>. The graph data is then sent to the viewport manager where it waits to be included in a two-dimensional viewport window.</p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+<code>coerce(<code>gi</code>)</code> returns the indicated graph, <code><code>gi</code></code>, of domain GraphImage as output of the domain OutputForm.</p>
+</dd></dl>
+<a name="f_component"></a><dl><dt>component : (%, <a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Palette.html">Palette</a>, <a href="Palette.html">Palette</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>component(<code>gi</code>, lp, pal1, pal2, p)</code> sets the components of the graph, <code><code>gi</code></code> of the domain GraphImage, to the values given. The point list for <code><code>gi</code></code> is set to the list <code>lp</code>, the color of the points in <code>lp</code> is set to the palette color <code>pal1</code>, the color of the lines which connect the points <code>lp</code> is set to the palette color <code>pal2</code>, and the size of the points in <code>lp</code> is given by the integer <code>p</code>.</p>
+</dd></dl>
+<dl><dt>component : (%, <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>component(<code>gi</code>, pt)</code> modifies the graph <code><code>gi</code></code> of the domain GraphImage to contain one point component, <code>pt</code> whose point color, line color and point size are determined by the default functions <span class="spadfun">pointColorDefault</span>, <span class="spadfun">lineColorDefault</span>, and <span class="spadfun">pointSizeDefault</span>.</p>
+</dd></dl>
+<dl><dt>component : (%, <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Palette.html">Palette</a>, <a href="Palette.html">Palette</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>component(<code>gi</code>, pt, pal1, pal2, ps)</code> modifies the graph <code><code>gi</code></code> of the domain GraphImage to contain one point component, <code>pt</code> whose point color is set to the palette color <code>pal1</code>, line color is set to the palette color <code>pal2</code>, and point size is set to the positive integer <code>ps</code>.</p>
+</dd></dl>
+<a name="f_graphImage"></a><dl><dt>graphImage : () -&gt %</dt><dd><p>
+<code>graphImage()</code> returns an empty graph with 0 point lists of the domain GraphImage. A graph image contains the graph data component of a two dimensional viewport.</p>
+</dd></dl>
+<a name="f_key"></a><dl><dt>key : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>key(<code>gi</code>)</code> returns the process ID of the given graph, <code><code>gi</code></code>, of the domain GraphImage.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_makeGraphImage"></a><dl><dt>makeGraphImage : <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))) -&gt %</dt><dd><p>
+<code>makeGraphImage(llp)</code> returns a graph of the domain GraphImage which is composed of the points and lines from the list of lists of points, <code>llp</code>, with default point size and default point and line colours.</p>
+</dd></dl>
+<dl><dt>makeGraphImage : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="List.html">List</a>(<a href="Palette.html">Palette</a>), <a href="List.html">List</a>(<a href="Palette.html">Palette</a>), <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)) -&gt %</dt><dd><p>
+<code>makeGraphImage(llp, lpal1, lpal2, lp)</code> returns a graph of the domain GraphImage which is composed of the points and lines from the list of lists of points, <code>llp</code>, whose point colors are indicated by the list of palette colors, <code>lpal1</code>, and whose lines are colored according to the list of palette colors, <code>lpal2</code>. The parameter <code>lp</code> is a list of integers which denote the size of the data points.</p>
+</dd></dl>
+<dl><dt>makeGraphImage : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="List.html">List</a>(<a href="Palette.html">Palette</a>), <a href="List.html">List</a>(<a href="Palette.html">Palette</a>), <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>), <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>)) -&gt %</dt><dd><p>
+<code>makeGraphImage(llp, lpal1, lpal2, lp, lopt)</code> returns a graph of the domain GraphImage which is composed of the points and lines from the list of lists of points, <code>llp</code>, whose point colors are indicated by the list of palette colors, <code>lpal1</code>, and whose lines are colored according to the list of palette colors, <code>lpal2</code>. The parameter <code>lp</code> is a list of integers which denote the size of the data points, and <code>lopt</code> is the list of draw command options.</p>
+</dd></dl>
+<a name="f_point"></a><dl><dt>point : (%, <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Palette.html">Palette</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>point(<code>gi</code>, pt, pal)</code> modifies the graph <code><code>gi</code></code> of the domain GraphImage to contain one point component, <code>pt</code> whose point color is set to be the palette color <code>pal</code>, and whose line color and point size are determined by the default functions <span class="spadfun">lineColorDefault</span> and <span class="spadfun">pointSizeDefault</span>.</p>
+</dd></dl>
+<a name="f_pointLists"></a><dl><dt>pointLists : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)))</dt><dd><p>
+<code>pointLists(<code>gi</code>)</code> returns the list of lists of points which compose the given graph, <code><code>gi</code></code>, of the domain GraphImage.</p>
+</dd></dl>
+<a name="f_putColorInfo"></a><dl><dt>putColorInfo : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))), <a href="List.html">List</a>(<a href="Palette.html">Palette</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)))</dt><dd><p>
+<code>putColorInfo(llp, lpal)</code> takes a list of list of points, <code>llp</code>, and returns the points with their hue and shade components set according to the list of palette colors, <code>lpal</code>.</p>
+</dd></dl>
+<a name="f_ranges"></a><dl><dt>ranges : % -&gt <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+<code>ranges(<code>gi</code>)</code> returns the list of ranges of the point components from the indicated graph, <code><code>gi</code></code>, of the domain GraphImage.</p>
+</dd></dl>
+<dl><dt>ranges : (%, <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>))) -&gt <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+<code>ranges(<code>gi</code>, lr)</code> modifies the list of ranges for the given graph, <code><code>gi</code></code> of the domain GraphImage, to be that of the list of range segments, <code>lr</code>, and returns the new range list for <code><code>gi</code></code>.</p>
+</dd></dl>
+<a name="f_sendGraphImage"></a><dl><dt>sendGraphImage : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>sendGraphImage(<code>gi</code>)</code> takes the given graph, <code><code>gi</code></code> of the domain GraphImage, and sends it<code>'s</code> data to the viewport manager where it waits to be included in a two-dimensional viewport window. <code><code>gi</code></code> cannot be an empty graph.</p>
+</dd></dl>
+<a name="f_units"></a><dl><dt>units : % -&gt <a href="List.html">List</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>units(<code>gi</code>)</code> returns the list of unit increments for the <code>x</code> and <code>y</code> axes of the indicated graph, <code><code>gi</code></code>, of the domain GraphImage.</p>
+</dd></dl>
+<dl><dt>units : (%, <a href="List.html">List</a>(<a href="Float.html">Float</a>)) -&gt <a href="List.html">List</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>units(<code>gi</code>, lu)</code> modifies the list of unit increments for the <code>x</code> and <code>y</code> axes of the given graph, <code><code>gi</code></code> of the domain GraphImage, to be that of the list of unit increments, <code>lu</code>, and returns the new list of units for <code><code>gi</code></code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

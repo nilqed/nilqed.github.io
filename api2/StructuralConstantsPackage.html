@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>StructuralConstantsPackage</title>
+</head>
+<body>
+<h1>StructuralConstantsPackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/naalg.spad#L463">naalg.spad line 463</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/naalg.spad#L463">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+StructuralConstantsPackage provides functions creating structural constants from a multiplication tables or a basis of a matrix algebra and other useful functions in this context.</p>
+<a name="f_coordinates"></a><dl><dt>coordinates : (<a href="Matrix.html">Matrix</a>(R), <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R))) -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>coordinates(a, [v1, ..., vn])</code> returns the coordinates of <code>a</code> with respect to the <code>R</code>-module basis <code>v1</code>, ..., <code>vn</code>.</p>
+</dd></dl>
+<a name="f_structuralConstants"></a><dl><dt>structuralConstants : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(R)) -&gt <a href="Vector.html">Vector</a>(<a href="Matrix.html">Matrix</a>(R))</dt><dd><p>
+<code>structuralConstants(basis)</code> takes the <code>basis</code> of a matrix algebra, e.g. the result of <span class="spadfun">basisOfCentroid</span> and calculates the structural constants. Note, that the it is not checked, whether <code>basis</code> really is a <code>basis</code> of a matrix algebra.</p>
+</dd></dl>
+<dl><dt>structuralConstants : (<a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="Vector.html">Vector</a>(<a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>structuralConstants(ls, mt)</code> determines the structural constants of an algebra with generators <code>ls</code> and multiplication table <code>mt</code>, the entries of which must be given as linear polynomials in the indeterminates given by <code>ls</code>. The result is in particular useful as fourth argument for AlgebraGivenByStructuralConstants and GenericNonAssociativeAlgebra.</p>
+</dd></dl>
+<dl><dt>structuralConstants : (<a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="Vector.html">Vector</a>(<a href="Matrix.html">Matrix</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>structuralConstants(ls, mt)</code> determines the structural constants of an algebra with generators <code>ls</code> and multiplication table <code>mt</code>, the entries of which must be given as linear polynomials in the indeterminates given by <code>ls</code>. The result is in particular useful as fourth argument for AlgebraGivenByStructuralConstants and GenericNonAssociativeAlgebra.</p>
+</dd></dl>
+</body>
+</html>

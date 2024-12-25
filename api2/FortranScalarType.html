@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FortranScalarType</title>
+</head>
+<body>
+<h1>FortranScalarType</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/forttyp.spad#L1">forttyp.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/forttyp.spad#L1">[edit on github]</a></p>
+<p>
+Creates and manipulates objects which correspond to the basic FORTRAN data types: REAL, INTEGER, COMPLEX, LOGICAL and CHARACTER</p>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>x=y</code> tests for equality</p>
+</dd></dl>
+<a name="f_character_63"></a><dl><dt>character? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>character?(t)</code> tests whether <code>t</code> is equivalent to the FORTRAN type CHARACTER.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>coerce(s)</code> transforms the string <code>s</code> into an element of FortranScalarType provided <code>s</code> is one of "real", "double precision", "complex", "logical", "integer", "character", "REAL", "COMPLEX", "LOGICAL", "INTEGER", "CHARACTER", "DOUBLE PRECISION"</p>
+</dd></dl>
+<dl><dt>coerce : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>coerce(s)</code> transforms the symbol <code>s</code> into an element of FortranScalarType provided <code>s</code> is one of real, complex, double precision, logical, integer, character, REAL, COMPLEX, LOGICAL, INTEGER, CHARACTER, DOUBLE PRECISION</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt>coerce : % -&gt <a href="SExpression.html">SExpression</a></dt><dd><p>
+<code>coerce(x)</code> returns the <code>s</code>-expression associated with <code>x</code></p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>coerce(x)</code> returns the uppercase string associated with <code>x</code></p>
+</dd></dl>
+<dl><dt>coerce : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>coerce(x)</code> returns the symbol associated with <code>x</code></p>
+</dd></dl>
+<a name="f_complex_63"></a><dl><dt>complex? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>complex?(t)</code> tests whether <code>t</code> is equivalent to the FORTRAN type COMPLEX.</p>
+</dd></dl>
+<a name="f_double_63"></a><dl><dt>double? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>double?(t)</code> tests whether <code>t</code> is equivalent to the FORTRAN type DOUBLE PRECISION</p>
+</dd></dl>
+<a name="f_doubleComplex_63"></a><dl><dt>doubleComplex? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>doubleComplex?(t)</code> tests whether <code>t</code> is equivalent to the (non-standard) FORTRAN type DOUBLE COMPLEX.</p>
+</dd></dl>
+<a name="f_integer_63"></a><dl><dt>integer? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>integer?(t)</code> tests whether <code>t</code> is equivalent to the FORTRAN type INTEGER.</p>
+</dd></dl>
+<a name="f_logical_63"></a><dl><dt>logical? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>logical?(t)</code> tests whether <code>t</code> is equivalent to the FORTRAN type LOGICAL.</p>
+</dd></dl>
+<a name="f_real_63"></a><dl><dt>real? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>real?(t)</code> tests whether <code>t</code> is equivalent to the FORTRAN type REAL.</p>
+</dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

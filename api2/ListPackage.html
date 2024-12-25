@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ListPackage</title>
+</head>
+<body>
+<h1>ListPackage(T)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/logic.spad#L129">logic.spad line 129</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/logic.spad#L129">[edit on github]</a></p>
+<ul>
+<li>T : <a href="BasicType.html">BasicType</a></ul>
+<p>
+splitting lists</p>
+<a name="f_cartesian"></a><dl><dt>cartesian : <a href="List.html">List</a>(<a href="List.html">List</a>(T$)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(T$))</dt><dd><p>
+<code>cartesian([S1, S2, ...])</code> returns the set of lists [<code>s1</code>, <code>s2</code>, ...] with <code>si</code> in <code>Si</code></p>
+</dd></dl>
+<a name="f_cartesianPower"></a><dl><dt>cartesianPower : (<a href="List.html">List</a>(T$), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(T$))</dt><dd><p>
+<code>cartesianPower(S, n)</code> returns the <code>n</code>-th cartesian power of the list <code>S</code></p>
+</dd></dl>
+<a name="f_minShift"></a><dl><dt>minShift : <a href="List.html">List</a>(T$) -&gt <a href="List.html">List</a>(T$) if T$ has <a href="OrderedSet.html">OrderedSet</a></dt><dd><p>
+<code>minShift(l)</code> returns the lexicographically minimal cyclic rotation of the list <code>l</code></p>
+</dd></dl>
+<a name="f_shiftLeft"></a><dl><dt>shiftLeft : <a href="List.html">List</a>(T$) -&gt <a href="List.html">List</a>(T$)</dt><dd><p>
+<code>leftShift(l)</code> rotates the list <code>l</code> to the left and inserts the first element at the end</p>
+</dd></dl>
+<a name="f_splitList"></a><dl><dt>splitList : (Mapping(<a href="Boolean.html">Boolean</a>, T$), <a href="List.html">List</a>(T$)) -&gt Record(yes : <a href="List.html">List</a>(T$), no : <a href="List.html">List</a>(T$))</dt><dd><p>
+<code>splitList(f, x)</code> splits the list <code>x</code> into a yes part and a no part according to the boolean function <code>f</code></p>
+</dd></dl>
+<a name="f_topologicalSort"></a><dl><dt>topologicalSort : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Boolean.html">Boolean</a>)), <a href="List.html">List</a>(T$)) -&gt <a href="List.html">List</a>(T$)</dt><dd><p>
+<code>topologicalSort(xx)</code> returns a rearrangement of the elements which is compatible with the partial order. (Martin Baker) <code>I</code> added this version because predicate function can be difficult to work with so use table instead.</p>
+</dd></dl>
+<dl><dt>topologicalSort : (Mapping(<a href="Boolean.html">Boolean</a>, T$, T$), <a href="List.html">List</a>(T$)) -&gt <a href="List.html">List</a>(T$)</dt><dd><p>
+<code>topologicalSort(xx)</code> returns a rearrangement of the elements which is compatible with the partial order.</p>
+</dd></dl>
+<a name="f_topologicalSort_33"></a><dl><dt>topologicalSort! : (Mapping(<a href="Boolean.html">Boolean</a>, T$, T$), <a href="List.html">List</a>(T$)) -&gt <a href="List.html">List</a>(T$)</dt><dd><p>
+<code>topologicalSort(xx)</code> returns a rearrangement of the elements which is compatible with the partial order. The argument list <code>xx</code> is destroyed.</p>
+</dd></dl>
+</body>
+</html>

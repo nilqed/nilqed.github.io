@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>WeierstrassPreparation</title>
+</head>
+<body>
+<h1>WeierstrassPreparation(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/weier.spad#L1">weier.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/weier.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Field.html">Field</a></ul>
+<p>
+This package implements the Weierstrass preparation theorem <code>f</code> for multivariate power series. weierstrass(<code>v</code>, <code>p</code>) where <code>v</code> is a variable, and <code>p</code> is a TaylorSeries(<code>R</code>) in which there is term of form c*v^s where <code>c</code> is a constant. Let <code>s</code> be minimal as above. The result is a list of TaylorSeries coefficients A[<code>i</code>] of the equivalent polynomial A = A[0] + A[1]<code>*v</code> + A[2]<code>*v^2</code> + ... + A[<code>s</code>-1]<code>*v^</code>(<code>s</code>-1) + <code>v^s</code> such that p=A*B , <code>B</code> being a TaylorSeries of minimum degree 0</p>
+<a name="f_weierstrass"></a><dl><dt>weierstrass : (<a href="Symbol.html">Symbol</a>, <a href="TaylorSeries.html">TaylorSeries</a>(R)) -&gt <a href="List.html">List</a>(<a href="TaylorSeries.html">TaylorSeries</a>(R))</dt><dd><p>
+<code>weierstrass(v, ts)</code> where <code>v</code> is a variable and <code>ts</code> is a TaylorSeries, implements the Weierstrass Preparation Theorem. The result is a list of TaylorSeries that are the coefficients of the equivalent series.</p>
+</dd></dl>
+</body>
+</html>

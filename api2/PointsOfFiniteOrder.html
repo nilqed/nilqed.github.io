@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PointsOfFiniteOrder</title>
+</head>
+<body>
+<h1>PointsOfFiniteOrder(R0, F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pfo.spad#L259">pfo.spad line 259</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pfo.spad#L259">[edit on github]</a></p>
+<ul>
+<li>R0 : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>))<li>F : <a href="FunctionSpace.html">FunctionSpace</a>(R0)<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : <a href="FunctionFieldCategory.html">FunctionFieldCategory</a>(F, UP, UPUP)</ul>
+<p>
+This package provides function for testing whether a divisor on a curve is a torsion divisor.</p>
+<a name="f_cmult"></a><dl><dt>cmult : <a href="List.html">List</a>(<a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R0, <a href="Kernel.html">Kernel</a>(F))) -&gt <a href="SparseMultivariatePolynomial.html">SparseMultivariatePolynomial</a>(R0, <a href="Kernel.html">Kernel</a>(F))</dt><dd><p>
+<code>cmult(x)</code> should be local but conditional</p>
+</dd></dl>
+<a name="f_handle_95imaginary"></a><dl><dt>handle_imaginary : <a href="FiniteDivisor.html">FiniteDivisor</a>(F, UP, UPUP, R) -&gt Record(ncurve : UPUP, n_div_numer : <a href="Vector.html">Vector</a>(UPUP), n_div_denom : UPUP, need_change : <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>handle_imaginary(d)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_order"></a><dl><dt>order : <a href="FiniteDivisor.html">FiniteDivisor</a>(F, UP, UPUP, R) -&gt Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "failed")</dt><dd><p>
+<code>order(fd)</code> returns order of divisor <code>fd</code> or <code>"failed"</code> if <code>fd</code> is not of finite order.</p>
+</dd></dl>
+<a name="f_possibleOrder"></a><dl><dt>possibleOrder : <a href="FiniteDivisor.html">FiniteDivisor</a>(F, UP, UPUP, R) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>possibleOrder(d)</code> returns <code>n</code> such that <code>d</code> is of order <code>n</code>, or of infinite order.</p>
+</dd></dl>
+<a name="f_simplifyCoeffs"></a><dl><dt>simplifyCoeffs : (Record(ncurve : UPUP, n_div_numer : <a href="Vector.html">Vector</a>(UPUP), n_div_denom : UPUP, need_change : <a href="Boolean.html">Boolean</a>), <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(F))) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if R0 has <a href="CharacteristicZero.html">CharacteristicZero</a> and F has <a href="AlgebraicallyClosedField.html">AlgebraicallyClosedField</a></dt><dd><p>
+<code>simplifyCoeffs(d, la)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_torsion_63"></a><dl><dt>torsion? : <a href="FiniteDivisor.html">FiniteDivisor</a>(F, UP, UPUP, R) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>torsion?(fd)</code> returns <code>true</code> if <code>fd</code> is of finite order, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_torsionIfCan"></a><dl><dt>torsionIfCan : <a href="FiniteDivisor.html">FiniteDivisor</a>(F, UP, UPUP, R) -&gt Union(Record(order : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, function : R), "failed")</dt><dd><p>
+<code>torsionIfCan(fd)</code> returns <code>[n, f]</code> such that <code>n*fd = div(f)</code> when <code>fd</code> is of finite order. torsionIfCan(<code>fd</code>) returns <code>"failed"</code> if <code>fd</code> is not of finite order.</p>
+</dd></dl>
+</body>
+</html>

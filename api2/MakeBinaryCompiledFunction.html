@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MakeBinaryCompiledFunction</title>
+</head>
+<body>
+<h1>MakeBinaryCompiledFunction(S, D1, D2, I)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mkfunc.spad#L302">mkfunc.spad line 302</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mkfunc.spad#L302">[edit on github]</a></p>
+<ul>
+<li>S : <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)<li>D1 : <a href="Type.html">Type</a><li>D2 : <a href="Type.html">Type</a><li>I : <a href="Type.html">Type</a></ul>
+<p>
+transforms top-level objects into compiled functions.</p>
+<a name="f_binaryFunction"></a><dl><dt>binaryFunction : <a href="Symbol.html">Symbol</a> -&gt Mapping(I, D1, D2)</dt><dd><p>
+<code>binaryFunction(s)</code> is a local function</p>
+</dd></dl>
+<a name="f_compiledFunction"></a><dl><dt>compiledFunction : (S, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>) -&gt Mapping(I, D1, D2)</dt><dd><p>
+<code>compiledFunction(expr, x, y)</code> returns a function <code>f: (D1, D2) -&gt; I</code> defined by <code>f(x, y) == expr</code>. Function <code>f</code> is compiled and directly applicable to objects of type <code>(D1, D2)</code></p>
+</dd></dl>
+</body>
+</html>

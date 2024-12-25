@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Collection</title>
+</head>
+<body>
+<h1>Collection(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/aggcat.spad#L182">aggcat.spad line 182</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/aggcat.spad#L182">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+A collection is a homogeneous aggregate which can be built from a list of members. The operation used to build the aggregate is generically named <span class="spadfun">construct</span>. However, each collection provides its own special function with the same name as the data type, except with an initial lower case letter, e.g. <span class="spadfun">list</span> for List, <span class="spadfun">flexibleArray</span> for FlexibleArray, and so on.</p>
+<a name="f__35"></a><dl><dt><a href="Aggregate.html#f__35">#</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a> or S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_any_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_any_63">any?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if S has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_construct"></a><dl><dt>construct : <a href="List.html">List</a>(S) -&gt %</dt><dd><p>
+<code>construct([x, y, ..., z])</code> returns the collection of elements <code>x, y, ..., z</code> ordered as given. Equivalently written as <code>[x, y, ..., z]$D</code>, where <code>D</code> is the domain. <code>D</code> may be omitted for those of type List.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if S has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_copy"></a><dl><dt><a href="Aggregate.html#f_copy">copy</a> : % -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_count"></a><dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (S, %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_count">count</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_empty"></a><dl><dt><a href="Aggregate.html#f_empty">empty</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_empty_63"></a><dl><dt><a href="Aggregate.html#f_empty_63">empty?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eq_63"></a><dl><dt><a href="Aggregate.html#f_eq_63">eq?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, S, S) -&gt % if S has <a href="Evalable.html">Evalable</a>(S) and S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(S, S)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(S)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S) and S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(S)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(S), <a href="List.html">List</a>(S)) -&gt % if S has <a href="Evalable.html">Evalable</a>(S) and S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(S, S)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(S))) -&gt % if S has <a href="Evalable.html">Evalable</a>(S) and S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="Evalable.html">Evalable</a>(S)</dd></dl>
+<a name="f_every_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_every_63">every?</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt <a href="Boolean.html">Boolean</a> if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_find"></a><dl><dt>find : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt Union(S, "failed")</dt><dd><p>
+<code>find(p, u)</code> returns the first <code>x</code> in <code>u</code> such that <code>p(x)</code> is <code>true</code>, and "failed" otherwise.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_less_63"></a><dl><dt><a href="Aggregate.html#f_less_63">less?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="HomogeneousAggregate.html#f_map">map</a> : (Mapping(S, S), %) -&gt %</dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_map_33"></a><dl><dt><a href="HomogeneousAggregate.html#f_map_33">map!</a> : (Mapping(S, S), %) -&gt % if % has <a href="shallowlyMutable.html">shallowlyMutable</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : % -&gt S if S has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<dl><dt><a href="HomogeneousAggregate.html#f_max">max</a> : (Mapping(<a href="Boolean.html">Boolean</a>, S, S), %) -&gt S if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_member_63"></a><dl><dt><a href="HomogeneousAggregate.html#f_member_63">member?</a> : (S, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_members"></a><dl><dt><a href="HomogeneousAggregate.html#f_members">members</a> : % -&gt <a href="List.html">List</a>(S) if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="HomogeneousAggregate.html#f_min">min</a> : % -&gt S if S has <a href="OrderedSet.html">OrderedSet</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_more_63"></a><dl><dt><a href="Aggregate.html#f_more_63">more?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_parts"></a><dl><dt><a href="HomogeneousAggregate.html#f_parts">parts</a> : % -&gt <a href="List.html">List</a>(S) if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)</dd></dl>
+<a name="f_reduce"></a><dl><dt>reduce : (Mapping(S, S, S), %) -&gt S if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>reduce(f, u)</code> reduces the binary operation <code>f</code> across <code>u</code>. For example, if <code>u</code> is <code>[x, y, ..., z]</code> then <code>reduce(f, u)</code> returns <code>f(..f(f(x, y), ...), z)</code>. Note: if <code>u</code> has one element <code>x</code>, <code>reduce(f, u)</code> returns <code>x</code>. Error: if <code>u</code> is empty.</p>
+</dd></dl>
+<dl><dt>reduce : (Mapping(S, S, S), %, S) -&gt S if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>reduce(f, u, x)</code> reduces the binary operation <code>f</code> across <code>u</code>, where <code>x</code> is the identity operation of <code>f</code>. Same as <code>reduce(f, u)</code> if <code>u</code> has 2 or more elements. Returns <code>f(y, x)</code> if <code>u</code> has one element <code>y</code>. Returns <code>x</code> if <code>u</code> is empty. For example, <code>reduce(+, u, 0)</code> returns the sum of the elements of <code>u</code>.</p>
+</dd></dl>
+<dl><dt>reduce : (Mapping(S, S, S), %, S, S) -&gt S if S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>reduce(f, u, x, z)</code> reduces the binary operation <code>f</code> across <code>u</code>, stopping when an "absorbing element" <code>z</code> is encountered. As for <code>reduce(f, u, x)</code>, <code>x</code> is the identity element of <code>f</code>. Same as <code>reduce(f, u, x)</code> when <code>u</code> contains no element <code>z</code>. Thus the third argument <code>x</code> is returned when <code>u</code> is empty.</p>
+</dd></dl>
+<a name="f_remove"></a><dl><dt>remove : (S, %) -&gt % if S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>remove(x, u)</code> returns a copy of <code>u</code> with all elements equal to <code>x</code> removed. Note: <code>remove(x, u) = [y for y in u | y ~= x]</code>.</p>
+</dd></dl>
+<dl><dt>remove : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>remove(p, u)</code> returns a copy of <code>u</code> removing all elements <code>x</code> such that <code>p(x)</code> is <code>true</code>. Note: <code>remove(p, u) = [x for x in u | not p(x)]</code>.</p>
+</dd></dl>
+<a name="f_removeDuplicates"></a><dl><dt>removeDuplicates : % -&gt % if S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>removeDuplicates(u)</code> returns a copy of <code>u</code> with all duplicates removed.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="Aggregate.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f_select"></a><dl><dt>select : (Mapping(<a href="Boolean.html">Boolean</a>, S), %) -&gt % if % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd><p>
+<code>select(p, u)</code> returns a copy of <code>u</code> containing only those elements such <code>p(x)</code> is <code>true</code>. Note: <code>select(p, u) = [x for x in u | p(x)]</code>.</p>
+</dd></dl>
+<a name="f_size_63"></a><dl><dt><a href="Aggregate.html#f_size_63">size?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Aggregate.html">Aggregate</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a> or S has <a href="BasicType.html">BasicType</a> and % has <a href="finiteAggregate.html">finiteAggregate</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="HomogeneousAggregate.html">HomogeneousAggregate</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Aggregate.html">Aggregate</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(S, S)
+<p><a href="Evalable.html">Evalable</a>(S)
+</body>
+</html>

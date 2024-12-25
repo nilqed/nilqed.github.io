@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SubSpace</title>
+</head>
+<body>
+<h1>SubSpace(n, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/newpoint.spad#L101">newpoint.spad line 101</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/newpoint.spad#L101">[edit on github]</a></p>
+<ul>
+<li>n : <a href="PositiveInteger.html">PositiveInteger</a><li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+This domain is undocumented</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addPoint"></a><dl><dt>addPoint : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPoint(s, <code>li</code>, i)</code> adds the 4 dimensional point indicated by the index location, <code>i</code>, to the 3 dimensional subspace, <code>s</code>. The list of non negative integers, <code>li</code>, dictates the path to follow, or, to look at it another way, points to the component in which the point is to be added. It<code>'s</code> length should range from 0 to <code>n - 1</code> where <code>n</code> is the dimension of the subspace. If the length is <code>n - 1</code>, then a specific lowest level component is being referenced. If it is less than <code>n - 1</code>, then some higher level component (0 indicates top level component) is being referenced and a component of that level with the desired point is created. The subspace <code>s</code> is returned with the additional point.</p>
+</dd></dl>
+<dl><dt>addPoint : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Point.html">Point</a>(R)) -&gt %</dt><dd><p>
+<code>addPoint(s, <code>li</code>, p)</code> adds the 4 dimensional point, <code>p</code>, to the 3 dimensional subspace, <code>s</code>. The list of non negative integers, <code>li</code>, dictates the path to follow, or, to look at it another way, points to the component in which the point is to be added. It<code>'s</code> length should range from 0 to <code>n - 1</code> where <code>n</code> is the dimension of the subspace. If the length is <code>n - 1</code>, then a specific lowest level component is being referenced. If it is less than <code>n - 1</code>, then some higher level component (0 indicates top level component) is being referenced and a component of that level with the desired point is created. The subspace <code>s</code> is returned with the additional point.</p>
+</dd></dl>
+<dl><dt>addPoint : (%, <a href="Point.html">Point</a>(R)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>addPoint(s, p)</code> adds the point, <code>p</code>, to the 3 dimensional subspace, <code>s</code>, and returns the new total number of points in <code>s</code>.</p>
+</dd></dl>
+<a name="f_addPoint2"></a><dl><dt>addPoint2 : (%, <a href="Point.html">Point</a>(R)) -&gt %</dt><dd><p>
+<code>addPoint2(s, p)</code> adds the 4 dimensional point, <code>p</code>, to the 3 dimensional subspace, <code>s</code>. The subspace <code>s</code> is returned with the additional point.</p>
+</dd></dl>
+<a name="f_addPointLast"></a><dl><dt>addPointLast : (%, %, <a href="Point.html">Point</a>(R), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPointLast(s, s2, <code>li</code>, p)</code> adds the 4 dimensional point, <code>p</code>, to the 3 dimensional subspace, <code>s</code>. <code>s2</code> point to the end of the subspace <code>s</code>. <code>n</code> is the path in the <code>s2</code> component. The subspace <code>s</code> is returned with the additional point.</p>
+</dd></dl>
+<a name="f_birth"></a><dl><dt>birth : % -&gt %</dt><dd><p>
+<code>birth(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_child"></a><dl><dt>child : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>child(x, n)</code> is undocumented</p>
+</dd></dl>
+<a name="f_children"></a><dl><dt>children : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>children(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_closeComponent"></a><dl><dt>closeComponent : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>closeComponent(s, <code>li</code>, b)</code> sets the property of the component in the 3 dimensional subspace, <code>s</code>, to be closed if <code>b</code> is <code>true</code>, or open if <code>b</code> is <code>false</code>. The list of non negative integers, <code>li</code>, dictates the path to follow, or, to look at it another way, points to the component whose closed property is to be set. The subspace, <code>s</code>, is returned with the component property modification.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_deepCopy"></a><dl><dt>deepCopy : % -&gt %</dt><dd><p>
+<code>deepCopy(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_defineProperty"></a><dl><dt>defineProperty : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a>) -&gt %</dt><dd><p>
+<code>defineProperty(s, <code>li</code>, p)</code> defines the component property in the 3 dimensional subspace, <code>s</code>, to be that of <code>p</code>, where <code>p</code> is of the domain SubSpaceComponentProperty. The list of non negative integers, <code>li</code>, dictates the path to follow, or, to look at it another way, points to the component whose property is being defined. The subspace, <code>s</code>, is returned with the component property definition.</p>
+</dd></dl>
+<a name="f_extractClosed"></a><dl><dt>extractClosed : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>extractClosed(s)</code> returns the Boolean value of the closed property for the indicated 3 dimensional subspace <code>s</code>. If the property is closed, <code>True</code> is returned, otherwise <code>False</code> is returned.</p>
+</dd></dl>
+<a name="f_extractIndex"></a><dl><dt>extractIndex : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>extractIndex(s)</code> returns a non negative integer which is the current index of the 3 dimensional subspace <code>s</code>.</p>
+</dd></dl>
+<a name="f_extractPoint"></a><dl><dt>extractPoint : % -&gt <a href="Point.html">Point</a>(R)</dt><dd><p>
+<code>extractPoint(s)</code> returns the point which is given by the current index location into the point data field of the 3 dimensional subspace <code>s</code>.</p>
+</dd></dl>
+<a name="f_extractProperty"></a><dl><dt>extractProperty : % -&gt <a href="SubSpaceComponentProperty.html">SubSpaceComponentProperty</a></dt><dd><p>
+<code>extractProperty(s)</code> returns the property of domain SubSpaceComponentProperty of the indicated 3 dimensional subspace <code>s</code>.</p>
+</dd></dl>
+<a name="f_internal_63"></a><dl><dt>internal? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>internal?(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leaf_63"></a><dl><dt>leaf? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>leaf?(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_level"></a><dl><dt>level : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>level(s)</code> returns a non negative integer which is the current level field of the indicated 3 dimensional subspace <code>s</code>.</p>
+</dd></dl>
+<a name="f_merge"></a><dl><dt>merge : (%, %) -&gt %</dt><dd><p>
+<code>merge(s1, s2)</code> the subspaces <code>s1</code> and <code>s2</code> into a single subspace.</p>
+</dd></dl>
+<dl><dt>merge : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>merge(ls)</code> a list of subspaces, <code>ls</code>, into one subspace.</p>
+</dd></dl>
+<a name="f_modifyPoint"></a><dl><dt>modifyPoint : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>modifyPoint(s, <code>li</code>, i)</code> replaces an existing point in the 3 dimensional subspace, <code>s</code>, with the 4 dimensional point indicated by the index location, <code>i</code>. The list of non negative integers, <code>li</code>, dictates the path to follow, or, to look at it another way, points to the component in which the existing point is to be modified. An error message occurs if <code>s</code> is empty, otherwise the subspace <code>s</code> is returned with the point modification.</p>
+</dd></dl>
+<dl><dt>modifyPoint : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="Point.html">Point</a>(R)) -&gt %</dt><dd><p>
+<code>modifyPoint(s, <code>li</code>, p)</code> replaces an existing point in the 3 dimensional subspace, <code>s</code>, with the 4 dimensional point, <code>p</code>. The list of non negative integers, <code>li</code>, dictates the path to follow, or, to look at it another way, points to the component in which the existing point is to be modified. An error message occurs if <code>s</code> is empty, otherwise the subspace <code>s</code> is returned with the point modification.</p>
+</dd></dl>
+<dl><dt>modifyPoint : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Point.html">Point</a>(R)) -&gt %</dt><dd><p>
+<code>modifyPoint(s, ind, p)</code> modifies the point referenced by the index location, <code>ind</code>, by replacing it with the point, <code>p</code> in the 3 dimensional subspace, <code>s</code>. An error message occurs if <code>s</code> is empty, otherwise the subspace <code>s</code> is returned with the point modification.</p>
+</dd></dl>
+<a name="f_new"></a><dl><dt>new : () -&gt %</dt><dd><p>
+<code>new()</code> is undocumented</p>
+</dd></dl>
+<a name="f_numberOfChildren"></a><dl><dt>numberOfChildren : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>numberOfChildren(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_parent"></a><dl><dt>parent : % -&gt %</dt><dd><p>
+<code>parent(s)</code> returns the subspace which is the parent of the indicated 3 dimensional subspace <code>s</code>. If <code>s</code> is the top level subspace an error message is returned.</p>
+</dd></dl>
+<a name="f_pointData"></a><dl><dt>pointData : % -&gt <a href="List.html">List</a>(<a href="Point.html">Point</a>(R))</dt><dd><p>
+<code>pointData(s)</code> returns the list of points from the point data field of the 3 dimensional subspace <code>s</code>.</p>
+</dd></dl>
+<a name="f_root_63"></a><dl><dt>root? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>root?(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_separate"></a><dl><dt>separate : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>separate(s)</code> makes each of the components of the SubSpace, <code>s</code>, into a list of separate and distinct subspaces and returns the list.</p>
+</dd></dl>
+<a name="f_shallowCopy"></a><dl><dt>shallowCopy : % -&gt %</dt><dd><p>
+<code>shallowCopy(x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_subspace"></a><dl><dt>subspace : () -&gt %</dt><dd><p>
+<code>subspace()</code> is undocumented</p>
+</dd></dl>
+<a name="f_traverse"></a><dl><dt>traverse : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>traverse(s, <code>li</code>)</code> follows the branch list of the 3 dimensional subspace, <code>s</code>, along the path dictated by the list of non negative integers, <code>li</code>, which points to the component which has been traversed to. The subspace, <code>s</code>, is returned, where <code>s</code> is now the subspace pointed to by <code>li</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

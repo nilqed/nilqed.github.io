@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>XExponentialPackage</title>
+</head>
+<body>
+<h1>XExponentialPackage(R, VarSet, XPOLY)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/xlpoly.spad#L381">xlpoly.spad line 381</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/xlpoly.spad#L381">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Ring.html">Ring</a>, <a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>VarSet : <a href="OrderedSet.html">OrderedSet</a><li>XPOLY : <a href="XPolynomialsCat.html">XPolynomialsCat</a>(VarSet, R)</ul>
+<p>
+This package provides computations of logarithms and exponentials for polynomials in non-commutative variables.  Author: Michel Petitot (petitot@lifl.<code>fr</code>).</p>
+<a name="f_Hausdorff"></a><dl><dt>Hausdorff : (XPOLY, XPOLY, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt XPOLY</dt><dd><p>
+<code>Hausdorff(a, b, n)</code> returns log(exp(a)*exp(<code>b</code>)) truncated at order <code>n</code>.</p>
+</dd></dl>
+<a name="f_exp"></a><dl><dt>exp : (XPOLY, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt XPOLY</dt><dd><p>
+<code>exp(p, n)</code> returns the exponential of <code>p</code> truncated at order <code>n</code>.</p>
+</dd></dl>
+<a name="f_log"></a><dl><dt>log : (XPOLY, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt XPOLY</dt><dd><p>
+<code>log(p, n)</code> returns the logarithm of <code>p</code> truncated at order <code>n</code>.</p>
+</dd></dl>
+</body>
+</html>

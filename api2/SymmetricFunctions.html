@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SymmetricFunctions</title>
+</head>
+<body>
+<h1>SymmetricFunctions(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/efstruc.spad#L1">efstruc.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/efstruc.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+Computes all the symmetric functions in <code>n</code> variables.</p>
+<a name="f_symFunc"></a><dl><dt>symFunc : (R, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>symFunc(r, n)</code> returns the vector of the elementary symmetric functions in <code>[r, r, ..., r]</code> <code>n</code> times.</p>
+</dd></dl>
+<dl><dt>symFunc : <a href="List.html">List</a>(R) -&gt <a href="Vector.html">Vector</a>(R)</dt><dd><p>
+<code>symFunc([r1, ..., rn])</code> returns the vector of the elementary symmetric functions in the <code><code>ri</code>'s</code>: <code>[r1 + ... + rn, r1 r2 + ... + r(n-1) rn, ..., r1 r2 ... rn]</code>.</p>
+</dd></dl>
+</body>
+</html>

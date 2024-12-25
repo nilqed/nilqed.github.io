@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SystemSolvePackage</title>
+</head>
+<body>
+<h1>SystemSolvePackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/syssolp.spad#L1">syssolp.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/syssolp.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+Symbolic solver for systems of rational functions with coefficients in an integral domain <code>R</code>. The systems are solved in the field of rational functions over <code>R</code>. Solutions are exact of the form variable = value when the value is a member of the coefficient domain <code>R</code>. Otherwise the solutions are implicitly expressed as roots of univariate polynomial equations over <code>R</code>. Care is taken to guarantee that the denominators of the input equations do not vanish on the solution sets. The arguments to solve can either be given as equations or as rational functions interpreted as equal to zero. The user can specify an explicit list of symbols to be solved for, treating all other symbols appearing as parameters or omit the list of symbols in which case the system tries to solve with respect to all symbols appearing in the input.</p>
+<a name="f_solve"></a><dl><dt>solve : <a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>solve(eq)</code> finds the solutions of the equation <code>eq</code> with respect to the unique variable appearing in <code>eq</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>solve(eq, v)</code> finds the solutions of the equation <code>eq</code> with respect to the variable <code>v</code>.</p>
+</dd></dl>
+<dl><dt>solve : <a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>solve(p)</code> finds the solution of a rational function <code>p</code> = 0 with respect to the unique variable appearing in <code>p</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>solve(p, v)</code> solves the equation <code>p=0</code>, where <code>p</code> is a rational function with respect to the variable <code>v</code>.</p>
+</dd></dl>
+<dl><dt>solve : <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solve(le)</code> finds the solutions of the list <code>le</code> of equations of rational functions with respect to all symbols appearing in <code>le</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solve(le, lv)</code> finds the solutions of the list <code>le</code> of equations of rational functions with respect to the list of symbols <code>lv</code>.</p>
+</dd></dl>
+<dl><dt>solve : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solve(lp)</code> finds the solutions of the list <code>lp</code> of rational functions with respect to all symbols appearing in <code>lp</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)))))</dt><dd><p>
+<code>solve(lp, lv)</code> finds the solutions of the list <code>lp</code> of rational functions with respect to the list of symbols <code>lv</code>.</p>
+</dd></dl>
+<a name="f_triangularSystems"></a><dl><dt>triangularSystems : (<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)))</dt><dd><p>
+<code>triangularSystems(lf, lv)</code> solves the system of equations defined by <code>lf</code> with respect to the list of symbols <code>lv</code>; the system of equations is obtaining by equating to zero the list of rational functions <code>lf</code>. The output is a list of solutions where each solution is expressed as a "reduced" triangular system of polynomials.</p>
+</dd></dl>
+</body>
+</html>

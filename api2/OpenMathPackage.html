@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OpenMathPackage</title>
+</head>
+<body>
+<h1>OpenMathPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/omdev.spad#L236">omdev.spad line 236</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/omdev.spad#L236">[edit on github]</a></p>
+<p>
+OpenMathPackage provides some simple utilities to make reading OpenMath objects easier.</p>
+<a name="f_OMlistCDs"></a><dl><dt>OMlistCDs : () -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>OMlistCDs()</code> lists all the <code>CDs</code> supported by FriCAS.</p>
+</dd></dl>
+<a name="f_OMlistSymbols"></a><dl><dt>OMlistSymbols : <a href="String.html">String</a> -&gt <a href="List.html">List</a>(<a href="String.html">String</a>)</dt><dd><p>
+<code>OMlistSymbols(cd)</code> lists all the symbols in <code>cd</code>.</p>
+</dd></dl>
+<a name="f_OMread"></a><dl><dt>OMread : <a href="OpenMathDevice.html">OpenMathDevice</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>OMread(dev)</code> reads an OpenMath object from <code>dev</code> and passes it to FriCAS.</p>
+</dd></dl>
+<a name="f_OMreadFile"></a><dl><dt>OMreadFile : <a href="String.html">String</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>OMreadFile(f)</code> reads an OpenMath object from <code>f</code> and passes it to FriCAS.</p>
+</dd></dl>
+<a name="f_OMreadStr"></a><dl><dt>OMreadStr : <a href="String.html">String</a> -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>OMreadStr(f)</code> reads an OpenMath object from <code>f</code> and passes it to FriCAS.</p>
+</dd></dl>
+<a name="f_OMsupportsCD_63"></a><dl><dt>OMsupportsCD? : <a href="String.html">String</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>OMsupportsCD?(cd)</code> returns <code>true</code> if FriCAS supports <code>cd</code>, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_OMsupportsSymbol_63"></a><dl><dt>OMsupportsSymbol? : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>OMsupportsSymbol?(s, cd)</code> returns <code>true</code> if FriCAS supports symbol <code>s</code> from <code>CD</code> <code>cd</code>, <code>false</code> otherwise.</p>
+</dd></dl>
+<a name="f_OMunhandledSymbol"></a><dl><dt>OMunhandledSymbol : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Exit.html">Exit</a></dt><dd><p>
+<code>OMunhandledSymbol(s, cd)</code> raises an error if FriCAS reads a symbol which it is unable to handle. Note that this is different from an unexpected symbol.</p>
+</dd></dl>
+</body>
+</html>

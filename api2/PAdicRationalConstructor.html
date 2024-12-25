@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PAdicRationalConstructor</title>
+</head>
+<body>
+<h1>PAdicRationalConstructor(p, PADIC)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/padic.spad#L327">padic.spad line 327</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/padic.spad#L327">[edit on github]</a></p>
+<ul>
+<li>p : <a href="Integer.html">Integer</a><li>PADIC : <a href="PAdicIntegerCategory.html">PAdicIntegerCategory</a>(p)</ul>
+<p>
+This is the category of stream-based representations of <code>Qp</code>.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, PADIC) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(PADIC)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if PADIC has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (PADIC, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(PADIC)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="Field.html#f__47">/</a> : (%, %) -&gt %</dt><dd> from <a href="Field.html">Field</a></dd></dl>
+<dl><dt><a href="QuotientFieldCategory.html#f__47">/</a> : (PADIC, PADIC) -&gt %</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="DifferentialRing.html#f_D">D</a> : % -&gt % if PADIC has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_D">D</a> : (%, Mapping(PADIC, PADIC)) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(PADIC)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_D">D</a> : (%, Mapping(PADIC, PADIC), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(PADIC)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_D">D</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if PADIC has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="DivisionRing.html#f__94">^</a> : (%, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_abs"></a><dl><dt><a href="OrderedRing.html#f_abs">abs</a> : % -&gt % if PADIC has <a href="OrderedIntegralDomain.html">OrderedIntegralDomain</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_approximate"></a><dl><dt>approximate : (%, <a href="Integer.html">Integer</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)</dt><dd><p>
+<code>approximate(x, n)</code> returns a rational number <code>y</code> such that <code>y = x (mod p^n)</code>.</p>
+</dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_ceiling"></a><dl><dt><a href="QuotientFieldCategory.html#f_ceiling">ceiling</a> : % -&gt PADIC if PADIC has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if PADIC has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a> or PADIC has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : PADIC -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(PADIC)</dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : <a href="Symbol.html">Symbol</a> -&gt % if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_conditionP"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_conditionP">conditionP</a> : <a href="Matrix.html">Matrix</a>(%) -&gt Union(<a href="Vector.html">Vector</a>(%), "failed") if PADIC has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and % has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_continuedFraction"></a><dl><dt>continuedFraction : % -&gt <a href="ContinuedFraction.html">ContinuedFraction</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>continuedFraction(x)</code> converts the <code>p</code>-adic rational number <code>x</code> to a continued fraction.</p>
+</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="DoubleFloat.html">DoubleFloat</a> if PADIC has <a href="RealConstant.html">RealConstant</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Float.html">Float</a> if PADIC has <a href="RealConstant.html">RealConstant</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a> if PADIC has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>) if PADIC has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))</dd></dl>
+<dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>) if PADIC has <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<a name="f_denom"></a><dl><dt><a href="QuotientFieldCategory.html#f_denom">denom</a> : % -&gt PADIC</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_denominator"></a><dl><dt><a href="QuotientFieldCategory.html#f_denominator">denominator</a> : % -&gt %</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : % -&gt % if PADIC has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_differentiate">differentiate</a> : (%, Mapping(PADIC, PADIC)) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(PADIC)</dd></dl>
+<dl><dt><a href="DifferentialExtension.html#f_differentiate">differentiate</a> : (%, Mapping(PADIC, PADIC), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialExtension.html">DifferentialExtension</a>(PADIC)</dd></dl>
+<dl><dt><a href="DifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if PADIC has <a href="DifferentialRing.html">DifferentialRing</a></dt><dd> from <a href="DifferentialRing.html">DifferentialRing</a></dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt % if PADIC has <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_divide"></a><dl><dt><a href="EuclideanDomain.html#f_divide">divide</a> : (%, %) -&gt Record(quotient : %, remainder : %)</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, PADIC) -&gt % if PADIC has <a href="Eltable.html">Eltable</a>(PADIC, PADIC)</dt><dd> from <a href="Eltable.html">Eltable</a>(PADIC, %)</dd></dl>
+<a name="f_euclideanSize"></a><dl><dt><a href="EuclideanDomain.html#f_euclideanSize">euclideanSize</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, PADIC, PADIC) -&gt % if PADIC has <a href="Evalable.html">Evalable</a>(PADIC)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(PADIC, PADIC)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(PADIC)) -&gt % if PADIC has <a href="Evalable.html">Evalable</a>(PADIC)</dt><dd> from <a href="Evalable.html">Evalable</a>(PADIC)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(PADIC), <a href="List.html">List</a>(PADIC)) -&gt % if PADIC has <a href="Evalable.html">Evalable</a>(PADIC)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(PADIC, PADIC)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(PADIC))) -&gt % if PADIC has <a href="Evalable.html">Evalable</a>(PADIC)</dt><dd> from <a href="Evalable.html">Evalable</a>(PADIC)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(PADIC)) -&gt % if PADIC has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, PADIC)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, PADIC)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, PADIC) -&gt % if PADIC has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, PADIC)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, PADIC)</dd></dl>
+<a name="f_expressIdealMember"></a><dl><dt><a href="PrincipalIdealDomain.html#f_expressIdealMember">expressIdealMember</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extendedEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %) -&gt Record(coef1 : %, coef2 : %, generator : %)</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<dl><dt><a href="EuclideanDomain.html#f_extendedEuclidean">extendedEuclidean</a> : (%, %, %) -&gt Union(Record(coef1 : %, coef2 : %), "failed")</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_factor"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_factor">factor</a> : % -&gt <a href="Factored.html">Factored</a>(%)</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_factorPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorPolynomial">factorPolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if PADIC has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_factorSquareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_factorSquareFreePolynomial">factorSquareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if PADIC has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_floor"></a><dl><dt><a href="QuotientFieldCategory.html#f_floor">floor</a> : % -&gt PADIC if PADIC has <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_fractionPart"></a><dl><dt><a href="QuotientFieldCategory.html#f_fractionPart">fractionPart</a> : % -&gt %</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_init"></a><dl><dt><a href="StepThrough.html#f_init">init</a> : () -&gt % if PADIC has <a href="StepThrough.html">StepThrough</a></dt><dd> from <a href="StepThrough.html">StepThrough</a></dd></dl>
+<a name="f_inv"></a><dl><dt><a href="DivisionRing.html#f_inv">inv</a> : % -&gt %</dt><dd> from <a href="DivisionRing.html">DivisionRing</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %)</dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="FullyEvalableOver.html#f_map">map</a> : (Mapping(PADIC, PADIC), %) -&gt %</dt><dd> from <a href="FullyEvalableOver.html">FullyEvalableOver</a>(PADIC)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt % if PADIC has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt % if PADIC has <a href="OrderedSet.html">OrderedSet</a></dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_multiEuclidean"></a><dl><dt><a href="EuclideanDomain.html#f_multiEuclidean">multiEuclidean</a> : (<a href="List.html">List</a>(%), %) -&gt Union(<a href="List.html">List</a>(%), "failed")</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_negative_63"></a><dl><dt><a href="OrderedRing.html#f_negative_63">negative?</a> : % -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="OrderedIntegralDomain.html">OrderedIntegralDomain</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_nextItem"></a><dl><dt><a href="StepThrough.html#f_nextItem">nextItem</a> : % -&gt Union(%, "failed") if PADIC has <a href="StepThrough.html">StepThrough</a></dt><dd> from <a href="StepThrough.html">StepThrough</a></dd></dl>
+<a name="f_numer"></a><dl><dt><a href="QuotientFieldCategory.html#f_numer">numer</a> : % -&gt PADIC</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_numerator"></a><dl><dt><a href="QuotientFieldCategory.html#f_numerator">numerator</a> : % -&gt %</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_patternMatch"></a><dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Float.html">Float</a>, %) if PADIC has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)</dd></dl>
+<dl><dt><a href="PatternMatchable.html#f_patternMatch">patternMatch</a> : (%, <a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>), <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(<a href="Integer.html">Integer</a>, %) if PADIC has <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)</dd></dl>
+<a name="f_positive_63"></a><dl><dt><a href="OrderedRing.html#f_positive_63">positive?</a> : % -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="OrderedIntegralDomain.html">OrderedIntegralDomain</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_prime_63"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_prime_63">prime?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_principalIdeal"></a><dl><dt><a href="PrincipalIdealDomain.html#f_principalIdeal">principalIdeal</a> : <a href="List.html">List</a>(%) -&gt Record(coef : <a href="List.html">List</a>(%), generator : %)</dt><dd> from <a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a></dd></dl>
+<a name="f_quo"></a><dl><dt><a href="EuclideanDomain.html#f_quo">quo</a> : (%, %) -&gt %</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reducedSystem"></a><dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(PADIC)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(PADIC)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : <a href="Matrix.html">Matrix</a>(%) -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>) if PADIC has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(PADIC), vec : <a href="Vector.html">Vector</a>(PADIC))</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(PADIC)</dd></dl>
+<dl><dt><a href="LinearlyExplicitOver.html#f_reducedSystem">reducedSystem</a> : (<a href="Matrix.html">Matrix</a>(%), <a href="Vector.html">Vector</a>(%)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>), vec : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>)) if PADIC has <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<a name="f_rem"></a><dl><dt><a href="EuclideanDomain.html#f_rem">rem</a> : (%, %) -&gt %</dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_removeZeroes"></a><dl><dt>removeZeroes : % -&gt %</dt><dd><p>
+<code>removeZeroes(x)</code> removes leading zeroes from the representation of the <code>p</code>-adic rational <code>x</code>. A <code>p</code>-adic rational is represented by (1) an exponent and (2) a <code>p</code>-adic integer which may have leading zero digits. When the <code>p</code>-adic integer has a leading zero digit, a 'leading zero' is removed from the <code>p</code>-adic rational as follows: the number is rewritten by increasing the exponent by 1 and dividing the <code>p</code>-adic integer by <code>p</code>. Note: <code>removeZeroes(f)</code> removes all leading zeroes from <code>f</code>.</p>
+</dd></dl>
+<dl><dt>removeZeroes : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd><p>
+<code>removeZeroes(n, x)</code> removes up to <code>n</code> leading zeroes from the <code>p</code>-adic rational <code>x</code>.</p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt PADIC</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(PADIC)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Integer.html">Integer</a> if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt <a href="Symbol.html">Symbol</a> if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(PADIC, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(PADIC)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), "failed") if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Integer.html">Integer</a>, "failed") if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)</dd></dl>
+<dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(<a href="Symbol.html">Symbol</a>, "failed") if PADIC has <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sign"></a><dl><dt><a href="OrderedRing.html#f_sign">sign</a> : % -&gt <a href="Integer.html">Integer</a> if PADIC has <a href="OrderedIntegralDomain.html">OrderedIntegralDomain</a></dt><dd> from <a href="OrderedRing.html">OrderedRing</a></dd></dl>
+<a name="f_sizeLess_63"></a><dl><dt><a href="EuclideanDomain.html#f_sizeLess_63">sizeLess?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EuclideanDomain.html">EuclideanDomain</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if PADIC has <a href="Comparable.html">Comparable</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_solveLinearPolynomialEquation"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_solveLinearPolynomialEquation">solveLinearPolynomialEquation</a> : (<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt Union(<a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)), "failed") if PADIC has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_squareFree"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFree">squareFree</a> : % -&gt <a href="Factored.html">Factored</a>(%)</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_squareFreePart"></a><dl><dt><a href="UniqueFactorizationDomain.html#f_squareFreePart">squareFreePart</a> : % -&gt %</dt><dd> from <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a></dd></dl>
+<a name="f_squareFreePolynomial"></a><dl><dt><a href="PolynomialFactorizationExplicit.html#f_squareFreePolynomial">squareFreePolynomial</a> : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%) -&gt <a href="Factored.html">Factored</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) if PADIC has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dt><dd> from <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt %</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %)</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_wholePart"></a><dl><dt><a href="QuotientFieldCategory.html#f_wholePart">wholePart</a> : % -&gt PADIC</dt><dd> from <a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Float.html">Float</a>)
+<p><a href="PrincipalIdealDomain.html">PrincipalIdealDomain</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+<p><a href="Field.html">Field</a>
+<p><a href="canonicalUnitNormal.html">canonicalUnitNormal</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Integer.html">Integer</a>)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Float.html">Float</a>)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="LeftModule.html">LeftModule</a>(PADIC)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="DifferentialExtension.html">DifferentialExtension</a>(PADIC)
+<p><a href="Module.html">Module</a>(PADIC)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="Magma.html">Magma</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(PADIC)
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(PADIC)
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(PADIC)
+<p><a href="OrderedIntegralDomain.html">OrderedIntegralDomain</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="DifferentialRing.html">DifferentialRing</a>
+<p><a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a>
+<p><a href="DivisionRing.html">DivisionRing</a>
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="OrderedAbelianGroup.html">OrderedAbelianGroup</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="EuclideanDomain.html">EuclideanDomain</a>
+<p><a href="canonicalsClosed.html">canonicalsClosed</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>)
+<p><a href="RightModule.html">RightModule</a>(PADIC)
+<p><a href="BiModule.html">BiModule</a>(PADIC, PADIC)
+<p><a href="OrderedRing.html">OrderedRing</a>
+<p><a href="StepThrough.html">StepThrough</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="FullyLinearlyExplicitOver.html">FullyLinearlyExplicitOver</a>(PADIC)
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="Patternable.html">Patternable</a>(PADIC)
+<p><a href="RealConstant.html">RealConstant</a>
+<p><a href="QuotientFieldCategory.html">QuotientFieldCategory</a>(PADIC)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="DoubleFloat.html">DoubleFloat</a>)
+<p><a href="OrderedAbelianSemiGroup.html">OrderedAbelianSemiGroup</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, PADIC)
+<p><a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>)
+<p><a href="FullyPatternMatchable.html">FullyPatternMatchable</a>(PADIC)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Float.html">Float</a>))
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>
+<p><a href="OrderedCancellationAbelianMonoid.html">OrderedCancellationAbelianMonoid</a>
+<p><a href="Evalable.html">Evalable</a>(PADIC)
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(PADIC, PADIC)
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="RightModule.html">RightModule</a>(<a href="Integer.html">Integer</a>)
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="Module.html">Module</a>(%)
+<p><a href="Eltable.html">Eltable</a>(PADIC, %)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Algebra.html">Algebra</a>(PADIC)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(PADIC)
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="PatternMatchable.html">PatternMatchable</a>(<a href="Integer.html">Integer</a>)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="FullyEvalableOver.html">FullyEvalableOver</a>(PADIC)
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="Pattern.html">Pattern</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+</body>
+</html>

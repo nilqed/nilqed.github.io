@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>InnerTrigonometricManipulations</title>
+</head>
+<body>
+<h1>InnerTrigonometricManipulations(R, F, FG)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/efstruc.spad#L815">efstruc.spad line 815</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/efstruc.spad#L815">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="IntegralDomain.html">IntegralDomain</a>, <a href="Comparable.html">Comparable</a>)<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="RadicalCategory.html">RadicalCategory</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>)<li>FG : Join(<a href="FunctionSpace.html">FunctionSpace</a>(<a href="Complex.html">Complex</a>(R)), <a href="RadicalCategory.html">RadicalCategory</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>)</ul>
+<p>
+This package provides transformations from trigonometric functions to exponentials and logarithms, and back. <code>F</code> and <code>FG</code> should be the same type of function space.</p>
+<a name="f_F2FG"></a><dl><dt>F2FG : F -&gt FG</dt><dd><p>
+<code>F2FG(a + sqrt(-1) b)</code> returns <code>a + i b</code>.</p>
+</dd></dl>
+<a name="f_FG2F"></a><dl><dt>FG2F : FG -&gt F</dt><dd><p>
+<code>FG2F(a + i b)</code> returns <code>a + sqrt(-1) b</code>.</p>
+</dd></dl>
+<a name="f_GF2FG"></a><dl><dt>GF2FG : <a href="Complex.html">Complex</a>(F) -&gt FG</dt><dd><p>
+<code>GF2FG(a + i b)</code> returns <code>a + i b</code> viewed as a function with the <code>i</code> pushed down into the coefficient domain.</p>
+</dd></dl>
+<a name="f_do_95liou"></a><dl><dt>do_liou : (<a href="BasicOperator.html">BasicOperator</a>, <a href="List.html">List</a>(<a href="Complex.html">Complex</a>(F))) -&gt <a href="Complex.html">Complex</a>(F)</dt><dd><p>
+<code>do_liou(op, lf)</code> should be local but conditional.</p>
+</dd></dl>
+<a name="f_explogs2trigs"></a><dl><dt>explogs2trigs : FG -&gt <a href="Complex.html">Complex</a>(F)</dt><dd><p>
+<code>explogs2trigs(f)</code> rewrites all the complex logs and exponentials appearing in <code>f</code> in terms of trigonometric functions.</p>
+</dd></dl>
+<a name="f_trigs2explogs"></a><dl><dt>trigs2explogs : (FG, <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(FG))) -&gt FG</dt><dd><p>
+<code>trigs2explogs(f, [k1, ..., kn])</code> rewrites all the trigonometric functions appearing in <code>f</code> in terms of complex logarithms and exponentials. A kernel of the form <code>tan(u)</code> is expressed using <code>exp(u)^2</code> if it is one of the <code><code>ki</code>'s</code>, in terms of <code>exp(2*u)</code> otherwise.</p>
+</dd></dl>
+</body>
+</html>

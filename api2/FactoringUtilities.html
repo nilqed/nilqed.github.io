@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FactoringUtilities</title>
+</head>
+<body>
+<h1>FactoringUtilities(E, OV, R, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/facutil.spad#L1">facutil.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/facutil.spad#L1">[edit on github]</a></p>
+<ul>
+<li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a><li>R : <a href="Ring.html">Ring</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+This package provides utilities used by the factorizers which operate on polynomials represented as univariate polynomials with multivariate coefficients.</p>
+<a name="f_completeEval"></a><dl><dt>completeEval : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV), <a href="List.html">List</a>(R)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>completeEval(upoly, lvar, lval)</code> evaluates the polynomial <code>upoly</code> with each variable in <code>lvar</code> replaced by the corresponding value in lval. Substitutions are done for all variables in <code>upoly</code> producing a univariate polynomial over <code>R</code>.</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="List.html">List</a>(OV)) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>degree(upoly, lvar)</code> returns a list containing the maximum degree for each variable in lvar.</p>
+</dd></dl>
+<a name="f_lowerPolynomial"></a><dl><dt>lowerPolynomial : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R)</dt><dd><p>
+<code>lowerPolynomial(upoly)</code> converts <code>upoly</code> to be a univariate polynomial over <code>R</code>. An error if the coefficients contain variables.</p>
+</dd></dl>
+<a name="f_normalDeriv"></a><dl><dt>normalDeriv : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P), <a href="Integer.html">Integer</a>) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)</dt><dd><p>
+<code>normalDeriv(poly, i)</code> computes the <code>i</code>th derivative of <code>poly</code> divided by i!.</p>
+</dd></dl>
+<a name="f_raisePolynomial"></a><dl><dt>raisePolynomial : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P)</dt><dd><p>
+<code>raisePolynomial(rpoly)</code> converts <code>rpoly</code> from a univariate polynomial over <code>r</code> to be a univariate polynomial with polynomial coefficients.</p>
+</dd></dl>
+<a name="f_ran"></a><dl><dt>ran : <a href="Integer.html">Integer</a> -&gt R</dt><dd><p>
+<code>ran(k)</code> computes a random integer between <code>-k</code> and <code>k</code> as a member of <code>R</code>.</p>
+</dd></dl>
+<a name="f_variables"></a><dl><dt>variables : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(P) -&gt <a href="List.html">List</a>(OV)</dt><dd><p>
+<code>variables(upoly)</code> returns the list of variables for the coefficients of <code>upoly</code>.</p>
+</dd></dl>
+</body>
+</html>

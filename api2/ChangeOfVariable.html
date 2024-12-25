@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ChangeOfVariable</title>
+</head>
+<body>
+<h1>ChangeOfVariable(F, UP, UPUP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/curve.spad#L435">curve.spad line 435</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/curve.spad#L435">[edit on github]</a></p>
+<ul>
+<li>F : <a href="UniqueFactorizationDomain.html">UniqueFactorizationDomain</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))</ul>
+<p>
+Tools to send a point to infinity on an algebraic curve.</p>
+<a name="f_chvar"></a><dl><dt>chvar : (UPUP, UPUP) -&gt Record(func : UPUP, poly : UPUP, c1 : <a href="Fraction.html">Fraction</a>(UP), c2 : <a href="Fraction.html">Fraction</a>(UP), deg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>chvar(f(x, y), p(x, y))</code> returns <code>[g(z, t), q(z, t), c1(x), c2(x), n]</code> such that under the change of variable <code>z = c1(x)</code>, <code>t = y * c2(x)</code>, one gets <code>f(x, y) = c1'(x)g(c1(x), c2(x)y)</code> The algebraic relation between <code>x</code> and <code>y</code> is <code>p(x, y) = 0</code>. The algebraic relation between <code>z</code> and <code>t</code> is <code>q(z, t) = 0</code>.</p>
+</dd></dl>
+<dl><dt>chvar : (<a href="List.html">List</a>(UPUP), UPUP) -&gt Record(func : <a href="List.html">List</a>(UPUP), poly : UPUP, c1 : <a href="Fraction.html">Fraction</a>(UP), c2 : <a href="Fraction.html">Fraction</a>(UP), deg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>chvar(lf, p)</code> is like chvar(<code>f</code>, <code>p</code>) but handles list of functions</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (UPUP, <a href="Fraction.html">Fraction</a>(UP), <a href="Fraction.html">Fraction</a>(UP)) -&gt UPUP</dt><dd><p>
+<code>eval(p(x, y), f(x), g(x))</code> returns <code>p(f(x), y * g(x))</code>.</p>
+</dd></dl>
+<a name="f_goodPoint"></a><dl><dt>goodPoint : (<a href="List.html">List</a>(UPUP), UPUP) -&gt F</dt><dd><p>
+<code>goodPoint([p1, ..., pn], q)</code> returns an integer a such that a is neither a pole of <code><code>pi</code>(x, y)</code> for some <code>i</code> nor a branch point of <code>q(x, y) = 0</code>.</p>
+</dd></dl>
+<a name="f_mkIntegral"></a><dl><dt>mkIntegral : UPUP -&gt Record(coef : <a href="Fraction.html">Fraction</a>(UP), poly : UPUP)</dt><dd><p>
+<code>mkIntegral(p(x, y))</code> returns <code>[c(x), q(x, z)]</code> such that <code>z = c * y</code> is integral. The algebraic relation between <code>x</code> and <code>y</code> is <code>p(x, y) = 0</code>. The algebraic relation between <code>x</code> and <code>z</code> is <code>q(x, z) = 0</code>.</p>
+</dd></dl>
+<a name="f_radPoly"></a><dl><dt>radPoly : UPUP -&gt Union(Record(radicand : <a href="Fraction.html">Fraction</a>(UP), deg : <a href="NonNegativeInteger.html">NonNegativeInteger</a>), "failed")</dt><dd><p>
+<code>radPoly(p(x, y))</code> returns <code>[c(x), n]</code> if <code>p</code> is of the form <code>y^n - c(x)</code>, "failed" otherwise.</p>
+</dd></dl>
+<a name="f_rootPoly"></a><dl><dt>rootPoly : (<a href="Fraction.html">Fraction</a>(UP), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, coef : <a href="Fraction.html">Fraction</a>(UP), radicand : UP)</dt><dd><p>
+<code>rootPoly(g, n)</code> returns <code>[m, c, P]</code> such that <code>c * g ^ (1/n) = P ^ (1/m)</code> thus if <code>y^n = g</code>, then <code>z^m = P</code> where <code>z = c * y</code>.</p>
+</dd></dl>
+</body>
+</html>

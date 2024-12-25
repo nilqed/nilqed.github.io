@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LatticeMeetOfJoins</title>
+</head>
+<body>
+<h1>LatticeMeetOfJoins</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/logic.spad#L3219">logic.spad line 3219</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/logic.spad#L3219">[edit on github]</a></p>
+<p>
+Infinite Lattice which is distributive. Representation held as meet of joins.</p>
+<a name="f__47_92"></a><dl><dt><a href="MeetSemilattice.html#f__47_92">/\</a> : (%, %) -&gt %</dt><dd> from <a href="MeetSemilattice.html">MeetSemilattice</a></dd></dl>
+<a name="f__61"></a><dl><dt>= : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> (boolean <code>true</code>) if intuitionisticLogic values are the same. Translates from Intuitionistic Logic to Boolean Logic</p>
+</dd></dl>
+<a name="f_T"></a><dl><dt><a href="BoundedMeetSemilattice.html#f_T">T</a> : () -&gt %</dt><dd> from <a href="BoundedMeetSemilattice.html">BoundedMeetSemilattice</a></dd></dl>
+<a name="f__92_47"></a><dl><dt><a href="JoinSemilattice.html#f__92_47">\/</a> : (%, %) -&gt %</dt><dd> from <a href="JoinSemilattice.html">JoinSemilattice</a></dd></dl>
+<a name="f__95_124_95"></a><dl><dt><a href="BoundedJoinSemilattice.html#f__95_124_95">_|_</a> : () -&gt %</dt><dd> from <a href="BoundedJoinSemilattice.html">BoundedJoinSemilattice</a></dd></dl>
+<a name="f_atom_63"></a><dl><dt>atom? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+returns <code>true</code> if this is an atom, that is a leaf node otherwise return <code>false</code> if this is a compound term</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_deductions"></a><dl><dt>deductions : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+assumes <code>ln</code> contains a list of factors which must be <code>true</code> for the whole to be <code>true</code> (such as the list produced by factor). From this deductions attempts to produce a list of other proposition that must also be <code>true</code> by using modus ponens. This is used to determine the returned type when converting ILogic to types by using the Curry-Howard isomorphism.</p>
+</dd></dl>
+<a name="f_empty_63"></a><dl><dt>empty? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>true</code> if empty</p>
+</dd></dl>
+<a name="f_emptyLattice"></a><dl><dt>emptyLattice : () -&gt %</dt><dd><p>
+construct an empty lattice</p>
+</dd></dl>
+<a name="f_factor"></a><dl><dt>factor : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+splits <code>n</code> into a list of factors which must be <code>true</code> for the whole to be <code>true</code>. This assumes that the top level is already a set of factors separated by <code>/\</code> otherwise the result will just be a list with one entry: <code>'n'</code>. This is used when converting ILogic to types by using the Curry-Howard isomorphism.</p>
+</dd></dl>
+<a name="f_getChildren"></a><dl><dt>getChildren : % -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+returns child nodes if this is a compound term otherwise returns []</p>
+</dd></dl>
+<a name="f_join"></a><dl><dt>join : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>join of</code> set of elements</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_latticeMeetOfJoins"></a><dl><dt>latticeMeetOfJoins : Union(:(const, Record(val : <a href="Symbol.html">Symbol</a>)), :(var, Record(str : <a href="String.html">String</a>))) -&gt %</dt><dd><p>
+construct a lattice with one element</p>
+</dd></dl>
+<a name="f_logicF"></a><dl><dt>logicF : () -&gt %</dt><dd><p>
+construct <code>false</code> (contradiction): a logical constant.</p>
+</dd></dl>
+<a name="f_logicT"></a><dl><dt>logicT : () -&gt %</dt><dd><p>
+construct true: a logical constant.</p>
+</dd></dl>
+<a name="f_meet"></a><dl><dt>meet : <a href="List.html">List</a>(%) -&gt %</dt><dd><p>
+<code>meet of</code> set of elements</p>
+</dd></dl>
+<a name="f_opType"></a><dl><dt>opType : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+if this is a compound op then opType returns the type of that op: "IMPLY"::Symbol =implies "AND"::Symbol=/\ "OR"::Symbol=<code>\/</code> "NOT"::Symbol=~ "OTHER"::Symbol=not compound op</p>
+</dd></dl>
+<a name="f_redux"></a><dl><dt>redux : % -&gt %</dt><dd><p>
+attempt to simplify terms</p>
+</dd></dl>
+<a name="f_toString"></a><dl><dt>toString : % -&gt <a href="String.html">String</a></dt><dd><p>
+creates a string representation of this term and its sub-terms</p>
+</dd></dl>
+<a name="f_toStringUnwrapped"></a><dl><dt>toStringUnwrapped : % -&gt <a href="String.html">String</a></dt><dd><p>
+similar to 'toString' but does not put outer compound terms in brackets</p>
+</dd></dl>
+<a name="f_value"></a><dl><dt>value : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+returns: "T"::Symbol = <code>T</code> "F"::Symbol = <code>_|_</code> "E"::Symbol = error "P"::Symbol = proposition "C"::Symbol = compound Constructs lambda term and bind any variables with the name provided</p>
+</dd></dl>
+<a name="f_variable"></a><dl><dt>variable : <a href="String.html">String</a> -&gt %</dt><dd><p>
+construct a variable</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="BoundedLattice.html">BoundedLattice</a>
+<p><a href="BoundedJoinSemilattice.html">BoundedJoinSemilattice</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="MeetSemilattice.html">MeetSemilattice</a>
+<p><a href="DistributiveLattice.html">DistributiveLattice</a>
+<p><a href="BoundedMeetSemilattice.html">BoundedMeetSemilattice</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Lattice.html">Lattice</a>
+<p><a href="BoundedDistributiveLattice.html">BoundedDistributiveLattice</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="JoinSemilattice.html">JoinSemilattice</a>
+</body>
+</html>

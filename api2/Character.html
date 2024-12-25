@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Character</title>
+</head>
+<body>
+<h1>Character</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/string.spad#L1">string.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/string.spad#L1">[edit on github]</a></p>
+<p>
+This domain provides the basic character data type.</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_alphabetic_63"></a><dl><dt>alphabetic? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>alphabetic?(c)</code> tests if <code>c</code> is a letter, i.e. one of a..<code>z</code> or A..<code>Z</code>.</p>
+</dd></dl>
+<a name="f_alphanumeric_63"></a><dl><dt>alphanumeric? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>alphanumeric?(c)</code> tests if <code>c</code> is either a letter or number, i.e. one of 0..9, a..<code>z</code> or A..<code>Z</code>.</p>
+</dd></dl>
+<a name="f_char"></a><dl><dt>char : <a href="Integer.html">Integer</a> -&gt %</dt><dd><p>
+<code>char(i)</code> provides a character corresponding to the integer code <code>i</code>. It is always <code>true</code> that <code>ord char i = i</code>.</p>
+</dd></dl>
+<dl><dt>char : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>char(s)</code> provides a character from a string <code>s</code> of length one.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_convert"></a><dl><dt><a href="ConvertibleTo.html#f_convert">convert</a> : % -&gt <a href="InputForm.html">InputForm</a></dt><dd> from <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</dd></dl>
+<a name="f_digit_63"></a><dl><dt>digit? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>digit?(c)</code> tests if <code>c</code> is a digit character, i.e. one of 0..9.</p>
+</dd></dl>
+<a name="f_enumerate"></a><dl><dt><a href="Finite.html#f_enumerate">enumerate</a> : () -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_hash"></a><dl><dt><a href="Hashable.html#f_hash">hash</a> : % -&gt <a href="SingleInteger.html">SingleInteger</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hashUpdate_33"></a><dl><dt><a href="Hashable.html#f_hashUpdate_33">hashUpdate!</a> : (<a href="HashState.html">HashState</a>, %) -&gt <a href="HashState.html">HashState</a></dt><dd> from <a href="Hashable.html">Hashable</a></dd></dl>
+<a name="f_hexDigit_63"></a><dl><dt>hexDigit? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>hexDigit?(c)</code> tests if <code>c</code> is a hexadecimal numeral, i.e. one of 0..9, a..<code>f</code> or A..<code>F</code>.</p>
+</dd></dl>
+<a name="f_index"></a><dl><dt><a href="Finite.html#f_index">index</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lookup"></a><dl><dt><a href="Finite.html#f_lookup">lookup</a> : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_lowerCase"></a><dl><dt>lowerCase : % -&gt %</dt><dd><p>
+<code>lowerCase(c)</code> converts an upper case letter to the corresponding lower case letter. If <code>c</code> is not an upper case letter, then it is returned unchanged.</p>
+</dd></dl>
+<a name="f_lowerCase_63"></a><dl><dt>lowerCase? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>lowerCase?(c)</code> tests if <code>c</code> is an lower case letter, i.e. one of a..<code>z</code>.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_newline"></a><dl><dt>newline : () -&gt %</dt><dd><p>
+<code>newline()</code> provides the newline character.</p>
+</dd></dl>
+<a name="f_ord"></a><dl><dt>ord : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>ord(c)</code> provides an integral code corresponding to the character <code>c</code>. It is always <code>true</code> that <code>char ord c = c</code>.</p>
+</dd></dl>
+<a name="f_quote"></a><dl><dt>quote : () -&gt %</dt><dd><p>
+<code>quote()</code> provides the string quote character, <code>"</code>.</p>
+</dd></dl>
+<a name="f_random"></a><dl><dt><a href="Finite.html#f_random">random</a> : () -&gt %</dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_size"></a><dl><dt><a href="Finite.html#f_size">size</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="Finite.html">Finite</a></dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_space"></a><dl><dt>space : () -&gt %</dt><dd><p>
+<code>space()</code> provides the blank character.</p>
+</dd></dl>
+<a name="f_underscore"></a><dl><dt>underscore : () -&gt %</dt><dd><p>
+<code>underscore()</code> provides the underscore character, <code>_</code>, which is used to allow quotes and other characters  within strings.</p>
+</dd></dl>
+<a name="f_upperCase"></a><dl><dt>upperCase : % -&gt %</dt><dd><p>
+<code>upperCase(c)</code> converts a lower case letter to the corresponding upper case letter. If <code>c</code> is not a lower case letter, then it is returned unchanged.</p>
+</dd></dl>
+<a name="f_upperCase_63"></a><dl><dt>upperCase? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>upperCase?(c)</code> tests if <code>c</code> is an upper case letter, i.e. one of A..<code>Z</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Finite.html">Finite</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="OrderedFinite.html">OrderedFinite</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="Hashable.html">Hashable</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)
+</body>
+</html>

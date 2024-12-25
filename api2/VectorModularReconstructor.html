@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>VectorModularReconstructor</title>
+</head>
+<body>
+<h1>VectorModularReconstructor</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/vecrec.spad#L7">vecrec.spad line 7</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/vecrec.spad#L7">[edit on github]</a></p>
+<p>
+This domain supports modular methods based on evaluation and rational reconstruction.All computation are done on polynomials modulo machine sized prime <code>p</code> <code>--</code> <code>p</code> must be chosen small enough to avoid overflow in intermediate calculations. Each evaluation is supposed to produce vector of values. Once enough evaluations are known rational reconstruction produces vector of rational functions or multivariate polynomials.</p>
+<a name="f_add_95slots"></a><dl><dt>add_slots : (<a href="List.html">List</a>(<a href="Integer.html">Integer</a>), %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>add_slots(<code>li</code>)</code> extend reconstructor adding zeros at positions in <code>li</code>.</p>
+</dd></dl>
+<a name="f_chinese_95update"></a><dl><dt>chinese_update : (<a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>chinese_update(v, pt, r)</code> informs <code>r</code> that evaluation at <code>pt</code> gave vector of values <code>v</code></p>
+</dd></dl>
+<a name="f_empty"></a><dl><dt>empty : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>empty(n, p)</code> initializes reconstructor with <code>n</code> slots working modulo <code>p</code></p>
+</dd></dl>
+<a name="f_rational_95reconstruction"></a><dl><dt>rational_reconstruction : (<a href="U32Vector.html">U32Vector</a>, <a href="U32Vector.html">U32Vector</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt Union(Record(numer : <a href="U32Vector.html">U32Vector</a>, denom : <a href="U32Vector.html">U32Vector</a>), "failed")</dt><dd><p>
+<code>rational_reconstruction(x, y, i, j)</code> finds rational function <code>r/s</code> such that <code>r/s = y</code> modulo <code>x</code>, <code>degre(r) &lt;= i</code>, <code>degree(s) \leq j</code>. Returns "failed" when such <code>r/s</code> does not exist.</p>
+</dd></dl>
+<dl><dt>rational_reconstruction : % -&gt Union(Record(numers : <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), denoms : <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>)), "failed")</dt><dd><p>
+<code>rational_reconstruction(r)</code> reconstructs vector of rational functions based on information stored in reconstructor.</p>
+</dd></dl>
+<a name="f_reconstruct"></a><dl><dt>reconstruct : (<a href="Integer.html">Integer</a>, <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>, <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>) -&gt Record(nvars : <a href="Integer.html">Integer</a>, offsetdata : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), expdata : <a href="SortedExponentVector.html">SortedExponentVector</a>, coeffdata : <a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+<code>reconstruct(n, bo, po, ev, nums, dens, p)</code> reconstructs polynomials in <code>n</code> + 1 variables from result of rational reconstruction.</p>
+</dd></dl>
+<dl><dt>reconstruct : (%, <a href="Integer.html">Integer</a>, <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>) -&gt Union(Record(nvars : <a href="Integer.html">Integer</a>, offsetdata : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), expdata : <a href="SortedExponentVector.html">SortedExponentVector</a>, coeffdata : <a href="U32Vector.html">U32Vector</a>), "failed")</dt><dd><p>
+<code>reconstruct(r, n, bo, po, ev)</code> reconstructs polynomials in <code>n + 1</code> variables using information stored in <code>r</code>.</p>
+</dd></dl>
+<a name="f_remove_95denoms"></a><dl><dt>remove_denoms : (<a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>) -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+<code>remove_denoms(offsets, nums, denoms, p)</code> removes common denominator from vectors of rational functions. Several vectors of rational functions are packed into <code>nums</code> (storing numerators) and dens (storing denominators) Vector <code>i</code> starts at position <code>offsets</code>(<code>i</code>). Computations are done modulo <code>p</code>.</p>
+</dd></dl>
+<a name="f_repack_95polys"></a><dl><dt>repack_polys : (<a href="Integer.html">Integer</a>, <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>, <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="U32Vector.html">U32Vector</a>)) -&gt Record(nvars : <a href="Integer.html">Integer</a>, offsetdata : <a href="Vector.html">Vector</a>(<a href="Integer.html">Integer</a>), expdata : <a href="SortedExponentVector.html">SortedExponentVector</a>, coeffdata : <a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+<code>repack_polys(k, offsets, exponents, coefficients)</code> converts polynomials represented as parallel vector of <code>exponents</code> in <code>k</code> variables and vector of univariate polynomials to parallel vector of <code>exponents</code> in <code>k+1</code> variables and coefficients.</p>
+</dd></dl>
+</body>
+</html>

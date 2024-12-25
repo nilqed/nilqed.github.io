@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegrateSolutions</title>
+</head>
+<body>
+<h1>IntegrateSolutions(F, L)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ore.spad#L531">ore.spad line 531</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ore.spad#L531">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>L : <a href="UnivariateSkewPolynomialCategory.html">UnivariateSkewPolynomialCategory</a>(F) with
+<p>adjoint : % -&gt %</ul>
+<p>
+IntegrateSolutions implements a method to compute integral of solution of differential operator.</p>
+<a name="f_integrate_95sols"></a><dl><dt>integrate_sols : (L, Mapping(Record(particular : Union(F, "failed"), basis : <a href="List.html">List</a>(F)), L, F)) -&gt Record(ltilde : L, r : Union(L, "failed"))</dt><dd><p>
+<code>integrate_sols(l, rat_solve)</code> integrates the solutions of an operator <code>l</code> given rat_solve(op, <code>g</code>) that returns <code>["failed", []]</code> if the equation <code>op y = g</code> has no rational solution. Otherwise, the rat_solve function should return <code>[f, [y1, ..., ym]]</code> where <code>f</code> is a particular rational solution and the <code>yi</code><code>'s</code> form a basis for the rational solutions of the homogeneous equation.</p>
+</dd></dl>
+</body>
+</html>

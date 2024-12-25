@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RadicalEigenPackage</title>
+</head>
+<body>
+<h1>RadicalEigenPackage</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/radeigen.spad#L1">radeigen.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/radeigen.spad#L1">[edit on github]</a></p>
+<p>
+Package for the computation of eigenvalues and eigenvectors. This package works for matrices with coefficients which are rational functions over the integers. (see Fraction Polynomial Integer). The eigenvalues and eigenvectors are expressed in terms of radicals.</p>
+<a name="f_eigenMatrix"></a><dl><dt>eigenMatrix : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)), "failed")</dt><dd><p>
+<code>eigenMatrix(m)</code> returns the matrix <code>b</code> such that <code>b*m*(inverse b)</code> is diagonal, or "failed" if no such <code>b</code> exists.</p>
+</dd></dl>
+<a name="f_gramschmidt"></a><dl><dt>gramschmidt : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>gramschmidt(lv)</code> converts the list of column vectors <code>lv</code> into a set of orthogonal column vectors of euclidean length 1 using the Gram-Schmidt algorithm.</p>
+</dd></dl>
+<a name="f_normalise"></a><dl><dt>normalise : <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>normalise(v)</code> returns the column vector <code>v</code> divided by its euclidean norm; when possible, the vector <code>v</code> is expressed in terms of radicals.</p>
+</dd></dl>
+<a name="f_orthonormalBasis"></a><dl><dt>orthonormalBasis : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>orthonormalBasis(m)</code> returns the orthogonal matrix <code>b</code> such that <code>b*m*(inverse b)</code> is diagonal. Error: if <code>m</code> is not a symmetric matrix.</p>
+</dd></dl>
+<a name="f_radicalEigenvalues"></a><dl><dt>radicalEigenvalues : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>radicalEigenvalues(m)</code> computes the eigenvalues of the matrix <code>m</code>; when possible, the eigenvalues are expressed in terms of radicals.</p>
+</dd></dl>
+<a name="f_radicalEigenvector"></a><dl><dt>radicalEigenvector : (<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))) -&gt <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)))</dt><dd><p>
+<code>radicalEigenvector(c, m)</code> computes the eigenvector(<code>s</code>) of the matrix <code>m</code> corresponding to the eigenvalue <code>c</code>; when possible, values are expressed in terms of radicals.</p>
+</dd></dl>
+<a name="f_radicalEigenvectors"></a><dl><dt>radicalEigenvectors : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))) -&gt <a href="List.html">List</a>(Record(radval : <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), radmult : <a href="Integer.html">Integer</a>, radvect : <a href="List.html">List</a>(<a href="Matrix.html">Matrix</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)))))</dt><dd><p>
+<code>radicalEigenvectors(m)</code> computes the eigenvalues and the corresponding eigenvectors of the matrix <code>m</code>; when possible, values are expressed in terms of radicals.</p>
+</dd></dl>
+</body>
+</html>

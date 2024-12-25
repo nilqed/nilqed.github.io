@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LexTriangularPackage</title>
+</head>
+<body>
+<h1>LexTriangularPackage(R, ls)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/zerodim.spad#L110">zerodim.spad line 110</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/zerodim.spad#L110">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>ls : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+A package for solving polynomial systems with finitely many solutions. The decompositions are given by means of regular triangular sets. The computations use lexicographical Groebner bases. The main operations are <span class="spadop">lexTriangular</span> and <span class="spadop">squareFreeLexTriangular</span>. The second one provide decompositions by means of square-free regular triangular sets. Both are based on the  lexTriangular method described in [1]. They differ from the algorithm described in [2] by the fact that multiciplities of the roots are not kept. With the <span class="spadop">squareFreeLexTriangular</span> operation all multiciplities are removed. With the other operation some multiciplities may remain. Both operations admit an optional argument to produce normalized triangular sets. </p>
+<a name="f_fglmIfCan"></a><dl><dt>fglmIfCan : <a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))) -&gt Union(<a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))), "failed")</dt><dd><p>
+<code>fglmIfCan(lp)</code> returns the lexicographical Groebner basis of <code>lp</code> by using the  FGLM strategy, if <code>zeroDimensional?(lp)</code> holds .</p>
+</dd></dl>
+<a name="f_groebner"></a><dl><dt>groebner : <a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))) -&gt <a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls)))</dt><dd><p>
+<code>groebner(lp)</code> returns the lexicographical Groebner basis of <code>lp</code>. If <code>lp</code> generates a zero-dimensional ideal then the  FGLM strategy is used, otherwise the  Sugar strategy is used.</p>
+</dd></dl>
+<a name="f_lexTriangular"></a><dl><dt>lexTriangular : (<a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="RegularChain.html">RegularChain</a>(R, ls))</dt><dd><p>
+<code>lexTriangular(base, norm?)</code> decomposes the variety associated with <code>base</code> into regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that <code>base</code> needs to be a lexicographical Groebner basis of a zero-dimensional ideal. If <code>norm?</code> is <code>true</code> then the regular sets are normalized.</p>
+</dd></dl>
+<a name="f_squareFreeLexTriangular"></a><dl><dt>squareFreeLexTriangular : (<a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="SquareFreeRegularTriangularSet.html">SquareFreeRegularTriangularSet</a>(R, <a href="IndexedExponents.html">IndexedExponents</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(ls)), <a href="OrderedVariableList.html">OrderedVariableList</a>(ls), <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))))</dt><dd><p>
+<code>squareFreeLexTriangular(base, norm?)</code> decomposes the variety associated with <code>base</code> into square-free regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that <code>base</code> needs to be a lexicographical Groebner basis of a zero-dimensional ideal. If <code>norm?</code> is <code>true</code> then the regular sets are normalized.</p>
+</dd></dl>
+<a name="f_zeroDimensional_63"></a><dl><dt>zeroDimensional? : <a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>zeroDimensional?(lp)</code> returns <code>true</code> iff <code>lp</code> generates a zero-dimensional ideal <code>w</code>.<code>r</code>.<code>t</code>. the variables involved in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_zeroSetSplit"></a><dl><dt>zeroSetSplit : (<a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="RegularChain.html">RegularChain</a>(R, ls))</dt><dd><p>
+<code>zeroSetSplit(lp, norm?)</code> decomposes the variety associated with <code>lp</code> into regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that <code>lp</code> needs to generate a zero-dimensional ideal. If <code>norm?</code> is <code>true</code> then the regular sets are normalized.</p>
+</dd></dl>
+<dl><dt>zeroSetSplit : (<a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="SquareFreeRegularTriangularSet.html">SquareFreeRegularTriangularSet</a>(R, <a href="IndexedExponents.html">IndexedExponents</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(ls)), <a href="OrderedVariableList.html">OrderedVariableList</a>(ls), <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls))))</dt><dd><p>
+<code>zeroSetSplit(lp, norm?)</code> decomposes the variety associated with <code>lp</code> into square-free regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that <code>lp</code> needs to generate a zero-dimensional ideal. If <code>norm?</code> is <code>true</code> then the regular sets are normalized.</p>
+</dd></dl>
+</body>
+</html>

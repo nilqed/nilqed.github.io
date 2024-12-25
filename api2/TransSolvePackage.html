@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TransSolvePackage</title>
+</head>
+<body>
+<h1>TransSolvePackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/transsolve.spad#L1">transsolve.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/transsolve.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="LinearlyExplicitOver.html">LinearlyExplicitOver</a>(<a href="Integer.html">Integer</a>), <a href="CharacteristicZero.html">CharacteristicZero</a>)</ul>
+<p>
+This package tries to find solutions of equations of type Expression(<code>R</code>). This means expressions involving transcendental, exponential, logarithmic and nthRoot functions. After trying to transform different kernels to one kernel by applying several rules, it calls zerosOf for the SparseUnivariatePolynomial in the remaining kernel. For example the expression <code>sin(x)*cos(x)-2</code> will be transformed to <code>-2 tan(x/2)^4 -2 tan(x/2)^3 -4 tan(x/2)^2 +2 tan(x/2) -2</code> by using the function normalize and then to <code>-2 tan(x)^2 + tan(x) -2</code> with help of subsTan. This function tries to express the given function in terms of <code>tan(x/2)</code> to express in terms of <code>tan(x)</code> . Other examples are the expressions <code>sqrt(x+1)+sqrt(x+7)+1</code> or <code>sqrt(sin(x))+1</code> .</p>
+<a name="f_solve"></a><dl><dt>solve : <a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>solve(eq)</code> finds the solutions of the equation <code>eq</code> where <code>eq</code> is an equation of functions of type Expression(<code>R</code>) with respect to the unique symbol <code>x</code> appearing in <code>eq</code>.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>solve(eq, x)</code> finds the solutions of the equation <code>eq</code> where <code>eq</code> is an equation of functions of type Expression(<code>R</code>) with respect to the symbol <code>x</code>.</p>
+</dd></dl>
+<dl><dt>solve : <a href="Expression.html">Expression</a>(R) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>solve(expr)</code> finds the solutions of the equation <code>expr</code> = 0 where <code>expr</code> is a function of type Expression(<code>R</code>) with respect to the unique symbol <code>x</code> appearing in eq.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="Expression.html">Expression</a>(R), <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>solve(expr, x)</code> finds the solutions of the equation <code>expr</code> = 0 with respect to the symbol <code>x</code> where <code>expr</code> is a function of type Expression(<code>R</code>).</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))), <a href="List.html">List</a>(<a href="Expression.html">Expression</a>(R))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>solve(leqs, lexpr)</code> returns a list of solutions to the list of equations <code>leqs</code> with respect to the list of expressions lexpr. Each expression in lexpr is treated as a variable and must be a single kernel.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))), <a href="List.html">List</a>(<a href="Kernel.html">Kernel</a>(<a href="Expression.html">Expression</a>(R)))) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>solve(leqs, lker)</code> returns a list of solutions to the list of equations <code>leqs</code> with respect to the list of kernels lker.</p>
+</dd></dl>
+<dl><dt>solve : (<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Equation.html">Equation</a>(<a href="Expression.html">Expression</a>(R))))</dt><dd><p>
+<code>solve(leqs, lvar)</code> returns a list of solutions to the list of equations <code>leqs</code> with respect to the list of symbols lvar.</p>
+</dd></dl>
+</body>
+</html>

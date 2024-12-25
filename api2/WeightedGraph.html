@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>WeightedGraph</title>
+</head>
+<body>
+<h1>WeightedGraph(S, W)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/graph.spad#L4817">graph.spad line 4817</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/graph.spad#L4817">[edit on github]</a></p>
+<ul>
+<li>S : <a href="SetCategory.html">SetCategory</a><li>W : <a href="OrderedAbelianMonoid.html">OrderedAbelianMonoid</a></ul>
+<p>
+allows us to model weighted graphs This graph assigns a weight to each arrow. This is used when calculating say, lowest 'cost' routes. An arrow with a higher weight is more 'costly' in some way and therefore we try to choose the minimum weight. For arrows in series the overall weight is the sum of the individual weights. For arrows in parallel the overall weight is the minimum of the individual weights. <code>I</code> may change this in future to allow different cost metrics to be plugged in. </p>
+<a name="f__42"></a><dl><dt>* : (%, %) -&gt <a href="WeightedGraph.html">WeightedGraph</a>(<a href="Product.html">Product</a>(S, S), W)</dt><dd><p>
+tensor product : the tensor product <code>G*H</code> of graphs <code>G</code> and <code>H</code> is a graph such that the vertex set of <code>G*H</code> is the Cartesian product <code>V</code>(<code>G</code>) times <code>V</code>(<code>H</code>); and any two vertices (<code>u</code>, u') and (<code>v</code>, <code>v'</code>) are adjacent in <code>G</code> times <code>H</code> if and only if u' is adjacent with <code>v'</code> and <code>u</code> is adjacent with <code>v</code>.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt><a href="FiniteGraph.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_addArrow_33"></a><dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, <a href="String.html">String</a>, S, S) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addArrow_33">addArrow!</a> : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_addObject_33"></a><dl><dt><a href="FiniteGraph.html#f_addObject_33">addObject!</a> : (%, S) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_addObject_33">addObject!</a> : (%, Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_addWArrow_33"></a><dl><dt>addWArrow! : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, W) -&gt %</dt><dd><p>
+<code>addWArrow!(s, name, n1, n2, w)</code> adds a weighted arrow to the graph <code>s</code>, where <code>name</code> is <code>name</code> of the arrow, <code>w</code> is weight of the arrow, <code>n1</code> is starting point of the arrow, <code>n2</code> is endpoint of the arrow.</p>
+</dd></dl>
+<a name="f_adjacencyMatrix"></a><dl><dt><a href="FiniteGraph.html#f_adjacencyMatrix">adjacencyMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowName"></a><dl><dt><a href="FiniteGraph.html#f_arrowName">arrowName</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="String.html">String</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsFromArrow"></a><dl><dt><a href="FiniteGraph.html#f_arrowsFromArrow">arrowsFromArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsFromNode"></a><dl><dt><a href="FiniteGraph.html#f_arrowsFromNode">arrowsFromNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsToArrow"></a><dl><dt><a href="FiniteGraph.html#f_arrowsToArrow">arrowsToArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_arrowsToNode"></a><dl><dt><a href="FiniteGraph.html#f_arrowsToNode">arrowsToNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_cartesian"></a><dl><dt>cartesian : (%, %) -&gt <a href="WeightedGraph.html">WeightedGraph</a>(<a href="Product.html">Product</a>(S, S), W)</dt><dd><p>
+Cartesian product: the vertex set of <code>G</code> <code>o</code> <code>H</code> is the Cartesian product <code>V</code>(<code>G</code>) times <code>V</code>(<code>H</code>) and any two vertices (<code>u</code>, u') and (<code>v</code>, <code>v'</code>) are adjacent in <code>G</code> <code>o</code> <code>H</code> if and only if either <code>u</code> = <code>v</code> and u' is adjacent with <code>v'</code> in <code>H</code>, or u' = <code>v'</code> and <code>u</code> is adjacent with <code>v</code> in <code>G</code>.</p>
+</dd></dl>
+<a name="f_closedCartesian"></a><dl><dt>closedCartesian : (%, %, Mapping(S, S, S)) -&gt %</dt><dd><p>
+as Cartesian product but returns %.</p>
+</dd></dl>
+<a name="f_closedTensor"></a><dl><dt>closedTensor : (%, %, Mapping(S, S, S)) -&gt %</dt><dd><p>
+as tensor product but returns %.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="FinitePoset.html">FinitePoset</a>(S) -&gt %</dt><dd><p>
+<code>coerce FinitePoset</code> to graph</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_createWidth"></a><dl><dt><a href="FiniteGraph.html#f_createWidth">createWidth</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_createX"></a><dl><dt><a href="FiniteGraph.html#f_createX">createX</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_createY"></a><dl><dt><a href="FiniteGraph.html#f_createY">createY</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_cycleClosed"></a><dl><dt><a href="FiniteGraph.html#f_cycleClosed">cycleClosed</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_cycleOpen"></a><dl><dt><a href="FiniteGraph.html#f_cycleOpen">cycleOpen</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_deepDiagramSvg"></a><dl><dt><a href="FiniteGraph.html#f_deepDiagramSvg">deepDiagramSvg</a> : (<a href="String.html">String</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramHeight"></a><dl><dt><a href="FiniteGraph.html#f_diagramHeight">diagramHeight</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramSvg"></a><dl><dt><a href="FiniteGraph.html#f_diagramSvg">diagramSvg</a> : (<a href="String.html">String</a>, %, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramWidth"></a><dl><dt><a href="FiniteGraph.html#f_diagramWidth">diagramWidth</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_diagramsSvg"></a><dl><dt><a href="FiniteGraph.html#f_diagramsSvg">diagramsSvg</a> : (<a href="String.html">String</a>, <a href="List.html">List</a>(%), <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_distance"></a><dl><dt><a href="FiniteGraph.html#f_distance">distance</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Integer.html">Integer</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_distanceMatrix"></a><dl><dt><a href="FiniteGraph.html#f_distanceMatrix">distanceMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_distanceWeighted"></a><dl><dt>distanceWeighted : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(W, "disjoint")</dt><dd><p>
+the shortest distance between 'a' and <code>'b'</code> in terms of weight.</p>
+</dd></dl>
+<a name="f_flatten"></a><dl><dt><a href="FiniteGraph.html#f_flatten">flatten</a> : <a href="DirectedGraph.html">DirectedGraph</a>(%) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getArrowIndex"></a><dl><dt><a href="FiniteGraph.html#f_getArrowIndex">getArrowIndex</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getArrows"></a><dl><dt><a href="FiniteGraph.html#f_getArrows">getArrows</a> : % -&gt <a href="List.html">List</a>(Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getVertexIndex"></a><dl><dt><a href="FiniteGraph.html#f_getVertexIndex">getVertexIndex</a> : (%, S) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_getVertices"></a><dl><dt><a href="FiniteGraph.html#f_getVertices">getVertices</a> : % -&gt <a href="List.html">List</a>(Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_inDegree"></a><dl><dt><a href="FiniteGraph.html#f_inDegree">inDegree</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_incidenceMatrix"></a><dl><dt><a href="FiniteGraph.html#f_incidenceMatrix">incidenceMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_initial"></a><dl><dt><a href="FiniteGraph.html#f_initial">initial</a> : () -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isAcyclic_63"></a><dl><dt><a href="FiniteGraph.html#f_isAcyclic_63">isAcyclic?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isDirectSuccessor_63"></a><dl><dt><a href="FiniteGraph.html#f_isDirectSuccessor_63">isDirectSuccessor?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isDirected_63"></a><dl><dt><a href="FiniteGraph.html#f_isDirected_63">isDirected?</a> : () -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isFixPoint_63"></a><dl><dt><a href="FiniteGraph.html#f_isFixPoint_63">isFixPoint?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isFunctional_63"></a><dl><dt><a href="FiniteGraph.html#f_isFunctional_63">isFunctional?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_isGreaterThan_63"></a><dl><dt><a href="FiniteGraph.html#f_isGreaterThan_63">isGreaterThan?</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_kgraph"></a><dl><dt><a href="FiniteGraph.html#f_kgraph">kgraph</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_laplacianMatrix"></a><dl><dt><a href="FiniteGraph.html#f_laplacianMatrix">laplacianMatrix</a> : % -&gt <a href="Matrix.html">Matrix</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_loopsArrows"></a><dl><dt><a href="FiniteGraph.html#f_loopsArrows">loopsArrows</a> : % -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_loopsAtNode"></a><dl><dt><a href="FiniteGraph.html#f_loopsAtNode">loopsAtNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_loopsNodes"></a><dl><dt><a href="FiniteGraph.html#f_loopsNodes">loopsNodes</a> : % -&gt <a href="List.html">List</a>(<a href="Loop.html">Loop</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_looseEquals"></a><dl><dt><a href="FiniteGraph.html#f_looseEquals">looseEquals</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_map"></a><dl><dt><a href="FiniteGraph.html#f_map">map</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(S), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_mapContra"></a><dl><dt><a href="FiniteGraph.html#f_mapContra">mapContra</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="List.html">List</a>(S), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="FiniteGraph.html#f_max">max</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_max">max</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_merge"></a><dl><dt><a href="FiniteGraph.html#f_merge">merge</a> : (%, %) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_min"></a><dl><dt><a href="FiniteGraph.html#f_min">min</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<dl><dt><a href="FiniteGraph.html#f_min">min</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeFromArrow"></a><dl><dt><a href="FiniteGraph.html#f_nodeFromArrow">nodeFromArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeFromNode"></a><dl><dt><a href="FiniteGraph.html#f_nodeFromNode">nodeFromNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeToArrow"></a><dl><dt><a href="FiniteGraph.html#f_nodeToArrow">nodeToArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_nodeToNode"></a><dl><dt><a href="FiniteGraph.html#f_nodeToNode">nodeToNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_outDegree"></a><dl><dt><a href="FiniteGraph.html#f_outDegree">outDegree</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_routeArrowWeight"></a><dl><dt>routeArrowWeight : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt W</dt><dd><p>
+the cumulative weight of a given route. The route is given in terms of a sequence of arrow indexes.</p>
+</dd></dl>
+<a name="f_routeArrows"></a><dl><dt><a href="FiniteGraph.html#f_routeArrows">routeArrows</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_routeNodeWeight"></a><dl><dt>routeNodeWeight : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt W</dt><dd><p>
+the cumulative weight of a given route. The route is given in terms of a sequence of node indexes.</p>
+</dd></dl>
+<a name="f_routeNodes"></a><dl><dt><a href="FiniteGraph.html#f_routeNodes">routeNodes</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningForestArrow"></a><dl><dt><a href="FiniteGraph.html#f_spanningForestArrow">spanningForestArrow</a> : % -&gt <a href="List.html">List</a>(<a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningForestNode"></a><dl><dt><a href="FiniteGraph.html#f_spanningForestNode">spanningForestNode</a> : % -&gt <a href="List.html">List</a>(<a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningTreeArrow"></a><dl><dt><a href="FiniteGraph.html#f_spanningTreeArrow">spanningTreeArrow</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_spanningTreeNode"></a><dl><dt><a href="FiniteGraph.html#f_spanningTreeNode">spanningTreeNode</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Tree.html">Tree</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_subdiagramSvg"></a><dl><dt><a href="FiniteGraph.html#f_subdiagramSvg">subdiagramSvg</a> : (<a href="Scene.html">Scene</a>(<a href="SCartesian.html">SCartesian</a>(2)), %, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="Void.html">Void</a></dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_terminal"></a><dl><dt><a href="FiniteGraph.html#f_terminal">terminal</a> : S -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_unit"></a><dl><dt><a href="FiniteGraph.html#f_unit">unit</a> : (<a href="List.html">List</a>(S), <a href="String.html">String</a>) -&gt %</dt><dd> from <a href="FiniteGraph.html">FiniteGraph</a>(S)</dd></dl>
+<a name="f_weightedDistanceMatrix"></a><dl><dt>weightedDistanceMatrix : % -&gt <a href="TwoDimensionalArray.html">TwoDimensionalArray</a>(Union(W, "disjoint"))</dt><dd><p>
+The elements of the returned array will represent the distance weights between vertices. if there is no connection between the vertices then the element will be set to "disjoint"</p>
+</dd></dl>
+<a name="f_weightedGraph"></a><dl><dt>weightedGraph : <a href="FinitePoset.html">FinitePoset</a>(S) -&gt %</dt><dd><p>
+<code>weightedGraph(poset)</code> constructs graph from a partially ordered set. This will be a graph with, at most, one arrow between any two nodes.</p>
+</dd></dl>
+<dl><dt>weightedGraph : <a href="List.html">List</a>(S) -&gt %</dt><dd><p>
+constructor for graph with given list of object names. Use this version of the constructor if you don<code>'t</code> intend to create diagrams and therefore don<code>'t</code> care about <code>x</code>, <code>y</code> coordinates. more objects and arrows can be added later if required.</p>
+</dd></dl>
+<dl><dt>weightedGraph : (<a href="List.html">List</a>(S), <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd><p>
+constructor for graph with given objects and adjacency matrix.</p>
+</dd></dl>
+<dl><dt>weightedGraph : (<a href="List.html">List</a>(S), <a href="List.html">List</a>(Record(fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>))) -&gt %</dt><dd><p>
+<code>weightedGraph(obs, ars)</code> constructs graph with objects <code>obs</code> and arrows ars. This constructor just has pure abstract graph information without decoration information.</p>
+</dd></dl>
+<dl><dt>weightedGraph : (<a href="List.html">List</a>(Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)), <a href="List.html">List</a>(Record(name : <a href="String.html">String</a>, arrType : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)))) -&gt %</dt><dd><p>
+constructor for graph with given objects and arrows more objects and arrows can be added later if required.</p>
+</dd></dl>
+<dl><dt>weightedGraph : <a href="List.html">List</a>(Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, weight : W)) -&gt %</dt><dd><p>
+constructor for graph with given objects more objects and arrows can be added later if required.</p>
+</dd></dl>
+<dl><dt>weightedGraph : (<a href="List.html">List</a>(Record(value : S, posX : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, posY : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, weight : W)), <a href="List.html">List</a>(Record(name : <a href="String.html">String</a>, weight : W, fromOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, toOb : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, xOffset : <a href="Integer.html">Integer</a>, yOffset : <a href="Integer.html">Integer</a>, map : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)))) -&gt %</dt><dd><p>
+<code>weightedGraph(ob, ar)</code> constructs graph with objects on and arrows ar. More objects and arrows can be added later if required.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="FiniteGraph.html">FiniteGraph</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

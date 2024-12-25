@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SPointCategory</title>
+</head>
+<body>
+<h1>SPointCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L828">scene.spad line 828</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L828">[edit on github]</a></p>
+<p>
+PointCategory is the category of points and vectors in space. Points may be used to represent shapes in a scenegraph such as: the vertices of a cube or points along a line. Shapes such as these may be defined explicitly or may be plotted. We implement SetCategory to allow us to curry transforms from one point to another.</p>
+<a name="f__42"></a><dl><dt>* : (<a href="DoubleFloat.html">DoubleFloat</a>, %) -&gt %</dt><dd><p>
+*(<code>s</code>, <code>x</code>) gives scalar multiplication Although, scalar multiplication is strictly only a valid operation for vectors and not points, we allow it here because there are some useful short cuts, for instance, to find the central point between two points we can add them together and scalar multiply by 0.5.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
++(<code>x</code>, <code>y</code>) gives addition add the corresponding elements of the vector or point. The type (vector or point) depends on the following table: vector + vector = vector point + vector = point point + point = invalid (but interpret as vector) Although, adding two points is not strictly a valid operation, we allow it here by interpreting the point as a vector relative to the origin. We do that because there are some useful short cuts, for instance, to find the central point between two points we can add them together and scalar multiply by 0.5.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : (%, %) -&gt %</dt><dd><p>
+<code>-(x, y)</code> gives subtraction subtract the corresponding elements of the vector or point. The type (vector or point) depends on the following table: vector - vector = vector point - vector = point vector - point = invalid (but interpret as point) point - point = invalid (but interpret as vector) Although, subtracting two points is not strictly a valid operation, we allow it here by interpreting the result as the vector distance between the two points.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_Pnan_63"></a><dl><dt>Pnan? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>Pnan?(p)</code> returns <code>true</code> if any of its elements are not valid DoubleFloat values. Examples of invalid floating point numbers are when we have divided a given element by zero or taken sqrt of negative number at some stage? Note: we can still represent a point at infinity and we can represent points using complex numbers, but we do this using projective or conformal space or by using the appropriate instance of SPointCategory, not by using invalid floating point numbers.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+output</p>
+</dd></dl>
+<a name="f_colinearity"></a><dl><dt>colinearity : (%, %) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>colinearity(x, y)</code> returns a measure of how parallel two vectors are independent of the length of the vectors: 1.0 is completely parallel 0.0 is completely perpendicular returned value will be between these</p>
+</dd></dl>
+<a name="f_dimension"></a><dl><dt>dimension : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>dimension(p)</code> returns the number of dimensions that make up the point category <code>p</code>.</p>
+</dd></dl>
+<a name="f_distance"></a><dl><dt>distance : (%, %) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>distance(p1, p2)</code> returns the distance between the points <code>p1</code> is the first point. <code>p2</code> is the second point. There are 2 metrics associated with any SPointCategory the underlying space and the space that it is embedded in this is the distance in the underlying space.</p>
+</dd></dl>
+<a name="f_distanceSquared"></a><dl><dt>distanceSquared : (%, %) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>distanceSquared(p1, p2)</code> returns the distance between the points <code>p1</code> and <code>p2</code>. There are 2 metrics associated with any SPointCategory the underlying space and the space that it is embedded in this is the distance in the underlying space.</p>
+</dd></dl>
+<a name="f_extendedCoords"></a><dl><dt>extendedCoords : % -&gt <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>extendedCoords(pt)</code> returns extended coordinates as a list.</p>
+</dd></dl>
+<a name="f_inBounds_63"></a><dl><dt>inBounds? : (%, %, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>inBounds?(pt, mns, mxs)</code> returns <code>true</code> if <code>pt</code> is inside bounding box where bounding box is specified by min and max.</p>
+</dd></dl>
+<a name="f_isPoint_63"></a><dl><dt>isPoint? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isPoint?(p)</code> returns <code>true</code> if this represents a point as opposed to a vector.</p>
+</dd></dl>
+<a name="f_isVector_63"></a><dl><dt>isVector? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>isVector? returns</code> <code>true</code> if this represents a vector as opposed to a point.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_max"></a><dl><dt>max : (%, %) -&gt %</dt><dd><p>
+<code>max(a, b)</code> returns a point whose value in each dimension is the maximum. So if a has the largest <code>x</code> value and <code>b</code> has the largest <code>y</code> value then the result will combine these. This is useful for constructing boundary boxes around sets of points.</p>
+</dd></dl>
+<a name="f_min"></a><dl><dt>min : (%, %) -&gt %</dt><dd><p>
+<code>min(a, b)</code> returns a point whose value in each dimension is the minimum. So if a has the smallest <code>x</code> value and <code>b</code> has the smallest <code>y</code> value then the result will combine these. This is useful for constructing boundary boxes around sets of points.</p>
+</dd></dl>
+<a name="f_parallel"></a><dl><dt>parallel : (%, %) -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>parallel(x, y)</code> returns the length of the parallel component of two vectors. In the case of Euclidean space this is the dot product of two vectors. We use this function to test the colinearity</p>
+</dd></dl>
+<a name="f_perpendicular"></a><dl><dt>perpendicular : (%, %) -&gt %</dt><dd><p>
+<code>perpendicular(x, y)</code> returns a vector perpendicular to the two vectors in the case of 3D Euclidean space this is the cross the product of two vectors. We use this function to compute orthogonal</p>
+</dd></dl>
+<a name="f_screenCoordX"></a><dl><dt>screenCoordX : % -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>screenCoordX(pt)</code> returns the <code>'x'</code>(left to right) screen coordinate.</p>
+</dd></dl>
+<a name="f_screenCoordY"></a><dl><dt>screenCoordY : % -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>screenCoordY(pt)</code> returns the <code>'y'</code>(bottom to top) screen coordinate.</p>
+</dd></dl>
+<a name="f_screenCoordZ"></a><dl><dt>screenCoordZ : % -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>screenCoordZ(pt)</code> returns the <code>'z'</code>(out from screen) screen coordinate.</p>
+</dd></dl>
+<a name="f_screenCoords"></a><dl><dt>screenCoords : % -&gt <a href="List.html">List</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>screenCoords(pt)</code> returns screen coordinates as a list.</p>
+</dd></dl>
+<a name="f_sipnt"></a><dl><dt>sipnt : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>sipnt(a, b)</code> constructs a 2D point defined by a and <code>b</code> of type Integer</p>
+</dd></dl>
+<dl><dt>sipnt : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>sipnt(a, b, c)</code> constructs a 3D point defined by a, <code>b</code> and <code>c</code> of type Integer</p>
+</dd></dl>
+<a name="f_sivec"></a><dl><dt>sivec : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>sivec(a, b)</code> constructs a 2D vector defined by a and <code>b</code> of type Integer</p>
+</dd></dl>
+<dl><dt>sivec : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>sivec(a, b, c)</code> constructs a 3D vector defined by a, <code>b</code> and <code>c</code> of type Integer</p>
+</dd></dl>
+<a name="f_spnt"></a><dl><dt>spnt : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>spnt(a, b)</code> constructs a 2D point defined by a and <code>b</code> of type <code>R</code></p>
+</dd></dl>
+<dl><dt>spnt : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>spnt(a, b, c)</code> constructs a 3D point defined by a, <code>b</code> and <code>c</code> of type <code>R</code></p>
+</dd></dl>
+<a name="f_svec"></a><dl><dt>svec : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>svec(a, b)</code> constructs a 2D vector defined by a and <code>b</code> of type <code>R</code></p>
+</dd></dl>
+<dl><dt>svec : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>svec(a, b, c)</code> constructs a 3D vector defined by a, <code>b</code> and <code>c</code> of type <code>R</code></p>
+</dd></dl>
+<a name="f_toPoint"></a><dl><dt>toPoint : % -&gt %</dt><dd><p>
+<code>toPoint(p)</code> returns a Point with the same coordinates as <code>p</code> If <code>p</code> was originally a vector then that will be treated as the distance from the origin.</p>
+</dd></dl>
+<a name="f_toVector"></a><dl><dt>toVector : % -&gt %</dt><dd><p>
+<code>toVector returns</code> a Vector with the same coordinates as <code>p</code> If <code>p</code> was originally a point then the vector will be the distance from the origin.</p>
+</dd></dl>
+<a name="f_unitVector"></a><dl><dt>unitVector : % -&gt %</dt><dd><p>
+<code>unitVector(p)</code> returns a vector with the same direction as <code>p</code> but with unit length. We scale until length is 1</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

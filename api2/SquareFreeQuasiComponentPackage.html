@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SquareFreeQuasiComponentPackage</title>
+</head>
+<body>
+<h1>SquareFreeQuasiComponentPackage(R, E, V, P, TS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sregset.spad#L32">sregset.spad line 32</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sregset.spad#L32">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="RegularTriangularSetCategory.html">RegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+A internal package for removing redundant quasi-components and redundant branches when decomposing a variety by means of quasi-components of regular triangular sets. </p>
+<a name="f_algebraicSort"></a><dl><dt>algebraicSort : <a href="List.html">List</a>(TS) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+<code>algebraicSort(lts)</code> sorts <code>lts</code> <code>w</code>.<code>r</code>.<code>t</code> <span class="spadop">supDimElseRittWu</span>.</p>
+</dd></dl>
+<a name="f_branchIfCan"></a><dl><dt>branchIfCan : (<a href="List.html">List</a>(P), TS, <a href="List.html">List</a>(P), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt Union(Record(eq : <a href="List.html">List</a>(P), tower : TS, ineq : <a href="List.html">List</a>(P)), "failed")</dt><dd><p>
+<code>branchIfCan(leq, ts, lineq, b1, b2, b3, b4, b5)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_infRittWu_63"></a><dl><dt>infRittWu? : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>infRittWu?(lp1, lp2)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_internalInfRittWu_63"></a><dl><dt>internalInfRittWu? : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>internalInfRittWu?(lp1, lp2)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_internalSubPolSet_63"></a><dl><dt>internalSubPolSet? : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>internalSubPolSet?(lp1, lp2)</code> returns <code>true</code> iff <code>lp1</code> is a sub-set of <code>lp2</code> assuming that these lists are sorted increasingly <code>w</code>.<code>r</code>.<code>t</code>. <span class="spadop">infRittWu?</span>.</p>
+</dd></dl>
+<a name="f_internalSubQuasiComponent_63"></a><dl><dt>internalSubQuasiComponent? : (TS, TS) -&gt Union(<a href="Boolean.html">Boolean</a>, "failed")</dt><dd><p>
+<code>internalSubQuasiComponent?(ts, us)</code> returns a boolean <code>b</code> value if the fact the regular zero set of <code>us</code> contains that of <code>ts</code> can be decided (and in that case <code>b</code> gives this inclusion) otherwise returns <code>"failed"</code>.</p>
+</dd></dl>
+<a name="f_moreAlgebraic_63"></a><dl><dt>moreAlgebraic? : (TS, TS) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>moreAlgebraic?(ts, us)</code> returns <code>false</code> iff <code>ts</code> and <code>us</code> are both empty, or <code>ts</code> has less elements than <code>us</code>, or some variable is algebraic <code>w</code>.<code>r</code>.<code>t</code>. <code>us</code> and is not <code>w</code>.<code>r</code>.<code>t</code>. <code>ts</code>.</p>
+</dd></dl>
+<a name="f_prepareDecompose"></a><dl><dt>prepareDecompose : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(TS), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(eq : <a href="List.html">List</a>(P), tower : TS, ineq : <a href="List.html">List</a>(P)))</dt><dd><p>
+<code>prepareDecompose(lp, lts, b1, b2)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_removeSuperfluousCases"></a><dl><dt>removeSuperfluousCases : <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)) -&gt <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS))</dt><dd><p>
+<code>removeSuperfluousCases(llpwt)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_removeSuperfluousQuasiComponents"></a><dl><dt>removeSuperfluousQuasiComponents : <a href="List.html">List</a>(TS) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+<code>removeSuperfluousQuasiComponents(lts)</code> removes from <code>lts</code> any <code>ts</code> such that <code>subQuasiComponent?(ts, us)</code> holds for another <code>us</code> in <code>lts</code>.</p>
+</dd></dl>
+<a name="f_startTable_33"></a><dl><dt>startTable! : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>startTableGcd!(s1, s2, s3)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_stopTable_33"></a><dl><dt>stopTable! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>stopTableGcd!()</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_subCase_63"></a><dl><dt>subCase? : (Record(val : <a href="List.html">List</a>(P), tower : TS), Record(val : <a href="List.html">List</a>(P), tower : TS)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subCase?(lpwt1, lpwt2)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_subPolSet_63"></a><dl><dt>subPolSet? : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subPolSet?(lp1, lp2)</code> returns <code>true</code> iff <code>lp1</code> is a sub-set of <code>lp2</code>.</p>
+</dd></dl>
+<a name="f_subQuasiComponent_63"></a><dl><dt>subQuasiComponent? : (TS, TS) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subQuasiComponent?(ts, us)</code> returns <code>true</code> iff <span class="spadop">internalSubQuasiComponent?(<code>ts</code>, us)</span> returns <code>true</code>.</p>
+</dd></dl>
+<dl><dt>subQuasiComponent? : (TS, <a href="List.html">List</a>(TS)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subQuasiComponent?(ts, lus)</code> returns <code>true</code> iff <code>subQuasiComponent?(ts, us)</code> holds for one <code>us</code> in <code>lus</code>.</p>
+</dd></dl>
+<a name="f_subTriSet_63"></a><dl><dt>subTriSet? : (TS, TS) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>subTriSet?(ts, us)</code> returns <code>true</code> iff <code>ts</code> is a sub-set of <code>us</code>.</p>
+</dd></dl>
+<a name="f_supDimElseRittWu_63"></a><dl><dt>supDimElseRittWu? : (TS, TS) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>supDimElseRittWu(ts, us)</code> returns <code>true</code> iff <code>ts</code> has less elements than <code>us</code> otherwise if <code>ts</code> has higher rank than <code>us</code> <code>w</code>.<code>r</code>.<code>t</code>. Ritt and Wu ordering.</p>
+</dd></dl>
+</body>
+</html>

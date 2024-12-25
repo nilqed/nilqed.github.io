@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ParametricTranscendentalIntegration</title>
+</head>
+<body>
+<h1>ParametricTranscendentalIntegration(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L466">intpar.spad line 466</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L466">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+This package implements parametric integration in transcendental case.</p>
+<a name="f_diffextint"></a><dl><dt>diffextint : (Mapping(<a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), <a href="List.html">List</a>(UP)), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>diffextint(ext, csolve, [g1, ..., gn])</code> is like primextint and expextint but for differentialy transcendental extensions.</p>
+</dd></dl>
+<a name="f_expextint"></a><dl><dt>expextint : (Mapping(UP, UP), Mapping(<a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(F)), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt <a href="List.html">List</a>(Record(ratpart : <a href="Fraction.html">Fraction</a>(UP), coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>expextint(', rde, csolve, [g1, ..., gn])</code> returns a basis of solution of the homogeneous system <code>h' + c1*g1 + ... + cn*gn = 0</code> Argument foo is an parametric <code>rde</code> solver on <code>F</code>. <code>csolve</code> is solver over constants.</p>
+</dd></dl>
+<a name="f_logextint"></a><dl><dt>logextint : (Mapping(UP, UP), Mapping(<a href="Factored.html">Factored</a>(UP), UP), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))), <a href="Matrix.html">Matrix</a>(F)), Mapping(Record(logands : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))), <a href="List.html">List</a>(UP)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt Record(logands : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))))</dt><dd><p>
+<code>logextint(der, ufactor, csolve, rec, [g1, ..., gn])</code> returns [[<code>u1</code>, ..., um], bas] giving basis of solution of the homogeneous systym <code>c1*g1 + ... + cn*gn + c_n+1u1'/u1 + ... c_n+mum'/um = 0</code></p>
+</dd></dl>
+<a name="f_monologextint"></a><dl><dt>monologextint : (<a href="List.html">List</a>(UP), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))), <a href="Matrix.html">Matrix</a>(F)), Mapping(Record(logands : <a href="List.html">List</a>(F), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))), <a href="List.html">List</a>(F))) -&gt Record(logands : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))))</dt><dd><p>
+<code>monologextint(lup, csolve, rec)</code> is a helper for logextint</p>
+</dd></dl>
+<a name="f_primextint"></a><dl><dt>primextint : (Mapping(UP, UP), Mapping(<a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), <a href="List.html">List</a>(F)), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt <a href="List.html">List</a>(Record(ratpart : <a href="Fraction.html">Fraction</a>(UP), coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>primextint(', ext, csolve, [g1, ..., gn])</code> returns a basis of solutions of the homogeneous system <code>h' + c1*g1 + ... + cn*gn = 0</code>. Argument <code>ext</code> is an extended integration function on <code>F</code>. <code>csolve</code> is solver over constants.</p>
+</dd></dl>
+<a name="f_unkextint"></a><dl><dt>unkextint : (Mapping(<a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F))), <a href="List.html">List</a>(F)), Mapping(<a href="List.html">List</a>(<a href="Vector.html">Vector</a>(F)), <a href="Matrix.html">Matrix</a>(F)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt <a href="List.html">List</a>(Record(ratpart : F, coeffs : <a href="Vector.html">Vector</a>(F)))</dt><dd><p>
+<code>unkextint(ext, csolve, [g1, ..., gn])</code> is like primextint and expextint but for makes no assumption about generator of the extension.</p>
+</dd></dl>
+</body>
+</html>

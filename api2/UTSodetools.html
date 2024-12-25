@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UTSodetools</title>
+</head>
+<body>
+<h1>UTSodetools(F, UP, L, UTS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/oderf.spad#L247">oderf.spad line 247</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/oderf.spad#L247">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Ring.html">Ring</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>L : <a href="LinearOrdinaryDifferentialOperatorCategory.html">LinearOrdinaryDifferentialOperatorCategory</a>(UP)<li>UTS : <a href="UnivariateTaylorSeriesCategory.html">UnivariateTaylorSeriesCategory</a>(F)</ul>
+<p>
+<code>RUTSodetools</code> provides tools to interface with the series ODE solver when presented with linear ODEs.</p>
+<a name="f_LODO2FUN"></a><dl><dt>LODO2FUN : L -&gt Mapping(UTS, <a href="List.html">List</a>(UTS))</dt><dd><p>
+<code>LODO2FUN(op)</code> returns the function to pass to the series ODE solver in order to solve <code>op y = 0</code>.</p>
+</dd></dl>
+<a name="f_RF2UTS"></a><dl><dt>RF2UTS : <a href="Fraction.html">Fraction</a>(UP) -&gt UTS if F has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd><p>
+<code>RF2UTS(f)</code> converts <code>f</code> to a Taylor series.</p>
+</dd></dl>
+<a name="f_UP2UTS"></a><dl><dt>UP2UTS : UP -&gt UTS</dt><dd><p>
+<code>UP2UTS(p)</code> converts <code>p</code> to a Taylor series.</p>
+</dd></dl>
+<a name="f_UTS2UP"></a><dl><dt>UTS2UP : (UTS, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt UP</dt><dd><p>
+<code>UTS2UP(s, n)</code> converts the first <code>n</code> terms of <code>s</code> to a univariate polynomial.</p>
+</dd></dl>
+</body>
+</html>

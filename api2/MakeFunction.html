@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>MakeFunction</title>
+</head>
+<body>
+<h1>MakeFunction(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mkfunc.spad#L240">mkfunc.spad line 240</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mkfunc.spad#L240">[edit on github]</a></p>
+<ul>
+<li>S : <a href="ConvertibleTo.html">ConvertibleTo</a>(<a href="InputForm.html">InputForm</a>)</ul>
+<p>
+transforms top-level objects into interpreter functions.</p>
+<a name="f_function"></a><dl><dt>function : (S, <a href="Symbol.html">Symbol</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>function(e, foo)</code> creates a function <code>foo() == e</code>.</p>
+</dd></dl>
+<dl><dt>function : (S, <a href="Symbol.html">Symbol</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>function(e, foo, [x1, ..., xn])</code> creates a function <code>foo(x1, ..., xn) == e</code>.</p>
+</dd></dl>
+<dl><dt>function : (S, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>function(e, foo, x)</code> creates a function <code>foo(x) == e</code>.</p>
+</dd></dl>
+<dl><dt>function : (S, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>) -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>function(e, foo, x, y)</code> creates a function <code>foo(x, y) = e</code>.</p>
+</dd></dl>
+</body>
+</html>

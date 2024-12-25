@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SmithNormalForm</title>
+</head>
+<body>
+<h1>SmithNormalForm(R, Row, Col, M)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/smith.spad#L1">smith.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/smith.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="EuclideanDomain.html">EuclideanDomain</a><li>Row : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>Col : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(R, Row, Col)</ul>
+<p>
+SmithNormalForm is a package which provides some standard canonical forms for matrices.</p>
+<a name="f_completeHermite"></a><dl><dt>completeHermite : M -&gt Record(Hermite : M, eqMat : M)</dt><dd><p>
+<code>completeHermite</code> returns a record that contains the Hermite normal form <code>H</code> of the matrix and the equivalence matrix <code>U</code> such that U*m = <code>H</code></p>
+</dd></dl>
+<a name="f_completeSmith"></a><dl><dt>completeSmith : M -&gt Record(Smith : M, leftEqMat : M, rightEqMat : M)</dt><dd><p>
+<code>completeSmith</code> returns a record that contains the Smith normal form <code>H</code> of the matrix and the left and right equivalence matrices <code>U</code> and <code>V</code> such that U*m*v = <code>H</code></p>
+</dd></dl>
+<a name="f_diophantineSystem"></a><dl><dt>diophantineSystem : (M, Col) -&gt Record(particular : Union(Col, "failed"), basis : <a href="List.html">List</a>(Col))</dt><dd><p>
+<code>diophantineSystem(A, B)</code> returns a particular integer solution and an integer basis of the equation <code>A X = B</code>.</p>
+</dd></dl>
+<a name="f_hermite"></a><dl><dt>hermite : M -&gt M</dt><dd><p>
+<code>hermite(m)</code> returns the Hermite normal form of the matrix <code>m</code>.</p>
+</dd></dl>
+<a name="f_smith"></a><dl><dt>smith : M -&gt M</dt><dd><p>
+<code>smith(m)</code> returns the Smith Normal form of the matrix <code>m</code>.</p>
+</dd></dl>
+</body>
+</html>

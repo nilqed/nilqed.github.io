@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LinearSystemPolynomialPackage</title>
+</head>
+<body>
+<h1>LinearSystemPolynomialPackage(R, E, OV, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/solvelin.spad#L154">solvelin.spad line 154</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/solvelin.spad#L154">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>OV : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="PolynomialCategory.html">PolynomialCategory</a>(R, E, OV)</ul>
+<p>
+this package finds the solutions of linear systems presented as a list of polynomials.</p>
+<a name="f_intoMatrix"></a><dl><dt>intoMatrix : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(OV)) -&gt Record(mat : <a href="Matrix.html">Matrix</a>(<a href="Fraction.html">Fraction</a>(P)), vec : <a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(P)))</dt><dd><p>
+<code>intoMatrix(lp, lvar)</code> converts linear in symbols lvar system of polynomials <code>lp</code> = 0 into matrix form</p>
+</dd></dl>
+<a name="f_linSolve"></a><dl><dt>linSolve : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(OV)) -&gt Record(particular : Union(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(P)), "failed"), basis : <a href="List.html">List</a>(<a href="Vector.html">Vector</a>(<a href="Fraction.html">Fraction</a>(P))))</dt><dd><p>
+<code>linSolve(lp, lvar)</code> finds the solutions of the linear system of polynomials <code>lp</code> = 0 with respect to the list of symbols lvar.</p>
+</dd></dl>
+</body>
+</html>

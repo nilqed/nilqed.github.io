@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariatePolynomialSquareFree</title>
+</head>
+<body>
+<h1>UnivariatePolynomialSquareFree(RC, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/poly.spad#L1006">poly.spad line 1006</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/poly.spad#L1006">[edit on github]</a></p>
+<ul>
+<li>RC : <a href="IntegralDomain.html">IntegralDomain</a><li>P : Join<a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(RC), <a href="IntegralDomain.html">IntegralDomain</a>) with
+<p>gcd : (%, %) -&gt %</ul>
+<p>
+This package provides for square-free decomposition of univariate polynomials over arbitrary rings, i.e. a partial factorization such that each factor is a product of irreducibles with multiplicity one and the factors are pairwise relatively prime. If the ring has characteristic zero, the result is guaranteed to satisfy this condition. If the ring is an infinite ring of finite characteristic, then it may not be possible to decide when polynomials contain factors which are <code>p</code>th powers. In this case, the flag associated with that polynomial is set to "nil" (meaning that that polynomials are not guaranteed to be square-free).</p>
+<a name="f_BumInSepFFE"></a><dl><dt>BumInSepFFE : Record(flag : Union("nil", "sqfr", "irred", "prime"), factor : P, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Record(flag : Union("nil", "sqfr", "irred", "prime"), factor : P, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>BumInSepFFE(f)</code> is a local function, exported only because it has multiple conditional definitions.</p>
+</dd></dl>
+<a name="f_squareFree"></a><dl><dt>squareFree : P -&gt <a href="Factored.html">Factored</a>(P)</dt><dd><p>
+<code>squareFree(p)</code> computes the square-free factorization of the univariate polynomial <code>p</code>. Each factor has no repeated roots, and the factors are pairwise relatively prime.</p>
+</dd></dl>
+<a name="f_squareFreePart"></a><dl><dt>squareFreePart : P -&gt P</dt><dd><p>
+<code>squareFreePart(p)</code> returns a polynomial which has the same irreducible factors as the univariate polynomial <code>p</code>, but each factor has multiplicity one.</p>
+</dd></dl>
+</body>
+</html>

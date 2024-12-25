@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ModularHermitePade</title>
+</head>
+<body>
+<h1>ModularHermitePade</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/modhpsol.spad#L1035">modhpsol.spad line 1035</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/modhpsol.spad#L1035">[edit on github]</a></p>
+<p>
+This package provides modular Hermite-Pade solvers for a few rings.Solver over integers is implemented in this package.Also it contains interfaces to solver over $<code>Z_p</code>$ and solver over ring of integer polynomials.</p>
+<a name="f_HP_95solve_95A"></a><dl><dt>HP_solve_A : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)), <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+HP_solve_A is a fake solver over algebraic numbers.</p>
+</dd></dl>
+<a name="f_HP_95solve_95I"></a><dl><dt>HP_solve_I : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>HP_solve_I implements</code> HP_solve over integers.</p>
+</dd></dl>
+<a name="f_HP_95solve_95M"></a><dl><dt>HP_solve_M : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Integer.html">Integer</a>)), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="Integer.html">Integer</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>HP_solve_M implements</code> HP_solve over $<code>Z_p</code>$ with machine-sized $<code>p</code>$.</p>
+</dd></dl>
+<a name="f_HP_95solve_95P"></a><dl><dt>HP_solve_P : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))), <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+<code>HP_solve_P implements</code> HP_solve over integer polynomials.</p>
+</dd></dl>
+<a name="f_HP_95solve_95PA"></a><dl><dt>HP_solve_PA : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>)))), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), Mapping(Union("good", "reject", "no_solution"), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>))))) -&gt Union(<a href="Matrix.html">Matrix</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="AlgebraicNumber.html">AlgebraicNumber</a>))), <a href="Boolean.html">Boolean</a>)</dt><dd><p>
+HP_solve_PA is a fake solver over polynomials having algebraic coefficients.</p>
+</dd></dl>
+<a name="f_LLFI_95to_95LPA"></a><dl><dt>LLFI_to_LPA : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt Union(<a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), "failed")</dt><dd><p>
+evaluation routine</p>
+</dd></dl>
+<a name="f_LLFPI_95to_95LPA"></a><dl><dt>LLFPI_to_LPA : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))), <a href="Integer.html">Integer</a>, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt Union(<a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), "failed")</dt><dd><p>
+evaluation routine</p>
+</dd></dl>
+<a name="f_VSUPI_95to_95VPA"></a><dl><dt>VSUPI_to_VPA : (<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Integer.html">Integer</a>)), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+evaluation routine</p>
+</dd></dl>
+<a name="f_VSUPPI_95to_95VPA"></a><dl><dt>VSUPPI_to_VPA : (<a href="Vector.html">Vector</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>) -&gt <a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>)</dt><dd><p>
+evaluation routine</p>
+</dd></dl>
+<a name="f_check_95sol1a"></a><dl><dt>check_sol1a : (<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), Mapping(<a href="Vector.html">Vector</a>(<a href="U32Vector.html">U32Vector</a>), <a href="List.html">List</a>(<a href="U32Vector.html">U32Vector</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="U32Vector.html">U32Vector</a></dt><dd><p>
+<code>check_sol1a performs</code> one round of modular Monte Carlo check for solutions.</p>
+</dd></dl>
+<a name="f_get_95variables"></a><dl><dt>get_variables : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>)))), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>) -&gt <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_unpack_95poly"></a><dl><dt>unpack_poly : (<a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="SortedExponentVector.html">SortedExponentVector</a>, <a href="PrimitiveArray.html">PrimitiveArray</a>(<a href="Integer.html">Integer</a>), <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>unpack_poly(vars, exps, coeffs, lo, <code>hi</code>)</code> converts polynomial from packed to sparse representation. Coefficients of packed polynomial are stored in <code>coeffs</code>(<code>l0</code>) up to <code>coeffs</code>(<code>hi</code>) Exponents are stored in corresponding elements of <code>exps</code>.</p>
+</dd></dl>
+</body>
+</html>

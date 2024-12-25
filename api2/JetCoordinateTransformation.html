@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetCoordinateTransformation</title>
+</head>
+<body>
+<h1>JetCoordinateTransformation(JB1, JB2, Y, W)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L6338">jet.spad line 6338</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L6338">[edit on github]</a></p>
+<ul>
+<li>JB1 : <a href="JetBundleCategory.html">JetBundleCategory</a><li>JB2 : <a href="JetBundleCategory.html">JetBundleCategory</a><li>Y : <a href="Vector.html">Vector</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB2))<li>W : <a href="Vector.html">Vector</a>(<a href="JetBundleExpression.html">JetBundleExpression</a>(JB2))</ul>
+<p>
+JetCoordinateTransformation implements changes of local coordinates. Given are the changes of the coordinates of the base space, i.e. the independent and dependent variables. The transformations of the derivatives are computed via the chain rule. <code>Y</code> (<code>W</code>) contains expressions for the old variables in terms of the new ones.</p>
+<a name="f_transform"></a><dl><dt>transform : JB1 -&gt <a href="JetBundleExpression.html">JetBundleExpression</a>(JB2)</dt><dd><p>
+<code>transform(jv)</code> transforms a jet variable <code>jv</code> into a function of the new coordinates.</p>
+</dd></dl>
+<dl><dt>transform : <a href="JetBundleExpression.html">JetBundleExpression</a>(JB1) -&gt <a href="JetBundleExpression.html">JetBundleExpression</a>(JB2)</dt><dd><p>
+<code>transform(f)</code> rewrites a function of the old coordinates in the new ones.</p>
+</dd></dl>
+</body>
+</html>

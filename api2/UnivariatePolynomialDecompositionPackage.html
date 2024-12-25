@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariatePolynomialDecompositionPackage</title>
+</head>
+<body>
+<h1>UnivariatePolynomialDecompositionPackage(R, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/updecomp.spad#L41">updecomp.spad line 41</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/updecomp.spad#L41">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+UnivariatePolynomialDecompositionPackage implements functional decomposition of univariate polynomial with coefficients in an <code>IntegralDomain</code> of <code>CharacteristicZero</code>.</p>
+<a name="f_completeDecompose"></a><dl><dt>completeDecompose : UP -&gt <a href="List.html">List</a>(UP) if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>completeDecompose(f)</code> returns a list of factors of <code>f</code> for the functional decomposition of <code>f</code>. [<code>f1</code>, ..., <code>fn</code>] means <code>f</code> = <code>f1</code> <code>o</code> ... <code>o</code> <code>fn</code>.</p>
+</dd></dl>
+<a name="f_decomposeIfCan"></a><dl><dt>decomposeIfCan : UP -&gt Union(Record(left : UP, right : UP), "failed") if R has <a href="Field.html">Field</a></dt><dd><p>
+<code>decomposeIfCan(f)</code> returns a functional decomposition of the polynomial <code>f</code> or "failed" if it has not found any.</p>
+</dd></dl>
+<a name="f_leftFactorIfCan"></a><dl><dt>leftFactorIfCan : (UP, UP) -&gt Union(UP, "failed")</dt><dd><p>
+<code>leftFactorIfCan(f, h)</code> returns the left factor (<code>g</code> in <code>f</code> = <code>g</code> <code>o</code> <code>h</code>) of the functional decomposition of the polynomial <code>f</code> with given <code>h</code> or <code>"failed"</code> if <code>g</code> does not exist.</p>
+</dd></dl>
+<a name="f_monicCompleteDecompose"></a><dl><dt>monicCompleteDecompose : UP -&gt <a href="List.html">List</a>(UP)</dt><dd><p>
+<code>monicCompleteDecompose(f)</code> returns a list of factors of <code>f</code> for the functional decomposition of monic polynomial <code>f</code>. [<code>f1</code>, ..., <code>fn</code>] means <code>f</code> = <code>f1</code> <code>o</code> ... <code>o</code> <code>fn</code>.</p>
+</dd></dl>
+<a name="f_monicDecomposeIfCan"></a><dl><dt>monicDecomposeIfCan : UP -&gt Union(Record(left : UP, right : UP), "failed")</dt><dd><p>
+<code>monicDecomposeIfCan(f)</code> returns a functional decomposition of the monic polynomial <code>f</code> or "failed" if it has not found any.</p>
+</dd></dl>
+<a name="f_monicRightFactorIfCan"></a><dl><dt>monicRightFactorIfCan : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(UP, "failed")</dt><dd><p>
+<code>monicRightFactorIfCan(f, d)</code> returns a candidate to be the monic right factor (<code>h</code> in <code>f</code> = <code>g</code> <code>o</code> <code>h</code>) of degree <code>d</code> of a functional decomposition of the polynomial <code>f</code> or <code>"failed"</code> if no such candidate.</p>
+</dd></dl>
+<a name="f_rightFactorIfCan"></a><dl><dt>rightFactorIfCan : (UP, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, R) -&gt Union(UP, "failed")</dt><dd><p>
+<code>rightFactorIfCan(f, d, c)</code> returns a candidate to be the right factor (<code>h</code> in <code>f</code> = <code>g</code> <code>o</code> <code>h</code>) of degree <code>d</code> with leading coefficient <code>c</code> of a functional decomposition of the polynomial <code>f</code> or <code>"failed"</code> if no such candidate.</p>
+</dd></dl>
+</body>
+</html>

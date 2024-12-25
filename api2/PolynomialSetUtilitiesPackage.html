@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PolynomialSetUtilitiesPackage</title>
+</head>
+<body>
+<h1>PolynomialSetUtilitiesPackage(R, E, V, P)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/triset.spad#L580">triset.spad line 580</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/triset.spad#L580">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)</ul>
+<p>
+This package provides modest routines for polynomial system solving. The aim of many of the operations of this package is to remove certain factors in some polynomials in order to avoid unnecessary computations in algorithms involving splitting techniques by partial factorization.</p>
+<a name="f_bivariate_63"></a><dl><dt>bivariate? : P -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>bivariate?(p)</code> returns <code>true</code> iff <code>p</code> involves two and only two variables.</p>
+</dd></dl>
+<a name="f_bivariatePolynomials"></a><dl><dt>bivariatePolynomials : <a href="List.html">List</a>(P) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>bivariatePolynomials(lp)</code> returns <code>bps, nbps</code> where <code>bps</code> is a list of the bivariate polynomials, and <code>nbps</code> are the other ones.</p>
+</dd></dl>
+<a name="f_certainlySubVariety_63"></a><dl><dt>certainlySubVariety? : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>certainlySubVariety?(newlp, lp)</code> returns <code>true</code> iff for every <code>p</code> in <code>lp</code> the remainder of <code>p</code> by <code>newlp</code> using the division algorithm of Groebner techniques is zero.</p>
+</dd></dl>
+<a name="f_crushedSet"></a><dl><dt>crushedSet : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>crushedSet(lp)</code> returns <code>lq</code> such that <code>lp</code> and and <code>lq</code> generate the same ideal and no rough basic sets reduce (in the sense of Groebner bases) the other polynomials in <code>lq</code>.</p>
+</dd></dl>
+<a name="f_interReduce"></a><dl><dt>interReduce : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>interReduce(lp)</code> returns <code>lq</code> such that <code>lp</code> and <code>lq</code> generate the same ideal and no polynomial in <code>lq</code> is reducible by the others in the sense of Groebner bases. Since no assumptions are required the result may depend on the ordering the reductions are performed.</p>
+</dd></dl>
+<a name="f_irreducibleFactors"></a><dl><dt>irreducibleFactors : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and R has <a href="CharacteristicZero.html">CharacteristicZero</a></dt><dd><p>
+<code>irreducibleFactors(lp)</code> returns <code>lf</code> such that if <code>lp = [p1, ..., pn]</code> and <code>lf = [f1, ..., fm]</code> then <code>p1*p2*...*pn=0</code> means <code>f1*f2*...*fm=0</code>, and the <code><code>fi</code></code> are irreducible over <code>R</code> and are pairwise distinct.</p>
+</dd></dl>
+<a name="f_lazyIrreducibleFactors"></a><dl><dt>lazyIrreducibleFactors : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and R has <a href="CharacteristicZero.html">CharacteristicZero</a></dt><dd><p>
+<code>lazyIrreducibleFactors(lp)</code> returns <code>lf</code> such that if <code>lp = [p1, ..., pn]</code> and <code>lf = [f1, ..., fm]</code> then <code>p1*p2*...*pn=0</code> means <code>f1*f2*...*fm=0</code>, and the <code><code>fi</code></code> are irreducible over <code>R</code> and are pairwise distinct. The algorithm tries to avoid factorization into irreducible factors as far as possible and makes previously use of <code>gcd</code> techniques over <code>R</code>.</p>
+</dd></dl>
+<a name="f_linear_63"></a><dl><dt>linear? : P -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>linear?(p)</code> returns <code>true</code> iff <code>p</code> does not lie in the base ring <code>R</code> and has main degree <code>1</code>.</p>
+</dd></dl>
+<a name="f_linearPolynomials"></a><dl><dt>linearPolynomials : <a href="List.html">List</a>(P) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>linearPolynomials(lp)</code> returns <code>lps, nlps</code> where <code>lps</code> is a list of the linear polynomials in <code>lp</code>, and <code>nlps</code> are the other ones.</p>
+</dd></dl>
+<a name="f_possiblyNewVariety_63"></a><dl><dt>possiblyNewVariety? : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(<a href="List.html">List</a>(P))) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>possiblyNewVariety?(newlp, llp)</code> returns <code>true</code> iff for every <code>lp</code> in <code>llp</code> certainlySubVariety?(<code>newlp</code>, <code>lp</code>) does not hold.</p>
+</dd></dl>
+<a name="f_probablyZeroDim_63"></a><dl><dt>probablyZeroDim? : <a href="List.html">List</a>(P) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>probablyZeroDim?(lp)</code> returns <code>true</code> iff the number of polynomials in <code>lp</code> is not smaller than the number of variables occurring in these polynomials.</p>
+</dd></dl>
+<a name="f_quasiMonicPolynomials"></a><dl><dt>quasiMonicPolynomials : <a href="List.html">List</a>(P) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>quasiMonicPolynomials(lp)</code> returns <code>qmps, nqmps</code> where <code>qmps</code> is a list of the quasi-monic polynomials in <code>lp</code> and <code>nqmps</code> are the other ones.</p>
+</dd></dl>
+<a name="f_removeIrreducibleRedundantFactors"></a><dl><dt>removeIrreducibleRedundantFactors : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="List.html">List</a>(P) if R has <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a> and R has <a href="CharacteristicZero.html">CharacteristicZero</a></dt><dd><p>
+<code>removeIrreducibleRedundantFactors(lp, lq)</code> returns the same as <code>irreducibleFactors(concat(lp, lq))</code> assuming that <code>irreducibleFactors(lp)</code> returns <code>lp</code> up to replacing some polynomial <code>pj</code> in <code>lp</code> by some polynomial <code>qj</code> associated to <code>pj</code>.</p>
+</dd></dl>
+<a name="f_removeRedundantFactors"></a><dl><dt>removeRedundantFactors : (P, P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRedundantFactors(p, q)</code> returns the same as <code>removeRedundantFactors([p, q])</code></p>
+</dd></dl>
+<dl><dt>removeRedundantFactors : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRedundantFactors(lp)</code> returns <code>lq</code> such that if <code>lp = [p1, ..., pn]</code> and <code>lq = [q1, ..., qm]</code> then the product <code>p1*p2*...*pn</code> vanishes iff the product <code>q1*q2*...*qm</code> vanishes, and the product of degrees of the <code><code>qi</code></code> is not greater than the one of the <code>pj</code>, and no polynomial in <code>lq</code> divides another polynomial in <code>lq</code>. In particular, polynomials lying in the base ring <code>R</code> are removed. Moreover, <code>lq</code> is sorted <code>w</code>.<code>r</code>.<code>t</code> <code>infRittWu?</code>. Furthermore, if <code>R</code> is <code>gcd</code>-domain, the polynomials in <code>lq</code> are pairwise without common non trivial factor.</p>
+</dd></dl>
+<dl><dt>removeRedundantFactors : (<a href="List.html">List</a>(P), P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRedundantFactors(lp, q)</code> returns the same as <code>removeRedundantFactors(cons(q, lp))</code> assuming that <code>removeRedundantFactors(lp)</code> returns <code>lp</code> up to replacing some polynomial <code>pj</code> in <code>lp</code> by some some polynomial <code>qj</code> associated to <code>pj</code>.</p>
+</dd></dl>
+<dl><dt>removeRedundantFactors : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRedundantFactors(lp, lq)</code> returns the same as <code>removeRedundantFactors(concat(lp, lq))</code> assuming that <code>removeRedundantFactors(lp)</code> returns <code>lp</code> up to replacing some polynomial <code>pj</code> in <code>lp</code> by some polynomial <code>qj</code> associated to <code>pj</code>.</p>
+</dd></dl>
+<dl><dt>removeRedundantFactors : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P), Mapping(<a href="List.html">List</a>(P), <a href="List.html">List</a>(P))) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRedundantFactors(lp, lq, remOp)</code> returns the same as <code>concat(remOp(removeRoughlyRedundantFactorsInPols(lp, lq)), lq)</code> assuming that <code>remOp(lq)</code> returns <code>lq</code> up to similarity.</p>
+</dd></dl>
+<a name="f_removeRedundantFactorsInContents"></a><dl><dt>removeRedundantFactorsInContents : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="List.html">List</a>(P) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>removeRedundantFactorsInContents(lp, lf)</code> returns <code>newlp</code> where <code>newlp</code> is obtained from <code>lp</code> by removing in the content of every polynomial of <code>lp</code> any non trivial factor of any polynomial <code>f</code> in <code>lf</code>. Moreover, squares over <code>R</code> are first removed in the content of every polynomial of <code>lp</code>.</p>
+</dd></dl>
+<a name="f_removeRedundantFactorsInPols"></a><dl><dt>removeRedundantFactorsInPols : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="List.html">List</a>(P) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>removeRedundantFactorsInPols(lp, lf)</code> returns <code>newlp</code> where <code>newlp</code> is obtained from <code>lp</code> by removing in every polynomial <code>p</code> of <code>lp</code> any non trivial factor of any polynomial <code>f</code> in <code>lf</code>. Moreover, squares over <code>R</code> are first removed in every polynomial <code>lp</code>.</p>
+</dd></dl>
+<a name="f_removeRoughlyRedundantFactorsInContents"></a><dl><dt>removeRoughlyRedundantFactorsInContents : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="List.html">List</a>(P) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>removeRoughlyRedundantFactorsInContents(lp, lf)</code> returns <code>newlp</code>where <code>newlp</code> is obtained from <code>lp</code> by removing in the content of every polynomial of <code>lp</code> any occurrence of a polynomial <code>f</code> in <code>lf</code>. Moreover, squares over <code>R</code> are first removed in the content of every polynomial of <code>lp</code>.</p>
+</dd></dl>
+<a name="f_removeRoughlyRedundantFactorsInPol"></a><dl><dt>removeRoughlyRedundantFactorsInPol : (P, <a href="List.html">List</a>(P)) -&gt P</dt><dd><p>
+<code>removeRoughlyRedundantFactorsInPol(p, lf)</code> returns the same as removeRoughlyRedundantFactorsInPols([<code>p</code>], <code>lf</code>, <code>true</code>)</p>
+</dd></dl>
+<a name="f_removeRoughlyRedundantFactorsInPols"></a><dl><dt>removeRoughlyRedundantFactorsInPols : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P)) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRoughlyRedundantFactorsInPols(lp, lf)</code> returns <code>newlp</code>where <code>newlp</code> is obtained from <code>lp</code> by removing in every polynomial <code>p</code> of <code>lp</code> any occurrence of a polynomial <code>f</code> in <code>lf</code>. This may involve a lot of exact-quotients computations.</p>
+</dd></dl>
+<dl><dt>removeRoughlyRedundantFactorsInPols : (<a href="List.html">List</a>(P), <a href="List.html">List</a>(P), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeRoughlyRedundantFactorsInPols(lp, lf, opt)</code> returns the same as <code>removeRoughlyRedundantFactorsInPols(lp, lf)</code> if <code>opt</code> is <code>false</code> and if the previous operation does not return any non null and constant polynomial, else return <code>[1]</code>.</p>
+</dd></dl>
+<a name="f_removeSquaresIfCan"></a><dl><dt>removeSquaresIfCan : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>removeSquaresIfCan(lp)</code> returns <code>removeDuplicates [squareFreePart(p)$P for p in lp]</code> if <code>R</code> is <code>gcd</code>-domain else returns <code>lp</code>.</p>
+</dd></dl>
+<a name="f_rewriteIdealWithQuasiMonicGenerators"></a><dl><dt>rewriteIdealWithQuasiMonicGenerators : (<a href="List.html">List</a>(P), Mapping(<a href="Boolean.html">Boolean</a>, P, P), Mapping(P, P, P)) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>rewriteIdealWithQuasiMonicGenerators(lp, redOp?, redOp)</code> returns <code>lq</code> where <code>lq</code> and <code>lp</code> generate the same ideal in <code>R^(-1) P</code> and <code>lq</code> has rank not higher than the one of <code>lp</code>. Moreover, <code>lq</code> is computed by reducing <code>lp</code> <code>w</code>.<code>r</code>.<code>t</code>. some basic set of the ideal generated by the quasi-monic polynomials in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_rewriteSetByReducingWithParticularGenerators"></a><dl><dt>rewriteSetByReducingWithParticularGenerators : (<a href="List.html">List</a>(P), Mapping(<a href="Boolean.html">Boolean</a>, P), Mapping(<a href="Boolean.html">Boolean</a>, P, P), Mapping(P, P, P)) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>rewriteSetByReducingWithParticularGenerators(lp, pred?, redOp?, redOp)</code> returns <code>lq</code> where <code>lq</code> is computed by the following algorithm. Chose a basic set <code>w</code>.<code>r</code>.<code>t</code>. the reduction-test <code>redOp?</code> among the polynomials satisfying property <code>pred?</code>, if it is empty then leave, else reduce the other polynomials by this basic set <code>w</code>.<code>r</code>.<code>t</code>. the reduction-operation <code>redOp</code>. Repeat while another basic set with smaller rank can be computed. See code. If <code>pred?</code> is <code>quasiMonic?</code> the ideal is unchanged.</p>
+</dd></dl>
+<a name="f_roughBasicSet"></a><dl><dt>roughBasicSet : <a href="List.html">List</a>(P) -&gt Union(Record(bas : <a href="GeneralTriangularSet.html">GeneralTriangularSet</a>(R, E, V, P), top : <a href="List.html">List</a>(P)), "failed")</dt><dd><p>
+<code>roughBasicSet(lp)</code> returns the smallest (with Ritt-Wu ordering) triangular set contained in <code>lp</code>.</p>
+</dd></dl>
+<a name="f_selectAndPolynomials"></a><dl><dt>selectAndPolynomials : (<a href="List.html">List</a>(Mapping(<a href="Boolean.html">Boolean</a>, P)), <a href="List.html">List</a>(P)) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>selectAndPolynomials(lpred?, ps)</code> returns <code>gps, bps</code> where <code>gps</code> is a list of the polynomial <code>p</code> in <code>ps</code> such that <code>pred?(p)</code> holds for every <code>pred?</code> in <code>lpred?</code> and <code>bps</code> are the other ones.</p>
+</dd></dl>
+<a name="f_selectOrPolynomials"></a><dl><dt>selectOrPolynomials : (<a href="List.html">List</a>(Mapping(<a href="Boolean.html">Boolean</a>, P)), <a href="List.html">List</a>(P)) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>selectOrPolynomials(lpred?, ps)</code> returns <code>gps, bps</code> where <code>gps</code> is a list of the polynomial <code>p</code> in <code>ps</code> such that <code>pred?(p)</code> holds for some <code>pred?</code> in <code>lpred?</code> and <code>bps</code> are the other ones.</p>
+</dd></dl>
+<a name="f_selectPolynomials"></a><dl><dt>selectPolynomials : (Mapping(<a href="Boolean.html">Boolean</a>, P), <a href="List.html">List</a>(P)) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>selectPolynomials(pred?, ps)</code> returns <code>gps, bps</code> where <code>gps</code> is a list of the polynomial <code>p</code> in <code>ps</code> such that <code>pred?(p)</code> holds and <code>bps</code> are the other ones.</p>
+</dd></dl>
+<a name="f_squareFreeFactors"></a><dl><dt>squareFreeFactors : P -&gt <a href="List.html">List</a>(P) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>squareFreeFactors(p)</code> returns the square-free factors of <code>p</code> over <code>R</code></p>
+</dd></dl>
+<a name="f_univariate_63"></a><dl><dt>univariate? : P -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>univariate?(p)</code> returns <code>true</code> iff <code>p</code> involves one and only one variable.</p>
+</dd></dl>
+<a name="f_univariatePolynomials"></a><dl><dt>univariatePolynomials : <a href="List.html">List</a>(P) -&gt Record(goodPols : <a href="List.html">List</a>(P), badPols : <a href="List.html">List</a>(P))</dt><dd><p>
+<code>univariatePolynomials(lp)</code> returns <code>ups, nups</code> where <code>ups</code> is a list of the univariate polynomials, and <code>nups</code> are the other ones.</p>
+</dd></dl>
+<a name="f_univariatePolynomialsGcds"></a><dl><dt>univariatePolynomialsGcds : <a href="List.html">List</a>(P) -&gt <a href="List.html">List</a>(P) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>univariatePolynomialsGcds(lp)</code> returns <code>lg</code> where <code>lg</code> is a list of the gcds of every pair in <code>lp</code> of univariate polynomials in the same main variable.</p>
+</dd></dl>
+<dl><dt>univariatePolynomialsGcds : (<a href="List.html">List</a>(P), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(P) if R has <a href="GcdDomain.html">GcdDomain</a></dt><dd><p>
+<code>univariatePolynomialsGcds(lp, opt)</code> returns the same as <code>univariatePolynomialsGcds(lp)</code> if <code>opt</code> is <code>false</code> and if the previous operation does not return any non null and constant polynomial, else return <code>[1]</code>.</p>
+</dd></dl>
+<a name="f_unprotectedRemoveRedundantFactors"></a><dl><dt>unprotectedRemoveRedundantFactors : (P, P) -&gt <a href="List.html">List</a>(P)</dt><dd><p>
+<code>unprotectedRemoveRedundantFactors(p, q)</code> returns the same as <code>removeRedundantFactors(p, q)</code> but does assume that neither <code>p</code> nor <code>q</code> lie in the base ring <code>R</code> and assumes that <code>infRittWu?(p, q)</code> holds. Moreover, if <code>R</code> is <code>gcd</code>-domain, then <code>p</code> and <code>q</code> are assumed to be square free.</p>
+</dd></dl>
+</body>
+</html>

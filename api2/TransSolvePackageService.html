@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>TransSolvePackageService</title>
+</head>
+<body>
+<h1>TransSolvePackageService(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/transsolve.spad#L598">transsolve.spad line 598</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/transsolve.spad#L598">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)</ul>
+<p>
+This package finds the function <code>func3</code> where <code>func1</code> and <code>func2</code> are given and<code>func1</code> = <code>func3</code>(<code>func2</code>) .If there is no solution then function <code>func1</code> will be returned. An example would be<code>func1 := 8*X^3+32*X^2-14*X ::EXPR INT</code> and <code>func2 := 2*X ::EXPR INT</code> convert them via univariate to FRAC SUP EXPR INT and then the solution is <code>func3 := X^3+X^2-X</code> of type FRAC SUP EXPR INT</p>
+<a name="f_decomposeFunc"></a><dl><dt>decomposeFunc : (<a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Expression.html">Expression</a>(R))), <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Expression.html">Expression</a>(R))), <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Expression.html">Expression</a>(R)))) -&gt <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>decomposeFunc(func1, func2, newvar)</code> returns a function <code>func3</code> where <code>func1</code> = <code>func3</code>(<code>func2</code>) and expresses it in the new variable newvar. If there is no solution then <code>func1</code> will be returned.</p>
+</dd></dl>
+<a name="f_unvectorise"></a><dl><dt>unvectorise : (<a href="Vector.html">Vector</a>(<a href="Expression.html">Expression</a>(R)), <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Expression.html">Expression</a>(R))), <a href="Integer.html">Integer</a>) -&gt <a href="Fraction.html">Fraction</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="Expression.html">Expression</a>(R)))</dt><dd><p>
+<code>unvectorise(vect, var, n)</code> returns <code>vect(1) + vect(2)*var + ... + vect(n+1)*var^(n)</code> where <code>vect</code> is the vector of the coefficients of the polynomial, <code>var</code> the new variable and <code>n</code> the degree.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ZeroDimensionalSolvePackage</title>
+</head>
+<body>
+<h1>ZeroDimensionalSolvePackage(R, ls, ls2)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/zerodim.spad#L647">zerodim.spad line 647</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/zerodim.spad#L647">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="OrderedRing.html">OrderedRing</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RealConstant.html">RealConstant</a>)<li>ls : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)<li>ls2 : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)</ul>
+<p>
+A package for computing symbolically the complex and real roots of zero-dimensional algebraic systems over the integer or rational numbers. Complex roots are given by means of univariate representations of irreducible regular chains. Real roots are given by means of tuples of coordinates lying in the RealClosure of the coefficient ring. This constructor takes three arguments. The first one <code>R</code> is the coefficient ring. The second one <code>ls</code> is the list of variables involved in the systems to solve. The third one must be <code>concat(ls, s)</code> where <code>s</code> is an additional symbol used for the univariate representations. WARNING: The third argument is not checked. All operations are based on triangular decompositions. The default is to compute these decompositions directly from the input system by using the RegularChain domain constructor. The lexTriangular algorithm can also be used for computing these decompositions (see the LexTriangularPackage package constructor). For that purpose, the operations <span class="spadop">univariateSolve</span>, <span class="spadop">realSolve</span> and <span class="spadop">positiveSolve</span> admit an optional argument.  Author: Marc Moreno Maza.</p>
+<a name="f_convert"></a><dl><dt>convert : <a href="SquareFreeRegularTriangularSet.html">SquareFreeRegularTriangularSet</a>(R, <a href="IndexedExponents.html">IndexedExponents</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(ls2)), <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2), <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2))) -&gt <a href="List.html">List</a>(<a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2)))</dt><dd><p>
+<code>convert(st)</code> returns the members of <code>st</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls)) -&gt <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2))</dt><dd><p>
+<code>convert(q)</code> converts <code>q</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2)) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R)))</dt><dd><p>
+<code>convert(q)</code> converts <code>q</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="Polynomial.html">Polynomial</a>(R) -&gt <a href="Polynomial.html">Polynomial</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R)))</dt><dd><p>
+<code>convert(p)</code> converts <code>p</code>.</p>
+</dd></dl>
+<dl><dt>convert : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R)))</dt><dd><p>
+<code>convert(u)</code> converts <code>u</code>.</p>
+</dd></dl>
+<a name="f_positiveSolve"></a><dl><dt>positiveSolve : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>positiveSolve(lp)</code> returns the same as <code>positiveSolve(lp, false, false)</code>.</p>
+</dd></dl>
+<dl><dt>positiveSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>positiveSolve(lp)</code> returns the same as <code>positiveSolve(lp, info?, false)</code>.</p>
+</dd></dl>
+<dl><dt>positiveSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>positiveSolve(lp, info?, lextri?)</code> returns the set of the points in the variety associated with <code>lp</code> whose coordinates are (real) strictly positive. Moreover, if <code>info?</code> is <code>true</code> then some information is displayed during decomposition into regular chains. If <code>lextri?</code> is <code>true</code> then the lexTriangular algorithm is called from the LexTriangularPackage constructor (see <span class="spadop">zeroSetSplit</span>(<code>lp</code>, <code>false</code>)). Otherwise, the triangular decomposition is computed directly from the input system by using the <span class="spadop">zeroSetSplit</span> from RegularChain. WARNING: For each set of coordinates given by <code>positiveSolve(lp, info?, lextri?)</code> the ordering of the indeterminates is reversed <code>w</code>.<code>r</code>.<code>t</code>. <code>ls</code>.</p>
+</dd></dl>
+<dl><dt>positiveSolve : <a href="RegularChain.html">RegularChain</a>(R, ls) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>positiveSolve(ts)</code> returns the points of the regular set of <code>ts</code> with (real) strictly positive coordinates.</p>
+</dd></dl>
+<a name="f_realSolve"></a><dl><dt>realSolve : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>realSolve(lp)</code> returns the same as <code>realSolve(ts, false, false, false)</code></p>
+</dd></dl>
+<dl><dt>realSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>realSolve(ts, info?)</code> returns the same as <code>realSolve(ts, info?, false, false)</code>.</p>
+</dd></dl>
+<dl><dt>realSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>realSolve(ts, info?, check?)</code> returns the same as <code>realSolve(ts, info?, check?, false)</code>.</p>
+</dd></dl>
+<dl><dt>realSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>realSolve(ts, info?, check?, lextri?)</code> returns the set of the points in the variety associated with <code>lp</code> whose coordinates are all real. Moreover, if <code>info?</code> is <code>true</code> then some information is displayed during decomposition into regular chains. If <code>check?</code> is <code>true</code> then the result is checked. If <code>lextri?</code> is <code>true</code> then the lexTriangular algorithm is called from the LexTriangularPackage constructor (see <span class="spadop">zeroSetSplit</span>(<code>lp</code>, <code>false</code>)). Otherwise, the triangular decomposition is computed directly from the input system by using the <span class="spadop">zeroSetSplit</span> from RegularChain. WARNING: For each set of coordinates given by <code>realSolve(ts, info?, check?, lextri?)</code> the ordering of the indeterminates is reversed <code>w</code>.<code>r</code>.<code>t</code>. <code>ls</code>.</p>
+</dd></dl>
+<dl><dt>realSolve : <a href="RegularChain.html">RegularChain</a>(R, ls) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="RealClosure.html">RealClosure</a>(<a href="Fraction.html">Fraction</a>(R))))</dt><dd><p>
+<code>realSolve(ts)</code> returns the set of the points in the regular zero set of <code>ts</code> whose coordinates are all real. WARNING: For each set of coordinates given by <code>realSolve(ts)</code> the ordering of the indeterminates is reversed <code>w</code>.<code>r</code>.<code>t</code>. <code>ls</code>.</p>
+</dd></dl>
+<a name="f_squareFree"></a><dl><dt>squareFree : <a href="RegularChain.html">RegularChain</a>(R, ls) -&gt <a href="List.html">List</a>(<a href="SquareFreeRegularTriangularSet.html">SquareFreeRegularTriangularSet</a>(R, <a href="IndexedExponents.html">IndexedExponents</a>(<a href="OrderedVariableList.html">OrderedVariableList</a>(ls2)), <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2), <a href="NewSparseMultivariatePolynomial.html">NewSparseMultivariatePolynomial</a>(R, <a href="OrderedVariableList.html">OrderedVariableList</a>(ls2))))</dt><dd><p>
+<code>squareFree(ts)</code> returns the square-free factorization of <code>ts</code>. Moreover, each factor is a Lazard triangular set and the decomposition is a Kalkbrener split of <code>ts</code>, which is enough here for the matter of solving zero-dimensional algebraic systems. WARNING: <code>ts</code> is not checked to be zero-dimensional.</p>
+</dd></dl>
+<a name="f_triangSolve"></a><dl><dt>triangSolve : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(<a href="RegularChain.html">RegularChain</a>(R, ls))</dt><dd><p>
+<code>triangSolve(lp)</code> returns the same as <code>triangSolve(lp, false, false)</code></p>
+</dd></dl>
+<dl><dt>triangSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="RegularChain.html">RegularChain</a>(R, ls))</dt><dd><p>
+<code>triangSolve(lp, info?)</code> returns the same as <code>triangSolve(lp, false)</code></p>
+</dd></dl>
+<dl><dt>triangSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(<a href="RegularChain.html">RegularChain</a>(R, ls))</dt><dd><p>
+<code>triangSolve(lp, info?, lextri?)</code> decomposes the variety associated with <code>lp</code> into regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that <code>lp</code> needs to generate a zero-dimensional ideal. If <code>lp</code> is not zero-dimensional then the result is only a decomposition of its zero-set in the sense of the closure (<code>w</code>.<code>r</code>.<code>t</code>. Zarisky topology). Moreover, if <code>info?</code> is <code>true</code> then some information is displayed during the computations. See <span class="spadop">zeroSetSplit</span>(<code>lp</code>, <code>true</code>, <code>info?</code>). If <code>lextri?</code> is <code>true</code> then the lexTriangular algorithm is called from the LexTriangularPackage constructor (see <span class="spadop">zeroSetSplit</span>(<code>lp</code>, <code>false</code>)). Otherwise, the triangular decomposition is computed directly from the input system by using the <span class="spadop">zeroSetSplit</span> from RegularChain.</p>
+</dd></dl>
+<a name="f_univariateSolve"></a><dl><dt>univariateSolve : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>univariateSolve(lp)</code> returns the same as <code>univariateSolve(lp, false, false, false)</code>.</p>
+</dd></dl>
+<dl><dt>univariateSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>univariateSolve(lp, info?)</code> returns the same as <code>univariateSolve(lp, info?, false, false)</code>.</p>
+</dd></dl>
+<dl><dt>univariateSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>univariateSolve(lp, info?, check?)</code> returns the same as <code>univariateSolve(lp, info?, check?, false)</code>.</p>
+</dd></dl>
+<dl><dt>univariateSolve : (<a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>univariateSolve(lp, info?, check?, lextri?)</code> returns a univariate representation of the variety associated with <code>lp</code>. Moreover, if <code>info?</code> is <code>true</code> then some information is displayed during the decomposition into regular chains. If <code>check?</code> is <code>true</code> then the result is checked. See <span class="spadop">rur</span>(<code>lp</code>, <code>true</code>). If <code>lextri?</code> is <code>true</code> then the lexTriangular algorithm is called from the LexTriangularPackage constructor (see <span class="spadop">zeroSetSplit</span>(<code>lp</code>, <code>false</code>)). Otherwise, the triangular decomposition is computed directly from the input system by using the <span class="spadop">zeroSetSplit</span> from RegularChain.</p>
+</dd></dl>
+<dl><dt>univariateSolve : <a href="RegularChain.html">RegularChain</a>(R, ls) -&gt <a href="List.html">List</a>(Record(complexRoots : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(R), coordinates : <a href="List.html">List</a>(<a href="Polynomial.html">Polynomial</a>(R))))</dt><dd><p>
+<code>univariateSolve(ts)</code> returns a univariate representation of <code>ts</code>. See <span class="spadop">rur</span>(<code>lp</code>, <code>true</code>).</p>
+</dd></dl>
+</body>
+</html>

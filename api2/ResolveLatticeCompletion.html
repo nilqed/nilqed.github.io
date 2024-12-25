@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ResolveLatticeCompletion</title>
+</head>
+<body>
+<h1>ResolveLatticeCompletion(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/any.spad#L218">any.spad line 218</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/any.spad#L218">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+This package provides coercions for the special types Exit and Void.</p>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="Exit.html">Exit</a> -&gt S</dt><dd><p>
+<code>coerce(e)</code> is never really evaluated. This coercion is used for formal type correctness when a function will not return directly to its caller.</p>
+</dd></dl>
+<dl><dt>coerce : S -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>coerce(s)</code> throws all information about <code>s</code> away. This coercion allows values of any type to appear in contexts where they will not be used. For example, it allows the resolution of different types in the <code>then</code> and <code>else</code> branches when an <code>if</code> is in a context where the resulting value is not used.</p>
+</dd></dl>
+</body>
+</html>

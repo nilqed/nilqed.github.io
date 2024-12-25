@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PatternFunctions1</title>
+</head>
+<body>
+<h1>PatternFunctions1(R, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pattern.spad#L374">pattern.spad line 374</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pattern.spad#L374">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a><li>D : <a href="Type.html">Type</a></ul>
+<p>
+Tools for patterns.</p>
+<a name="f_addBadValue"></a><dl><dt>addBadValue : (<a href="Pattern.html">Pattern</a>(R), D) -&gt <a href="Pattern.html">Pattern</a>(R)</dt><dd><p>
+<code>addBadValue(p, v)</code> adds <code>v</code> to the list of "bad values" for <code>p</code>; <code>p</code> is not allowed to match any of its "bad values".</p>
+</dd></dl>
+<a name="f_badValues"></a><dl><dt>badValues : <a href="Pattern.html">Pattern</a>(R) -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>badValues(p)</code> returns the list of "bad values" for <code>p</code>; <code>p</code> is not allowed to match any of its "bad values".</p>
+</dd></dl>
+<a name="f_predicate"></a><dl><dt>predicate : <a href="Pattern.html">Pattern</a>(R) -&gt Mapping(<a href="Boolean.html">Boolean</a>, D)</dt><dd><p>
+<code>predicate(p)</code> returns the predicate attached to <code>p</code>, the constant function <code>true</code> if <code>p</code> has no predicates attached to it.</p>
+</dd></dl>
+<a name="f_satisfy_63"></a><dl><dt>satisfy? : (D, <a href="Pattern.html">Pattern</a>(R)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>satisfy?(v, p)</code> returns <code>f</code>(<code>v</code>) where <code>f</code> is the predicate attached to <code>p</code>.</p>
+</dd></dl>
+<dl><dt>satisfy? : (<a href="List.html">List</a>(D), <a href="Pattern.html">Pattern</a>(R)) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>satisfy?([v1, ..., vn], p)</code> returns <code>f(v1, ..., vn)</code> where <code>f</code> is the top-level predicate attached to <code>p</code>.</p>
+</dd></dl>
+<a name="f_suchThat"></a><dl><dt>suchThat : (<a href="Pattern.html">Pattern</a>(R), <a href="List.html">List</a>(Mapping(<a href="Boolean.html">Boolean</a>, D))) -&gt <a href="Pattern.html">Pattern</a>(R)</dt><dd><p>
+<code>suchThat(p, [f1, ..., fn])</code> makes a copy of <code>p</code> and adds the predicate <code>f1</code> and ... and <code>fn</code> to the copy, which is returned.</p>
+</dd></dl>
+<dl><dt>suchThat : (<a href="Pattern.html">Pattern</a>(R), <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), Mapping(<a href="Boolean.html">Boolean</a>, <a href="List.html">List</a>(D))) -&gt <a href="Pattern.html">Pattern</a>(R)</dt><dd><p>
+<code>suchThat(p, [a1, ..., an], f)</code> returns a copy of <code>p</code> with the top-level predicate set to <code>f(a1, ..., an)</code>.</p>
+</dd></dl>
+<dl><dt>suchThat : (<a href="Pattern.html">Pattern</a>(R), Mapping(<a href="Boolean.html">Boolean</a>, D)) -&gt <a href="Pattern.html">Pattern</a>(R)</dt><dd><p>
+<code>suchThat(p, f)</code> makes a copy of <code>p</code> and adds the predicate <code>f</code> to the copy, which is returned.</p>
+</dd></dl>
+</body>
+</html>

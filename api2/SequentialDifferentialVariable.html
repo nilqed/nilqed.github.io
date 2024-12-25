@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SequentialDifferentialVariable</title>
+</head>
+<body>
+<h1>SequentialDifferentialVariable(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/dpolcat.spad#L142">dpolcat.spad line 142</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/dpolcat.spad#L142">[edit on github]</a></p>
+<ul>
+<li>S : <a href="OrderedSet.html">OrderedSet</a></ul>
+<p>
+OrderlyDifferentialVariable adds a commonly used sequential ranking to the set of derivatives of an ordered list of differential indeterminates. A sequential ranking is a ranking <span class="spadfun">&lt;</span> of the derivatives with the property that for any derivative <code>v</code>, there are only a finite number of derivatives <code>u</code> with <code>u</code> <span class="spadfun">&lt;</span> <code>v</code>. This domain belongs to DifferentialVariableCategory. It defines <span class="spadfun">weight</span> to be just <span class="spadfun">order</span>, and it defines a sequential ranking <span class="spadfun">&lt;</span> on derivatives <code>u</code> by the lexicographic order on the pair (<span class="spadfun">variable</span>(<code>u</code>), <span class="spadfun">order</span>(<code>u</code>)).</p>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt><a href="PartialOrder.html#f__62">&gt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="DifferentialVariableCategory.html#f_coerce">coerce</a> : S -&gt %</dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="DifferentialVariableCategory.html#f_differentiate">differentiate</a> : % -&gt %</dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<dl><dt><a href="DifferentialVariableCategory.html#f_differentiate">differentiate</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_makeVariable"></a><dl><dt><a href="DifferentialVariableCategory.html#f_makeVariable">makeVariable</a> : (S, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="DifferentialVariableCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt S</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(S, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(S)</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_variable"></a><dl><dt><a href="DifferentialVariableCategory.html#f_variable">variable</a> : % -&gt S</dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<a name="f_weight"></a><dl><dt><a href="DifferentialVariableCategory.html#f_weight">weight</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RetractableTo.html">RetractableTo</a>(S)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(S)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="DifferentialVariableCategory.html">DifferentialVariableCategory</a>(S)
+<p><a href="PartialOrder.html">PartialOrder</a>
+</body>
+</html>

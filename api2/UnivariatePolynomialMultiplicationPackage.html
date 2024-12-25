@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>UnivariatePolynomialMultiplicationPackage</title>
+</head>
+<body>
+<h1>UnivariatePolynomialMultiplicationPackage(R, U)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/poly.spad#L1314">poly.spad line 1314</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/poly.spad#L1314">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>U : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)</ul>
+<p>
+This package implements Karatsuba<code>'s</code> trick for multiplying (large) univariate polynomials. It could be improved with a version doing the work on place and also with a special case for squares. We've done this in Basicmath, but we believe that this out of the scope of FriCAS.</p>
+<a name="f_karatsuba"></a><dl><dt>karatsuba : (U, U, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt U</dt><dd><p>
+<code>karatsuba(a, b, l, k)</code> returns <code>a*b</code> by applying Karatsuba<code>'s</code> trick provided that both <code>a</code> and <code>b</code> have at least <code>l</code> terms and <code>k &gt; 0</code> holds and by calling <code>noKaratsuba</code> otherwise. The other multiplications are performed by recursive calls with the same third argument and <code>k-1</code> as fourth argument.</p>
+</dd></dl>
+<a name="f_karatsubaOnce"></a><dl><dt>karatsubaOnce : (U, U) -&gt U</dt><dd><p>
+<code>karatsuba(a, b)</code> returns <code>a*b</code> by applying Karatsuba<code>'s</code> trick once. The other multiplications are performed by calling <code>*</code> from <code>U</code>.</p>
+</dd></dl>
+<a name="f_noKaratsuba"></a><dl><dt>noKaratsuba : (U, U) -&gt U</dt><dd><p>
+<code>noKaratsuba(a, b)</code> returns <code>a*b</code> without using Karatsuba<code>'s</code> trick at all.</p>
+</dd></dl>
+</body>
+</html>

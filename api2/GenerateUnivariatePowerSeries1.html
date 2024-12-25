@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GenerateUnivariatePowerSeries1</title>
+</head>
+<body>
+<h1>GenerateUnivariatePowerSeries1(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/genups.spad#L1">genups.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/genups.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a></ul>
+<p>
+GenerateUnivariatePowerSeries provides functions that create power series from explicit formulas for their <code>n</code>th coefficient.</p>
+<a name="f_laurent"></a><dl><dt>laurent : (Mapping(R, <a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, R, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>laurent(n +-&gt; a(n), x, a, n0..)</code> returns <code>sum(n = n0.., a(n) * (x - a)^n)</code>; <code>laurent(n +-&gt; a(n), x, a, n0..n1)</code> returns <code>sum(n = n0..n1, a(n) * (x - a)^n)</code>.</p>
+</dd></dl>
+<a name="f_puiseux"></a><dl><dt>puiseux : (Mapping(R, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Symbol.html">Symbol</a>, R, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>puiseux(n +-&gt; a(n), x, a, r0.., r)</code> returns <code>sum(n = r0, r0 + r, r0 + 2*r..., a(n) * (x - a)^n)</code>; <code>puiseux(n +-&gt; a(n), x = a, r0..r1, r)</code> returns <code>sum(n = r0 + k*r while n &lt;= r1, a(n) * (x - a)^n)</code>.</p>
+</dd></dl>
+<a name="f_taylor"></a><dl><dt>taylor : (Mapping(R, <a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, R) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(n +-&gt; a(n), x, a)</code> returns <code>sum(n = 0.., a(n)*(x-a)^n)</code>.</p>
+</dd></dl>
+<dl><dt>taylor : (Mapping(R, <a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, R, <a href="UniversalSegment.html">UniversalSegment</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>taylor(n +-&gt; a(n), x, a, n0..)</code> returns <code>sum(n=n0.., a(n)*(x-a)^n)</code>; <code>taylor(n +-&gt; a(n), x, a, n0..n1)</code> returns <code>sum(n = n0.., a(n)*(x-a)^n)</code>.</p>
+</dd></dl>
+</body>
+</html>

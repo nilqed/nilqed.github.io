@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExpressionSpaceFunctions2</title>
+</head>
+<body>
+<h1>ExpressionSpaceFunctions2(E, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fspace.spad#L372">fspace.spad line 372</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fspace.spad#L372">[edit on github]</a></p>
+<ul>
+<li>E : <a href="ExpressionSpace.html">ExpressionSpace</a><li>F : <a href="ExpressionSpace.html">ExpressionSpace</a></ul>
+<p>
+This package allows a mapping <code>E</code> <code>-&gt;</code> <code>F</code> to be lifted to a kernel over <code>E</code>; This lifting can fail if the operator of the kernel cannot be applied in <code>F</code>; Do not use this package with <code>E</code> = <code>F</code>, since this may drop some properties of the operators.</p>
+<a name="f_map"></a><dl><dt>map : (Mapping(F, E), <a href="Kernel.html">Kernel</a>(E)) -&gt F</dt><dd><p>
+<code>map(f, k)</code> returns <code>g = op(f(a1), ..., f(an))</code> where <code>k = op(a1, ..., an)</code>.</p>
+</dd></dl>
+</body>
+</html>

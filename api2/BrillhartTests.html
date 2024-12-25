@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>BrillhartTests</title>
+</head>
+<body>
+<h1>BrillhartTests(UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/brill.spad#L1">brill.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/brill.spad#L1">[edit on github]</a></p>
+<ul>
+<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Integer.html">Integer</a>)</ul>
+<p>
+This package implements Brillhart irreducibility test.</p>
+<a name="f_brillhartIrreducible_63"></a><dl><dt>brillhartIrreducible? : UP -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>brillhartIrreducible?(p)</code> returns <code>true</code> if <code>p</code> can be shown to be irreducible by a remark of Brillhart, <code>false</code> is inconclusive.</p>
+</dd></dl>
+<dl><dt>brillhartIrreducible? : (UP, <a href="Boolean.html">Boolean</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>brillhartIrreducible?(p, noLinears)</code> returns <code>true</code> if <code>p</code> can be shown to be irreducible by a remark of Brillhart, <code>false</code> else. If noLinears is <code>true</code>, we are being told <code>p</code> has no linear factors <code>false</code> does not mean that <code>p</code> is reducible.</p>
+</dd></dl>
+<a name="f_brillhartTrials"></a><dl><dt>brillhartTrials : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>brillhartTrials()</code> returns the number of tests in <span class="spadfun">brillhartIrreducible?</span>.</p>
+</dd></dl>
+<dl><dt>brillhartTrials : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>brillhartTrials(n)</code> sets to <code>n</code> the number of tests in <span class="spadfun">brillhartIrreducible?</span> and returns the previous value.</p>
+</dd></dl>
+<a name="f_noLinearFactor_63"></a><dl><dt>noLinearFactor? : UP -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>noLinearFactor?(p)</code> returns <code>true</code> if <code>p</code> can be shown to have no linear factor by a theorem of Lehmer, <code>false</code> else. <code>I</code> insist on the fact that <code>false</code> does not mean that <code>p</code> has a linear factor.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>LiouvillianFunction</title>
+</head>
+<body>
+<h1>LiouvillianFunction(R, F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/liouv.spad#L1">liouv.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/liouv.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="Comparable.html">Comparable</a>, <a href="IntegralDomain.html">IntegralDomain</a>)<li>F : Join(<a href="FunctionSpace.html">FunctionSpace</a>(R), <a href="RadicalCategory.html">RadicalCategory</a>, <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>)</ul>
+<p>
+This package provides liouvillian functions over an integral domain.</p>
+<a name="f_Chi"></a><dl><dt>Chi : F -&gt F</dt><dd><p>
+<code>Chi(f)</code> denotes the hyperbolic cosine integral</p>
+</dd></dl>
+<a name="f_Ci"></a><dl><dt>Ci : F -&gt F</dt><dd><p>
+<code><code>Ci</code>(f)</code> denotes the cosine integral</p>
+</dd></dl>
+<a name="f_Ei"></a><dl><dt>Ei : F -&gt F</dt><dd><p>
+<code><code>Ei</code>(f)</code> denotes the exponential integral</p>
+</dd></dl>
+<a name="f_Shi"></a><dl><dt>Shi : F -&gt F</dt><dd><p>
+<code>Shi(f)</code> denotes the hyperbolic sine integral</p>
+</dd></dl>
+<a name="f_Si"></a><dl><dt>Si : F -&gt F</dt><dd><p>
+<code><code>Si</code>(f)</code> denotes the sine integral</p>
+</dd></dl>
+<a name="f_belong_63"></a><dl><dt>belong? : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>belong?(op)</code> checks if <code>op</code> is Liouvillian</p>
+</dd></dl>
+<a name="f_dilog"></a><dl><dt>dilog : F -&gt F</dt><dd><p>
+<code>dilog(f)</code> denotes the dilogarithm</p>
+</dd></dl>
+<a name="f_erf"></a><dl><dt>erf : F -&gt F</dt><dd><p>
+<code>erf(f)</code> denotes the error function</p>
+</dd></dl>
+<a name="f_erfi"></a><dl><dt>erfi : F -&gt F</dt><dd><p>
+<code>erfi(f)</code> denotes <code>-%i*erf(%i*z)</code></p>
+</dd></dl>
+<a name="f_fresnelC"></a><dl><dt>fresnelC : F -&gt F</dt><dd><p>
+<code>fresnelC(f)</code> denotes the Fresnel integral <code>C</code></p>
+</dd></dl>
+<a name="f_fresnelS"></a><dl><dt>fresnelS : F -&gt F</dt><dd><p>
+<code>fresnelS(f)</code> denotes the Fresnel integral <code>S</code></p>
+</dd></dl>
+<a name="f_integral"></a><dl><dt>integral : (F, <a href="SegmentBinding.html">SegmentBinding</a>(F)) -&gt F</dt><dd><p>
+<code>integral(f, x = a..b)</code> denotes the definite integral of <code>f</code> with respect to <code>x</code> from <code>a</code> to <code>b</code>.</p>
+</dd></dl>
+<dl><dt>integral : (F, <a href="Symbol.html">Symbol</a>) -&gt F</dt><dd><p>
+<code>integral(f, x)</code> indefinite integral of <code>f</code> with respect to <code>x</code>.</p>
+</dd></dl>
+<a name="f_li"></a><dl><dt>li : F -&gt F</dt><dd><p>
+<code><code>li</code>(f)</code> denotes the logarithmic integral</p>
+</dd></dl>
+<a name="f_operator"></a><dl><dt>operator : <a href="BasicOperator.html">BasicOperator</a> -&gt <a href="BasicOperator.html">BasicOperator</a></dt><dd><p>
+<code>operator(op)</code> returns the Liouvillian operator based on <code>op</code></p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ComplexPatternMatch</title>
+</head>
+<body>
+<h1>ComplexPatternMatch(R, S, CS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/gaussian.spad#L494">gaussian.spad line 494</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/gaussian.spad#L494">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a><li>S : Join(<a href="PatternMatchable.html">PatternMatchable</a>(R), <a href="CommutativeRing.html">CommutativeRing</a>)<li>CS : <a href="ComplexCategory.html">ComplexCategory</a>(S)</ul>
+<p>
+This package supports matching patterns involving complex expressions</p>
+<a name="f_patternMatch"></a><dl><dt>patternMatch : (CS, <a href="Pattern.html">Pattern</a>(R), <a href="PatternMatchResult.html">PatternMatchResult</a>(R, CS)) -&gt <a href="PatternMatchResult.html">PatternMatchResult</a>(R, CS) if <a href="Polynomial.html">Polynomial</a>(S) has <a href="PatternMatchable.html">PatternMatchable</a>(R)</dt><dd><p>
+<code>patternMatch(cexpr, pat, res)</code> matches the pattern <code>pat</code> to the complex expression <code>cexpr</code>. res contains the variables of <code>pat</code> which are already matched and their matches.</p>
+</dd></dl>
+</body>
+</html>

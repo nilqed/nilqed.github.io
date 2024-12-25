@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RationalLODE</title>
+</head>
+<body>
+<h1>RationalLODE(F, UP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/oderf.spad#L302">oderf.spad line 302</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/oderf.spad#L302">[edit on github]</a></p>
+<ul>
+<li>F : Join(<a href="Field.html">Field</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>, <a href="RetractableTo.html">RetractableTo</a>(<a href="Integer.html">Integer</a>), <a href="RetractableTo.html">RetractableTo</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)))<li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)</ul>
+<p>
+<code>RationalLODE</code> provides functions for in-field solutions of linear ordinary differential equations, in the rational case.</p>
+<a name="f_indicialEquationAtInfinity"></a><dl><dt>indicialEquationAtInfinity : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)) -&gt UP</dt><dd><p>
+<code>indicialEquationAtInfinity op</code> returns the indicial equation of <code>op</code> at infinity.</p>
+</dd></dl>
+<dl><dt>indicialEquationAtInfinity : <a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)) -&gt UP</dt><dd><p>
+<code>indicialEquationAtInfinity op</code> returns the indicial equation of <code>op</code> at infinity.</p>
+</dd></dl>
+<a name="f_integrate_95sols"></a><dl><dt>integrate_sols : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)) -&gt Record(ltilde : <a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), r : Union(<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), "failed"))</dt><dd><p>
+<code>integrate_sols(l)</code> integrates the solutions of an operator <code>l</code>.</p>
+</dd></dl>
+<a name="f_ratDsolve"></a><dl><dt>ratDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt Record(basis : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)), mat : <a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>ratDsolve(op, [g1, ..., gm])</code> returns <code>[[h1, ..., hq], M]</code> such that any rational solution of <code>op y = c1 g1 + ... + cm gm</code> is of the form <code>c1 h1 + ... + cq hq</code> where <code>M [c1, ..., cq] = 0</code> and <code>q &gt;= m</code>.</p>
+</dd></dl>
+<dl><dt>ratDsolve : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP))) -&gt Record(basis : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)), mat : <a href="Matrix.html">Matrix</a>(F))</dt><dd><p>
+<code>ratDsolve(op, [g1, ..., gm])</code> returns <code>[[h1, ..., hq], M]</code> such that any rational solution of <code>op y = c1 g1 + ... + cm gm</code> is of the form <code>c1 h1 + ... + cq hq</code> where <code>M [c1, ..., cq] = 0</code> and <code>q &gt;= m</code>.</p>
+</dd></dl>
+<dl><dt>ratDsolve : (<a href="LinearOrdinaryDifferentialOperator1.html">LinearOrdinaryDifferentialOperator1</a>(<a href="Fraction.html">Fraction</a>(UP)), <a href="Fraction.html">Fraction</a>(UP)) -&gt Record(particular : Union(<a href="Fraction.html">Fraction</a>(UP), "failed"), basis : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)))</dt><dd><p>
+<code>ratDsolve(op, g)</code> returns <code>["failed", []]</code> if the equation <code>op y = g</code> has no rational solution. Otherwise, it returns <code>[f, [y1, ..., ym]]</code> where <code>f</code> is a particular rational solution and the <code>yi</code><code>'s</code> form a basis for the rational solutions of the homogeneous equation.</p>
+</dd></dl>
+<dl><dt>ratDsolve : (<a href="LinearOrdinaryDifferentialOperator2.html">LinearOrdinaryDifferentialOperator2</a>(UP, <a href="Fraction.html">Fraction</a>(UP)), <a href="Fraction.html">Fraction</a>(UP)) -&gt Record(particular : Union(<a href="Fraction.html">Fraction</a>(UP), "failed"), basis : <a href="List.html">List</a>(<a href="Fraction.html">Fraction</a>(UP)))</dt><dd><p>
+<code>ratDsolve(op, g)</code> returns <code>["failed", []]</code> if the equation <code>op y = g</code> has no rational solution. Otherwise, it returns <code>[f, [y1, ..., ym]]</code> where <code>f</code> is a particular rational solution and the <code>yi</code><code>'s</code> form a basis for the rational solutions of the homogeneous equation.</p>
+</dd></dl>
+</body>
+</html>

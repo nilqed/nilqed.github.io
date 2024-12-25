@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>IntegerRoots</title>
+</head>
+<body>
+<h1>IntegerRoots(I)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intfact.spad#L201">intfact.spad line 201</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intfact.spad#L201">[edit on github]</a></p>
+<ul>
+<li>I : <a href="IntegerNumberSystem.html">IntegerNumberSystem</a></ul>
+<p>
+The IntegerRoots package computes square roots and <code>n</code>th roots of integers efficiently.</p>
+<a name="f_approxNthRoot"></a><dl><dt>approxNthRoot : (I, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt I</dt><dd><p>
+<code>approxRoot(n, r)</code> returns an approximation <code>x</code> to <code>n^(1/r)</code> such that <code>-1 &lt; x - n^(1/r) &lt; 1</code></p>
+</dd></dl>
+<a name="f_approxSqrt"></a><dl><dt>approxSqrt : I -&gt I</dt><dd><p>
+<code>approxSqrt(n)</code> returns an approximation <code>x</code> to <code>sqrt(n)</code> such that <code>-1 &lt; x - sqrt(n) &lt; 1</code>. Returns 0 if <code>n</code> is negative. A variable precision Newton iteration is used. The running time is <code>O( log(n)^2 )</code>.</p>
+</dd></dl>
+<a name="f_perfectNthPower_63"></a><dl><dt>perfectNthPower? : (I, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>perfectNthPower?(n, r)</code> returns <code>true</code> if <code>n</code> is an <code>r</code>th power and <code>false</code> otherwise</p>
+</dd></dl>
+<a name="f_perfectNthRoot"></a><dl><dt>perfectNthRoot : I -&gt Record(base : I, exponent : <a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>perfectNthRoot(n)</code> returns <code>[x, r]</code>, where <code>n = x^r</code> and <code>r</code> is the largest integer such that <code>n</code> is a perfect <code>r</code>th power</p>
+</dd></dl>
+<dl><dt>perfectNthRoot : (I, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt Union(I, "failed")</dt><dd><p>
+<code>perfectNthRoot(n, r)</code> returns the <code>r</code>th root of <code>n</code> if <code>n</code> is an <code>r</code>th power and returns "failed" otherwise</p>
+</dd></dl>
+<a name="f_perfectSqrt"></a><dl><dt>perfectSqrt : I -&gt Union(I, "failed")</dt><dd><p>
+<code>perfectSqrt(n)</code> returns the square root of <code>n</code> if <code>n</code> is a perfect square and returns "failed" otherwise</p>
+</dd></dl>
+<a name="f_perfectSquare_63"></a><dl><dt>perfectSquare? : I -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>perfectSquare?(n)</code> returns <code>true</code> if <code>n</code> is a perfect square and <code>false</code> otherwise</p>
+</dd></dl>
+</body>
+</html>

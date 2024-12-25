@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FiniteFieldSolveLinearPolynomialEquation</title>
+</head>
+<body>
+<h1>FiniteFieldSolveLinearPolynomialEquation(F, FP, FPP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/ffcat.spad#L645">ffcat.spad line 645</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/ffcat.spad#L645">[edit on github]</a></p>
+<ul>
+<li>F : <a href="FiniteFieldCategory.html">FiniteFieldCategory</a><li>FP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>FPP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(FP)</ul>
+<p>
+This package solves linear diophantine equations for Bivariate polynomials over finite fields</p>
+<a name="f_solveLinearPolynomialEquation"></a><dl><dt>solveLinearPolynomialEquation : (<a href="List.html">List</a>(FPP), FPP) -&gt Union(<a href="List.html">List</a>(FPP), "failed")</dt><dd><p>
+<code>solveLinearPolynomialEquation([f1, ..., fn], g)</code> (where the <code>fi</code> are relatively prime to each other) returns a list of <code>ai</code> such that <code>g/prod <code>fi</code> = sum ai/fi</code> or returns "failed" if no such list of <code>ai</code><code>'s</code> exists.</p>
+</dd></dl>
+</body>
+</html>

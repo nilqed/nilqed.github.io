@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ErrorFunctions</title>
+</head>
+<body>
+<h1>ErrorFunctions</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/error.spad#L1">error.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/error.spad#L1">[edit on github]</a></p>
+<p>
+ErrorFunctions implements error functions callable from the system interpreter. Typically, these functions would be called in user functions. The simple forms of the functions take one argument which is either a string (an error message) or a list of strings which all together make up a message. The list can contain formatting codes (see below). The more sophisticated versions takes two arguments where the first argument is the name of the function from which the error was invoked and the second argument is either a string or a list of strings, as above. When you use the one argument version in an interpreter function, the system will automatically insert the name of the function as the new first argument. Thus in the user interpreter function <code>f x == if x &lt; 0 then error "negative argument" else x</code> the call to error will actually be of the form <code>error("f","negative argument")</code> because the interpreter will have created a new first argument.  Formatting codes: error messages may contain the following formatting codes (they should either start or end a string or else have blanks around them): <code>%l</code>start a new line <code>%b</code>start printing in a bold font (where available) <code>%d</code>stopprinting in a bold font (where available) <code> %ceon</code>start centering message lines <code>%ceoff</code>stopcentering message lines <code>%rjon</code>start displaying lines "ragged left" <code>%rjoff</code>stopdisplaying lines "ragged left" <code>%i</code>indentfollowing lines 3 additional spaces <code>%u</code>unindent following lines 3 additional spaces <code>%xN</code>insert <code>N</code> blanks (eg, <code>%x10</code> inserts 10 blanks) </p>
+<a name="f_error"></a><dl><dt>error : <a href="List.html">List</a>(<a href="String.html">String</a>) -&gt <a href="Exit.html">Exit</a></dt><dd><p>
+<code>error(lmsg)</code> displays error message <code>lmsg</code> and terminates.</p>
+</dd></dl>
+<dl><dt>error : <a href="String.html">String</a> -&gt <a href="Exit.html">Exit</a></dt><dd><p>
+<code>error(msg)</code> displays error message <code>msg</code> and terminates.</p>
+</dd></dl>
+<dl><dt>error : (<a href="String.html">String</a>, <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt <a href="Exit.html">Exit</a></dt><dd><p>
+<code>error(nam, lmsg)</code> displays error messages lmsg preceded by a message containing the name <code>nam</code> of the function in which the error is contained.</p>
+</dd></dl>
+<dl><dt>error : (<a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Exit.html">Exit</a></dt><dd><p>
+<code>error(nam, msg)</code> displays error message <code>msg</code> preceded by a message containing the name <code>nam</code> of the function in which the error is contained.</p>
+</dd></dl>
+</body>
+</html>

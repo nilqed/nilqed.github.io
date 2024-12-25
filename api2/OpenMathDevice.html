@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>OpenMathDevice</title>
+</head>
+<body>
+<h1>OpenMathDevice</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/omdev.spad#L41">omdev.spad line 41</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/omdev.spad#L41">[edit on github]</a></p>
+<p>
+OpenMathDevice provides support for reading and writing openMath objects to files, strings etc. It also provides access to low-level operations from within the interpreter.</p>
+<a name="f_OMclose"></a><dl><dt>OMclose : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMclose(dev)</code> closes <code>dev</code>, flushing output if necessary.</p>
+</dd></dl>
+<a name="f_OMgetApp"></a><dl><dt>OMgetApp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetApp(dev)</code> reads a begin application token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetAtp"></a><dl><dt>OMgetAtp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetAtp(dev)</code> reads a begin attribute pair token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetAttr"></a><dl><dt>OMgetAttr : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetAttr(dev)</code> reads a begin attribute token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetBVar"></a><dl><dt>OMgetBVar : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetBVar(dev)</code> reads a begin bound variable list token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetBind"></a><dl><dt>OMgetBind : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetBind(dev)</code> reads a begin binder token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndApp"></a><dl><dt>OMgetEndApp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndApp(dev)</code> reads an end application token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndAtp"></a><dl><dt>OMgetEndAtp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndAtp(dev)</code> reads an end attribute pair token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndAttr"></a><dl><dt>OMgetEndAttr : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndAttr(dev)</code> reads an end attribute token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndBVar"></a><dl><dt>OMgetEndBVar : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndBVar(dev)</code> reads an end bound variable list token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndBind"></a><dl><dt>OMgetEndBind : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndBind(dev)</code> reads an end binder token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndError"></a><dl><dt>OMgetEndError : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndError(dev)</code> reads an end error token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetEndObject"></a><dl><dt>OMgetEndObject : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetEndObject(dev)</code> reads an end object token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetError"></a><dl><dt>OMgetError : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetError(dev)</code> reads a begin error token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetFloat"></a><dl><dt>OMgetFloat : % -&gt <a href="DoubleFloat.html">DoubleFloat</a></dt><dd><p>
+<code>OMgetFloat(dev)</code> reads a float from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetInteger"></a><dl><dt>OMgetInteger : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>OMgetInteger(dev)</code> reads an integer from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetObject"></a><dl><dt>OMgetObject : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMgetObject(dev)</code> reads a begin object token from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetString"></a><dl><dt>OMgetString : % -&gt <a href="String.html">String</a></dt><dd><p>
+<code>OMgetString(dev)</code> reads a string from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetSymbol"></a><dl><dt>OMgetSymbol : % -&gt Record(cd : <a href="String.html">String</a>, name : <a href="String.html">String</a>)</dt><dd><p>
+<code>OMgetSymbol(dev)</code> reads a symbol from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetType"></a><dl><dt>OMgetType : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>OMgetType(dev)</code> returns the type of the next object on <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMgetVariable"></a><dl><dt>OMgetVariable : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>OMgetVariable(dev)</code> reads a variable from <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMopenFile"></a><dl><dt>OMopenFile : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="OpenMathEncoding.html">OpenMathEncoding</a>) -&gt %</dt><dd><p>
+<code>OMopenFile(f, mode, enc)</code> opens file <code>f</code> for reading or writing OpenMath objects (depending on <code>mode</code> which can be <code>"r"</code>, <code>"w"</code> or "a" for read, write and append respectively), in the encoding <code>enc</code>.</p>
+</dd></dl>
+<a name="f_OMopenString"></a><dl><dt>OMopenString : (<a href="String.html">String</a>, <a href="OpenMathEncoding.html">OpenMathEncoding</a>) -&gt %</dt><dd><p>
+<code>OMopenString(s, mode)</code> opens the string <code>s</code> for reading or writing OpenMath objects in encoding <code>enc</code>.</p>
+</dd></dl>
+<a name="f_OMputApp"></a><dl><dt>OMputApp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputApp(dev)</code> writes a begin application token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputAtp"></a><dl><dt>OMputAtp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputAtp(dev)</code> writes a begin attribute pair token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputAttr"></a><dl><dt>OMputAttr : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputAttr(dev)</code> writes a begin attribute token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputBVar"></a><dl><dt>OMputBVar : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputBVar(dev)</code> writes a begin bound variable list token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputBind"></a><dl><dt>OMputBind : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputBind(dev)</code> writes a begin binder token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndApp"></a><dl><dt>OMputEndApp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndApp(dev)</code> writes an end application token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndAtp"></a><dl><dt>OMputEndAtp : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndAtp(dev)</code> writes an end attribute pair token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndAttr"></a><dl><dt>OMputEndAttr : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndAttr(dev)</code> writes an end attribute token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndBVar"></a><dl><dt>OMputEndBVar : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndBVar(dev)</code> writes an end bound variable list token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndBind"></a><dl><dt>OMputEndBind : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndBind(dev)</code> writes an end binder token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndError"></a><dl><dt>OMputEndError : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndError(dev)</code> writes an end error token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputEndObject"></a><dl><dt>OMputEndObject : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputEndObject(dev)</code> writes an end object token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputError"></a><dl><dt>OMputError : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputError(dev)</code> writes a begin error token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputFloat"></a><dl><dt>OMputFloat : (%, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputFloat(dev, i)</code> writes the float <code>i</code> to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputInteger"></a><dl><dt>OMputInteger : (%, <a href="Integer.html">Integer</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputInteger(dev, i)</code> writes the integer <code>i</code> to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputObject"></a><dl><dt>OMputObject : % -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputObject(dev)</code> writes a begin object token to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputString"></a><dl><dt>OMputString : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputString(dev, i)</code> writes the string <code>i</code> to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputSymbol"></a><dl><dt>OMputSymbol : (%, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputSymbol(dev, cd, s)</code> writes the symbol <code>s</code> from <code>CD</code> <code>cd</code> to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMputVariable"></a><dl><dt>OMputVariable : (%, <a href="Symbol.html">Symbol</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMputVariable(dev, i)</code> writes the variable <code>i</code> to <code>dev</code>.</p>
+</dd></dl>
+<a name="f_OMsetEncoding"></a><dl><dt>OMsetEncoding : (%, <a href="OpenMathEncoding.html">OpenMathEncoding</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>OMsetEncoding(dev, enc)</code> sets the encoding used for reading or writing OpenMath objects to or from <code>dev</code> to <code>enc</code>.</p>
+</dd></dl>
+</body>
+</html>

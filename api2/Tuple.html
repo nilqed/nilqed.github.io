@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Tuple</title>
+</head>
+<body>
+<h1>Tuple(S)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/array1.spad#L67">array1.spad line 67</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/array1.spad#L67">[edit on github]</a></p>
+<ul>
+<li>S : <a href="Type.html">Type</a></ul>
+<p>
+This domain is used to interface with the interpreter<code>'s</code> notion of comma-delimited sequences of values.</p>
+<a name="f__35"></a><dl><dt># : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>#(x)</code> returns the number of elements in tuple <code>x</code></p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="PrimitiveArray.html">PrimitiveArray</a>(S) -&gt %</dt><dd><p>
+<code>coerce(a)</code> makes a tuple from primitive array a</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a> if S has <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="PrimitiveArray.html">PrimitiveArray</a>(S)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(S))</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_select"></a><dl><dt>select : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt S</dt><dd><p>
+<code>select(x, n)</code> returns the <code>n</code>-th element of tuple <code>x</code>. tuples are 0-based</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if S has <a href="SetCategory.html">SetCategory</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="PrimitiveArray.html">PrimitiveArray</a>(S))
+</body>
+</html>

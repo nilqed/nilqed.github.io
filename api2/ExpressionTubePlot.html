@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>ExpressionTubePlot</title>
+</head>
+<body>
+<h1>ExpressionTubePlot</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/tube.spad#L167">tube.spad line 167</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/tube.spad#L167">[edit on github]</a></p>
+<p>
+Package for constructing tubes around 3-dimensional parametric curves.</p>
+<a name="f_constantToUnaryFunction"></a><dl><dt>constantToUnaryFunction : <a href="DoubleFloat.html">DoubleFloat</a> -&gt Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>constantToUnaryFunction(s)</code> is a local function which takes the value of <code>s</code>, which may be a function of a constant, and returns a function which always returns the value DoubleFloat <code>s</code>.</p>
+</dd></dl>
+<a name="f_tubePlot"></a><dl><dt>tubePlot : (<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Integer.html">Integer</a>) -&gt <a href="TubePlot.html">TubePlot</a>(<a href="Plot3D.html">Plot3D</a>)</dt><dd><p>
+<code>tubePlot(f, g, h, colorFcn, a..b, r, n)</code> puts a tube of radius <code>r</code> with <code>n</code> points on each circle about the curve <code>x = f(t)</code>, <code>y = g(t)</code>, <code>z = h(t)</code> for <code>t</code> in <code>[a, b]</code>. The tube is considered to be open.</p>
+</dd></dl>
+<dl><dt>tubePlot : (<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="TubePlot.html">TubePlot</a>(<a href="Plot3D.html">Plot3D</a>)</dt><dd><p>
+<code>tubePlot(f, g, h, colorFcn, a..b, r, n, s)</code> puts a tube of radius <code>r</code> with <code>n</code> points on each circle about the curve <code>x = f(t)</code>, <code>y = g(t)</code>, <code>z = h(t)</code> for <code>t</code> in <code>[a, b]</code>. If <code>s</code> = "closed", the tube is considered to be closed; if <code>s</code> = "open", the tube is considered to be open.</p>
+</dd></dl>
+<dl><dt>tubePlot : (<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Integer.html">Integer</a>) -&gt <a href="TubePlot.html">TubePlot</a>(<a href="Plot3D.html">Plot3D</a>)</dt><dd><p>
+<code>tubePlot(f, g, h, colorFcn, a..b, r, n)</code> puts a tube of radius <code>r</code>(<code>t</code>) with <code>n</code> points on each circle about the curve <code>x = f(t)</code>, <code>y = g(t)</code>, <code>z = h(t)</code> for <code>t</code> in <code>[a, b]</code>. The tube is considered to be open.</p>
+</dd></dl>
+<dl><dt>tubePlot : (<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Integer.html">Integer</a>, <a href="String.html">String</a>) -&gt <a href="TubePlot.html">TubePlot</a>(<a href="Plot3D.html">Plot3D</a>)</dt><dd><p>
+<code>tubePlot(f, g, h, colorFcn, a..b, r, n, s)</code> puts a tube of radius <code>r(t)</code> with <code>n</code> points on each circle about the curve <code>x = f(t)</code>, <code>y = g(t)</code>, <code>z = h(t)</code> for <code>t</code> in <code>[a,b]</code>. If <code>s</code> = "closed", the tube is considered to be closed; if <code>s</code> = "open", the tube is considered to be open.</p>
+</dd></dl>
+</body>
+</html>

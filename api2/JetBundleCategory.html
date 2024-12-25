@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetBundleCategory</title>
+</head>
+<body>
+<h1>JetBundleCategory</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L37">jet.spad line 37</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L37">[edit on github]</a></p>
+<p>
+JetBundleCategory provides basic data structures and procedures for jet bundles. Nearly all necessary functions are implemented already here. Only the representation and functions which directly access it must be implemented in a domain. Two notations of derivatives are supported. Default is multi-index notation, where the <code>i</code>-th entry of the index denotes the number of differentiations taken with respect to <code>x^i</code>. In repeated index notation each entry <code>i</code> in the index denotes a differentiation with respect to <code>x^i</code>. The choice affects, however, only in- and output. Internally, multi-index notation is used throughout.</p>
+<a name="f_1"></a><dl><dt>1 : () -&gt %</dt><dd><p>
+<code>1</code> generates the special "jet variable" 1, which is needed for the representation of linear functions.</p>
+</dd></dl>
+<a name="f__60"></a><dl><dt><a href="PartialOrder.html#f__60">&lt;</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__60_61"></a><dl><dt><a href="PartialOrder.html#f__60_61">&lt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f__62"></a><dl><dt>&gt; : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>jv1 &gt; jv2</code> checks whether <code>jv1</code> is greater than <code>jv2</code> in the internal ordering.</p>
+</dd></dl>
+<a name="f__62_61"></a><dl><dt><a href="PartialOrder.html#f__62_61">&gt;=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PartialOrder.html">PartialOrder</a></dd></dl>
+<a name="f_P"></a><dl><dt>P : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>P(ind)</code> generates the derivative of the only dependent variable <code>wrt</code> the index <code>ind</code>.</p>
+</dd></dl>
+<dl><dt>P : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>P(i)</code> generates the <code>i</code><code>-</code>th derivative of the only dependent variable <code>wrt</code> the only independent variable.</p>
+</dd></dl>
+<dl><dt>P : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>P(i, ind)</code> generates the derivative of the <code>i</code><code>-</code>th dependent variable <code>wrt</code> the index <code>ind</code>. Whether <code>ind</code> is interpreted as multi-index or as repeated index depends on the chosen notation.</p>
+</dd></dl>
+<dl><dt>P : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>P(i, j)</code> generates the <code>j</code><code>-</code>th derivative of the <code>i</code><code>-</code>th independent variable <code>wrt</code> the only independent variable.</p>
+</dd></dl>
+<a name="f_Pm"></a><dl><dt>Pm : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>Pm(i, ind)</code> is like <code>P(i, ind)</code> but <code>ind</code> is always a multi-index.</p>
+</dd></dl>
+<a name="f_Pr"></a><dl><dt>Pr : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)) -&gt %</dt><dd><p>
+<code>Pr(i, ind)</code> is like <code>P(i, ind)</code> but <code>ind</code> is always a repeated index.</p>
+</dd></dl>
+<a name="f_U"></a><dl><dt>U : () -&gt %</dt><dd><p>
+<code>U()</code> generates the only dependent variable.</p>
+</dd></dl>
+<dl><dt>U : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>U(i)</code> generates the <code>i</code><code>-</code>th dependent variable.</p>
+</dd></dl>
+<a name="f_X"></a><dl><dt>X : () -&gt %</dt><dd><p>
+<code>X()</code> generates the only independent variable.</p>
+</dd></dl>
+<dl><dt>X : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>X(i)</code> generates the <code>i</code><code>-</code>th independent variable.</p>
+</dd></dl>
+<a name="f_allRepeated"></a><dl><dt>allRepeated : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>))</dt><dd><p>
+<code>allRepeated(ind)</code> returns a list of all possible realizations of a given multi-index as repeated index.</p>
+</dd></dl>
+<a name="f_class"></a><dl><dt>class : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>class(jv)</code> yields the class of the jet variable <code>jv</code> (Class of multi-index for derivative, 0 else).</p>
+</dd></dl>
+<dl><dt>class : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>class(ind)</code> yields the class of the multi-index <code>ind</code> (Position for first non-vanishing entry).</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>)</dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_derivativeOf_63"></a><dl><dt>derivativeOf? : (%, %) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>derivativeOf?(jv1, jv2)</code> checks whether <code>jv1</code> is a derivative of <code>jv2</code>. In this case, the difference of their multi-indices is returned. Otherwise, an empty list is returned.</p>
+</dd></dl>
+<a name="f_differentiate"></a><dl><dt>differentiate : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(%, "0")</dt><dd><p>
+<code>differentiate(jv, i)</code> differentiates <code>jv</code> <code>wrt</code> the <code>i</code><code>-</code>th independent variable.</p>
+</dd></dl>
+<a name="f_dimJ"></a><dl><dt>dimJ : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>dimJ(q)</code> computes the (fibre) dimension of the <code>q</code><code>-</code>th order jet bundle.</p>
+</dd></dl>
+<a name="f_dimS"></a><dl><dt>dimS : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>dimS(q)</code> computes dimension of <code>SqT</code> <code>x</code> VE (= number of derivatives of order <code>q</code>).</p>
+</dd></dl>
+<a name="f_getNotation"></a><dl><dt>getNotation : () -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>getNotation()</code> shows the currently used notation.</p>
+</dd></dl>
+<a name="f_index"></a><dl><dt>index : % -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>index(jv)</code> yields number of the jet variable <code>jv</code>.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt>integrate : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd><p>
+<code>integrate(jv, i)</code> is like <code>integrateIfCan(jv, i)</code> but yields an error, if the integration is not possible.</p>
+</dd></dl>
+<a name="f_integrateIfCan"></a><dl><dt>integrateIfCan : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt Union(%, "failed")</dt><dd><p>
+<code>integrate(jv, i)</code> integrated <code>jv</code> <code>wrt</code> the <code>i</code><code>-</code>th independent variable, if possible.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_m2r"></a><dl><dt>m2r : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd><p>
+<code>m2r(ind)</code> transforms a multi-index into a repeated index.</p>
+</dd></dl>
+<a name="f_max"></a><dl><dt><a href="OrderedSet.html#f_max">max</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_min"></a><dl><dt><a href="OrderedSet.html#f_min">min</a> : (%, %) -&gt %</dt><dd> from <a href="OrderedSet.html">OrderedSet</a></dd></dl>
+<a name="f_multiIndex"></a><dl><dt>multiIndex : % -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>multiIndex(jv)</code> returns the multi-index of the jet variable <code>jv</code>.</p>
+</dd></dl>
+<a name="f_name"></a><dl><dt>name : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>name(jv)</code> yields the name of the jet variable <code>jv</code>.</p>
+</dd></dl>
+<a name="f_numDepVar"></a><dl><dt>numDepVar : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>numDepVar</code> returns the number of dependent variables.</p>
+</dd></dl>
+<a name="f_numIndVar"></a><dl><dt>numIndVar : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>numIndVar</code> returns the number of independent variables.</p>
+</dd></dl>
+<a name="f_one_63"></a><dl><dt>one? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>one?(jv)</code> checks whether the jet variables <code>jv</code> is the special variable 1.</p>
+</dd></dl>
+<a name="f_order"></a><dl><dt>order : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>order(jv)</code> yields the order of the jet variable <code>jv</code> (Order as derivative).</p>
+</dd></dl>
+<a name="f_r2m"></a><dl><dt>r2m : <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)</dt><dd><p>
+<code>r2m(ind)</code> transforms a repeated index into a multi-index.</p>
+</dd></dl>
+<a name="f_repeatedIndex"></a><dl><dt>repeatedIndex : % -&gt <a href="List.html">List</a>(<a href="PositiveInteger.html">PositiveInteger</a>)</dt><dd><p>
+<code>repeatedIndex(jv)</code> returns the multi-index of the jet variable <code>jv</code> in repeated index notation.</p>
+</dd></dl>
+<a name="f_setNotation"></a><dl><dt>setNotation : <a href="Symbol.html">Symbol</a> -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>setNotation(s)</code> chooses the notation used for derivatives. Returns the old value.</p>
+</dd></dl>
+<a name="f_smaller_63"></a><dl><dt><a href="Comparable.html#f_smaller_63">smaller?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Comparable.html">Comparable</a></dd></dl>
+<a name="f_type"></a><dl><dt>type : % -&gt <a href="Symbol.html">Symbol</a></dt><dd><p>
+<code>type(jv)</code> yields the type (<code>Const, Indep, Dep, Deriv</code>) of the jet variable <code>jv</code>.</p>
+</dd></dl>
+<a name="f_variables"></a><dl><dt>variables : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>variables(q)</code> computes the list of all jet variables up to order <code>q</code>.</p>
+</dd></dl>
+<dl><dt>variables : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd><p>
+<code>variables(q, c)</code> computes all jet variables of order <code>q</code> whose class is greater than or equal to <code>c</code>.</p>
+</dd></dl>
+<a name="f_weight"></a><dl><dt>weight : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd><p>
+<code>weight(jv)</code> assigns each jet variable a unique integer reflecting its position in the internal ordering. The variable with the greater weight is also greater in this ordering.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="OrderedSet.html">OrderedSet</a>
+<p><a href="Comparable.html">Comparable</a>
+<p><a href="PartialOrder.html">PartialOrder</a>
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="Expression.html">Expression</a>(<a href="Integer.html">Integer</a>))
+</body>
+</html>

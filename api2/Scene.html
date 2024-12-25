@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Scene</title>
+</head>
+<body>
+<h1>Scene(PT)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/scene.spad#L3994">scene.spad line 3994</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/scene.spad#L3994">[edit on github]</a></p>
+<ul>
+<li>PT : <a href="SPointCategory.html">SPointCategory</a></ul>
+<p>
+these are the parameters that can be set for nodes of various types</p>
+<a name="f_addArrows2Din2D"></a><dl><dt>addArrows2Din2D : (%, Mapping(PT, PT), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addArrows2Din2D(n, ptFun, uSeg, vSeg, numPts)</code> is a convenience function which combines createArrows2Din2D with addChild!</p>
+</dd></dl>
+<a name="f_addChild_33"></a><dl><dt>addChild! : (%, %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>addChild!(n, c)</code> adds the specified child node <code>'c'</code> below node <code>'n'</code></p>
+</dd></dl>
+<a name="f_addPlot1Din2D"></a><dl><dt>addPlot1Din2D : (%, Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot1Din2D(n, f, tRange, numPts)</code> is a convenience function which combines createPlot1Din2D with addChild!</p>
+</dd></dl>
+<dl><dt>addPlot1Din2D : (%, Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot1Din2D(n, f, tRange, numPts)</code> is a convenience function which combines createPlot1Din2D with addChild!</p>
+</dd></dl>
+<a name="f_addPlot1Din2Dparametric"></a><dl><dt>addPlot1Din2Dparametric : (%, <a href="ParametricPlaneCurve.html">ParametricPlaneCurve</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot1Din2Dparametric(n, ppc, tRange, numPts)</code> is a convenience function which combines createPlot1Din2Dparametric with addChild!</p>
+</dd></dl>
+<a name="f_addPlot1Din3Dparametric"></a><dl><dt>addPlot1Din3Dparametric : (%, Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot1Din3Dparametric(n, pcfun, tRange, numPts)</code> is a convenience function which combines createPlot1Din3Dparametric with addChild!</p>
+</dd></dl>
+<dl><dt>addPlot1Din3Dparametric : (%, <a href="ParametricSpaceCurve.html">ParametricSpaceCurve</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot1Din3Dparametric(n, psc, tRange, numPts)</code> is a convenience function which combines createPlot1Din3Dparametric with addChild!</p>
+</dd></dl>
+<a name="f_addPlot2Din3D"></a><dl><dt>addPlot2Din3D : (%, Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot2Din3D(n, f, uSeg, vSeg, numPts)</code> is a convenience function which combines createPlot2Din3D with addChild!</p>
+</dd></dl>
+<a name="f_addPlot2Din3Dparametric"></a><dl><dt>addPlot2Din3Dparametric : (%, Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot2Din3Dparametric(n, f, uSeg, vSeg, numPts)</code> is a convenience function which combines createPlot2Din3Dparametric with addChild!</p>
+</dd></dl>
+<dl><dt>addPlot2Din3Dparametric : (%, <a href="ParametricSurface.html">ParametricSurface</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>addPlot2Din3Dparametric(n, f, uSeg, vSeg, numPts)</code> is a convenience function which combines createPlot2Din3Dparametric with addChild!</p>
+</dd></dl>
+<a name="f_addSceneArrow"></a><dl><dt>addSceneArrow : (%, %, %, PT, <a href="Symbol.html">Symbol</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>addSceneArrow(n, st, en, offset, mode, size, fontScale)</code> is a convenience function which combines createSceneArrow with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneArrow : (%, <a href="String.html">String</a>, <a href="String.html">String</a>, PT, <a href="Symbol.html">Symbol</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>addSceneArrow(n, st, en, offset, mode, size)</code> is a convenience function which combines createSceneArrow with addChild!</p>
+</dd></dl>
+<a name="f_addSceneArrows"></a><dl><dt>addSceneArrows : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(PT)), <a href="Symbol.html">Symbol</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>addSceneArrows(n, line, mode, size)</code> is a convenience function which combines createSceneArrows with addChild!</p>
+</dd></dl>
+<a name="f_addSceneBox"></a><dl><dt>addSceneBox : (%, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>addSceneBox(n, size)</code> is a convenience function which combines createSceneBox with addChild!</p>
+</dd></dl>
+<a name="f_addSceneClip"></a><dl><dt>addSceneClip : (%, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneClip(n, bb)</code> is a convenience function which combines createSceneClip with addChild!</p>
+</dd></dl>
+<a name="f_addSceneDef"></a><dl><dt>addSceneDef : (%, <a href="String.html">String</a>, %) -&gt %</dt><dd><p>
+<code>addSceneDef(n, nam, nde)</code> is a convenience function which combines createSceneDef with addChild!</p>
+</dd></dl>
+<a name="f_addSceneGraph"></a><dl><dt>addSceneGraph : (%, <a href="DirectedGraph.html">DirectedGraph</a>(<a href="String.html">String</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>addSceneGraph(n, g, x, y, dispArrowName)</code> is a convenience function which combines createSceneGraph with addChild!</p>
+</dd></dl>
+<a name="f_addSceneGrid"></a><dl><dt>addSceneGrid : (%, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneGrid(n, stepSize, bb)</code> is a convenience function which combines createSceneGrid with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneGrid : (%, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneGrid(n, bb)</code> is a convenience function which combines createSceneGrid with addChild!</p>
+</dd></dl>
+<a name="f_addSceneGroup"></a><dl><dt>addSceneGroup : % -&gt %</dt><dd><p>
+<code>addSceneGroup(n)</code> is a convenience function which combines createSceneGroup with addChild!</p>
+</dd></dl>
+<a name="f_addSceneIFS"></a><dl><dt>addSceneIFS : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)), <a href="List.html">List</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneIFS(n, inx, pts)</code> is a convenience function which combines createSceneIFS with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneIFS : (%, <a href="SceneIFS.html">SceneIFS</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneIFS(n, in1)</code> is a convenience function which combines createSceneIFS with addChild!</p>
+</dd></dl>
+<a name="f_addSceneLine"></a><dl><dt>addSceneLine : (%, %, %, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>addSceneLine(n, st, en, fontScale)</code> is a convenience function which combines createSceneLine with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneLine : (%, %, %, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>addSceneLine(n, st, en, fontScale)</code> is a convenience function which combines createSceneLine with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneLine : (%, <a href="List.html">List</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneLine(n, line)</code> is a convenience function which combines createSceneLine with addChild!</p>
+</dd></dl>
+<a name="f_addSceneLines"></a><dl><dt>addSceneLines : (%, <a href="List.html">List</a>(<a href="List.html">List</a>(PT))) -&gt %</dt><dd><p>
+<code>addSceneLines(n, line)</code> is a convenience function which combines createSceneLines with addChild!</p>
+</dd></dl>
+<a name="f_addSceneMaterial"></a><dl><dt>addSceneMaterial : (%, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>addSceneMaterial(n, lineW, lineC, fillC)</code> is a convenience function which combines createSceneMaterial with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneMaterial : (%, Record(lineWidth : <a href="DoubleFloat.html">DoubleFloat</a>, lineCol : <a href="String.html">String</a>, fillCol : <a href="String.html">String</a>, matOpacity : <a href="DoubleFloat.html">DoubleFloat</a>)) -&gt %</dt><dd><p>
+<code>addSceneMaterial(n, mat)</code> is a convenience function which combines createSceneMaterial with addChild!</p>
+</dd></dl>
+<a name="f_addSceneNamedPoints"></a><dl><dt>addSceneNamedPoints : (%, <a href="SceneNamedPoints.html">SceneNamedPoints</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneNamedPoints(n, np)</code> is a convenience function which combines createSceneNamedPoints with addChild!</p>
+</dd></dl>
+<a name="f_addScenePattern"></a><dl><dt>addScenePattern : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>addScenePattern(n, ptype, step, bb)</code> is a convenience function which combines createScenePattern with addChild!</p>
+</dd></dl>
+<a name="f_addSceneRuler"></a><dl><dt>addSceneRuler : (%, <a href="Symbol.html">Symbol</a>, PT, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneRuler(n, ptype, offset, bb)</code> is a convenience function which combines createSceneRuler with addChild!</p>
+</dd></dl>
+<a name="f_addSceneShape"></a><dl><dt>addSceneShape : (%, Record(shptype : <a href="Symbol.html">Symbol</a>, centre : PT, size : PT, fill : <a href="Boolean.html">Boolean</a>)) -&gt %</dt><dd><p>
+<code>addSceneShape(n, shape)</code> is a convenience function which combines createSceneShape with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneShape : (%, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneShape(n, shape)</code> is a convenience function which combines createSceneShape with addChild!</p>
+</dd></dl>
+<a name="f_addSceneText"></a><dl><dt>addSceneText : (%, <a href="List.html">List</a>(<a href="String.html">String</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PT) -&gt %</dt><dd><p>
+<code>addSceneText(n, str, sz, pz)</code> is a convenience function which combines createSceneText with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneText : (%, Record(txt : <a href="String.html">String</a>, siz : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, pos : PT, np : <a href="List.html">List</a>(<a href="String.html">String</a>))) -&gt %</dt><dd><p>
+<code>addSceneText(n, text)</code> is a convenience function which combines createSceneText with addChild!</p>
+</dd></dl>
+<dl><dt>addSceneText : (%, <a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PT) -&gt %</dt><dd><p>
+<code>addSceneText(n, str, sz, pz)</code> is a convenience function which combines createSceneText with addChild!</p>
+</dd></dl>
+<a name="f_addSceneTransform"></a><dl><dt>addSceneTransform : (%, <a href="STransform.html">STransform</a>(PT)) -&gt %</dt><dd><p>
+<code>addSceneTransform(n, tran)</code> is a convenience function which combines createSceneTransform with addChild!</p>
+</dd></dl>
+<a name="f_addSceneUse"></a><dl><dt>addSceneUse : (%, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>addSceneUse(n, nam)</code> is a convenience function which combines createSceneUse with addChild!</p>
+</dd></dl>
+<a name="f_boundary"></a><dl><dt>boundary : (%, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt <a href="SBoundary.html">SBoundary</a>(PT)</dt><dd><p>
+<code>boundary(n, fontScale)</code> returns the boundary of a given node, so if this is called on the root node, it will return the boundary of the whole scene. There is a difficulty involving text nodes, that is they have a fixed font size. But we want to calculate the boundary in local coordinates, to do this conversion we need to know the total boundary size but that is what we are trying to calculate! To get round this contradiction the parameter fontScale is required since fonts are rendered at a fixed size we need a scaling factor so that we can give the boundary in our coordinate system. fontScale should be set to the full width of the diagram (not just the width of this node). If this is not known then choose an approximate value. This only affects text nodes, if this node, or its subnodes, do not contain a text node then its value is not significant.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd><p>
+output a full scenegraph could contain a lot of data and so we have to be careful to restrict the output to what is reasonable on the command line. Therefore we do not display all subnodes or the full information from nodes such as IFS.</p>
+</dd></dl>
+<a name="f_createArrows2Din2D"></a><dl><dt>createArrows2Din2D : (Mapping(PT, PT), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createArrows2Din2D(ptFun, uSeg, vSeg, numPts)</code> creates arrows to represent output for each input point in other words this represents a two dimensional force field with the arrows showing the direction of the field</p>
+</dd></dl>
+<a name="f_createPlot1Din2D"></a><dl><dt>createPlot1Din2D : (Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot1Din2D(f, tRange, numPts)</code> creates a two dimensional function plot draws the graph from a mapping of float to point as <code>x</code> ranges from min(a, <code>b</code>) to max(a, <code>b</code>). <code>tRange</code> is a..<code>b</code></p>
+</dd></dl>
+<dl><dt>createPlot1Din2D : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot1Din2D(f, tRange, numPts)</code> creates two dimensional function plot. Draws the graph of <code>y</code> = <code>f</code>(<code>x</code>) as <code>x</code> ranges from min(a, <code>b</code>) to max(a, <code>b</code>). <code>tRange</code> is a..<code>b</code></p>
+</dd></dl>
+<a name="f_createPlot1Din2Dparametric"></a><dl><dt>createPlot1Din2Dparametric : (<a href="ParametricPlaneCurve.html">ParametricPlaneCurve</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot1Din2Dparametric(ppc, tRange, numPts)</code> creates a node from plot using Parametric Plane Curve. This represents 1 dimension (line - possibly curved) in 2 dimensions (plane) In theory a line has no width but in that case we would not see it so we give it a width given by the material node that is applicable in this part of the scene graph <code>PPC</code> is ParametricPlaneCurve(<code>DF</code> <code>-&gt;</code> <code>DF</code>) which is created with curve(<code>f1</code>, <code>f2</code>) where <code>f1</code> and <code>f2</code> are functions of type ComponentFunction, in this case <code>DF</code> <code>-&gt;</code> <code>DF</code></p>
+</dd></dl>
+<a name="f_createPlot1Din3Dparametric"></a><dl><dt>createPlot1Din3Dparametric : (Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot1Din3Dparametric(pcfun, tRange, numPts)</code> create a line (1D subspace) in 3D space. This represents 1 dimension (line - possibly curved) in 3 dimensions In theory a line has no width but in that case we would not see it so we give it a width given by the material node that is applicable in this part of the scene graph PCFUN is a function from float to point: <code>DF</code> <code>-&gt;</code> <code>PT</code></p>
+</dd></dl>
+<dl><dt>createPlot1Din3Dparametric : (<a href="ParametricSpaceCurve.html">ParametricSpaceCurve</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot1Din3Dparametric(psc, tRange, numPts)</code> create a line (1D subspace) in 3D space. This represents 1 dimension (line - possibly curved) in 3 dimensions In theory a line has no width but in that case we would not see it so we give it a width given by the material node that is applicable in this part of the scene graph <code>PSC</code> ParametricSpaceCurve(<code>DF</code> <code>-&gt;</code> <code>DF</code>) is created with curve(<code>f1</code>, <code>f2</code>, <code>f3</code>) where <code>f1</code>, <code>f2</code> and <code>f3</code> are functions of type ComponentFunction, in this case <code>DF</code> <code>-&gt;</code> <code>DF</code></p>
+</dd></dl>
+<a name="f_createPlot2Din3D"></a><dl><dt>createPlot2Din3D : (Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot2Din3D(ptFun, uSeg, vSeg, numPts)</code> create a surface (2D subspace) in 3D space. The surface is approximated by polygons which are represented by in indexed face set (IFS) node</p>
+</dd></dl>
+<dl><dt>createPlot2Din3D : (Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot2Din3D(f, a..b, c..d)</code> returns a scene node which contains the graph of <code>z</code> = <code>f</code>(<code>x</code>, <code>y</code>) as <code>x</code> ranges from min(a, <code>b</code>) to max(a, <code>b</code>) and <code>y</code> ranges from min(<code>c</code>, <code>d</code>) to max(<code>c</code>, <code>d</code>). create a surface (2D subspace) in 3D space The surface is approximated by polygons which are represented by in indexed face set (IFS) node</p>
+</dd></dl>
+<a name="f_createPlot2Din3Dparametric"></a><dl><dt>createPlot2Din3Dparametric : (Mapping(PT, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot2Din3Dparametric(f, a..b, c..d, l)</code> returns a scene node which contains the graph of the parametric surface <code>f</code>(<code>u</code>, <code>v</code>) as <code>u</code> ranges from min(a, <code>b</code>) to max(a, <code>b</code>) and <code>v</code> ranges from min(<code>c</code>, <code>d</code>) to max(<code>c</code>, <code>d</code>). This creates a surface (2D subspace) in 3D space The surface is approximated by polygons which are represented by in indexed face set (IFS) node</p>
+</dd></dl>
+<dl><dt>createPlot2Din3Dparametric : (<a href="ParametricSurface.html">ParametricSurface</a>(Mapping(<a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>)), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>createPlot2Din3Dparametric(surface(f, g, h), a..b, c..d, l)</code> returns a scene node which contains the graph of the parametric surface <code>x</code> = <code>f</code>(<code>u</code>, <code>v</code>), <code>y</code> = <code>g</code>(<code>u</code>, <code>v</code>), <code>z</code> = <code>h</code>(<code>u</code>, <code>v</code>) as <code>u</code> ranges from min(a, <code>b</code>) to max(a, <code>b</code>) and <code>v</code> ranges from min(<code>c</code>, <code>d</code>) to max(<code>c</code>, <code>d</code>). This creates a surface (2D subspace) in 3D space The surface is approximated by polygons which are represented by in indexed face set (IFS) node</p>
+</dd></dl>
+<a name="f_createSceneArrow"></a><dl><dt>createSceneArrow : (%, %, PT, <a href="Symbol.html">Symbol</a>, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>createSceneArrow(st, en, offset, mode, size, fontScale)</code> constructs an arrow node, in <code>n</code>-dimensional space, going from <code>st</code> to <code>en</code>. 'st' and 'en' are nodes in the scene and the arrows will be drawn upto their boundary. <code>st</code> is the node at the start of the arrow <code>en</code> is the node at the end of the arrow 'mode' and 'size' parameters determine the <code>size</code> of the arrowhead. <code>mode</code> can have the following values: "fixed"::Symbol <code>--</code> fixed <code>size</code> line width given by 'size' parameter "proportional"::Symbol <code>--</code> <code>size</code> as a proportion of the overall bounds "variable"::Symbol <code>--</code> <code>size</code> as a proportion of the arrow length So "proportional" would typically be used when drawing a graph (in graph theory) where it looks better if each arrow head is the same. "variable" would typically be used when drawing a force field where a bigger arrow head might indicate a stronger force. fontScale should be set to the full width of the diagram (not just the width of this node). If this is not known then choose an approximate value. This only affects text nodes, if <code>st</code> or <code>en</code>, or its subnodes, do not contain a text node then its value is not significant.</p>
+</dd></dl>
+<dl><dt>createSceneArrow : (<a href="String.html">String</a>, <a href="String.html">String</a>, PT, <a href="Symbol.html">Symbol</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>createSceneArrow(st, en, offset, mode, size)</code> constructs an arrow node, in <code>n</code>-dimensional space, going from <code>st</code> to <code>en</code>. 'st' and 'en' are determined from a list of points from named points node. <code>st</code> is the start of the arrow <code>en</code> is the end of the arrow 'mode' and 'size' parameters determine the size of the arrowhead. <code>mode</code> can have the following values: "fixed"::Symbol <code>--</code> fixed size line width given by 'size' parameter "proportional"::Symbol <code>--</code> size as a proportion of the overall bounds "variable"::Symbol <code>--</code> size as a proportion of the arrow length So "proportional" would typically be used when drawing a graph (in graph theory) where it looks better if each arrow head is the same. "variable" would typically be used when drawing a force field where a bigger arrow head might indicate a stronger force.</p>
+</dd></dl>
+<a name="f_createSceneArrows"></a><dl><dt>createSceneArrows : (<a href="List.html">List</a>(<a href="List.html">List</a>(PT)), <a href="Symbol.html">Symbol</a>, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>createSceneArrows(line, mode, size)</code> constructs an arrow node, this contains arrows (represented by a list of points) in <code>n</code>-dimensional space. The space is implicit in the <code>PT</code> and <code>TR</code> parameters supplied when this Scene was created. 'mode' and 'size' parameters determine the size of the arrowhead. <code>mode</code> can have the following values: "fixed"::Symbol <code>--</code> fixed size <code>line</code> width given by 'size' parameter "proportional"::Symbol <code>--</code> size as a proportion of the overall bounds "variable"::Symbol <code>--</code> size as a proportion of the arrow length So "proportional" would typically be used when drawing a graph (in graph theory) where it looks better if each arrow head is the same. "variable" would typically be used when drawing a force field where a bigger arrow head might indicate a stronger force.</p>
+</dd></dl>
+<a name="f_createSceneBox"></a><dl><dt>createSceneBox : <a href="DoubleFloat.html">DoubleFloat</a> -&gt %</dt><dd><p>
+<code>createSceneBox(size)</code> constructs an indexed face set node which is a 3D box of a given <code>size</code></p>
+</dd></dl>
+<a name="f_createSceneClip"></a><dl><dt>createSceneClip : <a href="SBoundary.html">SBoundary</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneClip(bb)</code> constructs a clip node, clips its sub nodes in the coordinate system in force at the clip node.</p>
+</dd></dl>
+<a name="f_createSceneDef"></a><dl><dt>createSceneDef : (<a href="String.html">String</a>, %) -&gt %</dt><dd><p>
+<code>createSceneDef(nam, nde)</code> defines a point in the scenegraph so that it can be used elsewhere.</p>
+</dd></dl>
+<a name="f_createSceneGraph"></a><dl><dt>createSceneGraph : (<a href="DirectedGraph.html">DirectedGraph</a>(<a href="String.html">String</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>createSceneGraph(g, x, y, dispArrowName)</code> creates a graph theory diagram</p>
+</dd></dl>
+<a name="f_createSceneGrid"></a><dl><dt>createSceneGrid : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>createSceneGrid(stepSize, bb)</code> constructs a grid, consists of a group, under which are vertical and horizontal lines. The spacing between lines is given by step.</p>
+</dd></dl>
+<dl><dt>createSceneGrid : <a href="SBoundary.html">SBoundary</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneGrid(bb)</code> constructs a grid with narrow blue lines every 20 units wide blue lines every 100 units wide red lines every 200 units</p>
+</dd></dl>
+<a name="f_createSceneGroup"></a><dl><dt>createSceneGroup : () -&gt %</dt><dd><p>
+<code>createSceneGroup()</code> constructs a group node, this node does not do anything itself but contains other nodes</p>
+</dd></dl>
+<a name="f_createSceneIFS"></a><dl><dt>createSceneIFS : (<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)), <a href="List.html">List</a>(PT)) -&gt %</dt><dd><p>
+<code>createSceneIFS(inx, pts)</code> constructs an indexed face set node, this defines a surface represented by a set of polygons in <code>n</code>-dimensional space.</p>
+</dd></dl>
+<dl><dt>createSceneIFS : <a href="SceneIFS.html">SceneIFS</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneIFS(in1)</code> constructs an indexed face set node, this defines a surface represented by a set of polygons in <code>n</code>-dimensional space.</p>
+</dd></dl>
+<a name="f_createSceneLine"></a><dl><dt>createSceneLine : (%, %, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>createSceneLine(st, en, fontScale)</code> constructs a line node, that contains a line, in <code>n</code>-dimensions, from <code>st</code> to <code>en</code>. 'st' and 'en' are nodes in the scene and the line will be drawn upto their boundary. <code>st</code> is the node at the start of the line <code>en</code> is the node at the end of the line fontScale should be set to the full width of the diagram (not just the width of this node). If this is not known then choose an approximate value. This only affects text nodes, if <code>st</code> or <code>en</code>, or its subnodes, do not contain a text node then its value is not significant.</p>
+</dd></dl>
+<dl><dt>createSceneLine : (%, %, <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>createSceneLine(st, en, fontScale, shortenLine)</code> constructs a line node, that contains a line, in <code>n</code>-dimensions, from <code>st</code> to <code>en</code>. 'st' and 'en' are nodes in the scene and the line will be drawn upto their boundary. <code>st</code> is the node at the start of the line <code>en</code> is the node at the end of the line <code>fontScale</code> should be set to the full width of the diagram (not just the width of this node). If this is not known then choose an approximate value. This only affects text nodes, if <code>st</code> or <code>en</code>, or its subnodes, do not contain a text node then its value is not significant. shortenLine if <code>true</code> line drawn upto boundary rather than centre of destination.</p>
+</dd></dl>
+<dl><dt>createSceneLine : <a href="List.html">List</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneLine(line)</code> constructs a <code>line</code> node, this contains a <code>line</code> (represented by a list of points) in <code>n</code>-dimensional space. The space is implicit in the <code>PT</code> and <code>TR</code> parameters supplied when this Scene was created.</p>
+</dd></dl>
+<a name="f_createSceneLines"></a><dl><dt>createSceneLines : <a href="List.html">List</a>(<a href="List.html">List</a>(PT)) -&gt %</dt><dd><p>
+<code>createSceneLines(line)</code> constructs a <code>line</code> node, this contains lines (represented by a list of points) in <code>n</code>-dimensional space. The space is implicit in the <code>PT</code> and <code>TR</code> parameters supplied when this Scene was created.</p>
+</dd></dl>
+<a name="f_createSceneMaterial"></a><dl><dt>createSceneMaterial : (<a href="DoubleFloat.html">DoubleFloat</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt %</dt><dd><p>
+<code>createSceneMaterial(lineW, lineC, fillC)</code> constructs a material node This sets the lineWidth, lineCol and fillCol for all nodes under this, unless overridden by another material node. That is the material parameters that apply to a given node are those of the closest material node above it in the hierarchy</p>
+</dd></dl>
+<dl><dt>createSceneMaterial : Record(lineWidth : <a href="DoubleFloat.html">DoubleFloat</a>, lineCol : <a href="String.html">String</a>, fillCol : <a href="String.html">String</a>, matOpacity : <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>createSceneMaterial(mat)</code> constructs a material node This sets the lineWidth, lineCol and fillCol for all nodes under this, unless overridden by another material node. That is the material parameters that apply to a given node are those of the closest material node above it in the hierarchy line width is expressed relative to the width of current boundary</p>
+</dd></dl>
+<a name="f_createSceneNamedPoints"></a><dl><dt>createSceneNamedPoints : <a href="SceneNamedPoints.html">SceneNamedPoints</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneNamedPoints(np)</code> constructs a named points node, this allows us to define a set of points which can be used multiple times in the scenegraph.</p>
+</dd></dl>
+<a name="f_createScenePattern"></a><dl><dt>createScenePattern : (<a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>createScenePattern(ptype, step, bb)</code> creates a test pattern suitable for showing the effect of transforms. The pattern depends on <code>ptype</code> parameter as follows: ptype="GRID"::Symbol : construct a set of horizontal and vertical lines in the current clip boundary and current material with a spacing between lines given by the <code>step</code> parameter. ptype="SIERPINSKI"::Symbol: constructs a Sierpinski fractal. <code>step</code> parameter gives the level of subdivision. ptype="HOUSE"::Symbol: constructs a house shape.</p>
+</dd></dl>
+<a name="f_createSceneRoot"></a><dl><dt>createSceneRoot : () -&gt %</dt><dd><p>
+<code>createSceneRoot()</code> constructs the root node, all other nodes are contained in a tree structure under this node</p>
+</dd></dl>
+<dl><dt>createSceneRoot : (<a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>, <a href="Integer.html">Integer</a>) -&gt %</dt><dd><p>
+<code>createSceneRoot(minx, miny, maxx, maxy)</code> constructs the root node, all other nodes are contained in a tree structure under this node</p>
+</dd></dl>
+<dl><dt>createSceneRoot : <a href="SBoundary.html">SBoundary</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneRoot(bb)</code> constructs the root node, all other nodes are contained in a tree structure under this node</p>
+</dd></dl>
+<a name="f_createSceneRuler"></a><dl><dt>createSceneRuler : (<a href="Symbol.html">Symbol</a>, PT, <a href="SBoundary.html">SBoundary</a>(PT)) -&gt %</dt><dd><p>
+<code>createSceneRuler(ptype, offset, bb)</code> creates a scale that can be used to provide numeric values for an axis: ptype= "HORIZONTAL"::Symbol : horizontal axis. ptype= "VERTICAL"::Symbol: vertical axis. ptype= "DEBTH"::Symbol: depth axis.</p>
+</dd></dl>
+<a name="f_createSceneShape"></a><dl><dt>createSceneShape : Record(shptype : <a href="Symbol.html">Symbol</a>, centre : PT, size : PT, fill : <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>createSceneShape(shape)</code> constructs a <code>shape</code> node, this contains a <code>shape</code> such as a rectangle or an ellipse.</p>
+</dd></dl>
+<dl><dt>createSceneShape : <a href="SBoundary.html">SBoundary</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneShape(shape)</code> constructs a <code>shape</code> node from a boundary, this contains a <code>shape</code> such as a rectangle or an ellipse.</p>
+</dd></dl>
+<a name="f_createSceneText"></a><dl><dt>createSceneText : (<a href="List.html">List</a>(<a href="String.html">String</a>), <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PT) -&gt %</dt><dd><p>
+<code>createSceneText(str, sz, pz)</code> constructs a text node using information from named points node.</p>
+</dd></dl>
+<dl><dt>createSceneText : Record(txt : <a href="String.html">String</a>, siz : <a href="NonNegativeInteger.html">NonNegativeInteger</a>, pos : PT, np : <a href="List.html">List</a>(<a href="String.html">String</a>)) -&gt %</dt><dd><p>
+<code>createSceneText(text)</code> constructs a <code>text</code> node, <code>text</code> can be used for labelling anything such as graphs, axes and so on.</p>
+</dd></dl>
+<dl><dt>createSceneText : (<a href="String.html">String</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, PT) -&gt %</dt><dd><p>
+<code>createSceneText(str, sz, pz)</code> constructs a text node, text can be used for labelling anything such as graphs, axes and so on.</p>
+</dd></dl>
+<a name="f_createSceneTransform"></a><dl><dt>createSceneTransform : <a href="STransform.html">STransform</a>(PT) -&gt %</dt><dd><p>
+<code>createSceneTransform(tran)</code> constructs a transform node This transforms the points and vectors below this node If a given node has more than one transform node above it in the hierarchy then the transforms are compound</p>
+</dd></dl>
+<a name="f_createSceneUse"></a><dl><dt>createSceneUse : <a href="String.html">String</a> -&gt %</dt><dd><p>
+<code>createSceneUse(nam)</code> uses another point in the scenegraph.</p>
+</dd></dl>
+<a name="f_removeChild_33"></a><dl><dt>removeChild! : (%, %) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>removeChild!(n, c)</code> removes the specified child node <code>'c'</code> below node <code>'n'</code></p>
+</dd></dl>
+<a name="f_setTransform_33"></a><dl><dt>setTransform! : (%, <a href="STransform.html">STransform</a>(PT)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>setTransform!(n, tran)</code> changes the transform without altering the scene hierarchy</p>
+</dd></dl>
+<a name="f_toObj"></a><dl><dt>toObj : (%, <a href="Reference.html">Reference</a>(<a href="List.html">List</a>(PT)), <a href="Reference.html">Reference</a>(<a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))), <a href="Reference.html">Reference</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>), <a href="STransform.html">STransform</a>(PT), <a href="SBoundary.html">SBoundary</a>(PT)) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>toObj(n, ptLst, indexLst, indexNxt, tran, bb)</code> creates an .OBJ (Wavefront) file from scenegraph tree structure called recursively for each node, so when called on root node in scenegraph all other nodes in the scenegraph will get called. <code>n</code> is the scene to be output to <code>ptLst</code> and <code>indexLst</code> <code>ptLst</code> is the points. This will be set to ref([]) at the start and will be built up as this function is called recursively <code>indexLst</code> is list of faces, where faces are list of points indexed by <code>ptLst</code> This will be set to ref([]) at the start and will be built up as this function is called recursively <code>tran</code> is the default transform which may be overridden by subnodes <code>bb</code> is the default boundary which may be overridden by subnodes</p>
+</dd></dl>
+<a name="f_toSVG"></a><dl><dt>toSVG : (%, Record(lineWidth : <a href="DoubleFloat.html">DoubleFloat</a>, lineCol : <a href="String.html">String</a>, fillCol : <a href="String.html">String</a>, matOpacity : <a href="DoubleFloat.html">DoubleFloat</a>), <a href="STransform.html">STransform</a>(PT), <a href="SBoundary.html">SBoundary</a>(PT), <a href="DoubleFloat.html">DoubleFloat</a>, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>, <a href="SceneNamedPoints.html">SceneNamedPoints</a>(PT)) -&gt <a href="XmlElement.html">XmlElement</a></dt><dd><p>
+<code>toSVG(n, mat, tran, bb, scale, clipEn, useInteger, npt)</code> creates an XmlElement containing a 'SVG' representation of node <code>'n'</code> and the nodes below it. <code>n</code> is the scene to be output to <code>XML</code> elements <code>mat</code> is the default material which may be overridden by subnodes <code>tran</code> is the default transform which may be overridden by subnodes <code>bb</code> is the default boundary which may be overridden by subnodes <code>scale</code> is the <code>scale</code> used to <code>scale</code> into canvas, it would be better to merge this into trans. <code>clipEn</code> if <code>true</code> this clips the output to the boundary <code>useInteger</code> if <code>true</code> truncate to integer values. <code>npt</code> names points can be provided. If not required then set to namedBranch([], [])</p>
+</dd></dl>
+<a name="f_toX3D"></a><dl><dt>toX3D : (%, Record(lineWidth : <a href="DoubleFloat.html">DoubleFloat</a>, lineCol : <a href="String.html">String</a>, fillCol : <a href="String.html">String</a>, matOpacity : <a href="DoubleFloat.html">DoubleFloat</a>), <a href="STransform.html">STransform</a>(PT), <a href="SBoundary.html">SBoundary</a>(PT)) -&gt <a href="XmlElement.html">XmlElement</a></dt><dd><p>
+<code>toX3D(n, mat, tran, bb)</code> creates an XmlElement containing a 'X3D' representation of node <code>'n'</code> and the nodes below it. <code>n</code> is the scene to be output to <code>XML</code> elements <code>mat</code> is the default material which may be overridden by subnodes <code>tran</code> is the default transform which may be overridden by subnodes <code>bb</code> is the default boundary which may be overridden by subnodes</p>
+</dd></dl>
+<a name="f_writeObj"></a><dl><dt>writeObj : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>writeObj(n, filename)</code> writes an 'OBJ' (Wavefront) representation of node <code>'n'</code> to the filename supplied.</p>
+</dd></dl>
+<a name="f_writeSvg"></a><dl><dt>writeSvg : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>writeSvg(n, filename)</code> writes an 'SVG' representation of node <code>'n'</code> to the filename supplied.</p>
+</dd></dl>
+<a name="f_writeSvgQuantised"></a><dl><dt>writeSvgQuantised : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>writeSvgQuantised(n, filename)</code> writes an 'SVG' representation of node <code>'n'</code> to the filename supplied.</p>
+</dd></dl>
+<a name="f_writeVRML"></a><dl><dt>writeVRML : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>writeVRML(n, filename)</code> writes an 'VRML' representation of node <code>'n'</code> to the filename supplied.</p>
+</dd></dl>
+<a name="f_writeX3d"></a><dl><dt>writeX3d : (%, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+writeX3d: (<code>n</code>, filename) writes an 'X3D' representation of node <code>'n'</code> to the filename supplied.</p>
+</dd></dl>
+</body>
+</html>

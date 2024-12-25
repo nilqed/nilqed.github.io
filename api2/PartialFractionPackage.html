@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PartialFractionPackage</title>
+</head>
+<body>
+<h1>PartialFractionPackage(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/pfr.spad#L327">pfr.spad line 327</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/pfr.spad#L327">[edit on github]</a></p>
+<ul>
+<li>R : Join(<a href="EuclideanDomain.html">EuclideanDomain</a>, <a href="PolynomialFactorizationExplicit.html">PolynomialFactorizationExplicit</a>, <a href="CharacteristicZero.html">CharacteristicZero</a>)</ul>
+<p>
+The package PartialFractionPackage gives an easier to use interface to PartialFraction. The user gives a fraction of polynomials, and a variable and the package converts it to the proper datatype for the PartialFraction domain.</p>
+<a name="f_partialFraction"></a><dl><dt>partialFraction : (<a href="Fraction.html">Fraction</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>partialFraction(rf, var)</code> returns the partial fraction decomposition of the rational function <code>rf</code> with respect to the variable var.</p>
+</dd></dl>
+<dl><dt>partialFraction : (<a href="Polynomial.html">Polynomial</a>(R), <a href="Factored.html">Factored</a>(<a href="Polynomial.html">Polynomial</a>(R)), <a href="Symbol.html">Symbol</a>) -&gt <a href="Any.html">Any</a></dt><dd><p>
+<code>partialFraction(num, facdenom, var)</code> returns the partial fraction decomposition of the rational function whose numerator is <code>num</code> and whose factored denominator is <code>facdenom</code> with respect to the variable var.</p>
+</dd></dl>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>Palette</title>
+</head>
+<body>
+<h1>Palette</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/color.spad#L95">color.spad line 95</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/color.spad#L95">[edit on github]</a></p>
+<p>
+This domain describes four groups of color shades (palettes).</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_bright"></a><dl><dt>bright : <a href="Color.html">Color</a> -&gt %</dt><dd><p>
+<code>bright(c)</code> sets the shade of a hue, <code>c</code>, above dim, but below pastel.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt>coerce : <a href="Color.html">Color</a> -&gt %</dt><dd><p>
+<code>coerce(c)</code> sets the average shade for the palette to that of the indicated color <code>c</code>.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_dark"></a><dl><dt>dark : <a href="Color.html">Color</a> -&gt %</dt><dd><p>
+<code>dark(c)</code> sets the shade of the indicated hue of <code>c</code> to it<code>'s</code> lowest value.</p>
+</dd></dl>
+<a name="f_dim"></a><dl><dt>dim : <a href="Color.html">Color</a> -&gt %</dt><dd><p>
+<code>dim(c)</code> sets the shade of a hue, <code>c</code>, above dark, but below bright.</p>
+</dd></dl>
+<a name="f_hue"></a><dl><dt>hue : % -&gt <a href="Color.html">Color</a></dt><dd><p>
+<code>hue(p)</code> returns the hue field of the indicated palette <code>p</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_light"></a><dl><dt>light : <a href="Color.html">Color</a> -&gt %</dt><dd><p>
+<code>light(c)</code> sets the shade of a hue, <code>c</code>, to it<code>'s</code> highest value.</p>
+</dd></dl>
+<a name="f_pastel"></a><dl><dt>pastel : <a href="Color.html">Color</a> -&gt %</dt><dd><p>
+<code>pastel(c)</code> sets the shade of a hue, <code>c</code>, above bright, but below light.</p>
+</dd></dl>
+<a name="f_shade"></a><dl><dt>shade : % -&gt <a href="Integer.html">Integer</a></dt><dd><p>
+<code>shade(p)</code> returns the shade index of the indicated palette <code>p</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

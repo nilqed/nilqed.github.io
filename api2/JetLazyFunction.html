@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetLazyFunction</title>
+</head>
+<body>
+<h1>JetLazyFunction(JB, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L5448">jet.spad line 5448</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L5448">[edit on github]</a></p>
+<ul>
+<li>JB : <a href="JetBundleCategory.html">JetBundleCategory</a><li>D : <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</ul>
+<p>
+JetLazyFunction takes as argument a domain in JetBundleFunctionCategory and returns another domain in the same category. This domain has basically the same properties as the argument domain, but there is a lazy evaluation mechanism for derivatives. This means that differentiations are not immediately performed. Instead a pointer is established to the function to be differentiated. Only when the exact value of the derivative is needed, the differentiation is executed. Special care is taken for leading derivatives and jet variables to avoid as much as possible the need to evaluate expressions. This entails that the result of <code>jetVariables</code> may contain spurious variables. Furthermore many functions in JetLazyFunction destructively change their arguments. This affects, however, only their internal representation, not the value obtained after full evaluation.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt>* : (D, %) -&gt %</dt><dd><p>
+<code>d*exp</code> is provided mainly for internal use, as basically all calculations should be performed within JetLazyFunction.</p>
+</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_P"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_P">P</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_U"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_U">U</a> : () -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_U">U</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_X"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_X">X</a> : () -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_X">X</a> : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_autoReduce"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_autoReduce">autoReduce</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_class"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_class">class</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt %</dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt>coerce : D -&gt %</dt><dd><p>
+<code>coerce(d)</code> coerces an element of <code>D</code> into the new domain. This includes the calculation of its leading derivative and its jet variables.</p>
+</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_coerce">coerce</a> : JB -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt>coerce : % -&gt D</dt><dd><p>
+<code>coerce(exp)</code> retracts an element to the base domain <code>D</code>. This looses all information about its leading derivative and its jet variables and requires complete evaluation of the expression.</p>
+</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_collect"></a><dl><dt>collect : % -&gt %</dt><dd><p>
+<code>collect(exp)</code> "collects" former lazy terms which have been meanwhile evaluated.</p>
+</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_const_63"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_const_63">const?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_dSubst"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_dSubst">dSubst</a> : (%, JB, %) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_denominator"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_denominator">denominator</a> : % -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_differentiate">differentiate</a> : (%, JB) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="Symbol.html">Symbol</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)</dd></dl>
+<a name="f_dimension"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_dimension">dimension</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_eqRep_63"></a><dl><dt>eqRep? : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>eqRep?(x, y)</code> compares the representations of <code>x</code> and <code>y</code> without any evaluation. Thus it is much weaker than <code>=</code> and cannot decide equality of the evaluated expressions.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : % -&gt %</dt><dd><p>
+<code>eval(exp)</code> explicitly evaluates all terms in <code>exp</code>. <code>exp</code> is destructively altered.</p>
+</dd></dl>
+<a name="f_eval1"></a><dl><dt>eval1 : % -&gt %</dt><dd><p>
+<code>eval1(exp)</code> explicitly evaluates the next term in <code>exp</code>. <code>exp</code> is destructively altered.</p>
+</dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extractSymbol"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_extractSymbol">extractSymbol</a> : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_formalDiff"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff">formalDiff</a> : (%, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff">formalDiff</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff">formalDiff</a> : (<a href="List.html">List</a>(%), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_formalDiff2"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff2">formalDiff2</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>, <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)) -&gt Record(DPhi : %, JVars : <a href="List.html">List</a>(JB))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_formalDiff2">formalDiff2</a> : (<a href="List.html">List</a>(%), <a href="PositiveInteger.html">PositiveInteger</a>, <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)) -&gt Record(DSys : <a href="List.html">List</a>(%), JVars : <a href="List.html">List</a>(<a href="List.html">List</a>(JB)))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_freeOf_63"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_freeOf_63">freeOf?</a> : (%, JB) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_gcd"></a><dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_gcd">gcd</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_gcdPolynomial"></a><dl><dt><a href="GcdDomain.html#f_gcdPolynomial">gcdPolynomial</a> : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)) -&gt <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(%)</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_getNotation"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_getNotation">getNotation</a> : () -&gt <a href="Symbol.html">Symbol</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_ground_63"></a><dl><dt>ground? : % -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>ground(exp)</code> is <code>true</code>, if <code>exp</code> contains only fully evaluated parts.</p>
+</dd></dl>
+<a name="f_jacobiMatrix"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_jacobiMatrix">jacobiMatrix</a> : <a href="List.html">List</a>(%) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_jacobiMatrix">jacobiMatrix</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(<a href="List.html">List</a>(JB))) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_jetVariables"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_jetVariables">jetVariables</a> : % -&gt <a href="List.html">List</a>(JB)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lcm"></a><dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : (%, %) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<dl><dt><a href="GcdDomain.html#f_lcm">lcm</a> : <a href="List.html">List</a>(%) -&gt %</dt><dd> from <a href="GcdDomain.html">GcdDomain</a></dd></dl>
+<a name="f_lcmCoef"></a><dl><dt><a href="LeftOreRing.html#f_lcmCoef">lcmCoef</a> : (%, %) -&gt Record(llcm_res : %, coeff1 : %, coeff2 : %)</dt><dd> from <a href="LeftOreRing.html">LeftOreRing</a></dd></dl>
+<a name="f_leadingDer"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_leadingDer">leadingDer</a> : % -&gt JB</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_numDepVar"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_numDepVar">numDepVar</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_numIndVar"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_numIndVar">numIndVar</a> : () -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_numerator"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_numerator">numerator</a> : % -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_order">order</a> : % -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_orderDim"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_orderDim">orderDim</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reduceMod"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_reduceMod">reduceMod</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt JB</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(JB)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(JB, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(JB)</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_setNotation"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_setNotation">setNotation</a> : <a href="Symbol.html">Symbol</a> -&gt <a href="Void.html">Void</a></dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_simpMod"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_simpMod">simpMod</a> : (<a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<dl><dt><a href="JetBundleFunctionCategory.html#f_simpMod">simpMod</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), <a href="List.html">List</a>(%)) -&gt Record(Sys : <a href="List.html">List</a>(%), JM : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), Depend : Union("failed", <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_simpOne"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_simpOne">simpOne</a> : % -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_simplify"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_simplify">simplify</a> : (<a href="List.html">List</a>(%), <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)) -&gt Record(Sys : <a href="List.html">List</a>(%), JM : <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %), Depend : Union("failed", <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>))))</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_solveFor"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_solveFor">solveFor</a> : (%, JB) -&gt Union(%, "failed")</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_sortLD"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_sortLD">sortLD</a> : <a href="List.html">List</a>(%) -&gt <a href="List.html">List</a>(%)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_statistics"></a><dl><dt>statistics : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>statistics()</code> prints a statistic on the use of the lazy evaluation mechanism. It displays the number of lazy differentiations performed and how many of them had to be executed explicitly later on.</p>
+</dd></dl>
+<a name="f_subst"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_subst">subst</a> : (%, JB, %) -&gt %</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_symbol"></a><dl><dt><a href="JetBundleFunctionCategory.html#f_symbol">symbol</a> : <a href="List.html">List</a>(%) -&gt <a href="SparseEchelonMatrix.html">SparseEchelonMatrix</a>(JB, %)</dt><dd> from <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt %</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %)</dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="RetractableTo.html">RetractableTo</a>(JB)
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="GcdDomain.html">GcdDomain</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="Module.html">Module</a>(%)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)
+<p><a href="LeftOreRing.html">LeftOreRing</a>
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(<a href="Symbol.html">Symbol</a>)
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(JB)
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="Rng.html">Rng</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="lazyRepresentation.html">lazyRepresentation</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+</body>
+</html>

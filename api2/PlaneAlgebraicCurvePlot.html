@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>PlaneAlgebraicCurvePlot</title>
+</head>
+<body>
+<h1>PlaneAlgebraicCurvePlot</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/acplot.spad#L48">acplot.spad line 48</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/acplot.spad#L48">[edit on github]</a></p>
+<p>
+Plot a NON-SINGULAR plane algebraic curve <code>p(x, y) = 0</code>.</p>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_listBranches"></a><dl><dt><a href="PlottablePlaneCurveCategory.html#f_listBranches">listBranches</a> : % -&gt <a href="List.html">List</a>(<a href="List.html">List</a>(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>)))</dt><dd> from <a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a></dd></dl>
+<a name="f_makeSketch"></a><dl><dt>makeSketch : (<a href="Polynomial.html">Polynomial</a>(<a href="Integer.html">Integer</a>), <a href="Symbol.html">Symbol</a>, <a href="Symbol.html">Symbol</a>, <a href="Segment.html">Segment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)), <a href="Segment.html">Segment</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))) -&gt %</dt><dd><p>
+<code>makeSketch(p, x, y, a..b, c..d)</code> creates an ACPLOT of the curve <code>p = 0</code> in the region  a &lt;= x &lt;= b, c &lt;= y &lt;= d. More specifically, 'makeSketch' plots a non-singular algebraic curve <code>p = 0</code> in an rectangular region  xMin &lt;= x &lt;= xMax,  yMin &lt;= y &lt;= yMax. The user inputs <code>makeSketch(p, x, y, xMin..xMax, yMin..yMax)</code>. Here <code>p</code> is a polynomial in the variables <code>x</code> and <code>y</code> with integer coefficients (<code>p</code> belongs to the domain <code>Polynomial Integer</code>). The case where <code>p</code> is a polynomial in only one of the variables is allowed. The variables <code>x</code> and <code>y</code> are input to specify the the coordinate axes. The horizontal axis is the <code>x</code>-axis and the vertical axis is the <code>y</code>-axis. The rational numbers xMin, ..., yMax specify the boundaries of the region in which the curve is to be plotted.</p>
+</dd></dl>
+<a name="f_refine"></a><dl><dt>refine : (%, <a href="DoubleFloat.html">DoubleFloat</a>) -&gt %</dt><dd><p>
+<code>refine(p, x)</code> is undocumented</p>
+</dd></dl>
+<a name="f_xRange"></a><dl><dt><a href="PlottablePlaneCurveCategory.html#f_xRange">xRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a></dd></dl>
+<a name="f_yRange"></a><dl><dt><a href="PlottablePlaneCurveCategory.html#f_yRange">yRange</a> : % -&gt <a href="Segment.html">Segment</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd> from <a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a></dd></dl>
+<p><a href="PlottablePlaneCurveCategory.html">PlottablePlaneCurveCategory</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>BezoutMatrix</title>
+</head>
+<body>
+<h1>BezoutMatrix(R, UP, M, Row, Col)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/bezout.spad#L1">bezout.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/bezout.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="Ring.html">Ring</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(R)<li>M : <a href="MatrixCategory.html">MatrixCategory</a>(R, Row, Col)<li>Row : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)<li>Col : <a href="FiniteLinearAggregate.html">FiniteLinearAggregate</a>(R)</ul>
+<p>
+BezoutMatrix contains functions for computing resultants and discriminants using Bezout matrices, and functions related with Sylvester matrix and subresultant.</p>
+<a name="f_bezoutDiscriminant"></a><dl><dt>bezoutDiscriminant : UP -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>bezoutDiscriminant(p)</code> computes the discriminant of a polynomial <code>p</code> by computing the determinant of a Bezout matrix.</p>
+</dd></dl>
+<a name="f_bezoutMatrix"></a><dl><dt>bezoutMatrix : (UP, UP) -&gt M</dt><dd><p>
+<code>bezoutMatrix(p, q)</code> returns the Bezout matrix for the two polynomials <code>p</code> and <code>q</code>.</p>
+</dd></dl>
+<a name="f_bezoutResultant"></a><dl><dt>bezoutResultant : (UP, UP) -&gt R if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>bezoutResultant(p, q)</code> computes the resultant of the two polynomials <code>p</code> and <code>q</code> by computing the determinant of a Bezout matrix.</p>
+</dd></dl>
+<a name="f_subSylvesterMatrix"></a><dl><dt>subSylvesterMatrix : (M, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt M</dt><dd><p>
+<code>subSylvesterMatrix(S, j)</code> returns the <code>j</code>th sub-Sylvester matrix <code>jS</code>.</p>
+</dd></dl>
+<dl><dt>subSylvesterMatrix : (M, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt M</dt><dd><p>
+<code>subSylvesterMatrix(S, j, i)</code> returns sub-Sylvester matrix jSi.</p>
+</dd></dl>
+<a name="f_subresultants"></a><dl><dt>subresultants : (UP, UP) -&gt <a href="IndexedVector.html">IndexedVector</a>(UP, Zero) if R has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd><p>
+<code>subresultants(p, q)</code> returns a vector of subresultants of <code>p</code> and <code>q</code>, in ascending order, starting with index 0.</p>
+</dd></dl>
+<a name="f_sylvesterMatrix"></a><dl><dt>sylvesterMatrix : (UP, UP) -&gt M</dt><dd><p>
+<code>sylvesterMatrix(p, q)</code> returns the Sylvester matrix for the two nonzero polynomials <code>p</code> and <code>q</code>.</p>
+</dd></dl>
+</body>
+</html>

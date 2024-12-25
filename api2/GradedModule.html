@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GradedModule</title>
+</head>
+<body>
+<h1>GradedModule(R, E)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/carten.spad#L1">carten.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/carten.spad#L1">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a><li>E : <a href="AbelianMonoid.html">AbelianMonoid</a></ul>
+<p>
+GradedModule(<code>R</code>, <code>E</code>) denotes ``E-graded <code>R</code>-module<code>''</code>, i.e. collection of <code>R</code>-modules indexed by an abelian monoid <code>E</code>. An element <code>g</code> of <code>G[s]</code> for some specific <code>s</code> in <code>E</code> is said to be an element of <code>G</code> with  degree <code>s</code>. Sums are defined in each module <code>G[s]</code> so two elements of <code>G</code> have a sum if they have the same degree.  Morphisms can be defined and composed by degree to give the mathematical category of graded modules.</p>
+<a name="f__42"></a><dl><dt>* : (%, R) -&gt %</dt><dd><p>
+<code>g*r</code> is right module multiplication.</p>
+</dd></dl>
+<dl><dt>* : (R, %) -&gt %</dt><dd><p>
+<code>r*g</code> is left module multiplication.</p>
+</dd></dl>
+<a name="f__43"></a><dl><dt>+ : (%, %) -&gt %</dt><dd><p>
+<code>g+h</code> is the sum of <code>g</code> and <code>h</code> in the module of elements of the same degree as <code>g</code> and <code>h</code>. Error: if <code>g</code> and <code>h</code> have different degrees.</p>
+</dd></dl>
+<a name="f__45"></a><dl><dt>- : % -&gt %</dt><dd><p>
+<code>-g</code> is the additive inverse of <code>g</code> in the module of elements of the same grade as <code>g</code>.</p>
+</dd></dl>
+<dl><dt>- : (%, %) -&gt %</dt><dd><p>
+<code>g-h</code> is the difference of <code>g</code> and <code>h</code> in the module of elements of the same degree as <code>g</code> and <code>h</code>. Error: if <code>g</code> and <code>h</code> have different degrees.</p>
+</dd></dl>
+<a name="f_0"></a><dl><dt>0 : () -&gt %</dt><dd><p>
+0 denotes the zero of degree 0.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_degree"></a><dl><dt>degree : % -&gt E</dt><dd><p>
+<code>degree(g)</code> names the degree of <code>g</code>. The set of all elements of a given degree form an <code>R</code>-module.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="BasicType.html">BasicType</a>
+</body>
+</html>

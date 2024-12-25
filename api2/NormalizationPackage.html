@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>NormalizationPackage</title>
+</head>
+<body>
+<h1>NormalizationPackage(R, E, V, P, TS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/nregset.spad#L35">nregset.spad line 35</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/nregset.spad#L35">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="RegularTriangularSetCategory.html">RegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+A package for computing normalized associates of univariate polynomials with coefficients in a tower of simple extensions of a field.</p>
+<a name="f_normInvertible_63"></a><dl><dt>normInvertible? : (P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="Boolean.html">Boolean</a>, tower : TS))</dt><dd><p>
+<code>normInvertible?(p, ts)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_normalize"></a><dl><dt>normalize : (P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+<code>normalize(p, ts)</code> normalizes <code>p</code> <code>w</code>.<code>r</code>.<code>t</code> <code>ts</code>.</p>
+</dd></dl>
+<a name="f_normalizedAssociate"></a><dl><dt>normalizedAssociate : (P, TS) -&gt P</dt><dd><p>
+<code>normalizedAssociate(p, ts)</code> returns a normalized polynomial <code>n</code> <code>w</code>.<code>r</code>.<code>t</code>. <code>ts</code> such that <code>n</code> and <code>p</code> are associates <code>w</code>.<code>r</code>.<code>t</code> <code>ts</code> and assuming that <code>p</code> is invertible <code>w</code>.<code>r</code>.<code>t</code> <code>ts</code>.</p>
+</dd></dl>
+<a name="f_outputArgs"></a><dl><dt>outputArgs : (<a href="String.html">String</a>, <a href="String.html">String</a>, P, TS) -&gt <a href="Void.html">Void</a></dt><dd><p>
+<code>outputArgs(s1, s2, p, ts)</code> is an internal subroutine, exported only for development.</p>
+</dd></dl>
+<a name="f_recip"></a><dl><dt>recip : (P, TS) -&gt Record(num : P, den : P)</dt><dd><p>
+<code>recip(p, ts)</code> returns the inverse of <code>p</code> <code>w</code>.<code>r</code>.<code>t</code> <code>ts</code> assuming that <code>p</code> is invertible <code>w</code>.<code>r</code>.<code>t</code> <code>ts</code>.</p>
+</dd></dl>
+</body>
+</html>

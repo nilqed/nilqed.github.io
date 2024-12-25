@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GuessOption</title>
+</head>
+<body>
+<h1>GuessOption</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mantepse.spad#L63">mantepse.spad line 63</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mantepse.spad#L63">[edit on github]</a></p>
+<p>
+GuessOption is a domain whose elements are various options used by Guess.</p>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_Somos"></a><dl><dt>Somos : Union(<a href="PositiveInteger.html">PositiveInteger</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>Somos(d)</code> specifies whether we want that the total degree of the differential operators is constant, and equal to <code>d</code>, or maxDerivative if <code>true</code>. If <code>true</code>, maxDerivative must be set, too.</p>
+</dd></dl>
+<a name="f_allDegrees"></a><dl><dt>allDegrees : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>allDegrees(d)</code> specifies whether all possibilities of the degree vector - taking into account maxDegree - should be tried. This is mainly interesting for rational interpolation. This option is expressed in the form <code>allDegrees == d</code>.</p>
+</dd></dl>
+<a name="f_check"></a><dl><dt>check : Union("skip", "MonteCarlo", "deterministic") -&gt %</dt><dd><p>
+<code>check(d)</code> specifies how we want to check the solution. If the value is "skip", we return the solutions found by the interpolation routine without checking. If the value is "MonteCarlo", we use a probabilistic check. This option is expressed in the form <code>check == d</code></p>
+</dd></dl>
+<a name="f_checkExtraValues"></a><dl><dt>checkExtraValues : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>checkExtraValues(d)</code> specifies whether we want to check the solution beyond the order given by the degree bounds. This option is expressed in the form <code>checkExtraValues == d</code></p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_debug"></a><dl><dt>debug : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>debug(d)</code> specifies whether we want additional output on the progress. This option is expressed in the form <code>debug == d</code>.</p>
+</dd></dl>
+<a name="f_displayKind"></a><dl><dt>displayKind : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>displayKind(d)</code> specifies kind of the result: generating function, recurrence or equation. This option should not be set by the user, but rather by the <code>HP</code>-specification.</p>
+</dd></dl>
+<a name="f_functionName"></a><dl><dt>functionName : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>functionName(d)</code> specifies the name of the function given by the algebraic differential equation or recurrence. This option is expressed in the form <code>functionName == d</code>.</p>
+</dd></dl>
+<a name="f_functionNames"></a><dl><dt>functionNames : <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>) -&gt %</dt><dd><p>
+<code>functionNames(d)</code> specifies the names for the function in algebraic dependence. This option is expressed in the form <code>functionNames == d</code>.</p>
+</dd></dl>
+<a name="f_homogeneous"></a><dl><dt>homogeneous : Union(<a href="PositiveInteger.html">PositiveInteger</a>, <a href="Boolean.html">Boolean</a>) -&gt %</dt><dd><p>
+<code>homogeneous(d)</code> specifies whether we allow only homogeneous algebraic differential equations. This option is expressed in the form <code>homogeneous == d</code>. If <code>true</code>, then maxPower must be set, too, and ADEs with constant total degree are allowed. If a PositiveInteger is given, only ADE<code>'s</code> with this total degree are allowed.</p>
+</dd></dl>
+<a name="f_indexName"></a><dl><dt>indexName : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>indexName(d)</code> specifies the index variable used for the formulas. This option is expressed in the form <code>indexName == d</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_maxDegree"></a><dl><dt>maxDegree : Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary") -&gt %</dt><dd><p>
+<code>maxDegree(d)</code> specifies the maximum degree of the coefficient polynomials in an algebraic differential equation or a recursion with polynomial coefficients. For rational functions with an exponential term, <code>maxDegree</code> bounds the degree of the denominator polynomial. This option is expressed in the form <code>maxDegree == d</code>.</p>
+</dd></dl>
+<a name="f_maxDerivative"></a><dl><dt>maxDerivative : Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary") -&gt %</dt><dd><p>
+<code>maxDerivative(d)</code> specifies the maximum derivative in an algebraic differential equation. This option is expressed in the form <code>maxDerivative == d</code>.</p>
+</dd></dl>
+<a name="f_maxLevel"></a><dl><dt>maxLevel : Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary") -&gt %</dt><dd><p>
+<code>maxLevel(d)</code> specifies the maximum number of recursion levels operators guessProduct and guessSum will be applied. This option is expressed in the form spadmaxLevel <code>==</code> <code>d</code>.</p>
+</dd></dl>
+<a name="f_maxMixedDegree"></a><dl><dt>maxMixedDegree : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>maxMixedDegree(d)</code> specifies the maximum <code>q</code>-degree of the coefficient polynomials in a recurrence with polynomial coefficients, in the case of mixed shifts. Although slightly inconsistent, maxMixedDegree(0) specifies that no mixed shifts are allowed. This option is expressed in the form <code>maxMixedDegree == d</code>.</p>
+</dd></dl>
+<a name="f_maxPower"></a><dl><dt>maxPower : Union(<a href="PositiveInteger.html">PositiveInteger</a>, "arbitrary") -&gt %</dt><dd><p>
+<code>maxPower(d)</code> specifies the maximum degree in an algebraic differential equation. For example, the degree of (<code>f</code><code>''</code>)<code>^3</code> <code>f'</code> is 4. maxPower(<code>-1</code>) specifies that the maximum exponent can be arbitrary. This option is expressed in the form <code>maxPower == d</code>.</p>
+</dd></dl>
+<a name="f_maxShift"></a><dl><dt>maxShift : Union(<a href="NonNegativeInteger.html">NonNegativeInteger</a>, "arbitrary") -&gt %</dt><dd><p>
+<code>maxShift(d)</code> specifies the maximum shift in a recurrence equation. This option is expressed in the form <code>maxShift == d</code>.</p>
+</dd></dl>
+<a name="f_maxSubst"></a><dl><dt>maxSubst : Union(<a href="PositiveInteger.html">PositiveInteger</a>, "arbitrary") -&gt %</dt><dd><p>
+<code>maxSubst(d)</code> specifies the maximum degree of the monomial substituted into the function we are looking for. That is, if <code>maxSubst == d</code>, we look for polynomials such that $<code>p</code>(<code>f</code>(<code>x</code>), <code>f</code>(<code>x^2</code>), ..., <code>f</code>(<code>x^d</code>))<code>=0</code>$. equation. This option is expressed in the form <code>maxSubst == d</code>.</p>
+</dd></dl>
+<a name="f_one"></a><dl><dt>one : <a href="Boolean.html">Boolean</a> -&gt %</dt><dd><p>
+<code>one(d)</code> specifies whether we are happy with one solution. This option is expressed in the form <code>one == d</code>.</p>
+</dd></dl>
+<a name="f_option"></a><dl><dt>option : (<a href="List.html">List</a>(%), <a href="Symbol.html">Symbol</a>) -&gt Union(<a href="Any.html">Any</a>, "failed")</dt><dd><p>
+<code>option(l, option)</code> returns which options are given.</p>
+</dd></dl>
+<a name="f_safety"></a><dl><dt>safety : <a href="NonNegativeInteger.html">NonNegativeInteger</a> -&gt %</dt><dd><p>
+<code>safety(d)</code> specifies the number of values reserved for testing any solutions found. This option is expressed in the form <code>safety == d</code>.</p>
+</dd></dl>
+<a name="f_variableName"></a><dl><dt>variableName : <a href="Symbol.html">Symbol</a> -&gt %</dt><dd><p>
+<code>variableName(d)</code> specifies the variable used in by the algebraic differential equation. This option is expressed in the form <code>variableName == d</code>.</p>
+</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

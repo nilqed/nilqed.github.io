@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>AlgebraicHermiteIntegration</title>
+</head>
+<body>
+<h1>AlgebraicHermiteIntegration(F, UP, UPUP, R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intalg.spad#L50">intalg.spad line 50</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intalg.spad#L50">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a><li>UP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(F)<li>UPUP : <a href="UnivariatePolynomialCategory.html">UnivariatePolynomialCategory</a>(<a href="Fraction.html">Fraction</a>(UP))<li>R : <a href="FunctionFieldCategory.html">FunctionFieldCategory</a>(F, UP, UPUP)</ul>
+<p>
+algebraic Hermite redution.</p>
+<a name="f_HermiteIntegrate"></a><dl><dt>HermiteIntegrate : (R, Mapping(UP, UP)) -&gt Record(answer : R, logpart : R)</dt><dd><p>
+<code>HermiteIntegrate(f, ')</code> returns <code>[g, h]</code> such that <code>f = g' + h</code> and <code>h</code> has a only simple finite normal poles.</p>
+</dd></dl>
+<dl><dt>HermiteIntegrate : (R, Mapping(UP, UP), R) -&gt Record(answer : R, logpart : R)</dt><dd><p>
+<code>HermiteIntegrate(f, ', d0)</code> returns <code>[g, h]</code> such that <code>f = g' + d0*g + h</code> and <code>h</code> has a only simple finite normal poles. Note: <code>d0</code> must be integral.</p>
+</dd></dl>
+</body>
+</html>

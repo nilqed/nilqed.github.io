@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>DrawOptionFunctions0</title>
+</head>
+<body>
+<h1>DrawOptionFunctions0</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/drawopt.spad#L219">drawopt.spad line 219</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/drawopt.spad#L219">[edit on github]</a></p>
+<p>
+This package is undocumented</p>
+<a name="f_adaptive"></a><dl><dt>adaptive : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="Boolean.html">Boolean</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>adaptive(l, b)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>adaptive</code>. If the option does not exist the value, <code>b</code> is returned.</p>
+</dd></dl>
+<a name="f_clipBoolean"></a><dl><dt>clipBoolean : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="Boolean.html">Boolean</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>clipBoolean(l, b)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>clipBoolean</code>. If the option does not exist the value, <code>b</code> is returned.</p>
+</dd></dl>
+<a name="f_coord"></a><dl><dt>coord : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))) -&gt Mapping(<a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>), <a href="Point.html">Point</a>(<a href="DoubleFloat.html">DoubleFloat</a>))</dt><dd><p>
+<code>coord(l, p)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>coord</code>. If the option does not exist the value, <code>p</code> is returned.</p>
+</dd></dl>
+<a name="f_curveColorPalette"></a><dl><dt>curveColorPalette : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="Palette.html">Palette</a>) -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>curveColorPalette(l, p)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>curveColorPalette</code>. If the option does not exist the value, <code>p</code> is returned.</p>
+</dd></dl>
+<a name="f_pointColorPalette"></a><dl><dt>pointColorPalette : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="Palette.html">Palette</a>) -&gt <a href="Palette.html">Palette</a></dt><dd><p>
+<code>pointColorPalette(l, p)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>pointColorPalette</code>. If the option does not exist the value, <code>p</code> is returned.</p>
+</dd></dl>
+<a name="f_ranges"></a><dl><dt>ranges : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>))) -&gt <a href="List.html">List</a>(<a href="Segment.html">Segment</a>(<a href="Float.html">Float</a>))</dt><dd><p>
+<code>ranges(l, r)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>ranges</code>. If the option does not exist the value, <code>r</code> is returned.</p>
+</dd></dl>
+<a name="f_space"></a><dl><dt>space : <a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>) -&gt <a href="ThreeSpace.html">ThreeSpace</a>(<a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>space(l)</code> takes a list of draw options, <code>l</code>, and checks to see if it contains the option <code>space</code>. If the option doesn<code>'t</code> exist, then an empty space is returned.</p>
+</dd></dl>
+<a name="f_style"></a><dl><dt>style : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>style(l, s)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>style</code>. If the option does not exist the value, <code>s</code> is returned.</p>
+</dd></dl>
+<a name="f_title"></a><dl><dt>title : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="String.html">String</a>) -&gt <a href="String.html">String</a></dt><dd><p>
+<code>title(l, s)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>title</code>. If the option does not exist the value, <code>s</code> is returned.</p>
+</dd></dl>
+<a name="f_toScale"></a><dl><dt>toScale : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="Boolean.html">Boolean</a>) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+<code>toScale(l, b)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>toScale</code>. If the option does not exist the value, <code>b</code> is returned.</p>
+</dd></dl>
+<a name="f_tubePoints"></a><dl><dt>tubePoints : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>tubePoints(l, n)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>tubePoints</code>. If the option does not exist the value, <code>n</code> is returned.</p>
+</dd></dl>
+<a name="f_tubeRadius"></a><dl><dt>tubeRadius : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="Float.html">Float</a>) -&gt <a href="Float.html">Float</a></dt><dd><p>
+<code>tubeRadius(l, n)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>tubeRadius</code>. If the option does not exist the value, <code>n</code> is returned.</p>
+</dd></dl>
+<a name="f_units"></a><dl><dt>units : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="List.html">List</a>(<a href="Float.html">Float</a>)) -&gt <a href="List.html">List</a>(<a href="Float.html">Float</a>)</dt><dd><p>
+<code>units(l, u)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>unit</code>. If the option does not exist the value, <code>u</code> is returned.</p>
+</dd></dl>
+<a name="f_var1Steps"></a><dl><dt>var1Steps : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>var1Steps(l, n)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>var1Steps</code>. If the option does not exist the value, <code>n</code> is returned.</p>
+</dd></dl>
+<a name="f_var2Steps"></a><dl><dt>var2Steps : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), <a href="PositiveInteger.html">PositiveInteger</a>) -&gt <a href="PositiveInteger.html">PositiveInteger</a></dt><dd><p>
+<code>var2Steps(l, n)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>var2Steps</code>. If the option does not exist the value, <code>n</code> is returned.</p>
+</dd></dl>
+<a name="f_viewpoint"></a><dl><dt>viewpoint : (<a href="List.html">List</a>(<a href="DrawOption.html">DrawOption</a>), Record(theta : <a href="DoubleFloat.html">DoubleFloat</a>, phi : <a href="DoubleFloat.html">DoubleFloat</a>, scale : <a href="DoubleFloat.html">DoubleFloat</a>, scaleX : <a href="DoubleFloat.html">DoubleFloat</a>, scaleY : <a href="DoubleFloat.html">DoubleFloat</a>, scaleZ : <a href="DoubleFloat.html">DoubleFloat</a>, deltaX : <a href="DoubleFloat.html">DoubleFloat</a>, deltaY : <a href="DoubleFloat.html">DoubleFloat</a>)) -&gt Record(theta : <a href="DoubleFloat.html">DoubleFloat</a>, phi : <a href="DoubleFloat.html">DoubleFloat</a>, scale : <a href="DoubleFloat.html">DoubleFloat</a>, scaleX : <a href="DoubleFloat.html">DoubleFloat</a>, scaleY : <a href="DoubleFloat.html">DoubleFloat</a>, scaleZ : <a href="DoubleFloat.html">DoubleFloat</a>, deltaX : <a href="DoubleFloat.html">DoubleFloat</a>, deltaY : <a href="DoubleFloat.html">DoubleFloat</a>)</dt><dd><p>
+<code>viewpoint(l, ls)</code> takes the list of draw options, <code>l</code>, and checks the list to see if it contains the option <code>viewpoint</code>. IF the option does not exist, the value <code>ls</code> is returned.</p>
+</dd></dl>
+</body>
+</html>

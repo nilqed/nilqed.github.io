@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FactoredFunctionUtilities</title>
+</head>
+<body>
+<h1>FactoredFunctionUtilities(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/fr.spad#L594">fr.spad line 594</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/fr.spad#L594">[edit on github]</a></p>
+<ul>
+<li>R : <a href="IntegralDomain.html">IntegralDomain</a></ul>
+<p>
+FactoredFunctionUtilities implements some utility functions for manipulating factored objects.</p>
+<a name="f_refine"></a><dl><dt>refine : (<a href="Factored.html">Factored</a>(R), Mapping(<a href="Factored.html">Factored</a>(R), R)) -&gt <a href="Factored.html">Factored</a>(R)</dt><dd><p>
+<code>refine(u, fn)</code> is used to apply the function <code>fn</code> to each factor of <code>u</code> and then build a new factored object from the results. For example, if <code>u</code> were created by calling <code>nilFactor(10, 2)</code> then <code>refine(u, factor)</code> would create a factored object equal to that created by <code>factor(100)</code> or <code>primeFactor(2, 2) * primeFactor(5, 2)</code>.</p>
+</dd></dl>
+</body>
+</html>

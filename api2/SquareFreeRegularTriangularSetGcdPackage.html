@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SquareFreeRegularTriangularSetGcdPackage</title>
+</head>
+<body>
+<h1>SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/sregset.spad#L422">sregset.spad line 422</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/sregset.spad#L422">[edit on github]</a></p>
+<ul>
+<li>R : <a href="GcdDomain.html">GcdDomain</a><li>E : <a href="OrderedAbelianMonoidSup.html">OrderedAbelianMonoidSup</a><li>V : <a href="OrderedSet.html">OrderedSet</a><li>P : <a href="RecursivePolynomialCategory.html">RecursivePolynomialCategory</a>(R, E, V)<li>TS : <a href="RegularTriangularSetCategory.html">RegularTriangularSetCategory</a>(R, E, V, P)</ul>
+<p>
+A internal package for computing gcds and resultants of univariate polynomials with coefficients in a tower of simple extensions of a field. There is no need to use directly this package since its main operations are available from <code>TS</code>. </p>
+<a name="f_startTableGcd_33"></a><dl><dt>startTableGcd! : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_startTableInvSet_33"></a><dl><dt>startTableInvSet! : (<a href="String.html">String</a>, <a href="String.html">String</a>, <a href="String.html">String</a>) -&gt <a href="Void.html">Void</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stopTableGcd_33"></a><dl><dt>stopTableGcd! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stopTableInvSet_33"></a><dl><dt>stopTableInvSet! : () -&gt <a href="Void.html">Void</a></dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseIntegralLastSubResultant"></a><dl><dt>stoseIntegralLastSubResultant : (P, P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInternalLastSubResultant"></a><dl><dt>stoseInternalLastSubResultant : (P, P, TS, <a href="Boolean.html">Boolean</a>, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>stoseInternalLastSubResultant : (<a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS)), V, <a href="Boolean.html">Boolean</a>) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInvertible_63"></a><dl><dt>stoseInvertible? : (P, TS) -&gt <a href="Boolean.html">Boolean</a></dt><dd><p>
+</p>
+</dd></dl>
+<dl><dt>stoseInvertible? : (P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="Boolean.html">Boolean</a>, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInvertible_63_95reg"></a><dl><dt>stoseInvertible?_reg : (P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="Boolean.html">Boolean</a>, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInvertible_63_95sqfreg"></a><dl><dt>stoseInvertible?_sqfreg : (P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="Boolean.html">Boolean</a>, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInvertibleSet"></a><dl><dt>stoseInvertibleSet : (P, TS) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInvertibleSet_95reg"></a><dl><dt>stoseInvertibleSet_reg : (P, TS) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseInvertibleSet_95sqfreg"></a><dl><dt>stoseInvertibleSet_sqfreg : (P, TS) -&gt <a href="List.html">List</a>(TS)</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseLastSubResultant"></a><dl><dt>stoseLastSubResultant : (P, P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stosePrepareSubResAlgo"></a><dl><dt>stosePrepareSubResAlgo : (P, P, TS) -&gt <a href="List.html">List</a>(Record(val : <a href="List.html">List</a>(P), tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+<a name="f_stoseSquareFreePart"></a><dl><dt>stoseSquareFreePart : (P, TS) -&gt <a href="List.html">List</a>(Record(val : P, tower : TS))</dt><dd><p>
+</p>
+</dd></dl>
+</body>
+</html>

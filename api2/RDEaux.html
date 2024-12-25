@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>RDEaux</title>
+</head>
+<body>
+<h1>RDEaux(F)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L753">intpar.spad line 753</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L753">[edit on github]</a></p>
+<ul>
+<li>F : <a href="Field.html">Field</a></ul>
+<p>
+This package contains special case for RDE solver.</p>
+<a name="f_SPDE1"></a><dl><dt>SPDE1 : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), Mapping(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))) -&gt Record(ans : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), remainder : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))</dt><dd><p>
+<code>SPDE1(b, c, D)</code> solves <code>Q'</code> + <code>b</code> <code>Q</code> = <code>c</code> and returns [<code>Q</code>, <code>r</code>] where <code>r</code> = <code>c</code> - ( <code>Q'</code> + <code>b</code> <code>Q</code>). That is when <code>r</code> is zero then <code>Q</code> is <code>true</code> solution, otherwise <code>r</code> represents unsolved part of <code>c</code>. Moreover def(<code>r</code>) &lt; deg(<code>bQ</code>). Note: <code>SPDE1</code> assumes that deg(<code>Q'</code>) &lt; deg(<code>bQ</code>) for all <code>Q</code>.</p>
+</dd></dl>
+<a name="f_multi_95SPDE"></a><dl><dt>multi_SPDE : (<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), <a href="Integer.html">Integer</a>, Mapping(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))) -&gt Union(<a href="List.html">List</a>(Record(ans : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), remainder : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F))), Record(ans : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), acoeff : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), eegen : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), bpar : <a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F), lcpar : <a href="List.html">List</a>(<a href="SparseUnivariatePolynomial.html">SparseUnivariatePolynomial</a>(F)), dpar : <a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>multi_SPDE(a, b, lc, d, der)</code></p>
+</dd></dl>
+</body>
+</html>

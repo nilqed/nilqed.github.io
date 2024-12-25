@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>SparseMultivariateTaylorSeries</title>
+</head>
+<body>
+<h1>SparseMultivariateTaylorSeries(Coef, Var, SMP)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/mts.spad#L1">mts.spad line 1</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/mts.spad#L1">[edit on github]</a></p>
+<ul>
+<li>Coef : <a href="Ring.html">Ring</a><li>Var : <a href="OrderedSet.html">OrderedSet</a><li>SMP : <a href="PolynomialCategory.html">PolynomialCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)</ul>
+<p>
+This domain provides multivariate Taylor series with variables from an arbitrary ordered set. A Taylor series is represented by a stream of polynomials from the polynomial domain <code>SMP</code>. The <code>n</code>th element of the stream is a form of degree <code>n</code>. SMTS is an internal domain.</p>
+<a name="f__42"></a><dl><dt><a href="Magma.html#f__42">*</a> : (%, %) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, Coef) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(Coef)</dd></dl>
+<dl><dt><a href="RightModule.html#f__42">*</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (Coef, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(Coef)</dd></dl>
+<dl><dt>* : (SMP, %) -&gt %</dt><dd><p>
+<code>smp*ts</code> multiplies a TaylorSeries <code>ts</code> by a monomial <code>smp</code>.</p>
+</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), %) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f__47"></a><dl><dt><a href="AbelianMonoidRing.html#f__47">/</a> : (%, Coef) -&gt % if Coef has <a href="Field.html">Field</a></dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_1"></a><dl><dt><a href="MagmaWithUnit.html#f_1">1</a> : () -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_D"></a><dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, Var) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, Var, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(Var)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_D">D</a> : (%, <a href="List.html">List</a>(Var), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<a name="f__94"></a><dl><dt><a href="ElementaryFunctionCategory.html#f__94">^</a> : (%, %) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<dl><dt><a href="RadicalCategory.html#f__94">^</a> : (%, <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>)) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<dl><dt><a href="MagmaWithUnit.html#f__94">^</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f__94">^</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_acos"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acos">acos</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acosh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acosh">acosh</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acot"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acot">acot</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acoth"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acoth">acoth</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_acsc"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_acsc">acsc</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_acsch"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_acsch">acsch</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_annihilate_63"></a><dl><dt><a href="Rng.html#f_annihilate_63">annihilate?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="Rng.html">Rng</a></dd></dl>
+<a name="f_antiCommutator"></a><dl><dt><a href="NonAssociativeSemiRng.html#f_antiCommutator">antiCommutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a></dd></dl>
+<a name="f_asec"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asec">asec</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asech"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asech">asech</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_asin"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_asin">asin</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_asinh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_asinh">asinh</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_associates_63"></a><dl><dt><a href="EntireRing.html#f_associates_63">associates?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a> if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_associator"></a><dl><dt><a href="NonAssociativeRng.html#f_associator">associator</a> : (%, %, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_atan"></a><dl><dt><a href="ArcTrigonometricFunctionCategory.html#f_atan">atan</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a></dd></dl>
+<a name="f_atanh"></a><dl><dt><a href="ArcHyperbolicFunctionCategory.html#f_atanh">atanh</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a></dd></dl>
+<a name="f_characteristic"></a><dl><dt><a href="NonAssociativeRing.html#f_characteristic">characteristic</a> : () -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<a name="f_charthRoot"></a><dl><dt><a href="CharacteristicNonZero.html#f_charthRoot">charthRoot</a> : % -&gt Union(%, "failed") if Coef has <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dt><dd> from <a href="CharacteristicNonZero.html">CharacteristicNonZero</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_coefficient">coefficient</a> : (%, Var, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_coefficient">coefficient</a> : (%, <a href="List.html">List</a>(Var), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt><a href="AbelianMonoidRing.html#f_coefficient">coefficient</a> : (%, <a href="IndexedExponents.html">IndexedExponents</a>(Var)) -&gt Coef</dt><dd> from <a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<dl><dt>coefficient : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt SMP</dt><dd><p>
+<code>coefficient(s, n)</code> gives the terms of total degree <code>n</code>.</p>
+</dd></dl>
+<a name="f_coefficients"></a><dl><dt>coefficients : % -&gt <a href="Stream.html">Stream</a>(SMP)</dt><dd><p>
+<code>coefficients(s)</code> gives stream of coefficients of <code>s</code>, i.e. [coefficient(<code>s</code>,0), coefficient(<code>s</code>,1), ...]</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="Algebra.html#f_coerce">coerce</a> : % -&gt % if Coef has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="Algebra.html">Algebra</a>(%)</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : Coef -&gt % if Coef has <a href="CommutativeRing.html">CommutativeRing</a></dt><dd> from <a href="Algebra.html">Algebra</a>(Coef)</dd></dl>
+<dl><dt>coerce : SMP -&gt %</dt><dd><p>
+<code>coerce(poly)</code> regroups the terms by total degree and forms a series.</p>
+</dd></dl>
+<dl><dt>coerce : Var -&gt %</dt><dd><p>
+<code>coerce(var)</code> converts a variable to a Taylor series</p>
+</dd></dl>
+<dl><dt><a href="Algebra.html#f_coerce">coerce</a> : <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dd></dl>
+<dl><dt><a href="NonAssociativeRing.html#f_coerce">coerce</a> : <a href="Integer.html">Integer</a> -&gt %</dt><dd> from <a href="NonAssociativeRing.html">NonAssociativeRing</a></dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt><a href="NonAssociativeRng.html#f_commutator">commutator</a> : (%, %) -&gt %</dt><dd> from <a href="NonAssociativeRng.html">NonAssociativeRng</a></dd></dl>
+<a name="f_complete"></a><dl><dt><a href="PowerSeriesCategory.html#f_complete">complete</a> : % -&gt %</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)</dd></dl>
+<a name="f_construct"></a><dl><dt><a href="IndexedProductCategory.html#f_construct">construct</a> : <a href="List.html">List</a>(Record(k : <a href="IndexedExponents.html">IndexedExponents</a>(Var), c : Coef)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_constructOrdered"></a><dl><dt><a href="IndexedProductCategory.html#f_constructOrdered">constructOrdered</a> : <a href="List.html">List</a>(Record(k : <a href="IndexedExponents.html">IndexedExponents</a>(Var), c : Coef)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_cos"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cos">cos</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_cosh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_cosh">cosh</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_cot"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_cot">cot</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_coth"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_coth">coth</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_csc"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_csc">csc</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_csch"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_csch">csch</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_csubst"></a><dl><dt>csubst : (<a href="List.html">List</a>(Var), <a href="List.html">List</a>(<a href="Stream.html">Stream</a>(SMP))) -&gt Mapping(<a href="Stream.html">Stream</a>(SMP), SMP)</dt><dd><p>
+<code>csubst(a, b)</code> is for internal use only</p>
+</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="PowerSeriesCategory.html#f_degree">degree</a> : % -&gt <a href="IndexedExponents.html">IndexedExponents</a>(Var)</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)</dd></dl>
+<a name="f_differentiate"></a><dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, Var) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, Var, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(Var)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<dl><dt><a href="PartialDifferentialRing.html#f_differentiate">differentiate</a> : (%, <a href="List.html">List</a>(Var), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, %, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, Var, %) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Var, %)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(%)) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(%), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(%, %)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(Var), <a href="List.html">List</a>(%)) -&gt %</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(Var, %)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(%))) -&gt %</dt><dd> from <a href="Evalable.html">Evalable</a>(%)</dd></dl>
+<a name="f_exp"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_exp">exp</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_exquo"></a><dl><dt><a href="EntireRing.html#f_exquo">exquo</a> : (%, %) -&gt Union(%, "failed") if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_extend"></a><dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_extend">extend</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<a name="f_fintegrate"></a><dl><dt>fintegrate : (Mapping(%), Var, Coef) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>fintegrate(f, v, c)</code> is the integral of <code>f()</code> with respect to <code>v</code> and having <code>c</code> as the constant of integration. The evaluation of <code>f()</code> is delayed.</p>
+</dd></dl>
+<a name="f_integrate"></a><dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_integrate">integrate</a> : (%, Var) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt>integrate : (%, Var, Coef) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd><p>
+<code>integrate(s, v, c)</code> is the integral of <code>s</code> with respect to <code>v</code> and having <code>c</code> as the constant of integration.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_leadingCoefficient"></a><dl><dt><a href="PowerSeriesCategory.html#f_leadingCoefficient">leadingCoefficient</a> : % -&gt Coef</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)</dd></dl>
+<a name="f_leadingMonomial"></a><dl><dt><a href="PowerSeriesCategory.html#f_leadingMonomial">leadingMonomial</a> : % -&gt %</dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)</dd></dl>
+<a name="f_leadingSupport"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingSupport">leadingSupport</a> : % -&gt <a href="IndexedExponents.html">IndexedExponents</a>(Var)</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_leadingTerm"></a><dl><dt><a href="IndexedProductCategory.html#f_leadingTerm">leadingTerm</a> : % -&gt Record(k : <a href="IndexedExponents.html">IndexedExponents</a>(Var), c : Coef)</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_leftPower"></a><dl><dt><a href="MagmaWithUnit.html#f_leftPower">leftPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_leftPower">leftPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_leftRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_leftRecip">leftRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_log"></a><dl><dt><a href="ElementaryFunctionCategory.html#f_log">log</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a></dd></dl>
+<a name="f_map"></a><dl><dt><a href="IndexedProductCategory.html#f_map">map</a> : (Mapping(Coef, Coef), %) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_monomial"></a><dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_monomial">monomial</a> : (%, Var, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_monomial">monomial</a> : (%, <a href="List.html">List</a>(Var), <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt><a href="IndexedProductCategory.html#f_monomial">monomial</a> : (Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var)) -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_monomial_63"></a><dl><dt><a href="IndexedProductCategory.html#f_monomial_63">monomial?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_nthRoot"></a><dl><dt><a href="RadicalCategory.html#f_nthRoot">nthRoot</a> : (%, <a href="Integer.html">Integer</a>) -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_one_63"></a><dl><dt><a href="MagmaWithUnit.html#f_one_63">one?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_order"></a><dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_order">order</a> : (%, Var) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_order">order</a> : (%, Var, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="NonNegativeInteger.html">NonNegativeInteger</a></dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<a name="f_pi"></a><dl><dt><a href="TranscendentalFunctionCategory.html#f_pi">pi</a> : () -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a></dd></dl>
+<a name="f_plenaryPower"></a><dl><dt><a href="NonAssociativeAlgebra.html#f_plenaryPower">plenaryPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt % if Coef has <a href="CommutativeRing.html">CommutativeRing</a> or Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(Coef)</dd></dl>
+<a name="f_pole_63"></a><dl><dt><a href="PowerSeriesCategory.html#f_pole_63">pole?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)</dd></dl>
+<a name="f_polynomial"></a><dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_polynomial">polynomial</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Polynomial.html">Polynomial</a>(Coef)</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<dl><dt><a href="MultivariateTaylorSeriesCategory.html#f_polynomial">polynomial</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt <a href="Polynomial.html">Polynomial</a>(Coef)</dt><dd> from <a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)</dd></dl>
+<a name="f_recip"></a><dl><dt><a href="MagmaWithUnit.html#f_recip">recip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_reductum"></a><dl><dt><a href="IndexedProductCategory.html#f_reductum">reductum</a> : % -&gt %</dt><dd> from <a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))</dd></dl>
+<a name="f_rightPower"></a><dl><dt><a href="MagmaWithUnit.html#f_rightPower">rightPower</a> : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<dl><dt><a href="Magma.html#f_rightPower">rightPower</a> : (%, <a href="PositiveInteger.html">PositiveInteger</a>) -&gt %</dt><dd> from <a href="Magma.html">Magma</a></dd></dl>
+<a name="f_rightRecip"></a><dl><dt><a href="MagmaWithUnit.html#f_rightRecip">rightRecip</a> : % -&gt Union(%, "failed")</dt><dd> from <a href="MagmaWithUnit.html">MagmaWithUnit</a></dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_sec"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sec">sec</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sech"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sech">sech</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_series"></a><dl><dt>series : <a href="Stream.html">Stream</a>(SMP) -&gt %</dt><dd><p>
+<code>series(st)</code> creates a series from a stream of coefficients.</p>
+</dd></dl>
+<a name="f_sin"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_sin">sin</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_sinh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_sinh">sinh</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_sqrt"></a><dl><dt><a href="RadicalCategory.html#f_sqrt">sqrt</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="RadicalCategory.html">RadicalCategory</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_tan"></a><dl><dt><a href="TrigonometricFunctionCategory.html#f_tan">tan</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a></dd></dl>
+<a name="f_tanh"></a><dl><dt><a href="HyperbolicFunctionCategory.html#f_tanh">tanh</a> : % -&gt % if Coef has <a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))</dt><dd> from <a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a></dd></dl>
+<a name="f_unit_63"></a><dl><dt><a href="EntireRing.html#f_unit_63">unit?</a> : % -&gt <a href="Boolean.html">Boolean</a> if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitCanonical"></a><dl><dt><a href="EntireRing.html#f_unitCanonical">unitCanonical</a> : % -&gt % if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_unitNormal"></a><dl><dt><a href="EntireRing.html#f_unitNormal">unitNormal</a> : % -&gt Record(unit : %, canonical : %, associate : %) if Coef has <a href="IntegralDomain.html">IntegralDomain</a></dt><dd> from <a href="EntireRing.html">EntireRing</a></dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="Module.html">Module</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(Coef)
+<p><a href="Module.html">Module</a>(Coef)
+<p><a href="NonAssociativeSemiRing.html">NonAssociativeSemiRing</a>
+<p><a href="BiModule.html">BiModule</a>(%, %)
+<p><a href="Rng.html">Rng</a>
+<p><a href="TrigonometricFunctionCategory.html">TrigonometricFunctionCategory</a>
+<p><a href="ArcTrigonometricFunctionCategory.html">ArcTrigonometricFunctionCategory</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(Var, %)
+<p><a href="TwoSidedRecip.html">TwoSidedRecip</a>
+<p><a href="TranscendentalFunctionCategory.html">TranscendentalFunctionCategory</a>
+<p><a href="SemiRing.html">SemiRing</a>
+<p><a href="EntireRing.html">EntireRing</a>
+<p><a href="RightModule.html">RightModule</a>(Coef)
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="unitsKnown.html">unitsKnown</a>
+<p><a href="RadicalCategory.html">RadicalCategory</a>
+<p><a href="NonAssociativeRng.html">NonAssociativeRng</a>
+<p><a href="CharacteristicNonZero.html">CharacteristicNonZero</a>
+<p><a href="MagmaWithUnit.html">MagmaWithUnit</a>
+<p><a href="AbelianProductCategory.html">AbelianProductCategory</a>(Coef)
+<p><a href="MultivariateTaylorSeriesCategory.html">MultivariateTaylorSeriesCategory</a>(Coef, Var)
+<p><a href="noZeroDivisors.html">noZeroDivisors</a>
+<p><a href="Magma.html">Magma</a>
+<p><a href="InnerEvalable.html">InnerEvalable</a>(%, %)
+<p><a href="SemiGroup.html">SemiGroup</a>
+<p><a href="IntegralDomain.html">IntegralDomain</a>
+<p><a href="LeftModule.html">LeftModule</a>(%)
+<p><a href="NonAssociativeRing.html">NonAssociativeRing</a>
+<p><a href="AbelianMonoidRing.html">AbelianMonoidRing</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))
+<p><a href="ArcHyperbolicFunctionCategory.html">ArcHyperbolicFunctionCategory</a>
+<p><a href="NonAssociativeAlgebra.html">NonAssociativeAlgebra</a>(%)
+<p><a href="CharacteristicZero.html">CharacteristicZero</a>
+<p><a href="Algebra.html">Algebra</a>(%)
+<p><a href="RightModule.html">RightModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="CommutativeRing.html">CommutativeRing</a>
+<p><a href="NonAssociativeSemiRng.html">NonAssociativeSemiRng</a>
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="CommutativeStar.html">CommutativeStar</a>
+<p><a href="VariablesCommuteWithCoefficients.html">VariablesCommuteWithCoefficients</a>
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="RightModule.html">RightModule</a>(%)
+<p><a href="BiModule.html">BiModule</a>(Coef, Coef)
+<p><a href="PartialDifferentialRing.html">PartialDifferentialRing</a>(Var)
+<p><a href="Module.html">Module</a>(%)
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="Algebra.html">Algebra</a>(Coef)
+<p><a href="SemiRng.html">SemiRng</a>
+<p><a href="Monoid.html">Monoid</a>
+<p><a href="HyperbolicFunctionCategory.html">HyperbolicFunctionCategory</a>
+<p><a href="Algebra.html">Algebra</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="Ring.html">Ring</a>
+<p><a href="LeftModule.html">LeftModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="PowerSeriesCategory.html">PowerSeriesCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var), Var)
+<p><a href="IndexedProductCategory.html">IndexedProductCategory</a>(Coef, <a href="IndexedExponents.html">IndexedExponents</a>(Var))
+<p><a href="LeftModule.html">LeftModule</a>(Coef)
+<p><a href="Evalable.html">Evalable</a>(%)
+<p><a href="BiModule.html">BiModule</a>(<a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>), <a href="Fraction.html">Fraction</a>(<a href="Integer.html">Integer</a>))
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="ElementaryFunctionCategory.html">ElementaryFunctionCategory</a>
+</body>
+</html>

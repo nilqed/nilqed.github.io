@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>GradedAlgebra</title>
+</head>
+<body>
+<h1>GradedAlgebra(R, E)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/carten.spad#L48">carten.spad line 48</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/carten.spad#L48">[edit on github]</a></p>
+<ul>
+<li>R : <a href="CommutativeRing.html">CommutativeRing</a><li>E : <a href="AbelianMonoid.html">AbelianMonoid</a></ul>
+<p>
+GradedAlgebra(<code>R</code>, <code>E</code>) denotes ``E-graded <code>R</code>-algebra<code>''</code>. A graded algebra is a graded module together with a degree preserving <code>R</code>-linear map, called the  product.  The name ``product<code>''</code> is written out in full so inner and outer products with the same mapping type can be distinguished by name.</p>
+<a name="f__42"></a><dl><dt><a href="GradedModule.html#f__42">*</a> : (%, R) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<dl><dt><a href="GradedModule.html#f__42">*</a> : (R, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<a name="f__43"></a><dl><dt><a href="GradedModule.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<a name="f__45"></a><dl><dt><a href="GradedModule.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<dl><dt><a href="GradedModule.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<a name="f_0"></a><dl><dt><a href="GradedModule.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<a name="f_1"></a><dl><dt>1 : () -&gt %</dt><dd><p>
+1 is the identity for <code>product</code>.</p>
+</dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleFrom.html#f_coerce">coerce</a> : R -&gt %</dt><dd> from <a href="CoercibleFrom.html">CoercibleFrom</a>(R)</dd></dl>
+<dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_degree"></a><dl><dt><a href="GradedModule.html#f_degree">degree</a> : % -&gt E</dt><dd> from <a href="GradedModule.html">GradedModule</a>(R, E)</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_product"></a><dl><dt>product : (%, %) -&gt %</dt><dd><p>
+<code>product(a, b)</code> is the degree-preserving <code>R</code>-linear product:  <code>degree product(a, b) = degree a + degree b</code> <code>product(a1+a2, b) = product(a1, b) + product(a2, b)</code> <code>product(a, b1+b2) = product(a, b1) + product(a, b2)</code> <code>product(r*a, b) = product(a, r*b) = r*product(a, b)</code> <code>product(a, product(b, c)) = product(product(a, b), c)</code></p>
+</dd></dl>
+<a name="f_retract"></a><dl><dt><a href="RetractableTo.html#f_retract">retract</a> : % -&gt R</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<a name="f_retractIfCan"></a><dl><dt><a href="RetractableTo.html#f_retractIfCan">retractIfCan</a> : % -&gt Union(R, "failed")</dt><dd> from <a href="RetractableTo.html">RetractableTo</a>(R)</dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="CoercibleFrom.html">CoercibleFrom</a>(R)
+<p><a href="SetCategory.html">SetCategory</a>
+<p><a href="GradedModule.html">GradedModule</a>(R, E)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="RetractableTo.html">RetractableTo</a>(R)
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>JetVectorField</title>
+</head>
+<body>
+<h1>JetVectorField(JB, D)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/jet.spad#L3319">jet.spad line 3319</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/jet.spad#L3319">[edit on github]</a></p>
+<ul>
+<li>JB : <a href="JetBundleCategory.html">JetBundleCategory</a><li>D : <a href="JetBundleFunctionCategory.html">JetBundleFunctionCategory</a>(JB)</ul>
+<p>
+<code>JetVectorField(JB, D)</code> implements vector fields over the jet bundle <code>JB</code> with coefficients from <code>D</code>. The fields operate on functions from <code>D</code>.</p>
+<a name="f__42"></a><dl><dt><a href="RightModule.html#f__42">*</a> : (%, D) -&gt %</dt><dd> from <a href="RightModule.html">RightModule</a>(D)</dd></dl>
+<dl><dt><a href="LeftModule.html#f__42">*</a> : (D, %) -&gt %</dt><dd> from <a href="LeftModule.html">LeftModule</a>(D)</dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__42">*</a> : (<a href="Integer.html">Integer</a>, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianMonoid.html#f__42">*</a> : (<a href="NonNegativeInteger.html">NonNegativeInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<dl><dt><a href="AbelianSemiGroup.html#f__42">*</a> : (<a href="PositiveInteger.html">PositiveInteger</a>, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__43"></a><dl><dt><a href="AbelianSemiGroup.html#f__43">+</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianSemiGroup.html">AbelianSemiGroup</a></dd></dl>
+<a name="f__45"></a><dl><dt><a href="AbelianGroup.html#f__45">-</a> : % -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<dl><dt><a href="AbelianGroup.html#f__45">-</a> : (%, %) -&gt %</dt><dd> from <a href="AbelianGroup.html">AbelianGroup</a></dd></dl>
+<a name="f_0"></a><dl><dt><a href="AbelianMonoid.html#f_0">0</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__61"></a><dl><dt><a href="BasicType.html#f__61">=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<a name="f_coefficient"></a><dl><dt>coefficient : (%, JB) -&gt D</dt><dd><p>
+<code>coefficient(v, jb)</code> returns the coefficient of <code>v</code> in direction <code>jb</code>.</p>
+</dd></dl>
+<a name="f_coefficients"></a><dl><dt>coefficients : % -&gt <a href="List.html">List</a>(D)</dt><dd><p>
+<code>coefficients(v)</code> yields the coefficients of <code>v</code>.</p>
+</dd></dl>
+<a name="f_coerce"></a><dl><dt><a href="CoercibleTo.html#f_coerce">coerce</a> : % -&gt <a href="OutputForm.html">OutputForm</a></dt><dd> from <a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)</dd></dl>
+<a name="f_commutator"></a><dl><dt>commutator : (%, %) -&gt %</dt><dd><p>
+<code>commutator(v, w)</code> calculates the commutator of two vector fields.</p>
+</dd></dl>
+<a name="f_copy"></a><dl><dt>copy : % -&gt %</dt><dd><p>
+<code>copy(v)</code> returns a copy of the vector field <code>v</code>.</p>
+</dd></dl>
+<a name="f_diff"></a><dl><dt>diff : JB -&gt %</dt><dd><p>
+<code>diff(jb)</code> returns the base vector field in direction <code>jb</code>.</p>
+</dd></dl>
+<a name="f_diffP"></a><dl><dt>diffP : (<a href="PositiveInteger.html">PositiveInteger</a>, <a href="List.html">List</a>(<a href="NonNegativeInteger.html">NonNegativeInteger</a>)) -&gt %</dt><dd><p>
+<code>diffP(i, mu)</code> returns the base vector field in direction <code>P(i, mu)</code>.</p>
+</dd></dl>
+<a name="f_diffU"></a><dl><dt>diffU : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>diffU(i)</code> returns the base vector field in direction <code>U(i)</code>.</p>
+</dd></dl>
+<a name="f_diffX"></a><dl><dt>diffX : <a href="PositiveInteger.html">PositiveInteger</a> -&gt %</dt><dd><p>
+<code>diffX(i)</code> returns the base vector field in direction <code>X(i)</code>.</p>
+</dd></dl>
+<a name="f_directions"></a><dl><dt>directions : % -&gt <a href="List.html">List</a>(JB)</dt><dd><p>
+<code>directions(v)</code> yields the directions of the base vectors where <code>v</code> has non-vanishing coefficients.</p>
+</dd></dl>
+<a name="f_eval"></a><dl><dt>eval : (%, D) -&gt D</dt><dd><p>
+<code>eval(v, f)</code> applies the vector field <code>v</code> to the function <code>f</code>.</p>
+</dd></dl>
+<a name="f_latex"></a><dl><dt><a href="SetCategory.html#f_latex">latex</a> : % -&gt <a href="String.html">String</a></dt><dd> from <a href="SetCategory.html">SetCategory</a></dd></dl>
+<a name="f_lie"></a><dl><dt>lie : (%, %) -&gt %</dt><dd><p>
+<code>lie(v, w)</code> calculates the Lie derivative of <code>w</code> with respect to <code>v</code>. (This yields the commutator of the fields.)</p>
+</dd></dl>
+<a name="f_opposite_63"></a><dl><dt><a href="AbelianMonoid.html#f_opposite_63">opposite?</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_prolong"></a><dl><dt>prolong : (%, <a href="NonNegativeInteger.html">NonNegativeInteger</a>) -&gt %</dt><dd><p>
+<code>prolong(v, q)</code> prolongs a vector field <code>v</code> defined on the base space into the jet bundle of order <code>q</code>.</p>
+</dd></dl>
+<a name="f_sample"></a><dl><dt><a href="AbelianMonoid.html#f_sample">sample</a> : () -&gt %</dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f_subtractIfCan"></a><dl><dt><a href="CancellationAbelianMonoid.html#f_subtractIfCan">subtractIfCan</a> : (%, %) -&gt Union(%, "failed")</dt><dd> from <a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a></dd></dl>
+<a name="f_table"></a><dl><dt>table : <a href="List.html">List</a>(%) -&gt <a href="TwoDimensionalArray.html">TwoDimensionalArray</a>(%)</dt><dd><p>
+<code>table(lv)</code> computes the commutator table for a given list of vector fields.</p>
+</dd></dl>
+<a name="f_zero_63"></a><dl><dt><a href="AbelianMonoid.html#f_zero_63">zero?</a> : % -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="AbelianMonoid.html">AbelianMonoid</a></dd></dl>
+<a name="f__126_61"></a><dl><dt><a href="BasicType.html#f__126_61">~=</a> : (%, %) -&gt <a href="Boolean.html">Boolean</a></dt><dd> from <a href="BasicType.html">BasicType</a></dd></dl>
+<p><a href="RightModule.html">RightModule</a>(D)
+<p><a href="BasicType.html">BasicType</a>
+<p><a href="CoercibleTo.html">CoercibleTo</a>(<a href="OutputForm.html">OutputForm</a>)
+<p><a href="BiModule.html">BiModule</a>(D, D)
+<p><a href="AbelianMonoid.html">AbelianMonoid</a>
+<p><a href="AbelianGroup.html">AbelianGroup</a>
+<p><a href="AbelianSemiGroup.html">AbelianSemiGroup</a>
+<p><a href="Module.html">Module</a>(D)
+<p><a href="LeftModule.html">LeftModule</a>(D)
+<p><a href="CancellationAbelianMonoid.html">CancellationAbelianMonoid</a>
+<p><a href="SetCategory.html">SetCategory</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<META http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+<head>
+<title>FullyEvalableOver</title>
+</head>
+<body>
+<h1>FullyEvalableOver(R)</h1>
+<p><a href="https://github.com/fricas/fricas/blob/master/src/algebra/equation1.spad#L280">equation1.spad line 280</a>
+<a href="https://github.com/fricas/fricas/edit/master/src/algebra/equation1.spad#L280">[edit on github]</a></p>
+<ul>
+<li>R : <a href="SetCategory.html">SetCategory</a></ul>
+<p>
+This category provides a selection of evaluation operations depending on what the argument type <code>R</code> provides.</p>
+<a name="f_elt"></a><dl><dt><a href="Eltable.html#f_elt">elt</a> : (%, R) -&gt % if R has <a href="Eltable.html">Eltable</a>(R, R)</dt><dd> from <a href="Eltable.html">Eltable</a>(R, %)</dd></dl>
+<a name="f_eval"></a><dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, R, R) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="Equation.html">Equation</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(R), <a href="List.html">List</a>(R)) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(R, R)</dd></dl>
+<dl><dt><a href="Evalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Equation.html">Equation</a>(R))) -&gt % if R has <a href="Evalable.html">Evalable</a>(R)</dt><dd> from <a href="Evalable.html">Evalable</a>(R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="List.html">List</a>(<a href="Symbol.html">Symbol</a>), <a href="List.html">List</a>(R)) -&gt % if R has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dd></dl>
+<dl><dt><a href="InnerEvalable.html#f_eval">eval</a> : (%, <a href="Symbol.html">Symbol</a>, R) -&gt % if R has <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dt><dd> from <a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)</dd></dl>
+<a name="f_map"></a><dl><dt>map : (Mapping(R, R), %) -&gt %</dt><dd><p>
+<code>map(f, ex)</code> evaluates ex, applying <code>f</code> to values of type <code>R</code> in ex.</p>
+</dd></dl>
+<p><a href="Eltable.html">Eltable</a>(R, %)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(<a href="Symbol.html">Symbol</a>, R)
+<p><a href="Evalable.html">Evalable</a>(R)
+<p><a href="InnerEvalable.html">InnerEvalable</a>(R, R)
+</body>
+</html>
