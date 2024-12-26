@@ -1,22 +1,22 @@
 body {
-  background-color: lightgray;
+  background-color: aliceblue;
   font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
-  color: blue;
+  color: navy;
 
 }
 p {
-  color: red;
-  font-family: courier;
-  #font-size: 120%;
+  color: maroon;
+  font-family: consolas;
+  #font-size: 160%;
 }
 
 
 
 a:link {
   text-decoration: none;
-  font-family: verdana;
+  font-family: consolas;
 }
 
 a:visited {
