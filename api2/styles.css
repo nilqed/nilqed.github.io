@@ -1,25 +1,30 @@
 body {
-  background-color: aliceblue;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
 }
 h1 {
-  color: navy;
-
-}
-p {
-  color: maroon;
-  font-family: consolas;
-  #font-size: 160%;
+  font-size: 195%;
+  font-family: sans-serif;
+  font-weight: normal;
+  color: #254565;
+  background-color: lightgray;
 }
 
+code {
+    background-color: #e8e8e8;
+}
 
+span.spadfun {
+    color: red;
+}
 
 a:link {
+  color: #355f7c;
   text-decoration: none;
-  font-family: consolas;
+  font-family: sans-serif;
 }
 
 a:visited {
+  color: #355f7c;
   text-decoration: none;
 }
 
