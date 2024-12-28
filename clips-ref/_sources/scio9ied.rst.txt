@@ -1,0 +1,10 @@
+DEFGENERIC-MODULE
+=================
+
+Returns the module in which the specified defgeneric is defined.
+
+::
+
+   (defgeneric-module <defgeneric-name>)
+
+`Go to start page <scio4c6w.htm>`__

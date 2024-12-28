@@ -1,0 +1,10 @@
+OVERRIDE-NEXT-METHOD
+====================
+
+Calls the next shadowed method allowing new arguments to be provided.
+
+::
+
+   (override-next-method <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

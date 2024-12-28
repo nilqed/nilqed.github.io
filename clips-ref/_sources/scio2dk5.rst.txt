@@ -1,0 +1,10 @@
+SLOT-DEFAULT-VALUE
+==================
+
+Returns the default value associated with a slot.
+
+::
+
+   (slot-default-value <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

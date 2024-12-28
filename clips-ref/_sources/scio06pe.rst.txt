@@ -1,0 +1,11 @@
+DIRECT-SLOT-REPLACE$
+====================
+
+Allows the replacement of a range of fields in a multifield slot value
+of the active instance from within a message-handler.
+
+::
+
+   (direct-slot-replace$ <mv-slot-name> <range-begin> <range-end> <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

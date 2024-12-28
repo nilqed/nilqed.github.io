@@ -1,0 +1,10 @@
+PPDEFMODULE
+===========
+
+Displays the text of a given defmodule.
+
+::
+
+   (ppdefmodule <defmodule-name>)
+
+`Go to start page <scio4c6w.htm>`__

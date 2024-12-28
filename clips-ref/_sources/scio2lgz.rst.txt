@@ -1,0 +1,11 @@
+LIST-DEFTEMPLATES
+=================
+
+Displays the list of all deftemplates in the specified module (or the
+current module if none specified).
+
+::
+
+   (list-deftemplates [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

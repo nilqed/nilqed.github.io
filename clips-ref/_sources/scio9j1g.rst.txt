@@ -1,0 +1,10 @@
+READ
+====
+
+Reads a single-field value from the specified logical name.
+
+::
+
+   (read [<logical-name>])
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,12 @@
+DEFTEMPLATE COMMANDS
+====================
+
+The following commands manipulate deftemplates.
+
+`LIST-DEFTEMPLATES <scio2lgz.htm>`__
+
+`PPDEFTEMPLATE <scio8s11.htm>`__
+
+`UNDEFTEMPLATE <scio412d.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

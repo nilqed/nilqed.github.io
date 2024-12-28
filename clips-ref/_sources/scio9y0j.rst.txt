@@ -1,0 +1,11 @@
+DEFGLOBAL FUNCTIONS
+===================
+
+The following functions provide ancillary capabilities for the defglobal
+construct.
+
+`GET-DEFGLOBAL-LIST <scio0yes.htm>`__
+
+`DEFGLOBAL-MODULE <scio82ud.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

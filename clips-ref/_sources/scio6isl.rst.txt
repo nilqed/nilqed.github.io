@@ -1,0 +1,10 @@
+CLOSE
+=====
+
+Closes a file.
+
+::
+
+   (close [<logical-name>])
+
+`Go to start page <scio4c6w.htm>`__

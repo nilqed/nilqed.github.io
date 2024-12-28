@@ -1,0 +1,11 @@
+SHOWS-DEFGLOBALS
+================
+
+Displays the name and current value of all defglobals n the specified
+module (or the current module if none specified).
+
+::
+
+   (show-defglobals [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

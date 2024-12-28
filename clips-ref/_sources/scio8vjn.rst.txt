@@ -1,0 +1,10 @@
+GET-FOCUS
+=========
+
+Returns the module name of the current focus.
+
+::
+
+   (get-focus)
+
+`Go to start page <scio4c6w.htm>`__

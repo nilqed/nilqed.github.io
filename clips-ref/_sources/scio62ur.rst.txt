@@ -1,0 +1,49 @@
+PREDICATE FUNCTIONS
+===================
+
+The following functions perform predicate tests and return either TRUE
+or FALSE.
+
+`< <scio05f8.htm>`__
+
+`<= <scio9n51.htm>`__
+
+`<> <scio9949.htm>`__
+
+`= <scio4azw.htm>`__
+
+`> <scio056c.htm>`__
+
+`>= <scio97c5.htm>`__
+
+`AND <scio8o2s.htm>`__
+
+`EQ <scio052p.htm>`__
+
+`EVENP <scio10fk.htm>`__
+
+*FLOATPFLOATP*
+
+`INTEGERP <scio8hkg.htm>`__
+
+`LEXEMEP <scio6o4w.htm>`__
+
+`MULTIFIELDP <scio25f4.htm>`__
+
+`NEQ <scio9sq9.htm>`__
+
+`NOT <scio9t84.htm>`__
+
+`NUMBERP <scio1kkw.htm>`__
+
+`ODDP <scio2l80.htm>`__
+
+`OR <scio05ki.htm>`__
+
+`POINTERP <scio1wq8.htm>`__
+
+`STRINGP <scio00ts.htm>`__
+
+`SYMBOLP <scio2vw0.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

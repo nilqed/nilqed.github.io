@@ -1,0 +1,11 @@
+LIST-DEFRULES
+=============
+
+Displays the list of all defrules in the specified module (or the
+current module if none specified).
+
+::
+
+   (list-defrules [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

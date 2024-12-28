@@ -1,0 +1,12 @@
+DEFFACTS COMMANDS
+=================
+
+The following commands manipulate deffacts.
+
+`PPDEFFACTS <scio5rw3.htm>`__
+
+`LIST-DEFFACTS <scio7ng3.htm>`__
+
+`UNDEFFACTS <scio2kxf.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+DIRECT-SLOT-INSERT$
+===================
+
+Allows the insertion of one or more values in a multifield slot value of
+the active instance from within a message-handler.
+
+::
+
+   (direct-slot-insert$ <mv-slot-name> <index> <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

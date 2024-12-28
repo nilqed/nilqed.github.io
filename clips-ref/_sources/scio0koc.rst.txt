@@ -1,0 +1,10 @@
+UNDEFGLOBAL
+===========
+
+Deletes a global variable.
+
+::
+
+   (undefglobal <global-variable-name>)
+
+`Go to start page <scio4c6w.htm>`__

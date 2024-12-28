@@ -1,0 +1,10 @@
+PPDEFFUNCTION
+=============
+
+Displays the text of a given deffunction.
+
+::
+
+   (ppdeffunction <deffunction-name>)
+
+`Go to start page <scio4c6w.htm>`__

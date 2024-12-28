@@ -1,0 +1,42 @@
+FUNCTION SUMMARY
+================
+
+This section gives a general overview of the available XSI functions.
+
+Subtopics:
+
+`AGENDA_FUNCTIONS <scio3svn.htm>`__
+
+`COOL_FUNCTIONS <scio7f5f.htm>`__
+
+`DEFFUNCTION_FUNCTIONS <scio6bg3.htm>`__
+
+`DEFGLOBAL_FUNCTIONS <scio9y0j.htm>`__
+
+`DEFMODULE_FUNCTIONS <scio1rhv.htm>`__
+
+`DEFRULE_FUNCTIONS <scio0prn.htm>`__
+
+`DEFTEMPLATE_FUNCTIONS <scio1qib.htm>`__
+
+`FACT_FUNCTIONS <scio5tyr.htm>`__
+
+`GENERIC_FUNCTION_FUNCTIONS <scio9tdf.htm>`__
+
+`IO_FUNCTIONS <scio5rar.htm>`__
+
+`MATH_FUNCTIONS <scio5ss3.htm>`__
+
+`MISCELLANEOUS_FUNCTIONS <scio588j.htm>`__
+
+`MULTIFIELD_FUNCTIONS <scio3jar.htm>`__
+
+`PREDICATE_FUNCTIONS <scio62ur.htm>`__
+
+`PROCEDURAL_FUNCTIONS <scio7cab.htm>`__
+
+`SEQUENCE_EXPANSION_FUNCTIONS <scio01v7.htm>`__
+
+`STRING_FUNCTIONS <scio12pf.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

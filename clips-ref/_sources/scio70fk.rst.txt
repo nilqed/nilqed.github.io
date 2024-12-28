@@ -1,0 +1,11 @@
+NEXT-HANDLERP
+=============
+
+Returns TRUE if there is another message-handler available for
+execution, FALSE otherwise.
+
+::
+
+   (next-handlerp)
+
+`Go to start page <scio4c6w.htm>`__

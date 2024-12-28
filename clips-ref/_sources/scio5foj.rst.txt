@@ -1,0 +1,65 @@
+DEFGENERIC / DEFMETHOD
+======================
+
+With the defgeneric/defmethod constructs, new generic functions may be
+written
+
+directly in XSI. Generic functions are similar to deffunctions because
+
+they can be used to define new procedural code directly in XSI, and they
+can
+
+be called like any other function. However, generic functions are much
+more
+
+powerful because they can do different things depending on the types
+
+(or classes) and number of their arguments. For example, a '+' operator
+could
+
+be defined which performs concatenation for strings but still performs
+
+arithmetic addition for numbers. Generic functions are comprised of
+
+multiple components called methods, where each method handles different
+
+cases of arguments for the generic function. A generic function which
+has
+
+more than one method is said to be overloaded.
+
+A generic function is comprised of a header (similar to a forward
+declaration)
+
+and zero or more methods. A generic function header can either be
+explicitly
+
+declared by the user or implicitly declared by the definition of at
+least one
+
+method. The defgeneric construct is used to specify the generic function
+header,
+
+and the defmethod construct is used for each of the generic function's
+methods.
+
+The syntax of the defgeneric/defmethod constructs is:
+
+::
+
+   (defgeneric <name> [<comment>])
+
+   (defmethod <name> [<index>] [<comment>]
+       (<parameter-restriction>* [<wildcard-parameter>])
+       <action>*)
+
+   <parameter-restriction> ::= <single-field-variable> |
+                               (<single-field-variable> <type>* [<query>])
+
+   <wildcard-parameter>    ::= <multifield-variable>
+
+   <type>                  ::= <class-name>
+
+   <query>                 ::= <global-variable> | <function-call>
+
+`Go to start page <scio4c6w.htm>`__

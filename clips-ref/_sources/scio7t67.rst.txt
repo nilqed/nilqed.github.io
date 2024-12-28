@@ -1,0 +1,11 @@
+PROFILE-INFO
+============
+
+Displays profiling information currently collected for constructs or
+user functions.
+
+::
+
+   (profile-info)
+
+`Go to start page <scio4c6w.htm>`__

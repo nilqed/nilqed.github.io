@@ -1,0 +1,10 @@
+FACT-SLOT-NAMES
+===============
+
+Returns the slot names associated with the fact.
+
+::
+
+   (fact-slot-names <fact-address-or-index>)
+
+`Go to start page <scio4c6w.htm>`__

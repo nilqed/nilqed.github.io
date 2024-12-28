@@ -1,0 +1,11 @@
+SUBCLASSP
+=========
+
+Returns TRUE if the first class is a subclass of the second class, FALSE
+otherwise.
+
+::
+
+   (subclassp <class1-name> <class2-name>)
+
+`Go to start page <scio4c6w.htm>`__

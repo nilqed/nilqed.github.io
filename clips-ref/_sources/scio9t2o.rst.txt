@@ -1,0 +1,10 @@
+INSTANCE-EXISTP
+===============
+
+Returns TRUE if the specified instance exists, FALSE otherwise.
+
+::
+
+   (instance-existp <instance-expression>)
+
+`Go to start page <scio4c6w.htm>`__

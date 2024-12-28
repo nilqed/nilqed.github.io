@@ -1,0 +1,10 @@
+FACT-SLOT-VALUE
+===============
+
+Returns the value of the specified slot from the specified fact.
+
+::
+
+   (fact-slot-value <fact-address-or-index> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

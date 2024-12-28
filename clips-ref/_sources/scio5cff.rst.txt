@@ -1,0 +1,10 @@
+REMOVE-BREAK
+============
+
+Removes a breakpoint on a rule.
+
+::
+
+   (remove-break [<rule-name>])
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+READLINE
+========
+
+Reads an entire line as a string from the specified logical name.
+
+::
+
+   (readline [<logical-name>])
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+SET-SALIENCE-EVALUATION
+=======================
+
+Sets the salience evaluation behavior.
+
+::
+
+   (set-salience-evaluation <behavior>)
+   <behavior> ::= when-defined | when-activated | every-cycle
+
+`Go to start page <scio4c6w.htm>`__

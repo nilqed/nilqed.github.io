@@ -1,0 +1,15 @@
+TEXT PROCESSING COMMANDS
+========================
+
+The following commands can be used by users to maintain their own
+information system similar to the help facility.
+
+::
+
+`FETCH <scio6e20.htm>`__
+
+`PRINT-REGION <scio97zi.htm>`__
+
+`TOSS <scio1o37.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

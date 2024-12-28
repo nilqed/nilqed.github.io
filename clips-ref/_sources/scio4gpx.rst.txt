@@ -1,0 +1,10 @@
+INSTANCE-NAME
+=============
+
+Returns a symbol which is the name of its instance argument.
+
+::
+
+   (instance-name <instance-expression>)
+
+`Go to start page <scio4c6w.htm>`__

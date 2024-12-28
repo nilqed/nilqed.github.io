@@ -1,0 +1,10 @@
+SET-FACT-DUPLICATION
+====================
+
+Sets the fact duplication behavior.
+
+::
+
+   (set-fact-duplication <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

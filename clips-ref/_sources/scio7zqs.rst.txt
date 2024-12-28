@@ -1,0 +1,13 @@
+GET-DEFMESSAGE-HANDLER-LIST
+===========================
+
+Returns the class names, message names, and message types of the
+message-handlers directly attached to a class in a multifield variable.
+If the optional inherit keyword is given, inherited message-handlers are
+also included.
+
+::
+
+   (get-defmessage-handler-list <class-name> [inherit])
+
+`Go to start page <scio4c6w.htm>`__

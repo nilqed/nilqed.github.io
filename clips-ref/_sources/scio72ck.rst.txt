@@ -1,0 +1,11 @@
+CALL-SPECIFIC-METHOD
+====================
+
+Calls a particular method of a generic function without regards to
+method precedence.
+
+::
+
+   (call-specific-method <generic-function> <method-index> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

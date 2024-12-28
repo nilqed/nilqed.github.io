@@ -1,0 +1,12 @@
+MOD
+===
+
+Returns the remainder of the result of dividing its first argument by
+its second argument (assuming that the result of division must be an
+integer).
+
+::
+
+   (mod <numeric-expression> <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

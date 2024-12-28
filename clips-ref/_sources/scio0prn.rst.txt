@@ -1,0 +1,11 @@
+DEFRULE FUNCTIONS
+=================
+
+The following functions provide ancillary capabilities for the defrule
+construct.
+
+`GET-DEFRULE-LIST <scio29pw.htm>`__
+
+`DEFRULE-MODULE <scio5t9h.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+SLOT-TYPES
+==========
+
+Returns the names of the primitive types allowed for a slot in a
+multifield variable.
+
+::
+
+   (slot-types <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

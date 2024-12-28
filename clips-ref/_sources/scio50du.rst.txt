@@ -1,0 +1,10 @@
+OVERRIDE-NEXT-HANDLER
+=====================
+
+Calls the next shadowed handler and allows the arguments to be changed.
+
+::
+
+   (override-next-handler <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

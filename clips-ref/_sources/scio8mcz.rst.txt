@@ -1,0 +1,10 @@
+PPDEFCLASS
+==========
+
+Displays the text of a given defclass.
+
+::
+
+   (ppdefclass <class-name>)
+
+`Go to start page <scio4c6w.htm>`__

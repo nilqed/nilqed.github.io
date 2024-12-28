@@ -1,0 +1,28 @@
+MISCELLANEOUS FUNCTIONS
+=======================
+
+The following are additional functions for use within XSI.
+
+`FUNCALL <scio1egc.htm>`__
+
+`GENSYM\* <scio62cy.htm>`__
+
+`GENSYM <scio0pwt.htm>`__
+
+`GET-FUNCTION_RESTRICTIONS <scio6bcj.htm>`__
+
+`LENGTH <scio9q7c.htm>`__
+
+`RANDOM <scio55wt.htm>`__
+
+`SEED <scio55ic.htm>`__
+
+`SORT <scio61ro.htm>`__
+
+`SETGEN <scio1ijy.htm>`__
+
+`TIMER <scio2khe.htm>`__
+
+`TIME <scio14th.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

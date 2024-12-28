@@ -1,0 +1,18 @@
+DEFGLOBAL COMMANDS
+==================
+
+The following commands manipulate defglobals.
+
+`GET-RESET-GLOBALS <scio8ltf.htm>`__
+
+`LIST-DEFGLOBALS <scio3b77.htm>`__
+
+`PPDEFGLOBAL <scio4yb0.htm>`__
+
+`SET-RESET-GLOBALS <scio86er.htm>`__
+
+`SHOWS-DEFGLOBALS <scio1i0j.htm>`__
+
+`UNDEFGLOBAL <scio0koc.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+GET-METHOD-RESTRICTIONS
+=======================
+
+Returns a multifield value containing information about the restrictions
+for the specified method.
+
+::
+
+   (get-method-restrictions <generic-function-name> <method-index>)
+
+`Go to start page <scio4c6w.htm>`__

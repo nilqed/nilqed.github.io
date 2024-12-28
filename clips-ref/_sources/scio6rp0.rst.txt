@@ -1,0 +1,11 @@
+PROFILE-RESET
+=============
+
+Resets all profiling information currently collected for constructs and
+user functions.
+
+::
+
+   (profile-reset)
+
+`Go to start page <scio4c6w.htm>`__

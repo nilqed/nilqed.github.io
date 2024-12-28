@@ -1,0 +1,10 @@
+FLOAT
+=====
+
+Converts its only argument to a float.
+
+::
+
+   (float <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+BSAVE
+=====
+
+Saves a binary image to a file.
+
+::
+
+   (bsave <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

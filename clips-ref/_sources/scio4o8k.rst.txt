@@ -1,0 +1,10 @@
+DYNAMIC-PUT
+===========
+
+Sets the value of the specified slot of the active instance.
+
+::
+
+   (put <slot-name-expression> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

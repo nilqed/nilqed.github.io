@@ -1,0 +1,10 @@
+NOT
+===
+
+Returns TRUE if its only argument evaluates to FALSE.
+
+::
+
+   (not <expression>)
+
+`Go to start page <scio4c6w.htm>`__

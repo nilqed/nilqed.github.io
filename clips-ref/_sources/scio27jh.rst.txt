@@ -1,0 +1,11 @@
+RELEASE-MEM
+===========
+
+Releases all free memory held internally by XSI to the operating system.
+Returns the amount of memory freed.
+
+::
+
+   (release-mem)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,22 @@
+INSTANCE SLOT FUNCTIONS
+=======================
+
+The following functions are used to manipulate instance slots.
+
+`DIRECT-SLOT-DELETE$ <scio6w6q.htm>`__
+
+`DIRECT-SLOT-INSERT$ <scio4er6.htm>`__
+
+`DIRECT-SLOT-REPLACE$ <scio06pe.htm>`__
+
+`DYNAMIC-GET <scio3v04.htm>`__
+
+`DYNAMIC-PUT <scio4o8k.htm>`__
+
+`SLOT-DELETE$ <scio9roy.htm>`__
+
+`SLOT-INSERT$ <scio7a9e.htm>`__
+
+`SLOT-REPLACE$ <scio473m.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

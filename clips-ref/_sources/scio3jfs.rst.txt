@@ -1,0 +1,15 @@
+SWITCH
+======
+
+Allows a particular group of actions to be performed based on a
+specified value.
+
+::
+
+   (switch <test-expression>
+      <case-statement>*
+      [<default-statement>])
+   <case-statement> ::= (case <comparison-expression> then <action>*)
+   <default-statement> ::= (default <action>*)
+
+`Go to start page <scio4c6w.htm>`__

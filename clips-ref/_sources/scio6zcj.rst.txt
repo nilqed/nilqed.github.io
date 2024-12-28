@@ -1,0 +1,11 @@
+MEM-REQUESTS
+============
+
+Returns the number of times XSI has requested memory from the operating
+system.
+
+::
+
+   (mem-requests)
+
+`Go to start page <scio4c6w.htm>`__

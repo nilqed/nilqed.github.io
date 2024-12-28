@@ -1,0 +1,10 @@
+DUPLICATE
+=========
+
+Duplicates a deftemplate fact in the fact-list.
+
+::
+
+   (duplicate <fact-specifier> <RHS-slot>*)
+
+`Go to start page <scio4c6w.htm>`__

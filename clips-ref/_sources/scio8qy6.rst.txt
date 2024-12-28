@@ -1,0 +1,13 @@
+RETURN
+======
+
+Immediately terminates the currently executing deffunction, generic
+function method, message-handler, defrule RHS, or certain instance set
+query functions and if a value is specified, returns this value as the
+result of the executing construct.
+
+::
+
+   (return [<expression>])
+
+`Go to start page <scio4c6w.htm>`__

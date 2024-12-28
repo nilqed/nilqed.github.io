@@ -1,0 +1,10 @@
+CLEAR-FOCUS-STACK
+=================
+
+Removes all modules from the focus stack.
+
+::
+
+   (clear-focus-stack)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+WHILE
+=====
+
+Allows conditional looping.
+
+::
+
+   (while <expression> [do] <action>*)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,12 @@
+CLASS-SLOTS
+===========
+
+Returns the names of the explicitly defined slots of a class in a
+multifield variable. If the optional inherit keyword is given, inherited
+slots are also included.
+
+::
+
+   (class-slots <class-name> [inherit])
+
+`Go to start page <scio4c6w.htm>`__

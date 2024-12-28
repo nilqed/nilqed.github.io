@@ -1,0 +1,10 @@
+CLEAR
+=====
+
+Clears the XSI environment.
+
+::
+
+   (clear)
+
+`Go to start page <scio4c6w.htm>`__

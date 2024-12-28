@@ -1,0 +1,12 @@
+SET-STRATEGY
+============
+
+Sets the current conflict resolution strategy.
+
+::
+
+   (set-strategy <strategy>)
+   <strategy> ::= depth | breadth | simplicity | complexity | 
+       lex | mea | random
+
+`Go to start page <scio4c6w.htm>`__

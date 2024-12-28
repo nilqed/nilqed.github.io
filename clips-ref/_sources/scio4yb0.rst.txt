@@ -1,0 +1,10 @@
+PPDEFGLOBAL
+===========
+
+Displays the text required to define a given global variable.
+
+::
+
+   (ppdefglobal <global-variable-name>)
+
+`Go to start page <scio4c6w.htm>`__

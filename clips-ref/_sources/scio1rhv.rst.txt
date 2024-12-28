@@ -1,0 +1,9 @@
+DEFMODULE FUNCTIONS
+===================
+
+The following functions provide ancillary capabilities for the defmodule
+construct.
+
+`GET-DEFMODULE-LIST <scio1t84.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

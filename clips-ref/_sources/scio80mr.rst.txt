@@ -1,0 +1,93 @@
+DEFCLASS
+========
+
+A defclass is a construct for specifying the properties (slots) of a
+class of
+
+objects. A defclass consists of four elements: 1) a name, 2) a list of
+
+superclasses from which the new class inherits slots and
+message-handlers,
+
+3) a specifier saying whether or not the creation of direct instances of
+the
+
+new class is allowed and 4) a list of slots specific to the new class.
+All
+
+user-defined classes must inherit from at least one class, and to this
+end
+
+COOL provides predefined system classes for use as a base in the
+derivation
+
+of new classes.
+
+Any slots explicitly given in the defclass override those gotten from
+
+inheritance. COOL applies rules to the list of superclasses to generate
+a
+
+class precedence list for the new class. Facets further describe slots.
+
+Some examples of facets include: default value, cardinality, and types
+of
+
+access allowed.
+
+The syntax of the defclass construct is:
+
+::
+
+   (defclass <name> [<comment>]
+     (is-a <superclass-name>+)
+     [<role>]
+     [<pattern-match-role>]
+     <slot>*
+     <handler-documentation>*)
+
+   <role>  ::= (role concrete | abstract)
+
+   <pattern-match-role> 
+           ::= (pattern-match reactive | non-reactive)
+
+   <slot>  ::= (slot <name> <facet>*) |
+               (single-slot <name> <facet>*) |
+               (multislot <name> <facet>*)
+
+   <facet> ::=  <default-facet> | <storage-facet> |
+                <access-facet> | <propagation-facet> | 
+                <source-facet> | <pattern-match-facet> |
+                <visibility-facet> | <create-accessor-facet>
+                <override-message-facet> | <constraint-attributes>
+    
+   <default-facet> ::= 
+              (default ?DERIVE | ?NONE | <expression>*) |
+              (default-dynamic <expression>*)
+
+   <storage-facet> ::= (storage local | shared)
+
+   <access-facet> 
+          ::= (access read-write | read-only | initialize-only)
+
+   <propagation-facet> ::= (propagation inherit | no-inherit)
+
+   <source-facet> ::= (source exclusive | composite)
+
+   <pattern-match-facet> 
+          ::= (pattern-match reactive | non-reactive)
+
+   <visibility-facet> ::= (visibility private | public)
+
+   <create-accessor-facet> 
+        ::= (create-accessor ?NONE | read | write | read-write)
+
+   <override-message-facet> 
+        ::= (override-message ?DEFAULT | <message-name>)
+                                              
+   <handler-documentation> 
+          ::= (message-handler <name> [<handler-type>])
+
+   <handler-type> ::= primary | around | before | after
+
+`Go to start page <scio4c6w.htm>`__

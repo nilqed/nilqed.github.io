@@ -1,0 +1,10 @@
+GET-PROFILE-PERCENT-THRESHOLD
+=============================
+
+Returns the current value of the profile percent threshold.
+
+::
+
+   (get-profile-percent-threshold)
+
+`Go to start page <scio4c6w.htm>`__

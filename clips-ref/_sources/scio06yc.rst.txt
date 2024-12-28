@@ -1,0 +1,11 @@
+GET-DEFFUNCTION-LIST
+====================
+
+Returns the list of all deffunctions in the specified module (or the
+current module if unspecified).
+
+::
+
+(get-deffunction-list [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

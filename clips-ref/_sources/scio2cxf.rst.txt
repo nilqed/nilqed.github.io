@@ -1,0 +1,20 @@
+GENERIC FUNCTION COMMANDS
+=========================
+
+The following commands manipulate generic functions.
+
+`LIST-DEFGENERICS <scio3rn7.htm>`__
+
+`LIST-DEFMETHODS <scio9drn.htm>`__
+
+`PPDEFGENERIC <scio7n6r.htm>`__
+
+`PPDEFMETHOD <scio0ilg.htm>`__
+
+`PREVIEW-GENERIC <scio96zn.htm>`__
+
+`UNDEFGENERIC <scio7ew3.htm>`__
+
+`UNDEFMETHOD <scio64ys.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

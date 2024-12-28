@@ -1,0 +1,10 @@
+SHOW-BREAKS
+===========
+
+Displays all rules having breakpoints.
+
+::
+
+   (show-breaks [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

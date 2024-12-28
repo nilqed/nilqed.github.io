@@ -1,0 +1,10 @@
+SYM-CAT
+=======
+
+Concatenates its arguments to form a single symbol.
+
+::
+
+   (sym-cat <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

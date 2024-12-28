@@ -1,0 +1,10 @@
+OR
+==
+
+Returns TRUE if any argument evaluates to a non-FALSE value.
+
+::
+
+   (or <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

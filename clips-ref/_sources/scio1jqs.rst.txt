@@ -1,0 +1,11 @@
+RETRACT
+=======
+
+Removes a fact from the fact-list.
+
+::
+
+   (retract <retract-specifier>+ | *)
+       <retract-specifier> ::= <fact-specifier> | <integer-expression>
+
+`Go to start page <scio4c6w.htm>`__

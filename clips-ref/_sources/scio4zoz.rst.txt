@@ -1,0 +1,12 @@
+CLASS-SUBCLASSES
+================
+
+Returns the names of the direct subclasses of a class in a multifield
+variable. If the optional "inherit" argument is given, indirect
+subclasses are also included.
+
+::
+
+   (class-subclasses <class-name> [inherit])
+
+`Go to start page <scio4c6w.htm>`__

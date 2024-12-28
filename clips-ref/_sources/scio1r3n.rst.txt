@@ -1,0 +1,10 @@
+LOAD-FACTS
+==========
+
+Asserts facts loaded from a file.
+
+::
+
+   (load-facts <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

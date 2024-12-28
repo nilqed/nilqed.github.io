@@ -1,0 +1,25 @@
+GENERIC FUNCTIONS
+=================
+
+The following functions provide ancillary capabilities for generic
+function methods.
+
+`CALL-NEXT-METHOD <scio9rxg.htm>`__
+
+`CALL-SPECIFIC-METHOD <scio72ck.htm>`__
+
+`DEFGENERIC-MODULE <scio9ied.htm>`__
+
+`GET-DEFGENERIC-LIST <scio992s.htm>`__
+
+`GET-DEFMETHOD-LIST <scio5o38.htm>`__
+
+`GET-METHOD-RESTRICTIONS <scio169f.htm>`__
+
+`NEXT-METHODP <scio9ai8.htm>`__
+
+`OVERRIDE-NEXT-METHOD <scio8dd0.htm>`__
+
+`TYPE <scio2jj9.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

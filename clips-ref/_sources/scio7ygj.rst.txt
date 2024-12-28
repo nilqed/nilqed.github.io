@@ -1,0 +1,13 @@
+TITLR
+=====
+
+Version M.m of XSI contains two major enhancements. First, XSI now
+provides a mechanism which allows an embedded application to create
+multiple environments into which programs can be loaded. Second, an
+improved Windows 95/98/NT XSI interface is now available and the
+Macintosh XSI interface has been enhanced to support MacOS X. For a
+detailed listing of differences between the 6.x releases, refer to
+appendix B of the *Basic Programming Guide* and appendix C of the
+*Advanced Programming Guide*.
+
+`Go to start page <scio4c6w.htm>`__

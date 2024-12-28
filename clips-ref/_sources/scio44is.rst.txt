@@ -1,0 +1,10 @@
+SET-AUTO-FLOAT-DIVIDEND
+=======================
+
+Sets the auto-float dividend behaviour.
+
+::
+
+   (set-auto-float-dividend <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

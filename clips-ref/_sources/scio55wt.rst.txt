@@ -1,0 +1,10 @@
+RANDOM
+======
+
+Returns a "random" integer value.
+
+::
+
+   (random [<start-integer-expression> <end-integer-expression>])
+
+`Go to start page <scio4c6w.htm>`__

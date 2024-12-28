@@ -1,0 +1,10 @@
+AGENDA
+======
+
+Displays all activations on the agenda of the specified module.
+
+::
+
+   (agenda [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

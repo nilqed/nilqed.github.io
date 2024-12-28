@@ -1,0 +1,11 @@
+DIRECT-SLOT-DELETE$
+===================
+
+Allows the deletion of a range of fields in a multifield slot value of
+the active instance from within a message-handler.
+
+::
+
+   (direct-slot-delete$ <mv-slot-name> <range-begin> <range-end>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+UNDEFCLASS
+==========
+
+Deletes a defclass, all its subclasses, and all associated instances.
+
+::
+
+   (undefclass <class-name>)
+
+`Go to start page <scio4c6w.htm>`__

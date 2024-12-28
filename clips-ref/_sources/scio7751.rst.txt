@@ -1,0 +1,10 @@
+GET-CURRENT-MODULE
+==================
+
+Returns the current module.
+
+::
+
+   (get-current-module)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,110 @@
+DEFRULE
+=======
+
+One of the primary methods of representing knowledge in XSI is a rule.
+
+A rule is a collection of conditions and the actions to be taken if the
+
+conditions are met. The developer of an expert system defines the rules
+
+which describe how to solve a problem. Rules execute (or fire) based on
+
+the existence or non-existence of facts. XSI provides the mechanism
+
+(the inference engine) which attempts to match the rules to the current
+
+state of the system (as represented by the fact-list) and applies the
+
+actions.
+
+::
+
+   (defrule <rule-name> [<comment>]
+       [<declaration>]              
+       <conditional-element>*       
+   =>
+       <action>*)  
+
+**DECLARATIONS**
+
+::
+
+   <declaration>           ::= (declare <rule-property>+)
+
+   <rule-property>         ::= (salience <integer-expression>) |
+                               (auto-focus <boolean-symbol>)
+
+**CONDITIONAL ELEMENTS**
+
+::
+
+   <conditional-element>   ::= <pattern-CE> | <assigned-pattern-CE> | 
+                               <not-CE> | <and-CE> | <or-CE> |
+                               <logical-CE> | <test-CE> |
+                               <exists-CE> | <forall-CE>
+
+   <test-CE>               ::= (test <function-call>)
+
+   <not-CE>                ::= (not <conditional-element>) 
+
+   <and-CE>                ::= (and <conditional-element>+)
+    
+   <or-CE>                 ::= (or <conditional-element>+)  
+    
+   <exists-CE>             ::= (exists <conditional-element>+)
+
+   <forall-CE>             ::= (forall <conditional-element>
+                                       <conditional-element>+)
+
+   <logical-CE>            ::= (logical <conditional-element>+)
+
+**PATTERN CONDITIONAL ELEMENT**
+
+::
+
+   <assigned-pattern-CE>::=    ?<variable-symbol> <- <pattern-CE>
+
+   <pattern-CE>         ::=    <ordered-pattern-CE> | 
+                               <template-pattern-CE> |
+                               <object-pattern-CE>
+
+   <ordered-pattern-CE> ::=    (<symbol> <constraint>*)
+
+   <template-pattern-CE>::=    (<deftemplate-name <LHS-slot>*)
+
+   <object-pattern-CE>  ::=    (object <attribute-constraint>*)
+
+   <attribute-constraint>  ::= (is-a <constraint>) |
+                               (name <constraint>) |
+                               (<slot-name> <constraint>*)
+
+   <LHS-slot>              ::= <single-field-LHS-slot> | 
+                               <multifield-LHS-slot>
+
+   <LHS-slot>              ::= <single-field-LHS-slot> | 
+                               <multifield-LHS-slot>
+
+   <single-field-LHS-slot> ::= (<slot-name> <constraint>)
+
+   <multifield-LHS-slot>   ::= (<slot-name> <constraint>*)
+
+**PATTERN CONSTRAINTS**
+
+::
+
+   <constraint>            ::= ? | $? | <connected-constraint>
+
+   <connected-constraint>  
+                ::= <single-constraint> |
+                    <single-constraint> & <connected-constraint> |
+                    <single-constraint> | <connected-constraint>
+
+   <single-constraint>     ::= <term> | ~<term>
+                        
+   <term>               ::= <constant> | 
+                            <single-field-variable> |
+                            <multifield-variable> |
+                            :<function-call> |
+                            =<function-call>
+
+`Go to start page <scio4c6w.htm>`__

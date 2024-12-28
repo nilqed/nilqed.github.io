@@ -1,0 +1,14 @@
+MEMORY COMMANDS
+===============
+
+The following commands display XSI memory status information.
+
+`CONSERVE-MEM <scio8ca5.htm>`__
+
+`MEM-REQUESTS <scio6zcj.htm>`__
+
+`MEM-USED <scio1jms.htm>`__
+
+`RELEASE-MEM <scio27jh.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

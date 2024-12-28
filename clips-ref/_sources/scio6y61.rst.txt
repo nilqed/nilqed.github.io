@@ -1,0 +1,38 @@
+COMMAND SUMMARY
+===============
+
+This section gives a general overview of the available XSI commands.
+
+Subtopics:
+
+`AGENDA_COMMANDS <scio4rjn.htm>`__
+
+`COOL_COMMANDS <scio6upf.htm>`__
+
+`DEBUGGING_COMMANDS <scio32lv.htm>`__
+
+`DEFFACTS_COMMANDS <scio7u5v.htm>`__
+
+`DEFFUNCTION_COMMANDS <scio5wc3.htm>`__
+
+`DEFGLOBAL_COMMANDS <scio854j.htm>`__
+
+`DEFMODULE_COMMANDS <scio2p9v.htm>`__
+
+`DEFRULE_COMMANDS <scio64fn.htm>`__
+
+`DEFTEMPLATE_COMMANDS <scio5iib.htm>`__
+
+`ENVIRONMENT_COMMANDS <scio8s4z.htm>`__
+
+`FACT_COMMANDS <scio6o6r.htm>`__
+
+`GENERIC_FUNCTION_COMMANDS <scio2cxf.htm>`__
+
+`MEMORY_COMMANDS <scio4r8z.htm>`__
+
+`TEXT_PROCESSING_COMMANDS <scio90tv.htm>`__
+
+`PROFILING_COMMANDS <scio0lf7.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+SLOT-RANGE
+==========
+
+Returns the minimum and maximum numeric values allowed for a slot.
+
+::
+
+   (slot-range <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

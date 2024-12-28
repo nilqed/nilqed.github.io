@@ -1,0 +1,10 @@
+CLASS-ABSTRACTP
+===============
+
+Returns TRUE if the specified class is abstract, FALSE otherwise.
+
+::
+
+   (class-abstractp <class-name>)
+
+`Go to start page <scio4c6w.htm>`__

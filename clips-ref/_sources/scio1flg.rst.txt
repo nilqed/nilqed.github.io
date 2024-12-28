@@ -1,0 +1,10 @@
+RESET
+=====
+
+Resets the XSI environment.
+
+::
+
+   (reset)
+
+`Go to start page <scio4c6w.htm>`__

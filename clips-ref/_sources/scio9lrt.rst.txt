@@ -1,0 +1,30 @@
+CONSTRUCT SUMMARY
+=================
+
+This section gives a general overview of the available XSI constructs.
+
+Subtopics:
+
+`CONSTRAINT_ATTRIBUTES <scio8htf.htm>`__
+
+`DEFCLASS <scio80mr.htm>`__
+
+`DEFFACTS <scio565v.htm>`__
+
+`DEFFUNCTION <scio9t0u.htm>`__
+
+`DEFGENERIC/DEFMETHOD <scio5foj.htm>`__
+
+`DEFGLOBAL <scio6bos.htm>`__
+
+`DEFINSTANCES <scio9h6b.htm>`__
+
+`DEFMESSAGE-HANDLER <scio4rea.htm>`__
+
+`DEFMODULE <scio92ed.htm>`__
+
+`DEFRULE <scio2pk5.htm>`__
+
+`DEFTEMPLATE <scio7fmt.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

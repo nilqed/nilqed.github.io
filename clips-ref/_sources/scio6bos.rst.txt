@@ -1,0 +1,26 @@
+DEFGLOBAL
+=========
+
+With the defglobal construct, global variables can be defined, set, and
+
+accessed within the XSI environment. Global variables can be accessed
+
+as part of the pattern matching process, but changing them does not
+invoke
+
+the pattern matching process. The bind function is used to set the value
+
+of global variables.
+
+The syntax of the defglobal construct is:
+
+::
+
+   <defglobal-construct> ::= (defglobal [<defmodule-name>] 
+                                <global-assignment>*)
+
+   <global-assignment>   ::= <global-variable> = <expression>
+
+   <global-variable>     ::= ?*<symbol>*
+
+`Go to start page <scio4c6w.htm>`__

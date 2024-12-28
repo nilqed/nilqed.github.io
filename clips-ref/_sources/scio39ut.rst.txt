@@ -1,0 +1,10 @@
+RENAME
+======
+
+Changes the name of a file.
+
+::
+
+   (rename <old-file-name> <new-file-name>)
+
+`Go to start page <scio4c6w.htm>`__

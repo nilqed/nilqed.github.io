@@ -1,0 +1,11 @@
+TIME
+====
+
+Returns a float representing the elapsed seconds since the system
+reference time.
+
+::
+
+   (time)
+
+`Go to start page <scio4c6w.htm>`__

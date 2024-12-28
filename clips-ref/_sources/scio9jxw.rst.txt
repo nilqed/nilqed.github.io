@@ -1,0 +1,10 @@
+REST$
+=====
+
+Returns all but the first field of a multifield.
+
+::
+
+   (rest$ <multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

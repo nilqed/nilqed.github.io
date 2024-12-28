@@ -1,0 +1,10 @@
+NUMBERP
+=======
+
+Returns TRUE for integers and floats.
+
+::
+
+   (numberp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

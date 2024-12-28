@@ -1,0 +1,11 @@
+GET-DEFGLOBAL-LIST
+==================
+
+Returns the list of all defglobals in the specified module (or the
+current module if unspecified).
+
+::
+
+   (get-defglobal-list [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

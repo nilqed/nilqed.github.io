@@ -1,0 +1,10 @@
+MAX
+===
+
+Returns the value of its largest numeric argument.
+
+::
+
+   (max <numeric-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

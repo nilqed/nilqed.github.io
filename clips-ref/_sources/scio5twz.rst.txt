@@ -1,0 +1,10 @@
+\*
+==
+
+Returns the product of its arguments.
+
+::
+
+   (* <numeric-expression> <numeric-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

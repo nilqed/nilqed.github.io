@@ -1,0 +1,10 @@
+GET-FACT-LIST
+=============
+
+Returns a multifield containing the list of visible facts.
+
+::
+
+   (get-fact-list [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+LIST-DEFMETHODS
+===============
+
+Displays a list of generic function methods.
+
+::
+
+   (list-defmethods [<generic-function-name>])
+
+`Go to start page <scio4c6w.htm>`__

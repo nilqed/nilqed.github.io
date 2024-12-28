@@ -1,0 +1,10 @@
+DYNAMIC-GET
+===========
+
+Returns the value of the specified slot of the active instance.
+
+::
+
+   (dynamic-get <slot-name-expression>)
+
+`Go to start page <scio4c6w.htm>`__

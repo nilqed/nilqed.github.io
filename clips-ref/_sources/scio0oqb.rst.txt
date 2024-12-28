@@ -1,0 +1,11 @@
+POP-FOCUS
+=========
+
+Removes the current focus from the focus stack and returns the module
+name of the current focus.
+
+::
+
+(pop-focus)
+
+`Go to start page <scio4c6w.htm>`__

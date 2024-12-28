@@ -1,0 +1,10 @@
+INSTANCE-NAMEP
+==============
+
+Returns TRUE if its argument is an instance name, FALSE otherwise.
+
+::
+
+   (instance-namep <expression>)
+
+`Go to start page <scio4c6w.htm>`__

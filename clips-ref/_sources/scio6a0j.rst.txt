@@ -1,0 +1,11 @@
+LIST-DEFINSTANCES
+=================
+
+Displays the list of all definstances in the specified module (or the
+current module if none specified).
+
+::
+
+   (list-definstances [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+MIN
+===
+
+Returns the value of its smallest numeric argument.
+
+::
+
+   (min <numeric-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

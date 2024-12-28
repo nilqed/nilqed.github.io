@@ -1,0 +1,10 @@
+PPDEFINSTANCES
+==============
+
+Displays the text of a given definstances.
+
+::
+
+   (ppdefinstances <definstances-name>)
+
+`Go to start page <scio4c6w.htm>`__

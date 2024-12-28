@@ -1,0 +1,12 @@
+DEFINSTANCES COMMANDS
+=====================
+
+The following commands manipulate definstances.
+
+`LIST-DEFINSTANCES <scio6a0j.htm>`__
+
+`PPDEFINSTANCES <scio5igj.htm>`__
+
+`UNDEFINSTANCES <scio1ktv.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

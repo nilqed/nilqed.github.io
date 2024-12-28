@@ -1,0 +1,10 @@
+CLASS-EXISTP
+============
+
+Returns TRUE if the specified class is defined, FALSE otherwise.
+
+::
+
+   (class-existp <class-name>)
+
+`Go to start page <scio4c6w.htm>`__

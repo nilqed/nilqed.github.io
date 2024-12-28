@@ -1,0 +1,48 @@
+DEFTEMPLATE
+===========
+
+Ordered facts encode information positionally. To access that
+information,
+
+a user must know not only what data is stored in a fact but which field
+
+contains the data. Non-ordered (or deftemplate) facts provide the user
+
+with the ability to abstract the structure of a fact by assigning names
+
+to each field found within the fact. The deftemplate construct is
+
+used to create a template which can then be used by non-ordered facts to
+
+access fields of the fact by name. The deftemplate construct is
+analogous
+
+to a record or structure definition in programming languages such as
+Pascal
+
+and C.
+
+The syntax of the deftemplate construct is:
+
+::
+
+   (deftemplate <deftemplate-name> [<comment>]
+      <slot-definition>*)
+
+   <slot-definition>         ::= <single-slot-definition> | 
+                                 <multislot-definition>
+
+   <single-slot-definition>  ::= (slot <slot-name> 
+                                       <template-attribute>*)
+
+   <multislot-definition>    ::= (multislot <slot-name> 
+                                            <template-attribute>*)
+
+   <template-attribute>      ::= <default-attribute> |
+                                 <constraint-attribute>
+
+   <default-attribute>  
+                      ::= (default ?DERIVE | ?NONE | <expression>*) |
+                          (default-dynamic <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

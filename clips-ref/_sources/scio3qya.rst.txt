@@ -1,0 +1,12 @@
+REPLACE-MEMBER$
+===============
+
+Replaces specific values contained within a multifield value and returns
+the modified multifield value.
+
+::
+
+   (replace-member$ <multifield-expression> <substitute-expression>
+                    <search-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

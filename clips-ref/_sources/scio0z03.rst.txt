@@ -1,0 +1,11 @@
+SLOT-SOURCES
+============
+
+Returns the names of the classes which provide facets for a slot of a
+class in a multifield variable.
+
+::
+
+   (slot-sources <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

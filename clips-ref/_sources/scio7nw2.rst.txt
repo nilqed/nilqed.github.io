@@ -1,0 +1,10 @@
+MEMBER$
+=======
+
+Returns the position of a single-field value within a multifield value.
+
+::
+
+   (member$ <single-field-expression> <multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

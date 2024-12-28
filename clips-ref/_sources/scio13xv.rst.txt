@@ -1,0 +1,10 @@
+FOCUS
+=====
+
+Pushes one or more modules onto the focus stack.
+
+::
+
+   (focus <module-name>+)
+
+`Go to start page <scio4c6w.htm>`__

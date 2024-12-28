@@ -1,0 +1,18 @@
+COOL COMMANDS
+=============
+
+The commands manipulating the XSI Object-Oriented Language (COOL)
+
+are divided into four categories.
+
+Subtopics:
+
+`CLASS_COMMANDS <scio36k3.htm>`__
+
+`DEFINSTANCES_COMMANDS <scio9l6b.htm>`__
+
+`INSTANCES_COMMANDS <scio9ofn.htm>`__
+
+`MESSAGE-HANDLER_COMMANDS <scio71pv.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

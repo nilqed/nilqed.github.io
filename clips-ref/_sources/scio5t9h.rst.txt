@@ -1,0 +1,10 @@
+DEFRULE-MODULE
+==============
+
+Returns the module in which the specified defrule is defined.
+
+::
+
+   (defrule-module <defrule-name>)
+
+`Go to start page <scio4c6w.htm>`__

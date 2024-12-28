@@ -1,0 +1,11 @@
+LIST-DEFFUNCTIONS
+=================
+
+Displays the list of all deffunctions in the specified module (or the
+current module if none specified).
+
+::
+
+(list-deffunctions [<deffunction-name>])
+
+`Go to start page <scio4c6w.htm>`__

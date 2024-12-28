@@ -1,0 +1,10 @@
+UNWATCH
+=======
+
+Disables trace information for the specified item.
+
+::
+
+   (unwatch <watch-item>)
+
+`Go to start page <scio4c6w.htm>`__

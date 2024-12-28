@@ -1,0 +1,31 @@
+EXTENDED MATH FUNCTIONS
+=======================
+
+The following functions perform extended mathematical operations and are
+included as part of the extended math package.
+
+`\*\* <scio8s6q.htm>`__
+
+`DEG-GRAD <scio712c.htm>`__
+
+`DEG-RAD <scio59r8.htm>`__
+
+`EXP <scio9180.htm>`__
+
+`GRAD-DEG <scio4pt3.htm>`__
+
+`LOG <scio9mw7.htm>`__
+
+`LOG10 <scio8xgw.htm>`__
+
+`MOD <scio9q1w.htm>`__
+
+`PI <scio05m1.htm>`__
+
+`RAD-DEG <scio5i1z.htm>`__
+
+`ROUND <scio7t2c.htm>`__
+
+`SQRT <scio6838.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

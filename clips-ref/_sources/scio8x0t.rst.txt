@@ -1,0 +1,11 @@
+SYSTEM
+======
+
+Appends its arguments together to form a command which is then sent to
+the operating system.
+
+::
+
+   (system <lexeme-expression>*)
+
+`Go to start page <scio4c6w.htm>`__

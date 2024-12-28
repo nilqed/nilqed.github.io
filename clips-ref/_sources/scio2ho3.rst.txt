@@ -1,0 +1,58 @@
+CLASS FUNCTIONS
+===============
+
+The following functions are used with classes.
+
+`CLASS-ABSTRACTP <scio6os0.htm>`__
+
+`CLASS-EXISTP <scio2xrk.htm>`__
+
+`CLASS-REACTIVEP <scio3yy8.htm>`__
+
+`CLASS-SLOTS <scio1u9f.htm>`__
+
+`CLASS-SUBCLASSES <scio4zoz.htm>`__
+
+`CLASS-SUPERCLASSES <scio9u43.htm>`__
+
+`DEFCLASS-MODULE <scio2wkl.htm>`__
+
+`GET-CLASS-DEFAULTS-MODE <scio6yud.htm>`__
+
+`GET-DEFCLASS-LIST <scio1j90.htm>`__
+
+`GET-DEFMESSAGE-HANDLER-LIST <scio7zqs.htm>`__
+
+`MESSAGE-HANDLER-EXISTP <scio52pc.htm>`__
+
+`SET-CLASS-DEFAULTS-MODE <scio8rfp.htm>`__
+
+`SLOT-ALLOWED-VALUES <scio7kxf.htm>`__
+
+`SLOT-CARDINALITY <scio92wp.htm>`__
+
+`SLOT-DEFAULT-VALUE <scio2dk5.htm>`__
+
+`SLOT-DIRECT-ACCESSP <scio7iuo.htm>`__
+
+`SLOT-EXISTP <scio3my8.htm>`__
+
+`SLOT-FACETS <scio21rn.htm>`__
+
+`SLOT-INITABLEP <scio1vlc.htm>`__
+
+`SLOT-PUBLICP <scio8y40.htm>`__
+
+`SLOT-RANGE <scio3mlh.htm>`__
+
+`SLOT-SOURCES <scio0z03.htm>`__
+
+`SLOT-TYPES <scio7u43.htm>`__
+
+`SLOT-WRITABLEP <scio9s1c.htm>`__
+
+`SUBCLASSP <scio7oz4.htm>`__
+
+`SUPERCLASSP <scio2l68.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

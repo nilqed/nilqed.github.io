@@ -1,0 +1,10 @@
+LIST-WATCH-ITEMS
+================
+
+Displays the current state of watch items.
+
+::
+
+   (list-watch-items [<watch-item>])
+
+`Go to start page <scio4c6w.htm>`__

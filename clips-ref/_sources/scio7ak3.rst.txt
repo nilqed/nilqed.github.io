@@ -1,0 +1,10 @@
+LOAD-INSTANCES
+==============
+
+Loads instances from the specified file.
+
+::
+
+   (load-instances <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

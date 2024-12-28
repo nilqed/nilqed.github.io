@@ -1,0 +1,10 @@
+STR-INDEX
+=========
+
+Returns the position of the first argument within the second argument.
+
+::
+
+   (str-index <lexeme-expression> <lexeme-expression>)
+
+`Go to start page <scio4c6w.htm>`__

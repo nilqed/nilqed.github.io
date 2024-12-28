@@ -1,0 +1,12 @@
+SLOT-EXISTP
+===========
+
+Returns TRUE if the specified slot is present in the class, FALSE
+otherwise. If the inherit keyword is specified, then the slot may be
+inherited.
+
+::
+
+   (slot-existp <class-name> <slot-name> [inherit])
+
+`Go to start page <scio4c6w.htm>`__

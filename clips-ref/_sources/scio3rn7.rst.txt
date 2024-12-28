@@ -1,0 +1,11 @@
+LIST-DEFGENERICS
+================
+
+Displays the names of all generic functions in the specified module (or
+the current module if none specified).
+
+::
+
+   (list-defgenerics [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

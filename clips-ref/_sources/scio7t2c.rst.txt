@@ -1,0 +1,11 @@
+ROUND
+=====
+
+Rounds its argument toward the closest integer or negative infinity if
+exactly between two integers.
+
+::
+
+   (round <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+TYPE
+====
+
+Returns a symbol which is the name of the type (or class) of its of
+argument.
+
+::
+
+   (type <expression>)
+
+`Go to start page <scio4c6w.htm>`__

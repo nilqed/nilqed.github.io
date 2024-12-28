@@ -1,0 +1,22 @@
+IO FUNCTIONS
+============
+
+The following functions perform I/O operations.
+
+`CLOSE <scio6isl.htm>`__
+
+`FORMAT <scio4k6s.htm>`__
+
+`OPEN <scio3n72.htm>`__
+
+`PRINTOUT <scio3fas.htm>`__
+
+`READ <scio9j1g.htm>`__
+
+`READLINE <scio0ulh.htm>`__
+
+`REMOVE <scio8w9x.htm>`__
+
+`RENAME <scio39ut.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

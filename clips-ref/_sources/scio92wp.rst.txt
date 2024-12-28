@@ -1,0 +1,11 @@
+SLOT-CARDINALITY
+================
+
+Returns the minimum and maximum number of fields allowed for a multislot
+in a multifield variable.
+
+::
+
+   (slot-cardinality <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

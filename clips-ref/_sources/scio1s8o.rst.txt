@@ -1,0 +1,11 @@
+CHECK-SYNTAX
+============
+
+Allows the text representation of a construct or function call to be
+checked for syntax and semantic errors.
+
+::
+
+   (check-syntax <construct-or-function-string>)
+
+`Go to start page <scio4c6w.htm>`__

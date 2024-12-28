@@ -1,0 +1,10 @@
+MATCHES
+=======
+
+Displays the facts which match the patterns of a rule.
+
+::
+
+   (matches <rule-name>)
+
+`Go to start page <scio4c6w.htm>`__

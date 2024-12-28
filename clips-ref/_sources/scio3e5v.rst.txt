@@ -1,0 +1,11 @@
+DEPENDENTS
+==========
+
+Lists all facts or instances which receive logical support from a fact
+or instance.
+
+::
+
+   (dependents <fact-or-instance-specifier>)
+
+`Go to start page <scio4c6w.htm>`__

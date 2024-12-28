@@ -1,0 +1,10 @@
+STR-LENGTH
+==========
+
+Returns the length of a string.
+
+::
+
+   (str-length <lexeme-expression>)
+
+`Go to start page <scio4c6w.htm>`__

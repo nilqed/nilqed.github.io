@@ -1,0 +1,10 @@
+SYMBOLP
+=======
+
+Returns TRUE for symbols.
+
+::
+
+   (symbolp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+OPTIONS
+=======
+
+Lists the settings of XSI compiler flags.
+
+::
+
+   (options)
+
+`Go to start page <scio4c6w.htm>`__

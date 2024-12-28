@@ -1,0 +1,67 @@
+CONSTRAINT ATTRIBUTES
+=====================
+
+Constraint attributes can be associated with deftemplate and defclass
+slots so that type checking can be performed on slot values when
+template facts and instances are created. The constraint information is
+also analyzed for the patterns on the LHS of a rule to determine if the
+specified constraints prevent the rule from ever firing.
+
+The syntax for constraint attributes is:
+
+::
+
+   <constraint-attribute> ::= <type-attribute> |
+                              <allowed-constant-attribute> |
+                              <range-attribute> |
+                              <cardinality-attribute>
+                              <default-attribute>
+
+   <type-attribute>       ::= (type <type-specification>)
+
+   <type-specification>   ::= <allowed-type>+ | ?VARIABLE
+
+   <allowed-type>         ::= SYMBOL | STRING | LEXEME |
+                              INTEGER | FLOAT | NUMBER | 
+                              INSTANCE-NAME | INSTANCE-ADDRESS |
+                              INSTANCE |
+                              EXTERNAL-ADDRESS | FACT-ADDRESS
+
+   <allowed-constant-attribute> 
+                          ::= (allowedsymbols <symbol-list>) |
+                              (allowedstrings <string-list>) |
+                              (allowed-lexemes <lexeme-list> |
+                              (allowedintegers <integer-list>) |
+                              (allowedfloats <float-list>) |
+                              (allowednumbers <number-list>) |
+                              (allowed-instance-names <instance-list>) |
+                              (allowedvalues <value-list>) |
+
+   <symbol-list>          ::= <symbol>+ | ?VARIABLE
+
+   <string-list>          ::= <string>+ | ?VARIABLE
+
+   <lexeme-list>          ::= <lexeme>+ | ?VARIABLE
+
+   <integer-list>         ::= <integer>+ | ?VARIABLE
+
+   <float-list>           ::= <float>+ | ?VARIABLE
+
+   <number-list>          ::= <number>+ | ?VARIABLE
+
+   <instance-name-list>   ::= <instance-name>+ | ?VARIABLE
+
+   <value-list>           ::= <constant>+ | ?VARIABLE
+
+   <range-attribute>      ::= (range <range-specification> 
+                                     <range-specification>)
+
+   <range-specification>  ::= <number> | ?VARIABLE
+
+   <cardinality-attribute>    
+                       ::= (cardinality <cardinality-specification> 
+                                        <cardinality-specification>)
+
+   <cardinality-specification> ::= <integer> | ?VARIABLE
+
+`Go to start page <scio4c6w.htm>`__

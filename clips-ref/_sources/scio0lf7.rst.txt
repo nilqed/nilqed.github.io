@@ -1,0 +1,20 @@
+PROFILING COMMANDS
+==================
+
+The following commands provide the ability to profile XSI programs
+
+for performance..
+
+::
+
+`GET-PROFILE-PERCENT-THRESHOLD <scio1sro.htm>`__
+
+`PROFILE <scio5ahx.htm>`__
+
+`PROFILE-INFO <scio7t67.htm>`__
+
+`PROFILE-RESET <scio6rp0.htm>`__
+
+`SET-PROFILE-PERCENT-THRESHOLDS <scio5td0.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

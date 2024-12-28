@@ -1,0 +1,31 @@
+WATCH
+=====
+
+Enables trace information for the specified item.
+
+::
+
+   (watch <watch-item>)
+   <watch-item> ::= all |
+       compilations | 
+       statistics |
+       focus |
+       messages |
+       deffunctions <deffunction-name>* |
+       globals <global-name>* |
+       rules <rule-name>* |
+       activations <rule-name>* |
+       facts <deftemplate-name>* |
+       instances <class-name>* |
+       slots <class-name>* |
+       message-handlers <handler-spec-1>* [<handler-spec-2>]) |
+       generic-functions <generic-name>* |
+       methods <method-spec-1>* [<method-spec-2>]
+
+   <handler-spec-1> ::= <class-name> <handler-name> <handler-type>
+   <handler-spec-2> ::= <class-name> [<handler-name> [<handler-type>]]
+
+   <method-spec-1> ::= <generic-name> <method-index>
+   <method-spec-2> ::= <generic-name> [<method-index>]
+
+`Go to start page <scio4c6w.htm>`__

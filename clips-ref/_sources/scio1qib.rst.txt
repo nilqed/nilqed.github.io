@@ -1,0 +1,11 @@
+DEFTEMPLATE FUNCTIONS
+=====================
+
+The following functions provide ancillary capabilities for the
+deftemplate construct.
+
+`GET-DEFTEMPLATE-LIST <scio25kk.htm>`__
+
+`DEFTEMPLATE-MODULE <scio5y05.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

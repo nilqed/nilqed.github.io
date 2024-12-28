@@ -1,0 +1,11 @@
+>=
+==
+
+Returns TRUE if each argument is greater than or equal to in value than
+the argument following it.
+
+::
+
+   (>= <numeric-expression> <numeric-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

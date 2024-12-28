@@ -1,0 +1,10 @@
+SET-BREAK
+=========
+
+Sets a breakpoint on a rule.
+
+::
+
+   (set-break <rule-name>)
+
+`Go to start page <scio4c6w.htm>`__

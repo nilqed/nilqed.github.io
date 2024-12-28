@@ -1,0 +1,10 @@
+SET-STATIC-CONSTRAINT-CHECKING
+==============================
+
+Sets the static constraint checking behaviour.
+
+::
+
+   (set-static-constraint-checking <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

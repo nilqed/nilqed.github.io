@@ -1,0 +1,10 @@
+UNDEFGENERIC
+============
+
+Deletes a generic function.
+
+::
+
+   (undefgeneric <generic-function-name>)
+
+`Go to start page <scio4c6w.htm>`__

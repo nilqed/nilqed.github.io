@@ -1,0 +1,10 @@
+SET-RESET-GLOBALS
+=================
+
+Sets the reset global variables behavior.
+
+::
+
+   (set-reset-globals <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

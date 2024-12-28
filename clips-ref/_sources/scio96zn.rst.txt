@@ -1,0 +1,11 @@
+PREVIEW-GENERIC
+===============
+
+Lists all applicable methods for a particular generic function call in
+order of decreasing precedence.
+
+::
+
+   (preview-generic <generic-function-name> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

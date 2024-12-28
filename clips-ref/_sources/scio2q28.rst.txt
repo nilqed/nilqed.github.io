@@ -1,0 +1,11 @@
+FACT-EXISTP
+===========
+
+Returns TRUE if the fact specified by its fact-index or fact-address
+argument exists, otherwise FALSE.
+
+::
+
+   (fact-existp <fact-address-or-index>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+DEFGLOBAL-MODULE
+================
+
+Returns the module in which the specified defglobal is defined.
+
+::
+
+   (defglobal-module <defglobal-name>)
+
+`Go to start page <scio4c6w.htm>`__

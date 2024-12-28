@@ -1,0 +1,10 @@
+SUBSETP
+=======
+
+Returns TRUE if the first argument is a subset of the second argument.
+
+::
+
+   (subsetp <multifield-expression> <multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

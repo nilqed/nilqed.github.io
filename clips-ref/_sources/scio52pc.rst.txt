@@ -1,0 +1,12 @@
+MESSAGE-HANDLER-EXISTP
+======================
+
+Returns TRUE if the specified message-handler is defined (directly, not
+by inheritance) for the class, FALSE otherwise.
+
+::
+
+   (message-handler-existp <class-name> <handler-name> [<handler-type>])
+   <handler-type> ::= around | before | primary | after
+
+`Go to start page <scio4c6w.htm>`__

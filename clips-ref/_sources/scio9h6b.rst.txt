@@ -1,0 +1,32 @@
+DEFINSTANCES
+============
+
+Similar to deffacts, the definstances construct allows the specification
+of
+
+instances which will be created every time the reset command is
+executed.
+
+On every reset all current instances receive a delete message, and the
+
+equivalent of a make-instance function call is made for every instance
+
+specified in definstances constructs.
+
+The syntax of the definstances construct is:
+
+::
+
+   <definstances-construct> 
+                   ::= (definstances <definstances-name> [<comment>]
+                          <instance-template>*)
+
+   <instance-template>   ::= (<instance-definition>)
+
+   <instance-definition> ::= <instance-name-expression> of
+                                <class-name-expression>
+                                <slot-override>*
+
+   <slot-override>       ::= (<slot-name-expression> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

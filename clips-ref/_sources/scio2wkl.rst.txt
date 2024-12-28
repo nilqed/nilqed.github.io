@@ -1,0 +1,10 @@
+DEFCLASS-MODULE
+===============
+
+Returns the module in which the specified defclass is defined.
+
+::
+
+   (defclass-module <defclass-name>)
+
+`Go to start page <scio4c6w.htm>`__

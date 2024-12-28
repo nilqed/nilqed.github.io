@@ -1,0 +1,12 @@
+BUILD
+=====
+
+Evaluates a string as though it were entered at the command prompt.
+
+Only allows constructs to be evaluated.
+
+::
+
+   (build <lexeme-expression>)
+
+`Go to start page <scio4c6w.htm>`__

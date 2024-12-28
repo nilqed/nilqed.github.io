@@ -1,0 +1,10 @@
+STR-COMPARE
+===========
+
+Lexigraphically compares two strings.
+
+::
+
+   (str-compare <lexeme-expression> <lexeme-expression>)
+
+`Go to start page <scio4c6w.htm>`__

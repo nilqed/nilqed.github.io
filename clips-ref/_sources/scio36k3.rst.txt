@@ -1,0 +1,16 @@
+CLASS COMMANDS
+==============
+
+The following commands manipulate defclasses.
+
+`BROWSE-CLASSES <scio27qr.htm>`__
+
+`DESCRIBE-CLASS <scio4qlv.htm>`__
+
+`LIST-DEFCLASSES <scio8kkz.htm>`__
+
+`PPDEFCLASS <scio8mcz.htm>`__
+
+`UNDEFCLASS <scio5feb.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

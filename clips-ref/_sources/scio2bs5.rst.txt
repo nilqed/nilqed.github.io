@@ -1,0 +1,10 @@
+SYMBOL-TO-INSTANCE-NAME
+=======================
+
+Converts a symbol to an instance name.
+
+::
+
+   (symbol-to-instance-name <symbol-expression>)
+
+`Go to start page <scio4c6w.htm>`__

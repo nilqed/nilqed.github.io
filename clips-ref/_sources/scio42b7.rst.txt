@@ -1,0 +1,11 @@
+APROPOS
+=======
+
+Displays all symbols currently defined in XSI which contain a specified
+substring.
+
+::
+
+   (apropos <lexeme>)
+
+`Go to start page <scio4c6w.htm>`__

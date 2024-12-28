@@ -1,0 +1,11 @@
+GET-DEFMETHOD-LIST
+==================
+
+Returns the list of all defmethods in the current module (or just the
+methods associated with the specified defgeneric).
+
+::
+
+   (get-defmethod-list [<defgeneric-name>])
+
+`Go to start page <scio4c6w.htm>`__

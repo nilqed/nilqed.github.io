@@ -1,0 +1,12 @@
+EXPAND$
+=======
+
+When used inside of a function call, expands its arguments as separate
+arguements to the function. The $ operator is merely a shorthand
+notation for the expand$ function call.
+
+::
+
+   (expand$ <multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

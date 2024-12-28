@@ -1,0 +1,16 @@
+.. image:: Logo2.png
+
+XSI/CLIPS Quick Reference
+=========================
+
+`Commands <scio6y61.htm>`__
+
+`Constructs <scio9lrt.htm>`__
+
+`Functions <scio9ke1.htm>`__
+
+`Notes <scio58v9.htm>`__
+
+`Appendix <scio6isz.htm>`__
+
+`Goto SciOS/XSI support site <http://www.scios.ch>`__

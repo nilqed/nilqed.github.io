@@ -1,0 +1,11 @@
+DELETE-INSTANCE
+===============
+
+Deletes the active instance when called from within the body of a
+message-handler.
+
+::
+
+   (delete-instance)
+
+`Go to start page <scio4c6w.htm>`__

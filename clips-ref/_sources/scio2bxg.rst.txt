@@ -1,0 +1,10 @@
+GET-AUTO-FLOAT-DIVIDEND
+=======================
+
+Returns the current value of the auto-float dividend behaviour.
+
+::
+
+   (get-auto-float-dividend)
+
+`Go to start page <scio4c6w.htm>`__

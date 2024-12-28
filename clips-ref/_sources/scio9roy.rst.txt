@@ -1,0 +1,11 @@
+SLOT-DELETE$
+============
+
+Allows the deletion of a range of fields in a multifield slot value.
+
+::
+
+   (slot-delete$ <instance-expression> <mv-slot-name> <range-begin>
+       <range-end>)
+
+`Go to start page <scio4c6w.htm>`__

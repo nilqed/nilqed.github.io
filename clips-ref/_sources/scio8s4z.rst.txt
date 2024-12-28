@@ -1,0 +1,44 @@
+ENVIRONMENT COMMANDS
+====================
+
+The following commands control the XSI environment.
+
+`APROPOS <scio42b7.htm>`__
+
+`BATCH <scio5jfs.htm>`__
+
+BATCH\*
+
+`BLOAD <scio6wis.htm>`__
+
+`BSAVE <scio517p.htm>`__
+
+`CLEAR <scio5mb6.htm>`__
+
+`EXIT <scio85ys.htm>`__
+
+`GET-AUTO-FLOAT-DIVIDEND <scio2bxg.htm>`__
+
+`GET-DYNAMIC-CONSTRAINT-CHECKING <scio49nr.htm>`__
+
+`GET-STATIC-CONSTRAINT-CHECKING <scio6auf.htm>`__
+
+`LOAD <scio6p0k.htm>`__
+
+LOAD\*
+
+`OPTIONS <scio5qpf.htm>`__
+
+`RESET <scio1flg.htm>`__
+
+`SAVE <scio4tph.htm>`__
+
+`SET-AUTO-FLOAT-DIVIDEND <scio44is.htm>`__
+
+`SET-DYNAMIC-CONSTRAINT-CHECKING <scio5ox3.htm>`__
+
+`SET-STATIC-CONSTRAINT-CHECKING <scio3crr.htm>`__
+
+`SYSTEM <scio8x0t.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

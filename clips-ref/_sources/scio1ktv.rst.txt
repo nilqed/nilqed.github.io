@@ -1,0 +1,10 @@
+UNDEFINSTANCES
+==============
+
+Deletes a definstances
+
+::
+
+   (undefinstances <definstances-name>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+LOWCASE
+=======
+
+Converts uppercase characters in a string or symbol to lowercase.
+
+::
+
+   (lowcase <lexeme-expression>)
+
+`Go to start page <scio4c6w.htm>`__

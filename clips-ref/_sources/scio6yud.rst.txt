@@ -1,0 +1,10 @@
+GET-CLASS-DEFAULTS-MODE
+=======================
+
+Returns the current defaults mode used when classes are defined.
+
+::
+
+   (get-class-defaults-mode)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+BLOAD
+=====
+
+Loads a binary image from a file.
+
+::
+
+   (bload <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

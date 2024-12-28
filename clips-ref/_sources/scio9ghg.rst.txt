@@ -1,0 +1,10 @@
+SET-INCREMENTAL-RESET
+=====================
+
+Sets the incremental reset behavior.
+
+::
+
+   (set-incremental-reset <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

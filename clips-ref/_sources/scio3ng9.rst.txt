@@ -1,0 +1,10 @@
+MODIFY
+======
+
+Modifies a deftemplate fact in the fact-list.
+
+::
+
+   (modify <fact-specifier> <RHS-slot>*)
+
+`Go to start page <scio4c6w.htm>`__

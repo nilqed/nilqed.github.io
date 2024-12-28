@@ -1,0 +1,10 @@
+GET-INCREMENTAL-RESET
+=====================
+
+Returns the incremental reset behavior.
+
+::
+
+   (get-incremental-reset)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+DEPENDENCIES
+============
+
+Lists the partial matches from which a fact or instance receives logical
+support.
+
+::
+
+   (dependencies <fact-or-instance-specifier>)
+
+`Go to start page <scio4c6w.htm>`__

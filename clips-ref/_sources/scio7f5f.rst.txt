@@ -1,0 +1,23 @@
+COOL FUNCTIONS
+==============
+
+The functions manipulating the XSI Object-Oriented Language (COOL) are
+divided into five categories.
+
+::
+
+Subtopics:
+
+`CLASS_FUNCTIONS <scio2ho3.htm>`__
+
+`MESSAGE-HANDLER_FUNCTIONS <scio9vxv.htm>`__
+
+`DEFINSTANCES_FUNCTIONS <scio2h6b.htm>`__
+
+`INSTANCE_MANIPULATION_FUNCTIONS <scio2tpv.htm>`__
+
+`INSTANCE_SLOT_FUNCTIONS <scio2f03.htm>`__
+
+`INSTANCE_PREDICATE_FUNCTIONS <scio4po3.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

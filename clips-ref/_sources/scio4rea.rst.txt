@@ -1,0 +1,71 @@
+DEFMESSAGE HANDLER
+==================
+
+Objects are manipulated by sending them messages via the function send.
+The
+
+result of a message is a useful return-value or side-effect. A
+
+defmessage-handler is a construct for specifying the behavior of a class
+of
+
+objects in response to a particular message. The implementation of a
+message
+
+is made up of pieces of procedural code called message-handlers (or
+handlers
+
+for short). Each class in the class precedence list of an object's class
+can
+
+have handlers for a message. In this way, the object's class and all its
+
+superclasses share the labor of handling the message. Each class's
+handlers
+
+handle the part of the message which is appropriate to that class.
+Within a
+
+class, the handlers for a particular message can be further subdivided
+into
+
+four types or categories: primary, before, after and around.
+
+A defmessage-handler is comprised of seven elements: 1) a class name to
+which
+
+to attach the handler (the class must have been previously defined), 2)
+a
+
+message name to which the handler will respond, 3) an optional type (the
+
+default is primary), 4) an optional comment, 5) a list of parameters
+that will
+
+be passed to the handler during execution, 6) an optional wildcard
+parameter
+
+and 7) a series of expressions which are executed in order when the
+handler
+
+is called. The return-value of a message-handler is the evaluation of
+the last
+
+expression in the body.
+
+The syntax of the defmessage-handler construct is:
+
+::
+
+   (defmessage-handler <class-name> <message-name>
+      [<handlertype>] [<comment>]
+      (<parameter>* [<wildcard-parameter>])
+      <action>*)
+
+   <handler-type>       ::= around | before | primary | after
+
+   <parameter>          ::= <single-field-variable>
+
+   <wildcard-parameter> ::= <multifield-variable>
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+INTEGERP
+========
+
+Returns TRUE for integers.
+
+::
+
+   (integerp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

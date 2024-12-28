@@ -1,0 +1,22 @@
+INSTANCE MANIPULATION FUNCTIONS
+===============================
+
+The following manipulation functions are used with instances.
+
+`CLASS <scio5ak3.htm>`__
+
+`DELETE-INSTANCE <scio8vj9.htm>`__
+
+`INIT-SLOTS <scio6ir7.htm>`__
+
+`INSTANCE-ADDRESS <scio5037.htm>`__
+
+`INSTANCE-NAME <scio4gpx.htm>`__
+
+`INSTANCE-NAME-TO-SYMBOL <scio963w.htm>`__
+
+`SYMBOL-TO-INSTANCE-NAME <scio2bs5.htm>`__
+
+`UNMAKE-INSTANCE <scio0lk5.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

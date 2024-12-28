@@ -1,0 +1,12 @@
+PRINT-REGION
+============
+
+Looks up the specified entry in a particular file which has been
+previously loaded into the lookup table and prints the contents of that
+entry to the specified logical name.
+
+::
+
+   (print-region <logical-name> <lookup-file> <topic-field>*)
+
+`Go to start page <scio4c6w.htm>`__

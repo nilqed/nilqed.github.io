@@ -1,0 +1,11 @@
+DELETE$
+=======
+
+Deletes the specified range from a multifield value.
+
+::
+
+   (delete$ <multifield-expression>
+            <begin-integer-expression> <end-integer-expression>)
+
+`Go to start page <scio4c6w.htm>`__

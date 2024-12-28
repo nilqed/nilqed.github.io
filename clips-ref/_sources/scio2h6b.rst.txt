@@ -1,0 +1,10 @@
+DEFINSTANCES FUNCTIONS
+======================
+
+The following functions are used with definstances.
+
+`DEFINSTANCES-MODULE <scio6oo5.htm>`__
+
+`GET-DEFINSTANCES-LIST <scio9rck.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+DEG-GRAD
+========
+
+Converts its only argument from degrees to gradients.
+
+::
+
+   (deg-grad <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

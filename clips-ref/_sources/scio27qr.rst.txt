@@ -1,0 +1,11 @@
+BROWSE-CLASSES
+==============
+
+Provides a rudimentary display of the inheritance relationships between
+a class and all its subclasses.
+
+::
+
+   (browse-classes [<class-name>])
+
+`Go to start page <scio4c6w.htm>`__

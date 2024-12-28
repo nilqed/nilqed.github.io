@@ -1,0 +1,12 @@
+BATCH\*
+=======
+
+Executes commands from a file. Unlike the batch command, evaluates all
+of the commands in the specified file before returning rather than
+replacing standard input.
+
+::
+
+   (batch* <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

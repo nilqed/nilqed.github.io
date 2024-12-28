@@ -1,0 +1,10 @@
+IF
+==
+
+Allows conditional execution of a group of actions.
+
+::
+
+   (if <expression> then <action>* [else <action>*])
+
+`Go to start page <scio4c6w.htm>`__

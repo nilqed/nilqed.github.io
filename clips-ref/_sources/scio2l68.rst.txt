@@ -1,0 +1,11 @@
+SUPERCLASSP
+===========
+
+Returns TRUE if the first class is a superclass of the second class,
+FALSE otherwise.
+
+::
+
+   (superclassp <class1-name> <class2-name>)
+
+`Go to start page <scio4c6w.htm>`__

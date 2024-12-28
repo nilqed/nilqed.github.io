@@ -1,0 +1,11 @@
+DELETE-MEMBER$
+==============
+
+Deletes specific values contained within a multifield value and returns
+the modified multifield value.
+
+::
+
+   (delete-member$ <multifield-expression> <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

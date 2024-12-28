@@ -1,0 +1,20 @@
+MATH FUNCTIONS
+==============
+
+The math functions have been divided into three broad categories. The
+
+basic math functions are always provided with XSI. The trigonometric
+
+and extended math functions are included as part of the extended math
+
+package.
+
+Subtopics:
+
+`BASIC_MATH_FUNCTIONS <scio6zqr.htm>`__
+
+`EXTENDED_MATH_FUNCTIONS <scio28ab.htm>`__
+
+`TRIGONOMETRIC_FUNCTIONS <scio9rsj.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

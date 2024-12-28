@@ -1,0 +1,10 @@
+GET-FACT-DUPLICATION
+====================
+
+Returns the fact duplication behavior.
+
+::
+
+   (get-fact-duplication)
+
+`Go to start page <scio4c6w.htm>`__

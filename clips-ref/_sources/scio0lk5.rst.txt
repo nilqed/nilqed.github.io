@@ -1,0 +1,10 @@
+UNMAKE-INSTANCE
+===============
+
+Deletes the specified instance by sending it the delete message.
+
+::
+
+   (unmake-instance <instance-expression> | *)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+LENGTH
+======
+
+Returns an integer for the number of fields in a multifield value or the
+length in characters of a string or symbol.
+
+::
+
+   (length <lexeme-or-multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

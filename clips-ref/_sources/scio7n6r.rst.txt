@@ -1,0 +1,10 @@
+PPDEFGENERIC
+============
+
+Displays the text of a given generic function header.
+
+::
+
+   (ppdefgeneric <generic-function-name>)
+
+`Go to start page <scio4c6w.htm>`__

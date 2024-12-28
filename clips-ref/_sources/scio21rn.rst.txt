@@ -1,0 +1,11 @@
+SLOT-FACETS
+===========
+
+Returns the facet values for the specified slot of a class in a
+multifield value.
+
+::
+
+   (slot-facets <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

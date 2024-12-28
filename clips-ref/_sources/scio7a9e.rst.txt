@@ -1,0 +1,10 @@
+SLOT-INSERT$
+============
+
+Allows the insertion of one or more values in a multifield slot value.
+
+::
+
+   (slot-insert$ <instance-expression> <mv-slot-name> <index> <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

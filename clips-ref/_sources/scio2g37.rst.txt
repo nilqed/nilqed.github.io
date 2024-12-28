@@ -1,0 +1,13 @@
+FACTS
+=====
+
+Display the facts in the fact-list.
+
+::
+
+   (facts [<module-name>]
+          [<start-integer-expression> 
+          [<end-integer-expression> 
+          [<max-integer-expression>]]])
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,11 @@
+DEFFACTS FUNCTIONS
+==================
+
+The following functions provide ancillary capabilities for the deffacts
+construct.
+
+`GET-DEFFACTS-LIST <scio9v04.htm>`__
+
+`DEFFACTS-MODULE <scio857p.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

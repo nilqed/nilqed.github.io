@@ -1,0 +1,11 @@
+SLOT-DIRECT-ACCESSP
+===================
+
+Returns TRUE if the specified slot can be accessed directly, otherwise
+FALSE.
+
+::
+
+   (slot-direct-accessp <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

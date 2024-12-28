@@ -1,0 +1,10 @@
+PPDEFMESSAGE-HANDLER
+====================
+
+Displays the text of a given defmessage-handler.
+
+::
+
+   (ppdefmessage-handler <class-name> <handler-name> [<handler-type>])
+
+`Go to start page <scio4c6w.htm>`__

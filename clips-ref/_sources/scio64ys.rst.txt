@@ -1,0 +1,10 @@
+UNDEFMETHOD
+===========
+
+Deletes a generic function method.
+
+::
+
+   (undefmethod <generic-function-name> <index>)
+
+`Go to start page <scio4c6w.htm>`__

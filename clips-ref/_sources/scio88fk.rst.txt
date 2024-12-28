@@ -1,0 +1,11 @@
+INSTANCEP
+=========
+
+Returns TRUE if its argument is an instance name or instance address,
+FALSE otherwise.
+
+::
+
+   (instancep <expression>)
+
+`Go to start page <scio4c6w.htm>`__

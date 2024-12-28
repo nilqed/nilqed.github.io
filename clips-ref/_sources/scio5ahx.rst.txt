@@ -1,0 +1,10 @@
+PROFILE
+=======
+
+Enables/disables profiling of constructs and user functions.
+
+::
+
+   (profile constructs | user-functions | off)
+
+`Go to start page <scio4c6w.htm>`__

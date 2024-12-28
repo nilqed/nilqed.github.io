@@ -1,0 +1,10 @@
+LENGTH$
+=======
+
+Returns the number of fields in a multifield value.
+
+::
+
+   (length$ <multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

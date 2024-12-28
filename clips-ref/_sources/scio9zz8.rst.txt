@@ -1,0 +1,10 @@
+BIND
+====
+
+Binds a variable to a new value.
+
+::
+
+          (bind <variable> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+ASSERT
+======
+
+Adds a fact to the fact-list.
+
+::
+
+   (assert <RHS pattern>+)
+
+`Go to start page <scio4c6w.htm>`__

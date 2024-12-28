@@ -1,0 +1,11 @@
+FUNCALL
+=======
+
+Constructs a function call from its arguments and then evaluates the
+function call.
+
+::
+
+   (funcall (function-name> <expression>*) 
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+SLOT-ALLOWED-VALUES
+===================
+
+Returns the allowed values for a slot in a multifield value.
+
+::
+
+   (slot-allowed-values <class-name> <slot-name>)
+
+`Go to start page <scio4c6w.htm>`__

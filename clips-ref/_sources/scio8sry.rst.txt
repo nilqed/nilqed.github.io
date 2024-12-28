@@ -1,0 +1,10 @@
+SET-SEQUENCE-OPERATOR-RECOGNITION
+=================================
+
+Sets the sequence operator recognition behavior.
+
+::
+
+   (setsequence-operator-recognition <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

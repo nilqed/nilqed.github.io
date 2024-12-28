@@ -1,0 +1,11 @@
+GET-DEFINSTANCES-LIST
+=====================
+
+Returns the list of all definstances in the specified module (or the
+current module if unspecified).
+
+::
+
+   (get-definstances-list [<module-name>])
+
+`Go to start page <scio4c6w.htm>`__

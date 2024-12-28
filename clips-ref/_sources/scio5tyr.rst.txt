@@ -1,0 +1,29 @@
+FACT FUNCTIONS
+==============
+
+The following actions are used for assert, retracting, and modifying
+facts.
+
+`ASSERT <scio7t2s.htm>`__
+
+`ASSERT-STRING <scio5zl3.htm>`__
+
+`DUPLICATE <scio1w11.htm>`__
+
+`FACT-EXISTP <scio2q28.htm>`__
+
+`FACT-INDEX <scio233s.htm>`__
+
+`FACT-RELATION <scio7vou.htm>`__
+
+`FACT-SLOT-NAMES <scio1mib.htm>`__
+
+`FACT-SLOT-VALUE <scio8b6t.htm>`__
+
+`GET-FACT-LIST <scio5qd0.htm>`__
+
+`MODIFY <scio3ng9.htm>`__
+
+`RETRACT <scio1jqs.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

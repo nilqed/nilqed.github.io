@@ -1,0 +1,11 @@
+EQ
+==
+
+Returns TRUE if the 1st argument is equal in type and value to all
+subsequent arguments.
+
+::
+
+   (eq <expression> <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

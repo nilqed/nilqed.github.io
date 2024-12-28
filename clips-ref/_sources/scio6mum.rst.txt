@@ -1,0 +1,10 @@
+GET-SEQUENCE-OPERATOR-RECOGNITION
+=================================
+
+Returns the current value of the sequence operator recognition behavior.
+
+::
+
+   (getsequence-operator-recognition)
+
+`Go to start page <scio4c6w.htm>`__

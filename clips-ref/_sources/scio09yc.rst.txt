@@ -1,0 +1,10 @@
+STRING-TO-FIELD
+===============
+
+Parses a string and converts its contents to a primitive data type.
+
+::
+
+   (string-to-field  <string-or-symbol-expression>)
+
+`Go to start page <scio4c6w.htm>`__

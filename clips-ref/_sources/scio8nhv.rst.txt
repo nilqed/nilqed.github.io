@@ -1,0 +1,10 @@
+ABS
+===
+
+Returns the absolute value of its only argument.
+
+::
+
+   (abs <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

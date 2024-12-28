@@ -1,0 +1,10 @@
+INTEGER
+=======
+
+Converts its only argument to an integer.
+
+::
+
+   (integer <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

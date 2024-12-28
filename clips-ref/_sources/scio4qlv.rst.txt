@@ -1,0 +1,10 @@
+DESCRIBE-CLASS
+==============
+
+Provides a verbose description of a class.
+
+::
+
+   (describe-class <class-name>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,13 @@
+NEXT-METHODP
+============
+
+If called from a method for a generic function, the function
+next-methodp will return the symbol TRUE if there is another method
+shadowed by the current one. Otherwise, the function will return the
+symbol FALSE.
+
+::
+
+   (next-methodp)
+
+`Go to start page <scio4c6w.htm>`__

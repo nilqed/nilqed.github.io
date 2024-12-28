@@ -1,0 +1,11 @@
+TIMER
+=====
+
+Returns the number of seconds elapsed evaluating a series of
+expressions.
+
+::
+
+   (timer <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

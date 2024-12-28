@@ -1,0 +1,11 @@
+SORT
+====
+
+Allows a list of values to be sorted based on a user specified
+comparison function.
+
+::
+
+   (sort <comparison-function-name> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

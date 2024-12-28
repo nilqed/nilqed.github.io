@@ -1,0 +1,10 @@
+EXIT
+====
+
+Exits the XSI environment.
+
+::
+
+   (exit)
+
+`Go to start page <scio4c6w.htm>`__

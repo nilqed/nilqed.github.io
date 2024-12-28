@@ -1,0 +1,10 @@
+RESTORE-INSTANCES
+=================
+
+Loads instances from the specified file.
+
+::
+
+   (restore-instances <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

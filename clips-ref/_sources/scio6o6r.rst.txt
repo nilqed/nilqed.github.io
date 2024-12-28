@@ -1,0 +1,20 @@
+FACT COMMANDS
+=============
+
+The following commands display information about facts.
+
+`DEPENDENCIES <scio35pv.htm>`__
+
+`DEPENDENTS <scio3e5v.htm>`__
+
+`FACTS <scio2g37.htm>`__
+
+`GET-FACT-DUPLICATION <scio8x7y.htm>`__
+
+`LOAD-FACTS <scio1r3n.htm>`__
+
+`SAVE-FACTS <scio4cqb.htm>`__
+
+`SET-FACT-DUPLICATION <scio5lta.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

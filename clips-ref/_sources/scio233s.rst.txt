@@ -1,0 +1,10 @@
+FACT-INDEX
+==========
+
+Returns the fact index of a fact address.
+
+::
+
+   (fact-index <fact-address>)
+
+`Go to start page <scio4c6w.htm>`__

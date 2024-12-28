@@ -1,0 +1,10 @@
+MULTIFIELDP
+===========
+
+Returns TRUE for multifield values.
+
+::
+
+   (multifieldp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

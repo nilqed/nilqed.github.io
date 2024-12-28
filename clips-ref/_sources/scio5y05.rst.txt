@@ -1,0 +1,10 @@
+DEFTEMPLATE-MODULE
+==================
+
+Returns the module in which the specified deftemplate is defined.
+
+::
+
+   (deftemplate-module <deftemplate-name>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,14 @@
+INSTANCE PREDICATE FUNCTIONS
+============================
+
+The following predicate functions are used with instances.
+
+`INSTANCE-ADDRESSP <scio05rk.htm>`__
+
+`INSTANCE-EXISTP <scio9t2o.htm>`__
+
+`INSTANCE-NAMEP <scio5q5s.htm>`__
+
+`INSTANCEP <scio88fk.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

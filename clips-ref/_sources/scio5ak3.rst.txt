@@ -1,0 +1,10 @@
+CLASS
+=====
+
+Returns a symbol which is the name of the class of its argument.
+
+::
+
+   (class <object-expression>)
+
+`Go to start page <scio4c6w.htm>`__

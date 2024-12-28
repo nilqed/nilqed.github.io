@@ -1,0 +1,10 @@
+GET-STATIC-CONSTRAINT-CHECKING
+==============================
+
+Returns the current value of the static constraint checking behaviour.
+
+::
+
+   (get-static-constraint-checking)
+
+`Go to start page <scio4c6w.htm>`__

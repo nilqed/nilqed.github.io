@@ -1,0 +1,10 @@
+MEM-USED
+========
+
+Returns number of bytes of memory XSI is using.
+
+::
+
+   (mem-used)
+
+`Go to start page <scio4c6w.htm>`__

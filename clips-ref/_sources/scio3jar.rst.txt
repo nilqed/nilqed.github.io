@@ -1,0 +1,36 @@
+MULTIFIELD FUNCTIONS
+====================
+
+The following functions operate on multifield values.
+
+`CREATE$ <scio78bp.htm>`__
+
+`DELETE$ <scio67dx.htm>`__
+
+`DELETE-MEMBER$ <scio0z3m.htm>`__
+
+`EXPLODE$ <scio7jdx.htm>`__
+
+`FIRST$ <scio8pmc.htm>`__
+
+`IMPLODE$ <scio0wdh.htm>`__
+
+`INSERT$ <scio1y44.htm>`__
+
+`LENGTH$ <scio2l2q.htm>`__
+
+`MEMBER$ <scio7nw2.htm>`__
+
+`NTH$ <scio9tgo.htm>`__
+
+`REPLACE$ <scio9gkl.htm>`__
+
+`REPLACE-MEMBER$ <scio3qya.htm>`__
+
+`REST$ <scio9jxw.htm>`__
+
+`SUBSEQ$ <scio4xpt.htm>`__
+
+`SUBSETP <scio5y40.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

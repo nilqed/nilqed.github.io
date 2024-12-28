@@ -1,0 +1,11 @@
+BREAK
+=====
+
+Immediately terminates the currently iterating while loop, progn
+execution, or certain instance set query functions.
+
+::
+
+   (break)
+
+`Go to start page <scio4c6w.htm>`__

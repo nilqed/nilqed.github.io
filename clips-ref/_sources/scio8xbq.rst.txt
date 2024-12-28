@@ -1,0 +1,11 @@
+DIV
+===
+
+Returns the first argument divided by all subsequent arguments using
+integer division.
+
+::
+
+   (div <numeric-expression> <numeric-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

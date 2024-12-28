@@ -1,0 +1,10 @@
+PI
+==
+
+Returns the value of pi.
+
+::
+
+   (pi)
+
+`Go to start page <scio4c6w.htm>`__

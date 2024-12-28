@@ -1,0 +1,11 @@
+SET-CLASS-DEFAULTS-MODE
+=======================
+
+Sets the defaults mode used when classes are defined.
+
+::
+
+   (set-class-defaults-mode <mode>)
+   <mode> ::= convenience | conservation
+
+`Go to start page <scio4c6w.htm>`__

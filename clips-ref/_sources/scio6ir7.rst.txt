@@ -1,0 +1,13 @@
+INIT-SLOTS
+==========
+
+Implements the init message-handler attached to the class USER. This
+function should never be called directly unless an init message-handler
+is being defined such that the one attached to USER will never be
+called.
+
+::
+
+   (init-slots)
+
+`Go to start page <scio4c6w.htm>`__

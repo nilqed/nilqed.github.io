@@ -1,0 +1,10 @@
+SET-DYNAMIC-CONSTRAINT-CHECKING
+===============================
+
+Sets the dynamic constraint checking behaviour.
+
+::
+
+   (set-dynamic-constraint-checking <boolean-expression>)
+
+`Go to start page <scio4c6w.htm>`__

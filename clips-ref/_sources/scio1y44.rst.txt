@@ -1,0 +1,11 @@
+INSERT$
+=======
+
+Inserts one or more values in a multifield.
+
+::
+
+   (insert$ <multifield-expression> <integer-expression> 
+            <single-or-multifield-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

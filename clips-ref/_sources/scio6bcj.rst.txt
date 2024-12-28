@@ -1,0 +1,11 @@
+GET-FUNCTION -RESTRICTIONS
+==========================
+
+Returns the restriction string associated with a XSI or user defined
+function.
+
+::
+
+   (get-function-restrictions <function-name>)
+
+`Go to start page <scio4c6w.htm>`__

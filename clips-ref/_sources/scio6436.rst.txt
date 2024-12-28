@@ -1,0 +1,12 @@
+PROGN$
+======
+
+Performs a set of actions for each field of a multifield value.
+
+::
+
+   (progn$ <list-spec> <expression>*)
+   <list-spec> ::= <multifield-expression> |
+                   (<list-variable> <multifield-expression>)
+
+`Go to start page <scio4c6w.htm>`__

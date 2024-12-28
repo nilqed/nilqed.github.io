@@ -1,0 +1,12 @@
+DEFFUNCTION COMMANDS
+====================
+
+The following commands manipulate deffunctions.
+
+`LIST-DEFFUNCTIONS <scio4eer.htm>`__
+
+`PPDEFFUNCTION <scio15f2.htm>`__
+
+`UNDEFFUNCTION <scio6ege.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

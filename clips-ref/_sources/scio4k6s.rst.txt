@@ -1,0 +1,10 @@
+FORMAT
+======
+
+Sends formated output to the specified logical name.
+
+::
+
+   (format <logical-name> <string-expression> <expression>*)
+
+`Go to start page <scio4c6w.htm>`__

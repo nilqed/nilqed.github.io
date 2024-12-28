@@ -1,0 +1,10 @@
+HALT
+====
+
+Stops rule execution.
+
+::
+
+   (halt)
+
+`Go to start page <scio4c6w.htm>`__

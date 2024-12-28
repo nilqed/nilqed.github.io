@@ -1,0 +1,8 @@
+PRINTOUT
+========
+
+Sends unformated output to the specified logical name.
+
+(printout <logical-name> <expresion>\*)
+
+`Go to start page <scio4c6w.htm>`__

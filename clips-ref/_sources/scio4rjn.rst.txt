@@ -1,0 +1,28 @@
+AGENDA COMMANDS
+===============
+
+The following commands manipulate the agenda.
+
+`AGENDA <scio4sf5.htm>`__
+
+`CLEAR-FOCUS-STACK <scio68tn.htm>`__
+
+`FOCUS <scio13xv.htm>`__
+
+`GET-SALIENCE-EVALUATION <scio3uwe.htm>`__
+
+`GET-STRATEGY <scio99rt.htm>`__
+
+`HALT <scio308k.htm>`__
+
+`LIST-FOCUS-STACK <scio2fcb.htm>`__
+
+`REFRESH-AGENDA <scio91b5.htm>`__
+
+`RUN <scio065q.htm>`__
+
+`SET-SALIENCE-EVALUATION <scio5nhq.htm>`__
+
+`SET-STRATEGY <scio9np5.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

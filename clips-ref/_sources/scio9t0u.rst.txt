@@ -1,0 +1,31 @@
+DEFFUNCTION
+===========
+
+With the deffunction construct, new functions may be defined directly in
+
+XSI. Deffunctions are equivalent in use to other functions in XSI.
+
+The only differences between user-defined external functions and
+
+deffunctions are that deffunctions are written in XSI and executed
+
+by XSI interpretively and user-defined external functions are written
+
+in an external language, such as C, and executed by XSI directly.
+
+Also, deffunctions allow the addition of new functions without having to
+
+recompile and relink XSI.
+
+The syntax of the deffunction construct is:
+
+::
+
+   (deffunction <name> [<comment>]
+       (<regular-parameter>* [<wildcard-parameter>])
+       <action>*)
+
+   <regular-parameter>  ::= <single-field-variable>
+   <wildcard-parameter> ::= <multifield-variable>
+
+`Go to start page <scio4c6w.htm>`__

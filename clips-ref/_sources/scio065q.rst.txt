@@ -1,0 +1,12 @@
+RUN
+===
+
+Starts execution of rules. Rules fire until agenda is empty or the
+number of rule firings limit specified by the first argument is reached
+(infinity if unspecified).
+
+::
+
+   (run [<integer-expression>])
+
+`Go to start page <scio4c6w.htm>`__

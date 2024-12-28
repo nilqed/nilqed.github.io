@@ -1,0 +1,10 @@
+CLASS-REACTIVEP
+===============
+
+Returns TRUE if the specified class is reactive, FALSE otherwise.
+
+::
+
+   (class-reactivep <class-name>)
+
+`Go to start page <scio4c6w.htm>`__

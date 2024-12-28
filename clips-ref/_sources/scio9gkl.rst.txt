@@ -1,0 +1,12 @@
+REPLACE$
+========
+
+Replaces the specified range of a multifield value with a set of values.
+
+::
+
+   (replace$ <multifield-expression>
+             <begin-integer-expression> <end-integer-expression> 
+             <single-or-multifield-expression>+)
+
+`Go to start page <scio4c6w.htm>`__

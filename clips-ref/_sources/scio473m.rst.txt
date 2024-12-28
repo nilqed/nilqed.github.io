@@ -1,0 +1,11 @@
+SLOT-REPLACE$
+=============
+
+Allows the replacement of a range of fields in a multifield slot value.
+
+::
+
+   (slot-replaceR <instance-expression> <mv-slot-name>
+       <range-begin> <range-end> <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

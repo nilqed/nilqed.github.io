@@ -1,0 +1,15 @@
+SEQUENCE EXPANSION FUNCTIONS
+============================
+
+The following functions provide ancillary capabilities for the sequence
+expansion operator.
+
+::
+
+`EXPAND$ <scio5n76.htm>`__
+
+`GET-SEQUENCE-OPERATOR-RECOGNITION <scio6mum.htm>`__
+
+`SET-SEQUENCE-OPERATOR-RECOGNITION <scio8sry.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

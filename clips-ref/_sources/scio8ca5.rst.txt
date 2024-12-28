@@ -1,0 +1,12 @@
+CONSERVE-MEM
+============
+
+Turns on or off the storage of information used for the save and
+pretty-print commands.
+
+::
+
+   (conserve-mem <status>)
+   <status> ::= on | off
+
+`Go to start page <scio4c6w.htm>`__

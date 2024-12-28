@@ -1,0 +1,10 @@
+POINTERP
+========
+
+Returns TRUE for external addresses.
+
+::
+
+   (pointerp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

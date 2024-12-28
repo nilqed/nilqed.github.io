@@ -1,0 +1,11 @@
+PPINSTANCE
+==========
+
+Prints the slots of the active instance when called from within the body
+of a message-handler.
+
+::
+
+   (ppinstance)
+
+`Go to start page <scio4c6w.htm>`__

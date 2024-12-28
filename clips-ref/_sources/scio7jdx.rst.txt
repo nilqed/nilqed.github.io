@@ -1,0 +1,10 @@
+EXPLODE$
+========
+
+Creates a multifield value from a string.
+
+::
+
+   (explode$ <string-expression>)
+
+`Go to start page <scio4c6w.htm>`__

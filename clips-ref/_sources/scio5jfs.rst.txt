@@ -1,0 +1,10 @@
+BATCH
+=====
+
+Executes commands from a file.
+
+::
+
+   (batch <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

@@ -1,0 +1,10 @@
+AND
+===
+
+Returns TRUE if all arguments evaluate to a non-FALSE value.
+
+::
+
+   (and <expression>+)
+
+`Go to start page <scio4c6w.htm>`__

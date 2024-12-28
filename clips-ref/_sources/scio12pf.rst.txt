@@ -1,0 +1,30 @@
+STRING FUNCTIONS
+================
+
+The following functions perform operations that are related to strings.
+
+`BUILD <scio6yjo.htm>`__
+
+`CHECK-SYNTAX <scio1s8o.htm>`__
+
+`EVAL <scio7z8s.htm>`__
+
+`LOWCASE <scio4xwl.htm>`__
+
+`STRING-TO-FIELD <scio09yc.htm>`__
+
+`STR-CAT <scio2v1w.htm>`__
+
+`STR-COMPARE <scio8hyd.htm>`__
+
+`STR-INDEX <scio4f94.htm>`__
+
+`STR-LENGTH <scio565k.htm>`__
+
+`SUB-STRING <scio8rtz.htm>`__
+
+`SYM-CAT <scio4ylw.htm>`__
+
+`UPCASE <scio91ut.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

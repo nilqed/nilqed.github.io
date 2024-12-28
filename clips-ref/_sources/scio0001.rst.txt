@@ -1,0 +1,10 @@
+LOAD\*
+======
+
+Loads constructs from a file without displaying messages.
+
+::
+
+   (load* <file-name>)
+
+`Go to start page <scio4c6w.htm>`__

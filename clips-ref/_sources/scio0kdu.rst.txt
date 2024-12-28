@@ -1,0 +1,10 @@
+UNDEFMESSAGE-HANDLER
+====================
+
+Deletes a defmessage-handler.
+
+::
+
+   (undefmessage-handler <class-name> <handler-name> [<handler-type>])
+
+`Go to start page <scio4c6w.htm>`__

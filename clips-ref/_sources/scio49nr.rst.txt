@@ -1,0 +1,10 @@
+GET-DYNAMIC-CONSTRAINT-CHECKING
+===============================
+
+Returns the current value of the dynamic constraint checking behaviour.
+
+::
+
+   (get-dynamic-constraint-checking)
+
+`Go to start page <scio4c6w.htm>`__

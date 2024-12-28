@@ -1,0 +1,10 @@
+LOG10
+=====
+
+Returns the logarithm base 10 of its only argument.
+
+::
+
+   (log10 <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

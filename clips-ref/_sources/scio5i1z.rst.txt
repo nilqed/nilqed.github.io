@@ -1,0 +1,10 @@
+RAD-DEG
+=======
+
+Converts its only argument from radians to degrees.
+
+::
+
+   (rad-deg <numeric-expression>)
+
+`Go to start page <scio4c6w.htm>`__

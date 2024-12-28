@@ -1,0 +1,10 @@
+SUB-STRING
+==========
+
+Retrieves a subportion from a string.
+
+::
+
+   (sub-string <integer-expression> <integer-expression> <string-expression>)
+
+`Go to start page <scio4c6w.htm>`__

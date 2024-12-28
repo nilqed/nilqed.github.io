@@ -1,0 +1,11 @@
+SAVE-FACTS
+==========
+
+Saves facts to a file.
+
+::
+
+   (save-facts <file-name> [<save-scope> <deftemplate-names>*])
+   <save-scope> ::= visible | local
+
+`Go to start page <scio4c6w.htm>`__

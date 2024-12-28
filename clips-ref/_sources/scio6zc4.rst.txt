@@ -1,0 +1,11 @@
+PREVIEW-SEND
+============
+
+Displays a list of all the applicable message-handlers for a message
+sent to an instance of a particular class.
+
+::
+
+   (preview-send <class-name> <message-name>)
+
+`Go to start page <scio4c6w.htm>`__

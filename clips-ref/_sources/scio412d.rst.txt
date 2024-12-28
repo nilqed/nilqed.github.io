@@ -1,0 +1,10 @@
+UNDEFTEMPLATE
+=============
+
+Deletes a deftemplate.
+
+::
+
+   (undeftemplate <deftemplate-name>)
+
+`Go to start page <scio4c6w.htm>`__

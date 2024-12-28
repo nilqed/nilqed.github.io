@@ -1,0 +1,8 @@
+FLOATP
+======
+
+Returns TRUE for floats.
+
+(floatp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

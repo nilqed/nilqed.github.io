@@ -1,0 +1,14 @@
+LOOP-FOR-COUNT
+==============
+
+Allows simple iterative looping.
+
+::
+
+   (loop-for-count <range-spec> [do] <action>*)
+   <range-spec>  ::= <end-index> |
+                     (<loop-variable> [<start-index> <end-index>])
+   <start-index> ::= <integer-expression>
+   <end-index>   ::= <integer-expression>
+
+`Go to start page <scio4c6w.htm>`__

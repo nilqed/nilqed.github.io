@@ -1,0 +1,10 @@
+LEXEMEP
+=======
+
+Returns TRUE for symbols and strings.
+
+::
+
+   (numberp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

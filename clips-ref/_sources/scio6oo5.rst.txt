@@ -1,0 +1,10 @@
+DEFINSTANCES-MODULE
+===================
+
+Returns the module in which the specified definstance is defined.
+
+::
+
+   (definstances-module <definstances-name>)
+
+`Go to start page <scio4c6w.htm>`__

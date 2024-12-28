@@ -1,0 +1,10 @@
+ASSERT-STRING
+=============
+
+Converts a string into a fact and asserts it.
+
+::
+
+   (assert-string <string-expression>)
+
+`Go to start page <scio4c6w.htm>`__

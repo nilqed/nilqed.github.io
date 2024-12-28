@@ -1,0 +1,10 @@
+PPDEFMETHOD
+===========
+
+Displays the text of a given method.
+
+::
+
+   (ppdefmethod <generic-function-name> <index>)
+
+`Go to start page <scio4c6w.htm>`__

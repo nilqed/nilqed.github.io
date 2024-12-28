@@ -1,0 +1,10 @@
+INSTANCE-ADDRESSP
+=================
+
+Returns TRUE if its argument is an instance address, FALSE otherwise.
+
+::
+
+   (instance-addressp <expression>)
+
+`Go to start page <scio4c6w.htm>`__

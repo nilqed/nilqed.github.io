@@ -1,0 +1,11 @@
+DEFFUNCTION FUNCTIONS
+=====================
+
+The following functions provide ancillary capabilities for the
+deffunction construct.
+
+`GET-DEFFUNCTION-LIST <scio06yc.htm>`__
+
+`DEFFUNCTION-MODULE <scio19lx.htm>`__
+
+`Go to start page <scio4c6w.htm>`__

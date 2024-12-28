@@ -1,0 +1,12 @@
+SET-PROFILE-PERCENT-THRESHOLD
+=============================
+
+Sets the minimum percentage of time that must be spent executing a
+construct or user function for it to be displayed by the profile-info
+command.
+
+::
+
+   (set-profile-percent-threshold <number in the range 0 to 100>)
+
+`Go to start page <scio4c6w.htm>`__
