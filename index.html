@@ -31,8 +31,8 @@
 <time datetime="2025-01-04T13:18:00+01:00">Sat 04 January 2025</time>            </header>
 
             <article>
-                <p>The new script <cite>frias2sixel</cite> should be posix compliant now
-(see <a class="reference external" href="https://github.com/nilqed/sixelSPAD">https://github.com/nilqed/sixelSPAD</a>)</p>
+                <p>This new script <cite>fricas2sixel</cite> should be posix compliant now
+(see the PR on  <a class="reference external" href="https://github.com/nilqed/sixelSPAD">https://github.com/nilqed/sixelSPAD</a>)</p>
 <div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
 
 usage<span class="o">()</span>
@@ -146,6 +146,11 @@ FriCAS session (e.g. including in <cite>.fricas.input</cite>):</p>
 <p>Note that one has to use <cite>)frame next</cite> when in x-mode and the function
 is included in  <cite>.fricas.input</cite>.  (not necessary with <cite>-nosman</cite>).</p>
 <img alt="" src="content/fricas2sixel0.png" />
+<p>It also works in <cite>domterm</cite> for example, however, one should adjust the
+parameters like size and color for nicer output:</p>
+<img alt="" src="content/domterm_sixel.png" />
+<p>How this can accomplished is described at
+<a class="reference external" href="https://github.com/nilqed/latex2sixel">https://github.com/nilqed/latex2sixel</a>.</p>
             </article>
                 <section id="article-list">
                     <h2>all posts</h2>
