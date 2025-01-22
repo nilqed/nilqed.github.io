@@ -9,7 +9,7 @@ FriCAS TMUX
 :summary: FriCAS TMUX (script)
 
 This little script `fricas.tmux.sh` starts a tmux session with 
-__FriCAS__, __Gnuplot__, __Emacs__ and __Lynx__.
+**FriCAS**, **Gnuplot**, **Emacs** and **Lynx**.
 
 .. code-block:: shell
 
@@ -48,7 +48,7 @@ __FriCAS__, __Gnuplot__, __Emacs__ and __Lynx__.
         # )system tmux kill-server ---> ok        
 
   
-One may send commands by using the system command:     
+One may send commands by using the `)system` command:     
         
 .. image:: content/fricas-tmux-1.jpg
 
