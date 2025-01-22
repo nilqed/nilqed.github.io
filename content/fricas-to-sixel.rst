@@ -8,7 +8,7 @@ FriCAS SIXEL OUTPUT
 :author: kfp
 :summary: FriCAS to SIXEL (posix).
 
-This new script `fricas2sixel` should be posix compliant now
+This new script `fricas2sixel` should now be posix compliant
 (see the PR on  https://github.com/nilqed/sixelSPAD)
 
 .. code-block:: shell
@@ -138,7 +138,7 @@ parameters like size and color for nicer output:
 
 .. image:: content/domterm_sixel.png
 
-How this can accomplished is described at
+How this can be accomplished is described at
 https://github.com/nilqed/latex2sixel.
 
 

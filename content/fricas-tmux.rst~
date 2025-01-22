@@ -1,0 +1,17 @@
+FriCAS TMUX
+###########
+
+:date: 2025-01-22 17:16
+:tags: fricas, tmux
+:category: FRICAS
+:slug: FriCAS TMUX
+:author: kfp
+:summary: FriCAS TMUX (script)
+
+This new script `fricas2sixel` should now be posix compliant
+(see the PR on  https://github.com/nilqed/sixelSPAD)
+
+.. code-block:: shell
+
+
+        
