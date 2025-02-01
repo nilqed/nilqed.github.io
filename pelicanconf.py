@@ -1,7 +1,7 @@
 AUTHOR = 'kfp'
 SITENAME = 'nilqed.github.io'
 #SITESUBTITLE = 'Personal RAM (outsourced)'
-SITEURL = ''
+SITEURL = 'https://nilqed.github.io'
 
 PATH = "content"
 
@@ -45,7 +45,7 @@ DISPLAY_CATEGORIES_ON_MENU = True
 # RELATIVE_URLS = True
 
 #THEME = "/home/kfp/pelican-themes/mnmlist"       ###
-THEME = "/home/kfp/pelican-themes/nmnlist"       #####
+THEME = "./nmnlist"       #####
 #THEME = "/home/kfp/pelican-themes/elegant"       ## 
 #THEME = "/home/kfp/pelican-themes/dev-random"
 #THEME = "/home/kfp/pelican-themes/notebook"      ##

@@ -3,18 +3,18 @@
 <head>
         <title>nilqed.github.io - kfp</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
-        <link href="/" type="application/atom+xml" rel="alternate" title="nilqed.github.io ATOM Feed" />
+        <link rel="stylesheet" href="https://nilqed.github.io/theme/css/main.css" type="text/css" />
+        <link href="https://nilqed.github.io/" type="application/atom+xml" rel="alternate" title="nilqed.github.io ATOM Feed" />
 
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie.css"/>
-                <script src="/js/IE8.js" type="text/javascript"></script><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href="https://nilqed.github.io/css/ie.css"/>
+                <script src="https://nilqed.github.io/js/IE8.js" type="text/javascript"></script><![endif]-->
 
         <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie6.css"/><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href="https://nilqed.github.io/css/ie6.css"/><![endif]-->
 
 </head>
 
@@ -26,51 +26,75 @@
         
 
             <header>
-                <h1><a href="/FriCAS TMUX.html" id="page-title">FriCAS TMUX</a></h1>
-                <span id="sitename"><a href="" id="site-title">nilqed.github.io </a> &sdot;</span>
-<time datetime="2025-01-22T17:16:00+01:00">Wed 22 January 2025</time>            </header>
+                <h1><a href="https://nilqed.github.io/FriCAS-CL.html" id="page-title">FriCAS+LISP</a></h1>
+                <span id="sitename"><a href="https://nilqed.github.io" id="site-title">nilqed.github.io </a> &sdot;</span>
+<time datetime="2025-02-01T10:50:00+01:00">Sat 01 February 2025</time>            </header>
 
             <article>
-                <p>This little script <cite>fricas.tmux.sh</cite> starts a tmux session with
-<strong>FriCAS</strong>, <strong>Gnuplot</strong>, <strong>Emacs</strong> and <strong>Lynx</strong>.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+                <p>FriCAS CL interaction examples (*.input):</p>
+<div class="highlight"><pre><span></span>lisp<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>EVAL<span class="o">(</span>READ_-FROM_-STRING<span class="o">(</span>s<span class="o">)</span><span class="nv">$Lisp</span><span class="o">)</span><span class="nv">$Lisp</span>
 
-<span class="nv">WORKDIR</span><span class="o">=</span>/tmp
-<span class="nv">FRICAS_CMD</span><span class="o">=</span><span class="s2">&quot;rlwrap fricas -nosman&quot;</span>
-<span class="nv">EDITOR_CMD</span><span class="o">=</span><span class="s2">&quot;emacs -nw&quot;</span>
-<span class="nv">GRAPHICS_CMD</span><span class="o">=</span><span class="s2">&quot;gnuplot&quot;</span>
-<span class="nv">PAGER_CMD</span><span class="o">=</span><span class="s2">&quot;lynx&quot;</span>
+r:<span class="o">=</span>lisp<span class="w"> </span><span class="s2">&quot;(list 1 2 3 &#39;a)&quot;</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>A<span class="o">)</span>,<span class="w"> </span>Type:<span class="w"> </span>SExpression
+car<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w"> </span><span class="m">1</span>
+cdr<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>A<span class="o">)</span>
+<span class="c1">#r --&gt; 4</span>
 
-tmux<span class="w"> </span><span class="k">select</span>-layout<span class="w"> </span>even-vertical
-tmux<span class="w"> </span><span class="k">select</span>-layout<span class="w"> </span>even-horizontal
+destruct<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w">  </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span>A<span class="o">]</span>
+list?<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w"> </span><span class="nb">true</span>
 
-tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>FriCAS<span class="w"> </span>-n<span class="w"> </span>Main
-tmux<span class="w"> </span>send<span class="w"> </span>-t<span class="w"> </span>FriCAS:Main<span class="w"> </span><span class="s2">&quot;cd </span><span class="nv">$WORKDIR</span><span class="s2">&quot;</span><span class="w"> </span>Enter
-tmux<span class="w"> </span>send<span class="w"> </span>-t<span class="w"> </span>FriCAS:Main<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FRICAS_CMD</span><span class="s2">&quot;</span><span class="w"> </span>Enter
+map<span class="o">(</span>integer?<span class="nv">$SEX</span>,destruct<span class="w"> </span>r<span class="o">)</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">[</span>true,<span class="w"> </span>true,<span class="w"> </span>true,<span class="w"> </span>false<span class="o">]</span>
 
+map<span class="o">(</span>integer,<span class="w"> </span>destruct<span class="w"> </span>r<span class="o">)</span>
 
-tmux<span class="w"> </span>split-window<span class="w"> </span>-h
-tmux<span class="w"> </span>send<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$GRAPHICS_CMD</span><span class="s2">&quot;</span><span class="w"> </span>Enter
+map<span class="o">(</span>integer,<span class="w"> </span><span class="o">[</span>i<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>destruct<span class="w"> </span>r<span class="w"> </span><span class="p">|</span><span class="w"> </span>integer?<span class="w"> </span>i<span class="o">])</span><span class="w"> </span>--&gt;<span class="w">  </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span><span class="o">]</span>
+--&gt;<span class="w">  </span>conversion<span class="w"> </span>to<span class="w"> </span>Type:<span class="w"> </span>List<span class="o">(</span>Integer<span class="o">)</span><span class="w"> </span>!!
 
+f:<span class="o">=</span>lisp<span class="w"> </span><span class="s2">&quot;(defun f(x y) (- (+ (* x x) (* y y)) (* x y)))&quot;</span><span class="w"> </span>--&gt;<span class="w"> </span>F
+symbol?<span class="w"> </span>f<span class="w"> </span>--&gt;<span class="w"> </span><span class="nb">true</span>
 
-tmux<span class="w"> </span>split-window<span class="w">  </span>-v<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>
-tmux<span class="w"> </span>send<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$EDITOR_CMD</span><span class="s2">&quot;</span><span class="w"> </span>Enter
+F<span class="o">(</span><span class="m">1</span>,2<span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="m">3</span>
+F<span class="o">(</span><span class="m">10</span>,20<span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="m">300</span>
 
+--<span class="w"> </span>notice<span class="w"> </span>the<span class="w"> </span>difference<span class="w"> </span>f<span class="w"> </span>vs.<span class="w"> </span><span class="p">|</span>f<span class="p">|</span>
+ff:<span class="o">=</span>lisp<span class="w"> </span><span class="s2">&quot;(defun |f|(x y) (- (+ (* x x) (* y y)) (* x y)))&quot;</span><span class="w"> </span>--&gt;<span class="w"> </span>f
+f<span class="o">(</span><span class="m">20</span>,30<span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="m">700</span>
 
-tmux<span class="w"> </span>split-window<span class="w">  </span>-v<span class="w"> </span>-t<span class="w"> </span><span class="m">3</span>
-tmux<span class="w"> </span>send<span class="w">  </span><span class="s2">&quot;</span><span class="nv">$PAGER_CMD</span><span class="s2">&quot;</span><span class="w"> </span>Enter
+FORMAT<span class="o">(</span><span class="s1">&#39;NIL,&quot;Hello&quot;)$Lisp --&gt; &quot;Hello&quot;, Type: SExpression</span>
+<span class="s1">FORMAT(&#39;</span>T,<span class="s2">&quot;Hello&quot;</span><span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">()</span>,<span class="w"> </span>but<span class="w"> </span>prints<span class="w"> </span>--<span class="w">  </span>Hello<span class="w"> </span>--<span class="w"> </span>to<span class="w"> </span>stdout
+FORMAT<span class="o">(</span><span class="s1">&#39;NIL,&quot;Hello ~A&quot;,123)$Lisp --&gt; &quot;Hello 123&quot;</span>
+<span class="s1">(FORMAT$Lisp) (&#39;</span>NIL,<span class="s2">&quot;Hello&quot;</span><span class="o">)</span><span class="w"> </span>--&gt;<span class="w"> </span>works<span class="w"> </span>as<span class="w"> </span>well
 
-
-tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>FriCAS:Main
-
-<span class="c1"># show pane numbers: C-a q</span>
-<span class="c1"># FRICAS: )system tmux lsp , send -t 1 ...</span>
-<span class="c1"># )system tmux kill-server ---&gt; ok</span>
+lisp<span class="w"> </span><span class="s2">&quot;*package*&quot;</span><span class="w"> </span>--&gt;<span class="w">  </span><span class="c1">#&lt;PACKAGE &quot;BOOT&quot;&gt;</span>
+lisp<span class="w"> </span><span class="s2">&quot;(get-universal-time)&quot;</span><span class="w"> </span>--&gt;<span class="w">  </span><span class="m">3947354723</span>
 </pre></div>
-<p>One may send commands by using the <cite>)system</cite> command:</p>
-<img alt="" src="content/fricas-tmux-1.jpg" />
-<img alt="" src="content/fricas-tmux-2.jpg" />
-<img alt="" src="content/fricas-tmux-3.jpg" />
+<div class="section" id="sexpression">
+<h2>SExpression</h2>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">)</span><span class="n">sh</span> <span class="n">SEX</span>
+<span class="n">SExpression</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">domain</span> <span class="n">constructor</span><span class="o">.</span>
+<span class="n">Abbreviation</span> <span class="k">for</span> <span class="n">SExpression</span> <span class="ow">is</span> <span class="n">SEX</span>
+<span class="n">This</span> <span class="n">constructor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">exposed</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">frame</span><span class="o">.</span>
+<span class="mi">25</span> <span class="n">Names</span> <span class="k">for</span> <span class="mi">30</span> <span class="n">Operations</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">Domain</span><span class="o">.</span>
+<span class="o">-------------------------------</span> <span class="n">Operations</span> <span class="o">--------------------------------</span>
+
+<span class="c1">#? : % -&gt; Integer                     ?=? : (%, %) -&gt; Boolean</span>
+<span class="n">atom</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                  <span class="n">car</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="o">%</span>
+<span class="n">cdr</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="o">%</span>                          <span class="n">coerce</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">OutputForm</span>
+<span class="n">convert</span> <span class="p">:</span> <span class="n">DoubleFloat</span> <span class="o">-&gt;</span> <span class="o">%</span>            <span class="n">convert</span> <span class="p">:</span> <span class="n">Integer</span> <span class="o">-&gt;</span> <span class="o">%</span>
+<span class="n">convert</span> <span class="p">:</span> <span class="n">List</span><span class="p">(</span><span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">%</span>                <span class="n">convert</span> <span class="p">:</span> <span class="n">String</span> <span class="o">-&gt;</span> <span class="o">%</span>
+<span class="n">convert</span> <span class="p">:</span> <span class="n">Symbol</span> <span class="o">-&gt;</span> <span class="o">%</span>                 <span class="n">destruct</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+<span class="n">elt</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">%</span>               <span class="n">elt</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="n">List</span><span class="p">(</span><span class="n">Integer</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="o">%</span>
+<span class="n">eq</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                <span class="nb">float</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">DoubleFloat</span>
+<span class="nb">float</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                 <span class="nb">hash</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">SingleInteger</span>
+<span class="n">integer</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Integer</span>                <span class="n">integer</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
+<span class="n">latex</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">String</span>                   <span class="nb">list</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
+<span class="n">null</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                  <span class="n">pair</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
+<span class="n">string</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">String</span>                  <span class="n">string</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
+<span class="n">symbol</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Symbol</span>                  <span class="n">symbol</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
+<span class="err">?</span><span class="o">~=</span><span class="err">?</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
+<span class="n">hashUpdate</span><span class="err">!</span> <span class="p">:</span> <span class="p">(</span><span class="n">HashState</span><span class="p">,</span> <span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HashState</span>
+</pre></div>
+<img alt="" src="content/fricas-lisp-scite.jpg" />
+</div>
             </article>
                 <section id="article-list">
                     <h2>all posts</h2>
@@ -80,21 +104,27 @@ tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </s
         
 
  
-            <li><a href="/FriCAS SIXEL.html" rel="bookmark" title="Permalink to FriCAS SIXEL OUTPUT">FriCAS SIXEL OUTPUT</a></li>
+            <li><a href="https://nilqed.github.io/FriCAS TMUX.html" rel="bookmark" title="Permalink to FriCAS TMUX">FriCAS TMUX</a></li>
             </ol>
             </section><!-- #article-list -->
         
 
  
-            <li><a href="/CLIPS scripting.html" rel="bookmark" title="Permalink to CLIPS scripting">CLIPS scripting</a></li>
+            <li><a href="https://nilqed.github.io/FriCAS SIXEL.html" rel="bookmark" title="Permalink to FriCAS SIXEL OUTPUT">FriCAS SIXEL OUTPUT</a></li>
+            </ol>
+            </section><!-- #article-list -->
+        
+
+ 
+            <li><a href="https://nilqed.github.io/CLIPS scripting.html" rel="bookmark" title="Permalink to CLIPS scripting">CLIPS scripting</a></li>
             </ol>
             </section><!-- #article-list -->
 
         <footer>
             <nav>
                 <ul>
-                    <li>:: <a href="/categories.html">Categories</a></li>
-                    <li>:: <a href="/tags.html">Tags</a></li>
+                    <li>:: <a href="https://nilqed.github.io/categories.html">Categories</a></li>
+                    <li>:: <a href="https://nilqed.github.io/tags.html">Tags</a></li>
                 </ul>
             </nav>
                 <p id="theme-credit">powered by <a href="https://docs.getpelican.com/en/latest/index.html">pelican</a></p>
