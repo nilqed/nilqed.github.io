@@ -1,7 +1,7 @@
 SBCL PIPES
 ##########
 
-:date: 2025-02-02 15:21
+:date: 2025-02-02 15:52
 :tags: common-lisp, sbcl, pipes
 :category: COMMON-LISP
 :slug: SBCL-PIPES
