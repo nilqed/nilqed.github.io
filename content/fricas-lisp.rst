@@ -10,7 +10,7 @@ FriCAS+LISP
 
 FriCAS CL interaction examples (\*.input):
 
-.. code-block:: shell
+.. code-block:: lisp
 
 	lisp s == EVAL(READ_-FROM_-STRING(s)$Lisp)$Lisp
 

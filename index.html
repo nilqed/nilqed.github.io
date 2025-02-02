@@ -26,79 +26,196 @@
         
 
             <header>
-                <h1><a href="https://nilqed.github.io/FriCAS-CL.html" id="page-title">FriCAS+LISP</a></h1>
+                <h1><a href="https://nilqed.github.io/SBCL-PIPES.html" id="page-title">SBCL PIPES</a></h1>
                 <span id="sitename"><a href="https://nilqed.github.io" id="site-title">nilqed.github.io </a> &sdot;</span>
-<time datetime="2025-02-01T10:50:00+01:00">Sat 01 February 2025</time>            </header>
+<time datetime="2025-02-02T15:21:00+01:00">Sun 02 February 2025</time>            </header>
 
             <article>
-                <p>FriCAS CL interaction examples (*.input):</p>
-<div class="highlight"><pre><span></span>lisp<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>EVAL<span class="o">(</span>READ_-FROM_-STRING<span class="o">(</span>s<span class="o">)</span><span class="nv">$Lisp</span><span class="o">)</span><span class="nv">$Lisp</span>
+                <p>This is an example REDUCE web server using <cite>Hunchentoot</cite> and <cite>SBCL</cite>'s
+<cite>sb-ext:run-program</cite> :</p>
+<div class="highlight"><pre><span></span><span class="o">#+</span><span class="nv">SBCL</span>
+<span class="p">(</span><span class="nb">load</span><span class="w"> </span><span class="s">&quot;~/quicklisp/setup&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">ql:quickload</span><span class="w"> </span><span class="ss">:hunchentoot</span><span class="p">)</span>
 
-r:<span class="o">=</span>lisp<span class="w"> </span><span class="s2">&quot;(list 1 2 3 &#39;a)&quot;</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>A<span class="o">)</span>,<span class="w"> </span>Type:<span class="w"> </span>SExpression
-car<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w"> </span><span class="m">1</span>
-cdr<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>A<span class="o">)</span>
-<span class="c1">#r --&gt; 4</span>
+<span class="p">(</span><span class="nb">defpackage</span><span class="w"> </span><span class="nv">redsrv</span>
+<span class="w">    </span><span class="p">(</span><span class="ss">:use</span><span class="w"> </span><span class="nv">common-lisp</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="ss">:documentation</span><span class="w"> </span><span class="s">&quot;see docs&quot;</span><span class="p">))</span>
 
-destruct<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w">  </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span>A<span class="o">]</span>
-list?<span class="w"> </span>r<span class="w"> </span>--&gt;<span class="w"> </span><span class="nb">true</span>
+<span class="p">(</span><span class="nb">in-package</span><span class="w"> </span><span class="ss">:redsrv</span><span class="p">)</span>
 
-map<span class="o">(</span>integer?<span class="nv">$SEX</span>,destruct<span class="w"> </span>r<span class="o">)</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">[</span>true,<span class="w"> </span>true,<span class="w"> </span>true,<span class="w"> </span>false<span class="o">]</span>
+<span class="p">(</span><span class="nb">defparameter</span><span class="w"> </span><span class="nv">itups</span><span class="w"> </span><span class="nv">internal-time-units-per-second</span><span class="p">)</span>
 
-map<span class="o">(</span>integer,<span class="w"> </span>destruct<span class="w"> </span>r<span class="o">)</span>
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">delta-time</span><span class="w"> </span><span class="p">(</span><span class="nv">timestamp</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Delta time &lt;== internal-real-time - timestamp in seconds&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">/</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="p">(</span><span class="nb">get-internal-real-time</span><span class="p">)</span><span class="w"> </span><span class="nv">timestamp</span><span class="p">)</span><span class="w"> </span><span class="nv">itups</span><span class="p">))</span>
 
-map<span class="o">(</span>integer,<span class="w"> </span><span class="o">[</span>i<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>destruct<span class="w"> </span>r<span class="w"> </span><span class="p">|</span><span class="w"> </span>integer?<span class="w"> </span>i<span class="o">])</span><span class="w"> </span>--&gt;<span class="w">  </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span><span class="o">]</span>
---&gt;<span class="w">  </span>conversion<span class="w"> </span>to<span class="w"> </span>Type:<span class="w"> </span>List<span class="o">(</span>Integer<span class="o">)</span><span class="w"> </span>!!
 
-f:<span class="o">=</span>lisp<span class="w"> </span><span class="s2">&quot;(defun f(x y) (- (+ (* x x) (* y y)) (* x y)))&quot;</span><span class="w"> </span>--&gt;<span class="w"> </span>F
-symbol?<span class="w"> </span>f<span class="w"> </span>--&gt;<span class="w"> </span><span class="nb">true</span>
 
-F<span class="o">(</span><span class="m">1</span>,2<span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="m">3</span>
-F<span class="o">(</span><span class="m">10</span>,20<span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="m">300</span>
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">makepipe</span><span class="w"> </span><span class="p">(</span><span class="nv">app</span><span class="w"> </span><span class="k">&amp;optional</span><span class="w"> </span><span class="nv">args</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">proc</span><span class="w"> </span><span class="p">(</span><span class="nv">sb-ext:run-program</span><span class="w"> </span><span class="nv">app</span><span class="w"> </span><span class="nv">args</span>
+<span class="w">                     </span><span class="ss">:input</span><span class="w"> </span><span class="ss">:stream</span>
+<span class="w">                     </span><span class="ss">:output</span><span class="w"> </span><span class="ss">:stream</span>
+<span class="w">                     </span><span class="ss">:wait</span><span class="w"> </span><span class="no">nil</span>
+<span class="w">                     </span><span class="ss">:search</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="nv">proc</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">make-two-way-stream</span><span class="w"> </span><span class="p">(</span><span class="nv">sb-ext:process-output</span><span class="w"> </span><span class="nv">proc</span><span class="p">)</span>
+<span class="w">                         </span><span class="p">(</span><span class="nv">sb-ext:process-input</span><span class="w"> </span><span class="nv">proc</span><span class="p">)))))</span>
 
---<span class="w"> </span>notice<span class="w"> </span>the<span class="w"> </span>difference<span class="w"> </span>f<span class="w"> </span>vs.<span class="w"> </span><span class="p">|</span>f<span class="p">|</span>
-ff:<span class="o">=</span>lisp<span class="w"> </span><span class="s2">&quot;(defun |f|(x y) (- (+ (* x x) (* y y)) (* x y)))&quot;</span><span class="w"> </span>--&gt;<span class="w"> </span>f
-f<span class="o">(</span><span class="m">20</span>,30<span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="m">700</span>
 
-FORMAT<span class="o">(</span><span class="s1">&#39;NIL,&quot;Hello&quot;)$Lisp --&gt; &quot;Hello&quot;, Type: SExpression</span>
-<span class="s1">FORMAT(&#39;</span>T,<span class="s2">&quot;Hello&quot;</span><span class="o">)</span><span class="nv">$Lisp</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">()</span>,<span class="w"> </span>but<span class="w"> </span>prints<span class="w"> </span>--<span class="w">  </span>Hello<span class="w"> </span>--<span class="w"> </span>to<span class="w"> </span>stdout
-FORMAT<span class="o">(</span><span class="s1">&#39;NIL,&quot;Hello ~A&quot;,123)$Lisp --&gt; &quot;Hello 123&quot;</span>
-<span class="s1">(FORMAT$Lisp) (&#39;</span>NIL,<span class="s2">&quot;Hello&quot;</span><span class="o">)</span><span class="w"> </span>--&gt;<span class="w"> </span>works<span class="w"> </span>as<span class="w"> </span>well
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">readpipe</span><span class="w"> </span><span class="p">(</span><span class="nc">stream</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">force-output</span><span class="w"> </span><span class="nc">stream</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">with-output-to-string</span><span class="w"> </span><span class="p">(</span><span class="nv">out</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">loop</span>
+<span class="w">       </span><span class="nv">for</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nb">=</span><span class="w"> </span><span class="p">(</span><span class="nb">read-char-no-hang</span><span class="w"> </span><span class="nc">stream</span><span class="p">)</span>
+<span class="w">       </span><span class="nv">while</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nb">do</span><span class="w"> </span><span class="p">(</span><span class="nb">write-char</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nv">out</span><span class="p">))))</span>
 
-lisp<span class="w"> </span><span class="s2">&quot;*package*&quot;</span><span class="w"> </span>--&gt;<span class="w">  </span><span class="c1">#&lt;PACKAGE &quot;BOOT&quot;&gt;</span>
-lisp<span class="w"> </span><span class="s2">&quot;(get-universal-time)&quot;</span><span class="w"> </span>--&gt;<span class="w">  </span><span class="m">3947354723</span>
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">readpipe-complete</span><span class="w"> </span><span class="p">(</span><span class="nc">stream</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Read pipe until empty.&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="p">(</span><span class="nv">readpipe</span><span class="w"> </span><span class="nc">stream</span><span class="p">))</span>
+<span class="w">  </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="nv">c</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">loop</span><span class="w"> </span><span class="nv">until</span><span class="w"> </span><span class="p">(</span><span class="nb">equal</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="nb">do</span>
+<span class="w">    </span><span class="p">(</span><span class="k">progn</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">sleep</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="p">(</span><span class="nv">readpipe</span><span class="w"> </span><span class="nc">stream</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="p">(</span><span class="nb">concatenate</span><span class="w"> </span><span class="ss">&#39;string</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="nv">c</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">force-output</span><span class="w"> </span><span class="nc">stream</span><span class="p">)))</span>
+<span class="w">     </span><span class="nv">cc</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">readpipe-timeout</span><span class="w"> </span><span class="p">(</span><span class="nc">stream</span><span class="w"> </span><span class="nv">timeout</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Read pipe until empty or timeout in seconds.&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="p">(</span><span class="nv">readpipe</span><span class="w"> </span><span class="nc">stream</span><span class="p">))</span>
+<span class="w">  </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="nv">c</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">timestamp</span><span class="w"> </span><span class="p">(</span><span class="nb">get-internal-real-time</span><span class="p">))</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">loop</span><span class="w"> </span><span class="nv">until</span><span class="w"> </span><span class="p">(</span><span class="nb">or</span><span class="w"> </span><span class="p">(</span><span class="nb">equal</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nv">delta-time</span><span class="w"> </span><span class="nv">timestamp</span><span class="p">)</span><span class="w"> </span><span class="nv">timeout</span><span class="p">))</span><span class="w"> </span><span class="nb">do</span>
+<span class="w">    </span><span class="p">(</span><span class="k">progn</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">sleep</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="p">(</span><span class="nv">readpipe</span><span class="w"> </span><span class="nc">stream</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="p">(</span><span class="nb">concatenate</span><span class="w"> </span><span class="ss">&#39;string</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="nv">c</span><span class="p">))</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">force-output</span><span class="w"> </span><span class="nc">stream</span><span class="p">)))</span>
+<span class="w">     </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">equal</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="nv">cc</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span>
+
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">writepipe</span><span class="w"> </span><span class="p">(</span><span class="nc">stream</span><span class="w"> </span><span class="nv">data</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="nc">stream</span><span class="w"> </span><span class="s">&quot;~a~%&quot;</span><span class="w"> </span><span class="nv">data</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">finish-output</span><span class="w"> </span><span class="nc">stream</span><span class="p">))</span>
+
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">take-from-end</span><span class="w"> </span><span class="p">(</span><span class="nv">str</span><span class="w"> </span><span class="nv">n</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Return the last n characters or nil&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">l</span><span class="w"> </span><span class="p">(</span><span class="nb">length</span><span class="w"> </span><span class="nv">str</span><span class="p">)))</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="nv">l</span><span class="w"> </span><span class="nv">n</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">subseq</span><span class="w"> </span><span class="nv">str</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">l</span><span class="w"> </span><span class="nv">n</span><span class="p">))</span><span class="w"> </span><span class="no">nil</span><span class="p">)))</span>
+
+<span class="c1">;;; REDUCE (psl)</span>
+<span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">red</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defparameter</span><span class="w"> </span><span class="vg">*timeout*</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defparameter</span><span class="w"> </span><span class="vg">*port*</span><span class="w"> </span><span class="mi">4242</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">redget</span><span class="w"> </span><span class="p">()</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">readpipe-timeout</span><span class="w"> </span><span class="nv">red</span><span class="w"> </span><span class="vg">*timeout*</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">redput</span><span class="w"> </span><span class="p">(</span><span class="nv">data</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">writepipe</span><span class="w"> </span><span class="nv">red</span><span class="w"> </span><span class="nv">data</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">redeval</span><span class="w"> </span><span class="p">(</span><span class="nv">code</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">writepipe</span><span class="w"> </span><span class="nv">red</span><span class="w"> </span><span class="nv">code</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">readpipe-timeout</span><span class="w"> </span><span class="nv">red</span><span class="w"> </span><span class="vg">*timeout*</span><span class="p">))</span>
+
+
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">red</span><span class="w"> </span><span class="p">(</span><span class="nv">makepipe</span><span class="w"> </span><span class="s">&quot;redpsl.bat&quot;</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">hunchentoot:define-easy-handler</span><span class="w"> </span><span class="p">(</span><span class="nv">reduce-eval</span><span class="w"> </span><span class="ss">:uri</span><span class="w"> </span><span class="s">&quot;/eval&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">code</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">setf</span><span class="w"> </span><span class="p">(</span><span class="nv">hunchentoot:content-type*</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;text/plain&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="no">nil</span><span class="w"> </span><span class="s">&quot;~A~%&quot;</span><span class="w"> </span><span class="p">(</span><span class="nv">redeval</span><span class="w"> </span><span class="nv">code</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nv">hunchentoot:start</span><span class="w"> </span><span class="p">(</span><span class="nb">make-instance</span><span class="w"> </span><span class="ss">&#39;hunchentoot:easy-acceptor</span><span class="w"> </span><span class="ss">:port</span><span class="w"> </span><span class="vg">*port*</span><span class="p">))</span>
+
+
+
+<span class="c1">;;;; TEST</span>
+<span class="c1">;;(setq cmd (makepipe &quot;cmd&quot;))</span>
+<span class="c1">;;(readpipe cmd)</span>
+<span class="c1">;;(writepipe cmd &quot;dir&quot;)</span>
+<span class="c1">;;(readpipe-complete cmd)</span>
+<span class="c1">;;(readpipe-timeout cmd 1)</span>
+<span class="c1">;;  (SETQ CMD (MAKEPIPE &quot;redpsl.bat&quot;))</span>
+<span class="c1">;; http://localhost:4242/eval?code=df(y**4*sin%20y,y,2);</span>
+
+
+<span class="cm">#|</span>
+<span class="cm">* (redget)</span>
+<span class="cm">&quot;Loading image file: C:\\Program Files\\Reduce\\bin\\..\\lib\\psl\\red\\reduce.img</span>
+<span class="cm">Reduce (Free PSL version, revision 5847), 16-Jul-2021 ...</span>
+
+<span class="cm">1: &quot;</span>
+<span class="cm">* (redget)</span>
+<span class="cm">&quot;&quot;</span>
+<span class="cm">* (redput &quot;x:=123456;&quot;)</span>
+<span class="cm">NIL</span>
+<span class="cm">* (redget)</span>
+<span class="cm">&quot;</span>
+<span class="cm">x := 123456</span>
+
+<span class="cm">2: &quot;</span>
+<span class="cm">* (redput &quot;load_package \&quot;tri\&quot;; &quot;)</span>
+<span class="cm">NIL</span>
+<span class="cm">* (redget)</span>
+<span class="cm">&quot;% TeX-REDUCE-Interface 0.71</span>
+<span class="cm">% set greek asserted</span>
+<span class="cm">% set lowercase asserted</span>
+<span class="cm">% set Greek asserted</span>
+<span class="cm">% set Uppercase asserted</span>
+<span class="cm">% \\tolerance 10</span>
+<span class="cm">% \\hsize=150mm</span>
+
+<span class="cm">3: &quot;</span>
+<span class="cm">* (redput &quot;on tex;&quot;)</span>
+<span class="cm">NIL</span>
+<span class="cm">* (redget)</span>
+<span class="cm">&quot;</span>
+<span class="cm">4: &quot;</span>
+<span class="cm">* (redput &quot;x;&quot;)</span>
+<span class="cm">NIL</span>
+<span class="cm">* (redget)</span>
+<span class="cm">&quot;$$</span>
+<span class="cm">123456</span>
+<span class="cm">$$</span>
+
+<span class="cm">5: &quot;</span>
+<span class="cm">* (redput &quot;bye;&quot;)</span>
+<span class="cm">NIL</span>
+<span class="cm">* (redget)</span>
+
+<span class="cm">debugger invoked on a END-OF-FILE in thread</span>
+<span class="cm">#&lt;THREAD &quot;main thread&quot; RUNNING {10012E0613}&gt;:</span>
+<span class="cm">  end of file on #&lt;SB-SYS:FD-STREAM for &quot;descriptor 212&quot; {10044A2A83}&gt;</span>
+
+<span class="cm">Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.</span>
+
+<span class="cm">restarts (invokable by number or by possibly-abbreviated name):</span>
+<span class="cm">  0: [ABORT] Exit debugger, returning to top level.</span>
+
+<span class="cm">(SB-IMPL::INPUT-CHAR/CP1252 #&lt;SB-SYS:FD-STREAM for &quot;descriptor 212&quot; {10044A2A83}&gt; T NIL)</span>
+<span class="cm">0] 0</span>
+
+<span class="cm">* (quit)</span>
+<span class="cm">|#</span>
 </pre></div>
-<div class="section" id="sexpression">
-<h2>SExpression</h2>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">)</span><span class="n">sh</span> <span class="n">SEX</span>
-<span class="n">SExpression</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">domain</span> <span class="n">constructor</span><span class="o">.</span>
-<span class="n">Abbreviation</span> <span class="k">for</span> <span class="n">SExpression</span> <span class="ow">is</span> <span class="n">SEX</span>
-<span class="n">This</span> <span class="n">constructor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">exposed</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">frame</span><span class="o">.</span>
-<span class="mi">25</span> <span class="n">Names</span> <span class="k">for</span> <span class="mi">30</span> <span class="n">Operations</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">Domain</span><span class="o">.</span>
-<span class="o">-------------------------------</span> <span class="n">Operations</span> <span class="o">--------------------------------</span>
-
-<span class="c1">#? : % -&gt; Integer                     ?=? : (%, %) -&gt; Boolean</span>
-<span class="n">atom</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                  <span class="n">car</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="o">%</span>
-<span class="n">cdr</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="o">%</span>                          <span class="n">coerce</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">OutputForm</span>
-<span class="n">convert</span> <span class="p">:</span> <span class="n">DoubleFloat</span> <span class="o">-&gt;</span> <span class="o">%</span>            <span class="n">convert</span> <span class="p">:</span> <span class="n">Integer</span> <span class="o">-&gt;</span> <span class="o">%</span>
-<span class="n">convert</span> <span class="p">:</span> <span class="n">List</span><span class="p">(</span><span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">%</span>                <span class="n">convert</span> <span class="p">:</span> <span class="n">String</span> <span class="o">-&gt;</span> <span class="o">%</span>
-<span class="n">convert</span> <span class="p">:</span> <span class="n">Symbol</span> <span class="o">-&gt;</span> <span class="o">%</span>                 <span class="n">destruct</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
-<span class="n">elt</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="n">Integer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">%</span>               <span class="n">elt</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="n">List</span><span class="p">(</span><span class="n">Integer</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="o">%</span>
-<span class="n">eq</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                <span class="nb">float</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">DoubleFloat</span>
-<span class="nb">float</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                 <span class="nb">hash</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">SingleInteger</span>
-<span class="n">integer</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Integer</span>                <span class="n">integer</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
-<span class="n">latex</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">String</span>                   <span class="nb">list</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
-<span class="n">null</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>                  <span class="n">pair</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
-<span class="n">string</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">String</span>                  <span class="n">string</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
-<span class="n">symbol</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Symbol</span>                  <span class="n">symbol</span><span class="err">?</span> <span class="p">:</span> <span class="o">%</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
-<span class="err">?</span><span class="o">~=</span><span class="err">?</span> <span class="p">:</span> <span class="p">(</span><span class="o">%</span><span class="p">,</span> <span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span>
-<span class="n">hashUpdate</span><span class="err">!</span> <span class="p">:</span> <span class="p">(</span><span class="n">HashState</span><span class="p">,</span> <span class="o">%</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HashState</span>
-</pre></div>
-<img alt="" src="content/fricas-lisp-scite.jpg" />
+<div class="section" id="jupyter-jucl">
+<h2>Jupyter (juCL)</h2>
+<p>Also working in the <a class="reference external" href="https://github.com/nilqed/juCL">juCL</a> Jupyter kernel or
+the <a class="reference external" href="https://github.com/nilqed/sbcl">TeXmacs plugin</a>.</p>
+<img alt="" src="content/jucl-redpsl-pipe.jpg" />
 </div>
             </article>
                 <section id="article-list">
                     <h2>all posts</h2>
                     <ol>
+            </ol>
+            </section><!-- #article-list -->
+        
+
+ 
+            <li><a href="https://nilqed.github.io/FriCAS-CL.html" rel="bookmark" title="Permalink to FriCAS+LISP">FriCAS+LISP</a></li>
             </ol>
             </section><!-- #article-list -->
         
