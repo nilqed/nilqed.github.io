@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SQL.js - Modern SQL Interpreter</title>
+  <title>fricas.db - FriCAS API SQL Database</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   </a>
   
   <header>
-    <h1>SQL.js Interpreter</h1>
+    <h1>fricas.db (SQL)</h1>
     <div class="toolbar">
       <button id="execute" class="button button-primary">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -68,32 +68,9 @@
       </div>
       <div class="panel-content">
         <textarea id="commands">-- Basic SQL Demo
--- Create a simple employees table
-DROP TABLE IF EXISTS employees;
-CREATE TABLE employees (
-  id INTEGER PRIMARY KEY,
-  name TEXT NOT NULL,
-  department TEXT,
-  salary NUMERIC,
-  hire_date DATE
-);
+-- See Examples
 
--- Insert sample data
-INSERT INTO employees (name, department, salary, hire_date) VALUES
-  ('Alice Smith', 'Engineering', 85000, '2020-01-15'),
-  ('Bob Johnson', 'Marketing', 72000, '2019-03-20'),
-  ('Carol Williams', 'Engineering', 92000, '2018-11-07'),
-  ('Dave Brown', 'Finance', 115000, '2017-05-12'),
-  ('Eve Davis', 'Engineering', 110000, '2021-08-30');
-
--- Query the data
-SELECT 
-  department, 
-  COUNT(*) as employee_count,
-  ROUND(AVG(salary), 2) as avg_salary
-FROM employees
-GROUP BY department
-ORDER BY avg_salary DESC;</textarea>
+</textarea>
         <div class="query-history" id="queryHistory">
           <!-- History items will be added here dynamically -->
         </div>

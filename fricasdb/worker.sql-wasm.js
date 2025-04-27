@@ -197,7 +197,14 @@ var db;
 function onModuleReady(SQL) {
     function createDb(data) {
         if (db != null) db.close();
-        db = new SQL.Database(data);
+        //db = new SQL.Database(data);
+        //db = new SQL.Database(new Uint8Array('fricas.db'))
+        const sqlPromise = initSqlJs({
+        locateFile: file => `https://nilqed.github.io/fricasdb/${file}`
+        });
+        const dataPromise = fetch("fricas.db").then(res => res.arrayBuffer());
+        const [SQL, buf] = await Promise.all([sqlPromise, dataPromise])
+        const db = new SQL.Database(new Uint8Array(buf));
         return db;
     }
 
