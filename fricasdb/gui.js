@@ -28,13 +28,14 @@ const state = {
 // SQL Snippets
 const sqlSnippets = {
 	'basic-demo': {
-		name: 'Basic Demo',
-		sql: "--"
+		name: 'Master',
+		sql: "SELECT `name`, `sql`\n  FROM `sqlite_master`\n  WHERE type='table';"
 	},
     
 	'schema': {
 		name: 'Show Schema',
-		sql: "--"
+		sql: ""
+
 	},
 	'blog-app': {
 		name: 'Blog App Schema',
@@ -62,6 +63,9 @@ initResizer();
 initTabs();
 initKeyboardShortcuts();
 initQueryHistory();
+
+
+
 
 // Error handling
 function handleError(e) {

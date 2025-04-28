@@ -208,6 +208,11 @@ function onModuleReady(SQL) {
         case "open":
             buff = data["buffer"];
             createDb(buff && new Uint8Array(buff));
+            
+            //const datab = fetch("https://nilqed.github.io/fricasdb/fricas.db").then(res => res.arrayBuffer());
+            //buff = await Promise(dataPromise);
+            //const db = new SQL.Database(new Uint8Array(buf));
+            //createDb(new Uint8Array(datab));
             //    
             return postMessage({
                 id: data["id"],
