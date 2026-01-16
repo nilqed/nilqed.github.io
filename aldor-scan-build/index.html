@@ -1,0 +1,1134 @@
+<html>
+<head>
+<title>aldor - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>aldor - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>kfp@omega</td></tr>
+<tr><th>Working Directory:</th><td>/home/kfp/aldor/aldor/aldor</td></tr>
+<tr><th>Command Line:</th><td>make</td></tr>
+<tr><th>Clang Version:</th><td>clang version 18.1.8 (https://github.com/root-project/llvm-project.git fd3db4ac62588a4fc8cea5d6cbe4d9e50de67ef5)
+</td></tr>
+<tr><th>Date:</th><td>Thu Jan 15 22:38:56 2026</td></tr>
+</table>
+<h2>Bug Summary</h2><table>
+<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
+<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">343</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
+<tr><th>API</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Argument with 'nonnull' attribute passed null</td><td class="Q">3</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_api_argument_with_nonnull_attribute_passed_null');" checked/></center></td></tr>
+<tr><th>Logic error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Dereference of null pointer</td><td class="Q">59</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_dereference_of_null_pointer');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Division by zero</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_division_by_zero');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Garbage return value</td><td class="Q">1</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_garbage_return_value');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Uninitialized argument value</td><td class="Q">4</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_uninitialized_argument_value');" checked/></center></td></tr>
+<tr><th>Memory error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Memory leak</td><td class="Q">10</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_memory_error_memory_leak');" checked/></center></td></tr>
+<tr><th>Suspicious operation</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Bitwise shift</td><td class="Q">4</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_suspicious_operation_bitwise_shift');" checked/></center></td></tr>
+<tr><th>Unused code</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Dead assignment</td><td class="Q">217</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_assignment');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dead increment</td><td class="Q">2</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_increment');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dead initialization</td><td class="Q">29</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_initialization');" checked/></center></td></tr>
+<tr><td class="SUMM_DESC">Dead nested assignment</td><td class="Q">13</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_unused_code_dead_nested_assignment');" checked/></center></td></tr>
+</table>
+<h2>Reports</h2>
+
+<table class="sortable" style="table-layout:automatic">
+<thead><tr>
+  <td>Bug Group</td>
+  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
+  <td>File</td>
+  <td>Function/Method</td>
+  <td class="Q">Line</td>
+  <td class="Q">Path Length</td>
+  <td class="sorttable_nosort"></td>
+  <!-- REPORTBUGCOL -->
+</tr></thead>
+<tbody>
+<tr class="bt_api_argument_with_nonnull_attribute_passed_null"><td class="DESC">API</td><td class="DESC">Argument with 'nonnull' attribute passed null</td><td>tools/unix/zacc.c</td><td class="DESC">renameBV</td><td class="Q">567</td><td class="Q">69</td><td><a href="report-0169e7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0169e7.html" -->
+</tr>
+<tr class="bt_api_argument_with_nonnull_attribute_passed_null"><td class="DESC">API</td><td class="DESC">Argument with 'nonnull' attribute passed null</td><td>src/tform.c</td><td class="DESC">abHas</td><td class="Q">7411</td><td class="Q">27</td><td><a href="report-6572f4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6572f4.html" -->
+</tr>
+<tr class="bt_api_argument_with_nonnull_attribute_passed_null"><td class="DESC">API</td><td class="DESC">Argument with 'nonnull' attribute passed null</td><td>src/cmdline.c</td><td class="DESC">cmdHandleOption</td><td class="Q">347</td><td class="Q">10</td><td><a href="report-be9e24.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-be9e24.html" -->
+</tr>
+<tr class="bt_suspicious_operation_bitwise_shift"><td class="DESC">Suspicious operation</td><td class="DESC">Bitwise shift</td><td>subcmd/unitools/bigint.c</td><td class="DESC">iintShift</td><td class="Q">2276</td><td class="Q">31</td><td><a href="report-28241b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-28241b.html" -->
+</tr>
+<tr class="bt_suspicious_operation_bitwise_shift"><td class="DESC">Suspicious operation</td><td class="DESC">Bitwise shift</td><td>subcmd/unitools/bigint.c</td><td class="DESC">iintShift</td><td class="Q">2283</td><td class="Q">33</td><td><a href="report-55f06e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-55f06e.html" -->
+</tr>
+<tr class="bt_suspicious_operation_bitwise_shift"><td class="DESC">Suspicious operation</td><td class="DESC">Bitwise shift</td><td>subcmd/unitools/bigint.c</td><td class="DESC">iintShift</td><td class="Q">2242</td><td class="Q">27</td><td><a href="report-8d8196.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8d8196.html" -->
+</tr>
+<tr class="bt_suspicious_operation_bitwise_shift"><td class="DESC">Suspicious operation</td><td class="DESC">Bitwise shift</td><td>src/syme.c</td><td class="DESC">symeGetFieldX</td><td class="Q">556</td><td class="Q">4</td><td><a href="report-c00879.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c00879.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF34_generator</td><td class="Q">1494</td><td class="Q">1</td><td><a href="report-014cf5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-014cf5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/syme.c</td><td class="DESC">symeFillFrExporter</td><td class="Q">1153</td><td class="Q">1</td><td><a href="report-06762f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-06762f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_java.c</td><td class="DESC">gfjExportToJavaFn</td><td class="Q">814</td><td class="Q">1</td><td><a href="report-0697b1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0697b1.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/java/genjava.c</td><td class="DESC">gj0ProgMain</td><td class="Q">1037</td><td class="Q">1</td><td><a href="report-07163f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-07163f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF3_addLevel0</td><td class="Q">479</td><td class="Q">1</td><td><a href="report-07409d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-07409d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_hfold.c</td><td class="DESC">hfoldUnit</td><td class="Q">69</td><td class="Q">1</td><td><a href="report-08e9b1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-08e9b1.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sinteger.c</td><td class="DESC">CF46_mod_HAT_</td><td class="Q">1671</td><td class="Q">1</td><td><a href="report-0920a7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0920a7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF26_generBaseFn</td><td class="Q">1398</td><td class="Q">1</td><td><a href="report-0a7893.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0a7893.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0SymeGeneric</td><td class="Q">4713</td><td class="Q">1</td><td><a href="report-0a93d2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0a93d2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genlisp.c</td><td class="DESC">gl0UseEnv</td><td class="Q">1121</td><td class="Q">1</td><td><a href="report-0ae93b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0ae93b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_deada.c</td><td class="DESC">trRenameSet</td><td class="Q">576</td><td class="Q">1</td><td><a href="report-0ffc50.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0ffc50.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF3_aPutc</td><td class="Q">379</td><td class="Q">1</td><td><a href="report-1095f4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1095f4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF31_step</td><td class="Q">1366</td><td class="Q">1</td><td><a href="report-131903.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-131903.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF43_generBaseFn</td><td class="Q">2125</td><td class="Q">1</td><td><a href="report-132e75.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-132e75.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0TrailingNew</td><td class="Q">3045</td><td class="Q">1</td><td><a href="report-1370ab.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1370ab.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF30_step</td><td class="Q">1342</td><td class="Q">1</td><td><a href="report-14228e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-14228e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF197_addLevel0</td><td class="Q">5437</td><td class="Q">1</td><td><a href="report-145fb1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-145fb1.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/sefo.c</td><td class="DESC">tformClosure0</td><td class="Q">3916</td><td class="Q">1</td><td><a href="report-148b39.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-148b39.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF32_generBaseFn</td><td class="Q">1404</td><td class="Q">1</td><td><a href="report-157298.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-157298.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">1014</td><td class="Q">1</td><td><a href="report-16a788.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-16a788.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF189_addLevel0</td><td class="Q">5165</td><td class="Q">1</td><td><a href="report-174b37.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-174b37.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF19_generBaseFn</td><td class="Q">1144</td><td class="Q">1</td><td><a href="report-180a18.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-180a18.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/opsys.c</td><td class="DESC">CF8_addLevel0</td><td class="Q">520</td><td class="Q">1</td><td><a href="report-183609.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-183609.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/oslow.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">406</td><td class="Q">1</td><td><a href="report-1af5fd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1af5fd.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0CreateGloList</td><td class="Q">1103</td><td class="Q">1</td><td><a href="report-1d91a7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1d91a7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/optfoam.c</td><td class="DESC">optimizeFoam</td><td class="Q">369</td><td class="Q">1</td><td><a href="report-1e48c2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1e48c2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamAuditExpr</td><td class="Q">1110</td><td class="Q">1</td><td><a href="report-1f4ec9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1f4ec9.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF195_addLevel0</td><td class="Q">5369</td><td class="Q">1</td><td><a href="report-20eba1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-20eba1.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF7_fPutc</td><td class="Q">552</td><td class="Q">1</td><td><a href="report-2157a7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2157a7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_argsub.c</td><td class="DESC">agsSubsProg</td><td class="Q">743</td><td class="Q">1</td><td><a href="report-22f95f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-22f95f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF46__LT__LT_</td><td class="Q">3220</td><td class="Q">1</td><td><a href="report-24d420.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-24d420.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_argsub.c</td><td class="DESC">agsSubsProg</td><td class="Q">742</td><td class="Q">1</td><td><a href="report-253be8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-253be8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF31_step</td><td class="Q">1368</td><td class="Q">1</td><td><a href="report-25e0c5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-25e0c5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF185_addLevel0</td><td class="Q">5029</td><td class="Q">1</td><td><a href="report-266240.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-266240.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF183_addLevel0</td><td class="Q">4961</td><td class="Q">1</td><td><a href="report-2730e2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2730e2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF181_addLevel0</td><td class="Q">4893</td><td class="Q">1</td><td><a href="report-279b1a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-279b1a.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gccFortranPCall</td><td class="Q">3584</td><td class="Q">1</td><td><a href="report-294084.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-294084.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF191_addLevel0</td><td class="Q">5233</td><td class="Q">1</td><td><a href="report-29a341.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-29a341.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0VarsLex</td><td class="Q">5739</td><td class="Q">1</td><td><a href="report-2a4e91.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2a4e91.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/tinfer.c</td><td class="DESC">abExpandDefs</td><td class="Q">2836</td><td class="Q">1</td><td><a href="report-2abbbf.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2abbbf.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/dword.c</td><td class="DESC">xxModDouble</td><td class="Q">231</td><td class="Q">1</td><td><a href="report-2d16ab.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2d16ab.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/stab.c</td><td class="DESC">symeListExtend</td><td class="Q">850</td><td class="Q">1</td><td><a href="report-2ffc1c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2ffc1c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/bigint_t.c</td><td class="DESC">testBigint</td><td class="Q">174</td><td class="Q">1</td><td><a href="report-308133.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-308133.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/oslow.c</td><td class="DESC">CF2_addLevel1</td><td class="Q">434</td><td class="Q">1</td><td><a href="report-342083.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-342083.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF8_fPutc</td><td class="Q">578</td><td class="Q">1</td><td><a href="report-3444b4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3444b4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF29_generBaseFn</td><td class="Q">1373</td><td class="Q">1</td><td><a href="report-35d582.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-35d582.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF26_generBaseFn</td><td class="Q">1404</td><td class="Q">1</td><td><a href="report-36892f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-36892f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/dnf.c</td><td class="DESC">dnfAndImpliesNegation</td><td class="Q">194</td><td class="Q">1</td><td><a href="report-36a865.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-36a865.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF31_step</td><td class="Q">1371</td><td class="Q">1</td><td><a href="report-3833fc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3833fc.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/scobind.c</td><td class="DESC">scobindWith</td><td class="Q">1116</td><td class="Q">1</td><td><a href="report-383d09.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-383d09.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF32_generBaseFn</td><td class="Q">1397</td><td class="Q">1</td><td><a href="report-38b094.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-38b094.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF5_addLevel0</td><td class="Q">554</td><td class="Q">1</td><td><a href="report-393ea3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-393ea3.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_gener.c</td><td class="DESC">gen0GenerValueFun</td><td class="Q">328</td><td class="Q">1</td><td><a href="report-39f1e5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-39f1e5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF30_addLevel1</td><td class="Q">2748</td><td class="Q">1</td><td><a href="report-3a11af.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3a11af.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/opsys.c</td><td class="DESC">CF2_addLevel1</td><td class="Q">265</td><td class="Q">1</td><td><a href="report-402cdc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-402cdc.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/dnf.c</td><td class="DESC">dnfAndImplies</td><td class="Q">165</td><td class="Q">1</td><td><a href="report-40a399.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-40a399.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_loops.c</td><td class="DESC">loopInvariantsFindFrBlock</td><td class="Q">349</td><td class="Q">1</td><td><a href="report-41dfad.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-41dfad.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF32_generBaseFn</td><td class="Q">1401</td><td class="Q">1</td><td><a href="report-443e02.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-443e02.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/java/javacode.c</td><td class="DESC">jcCastPrint</td><td class="Q">1321</td><td class="Q">1</td><td><a href="report-443f2c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-443f2c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/sefo.c</td><td class="DESC">sefoClosure0</td><td class="Q">3763</td><td class="Q">1</td><td><a href="report-444cac.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-444cac.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_retyp2.c</td><td class="DESC">retRearrangeExpr</td><td class="Q">693</td><td class="Q">1</td><td><a href="report-46e85a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-46e85a.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF6_filePuts</td><td class="Q">1068</td><td class="Q">1</td><td><a href="report-47fd64.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-47fd64.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF35_generBaseFn</td><td class="Q">1517</td><td class="Q">1</td><td><a href="report-4877ec.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4877ec.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF1_printDomain</td><td class="Q">846</td><td class="Q">1</td><td><a href="report-49acf4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-49acf4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF52__LT__LT_</td><td class="Q">2364</td><td class="Q">1</td><td><a href="report-49dcbf.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-49dcbf.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF3_filePutc</td><td class="Q">994</td><td class="Q">1</td><td><a href="report-4a5f05.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4a5f05.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/include.c</td><td class="DESC">inclHandleDirective</td><td class="Q">508</td><td class="Q">1</td><td><a href="report-4cc857.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4cc857.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF30_rtDelayedGetExport_BANG_</td><td class="Q">2223</td><td class="Q">1</td><td><a href="report-5003d0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5003d0.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sinteger.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">499</td><td class="Q">1</td><td><a href="report-5049fd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5049fd.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_killp.c</td><td class="DESC">kpPreprocessProg</td><td class="Q">613</td><td class="Q">1</td><td><a href="report-52807c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-52807c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF2_addLevel1</td><td class="Q">1042</td><td class="Q">1</td><td><a href="report-528bf7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-528bf7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/java/javacode.c</td><td class="DESC">jcUnaryOpPrint</td><td class="Q">1306</td><td class="Q">1</td><td><a href="report-5450f3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5450f3.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0ForIter</td><td class="Q">6337</td><td class="Q">1</td><td><a href="report-55a93c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-55a93c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF4_aPutc</td><td class="Q">406</td><td class="Q">1</td><td><a href="report-575556.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-575556.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF2_fn</td><td class="Q">922</td><td class="Q">1</td><td><a href="report-58ee12.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-58ee12.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_cprop.c</td><td class="DESC">acFoldBlock</td><td class="Q">973</td><td class="Q">1</td><td><a href="report-58fcf1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-58fcf1.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/showexports.c</td><td class="DESC">main</td><td class="Q">85</td><td class="Q">1</td><td><a href="report-59ec49.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-59ec49.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/dnf.c</td><td class="DESC">dnfExpandAndImplies</td><td class="Q">665</td><td class="Q">1</td><td><a href="report-5a34cb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5a34cb.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/gener.c</td><td class="DESC">CF5_generBaseFn</td><td class="Q">437</td><td class="Q">1</td><td><a href="report-5c7dcc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5c7dcc.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF23_generBaseFn</td><td class="Q">1233</td><td class="Q">1</td><td><a href="report-606b2e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-606b2e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF16_map</td><td class="Q">1276</td><td class="Q">1</td><td><a href="report-60768d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-60768d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_seq.c</td><td class="DESC">dgSortDependencies</td><td class="Q">993</td><td class="Q">1</td><td><a href="report-62deb8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-62deb8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">genRepeat</td><td class="Q">6220</td><td class="Q">1</td><td><a href="report-62e893.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-62e893.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/opsys.c</td><td class="DESC">CF3_generBaseFn</td><td class="Q">355</td><td class="Q">1</td><td><a href="report-66647e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-66647e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0Param</td><td class="Q">2513</td><td class="Q">1</td><td><a href="report-67e6ff.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-67e6ff.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_inlin.c</td><td class="DESC">inlSet</td><td class="Q">3404</td><td class="Q">1</td><td><a href="report-681b28.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-681b28.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0DeclList</td><td class="Q">1433</td><td class="Q">1</td><td><a href="report-68a0c6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-68a0c6.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/fint.c</td><td class="DESC">fintGenerStep</td><td class="Q">5510</td><td class="Q">1</td><td><a href="report-6be7b9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6be7b9.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/bloop.c</td><td class="DESC">bloopPosWhere</td><td class="Q">680</td><td class="Q">1</td><td><a href="report-6d208e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6d208e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0DbgAssignment</td><td class="Q">8381</td><td class="Q">1</td><td><a href="report-6df66f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6df66f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamAuditTypeCheck</td><td class="Q">1450</td><td class="Q">1</td><td><a href="report-6fc2c9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6fc2c9.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF15_addLevel0</td><td class="Q">1007</td><td class="Q">1</td><td><a href="report-71661f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-71661f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/cmdline.c</td><td class="DESC">cmdSubsumeResponseFiles</td><td class="Q">469</td><td class="Q">1</td><td><a href="report-719220.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-719220.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/lang.c</td><td class="DESC">CF33_addLevel0</td><td class="Q">1613</td><td class="Q">1</td><td><a href="report-726f0c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-726f0c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">531</td><td class="Q">1</td><td><a href="report-755139.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-755139.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_argsub.c</td><td class="DESC">agsDoOCall</td><td class="Q">659</td><td class="Q">1</td><td><a href="report-759726.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-759726.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/tform.c</td><td class="DESC">tfExtendSubst</td><td class="Q">7587</td><td class="Q">1</td><td><a href="report-760287.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-760287.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gccFortranPCall</td><td class="Q">3396</td><td class="Q">1</td><td><a href="report-7841f4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7841f4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF193_addLevel0</td><td class="Q">5301</td><td class="Q">1</td><td><a href="report-78645e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-78645e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/scobind.c</td><td class="DESC">scobindLambda</td><td class="Q">1023</td><td class="Q">1</td><td><a href="report-79ac6c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-79ac6c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/bigint.c</td><td class="DESC">bintPlus</td><td class="Q">1129</td><td class="Q">1</td><td><a href="report-7b2255.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7b2255.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0FindDefs</td><td class="Q">6538</td><td class="Q">1</td><td><a href="report-7cbb06.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7cbb06.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF19_generBaseFn</td><td class="Q">1139</td><td class="Q">1</td><td><a href="report-7d7701.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7d7701.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF9_PRINT</td><td class="Q">1149</td><td class="Q">1</td><td><a href="report-7fb4a9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7fb4a9.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamFrBuffer</td><td class="Q">1952</td><td class="Q">1</td><td><a href="report-80551e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-80551e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0FunFoamCall</td><td class="Q">5462</td><td class="Q">1</td><td><a href="report-809c61.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-809c61.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamProgHdrFrBuffer</td><td class="Q">2098</td><td class="Q">1</td><td><a href="report-8132d2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8132d2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamToBuffer</td><td class="Q">2284</td><td class="Q">1</td><td><a href="report-81856f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-81856f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_imps.c</td><td class="DESC">gen0IsStdLazySig</td><td class="Q">932</td><td class="Q">1</td><td><a href="report-824ec2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-824ec2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF10_fPuts</td><td class="Q">632</td><td class="Q">1</td><td><a href="report-82a8af.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-82a8af.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/ti_tdn.c</td><td class="DESC">titdnSelect</td><td class="Q">2627</td><td class="Q">1</td><td><a href="report-82f8d8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-82f8d8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF30_step</td><td class="Q">1339</td><td class="Q">1</td><td><a href="report-846d3d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-846d3d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/opsys.c</td><td class="DESC">CF3_generBaseFn</td><td class="Q">352</td><td class="Q">1</td><td><a href="report-8513ea.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8513ea.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/gener.c</td><td class="DESC">CF11_generBaseFn</td><td class="Q">590</td><td class="Q">1</td><td><a href="report-85cd90.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-85cd90.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/bool.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">277</td><td class="Q">1</td><td><a href="report-85f404.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-85f404.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/fint.c</td><td class="DESC">skipProg</td><td class="Q">6044</td><td class="Q">1</td><td><a href="report-874319.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-874319.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF25_generator</td><td class="Q">1369</td><td class="Q">1</td><td><a href="report-87ca2c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-87ca2c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF15_map</td><td class="Q">1231</td><td class="Q">1</td><td><a href="report-882645.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-882645.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF25_generator</td><td class="Q">1373</td><td class="Q">1</td><td><a href="report-88cf2a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-88cf2a.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gencpp.c</td><td class="DESC">GenCppMultiRet</td><td class="Q">2819</td><td class="Q">1</td><td><a href="report-88dabf.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-88dabf.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamProgHdrFrBuffer</td><td class="Q">2082</td><td class="Q">1</td><td><a href="report-89890b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-89890b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_imps.c</td><td class="DESC">gen0GlobalRef</td><td class="Q">1195</td><td class="Q">1</td><td><a href="report-8a888e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8a888e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF5_filePuts</td><td class="Q">1043</td><td class="Q">1</td><td><a href="report-8dc8c8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8dc8c8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF5_aPuts</td><td class="Q">460</td><td class="Q">1</td><td><a href="report-8f0805.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8f0805.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0VarsFluid</td><td class="Q">5785</td><td class="Q">1</td><td><a href="report-8fb0a4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8fb0a4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/ti_bup.c</td><td class="DESC">tibup0DefaultBody</td><td class="Q">507</td><td class="Q">1</td><td><a href="report-8fc30f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8fc30f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0TrailingNew</td><td class="Q">3050</td><td class="Q">1</td><td><a href="report-8fcc3b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8fcc3b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF35_generBaseFn</td><td class="Q">1519</td><td class="Q">1</td><td><a href="report-8ff630.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8ff630.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0CrossToMulti</td><td class="Q">7640</td><td class="Q">1</td><td><a href="report-90699c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-90699c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF29_generBaseFn</td><td class="Q">1371</td><td class="Q">1</td><td><a href="report-915c38.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-915c38.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF9_addLevel0</td><td class="Q">729</td><td class="Q">1</td><td><a href="report-9346c7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9346c7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/linear.c</td><td class="DESC">lntPrint</td><td class="Q">201</td><td class="Q">1</td><td><a href="report-939d6f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-939d6f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_imps.c</td><td class="DESC">gen0GetBuiltin</td><td class="Q">1351</td><td class="Q">1</td><td><a href="report-9483b9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9483b9.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/character.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">254</td><td class="Q">1</td><td><a href="report-967d86.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-967d86.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/format.c</td><td class="DESC">vaStrPrintf</td><td class="Q">54</td><td class="Q">1</td><td><a href="report-99514c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-99514c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/dword.c</td><td class="DESC">xxModDouble</td><td class="Q">228</td><td class="Q">1</td><td><a href="report-9bb08c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9bb08c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF201_addLevel0</td><td class="Q">5573</td><td class="Q">1</td><td><a href="report-9c6a80.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9c6a80.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/emit.c</td><td class="DESC">emitFileName</td><td class="Q">526</td><td class="Q">1</td><td><a href="report-9ca509.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9ca509.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0IdDecl</td><td class="Q">5918</td><td class="Q">1</td><td><a href="report-a28306.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a28306.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/store.c</td><td class="DESC">stoWritablePointer</td><td class="Q">4458</td><td class="Q">1</td><td><a href="report-a28bda.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a28bda.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_emerg.c</td><td class="DESC">emUsageAliasing</td><td class="Q">1236</td><td class="Q">1</td><td><a href="report-a4676c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a4676c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/dword.c</td><td class="DESC">xxModDouble</td><td class="Q">231</td><td class="Q">1</td><td><a href="report-a53d22.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a53d22.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_crinlin.c</td><td class="DESC">crinInlineGenIter</td><td class="Q">357</td><td class="Q">1</td><td><a href="report-a84f43.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a84f43.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF6_addLevel1</td><td class="Q">589</td><td class="Q">1</td><td><a href="report-aaf918.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-aaf918.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/gener.c</td><td class="DESC">CF25_generBaseFn</td><td class="Q">970</td><td class="Q">1</td><td><a href="report-ac3e10.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ac3e10.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_implicit.c</td><td class="DESC">gen1ImplicitExport</td><td class="Q">190</td><td class="Q">1</td><td><a href="report-ae7d45.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ae7d45.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF42_tails</td><td class="Q">2100</td><td class="Q">1</td><td><a href="report-b298ad.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b298ad.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gccFortranPCall</td><td class="Q">3395</td><td class="Q">1</td><td><a href="report-b30912.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b30912.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF203_addLevel0</td><td class="Q">5641</td><td class="Q">1</td><td><a href="report-b32424.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b32424.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF37_generBaseFn</td><td class="Q">1967</td><td class="Q">1</td><td><a href="report-b3855c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b3855c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF28_addLevel0</td><td class="Q">2671</td><td class="Q">1</td><td><a href="report-b41b03.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b41b03.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_deada.c</td><td class="DESC">trRenameSet</td><td class="Q">573</td><td class="Q">1</td><td><a href="report-b43e06.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b43e06.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_emerg.c</td><td class="DESC">emUsageAliasing</td><td class="Q">1248</td><td class="Q">1</td><td><a href="report-b6510b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b6510b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/cfgfile.c</td><td class="DESC">cfgExpandList</td><td class="Q">133</td><td class="Q">1</td><td><a href="report-b6b894.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b6b894.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF6_aPuts</td><td class="Q">487</td><td class="Q">1</td><td><a href="report-b77a26.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b77a26.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/forg.c</td><td class="DESC">forgBufferSkip</td><td class="Q">160</td><td class="Q">1</td><td><a href="report-b8b5e8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b8b5e8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gccReturn</td><td class="Q">2973</td><td class="Q">1</td><td><a href="report-bb8fac.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-bb8fac.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/array.c</td><td class="DESC">CF26_generBaseFn</td><td class="Q">1400</td><td class="Q">1</td><td><a href="report-bbe629.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-bbe629.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_killp.c</td><td class="DESC">kpPreprocessProg</td><td class="Q">614</td><td class="Q">1</td><td><a href="report-bc9ff5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-bc9ff5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_inlin.c</td><td class="DESC">inlSet</td><td class="Q">3403</td><td class="Q">1</td><td><a href="report-be8fea.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-be8fea.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/dnf.c</td><td class="DESC">dnfAndCancelNegation</td><td class="Q">223</td><td class="Q">1</td><td><a href="report-c0dd4a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c0dd4a.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/fint.c</td><td class="DESC">fintGetReference</td><td class="Q">5362</td><td class="Q">1</td><td><a href="report-c3ca77.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c3ca77.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF1_addLevel0</td><td class="Q">361</td><td class="Q">1</td><td><a href="report-c46348.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c46348.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF19_generBaseFn</td><td class="Q">1141</td><td class="Q">1</td><td><a href="report-c739d8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c739d8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_killp.c</td><td class="DESC">kpProg</td><td class="Q">224</td><td class="Q">1</td><td><a href="report-c75f46.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c75f46.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF28_generator</td><td class="Q">1348</td><td class="Q">1</td><td><a href="report-ca0262.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ca0262.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0UnaryToCross</td><td class="Q">7771</td><td class="Q">1</td><td><a href="report-ca979f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ca979f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/textwrit.c</td><td class="DESC">CF9_fPuts</td><td class="Q">605</td><td class="Q">1</td><td><a href="report-cba1f6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cba1f6.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_fortran.c</td><td class="DESC">gen1FortranExportArg</td><td class="Q">2002</td><td class="Q">1</td><td><a href="report-cc8393.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cc8393.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF5_addLevel0</td><td class="Q">672</td><td class="Q">1</td><td><a href="report-cda8b2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cda8b2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF22_generator</td><td class="Q">1208</td><td class="Q">1</td><td><a href="report-ce8ce7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ce8ce7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF23_generBaseFn</td><td class="Q">1231</td><td class="Q">1</td><td><a href="report-cef31b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cef31b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/ti_decl.c</td><td class="DESC">tidecl</td><td class="Q">152</td><td class="Q">1</td><td><a href="report-cf330c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cf330c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/fint.c</td><td class="DESC">fintDoCallN</td><td class="Q">5448</td><td class="Q">1</td><td><a href="report-cff6dd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cff6dd.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0UseStateFormat</td><td class="Q">7401</td><td class="Q">1</td><td><a href="report-d032d0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d032d0.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF17_addLevel1</td><td class="Q">1084</td><td class="Q">1</td><td><a href="report-d21307.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d21307.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF18_generator</td><td class="Q">1114</td><td class="Q">1</td><td><a href="report-d29ed2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d29ed2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF37_generBaseFn</td><td class="Q">1965</td><td class="Q">1</td><td><a href="report-d3b4ab.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d3b4ab.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0IdDecl</td><td class="Q">5914</td><td class="Q">1</td><td><a href="report-d75b71.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d75b71.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/ti_tdn.c</td><td class="DESC">titdnDo</td><td class="Q">2366</td><td class="Q">1</td><td><a href="report-d7b0f8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d7b0f8.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF60_addLevel0</td><td class="Q">3700</td><td class="Q">1</td><td><a href="report-d990d0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d990d0.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF43_generBaseFn</td><td class="Q">2123</td><td class="Q">1</td><td><a href="report-d9fa45.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d9fa45.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamFrBuffer0</td><td class="Q">2485</td><td class="Q">1</td><td><a href="report-dcb5ca.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-dcb5ca.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/stab.c</td><td class="DESC">symeListExtend</td><td class="Q">848</td><td class="Q">1</td><td><a href="report-dcd79f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-dcd79f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/stab.c</td><td class="DESC">stabMakeUsedTForm</td><td class="Q">2072</td><td class="Q">1</td><td><a href="report-dda931.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-dda931.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genlisp.c</td><td class="DESC">gl0UseEnv</td><td class="Q">1122</td><td class="Q">1</td><td><a href="report-ddb3ab.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ddb3ab.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_emerg.c</td><td class="DESC">emUsageFromLocalIndexAliasing</td><td class="Q">1291</td><td class="Q">1</td><td><a href="report-ddde19.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ddde19.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_imps.c</td><td class="DESC">gen0GVectIssueFn</td><td class="Q">1137</td><td class="Q">1</td><td><a href="report-ddeb9e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ddeb9e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/foam.c</td><td class="DESC">foamFrBuffer</td><td class="Q">1968</td><td class="Q">1</td><td><a href="report-de8ada.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-de8ada.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genlisp.c</td><td class="DESC">gliUnit</td><td class="Q">319</td><td class="Q">1</td><td><a href="report-dee2e2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-dee2e2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gencpp.c</td><td class="DESC">HasDependentTypes</td><td class="Q">1143</td><td class="Q">1</td><td><a href="report-e0b0c0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e0b0c0.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/segment.c</td><td class="DESC">CF6_addLevel0</td><td class="Q">604</td><td class="Q">1</td><td><a href="report-e1dbb9.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e1dbb9.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF187_addLevel0</td><td class="Q">5097</td><td class="Q">1</td><td><a href="report-e1efb6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e1efb6.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF27__LT__LT_</td><td class="Q">1374</td><td class="Q">1</td><td><a href="report-e2caeb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e2caeb.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/yldlocs.c</td><td class="DESC">ylProg</td><td class="Q">100</td><td class="Q">1</td><td><a href="report-e2ee15.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e2ee15.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_implicit.c</td><td class="DESC">gen1ImplicitExport</td><td class="Q">176</td><td class="Q">1</td><td><a href="report-e4c028.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e4c028.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/java/genjava.c</td><td class="DESC">gj0AElt</td><td class="Q">3205</td><td class="Q">1</td><td><a href="report-e55aa7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e55aa7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0Param</td><td class="Q">2512</td><td class="Q">1</td><td><a href="report-e64cf2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e64cf2.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_rrfmt.c</td><td class="DESC">rrFlogEmerge</td><td class="Q">244</td><td class="Q">1</td><td><a href="report-e720c4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e720c4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF18_generator</td><td class="Q">1111</td><td class="Q">1</td><td><a href="report-e9c68e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e9c68e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0MakeCross</td><td class="Q">1275</td><td class="Q">1</td><td><a href="report-edf8f4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-edf8f4.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gccBInt</td><td class="Q">4045</td><td class="Q">1</td><td><a href="report-ef82bc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ef82bc.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/string.c</td><td class="DESC">CF20_generStepper</td><td class="Q">1177</td><td class="Q">1</td><td><a href="report-f09bae.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f09bae.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/list.c</td><td class="DESC">CF36_generator</td><td class="Q">1942</td><td class="Q">1</td><td><a href="report-f36811.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f36811.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/gener.c</td><td class="DESC">CF19_generBaseFn</td><td class="Q">796</td><td class="Q">1</td><td><a href="report-f6719d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f6719d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>subcmd/unitools/dword.c</td><td class="DESC">xxDivideDouble</td><td class="Q">144</td><td class="Q">1</td><td><a href="report-f6a813.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f6a813.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genfoam.c</td><td class="DESC">gen0CrossToTuple</td><td class="Q">7668</td><td class="Q">1</td><td><a href="report-f6d0f7.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f6d0f7.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF199_addLevel0</td><td class="Q">5505</td><td class="Q">1</td><td><a href="report-f7f003.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f7f003.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/tform.c</td><td class="DESC">tfJavaCheckArg</td><td class="Q">8426</td><td class="Q">1</td><td><a href="report-fb3e7c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fb3e7c.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/gf_imps.c</td><td class="DESC">gen0GVectIssueFn</td><td class="Q">1132</td><td class="Q">1</td><td><a href="report-fc3286.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fc3286.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/sfloat.c</td><td class="DESC">CF32_generBaseFn</td><td class="Q">1399</td><td class="Q">1</td><td><a href="report-fd7314.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fd7314.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/genc.c</td><td class="DESC">gc0ExportToFortran</td><td class="Q">1606</td><td class="Q">1</td><td><a href="report-fe3645.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fe3645.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_emerg.c</td><td class="DESC">emUsageFromLocalIndexAliasing</td><td class="Q">1283</td><td class="Q">1</td><td><a href="report-fe6913.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fe6913.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/langx.c</td><td class="DESC">CF2_addLevel0</td><td class="Q">614</td><td class="Q">1</td><td><a href="report-fefc13.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fefc13.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoamlib/al/machine.c</td><td class="DESC">CF179_addLevel0</td><td class="Q">4825</td><td class="Q">1</td><td><a href="report-ff2974.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ff2974.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>lib/libfoam/al/runtime.c</td><td class="DESC">CF4_filePutc</td><td class="Q">1018</td><td class="Q">1</td><td><a href="report-ff451f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ff451f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead assignment</td><td>src/of_deada.c</td><td class="DESC">daProg</td><td class="Q">190</td><td class="Q">1</td><td><a href="report-ffc58f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ffc58f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_increment"><td class="DESC">Unused code</td><td class="DESC">Dead increment</td><td>subcmd/unitools/bigint.c</td><td class="DESC">bintRadixScanFrString</td><td class="Q">544</td><td class="Q">1</td><td><a href="report-94fb26.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-94fb26.html" -->
+</tr>
+<tr class="bt_unused_code_dead_increment"><td class="DESC">Unused code</td><td class="DESC">Dead increment</td><td>src/dnf.c</td><td class="DESC">dnfFormatter</td><td class="Q">744</td><td class="Q">1</td><td><a href="report-c398db.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c398db.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/usedef.c</td><td class="DESC">udVarDefsVectBuild</td><td class="Q">318</td><td class="Q">1</td><td><a href="report-02d936.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-02d936.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tinfer.c</td><td class="DESC">tiTfCondition</td><td class="Q">1945</td><td class="Q">1</td><td><a href="report-15c093.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-15c093.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/of_peep.c</td><td class="DESC">peepAElt</td><td class="Q">184</td><td class="Q">1</td><td><a href="report-171b8e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-171b8e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/gf_java.c</td><td class="DESC">gfjPCallFoamTypeDDeclId</td><td class="Q">607</td><td class="Q">1</td><td><a href="report-17eb36.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-17eb36.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tfsat.c</td><td class="DESC">tfSatAsMulti</td><td class="Q">654</td><td class="Q">1</td><td><a href="report-210b64.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-210b64.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/linear.c</td><td class="DESC">serrorUnbalanced</td><td class="Q">776</td><td class="Q">1</td><td><a href="report-382f3b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-382f3b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tfsat.c</td><td class="DESC">tfSatExcept</td><td class="Q">1508</td><td class="Q">1</td><td><a href="report-3d3c2a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3d3c2a.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/java/genjava.c</td><td class="DESC">gj0FlattenExpr</td><td class="Q">1651</td><td class="Q">1</td><td><a href="report-3fa853.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3fa853.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tform.c</td><td class="DESC">abCheckJavaImportId</td><td class="Q">8342</td><td class="Q">1</td><td><a href="report-4d0097.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4d0097.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/gf_java.c</td><td class="DESC">gfjExportToJava</td><td class="Q">659</td><td class="Q">1</td><td><a href="report-542acf.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-542acf.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/annabs.c</td><td class="DESC">abAnnotatedSExpr</td><td class="Q">203</td><td class="Q">1</td><td><a href="report-56186d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-56186d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/java/genjava.c</td><td class="DESC">gj0GloJavaId</td><td class="Q">2091</td><td class="Q">1</td><td><a href="report-610c9b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-610c9b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorOutDirForTest</td><td class="Q">827</td><td class="Q">1</td><td><a href="report-7a0ec0.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7a0ec0.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/annabs.c</td><td class="DESC">abAnnotateSymeRef</td><td class="Q">357</td><td class="Q">1</td><td><a href="report-82ee4e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-82ee4e.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/of_peep.c</td><td class="DESC">peepAElt</td><td class="Q">189</td><td class="Q">1</td><td><a href="report-855bd6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-855bd6.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tform.c</td><td class="DESC">tfSymesFrUnion</td><td class="Q">5499</td><td class="Q">1</td><td><a href="report-85a9a6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-85a9a6.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>subcmd/unitools/store.c</td><td class="DESC">stoMarkObject</td><td class="Q">4545</td><td class="Q">1</td><td><a href="report-907a7f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-907a7f.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>tools/unix/zacc.c</td><td class="DESC">isTerminal</td><td class="Q">946</td><td class="Q">1</td><td><a href="report-97cc2b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-97cc2b.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/annabs.c</td><td class="DESC">abAnnotateSymeRef</td><td class="Q">322</td><td class="Q">1</td><td><a href="report-98f63d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-98f63d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/abcheck.c</td><td class="DESC">abCheckLambda</td><td class="Q">760</td><td class="Q">1</td><td><a href="report-a1b7b3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a1b7b3.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/abcheck.c</td><td class="DESC">abCheckForeignExport</td><td class="Q">699</td><td class="Q">1</td><td><a href="report-ad1c09.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ad1c09.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/genlisp.c</td><td class="DESC">gliExpr</td><td class="Q">398</td><td class="Q">1</td><td><a href="report-be2e70.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-be2e70.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/terror.c</td><td class="DESC">bputBadArgType0</td><td class="Q">1537</td><td class="Q">1</td><td><a href="report-c967ee.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c967ee.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/java/genjava.c</td><td class="DESC">gj0ExportClassMethods</td><td class="Q">529</td><td class="Q">1</td><td><a href="report-cbf4af.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cbf4af.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/genc.c</td><td class="DESC">gc0CreateGloList</td><td class="Q">1096</td><td class="Q">1</td><td><a href="report-d4dcfb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d4dcfb.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tform.c</td><td class="DESC">tfSymesFrRecord</td><td class="Q">5320</td><td class="Q">1</td><td><a href="report-e7ffb1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e7ffb1.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/annabs.c</td><td class="DESC">abAnnotateSymeRef</td><td class="Q">323</td><td class="Q">1</td><td><a href="report-eff9cb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-eff9cb.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/tform.c</td><td class="DESC">tfSymesFrRawRecord</td><td class="Q">5243</td><td class="Q">1</td><td><a href="report-f10bff.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f10bff.html" -->
+</tr>
+<tr class="bt_unused_code_dead_initialization"><td class="DESC">Unused code</td><td class="DESC">Dead initialization</td><td>src/java/genjava.c</td><td class="DESC">gj0Gener</td><td class="Q">2697</td><td class="Q">1</td><td><a href="report-f9471d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f9471d.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/include.c</td><td class="DESC">inclHandleDirective</td><td class="Q">538</td><td class="Q">1</td><td><a href="report-0015ba.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0015ba.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/syscmd.c</td><td class="DESC">scmdProcessOrCheck</td><td class="Q">96</td><td class="Q">1</td><td><a href="report-2ab007.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2ab007.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/abpretty.c</td><td class="DESC">symeClipped0</td><td class="Q">1074</td><td class="Q">1</td><td><a href="report-4bba58.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4bba58.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/syscmd.c</td><td class="DESC">scmdProcessOrCheck</td><td class="Q">90</td><td class="Q">1</td><td><a href="report-501a87.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-501a87.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/include.c</td><td class="DESC">inclHandleDirective</td><td class="Q">541</td><td class="Q">1</td><td><a href="report-7520c5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7520c5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/bloop.c</td><td class="DESC">bloopPosWhere</td><td class="Q">680</td><td class="Q">1</td><td><a href="report-952955.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-952955.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/syscmd.c</td><td class="DESC">scmdProcessOrCheck</td><td class="Q">143</td><td class="Q">1</td><td><a href="report-9c5be5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-9c5be5.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/dnf.c</td><td class="DESC">dnfAndImpliesNegation</td><td class="Q">194</td><td class="Q">1</td><td><a href="report-b240da.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b240da.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/dnf.c</td><td class="DESC">dnfAndImplies</td><td class="Q">165</td><td class="Q">1</td><td><a href="report-c71cbc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c71cbc.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/bloop.c</td><td class="DESC">bloopPosWhere</td><td class="Q">680</td><td class="Q">1</td><td><a href="report-c932ea.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c932ea.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/dnf.c</td><td class="DESC">dnfAndCancelNegation</td><td class="Q">223</td><td class="Q">1</td><td><a href="report-d09be6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d09be6.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/dnf.c</td><td class="DESC">dnfExpandAndImplies</td><td class="Q">665</td><td class="Q">1</td><td><a href="report-e62c23.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e62c23.html" -->
+</tr>
+<tr class="bt_unused_code_dead_nested_assignment"><td class="DESC">Unused code</td><td class="DESC">Dead nested assignment</td><td>src/bloop.c</td><td class="DESC">bloopPosWhere</td><td class="Q">680</td><td class="Q">1</td><td><a href="report-fcccff.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fcccff.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_java.c</td><td class="DESC">gfjPCallFoamType</td><td class="Q">311</td><td class="Q">36</td><td><a href="report-0025ce.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0025ce.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tform.c</td><td class="DESC">tfThdExportsPending</td><td class="Q">3497</td><td class="Q">53</td><td><a href="report-01470b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-01470b.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gencpp.c</td><td class="DESC">GiveTypeAldorExport</td><td class="Q">4082</td><td class="Q">72</td><td><a href="report-0464b4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-0464b4.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/store.c</td><td class="DESC">stoAuditDLL</td><td class="Q">2989</td><td class="Q">49</td><td><a href="report-098895.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-098895.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_prog.c</td><td class="DESC">gen0ProgClosEmpty</td><td class="Q">349</td><td class="Q">8</td><td><a href="report-09cde8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-09cde8.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/scobind.c</td><td class="DESC">scobindSetSigUse</td><td class="Q">3539</td><td class="Q">38</td><td><a href="report-16ba73.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-16ba73.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/stab.c</td><td class="DESC">stabEntryPutSyme</td><td class="Q">342</td><td class="Q">85</td><td><a href="report-17ddcb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-17ddcb.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_prog.c</td><td class="DESC">gen0IssueLevels</td><td class="Q">640</td><td class="Q">9</td><td><a href="report-1f3e83.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1f3e83.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/scobind.c</td><td class="DESC">scobindExtendId</td><td class="Q">2248</td><td class="Q">8</td><td><a href="report-2515b4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2515b4.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tform.c</td><td class="DESC">tfExtendFinish</td><td class="Q">7759</td><td class="Q">22</td><td><a href="report-269532.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-269532.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gencpp.c</td><td class="DESC">transOperatorLike</td><td class="Q">4268</td><td class="Q">88</td><td><a href="report-3e9dae.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3e9dae.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/ti_sef.c</td><td class="DESC">tisef0Within</td><td class="Q">295</td><td class="Q">38</td><td><a href="report-55af89.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-55af89.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/stab.c</td><td class="DESC">stabGetEntry</td><td class="Q">699</td><td class="Q">49</td><td><a href="report-584252.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-584252.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tinfer.c</td><td class="DESC">tiTfThird1</td><td class="Q">1620</td><td class="Q">53</td><td><a href="report-5e5f1a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5e5f1a.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0NthState</td><td class="Q">7249</td><td class="Q">15</td><td><a href="report-5e9134.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5e9134.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_add.c</td><td class="DESC">gen0MakeDefaultPackage</td><td class="Q">331</td><td class="Q">14</td><td><a href="report-5eba1e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5eba1e.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_java.c</td><td class="DESC">gfjExportDecoder</td><td class="Q">965</td><td class="Q">35</td><td><a href="report-654c4e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-654c4e.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/store.c</td><td class="DESC">pgmapMod</td><td class="Q">705</td><td class="Q">38</td><td><a href="report-66ce18.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-66ce18.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/bloop.c</td><td class="DESC">getTok</td><td class="Q">556</td><td class="Q">31</td><td><a href="report-6c1f15.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6c1f15.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0OCall</td><td class="Q">1864</td><td class="Q">38</td><td><a href="report-6f25be.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-6f25be.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/store.c</td><td class="DESC">stoAuditDLL</td><td class="Q">2998</td><td class="Q">68</td><td><a href="report-702d87.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-702d87.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/of_cprop.c</td><td class="DESC">cpCopyPropagate0</td><td class="Q">799</td><td class="Q">59</td><td><a href="report-70b433.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-70b433.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_prog.c</td><td class="DESC">gen0ProgPopState</td><td class="Q">134</td><td class="Q">9</td><td><a href="report-70b5d1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-70b5d1.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/store.c</td><td class="DESC">stoAuditBTree</td><td class="Q">2938</td><td class="Q">48</td><td><a href="report-70fec3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-70fec3.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/ti_sef.c</td><td class="DESC">tiSefoStab</td><td class="Q">160</td><td class="Q">19</td><td><a href="report-744afa.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-744afa.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/formatters.c</td><td class="DESC">slotUsageFormatter</td><td class="Q">385</td><td class="Q">3</td><td><a href="report-7aae52.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7aae52.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/store.c</td><td class="DESC">stoAuditDLL</td><td class="Q">2994</td><td class="Q">55</td><td><a href="report-81b117.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-81b117.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tform.c</td><td class="DESC">tfThdExportsPending</td><td class="Q">3525</td><td class="Q">52</td><td><a href="report-82e612.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-82e612.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0DefineRhs</td><td class="Q">4210</td><td class="Q">16</td><td><a href="report-836237.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-836237.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/sefo.c</td><td class="DESC">sefoIdEqual</td><td class="Q">1717</td><td class="Q">12</td><td><a href="report-83655c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-83655c.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_java.c</td><td class="DESC">gfjExportEncoder</td><td class="Q">995</td><td class="Q">38</td><td><a href="report-85c462.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-85c462.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/scobind.c</td><td class="DESC">scobindSetSigUse</td><td class="Q">3524</td><td class="Q">50</td><td><a href="report-8cb068.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8cb068.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0ApplySyme</td><td class="Q">1759</td><td class="Q">18</td><td><a href="report-8ec954.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-8ec954.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0IsFortranCall</td><td class="Q">1580</td><td class="Q">6</td><td><a href="report-90b4d1.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-90b4d1.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_java.c</td><td class="DESC">gfjExportToJavaSyme</td><td class="Q">740</td><td class="Q">23</td><td><a href="report-91d896.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-91d896.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/sefo.c</td><td class="DESC">sefoClosure0</td><td class="Q">3789</td><td class="Q">67</td><td><a href="report-a10f23.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a10f23.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tform.c</td><td class="DESC">tfThdExportsPending</td><td class="Q">3526</td><td class="Q">55</td><td><a href="report-acbf61.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-acbf61.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/cmdline.c</td><td class="DESC">cmdDoOptDeveloper</td><td class="Q">870</td><td class="Q">12</td><td><a href="report-add8b5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-add8b5.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/sefo.c</td><td class="DESC">sefoIdEqual</td><td class="Q">1717</td><td class="Q">9</td><td><a href="report-b1e7dc.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b1e7dc.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gencpp.c</td><td class="DESC">GiveTypeAldorExport</td><td class="Q">4071</td><td class="Q">81</td><td><a href="report-b44159.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-b44159.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tform.c</td><td class="DESC">tfGetCatImportsFrWith</td><td class="Q">4494</td><td class="Q">41</td><td><a href="report-bb3294.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-bb3294.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/of_deada.c</td><td class="DESC">trAllocateTemporary</td><td class="Q">674</td><td class="Q">18</td><td><a href="report-bd8ae2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-bd8ae2.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/stab.c</td><td class="DESC">stabPropagateDecl</td><td class="Q">1493</td><td class="Q">8</td><td><a href="report-cb45a6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cb45a6.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/absyn.c</td><td class="DESC">abNewApplyArg</td><td class="Q">1104</td><td class="Q">11</td><td><a href="report-cbc0be.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-cbc0be.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/fbox.c</td><td class="DESC">fboxNth</td><td class="Q">89</td><td class="Q">5</td><td><a href="report-d3df42.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d3df42.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/absyn.c</td><td class="DESC">abNewApplyDeclaredArg</td><td class="Q">1133</td><td class="Q">10</td><td><a href="report-d71bef.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d71bef.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/sefo.c</td><td class="DESC">symeToBuffer</td><td class="Q">4171</td><td class="Q">20</td><td><a href="report-db7a60.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-db7a60.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/stab.c</td><td class="DESC">stabEntryAddSyme</td><td class="Q">351</td><td class="Q">75</td><td><a href="report-dc97a5.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-dc97a5.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/cfgfile.c</td><td class="DESC">cfgExpandList</td><td class="Q">154</td><td class="Q">27</td><td><a href="report-ddfbb2.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ddfbb2.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/stab.c</td><td class="DESC">stabEntryIsGeneric</td><td class="Q">383</td><td class="Q">87</td><td><a href="report-e14f5d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e14f5d.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/gf_java.c</td><td class="DESC">gfjExportToJavaFn</td><td class="Q">884</td><td class="Q">29</td><td><a href="report-e2a3f3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e2a3f3.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0FindDefsSyme</td><td class="Q">6745</td><td class="Q">16</td><td><a href="report-e30394.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e30394.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0FoamImportLevel</td><td class="Q">7374</td><td class="Q">14</td><td><a href="report-e3ac99.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e3ac99.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/cmdline.c</td><td class="DESC">cmdDoOptDebug</td><td class="Q">834</td><td class="Q">12</td><td><a href="report-e3ddbd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e3ddbd.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0FoamImportLevel</td><td class="Q">7380</td><td class="Q">15</td><td><a href="report-e623c4.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e623c4.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/bloop.c</td><td class="DESC">bloopGetPos</td><td class="Q">603</td><td class="Q">34</td><td><a href="report-e7ca77.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e7ca77.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/tinfer.c</td><td class="DESC">tiGetTFormContext</td><td class="Q">641</td><td class="Q">10</td><td><a href="report-f2b7a6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f2b7a6.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>src/genfoam.c</td><td class="DESC">gen0FoamLevel</td><td class="Q">7339</td><td class="Q">8</td><td><a href="report-f9df59.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f9df59.html" -->
+</tr>
+<tr class="bt_logic_error_dereference_of_null_pointer"><td class="DESC">Logic error</td><td class="DESC">Dereference of null pointer</td><td>subcmd/unitools/cfgfile.c</td><td class="DESC">cfgExpandList</td><td class="Q">147</td><td class="Q">24</td><td><a href="report-faee76.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-faee76.html" -->
+</tr>
+<tr class="bt_logic_error_division_by_zero"><td class="DESC">Logic error</td><td class="DESC">Division by zero</td><td>src/table.c</td><td class="DESC">tblEnlarge</td><td class="Q">283</td><td class="Q">14</td><td><a href="report-873f6f.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-873f6f.html" -->
+</tr>
+<tr class="bt_logic_error_garbage_return_value"><td class="DESC">Logic error</td><td class="DESC">Garbage return value</td><td>src/absyn.c</td><td class="DESC">abContainer</td><td class="Q">493</td><td class="Q">15</td><td><a href="report-987c5c.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-987c5c.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorRun</td><td class="Q">422</td><td class="Q">10</td><td><a href="report-1c33fd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1c33fd.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorCompile</td><td class="Q">349</td><td class="Q">10</td><td><a href="report-1d5332.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1d5332.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorPhase</td><td class="Q">572</td><td class="Q">10</td><td><a href="report-238226.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-238226.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorErrors</td><td class="Q">540</td><td class="Q">7</td><td><a href="report-2a9dc8.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2a9dc8.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorGenerate</td><td class="Q">655</td><td class="Q">15</td><td><a href="report-2eec9b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2eec9b.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorOutDirForTest</td><td class="Q">829</td><td class="Q">17</td><td><a href="report-64b434.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-64b434.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorInterpret</td><td class="Q">474</td><td class="Q">10</td><td><a href="report-77c943.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-77c943.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorGlean</td><td class="Q">820</td><td class="Q">6</td><td><a href="report-a07809.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-a07809.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorScript</td><td class="Q">267</td><td class="Q">18</td><td><a href="report-c761fb.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c761fb.html" -->
+</tr>
+<tr class="bt_memory_error_memory_leak"><td class="DESC">Memory error</td><td class="DESC">Memory leak</td><td>subcmd/testaldor/testaldor.c</td><td class="DESC">testAldorErrors</td><td class="Q">526</td><td class="Q">10</td><td><a href="report-ff898d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ff898d.html" -->
+</tr>
+<tr class="bt_logic_error_uninitialized_argument_value"><td class="DESC">Logic error</td><td class="DESC">Uninitialized argument value</td><td>src/fint.c</td><td class="DESC">fintExecMainUnit</td><td class="Q">6398</td><td class="Q">31</td><td><a href="report-3e5432.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3e5432.html" -->
+</tr>
+<tr class="bt_logic_error_uninitialized_argument_value"><td class="DESC">Logic error</td><td class="DESC">Uninitialized argument value</td><td>src/genfoam.c</td><td class="DESC">gen0FindDefsSyme</td><td class="Q">6753</td><td class="Q">19</td><td><a href="report-406c72.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-406c72.html" -->
+</tr>
+<tr class="bt_logic_error_uninitialized_argument_value"><td class="DESC">Logic error</td><td class="DESC">Uninitialized argument value</td><td>src/gf_prog.c</td><td class="DESC">gen0ProgInitEmpty</td><td class="Q">298</td><td class="Q">12</td><td><a href="report-44b532.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-44b532.html" -->
+</tr>
+<tr class="bt_logic_error_uninitialized_argument_value"><td class="DESC">Logic error</td><td class="DESC">Uninitialized argument value</td><td>src/genc.c</td><td class="DESC">gccBInt</td><td class="Q">4100</td><td class="Q">20</td><td><a href="report-fcf3dd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-fcf3dd.html" -->
+</tr>
+</tbody>
+</table>
+
+</body></html>

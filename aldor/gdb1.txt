@@ -1,0 +1,146 @@
+kfp@omega:~$ sudo gdb -p 879480
+[sudo] password for kfp:
+GNU gdb (Ubuntu 15.0.50.20240403-0ubuntu1) 15.0.50.20240403-git
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 879480
+Reading symbols from /usr/local/libexec/aldor...
+Reading symbols from /lib/x86_64-linux-gnu/libm.so.6...
+Reading symbols from /usr/lib/debug/.build-id/f8/34d7308d2660218ed4f7486a58e28c8464fe4b.debug...
+Reading symbols from /usr/local/lib/libreadline.so.8...
+(No debugging symbols found in /usr/local/lib/libreadline.so.8)
+Reading symbols from /lib/x86_64-linux-gnu/libc.so.6...
+Reading symbols from /usr/lib/debug/.build-id/27/4eec488d230825a136fa9c4d85370fed7a0a5e.debug...
+Reading symbols from /lib64/ld-linux-x86-64.so.2...
+Reading symbols from /usr/lib/debug/.build-id/52/0e05878220fb2fc6d28ff46b63b3fd5d48e763.debug...
+Reading symbols from /lib/x86_64-linux-gnu/libtinfo.so.6...
+
+warning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libtinfo.so.6
+(No debugging symbols found in /lib/x86_64-linux-gnu/libtinfo.so.6)
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007d45d552600e in pselect64_syscall (
+    sigmask=0x7d45d56e9120 <_rl_orig_sigset>, timeout=<optimised out>,
+    exceptfds=0x0, writefds=0x0, readfds=0x7ffeedb18610, nfds=1)
+    at ../sysdeps/unix/sysv/linux/pselect.c:34
+
+warning: 34     ../sysdeps/unix/sysv/linux/pselect.c: No such file or directory
+(gdb) next
+
+0x00007d45d56c882d in _rl_timeout_select ()
+   from /usr/local/lib/libreadline.so.8
+(gdb)
+Single stepping until exit from function _rl_timeout_select,
+which has no line number information.
+0x00007d45d56cc4c7 in rl_getc () from /usr/local/lib/libreadline.so.8
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /usr/local/libexec/aldor
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+warning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libtinfo.so.6
+#1 (Warning) No files!  Type `aldor -help' for help.
+[Inferior 1 (process 879616) exited normally]
+(gdb) run -g loop
+Starting program: /usr/local/libexec/aldor -g loop
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+warning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libtinfo.so.6
+Aldor
+
+Copyright (c) 1990-2007 Aldor Software Organization Ltd (Aldor.org).
+
+Release: Aldor(C) version 1.4.0(2c53e759f1e00e345f8b172e7139debda72fda13) for LINUX(glibc2.10+) (debug version)
+Type "#int help" for more details.
+[1] -> #int history on
+%%2 := 2
+^
+[L2 C1] #1 (Error) No meaning for integer-style literal `2'.
+
+%%3 := %2
+^
+[L3 C1] #1 (Error) No meaning for identifier `%2'.
+
+%%4 := %344
+^
+[L4 C1] #1 (Error) No meaning for identifier `%344'.
+
+%%5 := #include "aldor"
+                                           Comp: 50 msec, Interp: 0 msec
+%%6 := #include "aldorinterp"
+                                           Comp: 20 msec, Interp: 0 msec
+%%7 := 2
+^
+[L7 C1] #1 (Error) No meaning for integer-style literal `2'.
+
+%%8 := import from Integer
+                                           Comp: 10 msec, Interp: 0 msec
+%%9 := 2
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000555555705da7 in dnfIsTrue (xx=0x0) at dnf.c:391
+391             return xx->argc == 1 && dnfAndIsTrue(xx->argv[0]);
+(gdb)
+
+
+-----
+
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000555555705da7 in dnfIsTrue (xx=0x0) at dnf.c:391
+391             return xx->argc == 1 && dnfAndIsTrue(xx->argv[0]);
+(gdb)
+(gdb) next
+compSignalHandler (signo=0) at axlcomp.c:1378
+1378    {
+(gdb) next
+1383            if      (signo == SIGFAKE)      sigerr = ALDOR_E_SigUnknown;
+(gdb) next
+1384            else if (signo == SIGHUP)       sigerr = ALDOR_E_SigHup;
+(gdb) next
+1385            else if (signo == SIGINT)       sigerr = ALDOR_E_SigInt;
+(gdb) next
+1386            else if (signo == SIGQUIT)      sigerr = ALDOR_E_SigQuit;
+(gdb) next
+1387            else if (signo == SIGILL)       sigerr = ALDOR_E_SigIll;
+(gdb) next
+1388            else if (signo == SIGTRAP)      sigerr = ALDOR_E_SigTrap;
+(gdb) next
+1389            else if (signo == SIGABRT)      sigerr = ALDOR_E_SigAbrt;
+(gdb) next
+1390            else if (signo == SIGEMT)       sigerr = ALDOR_E_SigEmt;
+(gdb) next
+1391            else if (signo == SIGFPE)       sigerr = ALDOR_E_SigFpe;
+(gdb) next
+1392            else if (signo == SIGBUS)       sigerr = ALDOR_E_SigBus;
+(gdb) next
+1393            else if (signo == SIGSEGV)      sigerr = ALDOR_E_SigSegv;
+(gdb) next
+1402            osDisplayMessage(comsgString(sigerr));
+(gdb) next
+1403            comsgError(NULL, sigerr, signo);
+(gdb) next
+Program fault (segmentation violation).#1 (Error) Program fault (segmentation violation).
+1404            fflush(dbOut);
+(gdb) next
+1405            exitFailure();
+(gdb) next
+[Inferior 1 (process 879642) exited with code 01]
+(gdb) next
+The program is not being run.
+(gdb) next
+The program is not being run.
+(gdb)
