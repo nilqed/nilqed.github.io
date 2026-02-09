@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1 Introduction to ReGIS &#8212; ReGIS 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2 Screen Control Command" href="chapter2.html" />
+    <link rel="prev" title="About This Manual" href="about.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="navbar docutils container">
+<p><a class="reference external" href="../../"><img alt="VT100.net" class="button" src="../vt100.net-logo" style="width: 102px; height: 16px;" /></a> VT330/VT340 Programmer Reference Manual Volume 2:
+Graphics Programming</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="about.html">A
+bout</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="introduction-to-regis">
+<span id="s1"></span><h1>1 Introduction to ReGIS<a class="headerlink" href="#introduction-to-regis" title="Link to this heading">¶</a></h1>
+<section id="what-is-regis">
+<span id="s1-1"></span><h2>What is ReGIS?<a class="headerlink" href="#what-is-regis" title="Link to this heading">¶</a></h2>
+<p>ReGIS is a graphics instruction set from Digital. This chapter describes
+how to use ReGIS with the VT300. You can use ReGIS to create graphics
+for display or printing.</p>
+<p>ReGIS is a symbol system describing the parts of an image. You build an
+image by combining standard geometric forms: dots, lines, curves,
+circles, and arcs. You can also define text characters and add shading
+to your images.</p>
+<p>ReGIS lets you describe each geometric form with a few command
+characters. For example, ReGIS lets you draw a circle of any size, at
+any point on the screen. You simple specify (1) the command to draw the
+circle, (2) the location of the center of the circle, and (3) any point
+on the circumference of the circle.</p>
+<p>ReGIS has 10 basic commands (<a class="reference external" href="#T1-1">Table 1-1</a>). Each command has
+several options. The following chapters describe each command and its
+options.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Table 1-1 ReGIS Command Summary</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command Letter</p></th>
+<th class="head"><p>ReGIS Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S</p></td>
+<td><p>Screen</p></td>
+<td><p>Provides screen controls,
+such as erasing the screen.</p></td>
+</tr>
+<tr class="row-odd"><td><p>W</p></td>
+<td><p>Write</p></td>
+<td><p>Provides writing controls,
+such as writing shades.</p></td>
+</tr>
+<tr class="row-even"><td><p>P</p></td>
+<td><p>Position</p></td>
+<td><p>Moves the graphics cursor
+without performing any
+writing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>V</p></td>
+<td><p>Vector</p></td>
+<td><p>Draws vectors (straight
+lines) between the screen
+locations you specify in the
+command.</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>Curve</p></td>
+<td><p>Draws circles and arcs, using
+the screen locations you
+specify in the command.</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>Text</p></td>
+<td><p>Controls the display of text
+strings in graphics, and lets
+you specify characters to
+display.</p></td>
+</tr>
+<tr class="row-even"><td><p>L</p></td>
+<td><p>Load</p></td>
+<td><p>Defines and loads alternate
+characters you can display
+with the text command.</p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;</p></td>
+<td><p>Macrograph</p></td>
+<td><p>Defines a command string as a
+macrograph. You use
+macrographs to store and
+recall other ReGIS command
+strings.</p></td>
+</tr>
+<tr class="row-even"><td><p>R</p></td>
+<td><p>Report</p></td>
+<td><p>Reports information such as
+the active position and error
+codes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>Polygon Fill</p></td>
+<td><p>Fills in a single closed
+figure, such as a circle or
+square.</p></td>
+</tr>
+<tr class="row-even"><td><p>;</p></td>
+<td><p>Resynchronization</p></td>
+<td><p>Resynchronizes the flow of
+ReGIS command strings to the
+beginning of a new command.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conventions">
+<span id="s1-2"></span><h2>Conventions<a class="headerlink" href="#conventions" title="Link to this heading">¶</a></h2>
+<p>The following conventions apply to the ReGIS commands in this manual.</p>
+<ul class="simple">
+<li><p>You can use uppercase and lowercase letters with ReGIS commands
+(except text in a quoted string). This manual uses uppercase letters
+for clarity.</p></li>
+<li><p>Angle brackets <strong>&lt; &gt;</strong> indicate that you can select different values.
+The &lt;values&gt; in the angle brackets define what type of information
+you can use, but the angles are not part of the ReGIS syntax.</p></li>
+<li><p><strong>[X,Y]</strong> indicates you can select screen position values. The
+brackets are part of the ReGIS command syntax. You can use both
+values (X and Y) or just one value (X or Y).</p></li>
+</ul>
+</section>
+<section id="regis-command-syntax">
+<span id="s1-3"></span><h2>ReGIS Command Syntax<a class="headerlink" href="#regis-command-syntax" title="Link to this heading">¶</a></h2>
+<p>This section describes the format you use for ReGIS commands. The
+section also describes the numeric values you can use and the order that
+ReGIS performs commands in.</p>
+<section id="command-key-letter">
+<span id="s1-3-1"></span><h3>Command Key Letter<a class="headerlink" href="#command-key-letter" title="Link to this heading">¶</a></h3>
+<p>ReGIS commands begin with a single character that identifies the command
+type, followed by any selected options and arguments for that command.
+This character is called a command key letter. For example, an S
+indicates a screen control command.</p>
+<p>S &lt;option&gt; &lt;option&gt;</p>
+<p>You only have to use one command key letter for a series of arguments,
+until you select a new command type. For example, here is a sequence of
+screen (S) and position (P) commands.</p>
+<p>S &lt;option&gt; &lt;argument&gt; &lt;argument&gt; P &lt;argument&gt; S &lt;argument&gt;</p>
+<p>If you use an argument without a command key letter, ReGIS links that
+argument to the last identified command.</p>
+</section>
+<section id="argument-and-option-formats">
+<span id="s1-3-2"></span><h3>Argument and Option Formats<a class="headerlink" href="#argument-and-option-formats" title="Link to this heading">¶</a></h3>
+<p>An argument is any variable you include in a command to modify the
+action of that command. There are four types of arguments used in ReGIS.</p>
+<ul>
+<li><div class="line-block">
+<div class="line">Options and suboptions</div>
+<div class="line">Are always enclosed in parentheses.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Digit strings</div>
+<div class="line">Define numeric parameters for command and options.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Bracketed extents</div>
+<div class="line">Define position coordinates, or height and width values for text
+characters.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Quoted text strings</div>
+<div class="line">Define text for display or printing.</div>
+</div>
+</li>
+</ul>
+<p>All ReGIS data is enclosed in parentheses, brackets, or quotes, except
+for the following.</p>
+<ul class="simple">
+<li><p>Command key letters</p></li>
+<li><p>Macrograph command options that are defined by the &#64; sign as a
+command’s key lettter</p></li>
+<li><p>Pixel vector (PV) offset values</p></li>
+<li><p>Hex values used to define the contents of a character cell</p></li>
+</ul>
+<p>This section describes the meaning of parentheses, brackets, and quotes
+in ReGIS commands. The section also describes how commas and spaces
+affect commands.</p>
+<section id="parentheses">
+<span id="s1-3-2-1"></span><h4>Parentheses<a class="headerlink" href="#parentheses" title="Link to this heading">¶</a></h4>
+<p>You use parentheses to enclose options and suboptions.</p>
+<p>Command(Option(Suboption))</p>
+<p>The left parenthesis, (, defines the beginning of the option or
+suboption. The right parenthesis, ), defines the end. ReGIS assumes that
+any letter not enclosed in parentheses or quotes is a command key
+letter.</p>
+<p>You must enclose each suboption in a separate nested set of parentheses.
+Otherwise, ReGIS tries to process the suboption as an option. This could
+cause errors in your program.</p>
+<p>Here are some examples of various ReGIS command with options and
+suboptions in parentheses.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Meaning of Parentheses</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S(E)</p></td>
+<td><p><strong>E</strong> is an erase option to the <strong>S</strong> screen
+control command.</p></td>
+</tr>
+<tr class="row-odd"><td><p>W(I0,F3)</p></td>
+<td><p><strong>I</strong> and <strong>F</strong> are foreground intensity and plane
+select options to the <strong>W</strong> write control command.</p>
+<p>The <strong>0</strong> and <strong>3</strong> are numeric arguments to the
+options. A comma separates the options. You can
+also use spaces to separate options. (See the
+<a class="reference external" href="#S1.3.2.4">section on commas and spaces</a>.)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>P(W(M100))</p></td>
+<td><p>This is a pixel vector (PV) multiplication
+temporary write option to the <strong>P</strong> position
+command.</p>
+<p>The <strong>W</strong> write command is used as an option.</p>
+<p>The <strong>M</strong> multiplication option of the write
+control command is used as a suboption.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>V(W(I(R)))</p></td>
+<td><p>This example defines a temporary write option
+affecting the value of the foreground intensity for
+a vector command.</p>
+<p>The <strong>W</strong> write command is used as an option.</p>
+<p>The <strong>I</strong> foreground intensity option to the write
+control command is used as a suboption.</p>
+<p>The <strong>R</strong> argument to the I suboption is enclosed
+in a third set of parentheses, since this argument
+is a letter value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As these examples show, you must use an equal number of opening and
+closing parentheses. For example, take the command</p>
+<p>V(W(I(R)))</p>
+<p>The outer set of parentheses define the W option. The second set of
+parentheses define the I suboption. The inner set of parentheses define
+the R sub-suboption.</p>
+</section>
+<section id="brackets">
+<span id="s1-3-2-2"></span><h4>Brackets<a class="headerlink" href="#brackets" title="Link to this heading">¶</a></h4>
+<p>You use brackets to enclose two types of numeric values.</p>
+<ul class="simple">
+<li><p>Coordinate position values</p></li>
+<li><p>Height and width values</p></li>
+</ul>
+<p>Coordinate position values are arguments to commands, options, and
+suboptions. The coordinates can represent a specific point on the screen
+(known as an absolute value), some amount of displacement (known as a
+relative value), or a combination of the two.</p>
+<p>Height and width values are arguments to text commands only. These
+values represent relative displacement values for text options.</p>
+<p>NOTE: For more information on screen coordinate values, see “<a class="reference external" href="#...">Screen
+Coordinates</a>” in this chapter.</p>
+</section>
+<section id="quotes">
+<span id="s1-3-2-3"></span><h4>Quotes<a class="headerlink" href="#quotes" title="Link to this heading">¶</a></h4>
+<p>You use quotes to enclose any of the following ReGIS elements.</p>
+<ul class="simple">
+<li><p>Text to display on the screen (Used with text commands.)</p></li>
+<li><p>A printable character to use for shading</p></li>
+<li><p>A name for a character set selected by a load command</p></li>
+<li><p>A single ASCII character used as a call letter for load cell
+arguments to a load command</p></li>
+</ul>
+<p>In all cases, you can use double quotes (“), or single quotes (‘). The
+quote mark is the first character of the argument, so you do not need
+parentheses. The first quote mark defines the start of the argument,
+while the second defines the end.</p>
+</section>
+<section id="commas-and-spaces">
+<span id="s1-3-2-4"></span><h4>Commas and Spaces<a class="headerlink" href="#commas-and-spaces" title="Link to this heading">¶</a></h4>
+<p>You can use commas and spaces to separate option values in ReGIS
+commands. The commas and spaces make command strings easier to read.</p>
+<p>There are two cases where you must use commas: (1) to separate numeric
+values in brackets such as [100,200]; (2) when you have an E command
+(such as an erase screen to specified background) that follows a numeric
+value. ReGIS can handle exponential values, so you must insert a comma
+between the numeric value and the E command letter. This comma prevents
+ReGIS from assuming that the numeric value is exponential.</p>
+<p>ReGIS does not include commas and spaces as part of a graphic image,
+unless you use them in a quoted text string for a text command.</p>
+</section>
+</section>
+<section id="numeric-values">
+<span id="s1-3-3"></span><h3>Numeric Values<a class="headerlink" href="#numeric-values" title="Link to this heading">¶</a></h3>
+<p>You send numeric values as decimal integer strings to the VT300. You can
+use signed values where appropriate. The VT300 is an integer-oriented
+device. However, it accepts floating point specifiers, truncating those
+values to 16-bit signed integers for internal use.</p>
+<p>The VT300 also accepts exponential values. You define an exponential
+value by using the letter E and the power of 10 after a decimal integer
+string. This feature lets you run ReGIS commands written in higher level
+languages (such as FORTRAN and Pascal) on the VT300.</p>
+</section>
+<section id="when-does-regis-perform-commands">
+<span id="s1-3-4"></span><h3>When Does ReGIS Perform Commands?<a class="headerlink" href="#when-does-regis-perform-commands" title="Link to this heading">¶</a></h3>
+<p>ReGIS performs commands and options immediately. ReGIS acts on each
+option, suboption, and argument as soon as ReGIS receives the command.</p>
+</section>
+</section>
+<section id="control-characters">
+<span id="s1-4"></span><h2>Control Characters<a class="headerlink" href="#control-characters" title="Link to this heading">¶</a></h2>
+<p>ReGIS recognizes only four control characters.</p>
+<ul class="simple">
+<li><p>CR (carriage return)</p></li>
+<li><p>LF (line feed)</p></li>
+<li><p>BS (backspace)</p></li>
+<li><p>HT (horizontal tab)</p></li>
+</ul>
+<p>You can only use these control characters in a quoted string. Since
+ReGIS ignores control characters outside a quoted string, you can use
+line feeds and carriage returns to separate command strings. This makes
+your command strings easier to read, without affecting the graphic
+image.</p>
+</section>
+<section id="vt300-screen">
+<span id="s1-5"></span><h2>VT300 Screen<a class="headerlink" href="#vt300-screen" title="Link to this heading">¶</a></h2>
+<p>The VT300 screen has 384,000 pixels arranged in 800 vertical columns by
+480 horizontal rows. A pixel (picture element) is the smallest unit the
+terminal can display.</p>
+<p>ReGIS lets you draw lines, curves, and text by turning on specific
+pixels on the screen. For example, when you turn on several pixels in a
+row, a line appears on the screen. You can turn any one of the 384,000
+individual pixels on or off, by using an X-Y coordinate system.</p>
+</section>
+<section id="x-y-coordinate-system">
+<span id="s1-6"></span><h2>X-Y Coordinate System<a class="headerlink" href="#x-y-coordinate-system" title="Link to this heading">¶</a></h2>
+<p>You can select any pixel on the screen by specifying its location. You
+use an [X,Y] coordinate to specify the location of the pixel. The
+X-coordinate specifies the horizontal position value. The Y-coordinate
+specifies the vertical position value. The pixel is at the intersection
+of the X and Y values.</p>
+<p><a class="reference external" href="#F1-1">Figure 1-1</a> shows a typical coordinate system. The [X,Y]
+coordinates specify a point in the coordinate system.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Figure 1-1 Typical X-Y Coordinate System</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image1" src="rst/ma-0653-83" /></p></td>
+</tr>
+</tbody>
+</table>
+<section id="syntax">
+<span id="s1-6-1"></span><h3>Syntax<a class="headerlink" href="#syntax" title="Link to this heading">¶</a></h3>
+<p>ReGIS commands use a specific syntax for X- and Y-coordinates in ReGIS
+commands. There are three simple rules for specifying a coordinate
+position.</p>
+<ul class="simple">
+<li><p>Enclose the coordinates in brackets.</p></li>
+<li><p>Specify the X-coordinate (if any) first.</p></li>
+<li><p>Put a comma before any Y-coordinate, even if there is no
+X-coordinate.</p></li>
+</ul>
+<p>You do not have to specify both an X and Y value in all cases. In fact,
+you only have to specify an X or Y value that is changing from the
+current value.</p>
+<p>If you only change the X value, simple specify the new X value in
+brackets. ReGIS recognizes [X] as meaning the Y value is unchanged. If
+you only change the Y value, use a comma before the new Y value in the
+brackets. ReGIS recognizes [,Y] as meaning the X value is unchanged. The
+comma indicates that the next coordinate is a Y value.</p>
+<p>You specify coordinate values as numeric values assigned to points on
+the screen. This method is called display addressing. You can use a
+default value, embedded decimal values, or exponential values. See the
+display addressing option to the screen command (<a class="reference external" href="chapter2.html">Chapter
+2</a>).</p>
+<p>You can use absolute values (referring to a specific point), relative
+values (referring to a point as it relates to the current active
+position), or a combination of the two. Here are some examples of
+coordinate values.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Coordinate</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>[10,86]</p></td>
+<td><p>Absolute value for X and Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>[52]</p></td>
+<td><p>Absolute value for X, with Y unchanged</p></td>
+</tr>
+<tr class="row-even"><td><p>[,121]</p></td>
+<td><p>Absolute value for Y, with X unchanged</p></td>
+</tr>
+<tr class="row-odd"><td><p>[+15,-10]</p></td>
+<td><p>Relative values for X and Y</p></td>
+</tr>
+<tr class="row-even"><td><p>[+10,100]</p></td>
+<td><p>Relative value for X, absolute value for Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>[100,-25]</p></td>
+<td><p>Absolute value for X, relative value for Y</p></td>
+</tr>
+<tr class="row-even"><td><p>[6.25,10.4]</p></td>
+<td><p>Absolute embedded decimal values for X and Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>[.1E3,1000E-1]</p></td>
+<td><p>Absolute exponential values for X and Y</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="screen-coordinates">
+<span id="s1-6-2"></span><h3>Screen Coordinates<a class="headerlink" href="#screen-coordinates" title="Link to this heading">¶</a></h3>
+<p>The VT300 starts counting [X,Y] coordinates at the upper-left corner of
+the screen. The first pixel is at location [0,0], called the screen
+origin.</p>
+<p>X-coordinates range from 0 (the left edge of the screen), through 799
+(the right edge). Y-coordinates range from 0 (the top of the screen),
+through 479 (the bottom). This provides an 800 (0 to 799) by 480 (0 to
+479) array of specific screen locations.</p>
+</section>
+</section>
+<section id="graphics-cursors">
+<span id="s1-7"></span><h2>Graphics Cursors<a class="headerlink" href="#graphics-cursors" title="Link to this heading">¶</a></h2>
+<p>The VT300 has two types of graphics cursors, an output cursor and input
+cursor.</p>
+<section id="output-cursor">
+<span id="s1-7-1"></span><h3>Output Cursor<a class="headerlink" href="#output-cursor" title="Link to this heading">¶</a></h3>
+<p>The output cursor only appears when the terminal is in ReGIS mode and
+waiting for ReGIS input from the host. You can select whether or not to
+display the output cursor by using the <strong>Graphics Cursor</strong> feature in
+the Graphics Set-Up screen, or by using the ReGIS S(C) command
+(”<a class="reference external" href="chapter2.html#...">Graphics Cursor Control</a>” in <a class="reference external" href="chapter2.html">Chapter
+2</a>). You can select the style of the output cursor by
+using the ReGIS S(C(H)) command (”<a class="reference external" href="chapter2.html#...">Graphics Output
+Cursor</a>” in <a class="reference external" href="chapter2.html">Chapter 2</a>). See
+the “<a class="reference external" href="#S1.7.4">Cursor Styles</a>” section that follows.</p>
+</section>
+<section id="input-cursor">
+<span id="s1-7-2"></span><h3>Input Cursor<a class="headerlink" href="#input-cursor" title="Link to this heading">¶</a></h3>
+<p>The input cursor appears when the terminal is in ReGIS graphics input
+mode. You can move the input cursor by using the arrow keys on the
+keyboard, or by using a locator device such as a mouse. You can select
+the style of input cursor by using the ReGIS S(C(I)) command (”<a class="reference external" href="chapter2.html#...">Graphics
+Input Cursor</a>” in <a class="reference external" href="chapter2.html">Chapter 2</a>).</p>
+</section>
+<section id="cursor-position">
+<span id="s1-7-3"></span><h3>Cursor Position<a class="headerlink" href="#cursor-position" title="Link to this heading">¶</a></h3>
+<p>The graphics cursor (input or output) indicates the active screen
+location. This location is either the screen origin [0,0] or the point
+most recently moved or drawn to.</p>
+<p>The graphics cursor is at the screen origin when you enter ReGIS mode
+after a power-up or reset condition. If you exit ReGIS, then enter ReGIS
+again, the cursor is at the last position drawn or moved to during the
+previous ReGIS activity.</p>
+</section>
+<section id="cursor-styles">
+<span id="s1-7-4"></span><h3>Cursor Styles<a class="headerlink" href="#cursor-styles" title="Link to this heading">¶</a></h3>
+<p>There are four built-in graphics cursor styles you can use with ReGIS.
+You can also define your own input cursor. You select a built-in cursor
+style by using an index number with the ReGIS screen command. See
+“<a class="reference external" href="chapter2.html#...">Graphics Cursor Control</a>” in <a class="reference external" href="chapter2.html">Chapter
+2</a>.</p>
+<section id="diamond">
+<span id="s1-7-4-1"></span><h4>Diamond<a class="headerlink" href="#diamond" title="Link to this heading">¶</a></h4>
+<p>This cursor is a 21 × 21 pixel diamond. You can use this cursor for
+input and output operations. The diamond is the default output cursor.</p>
+</section>
+<section id="crosshair">
+<span id="s1-7-4-2"></span><h4>Crosshair<a class="headerlink" href="#crosshair" title="Link to this heading">¶</a></h4>
+<p>This cursor is a horizontal and a vertical line. The horizontal line is
+the width of the screen, and the vertical line is the height of the
+screen. The two lines intersect at the active position. You can use this
+cursor for input and output operations. The crosshair is the default
+input cursor.</p>
+</section>
+<section id="rubber-band-line">
+<span id="s1-7-4-3"></span><h4>Rubber Band Line<a class="headerlink" href="#rubber-band-line" title="Link to this heading">¶</a></h4>
+<p>This cursor is a single line, with its origin fixed at the current
+drawing (output) position and its endpoint at the current cursor
+position. You can only use this cursor as an input cursor.</p>
+</section>
+<section id="rubber-band-rectangle">
+<span id="s1-7-4-4"></span><h4>Rubber Band Rectangle<a class="headerlink" href="#rubber-band-rectangle" title="Link to this heading">¶</a></h4>
+<p>This cursor is a rectangle, with one corner fixed at the current drawing
+(output) position and the opposite corner at the current cursor
+position. You can only use this cursor as an input cursor.</p>
+</section>
+<section id="user-defined">
+<span id="s1-7-4-5"></span><h4>User-Defined<a class="headerlink" href="#user-defined" title="Link to this heading">¶</a></h4>
+<p>You can define your own input cursor by using the cursor option to the
+screen control command (<a class="reference external" href="chapter2.html">Chapter 2</a>).</p>
+</section>
+</section>
+</section>
+<section id="entering-and-exiting-regis">
+<span id="s1-8"></span><h2>Entering and Exiting ReGIS<a class="headerlink" href="#entering-and-exiting-regis" title="Link to this heading">¶</a></h2>
+<p>You use device control strings to enter and exit ReGIS.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>8-Bit Device
+Control String</p></th>
+<th class="head"><p>7-Bit Equivalent Escape Sequence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DCS p or
+DCS 0p</p></td>
+<td><p>ESC Pp or
+ESC P0p</p></td>
+</tr>
+<tr class="row-odd"><td><p>DCS 1p</p></td>
+<td><p>ESC P1p</p></td>
+</tr>
+<tr class="row-even"><td><p>DCS 2p</p></td>
+<td><p>ESC P2p</p></td>
+</tr>
+<tr class="row-odd"><td><p>DCS 3p</p></td>
+<td><p>ESC P3p</p></td>
+</tr>
+<tr class="row-even"><td><p>ST</p></td>
+<td><p>ESC \</p></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: You can enter ReGIS from VT100 or VT300 mode.</p>
+<p>You can display ReGIS commands by entering ReGIS with a DCS 2p or DCS 3p
+sequence. In command display mode, the terminal displays ReGIS commands
+as they are performed. The last line of ReGIS commands received appears
+on the bottom line of the screen.</p>
+<p>In command display mode, the VT300 processes characters as follows.</p>
+<ul class="simple">
+<li><p>A line feed character makes the terminal erase the ReGIS command
+display line, along with any graphic image previously drawn there.</p></li>
+<li><p>The terminal interprets each character as part of a ReGIS command and
+performs the command. Depending on the command, the graphic image
+changes.</p></li>
+<li><p>Command characters appear as normal intensity, nonblinking text (not
+reverse video).</p></li>
+</ul>
+<p>This processing continues until you leave ReGIS mode with an escape
+sequence.</p>
+<p><strong>Notes on ReGIS Command Display Mode</strong></p>
+<ul class="simple">
+<li><p>Characters appear as the terminal receives them (no case conversion,
+syntax checking, or macrograph expansion).</p></li>
+<li><p>The terminal does not display characters that are not part of the
+ReGIS character set (8-bit characters and control characters).</p></li>
+<li><p>The appearance of the characters is based only on the output map
+settings and the image that the characters are drawn over. Other
+ReGIS-settable states have no effect.</p></li>
+<li><p>You can display up to 80 characters on the command line. If the
+terminal receives more than 80 characters without a line feed
+character, the terminal erases the text line before displaying the
+next character.</p></li>
+<li><p>Command display mode slows down performance, because the system must
+process the command characters for display.</p></li>
+</ul>
+</section>
+<section id="regis-default-values">
+<span id="s1-9"></span><h2>ReGIS Default Values<a class="headerlink" href="#regis-default-values" title="Link to this heading">¶</a></h2>
+<p>Several ReGIS command arguments have default values. ReGIS always uses
+these values after you power up or reset the terminal. The default
+values let the terminal draw graphic images as soon as you enter ReGIS
+mode. You can change these values in ReGIS. The new values remain in
+effect until you change them, or until you power up or reset the
+terminal again.</p>
+<p><a class="reference external" href="#T1-2">Table 1-2</a> lists the default values for ReGIS commands.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Table 1-2 ReGIS Power-Up/Reset Default Values Summary</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Default Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Screen
+Controls</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Screen
+coordinates</p></td>
+<td><p>S(A[0,0][799,479])</p></td>
+</tr>
+<tr class="row-even"><td><p>Scrolling</p></td>
+<td><p>S[0,0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Printing
+offset</p></td>
+<td><p>S(H(P[50,0]))</p></td>
+</tr>
+<tr class="row-even"><td><p>Monochrome
+output
+mapping</p></td>
+<td><p>S(M0(L0) 1(L33) 2(L67)
+3(L100))</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>S(M0(L0) 1(L4) 2(L10)
+3(L17) 4(L24) 5(L30)
+6(L37) 7(L44) 8(L50)
+9(L57) 10(L64) 11(L70)
+12(L77) 13(L84) 14(L90)
+15(L97))</p></td>
+</tr>
+<tr class="row-even"><td><p>Color
+output
+mapping</p></td>
+<td><p>S(M0(AD) 1(AB) 2(AR)
+3(AG) 4(AM) 5(AC) 6(AY)
+7(AW) 8(AD) 9(AB) 10(AR)
+11(AG) 12(AM) 13(AC)
+14(AY) 15(AW))</p></td>
+</tr>
+<tr class="row-odd"><td><p>Background
+intensity</p></td>
+<td><p>S(I0)</p></td>
+</tr>
+<tr class="row-even"><td><p>Write
+Controls</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Pixel
+vector
+multiplier</p></td>
+<td><p>W(M1)</p></td>
+</tr>
+<tr class="row-even"><td><p>Writing
+pattern</p></td>
+<td><p>W(P1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pattern
+multiplier</p></td>
+<td><p>W(P(M2))</p></td>
+</tr>
+<tr class="row-even"><td><p>Negative
+pattern</p></td>
+<td><p>W(N0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bitmap
+planes</p></td>
+<td><p>VT330: W(F3)
+VT340: W(F15)</p></td>
+</tr>
+<tr class="row-even"><td><p>Foreground
+intensity</p></td>
+<td><p>VT330: W(I3)
+VT340: W(I7)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Overlay
+writing</p></td>
+<td><p>W(V)</p></td>
+</tr>
+<tr class="row-even"><td><p>Shading</p></td>
+<td><p>W(S0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Text</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Character
+set</p></td>
+<td><p>T(A0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Character
+cell</p></td>
+<td><p>T(S1)</p></td>
+</tr>
+<tr class="row-even"><td><p>Display
+cell</p></td>
+<td><p>T(S[9,20])</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unit cell</p></td>
+<td><p>T(U[8,20])</p></td>
+</tr>
+<tr class="row-even"><td><p>Character
+positioning</p></td>
+<td><p>T[+9,+0]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Height
+multiplier</p></td>
+<td><p>T(H2)</p></td>
+</tr>
+<tr class="row-even"><td><p>Tilt</p></td>
+<td><p>T(D0 S1 D0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Italics</p></td>
+<td><p>T(I0)</p></td>
+</tr>
+<tr class="row-even"><td><p>Size
+multiplier</p></td>
+<td><p>T(M[1,2])</p></td>
+</tr>
+<tr class="row-odd"><td><p>Load</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Character
+set</p></td>
+<td><p>L(A1)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="preventing-transmission-errors">
+<span id="s1-10"></span><h2>Preventing Transmission Errors<a class="headerlink" href="#preventing-transmission-errors" title="Link to this heading">¶</a></h2>
+<p>When transmission errors occur, the terminal may lose some data for
+ReGIS text and commands. These errors can change the meaning of command
+strings. You can reduce the effect of some transmission errors by
+resynchronizing the flow of data between the host and terminal.</p>
+<section id="resynchronization-command">
+<span id="s1-10-1"></span><h3>Resynchronization Command (;)<a class="headerlink" href="#resynchronization-command" title="Link to this heading">¶</a></h3>
+<p>ReGIS recognizes a semicolon (;) as a command to resynchronize. If you
+think errors are occurring in your program, you can use the semicolon
+between command strings. The semicolon ensures that the previous command
+string is correctly closed, even if the closing character (a bracket or
+parenthesis) is lost in transmission.</p>
+<p>The semicolon cannot fix a garbled message, but may reduce the effect of
+a single transmission error.</p>
+<p>The terminal does not recognize the semicolon as a resynchronization
+character in two cases.</p>
+<ul class="simple">
+<li><p>in a quoted text string</p></li>
+<li><p>as part of a macrograph definition</p></li>
+</ul>
+</section>
+</section>
+<section id="pixel-vector-pv-system">
+<span id="s1-11"></span><h2>Pixel Vector (PV) System<a class="headerlink" href="#pixel-vector-pv-system" title="Link to this heading">¶</a></h2>
+<p>You can control the direction of many ReGIS drawing or movement commands
+by using the pixel vector (PV) system. You can select eight different
+directions with PV numbers (<a class="reference external" href="#F1-2">Figure 1-2</a>). Each direction is
+at a different 45-degree interval. Each direction has a specific number
+assigned.</p>
+<p>The PV system also lets you specify how far to move in one direction.
+Each PV number tells the terminal to move one coordinate in that
+direction.</p>
+<p>To move horizontally or vertically, you use one PV number for each
+pixel. For example, you use a PV string of 444 to move three pixels to
+the left. You use a 000 string to move three pixels to the right.</p>
+<p>If you want to move several coordinates, you can use a pixel vector
+multiplier. The next section describes PV multiplication.</p>
+<p><a class="reference external" href="#F1-3">Figure 1-3</a> shows some examples that use PV numbers. The PV
+numbers used show the simplest method of movement. You could use
+combinations of different PV values to achieve the same effects.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Figure 1-2 Pixel Vector Dimensions</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image2" src="rst/ma-0655-83" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Figure 1-3 Pixel Vector Examples</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image3" src="rst/ma-0411-86" /></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>PV VALUES</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="upperalpha simple">
+<li></li>
+</ol>
+</td>
+<td><p>MOVEMENT FROM CENTER BY SIX 2s AND THREE 4s</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="upperalpha simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>MOVEMENT FROM CENTER BY TWO 2s AND FIVE 4s</p></td>
+</tr>
+<tr class="row-even"><td><ol class="upperalpha simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>MOVEMENT FROM CENTER BY THREE 6s</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="upperalpha simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>MOVEMENT FROM CENTER BY SIX 6s AND TWO 0s</p></td>
+</tr>
+<tr class="row-even"><td><ol class="upperalpha simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>MOVEMENT FROM CENTER BY FIVE 1s</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<section id="pv-multiplication">
+<span id="s1-11-1"></span><h3>PV Multiplication<a class="headerlink" href="#pv-multiplication" title="Link to this heading">¶</a></h3>
+<p>In some PV applications, entering all the PV numbers required would be
+tedious. In such cases, you can use a PV multiplier command to simplify
+the task.</p>
+<p>The PV multiplier command lets you specify the number of times to repeat
+each PV number. For example, suppose you use a multiplier of 10. Then
+each PV number in later commands specifies movement for 10 coordinates,
+not just 1.</p>
+<p><a class="reference external" href="#F1-4">Figure 1-4</a> shows a graphic image drawn using PV
+multiplication. In this figure, a write command (defined by W) first
+sets a PV multiplier of 100 (defined by M100). Then vector commands
+(defined by V) draw the image. Each PV value in the vector commands is
+multiplied by 100.</p>
+<div class="centrefig docutils container">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Figure 1-4 PV Multiplication Example</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image5" src="rst/ma-0657-83r" /></p></td>
+</tr>
+<tr class="row-even"><td><p>NOTE:
+The active position at the start is (400,100).
+The active position at the end is (400,400).</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>W(M100)
+V642446064600206</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="regis-examples-in-this-manual">
+<span id="s1-12"></span><h2>ReGIS Examples in this Manual<a class="headerlink" href="#regis-examples-in-this-manual" title="Link to this heading">¶</a></h2>
+<p>The following chapters contain examples of images drawn with ReGIS
+commands. For simplicity, most examples are based on the VT330
+monochrome terminal rather than the VT340 color graphics terminal. All
+the examples shown also work on the VT340. However, make sure you are
+aware of the main differences between the two terminals.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>VT330</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ul class="simple">
+<li><p>Monochrome terminal</p></li>
+<li><p>2-plane bitmap</p></li>
+<li><p>Can use up to 4 shades of
+gray, defined in gray map
+locations 0 through 3.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<section id="running-the-examples">
+<span id="s1-12-1"></span><h3>Running the Examples<a class="headerlink" href="#running-the-examples" title="Link to this heading">¶</a></h3>
+<p>As you read about a command, you can draw the examples on your own
+screen. Before you run an example, perform these steps.</p>
+<ol class="arabic">
+<li><p>Press <strong>Set-Up</strong> to enter set-up. The Set-Up Directory screen
+appears.</p></li>
+<li><p>Select the <strong>Clear Display</strong> feature. This will clear the screen
+after you leave set-up.</p></li>
+<li><p>Select the Global Set-Up screen.</p></li>
+<li><p>Set the <strong>On Line/Local</strong> feature to “local”.</p></li>
+<li><p>Press <strong>Set-Up</strong> to leave set-up.</p></li>
+<li><p>To enter ReGIS mode, hold down the <strong>Ctrl</strong> key and press <strong>3</strong>, then
+type <strong>P2p</strong>.</p>
+<p><strong>Ctrl-3 P2p</strong></p>
+<p>This sequence tells ReGIS to display the commands you enter. The
+commands appear on line 24 at the bottom of the screen.</p>
+</li>
+</ol>
+<p>You can now run any of the ReGIS examples in this manual. ReGIS
+immediately performs each command you enter, so you can see both the
+drawing and the command you entered.</p>
+<p>When you finish running examples, perform the following steps to return
+the terminal to its normal operating mode.</p>
+<ol class="arabic">
+<li><p>Type the following sequence to exit ReGIS mode.</p>
+<p><strong>Ctrl-3 \</strong></p>
+</li>
+<li><p>Enter set-up and set the <strong>On Line/Local</strong> feature to “on line”.</p></li>
+</ol>
+<div class="navbar docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="about.html">A
+bout</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="navbot docutils container">
+<p><a class="reference external" href="http://vt100.net/docs/vt3xx-gp/chapter1.html">http://vt100.net/docs/vt3xx-gp/chapter1.html</a></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ReGIS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Manual</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1 Introduction to ReGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-regis">What is ReGIS?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regis-command-syntax">ReGIS Command Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#control-characters">Control Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vt300-screen">VT300 Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x-y-coordinate-system">X-Y Coordinate System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphics-cursors">Graphics Cursors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entering-and-exiting-regis">Entering and Exiting ReGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regis-default-values">ReGIS Default Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preventing-transmission-errors">Preventing Transmission Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pixel-vector-pv-system">Pixel Vector (PV) System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regis-examples-in-this-manual">ReGIS Examples in this Manual</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2 Screen Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3 Write Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4 Position Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5 Vector Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6 Curve Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7 Text Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8 Load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">9 Macrographs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">10 Report Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">11 Polygon Fill Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">12 Combining ReGIS Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">13 4010/4014 Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter14.html">14 Sixel Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter15.html">15 Using a Mouse or Tablet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter16.html">16 Printing Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixa.html">VT240 Style HLS Color Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixb.html">Differences Between the VT300 and Other Digital Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">Contents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="about.html" title="previous chapter">About This Manual</a></li>
+      <li>Next: <a href="chapter2.html" title="next chapter">2 Screen Control Command</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, vt100.net.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/chapter1.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

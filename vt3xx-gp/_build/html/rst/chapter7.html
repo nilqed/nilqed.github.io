@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7 Text Command &#8212; ReGIS 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8 Load Command" href="chapter8.html" />
+    <link rel="prev" title="6 Curve Command" href="chapter6.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="navbar docutils container">
+<p><a class="reference external" href="../../"><img alt="VT100.net" class="button" src="../vt100.net-logo" style="width: 102px; height: 16px;" /></a> VT330/VT340 Programmer Reference Manual Volume 2:
+Graphics Programming</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="chapter6.html">Chapter
+6</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="text-command">
+<span id="s7"></span><h1>7 Text Command<a class="headerlink" href="#text-command" title="Link to this heading">¶</a></h1>
+<p>ReGIS text commands let you draw characters in different sizes,
+positions, and orientations. You can use characters from the terminal’s
+built-in character sets, or you can design and load your own set
+(<a class="reference external" href="chapter8.html">Chapter 8</a>).</p>
+<p>Text commands start with the letter T. There are 10 options and
+arguments for text commands. You can use text strings with many of these
+options.</p>
+<ul class="simple">
+<li><p>Character set</p></li>
+<li><p>Character spacing</p></li>
+<li><p>Size options</p></li>
+<li><p>Height multiplier</p></li>
+<li><p>Size multiplier</p></li>
+<li><p>String tilt</p></li>
+<li><p>Italics</p></li>
+<li><p>Temporary text control</p></li>
+<li><p>PV spacing</p></li>
+<li><p>Temporary write controls</p></li>
+</ul>
+<p>With two exceptions, the values you select with these options remain in
+effect until you define new values. The exceptions are temporary write
+controls and temporary text controls.</p>
+<ul class="simple">
+<li><p>Temporary write control values only remain in effect for the text
+command you use them with.</p></li>
+<li><p>Temporary text controls have specific start and end options. ReGIS
+processes all values between the start and end options as part of the
+temporary text control.</p></li>
+</ul>
+<section id="how-the-terminal-draws-characters">
+<span id="s7-1"></span><h2>How the Terminal Draws Characters<a class="headerlink" href="#how-the-terminal-draws-characters" title="Link to this heading">¶</a></h2>
+<p>You use the text command options to select the size and form of
+characters. The terminal uses the same basic method to draw these
+characters, no matter what size and form you select.</p>
+<ol class="arabic simple">
+<li><p>Selects the character from a stored character set.</p></li>
+<li><p>Scales the character according to multiplication and size values.</p></li>
+<li><p>Orients the character with the tilt values.</p></li>
+<li><p>Draws the character into the bitmap. You can then use the PV spacing
+value or position command to reposition other characters.</p></li>
+</ol>
+<section id="character-format">
+<span id="s7-1-1"></span><h3>Character Format<a class="headerlink" href="#character-format" title="Link to this heading">¶</a></h3>
+<p>All characters follow a specific format. The size of a stored character
+cell is 80 pixels (8 pixels wide × 10 pixels high).</p>
+<p><a class="reference external" href="#F7-1">Figure 7-1</a> shows examples of 8 × 10 character formats. All
+characters are right-justified within the format. When the terminal
+starts to draw a character, the upper-left pixel of the 8 × 10 cell is
+at the cursor position.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Figure 7-1 Stored Character Format Examples</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image2" src="rst/ma-0410-86" /></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>NOTE</p></td>
+</tr>
+<tr class="row-even"><td><p>Characters shown are examples from
+character set 0 (the stored ASCII set).
+Characters are shown in full 8 × 10
+pixel array.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="orientation">
+<span id="s7-1-2"></span><h3>Orientation<a class="headerlink" href="#orientation" title="Link to this heading">¶</a></h3>
+<p>The terminal uses the cursor position at the start of a character as the
+pivot point for drawing the character on the screen. For example, a
+character drawn in the normal orientation (left to right on a straight
+line, with no tilt) appears below and to the right of the cursor.</p>
+<p>If the character is tilted 180 degrees, it appears above and to the left
+of the cursor. The starting cursor position is always the pixel value at
+the upper-left point of the stored character form. All pivoting occurs
+at that point.</p>
+</section>
+</section>
+<section id="text-strings">
+<span id="s7-2"></span><h2>Text Strings<a class="headerlink" href="#text-strings" title="Link to this heading">¶</a></h2>
+<p>You use text strings to draw text characters. You use characters from
+the terminal’s built-in character sets, or you can design and load a set
+(<a class="reference external" href="chapter8.html">Chapter 8</a>). All the built-in sets have 94
+characters, except the ISO set. The ISO set has 96 characters.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Built-In Character Sets</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASCII</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISO Latin Nr 1 supplemental graphic</p></td>
+</tr>
+<tr class="row-even"><td><p>DEC Supplemental Graphic</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEC Special Graphic</p></td>
+</tr>
+<tr class="row-even"><td><p>DEC Technical</p></td>
+</tr>
+<tr class="row-odd"><td><p>National replacement character (NRC) sets (14 sets)</p></td>
+</tr>
+</tbody>
+</table>
+<section id="control-characters-in-text-strings">
+<span id="s7-2-1"></span><h3>Control Characters in Text Strings<a class="headerlink" href="#control-characters-in-text-strings" title="Link to this heading">¶</a></h3>
+<p>ReGIS only recognizes four control characters in text strings. ReGIS
+ignores other control characters. For example, ReGIS treats the
+semicolon (;) and the at sign (&#64;) as text characters in a text string.
+Outside text strings, the semicolon is a command to resynchronize ReGIS,
+and the at sign indicates macrographs (<a class="reference external" href="chapter9.html">Chapter 9</a>).</p>
+<p>You can use the following four control characters in a text string.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Carriage return</p></td>
+<td><p>CR</p></td>
+<td><p>Returns the cursor to the horizontal
+position where the current text writing
+command started.</p></td>
+</tr>
+<tr class="row-even"><td><p>Line feed</p></td>
+<td><p>LF</p></td>
+<td><p>Moves the cursor down one line in the same
+column.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backspace</p></td>
+<td><p>BS</p></td>
+<td><p>Moves the cursor back one character
+position. You can use BS to overstrike a
+character.</p></td>
+</tr>
+<tr class="row-even"><td><p>Horizontal tab</p></td>
+<td><p>HT</p></td>
+<td><p>Moves the cursor forward one character
+position, using the current text spacing
+value.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="format">
+<span id="s7-2-2"></span><h3>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h3>
+<p>You use the following format for a simple text string command, without
+any options.</p>
+<p>T’&lt;text string&gt;’</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>T</strong> identifies a text command.</p>
+<p><strong>‘ ‘</strong> are single or double quotation marks that enclose the text
+string. You must use the same type of quotation mark at the start and
+end.</p>
+<p><strong>&lt;text string&gt;</strong> are the 7- or 8-bit characters to draw.</p>
+</div>
+<p>You enclose a text string with a set of quotes (‘&lt;text&gt;’), or double
+quotes (“&lt;text&gt;”). You can use one type of quote to enclose the text
+string, and the other type within the string.</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>“don’t” appears on the screen as don’t</p></li>
+<li><p>‘“stop”’ appears on the screen as “stop”</p></li>
+</ul>
+<p>Some text strings may require both types of quotes within the string.
+You can use two quote marks in a row, so ReGIS recognizes one as a text
+string item, and not the end of the text string. The two quote marks
+must be next to each other (no spaces).</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>‘don’’t’ appears on the screen as don’t</p></li>
+<li><p>“ditto (“”)” appears on the screen as ditto (“)</p></li>
+</ul>
+<p>You can use a comma to concatenate two strings enclosed by the same type
+of quotes. You place the comma between the strings.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>With a comma</strong></div>
+<div class="line">“Stop “,”Here” appears on the screen as Stop Here</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Without a comma</strong></div>
+<div class="line">“Stop “”Here” appears on the screen as Stop “Here</div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="character-set-option-a">
+<span id="s7-3"></span><h2>Character Set Option – A<a class="headerlink" href="#character-set-option-a" title="Link to this heading">¶</a></h2>
+<p>The character set option lets you select which set to use for a text
+string. When you enter ReGIS, the terminal uses the ASCII character set
+and the ISO Latin-1 supplemental graphic set.</p>
+<p>NOTE: You should be familiar with how the terminal stores and uses
+character sets (Volume 1, Chapter 2). In ReGIS mode, the terminal
+accesses character sets similar to the way it does in text mode.
+However, in ReGIS mode, the terminal uses a different in-use table. The
+text in-use table can contain different character sets from the ReGIS
+in-use table.</p>
+<p>You use the following format for selecting a character set.</p>
+<p>T(A&lt;0 to 3&gt;)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>A</strong> identifies a character set option. ‘A’ stands for “alphabet”.</p>
+<p><strong>&lt;0 to 3&gt;</strong> is a number that identifies the character set to use.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>Selects one or more of the terminal’s built-in
+character sets (such as ASCII and ISO Latin-1
+supplemental graphic).</p></td>
+</tr>
+<tr class="row-even"><td><p>1, 2, or 3</p></td>
+<td><p>Selects a set you can load into the terminal. This set
+can have up to 96 characters, but can only include
+7-bit characters. (See <a class="reference external" href="chapter8.html">Chapter 8</a>.)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ReGIS uses only one 8-bit character code table to store the character
+set you select for alphabet 0 (A0). This code table has a left half (GL)
+for 7-bit characters, and a right half (GR) for 8-bit characters.</p>
+<p>When you enter ReGIS, the terminal automatically maps the ASCII
+character set into GL and the ISO Latin-1 supplemental graphic set into
+GR. You can select a character set for GL or GR by using the L or R
+suboptions as follows.</p>
+<section id="select-gl-character-set-l">
+<span id="s7-3-1"></span><h3>Select GL Character Set – L<a class="headerlink" href="#select-gl-character-set-l" title="Link to this heading">¶</a></h3>
+<p>You use the L suboption to map one of the terminal’s built-in character
+sets into the left half (GL) of the in-use table. You can only use this
+suboption when you select alphabet 0.</p>
+<p>The format for the text command with the L suboption is as follows.</p>
+<p>T(A0(L”&lt;designator&gt;”))</p>
+<p>where</p>
+<p><strong>&lt;designator&gt;</strong> indicates which character set the command selects.
+<a class="reference external" href="#T7-1">Table 7-1</a> shows how to select any one of the terminal’s
+7-bit, 94-character sets with this command.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Table 7-1 Selecting a 7-Bit Set with the L or R Suboption</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>To Select This
+Set</p></th>
+<th class="head"><p>Use This
+Designator</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASCII</p></td>
+<td><p>(B</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DEC Special
+Graphics</p></td>
+<td><p>(0</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DEC Technical</p></td>
+<td><p>(&gt;</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><em>National
+Replacement
+Character Sets</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>British</p></td>
+<td><p>(A</p></td>
+<td><p>Italian</p></td>
+<td><p>(Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dutch</p></td>
+<td><p>(4</p></td>
+<td><p>Norwegian/Danish</p></td>
+<td><p>(`</p></td>
+</tr>
+<tr class="row-even"><td><p>Finnish</p></td>
+<td><p>(5</p></td>
+<td><p>Portuguese</p></td>
+<td><p>(%6</p></td>
+</tr>
+<tr class="row-odd"><td><p>French</p></td>
+<td><p>(R</p></td>
+<td><p>Spanish</p></td>
+<td><p>(Z</p></td>
+</tr>
+<tr class="row-even"><td><p>French Canadian</p></td>
+<td><p>(9</p></td>
+<td><p>Swedish</p></td>
+<td><p>(7</p></td>
+</tr>
+<tr class="row-odd"><td><p>German</p></td>
+<td><p>(K</p></td>
+<td><p>Swiss</p></td>
+<td><p>(=</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>This command selects the DEC Technical set for use with ReGIS.</p>
+<p>T(A0(L”(&gt;”))</p>
+</li>
+<li><p>This command selects the DEC Special Graphic set for use with ReGIS.</p>
+<p>T(A0(L”(0”))</p>
+</li>
+</ul>
+</section>
+<section id="select-gr-character-set-r">
+<span id="s7-3-2"></span><h3>Select GR Character Set – R<a class="headerlink" href="#select-gr-character-set-r" title="Link to this heading">¶</a></h3>
+<p>This command is the same as the select GL character set command, except
+this command maps the desired character set into the right half (GR) of
+the in-use table. You can only use this suboption when you select
+alphabet 0.</p>
+<p>The format for the text command with the R suboption is as follows.</p>
+<p>T(A0(R”&lt;designator&gt;”))</p>
+<p>You can select any one of the terminal’s character sets, including any
+8-bit set, with the R suboption. <a class="reference external" href="#T7-1">Table 7-1</a> shows how to
+select 7-bit sets. <a class="reference external" href="#T7-2">Table 7-2</a> shows how to select 8-bit sets.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Table 7-2 Selecting an 8-Bit Set with the R Suboption</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>To Select This Set</p></th>
+<th class="head"><p>Use This Designator</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DEC Supplemental Graphic</p></td>
+<td><p>)%5</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISO Latin-1 supplemental</p></td>
+<td><p>-A</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<ul>
+<li><p>This command selects the DEC Supplemental Graphic set for use with
+ReGIS.</p>
+<p>T(A0(R”)%5”))</p>
+</li>
+<li><p>This command maps the ASCII set into GL and the DEC Supplemental
+Graphic set into GR for use with ReGIS.</p>
+<p>T(A0(L”(B”,R”)%5”))</p>
+</li>
+</ul>
+<p><strong>Notes on the L and R Suboptions</strong></p>
+<ul class="simple">
+<li><p>If you omit the 0 or use another number other than 0 after the A when
+using the R or L suboption, the terminal ignores the command.</p></li>
+</ul>
+</section>
+<section id="selecting-user-defined-loadable-sets">
+<span id="s7-3-3"></span><h3>Selecting User-Defined (Loadable) Sets<a class="headerlink" href="#selecting-user-defined-loadable-sets" title="Link to this heading">¶</a></h3>
+<p>You can select any set for use with ReGIS. However, the terminal
+displays a solid block error character if:</p>
+<ul class="simple">
+<li><p>you select a loadable set (1, 2, or 3) that does not have any
+characters loaded. The block appears for each text string character.</p></li>
+<li><p>you try to use a text string character that is not in the selected
+character set.</p></li>
+</ul>
+<p><a class="reference external" href="chapter8.html">Chapter 8</a> describes how to load a soft character
+set.</p>
+</section>
+</section>
+<section id="character-spacing">
+<span id="s7-4"></span><h2>Character Spacing<a class="headerlink" href="#character-spacing" title="Link to this heading">¶</a></h2>
+<p>There are three ways to specify the spacing between text characters.</p>
+<ul class="simple">
+<li><p>Select a standard cell size. ReGIS uses the character spacing value
+associated with that size. You select a cell size with the S option
+(next section).</p></li>
+<li><p>Select the direction of the character string.</p></li>
+<li><p>Specify a spacing value with relative X and Y values, as follows.</p></li>
+</ul>
+<p>You use the following format for the character spacing argument.</p>
+<p>T&lt;position&gt;</p>
+<p>where</p>
+<p><strong>&lt;position&gt;</strong> is a relative [X,Y] value. You can specify one or both
+coordinates. This value provides equal spacing between characters. After
+drawing a text character, ReGIS uses this &lt;position&gt; value to select the
+next cursor position.</p>
+<p>For most cases, you will only use a positive X value. A [+X] value keeps
+text characters on a horizontal line, from left to right. However, you
+can use a negative X value to draw a string backwards. You can also use
+Y values (+ or -) with different X values (+ or -) to produce a
+staircase effect.</p>
+<p>The spacing value does not change the baseline orientation of
+characters. For example, you can still use tilted or italic characters.
+<a class="reference external" href="#F7-2">Figure 7-2</a> shows how different character spacing values can
+affect a text string.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Figure 7-2 Example of Character Spacing Alignment</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[100,100]
+T(S4)
+‘ABCD’
+P[300]
+T[35,25]
+‘ABCD’
+P[575,100]
+T[-35,25]
+‘ABCD’</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image5" src="rst/ma-0723-83" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Graphic assumes background value
+of I3 (default white),
+foreground value of I0 (default
+dark), and all write controls at
+default values.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="size-options-s">
+<span id="s7-5"></span><h2>Size Options – S<a class="headerlink" href="#size-options-s" title="Link to this heading">¶</a></h2>
+<p>There are three types of character sizes you can select.</p>
+<ul class="simple">
+<li><p>Standard character cell size</p></li>
+<li><p>Display cell size</p></li>
+<li><p>Unit cell size</p></li>
+</ul>
+<p>The display cell is the size of the screen area used for each character.
+The unit cell is the size of each character within the display cell.
+Standard character cell sizes select a display cell size and unit cell
+size.</p>
+<section id="standard-character-cell-sizes">
+<span id="s7-5-1"></span><h3>Standard Character Cell Sizes<a class="headerlink" href="#standard-character-cell-sizes" title="Link to this heading">¶</a></h3>
+<p>There are 17 standard character cell sizes available. Each standard size
+has specific display cell, unit cell, and character position values
+assigned. The character position is the spacing value used between
+characters. The character position tells ReGIS how far to move the
+cursor after drawing a character.</p>
+<p>You use the following format for the standard character cell size
+option.</p>
+<p>T(S&lt;0 to 16&gt;)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>S</strong> identifies a cell size option.</p>
+<p><strong>&lt;0 to 16&gt;</strong> is a number that selects a standard character cell
+size. <a class="reference external" href="#T7-3">Table 7-3</a> lists the values assigned to each
+standard character cell size. The values in <a class="reference external" href="#T7-3">Table 7-3</a> are
+[X,Y] screen address coordinates.</p>
+</div>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Table 7-3 Standard Character Cell Sizes</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Set Number</p></th>
+<th class="head"><p>Display Cell Size</p></th>
+<th class="head"><p>Unit Cell Size</p></th>
+<th class="head"><p>Character Positioning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S0</p></td>
+<td><p>[9,10]</p></td>
+<td><p>[8,10]</p></td>
+<td><p>[9,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S1</p></td>
+<td><p>[9,20]</p></td>
+<td><p>[8,20]</p></td>
+<td><p>[9,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S2</p></td>
+<td><p>[18,30]</p></td>
+<td><p>[16,30]</p></td>
+<td><p>[18,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S3</p></td>
+<td><p>[27,45]</p></td>
+<td><p>[24,45]</p></td>
+<td><p>[27,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S4</p></td>
+<td><p>[36,60]</p></td>
+<td><p>[32,60]</p></td>
+<td><p>[36,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S5</p></td>
+<td><p>[45,75]</p></td>
+<td><p>[40,75]</p></td>
+<td><p>[45,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S6</p></td>
+<td><p>[54,90]</p></td>
+<td><p>[48,90]</p></td>
+<td><p>[54,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S7</p></td>
+<td><p>[63,105]</p></td>
+<td><p>[56,105]</p></td>
+<td><p>[63,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S8</p></td>
+<td><p>[72,120]</p></td>
+<td><p>[64,120]</p></td>
+<td><p>[72,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S9</p></td>
+<td><p>[81,135]</p></td>
+<td><p>[72,135]</p></td>
+<td><p>[81,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S10</p></td>
+<td><p>[90,150]</p></td>
+<td><p>[80,150]</p></td>
+<td><p>[90,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S11</p></td>
+<td><p>[99,165]</p></td>
+<td><p>[88,165]</p></td>
+<td><p>[99,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S12</p></td>
+<td><p>[108,180]</p></td>
+<td><p>[96,180]</p></td>
+<td><p>[108,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S13</p></td>
+<td><p>[117,195]</p></td>
+<td><p>[104,195]</p></td>
+<td><p>[117,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S14</p></td>
+<td><p>[126,210]</p></td>
+<td><p>[112,210]</p></td>
+<td><p>[126,]</p></td>
+</tr>
+<tr class="row-odd"><td><p>S15</p></td>
+<td><p>[135,225]</p></td>
+<td><p>[120,225]</p></td>
+<td><p>[135,]</p></td>
+</tr>
+<tr class="row-even"><td><p>S16</p></td>
+<td><p>[144,240]</p></td>
+<td><p>[128,240]</p></td>
+<td><p>[144,]</p></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: The sizes in this table are expressed in screen coordinate values.
+These values are based on the default screen addressing for the VT300.
+See <a class="reference external" href="chapter2.html">Chapter 2</a>.</p>
+</section>
+<section id="display-cell-size">
+<span id="s7-5-2"></span><h3>Display Cell Size<a class="headerlink" href="#display-cell-size" title="Link to this heading">¶</a></h3>
+<p>This option lets you define the height and width of a display cell,
+using [X,Y] values. The display cell is the size of the screen area used
+for each text character. You use the following format for the display
+cell size option.</p>
+<p>T(S[width,height])</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>S</strong> identifies a cell size option.</p>
+<p><strong>[width,height]</strong> are the width and height values of the unit cell,
+expressed in actual screen coordinates.</p>
+</div>
+<p>This option does not change the size of characters. You use the unit
+cell size option to change character size.</p>
+</section>
+<section id="unit-cell-size">
+<span id="s7-5-3"></span><h3>Unit Cell Size<a class="headerlink" href="#unit-cell-size" title="Link to this heading">¶</a></h3>
+<p>This option lets you define the size of characters, using [X,Y] values.
+You use the following format for the unit cell size option.</p>
+<p>T(U[width,height])</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>U</strong> identifies a unit cell size option.</p>
+<p><strong>[width,height]</strong> are the width and height of the unit cell,
+expressed in screen coordinates.</p>
+</div>
+<p>Because ReGIS uses a default character cell of 8 × 10, the width value
+must be a positive multiple of 8, the height value must be a positive
+multiple of 5. For example, you could use a width of 32 (4 × 8), and a
+height of 35 (7 × 5). If you do not use a multiple, ReGIS uses the next
+smaller size. For example, if you select a height of 38, ReGIS uses 35.</p>
+<p>Keep the unit cell size as close as possible to the display cell size.
+Otherwise, the following side effects could occur.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>When the unit cell is smaller than the display cell</strong></div>
+<div class="line">The terminal displays each text character with the unused part of
+the display cell filled in at the background intensity.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>When the unit cell is larger than the display cell</strong></div>
+<div class="line">The terminal only displays the part of a text character that can
+fit into the display cell on the screen.</div>
+</div>
+</li>
+</ul>
+<p>All characters are justified at the upper-left corner in the display
+cell, relative to the current character baseline orientation.</p>
+<p><a class="reference external" href="#F7-3">Figure 7-3</a> shows examples of characters drawn with the same
+unit cell size, but different display cell sizes.</p>
+<div class="centrefig docutils container">
+<p>Options</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><img alt="image7" src="rst/ma-0724-83" /></p></td>
+</tr>
+<tr class="row-even"><td><p>NOTE:
+Graphic assumes background value of I3 (default white), foreground
+value of I0 (default dark), and all write controls at default
+values.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[100,100]
+T[54](S[36,60],U[40,60])
+[25,]’ABCD’
+P[300,200]
+T(S[54,90])
+[50,]’ABCD’
+P[300,300]
+T(S[27,45])
+[25,]’ABCD’</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</section>
+</section>
+<section id="height-multiplier-h">
+<span id="s7-6"></span><h2>Height Multiplier – H<a class="headerlink" href="#height-multiplier-h" title="Link to this heading">¶</a></h2>
+<p>This option lets you change the height of characters without changing
+their width. This option changes the height value of the display cell
+and unit cell to the same size. You use the following format for the
+height multiplier option.</p>
+<p>T(H&lt;height&gt;)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>H</strong> identifies the height multiplier option.</p>
+<p><strong>&lt;height&gt;</strong> is a multiplication factor for the character cell’s
+height. This value is restricted to a range of 1 to 256.</p>
+</div>
+<p>ReGIS multiplies the default character cell height of 10 pixels by the
+value you enter. The result is the new character height.</p>
+<p>New height = option value × 10</p>
+<p>For example, an option value of 7 changes the height of the display cell
+and unit cell to 70.</p>
+<p><a class="reference external" href="#F7-4">Figure 7-4</a> shows an example of how the height multiplier
+option changes text characters. As shown, only the height values change.
+Character spacing and width values remain the same.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Figure 7-4 Height Multiplier Option Example</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[50,50]
+T(S3,H1)
+‘height 1’
+T(H6)
+‘height 6’
+T(H16)
+‘height 16’</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image10" src="rst/ma-0725-83" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Graphic assumes background value
+of I3 (default white),
+foreground value of I0 (default
+dark), and all write controls at
+default values.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="size-multiplier-m">
+<span id="s7-7"></span><h2>Size Multiplier – M<a class="headerlink" href="#size-multiplier-m" title="Link to this heading">¶</a></h2>
+<p>This option lets you multiply the standard height and width of
+characters. You select different factors for the height and width. You
+use the following format of the pixel multiplier option.</p>
+<p>T(M[width,height])</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>M</strong> identifies a size multiplication option.</p>
+<p><strong>[width,height]</strong> are the multiplication factors for the width and
+height of characters.</p>
+</div>
+<p>ReGIS applies these factors to the height and width of the unit cell for
+standard size 1 (S1). The standard size is [8,20] in screen coordinates.</p>
+<p>NOTE: You use both the M and U options to set the unit cell size. U
+expresses the unit cell size in [X,Y] screen addresses. M expresses the
+unit cell size as a multiple of standard character cell size 1.</p>
+<p>You can select a width value from 1 to 16. If you use a value greater
+than 16, ReGIS uses a value of 16.</p>
+<p>You can use this option with the character spacing and display cell size
+options, to create character forms not available with the standard
+character cell size option.</p>
+</section>
+<section id="string-and-character-tilt-options">
+<span id="s7-8"></span><h2>String and Character Tilt Options<a class="headerlink" href="#string-and-character-tilt-options" title="Link to this heading">¶</a></h2>
+<p>Normally, ReGIS draws characters from left to right along a horizontal
+baseline. However, in some applications you may want to write the text
+at an angle. The following options let you tilt individual characters or
+text strings at any 45 degree increment, for a full 360 degrees.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>String tilt option</p></td>
+<td><p>Selects the tilt angle for a text
+string.</p></td>
+</tr>
+<tr class="row-even"><td><p>String/character tilt option</p></td>
+<td><p>Defines two tilt angles: one for the
+text string as a unit, and one for
+the characters in the string.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The tilt angle is relative to the horizontal baseline. <a class="reference external" href="#F7-5">Figure
+7-5</a> is a tilt compass that shows the direction of tilt for
+each value you can use with the tilt options.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Figure 7-5 Tilt Compass</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image11" src="rst/ma-0654-83" /></p></td>
+</tr>
+</tbody>
+</table>
+<section id="character-distortion-with-tilt-angles">
+<span id="s7-8-1"></span><h3>Character Distortion with Tilt Angles<a class="headerlink" href="#character-distortion-with-tilt-angles" title="Link to this heading">¶</a></h3>
+<p>When you draw characters at diagonal angles, you may see some
+distortion. The distortion occurs because screen pixels are arranged in
+horizontal and vertical rows. The distance between pixels on a diagonal
+line is greater than the distance between pixels on a horizontal or
+vertical line.</p>
+<p>There is no distortion at 0 and 180 degrees. At these two angles, all
+width pixels align on an X-axis, and all height pixels align on a
+Y-axis.</p>
+<p>Distortion can occur at all other angles. ReGIS compensates for the
+distortion at 90 and 270 degrees. ReGIS does <em>not</em> compensate for
+distortion at 45, 135, 225, and 315 degrees. When you draw characters at
+these diagonal angles, they will appear distorted. The amount of
+distortion depends on the normal size and proportion of the character.</p>
+<p><a class="reference external" href="#F7-6">Figure 7-6</a> shows an example of the distortion that occurs
+when you draw diagonal characters. The figure shows a character drawn at
+45 degrees. The same amount of distortion occurs at 135, 225, and 315
+degrees.</p>
+<p>String/Character Tilt Option</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><img alt="image12" src="rst/ma-0405-86" /></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>NOTES</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>Characters are shown at 0° (far), and 45° (right).</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>9 × 10 pixel cell size is outlined to dramatize distortion.</p></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple" start="3">
+<li></li>
+</ol>
+</td>
+<td><p>X is used to identify the pixel that would be the location
+at start of a character draw.</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="4">
+<li></li>
+</ol>
+</td>
+<td><p>All characters are drawn from the same Y-axis value in
+order to dramatize the relationship characters have to the
+starting location for different tilt values.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="correcting-distortion">
+<span id="s7-8-2"></span><h3>Correcting Distortion<a class="headerlink" href="#correcting-distortion" title="Link to this heading">¶</a></h3>
+<p>When you draw diagonal characters, you can partially correct the
+distortion by changing the character cell size. There is one general
+guideline for correcting distortion.</p>
+<ul class="simple">
+<li><p>Reduce the width of the character cell by one half</p></li>
+</ul>
+<p>You can use this method for any size character. <a class="reference external" href="#F7-7">Figure 7-7</a>
+shows how to correct the character distortion in <a class="reference external" href="#F7-6">Figure 7-6</a>.
+In <a class="reference external" href="#F7-6">Figure 7-6</a>, both B characters are drawn using standard
+character cell size 1 (S1). <a class="reference external" href="#F7-7">Figure 7-7</a> adjusts the
+distortion of the 45 degree character by defining a size 0 character
+with a multiplier factor of 1 (S0H1).</p>
+<p>Tilt</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><img alt="image13" src="rst/ma-0406-86" /></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>NOTES</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>All notes from <a class="reference external" href="#F7-6">Fig. 7-6</a> apply.</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>45° tilt character is adjusted by defining a 5 × 9 display
+cell, and a 4 × 10 unit cell before drawing.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Unit Cell</p></th>
+<th class="head"><p>Display Cell</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S1 Cell</p></td>
+<td><p>8 × 20</p></td>
+<td><p>9 × 20</p></td>
+</tr>
+<tr class="row-odd"><td><p>S0H1 Cell</p></td>
+<td><p>–</p></td>
+<td><p>8 × 20</p></td>
+</tr>
+</tbody>
+</table>
+<p>Remember, even the corrected characters will have a slight distortion of
+size. This distortion is more apparent when you draw larger characters.
+You may need to perform an additional adjustment.</p>
+<p>For example, suppose you are drawing a size 8 character at 45 degrees.</p>
+<p>S8 size = 64 × 120 unit cell (64 × 60 pixels)</p>
+<p>Using the method just described, you would change you cell size to a
+size 4 character with an H factor of 6.</p>
+<p>S4H1 size = 32 × 120 unit cell (32 × 60 pixels)</p>
+<p>You could get a better result by using a size 3 with an H factor of 5.</p>
+<p>S3H5 size = 24 × 100 unit cell (24 × 50 pixels)</p>
+</section>
+<section id="string-tilt-d">
+<span id="s7-8-3"></span><h3>String Tilt – D<a class="headerlink" href="#string-tilt-d" title="Link to this heading">¶</a></h3>
+<p>This option selects the baseline angle for text strings. ReGIS draws all
+characters in a text string along this baseline. When you use this
+option, the baseline of each character in the string slopes with the
+defined tilt. You use the following format for the string tilt option.</p>
+<p>T(D&lt;angle&gt;,S&lt;0 to 16&gt;)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>D</strong> identifies a tilt option.</p>
+<p><strong>&lt;angle&gt;</strong> is the tilt angle. You can use 45 degree increments.</p>
+<p><strong>S</strong> identifies a cell size option.</p>
+<p><strong>&lt;0 to 16&gt;</strong> is a number that selects one of the 17 standard
+character cell sizes. ReGIS uses the spacing value associated with
+the cell size to space the characters in the tilted string.</p>
+</div>
+<p><a class="reference external" href="#F7-8">Figure 7-8</a> shows how each string tilt value affects a text
+string.</p>
+<p>NOTE: The terminal redefines the Y-axis at the start of each character.
+However, the tilt is the same for each character. So the cursor position
+at the start of the text string serves as a pivot point for the whole
+text string.</p>
+<p><a class="reference external" href="#F7-8">Figure 7-8</a> does not show any character distortion. The
+previous section describes how to correct character distortion by
+changing the size value used. For example, to match a size 1 character
+at a tilt of 45 degrees, you could use the command T(D45,S0,H1).</p>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Figure 7-8 String Tilt Directions</span><a class="headerlink" href="#id8" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image14" src="rst/ma-0728-83" /></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="string-character-tilt">
+<span id="s7-8-4"></span><h3>String/Character Tilt<a class="headerlink" href="#string-character-tilt" title="Link to this heading">¶</a></h3>
+<p>This option defines one tilt angle for a text string, and another tilt
+angle for the characters in the string. You use the following format for
+the string/character tilt option.</p>
+<p>T(D&lt;string angle&gt;,S&lt;0 to 16&gt;,D&lt;character angle&gt;)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>D</strong> identifies a tilt option.</p>
+<p><strong>&lt;string angle&gt;</strong> is the tilt angle for the string. You can use 45
+degree increments.</p>
+<p><strong>S</strong> identifies a cell size option.</p>
+<p><strong>&lt;0 to 16&gt;</strong> is a number that selects 1 of the 17 standard character
+cell sizes. ReGIS uses the spacing value associated with the cell
+size to space the characters in the tilted string.</p>
+<p><strong>D</strong> identifies a second tilt option.</p>
+<p><strong>&lt;character angle&gt;</strong> is the tilt angle for characters within the
+string. You can use 45 degree increments.</p>
+</div>
+<p><a class="reference external" href="#F7-9">Figure 7-9</a> shows some different effects you can produce with
+this option. This figure does not show any character distortion. The
+section on character distortion describes how to correct distortion by
+changing the character cell size. For example, to match a size 1
+character drawn at 90 degrees, on a string tilted at 45 degrees, you
+could use the command T(D45 S0H2 D90).</p>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Figure 7-9 String/Character Tilt Option Directions</span><a class="headerlink" href="#id9" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image15" src="rst/ma-0729-83" /></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="italics-option-i">
+<span id="s7-9"></span><h2>Italics Option – I<a class="headerlink" href="#italics-option-i" title="Link to this heading">¶</a></h2>
+<p>This option lets you tilt characters without changing their orientation
+to the baseline. You use the following format for the italics option.</p>
+<p>T(I&lt;angle&gt;)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>I</strong> identifies an italics option.</p>
+<p><strong>&lt;angle&gt;</strong> is the degree and direction of the slant. If you use a
+positive (+) sign or no sign, the slant is up and to left. If you use
+a negative (-) sign, the slant is up and to the right. The angle at
+which a character slants depends on the &lt;angle&gt; values included in
+the option. The following list shows how various &lt;angle&gt; values
+affect the slant of the character.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>&lt;angle&gt; Value</p></th>
+<th class="head"><p>Actual Italic Angle</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-31 or less</p></td>
+<td><p>-45 degrees</p></td>
+</tr>
+<tr class="row-odd"><td><p>-1 through -30</p></td>
+<td><p>-22</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0 (not slanted)</p></td>
+</tr>
+<tr class="row-odd"><td><p>1 through 30</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-even"><td><p>31 or greater</p></td>
+<td><p>45</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference external" href="#F7-10">Figure 7-10</a> shows an H character drawn at the four italic
+slant values.</p>
+<p>This option does not significantly distort characters, unless you use it
+with the tilt option. You can use italic slants with the tilt option to
+create special effects.</p>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Figure 7-10 Italic Option Slant Values</span><a class="headerlink" href="#id10" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image16" src="rst/ma-0730-83" /></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="temporary-text-control">
+<span id="s7-10"></span><h2>Temporary Text Control<a class="headerlink" href="#temporary-text-control" title="Link to this heading">¶</a></h2>
+<p>ReGIS uses the text command option values you select until you change
+them. However, you can use temporary values to draw a sequence of text
+strings. After you complete the sequence, the options return to their
+previous values. You use the following format for the temporary text
+control option.</p>
+<p>T(B)&lt;arguments&gt;T(E)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>(B)</strong> is the start of a temporary text control option.</p>
+<p><strong>&lt;arguments&gt;</strong> are the temporary text control arguments to use.</p>
+<p><strong>(E)</strong> is the end of the temporary text control option.</p>
+</div>
+<p>This option saves only those text controls already in effect. You enter
+the temporary values and your text strings between a begin (B) and end
+(E) option.</p>
+<p><a class="reference external" href="#F7-11">Figure 7-11</a> shows an example of a temporary text control
+option that uses a string tilt.</p>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Figure 7-11 Temporary Option Example</span><a class="headerlink" href="#id11" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[100,100]
+T(D0,S5,I0)
+‘ABCD’
+P[500,100]
+T(B)
+(D180,S5)
+‘ABCD’
+(E)
+P[500,100]
+T’ABCD’</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image19" src="rst/ma-0731-83" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Graphic assumes background value
+of I3 (default white),
+foreground value of I0 (default
+dark), and all write controls at
+default values.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pv-spacing-subscripts-superscripts-and-overstrikes">
+<span id="s7-11"></span><h2>PV Spacing – Subscripts, Superscripts, and Overstrikes<a class="headerlink" href="#pv-spacing-subscripts-superscripts-and-overstrikes" title="Link to this heading">¶</a></h2>
+<p>You use pixel vector (PV) spacing arguments to create subscripts,
+superscripts, and overstrikes. The direction specified by the PV value
+is relative to the current baseline for text characters.</p>
+<p>In text commands, each PV value defines a movement equal to one half of
+the defined display cell, in the direction specified. The PV
+multiplication factor does not affect this movement. You use the
+following format for the PV spacing argument.</p>
+<p>T&lt;PV value&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>&lt;PV value&gt;</strong> is a number that selects one of the following
+functions. For each function, ReGIS uses an offset equal to one half
+of the current display cell size.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><strong>Superscript</strong> – Moves the character up from the baseline
+and away from the previous character.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><strong>Superscript</strong> – Moves the character straight up from the
+baseline.</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><strong>Overstrike</strong> – A 44 value moves the character back over
+the previous character cell.</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><strong>Subscript</strong> – Moves the character straight down from the
+baseline.</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p><strong>Subscript</strong> – Moves the character down from the baseline
+and away from the previous character.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can use PV values of 3 and 5, but they partially overwrite the
+previous character. A 3 moves the character up and back toward the
+previous character. A 5 moves the character down and back toward the
+previous character.</p>
+<p>A PV value of 0 moves a character forward one-half character cell along
+the baseline. This value is useful for inserting visually pleasing space
+between adjacent characters.</p>
+<p>When you use a PV value, you change the distance from the baseline for
+text characters. ReGIS uses that PV value for all following text
+strings, until you change the value. You can return to the original
+baseline by selecting the PV value for the opposite function. For
+example, if you selected superscripting (PV = 2), use subscripting (PV =
+6). For an overstrike (44), use the PV value 00.</p>
+<p>NOTE: PV spacing is relative to the baseline. If you tilt the baseline,
+PV spacing rotates with that baseline.</p>
+<p><a class="reference external" href="#F7-12">Figure 7-12</a> shows a simple example of subscripting with the
+PV spacing argument.</p>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Figure 7-12 PV Spacing Argument Example</span><a class="headerlink" href="#id12" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[300,200]
+T(S2)
+‘H’ 7 ‘2’ 1 ‘O’</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image22" src="rst/ma-0732-83" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Graphic assumes background value
+of I3 (default white),
+foreground value of I0 (default
+dark), and all write controls at
+default values.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="temporary-write-control">
+<span id="s7-12"></span><h2>Temporary Write Control<a class="headerlink" href="#temporary-write-control" title="Link to this heading">¶</a></h2>
+<p>Some write control options in <a class="reference external" href="chapter4.html">Chapter 4</a> affect the
+appearance of the text characters you draw. For example, these options
+control the shade/color of text. When you use text commands, ReGIS uses
+the current settings for these write control options.</p>
+<p>You can use a temporary write control option to change one or more of
+these settings for one command. ReGIS uses the temporary values until
+you use one of the following commands.</p>
+<ul class="simple">
+<li><p>another temporary write control option</p></li>
+<li><p>any command that begins with a command letter, such as a vector (V)
+command or another text (T) command</p></li>
+<li><p>a resynchronization command (semicolon)</p></li>
+</ul>
+<p>When you use one of the above commands, the writing control options
+return to their previous values.</p>
+<p>You include the temporary write control option in your text command. You
+can use the following write control options from <a class="reference external" href="chapter3.html">Chapter
+3</a>.</p>
+<ul class="simple">
+<li><p>Intensity control</p></li>
+<li><p>Erase writing</p></li>
+<li><p>Replace writing</p></li>
+<li><p>Overlay writing</p></li>
+<li><p>Complement writing</p></li>
+</ul>
+<p>You can use this option to change shade/color, as well as writing mode
+(overlay, replace, erase, or complement). You use the following format
+for a temporary write control option.</p>
+<p>T(W(&lt;suboptions&gt;))&lt;arguments&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>W</strong> identifies a temporary write control option.</p>
+<p><strong>&lt;suboptions&gt;</strong> are the temporary write control values to use.</p>
+<p><strong>&lt;arguments&gt;</strong> are the text command arguments that will use the
+temporary write control values.</p>
+</div>
+<p><a class="reference external" href="#F7-13">Figure 7-13</a> shows a simple example of the temporary write
+control option.</p>
+<div class="centrefig docutils container">
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Figure 7-13 Example of Temporary Write Control Option</span><a class="headerlink" href="#id13" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image24" src="rst/ma-0733-83" /></p></td>
+</tr>
+<tr class="row-even"><td><p>NOTE:
+Graphic assumes background value of I3 (default white), foreground
+value of I0 (default dark), and all write controls at default
+values.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[400,200]
+W(S1)
+V[,+100]
+[+200]
+P[100,100]
+T(D0,S5)
+‘ABCD’
+P[410,210]
+T(W(C))
+‘ABCD’
+P[100,300]
+T’ABCD’</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="text-command-summary">
+<span id="s7-13"></span><h2>Text Command Summary<a class="headerlink" href="#text-command-summary" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="#T7-4">Table 7-4</a> is a summary of the <strong>T</strong> command options,
+including any default values.</p>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Table 7-4 Text Command Summary</span><a class="headerlink" href="#id14" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(A&lt;0 to 3&gt;)</p></td>
+<td><p>0</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Select character
+set</strong></div>
+<div class="line">Selects one of four
+possible character sets
+(&lt;0 to 3&gt;) to use for
+text string characters.</div>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>(A0)</p></td>
+<td><p>built-in
+set</p></td>
+</tr>
+<tr class="row-even"><td><p>(A1 to
+3)</p></td>
+<td><p>one of
+three
+loadable
+sets</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(A0(L”&lt;designator&gt;”))</p></td>
+<td><p>“(B”</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Select character set
+(left)</strong></div>
+<div class="line">Used with the (A0)
+option to select a
+built-in 7-bit set for
+the left side (GL) of
+the code table.</div>
+<div class="line">Default: ASCII set.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(A0(R”&lt;designator&gt;”))</p></td>
+<td><p>“-A”</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Select character set
+(right)</strong></div>
+<div class="line">Used with the (A0)
+option to select a
+built-in 7-bit or 8-bit
+set for the right side
+(GR) of the code table.</div>
+<div class="line">Default: ISO Latin-1
+supplemental graphic
+set.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(S&lt;0 to 16&gt;)</p></td>
+<td><p>1</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Standard character
+cell size</strong></div>
+<div class="line">Selects 1 of 17
+standard sets. The set
+defines the display
+cell, unit cell, and
+character positioning
+values for text
+characters.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(S[&lt;width,height&gt;])</p></td>
+<td><p>[9,20]*</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Display cell size</strong></div>
+<div class="line">Lets you change the
+size of the screen area
+used for each
+character.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>[X,Y]</p></td>
+<td><p>[9,0]*</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Character
+positioning</strong></div>
+<div class="line">Lets you vary spacing
+between text
+characters. [X,Y]
+values are relative.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(U[&lt;width,height&gt;])</p></td>
+<td><p>[8,20]*</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Unit cell size</strong></div>
+<div class="line">Lets you change scaling
+of characters.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(H&lt;height&gt;)</p></td>
+<td><p>2</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Height multiplier</strong></div>
+<div class="line">Changes the height of
+the display cell and
+unit cell, without
+affecting the width or
+positioning values. New
+height is equal to 10
+times the specified
+multiplier (&lt;1-256&gt;).</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(D&lt;a&gt; S&lt;0 to 16&gt;)</p></td>
+<td><p>(D0 S1)</p></td>
+<td><div class="line-block">
+<div class="line"><strong>String tilt</strong></div>
+<div class="line">Selects a tilt angle
+for text strings,
+relative to the current
+baseline.</div>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>&lt;a&gt;</p></td>
+<td><p>Selects
+the
+degrees
+of the
+tilt.
+(45
+degree
+inc
+rements)</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;
+0 to 16&gt;</p></td>
+<td><p>Selects
+a
+standard
+size to
+use for
+pos
+itioning
+tilted
+cha
+racters.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(I&lt;a&gt;)</p></td>
+<td><p>0</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Italics</strong></div>
+<div class="line">Selects a tilt angle
+&lt;a&gt; for italic
+characters without
+changing their
+orientation to the
+current baseline. Angle
+is ± 22 or 45 degrees.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(B)&lt;options&gt;(E)</p></td>
+<td><p>Text controls
+in effect</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Temporary text
+control</strong></div>
+<div class="line">Selects temporary
+option values for one
+text command. Temporary
+values remain in effect
+until you use (E).</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>&lt;PV&gt;</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>PV spacing</strong></div>
+<div class="line">Selects PV value to use
+for superscripts,
+subscripts, and
+overstriking.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(W(&lt;options&gt;))</p></td>
+<td><p>Write controls
+in effect</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Temporary write
+control</strong></div>
+<div class="line">Selects temporary write
+control values for one
+text command.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(M[width,height])</p></td>
+<td><p>[1,2]</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Size multiplication</strong></div>
+<div class="line">Selects a new unit cell
+size. Multiplies the
+height and width of the
+standard S1 unit cell
+by the factors you
+select. The maximum
+width factor is 16.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>* Default value is
+based on standard S1
+character cell.</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="navbar docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="chapter6.html">Chapter
+6</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="navbot docutils container">
+<p><a class="reference external" href="http://vt100.net/docs/vt3xx-gp/chapter7.html">http://vt100.net/docs/vt3xx-gp/chapter7.html</a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ReGIS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1 Introduction to ReGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2 Screen Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3 Write Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4 Position Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5 Vector Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6 Curve Command</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7 Text Command</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-the-terminal-draws-characters">How the Terminal Draws Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-strings">Text Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#character-set-option-a">Character Set Option – A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#character-spacing">Character Spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#size-options-s">Size Options – S</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#height-multiplier-h">Height Multiplier – H</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#size-multiplier-m">Size Multiplier – M</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-and-character-tilt-options">String and Character Tilt Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#italics-option-i">Italics Option – I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temporary-text-control">Temporary Text Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pv-spacing-subscripts-superscripts-and-overstrikes">PV Spacing – Subscripts, Superscripts, and Overstrikes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temporary-write-control">Temporary Write Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-command-summary">Text Command Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8 Load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">9 Macrographs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">10 Report Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">11 Polygon Fill Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">12 Combining ReGIS Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">13 4010/4014 Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter14.html">14 Sixel Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter15.html">15 Using a Mouse or Tablet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter16.html">16 Printing Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixa.html">VT240 Style HLS Color Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixb.html">Differences Between the VT300 and Other Digital Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">Contents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chapter6.html" title="previous chapter">6 Curve Command</a></li>
+      <li>Next: <a href="chapter8.html" title="next chapter">8 Load Command</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, vt100.net.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/chapter7.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

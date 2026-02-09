@@ -1,0 +1,4593 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>13 4010/4014 Mode &#8212; ReGIS 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="14 Sixel Graphics" href="chapter14.html" />
+    <link rel="prev" title="12 Combining ReGIS Commands" href="chapter12.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="navbar docutils container">
+<p><a class="reference external" href="../../"><img alt="VT100.net" class="button" src="../vt100.net-logo" style="width: 102px; height: 16px;" /></a> VT330/VT340 Programmer Reference Manual Volume 2:
+Graphics Programming</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">`</span></a>Chapter
+12</p>
+<blockquote>
+<div><p>&lt;chapter12.html&gt;`__</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="mode">
+<span id="s13"></span><h1>13 4010/4014 Mode<a class="headerlink" href="#mode" title="Link to this heading">¶</a></h1>
+<p>The VT300 can support industry-standard Tektronix 4010/4014 software
+packages. This chapter describes how to select and use 4010/4014 mode.
+The chapter assumes you have a working knowledge of Tektronix 4010/4014
+capabilities.</p>
+<p>The 4010/4014 terminals use direct-view storage tube technology. The
+VT300 uses raster-scan technology. The 4010/4014 mode supports those
+features that can migrate to a raster terminal.</p>
+<p>NOTE: Tektronix software may run differently on the VT300 than on other
+terminals, due to differences in terminal design.</p>
+<section id="supported-features">
+<span id="s13-1"></span><h2>Supported Features<a class="headerlink" href="#supported-features" title="Link to this heading">¶</a></h2>
+<p>The 4010/4014 mode supports the following modes and functions. This
+chapter has a section on each feature.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Alpha mode</p></td>
+<td><p>Processes text characters.</p></td>
+</tr>
+<tr class="row-even"><td><p>Graph mode</p></td>
+<td><p>Processes vectors from endpoints defined by
+absolute coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Incremental plot
+mode</p></td>
+<td><p>Similar to graph mode, but plots points
+relative to the current cursor position.</p></td>
+</tr>
+<tr class="row-even"><td><p>Point plot mode</p></td>
+<td><p>Similar to graph mode, but does not draw
+vectors. Only plots the points specified by
+absolute coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphics input
+(GIN) mode</p></td>
+<td><p>A local mode, similar to report position
+interactive in ReGIS. You can use the keyboard,
+a mouse, or graphics tablet to move the cursor
+and send position reports to the host.</p></td>
+</tr>
+<tr class="row-even"><td><p>Strap options</p></td>
+<td><p>Supported as set-up mode options. See the
+Graphics Set-Up screen in Installing and Using
+the VT330/VT340 Video Terminal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Control characters</p></td>
+<td><p>Supports some control characters to control
+terminal actions in 4010/4014 mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>Escape sequences</p></td>
+<td><p>Supports some escape sequences to control
+4010/4014 functions only. The way escape
+sequences work in 4010/4014 mode is independent
+of the way they work in text mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bypass condition</p></td>
+<td><p>Prevents the terminal from responding to data
+sent by the terminal and echoed by the host.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="restrictions">
+<span id="s13-2"></span><h2>Restrictions<a class="headerlink" href="#restrictions" title="Link to this heading">¶</a></h2>
+<p>The VT300 cannot support some 4010/4014 features, due to the differences
+between direct-view storage tube and raster-scan display technologies.
+The following sections describe these limitations.</p>
+<section id="write-through-mode">
+<span id="s13-2-1"></span><h3>Write-Through Mode<a class="headerlink" href="#write-through-mode" title="Link to this heading">¶</a></h3>
+<p>With 4010/4014 terminals, you can draw images and characters on the tube
+without storing them. The application must refresh these images to keep
+them visible. The intensity level of the images depends on the refresh
+rate.</p>
+<p>The VT300 can simulate write-through functions by using raster writing
+modes. The “<a class="reference external" href="#S13.8">Escape Sequences</a>” section in this chapter
+describes the capabilities and limitations of raster writing modes.</p>
+</section>
+<section id="character-sizes">
+<span id="s13-2-2"></span><h3>Character Sizes<a class="headerlink" href="#character-sizes" title="Link to this heading">¶</a></h3>
+<p>In 4010/4014 mode, the VT300 uses one of two character modes, aligned or
+enlarged.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Aligned mode</p></td>
+<td><p>The terminal uses four character sizes. The
+characters in all four sizes are small, but conform
+to the Tektronix terminal.</p></td>
+</tr>
+<tr class="row-even"><td><p>Enlarged mode</p></td>
+<td><p>The terminal uses two character sizes. The enlarged
+characters are larger and easier to read than the
+smaller aligned characters.</p></td>
+</tr>
+</tbody>
+</table>
+<p>In enlarged mode, Tektronix software that relies on strict registration
+of characters to pixels creates character distortion on the VT300. This
+problem does not occur with aligned characters. Although the smaller
+aligned characters are more difficult to read, they are not subject to
+pixel distortion.</p>
+<p>NOTE: You can select the aligned or enlarged characters from the
+Graphics Set-Up screen.</p>
+</section>
+<section id="fonts">
+<span id="s13-2-3"></span><h3>Fonts<a class="headerlink" href="#fonts" title="Link to this heading">¶</a></h3>
+<p>Loadable fonts and alternate hard fonts are not available in 4010/4014
+mode.</p>
+</section>
+<section id="enhanced-graphics-module-egm">
+<span id="s13-2-4"></span><h3>Enhanced Graphics Module (EGM)<a class="headerlink" href="#enhanced-graphics-module-egm" title="Link to this heading">¶</a></h3>
+<p>The Tektronix enhanced graphics module (EGM) is a 4014 option that
+provides a number of special features. The VT300 supports a number of
+features available through the EGM option. See “<a class="reference external" href="#S13.14">Graph
+Mode</a>” in this chapter.</p>
+</section>
+</section>
+<section id="screen-addressing">
+<span id="s13-3"></span><h2>Screen Addressing<a class="headerlink" href="#screen-addressing" title="Link to this heading">¶</a></h2>
+<p>The 4010/4014 series terminals use Tekpoints as their unit of screen
+addressing. By default, there is a 1024 × 768 Tekpoint matrix. Graphics
+input (GIN) mode uses this default matrix. Other operating modes use the
+12-bit addressing capability of the EGM option, increasing the visible
+matrix to a 4096 × 3072 array.</p>
+<p>By contrast, the VT300 has an 800 × 480 pixel matrix. In 4010/4014 mode,
+the VT300 uses a 623 × 480 pixel array that is centered on the screen.
+In vector drawing, the VT300 uses a 614 × 460 pixel array. The extra
+space is used for character drawing.</p>
+<p>Because the VT300 has a lower pixel resolution, several Tekpoints map to
+one pixel. The VT300 maps Tekpoints to the nearest pixel in the 623 ×
+480 array.</p>
+</section>
+<section id="set-up-support">
+<span id="s13-4"></span><h2>Set-Up Support<a class="headerlink" href="#set-up-support" title="Link to this heading">¶</a></h2>
+<p>The 4010/4014 terminals have four strap options you can select by moving
+jumper wires on the terminal’s circuit cards.</p>
+<ul class="simple">
+<li><p>CR effect</p></li>
+<li><p>LF effect</p></li>
+<li><p>Graphics input terminators</p></li>
+<li><p>DEL implies LO Y</p></li>
+</ul>
+<p>On the VT300, you can select these strap options from the Graphics
+Set-Up screen. See Installing and Using the VT330/VT340 Video Terminal
+for details.</p>
+</section>
+<section id="communication">
+<span id="s13-5"></span><h2>Communication<a class="headerlink" href="#communication" title="Link to this heading">¶</a></h2>
+<p>In 4010/4014 mode, the terminal uses 7-bit character codes to
+communicate with the host. <a class="reference external" href="#F13-1">Figure 13-1</a> shows the standard
+7-bit ASCII character set. Not all ASCII characters have a valid
+function in 4010/4014 mode.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Figure 13-1 7-Bit ASCII Character Set</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p>+—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| R | COLU
+MN  | 0 |   | 1 |   | 2 |   | 3 |   | 4 |   | 5 |   | 6 |   | 7 |   |
+| O |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">W |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+</div>
+<p>+===+=====
+====+===+===+===+===+===+===+===+===+===+===+===+===+===+===+===+===+
+|   | +-</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">+ |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| —+</div>
+</div>
+<p>— | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | -+–
+— | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | -+–
+–+ | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">+ |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|    |
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|  | B</div>
+</div>
+<p>ITS | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   |  |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| +-
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">| —+</div>
+</div>
+<p>— | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | -+–
+— | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | -+–
+–+ | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">+ |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|    |
+b7 | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|  |
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|  |
+| | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">| +-
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">| —+</div>
+</div>
+<p>— | | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |
+|   | -+–
+— |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   | -+–
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   | |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|    |
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|  | b</div>
+</div>
+<p>6   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   |  |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| +-
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">| —+</div>
+</div>
+<p>— | | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |
+|   | -+–
+— |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   | -+–
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   | |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|    |
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|  |
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|  | b</div>
+</div>
+<p>5 | |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+|   | +-</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| —+</div>
+</div>
+<p>— | | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |
+|   | -+–
+— | + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |
+|   | -+–
+–+ | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">- |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| b4 |
+b3 | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|  | b</div>
+</div>
+<p>2   | + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |
+|   |  | b
+1 | | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | +-</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">- |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| —+</div>
+</div>
+<p>— | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   | -+–
+— | + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |
+|   | -+–
+–+ | - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |
+|   |</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">- |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| 0 |   | 0 |   | 0 |   | 0 |   | 1 |   | 1 |   | 1 |   | 1 |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| 0 |   | 0 |   | 1 |   | 1 |   | 0 |   | 0 |   | 1 |   | 1 |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| 0 |   | 1 |   | 0 |   | 1 |   | 0 |   | 1 |   | 0 |   | 1 |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |</div>
+<div class="line">|
+| | |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| - |   | - |   | - |   | - |   | - |   | - |   | - |   | - |   |</div>
+<div class="line">|
+| + |   | + |   | + |   | + |   | + |   | + |   | + |   | + |   |</div>
+</div>
+<p>+—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 0 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">N | 0 | D | 2 | S | 4 | 0 | 6 | &#64; | 1 | P | 1 | | 1 | p | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | U | 0 | L | 0 | P | 0 |   | 0 |   | 0 |   | 2 | ` | 4 |   | 6 |
+|   | –+-
+–+ | L | 0 | E | 1 |   | 3 |   | 4 |   | 0 |   | 0 |   | 0 |   | 0 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   | 6 |   | 2 |   | 8 |   | 6 |   | 8 |   | 9 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 4 |   | 0 |   | 6 |   | 1 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>0 | |   |   |   | 0 |   | 0 |   | 0 |   | 4 |   | 5 |   | 6 |   | 2 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 0 |   | 0 |   | 0 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 0 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">S | 1 | D | 2 | ! | 4 | 1 | 6 | A | 1 | Q | 1 | a | 1 | q | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | O | 1 | C | 1 |   | 1 |   | 1 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | H | 1 | 1 | 1 |   | 3 |   | 4 |   | 1 |   | 1 |   | 1 |   | 1 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   | ( | 7 |   | 3 |   | 9 |   | 6 |   | 8 |   | 9 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   |   | X | 1 |   | 2 |   | 3 |   | 5 |   | 1 |   | 7 |   | 1 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>1 | |   |   | O | 1 |   | 1 |   | 1 |   | 4 |   | 5 |   | 6 |   | 3 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   | N |   |   |   |   |   |   | 1 |   | 1 |   | 1 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   | ) |   |   |   |   |   |   |   |   |   |   |   |   | 1 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 2 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">S | 2 | D | 2 | “ | 4 | 2 | 6 | B | 1 | R | 1 | b | 1 | r | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | T | 2 | C | 2 |   | 2 |   | 2 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | X | 2 | 2 | 1 |   | 3 |   | 5 |   | 2 |   | 2 |   | 2 |   | 2 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   | 8 |   | 4 |   | 0 |   | 6 |   | 8 |   | 9 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 6 |   | 2 |   | 8 |   | 1 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>0 | |   |   |   | 2 |   | 2 |   | 2 |   | 4 |   | 5 |   | 6 |   | 4 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 2 |   | 2 |   | 2 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | 2 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 3 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">E | 3 | D | 2 | # | 4 | 3 | 6 | C | 1 | S | 1 | c | 1 | s | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | T | 3 | C | 3 |   | 3 |   | 3 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | X | 3 | 3 | 1 |   | 3 |   | 5 |   | 3 |   | 3 |   | 3 |   | 3 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   | ( | 9 |   | 5 |   | 1 |   | 6 |   | 8 |   | 9 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   |   | X | 1 |   | 2 |   | 3 |   | 7 |   | 3 |   | 9 |   | 1 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>1 | |   |   | O | 3 |   | 3 |   | 3 |   | 4 |   | 5 |   | 6 |   | 5 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   | F |   |   |   |   |   |   | 3 |   | 3 |   | 3 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   | F |   |   |   |   |   |   |   |   |   |   |   |   | 3 |
+|   | –+-
+–+ |   |   | ) |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 4 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">E | 4 | D | 2 | $ | 4 | 4 | 6 | D | 1 | T | 1 | d | 1 | t | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | O | 4 | C | 4 |   | 4 |   | 4 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | T | 4 | 4 | 2 |   | 3 |   | 5 |   | 4 |   | 4 |   | 4 |   | 4 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   | 0 |   | 6 |   | 2 |   | 6 |   | 8 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 8 |   | 4 |   | 0 |   | 1 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>0 | |   |   |   | 4 |   | 4 |   | 4 |   | 4 |   | 5 |   | 0 |   | 6 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 4 |   | 4 |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | 4 |   | 4 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 5 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">E | 5 | N | 2 | % | 4 | 5 | 6 | E | 1 | U | 1 | e | 1 | u | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | N | 5 | A | 5 |   | 5 |   | 5 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | Q | 5 | K | 2 |   | 3 |   | 5 |   | 5 |   | 5 |   | 5 |   | 5 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   | 1 |   | 7 |   | 3 |   | 6 |   | 8 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 9 |   | 5 |   | 0 |   | 1 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>1 | |   |   |   | 5 |   | 5 |   | 5 |   | 4 |   | 5 |   | 1 |   | 7 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 5 |   | 5 |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | 5 |   | 5 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 6 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">A | 6 | S | 2 | &amp; | 4 | 6 | 6 | F | 1 | V | 1 | f | 1 | v | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | C | 6 | Y | 6 |   | 6 |   | 6 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | K | 6 | N | 2 |   | 3 |   | 5 |   | 6 |   | 6 |   | 6 |   | 6 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   | 2 |   | 8 |   | 4 |   | 7 |   | 8 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 0 |   | 6 |   | 0 |   | 1 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>0 | |   |   |   | 6 |   | 6 |   | 6 |   | 4 |   | 5 |   | 2 |   | 8 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 6 |   | 6 |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | 6 |   | 6 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 7 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">B | 7 | E | 2 | ‘ | 4 | 7 | 6 | G | 1 | W | 1 | g | 1 | w | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | E | 7 | T | 7 |   | 7 |   | 7 |   | 0 |   | 2 |   | 4 |   | 6 |
+|   | –+-
+–+ | L | 7 | B | 2 |   | 3 |   | 5 |   | 7 |   | 7 |   | 7 |   | 7 |
+|   | | 0</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   | 3 |   | 9 |   | 5 |   | 7 |   | 8 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 1 |   | 7 |   | 0 |   | 1 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>1 | |   |   |   | 7 |   | 7 |   | 7 |   | 4 |   | 5 |   | 3 |   | 9 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 7 |   | 7 |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | 7 |   | 7 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 8 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">B | 1 | C | 3 | ( | 5 | 8 | 7 | H | 1 | X | 1 | h | 1 | x | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | S | 0 | A | 0 |   | 0 |   | 0 |   | 1 |   | 3 |   | 5 |   | 7 |
+|   | –+-
+–+ |   | 8 | N | 2 |   | 4 |   | 5 |   | 0 |   | 0 |   | 0 |   | 0 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 8 |   | 4 |   | 0 |   | 6 |   | 7 |   | 8 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 2 |   | 8 |   | 0 |   | 2 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>0 | |   |   |   | 8 |   | 8 |   | 8 |   | 4 |   | 5 |   | 4 |   | 0 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 8 |   | 8 |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | 8 |   | 8 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 9 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">H | 1 | E | 3 | ) | 5 | 9 | 7 | I | 1 | Y | 1 | i | 1 | y | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- | T | 1 | M | 1 |   | 1 |   | 1 |   | 1 |   | 3 |   | 5 |   | 7 |
+|   | –+-
+–+ |   | 9 |   | 2 |   | 4 |   | 5 |   | 1 |   | 1 |   | 1 |   | 1 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 9 |   | 5 |   | 1 |   | 7 |   | 7 |   | 8 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   |   |   | 1 |   | 2 |   | 3 |   | 3 |   | 9 |   | 0 |   | 2 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>1 | |   |   |   | 9 |   | 9 |   | 9 |   | 4 |   | 5 |   | 5 |   | 1 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | 9 |   | 9 |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | 9 |   | 9 |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">L | 1 | S | 3 | | 5 | : | 7 | J | 1 | Z | 1 | j | 1 | z | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">0 | -+–</div>
+</div>
+<p>-+- | F | 2 | U | 2 | * | 2 |   | 2 |   | 1 |   | 3 |   | 5 |   | 7 |
+|   | –+-
+–+ |   | 1 | B | 2 |   | 4 |   | 5 |   | 2 |   | 2 |   | 2 |   | 2 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 0 |   | 6 |   | 2 |   | 8 |   | 7 |   | 9 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   | A |   | 1 |   | 2 |   | 3 |   | 4 |   | 0 |   | 0 |   | 2 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>0 | |   |   |   | A |   | A |   | A |   | 4 |   | 5 |   | 6 |   | 2 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | A |   | A |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | A |   | A |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">V | 1 | E | 3 | + | 5 | ; | 7 | K | 1 | [ | 1 | k | 1 | { | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">1 | -+–</div>
+</div>
+<p>-+- | T | 3 | S | 3 |   | 3 |   | 3 |   | 1 |   | 3 |   | 5 |   | 7 |
+|   | –+-
+–+ |   | 1 | C | 2 |   | 4 |   | 5 |   | 3 |   | 3 |   | 3 |   | 3 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 1 |   | 7 |   | 3 |   | 9 |   | 7 |   | 9 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 0
+|  |   | B |   | 1 |   | 2 |   | 3 |   | 5 |   | 1 |   | 0 |   | 2 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>1 | |   |   |   | B |   | B |   | B |   | 4 |   | 5 |   | 7 |   | 3 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | B |   | B |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | B |   | B |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">F | 1 | F | 3 | , | 5 | &lt; | 7 | L | 1 | | 1 | l | 1 | | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">2 | -+–</div>
+</div>
+<p>-+- | F | 4 | S | 4 |   | 4 |   | 4 |   | 1 | | 3 |   | 5 | | | 7 |
+|   | –+-
+–+ |   | 1 |   | 2 |   | 4 |   | 6 |   | 4 |   | 4 |   | 4 |   | 4 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 2 |   | 8 |   | 4 |   | 0 |   | 7 |   | 9 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   | C |   | 1 |   | 2 |   | 3 |   | 6 |   | 2 |   | 0 |   | 2 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>0 | |   |   |   | C |   | C |   | C |   | 4 |   | 5 |   | 8 |   | 4 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | C |   | C |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | C |   | C |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">C | 1 | G | 3 | - | 5 | = | 7 | M | 1 | ] | 1 | m | 1 | } | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">3 | -+–</div>
+</div>
+<p>-+- | R | 5 | S | 5 |   | 5 |   | 5 |   | 1 |   | 3 |   | 5 |   | 7 |
+|   | –+-
+–+ |   | 1 |   | 2 |   | 4 |   | 6 |   | 5 |   | 5 |   | 5 |   | 5 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 3 |   | 9 |   | 5 |   | 1 |   | 7 |   | 9 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   | D |   | 1 |   | 2 |   | 3 |   | 7 |   | 3 |   | 0 |   | 2 |</div>
+<div class="line">| 0 |</div>
+</div>
+<p>1 | |   |   |   | D |   | D |   | D |   | 4 |   | 5 |   | 9 |   | 5 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | D |   | D |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | D |   | D |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">S | 1 | R | 3 | . | 5 | &gt; | 7 | N | 1 | ^ | 1 | n | 1 | ~ | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">4 | -+–</div>
+</div>
+<p>-+- | O | 6 | S | 6 |   | 6 |   | 6 |   | 1 |   | 3 |   | 5 |   | 7 |
+|   | –+-
+–+ |   | 1 |   | 3 |   | 4 |   | 6 |   | 6 |   | 6 |   | 6 |   | 6 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 4 |   | 0 |   | 6 |   | 2 |   | 7 |   | 9 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   | E |   | 1 |   | 2 |   | 3 |   | 8 |   | 4 |   | 1 |   | 2 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>0 | |   |   |   | E |   | E |   | E |   | 4 |   | 5 |   | 0 |   | 6 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | E |   | E |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | E |   | E |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+
+| 1 | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">S | 1 | U | 3 | / | 5 | ? | 7 | O | 1 | | 1 | o | 1 | D | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">5 | -+–</div>
+</div>
+<p>-+- | I | 7 | S | 7 |   | 7 |   | 7 |   | 1 | _ | 3 |   | 5 | E | 7 |
+|   | –+-
+–+ |   | 1 |   | 3 |   | 4 |   | 6 |   | 7 |   | 7 |   | 7 | L | 7 |
+|   | | 1</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">| 5 |   | 1 |   | 7 |   | 3 |   | 7 |   | 9 |   | 1 |   | 1 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">|  | 1
+|  |   | F |   | 1 |   | 2 |   | 3 |   | 9 |   | 5 |   | 1 |   | 2 |</div>
+<div class="line">| 1 |</div>
+</div>
+<p>1 | |   |   |   | F |   | F |   | F |   | 4 |   | 5 |   | 1 |   | 7 |
+|   | +–</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">|   |   |   |   |   |   |   |   | F |   | F |   | 6 |   | 7 |</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">| -+–</div>
+</div>
+<p>-+- |   |   |   |   |   |   |   |   |   |   |   |   |   | F |   | F |
+|   | –+-
+–+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
++—+—–
+—-+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+—+</p>
+</td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>KEY</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CHARACTER</p></td>
+<td><p>+–
+-+-
+–+
+| E</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>3 |
+| S</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>3 |
+| C</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>2 |
+|</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>7 |
+|</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>1 |
+|</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<p>B |
++–
+-+-
+–+</p>
+</td>
+<td><p>OCTAL
+DECIMAL
+HEX</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The function of a valid ASCII character may depend on (1) which
+4010/4014 operating mode the terminal is using when the character is
+received, and (2) whether or not the ASCII character is part of an
+escape sequence.</p>
+<p><a class="reference external" href="#T13-1">Table 13-1</a> lists the valid ASCII codes for 4010/4014 mode
+and briefly describes their different functions. Later sections on
+control characters, escape sequences, and 4010/4014 operating modes
+provide more details.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Table 13-1 ASCII Character Code Functions</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>ASCII
+Character</p></th>
+<th class="head"><p>Operating
+Mode Value</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p>Alpha</p></td>
+<td><p>Graph</p></td>
+<td><p>Bypass/GIN</p></td>
+<td><p>LCE Flag*</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUL</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Set LCE.</p></td>
+</tr>
+<tr class="row-even"><td><p>SOH</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>STX</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>ETX</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>EOT</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>ENQ</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Return
+terminal
+status.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACK</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>BEL</p></td>
+<td><p>Ring bell.</p></td>
+<td><p>Ring bell.</p></td>
+<td><p>Ring bell.</p></td>
+<td><p>Ring bell.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BS</p></td>
+<td><p>Left 1
+space.</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Left 1
+space.</p></td>
+</tr>
+<tr class="row-even"><td><p>HT</p></td>
+<td><p>Right 1
+space.</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Right 1
+space.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LF</p></td>
+<td><p>Down 1
+line.</p></td>
+<td><p>–</p></td>
+<td><p>Down 1
+line.</p></td>
+<td><p>Set LCE.†</p></td>
+</tr>
+<tr class="row-even"><td><p>VT</p></td>
+<td><p>Up 1 line.</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Up 1 line.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FF</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Erase and
+home
+(page).</p></td>
+</tr>
+<tr class="row-even"><td><p>CR</p></td>
+<td><p>Move to
+left
+margin.</p></td>
+<td><p>Set alpha
+and left.</p></td>
+<td><p>Set alpha
+and left.</p></td>
+<td><p>Set LCE.†</p></td>
+</tr>
+<tr class="row-odd"><td><p>SO</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>SI</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>DLE</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>DC1</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>DC2</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>DC3</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>DC4</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>NAK</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYN</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>ETB</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Make hard
+copy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAN</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Set bypass.</p></td>
+</tr>
+<tr class="row-even"><td><p>EM</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUB</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>Set GIN and
+bypass.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC</p></td>
+<td><p>Set LCE.</p></td>
+<td><p>Set LCE.</p></td>
+<td><p>Set LCE.</p></td>
+<td><p>Set LCE.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FS</p></td>
+<td><p>Set point
+plot.</p></td>
+<td><p>Set point
+plot.</p></td>
+<td><p>Set point
+plot.</p></td>
+<td><p>Set point
+plot.</p></td>
+</tr>
+<tr class="row-even"><td><p>GS</p></td>
+<td><p>Set graph
+and dark
+vector.</p></td>
+<td><p>Do a dark
+vector.</p></td>
+<td><p>Set graph
+and dark
+vector.</p></td>
+<td><p>Set graph
+and dark
+vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RS</p></td>
+<td><p>Set
+incremental
+plot.</p></td>
+<td><p>Set
+incremental
+plot.</p></td>
+<td><p>Set
+incremental
+plot.</p></td>
+<td><p>Set
+incremental
+plot.</p></td>
+</tr>
+<tr class="row-even"><td><p>US</p></td>
+<td><p>–</p></td>
+<td><p>Set alpha
+mode.</p></td>
+<td><p>Set alpha
+mode.</p></td>
+<td><p>Set alpha
+mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Space</p></td>
+<td><p>Right 1
+space.</p></td>
+<td><p>High X or
+high Y.</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>!</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>“</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>#</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>$</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>%</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>(</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>)</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>*</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>,</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>.</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>/</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>Aligned
+Mode</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Smallest
+size‡</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Largest
+size‡</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Largest
+size‡</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Largest
+size‡</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Largest
+size</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Large size</p></td>
+</tr>
+<tr class="row-odd"><td><p>:</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Smallest
+size</p></td>
+</tr>
+<tr class="row-even"><td><p>;</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Small size</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enlarged
+Mode</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Small size‡</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Large size‡</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Large size‡</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Large size‡</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Large size</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Large size</p></td>
+</tr>
+<tr class="row-even"><td><p>:</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Small size</p></td>
+</tr>
+<tr class="row-odd"><td><p>;</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y.</p></td>
+<td><p>–</p></td>
+<td><p>Small size</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>=</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>?</p></td>
+<td><p>Print
+character</p></td>
+<td><p>High X or
+high Y</p></td>
+<td><p>–</p></td>
+<td><p>Low Y for
+graph</p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>G</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>H</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>J</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>K</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>N</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>O</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>Q</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>R</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>S</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>U</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>V</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>X</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>Y</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Z</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>[</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>\</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>]</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>^</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>_</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low X</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>`</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="14">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="14">
+<li><p>dotted</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>b</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>(N)
+dot-dash</p></td>
+</tr>
+<tr class="row-even"><td><p>c</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>(N) short
+dash</p></td>
+</tr>
+<tr class="row-odd"><td><p>d</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>(N) long
+dash</p></td>
+</tr>
+<tr class="row-even"><td><p>e</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="14">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>f</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="14">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>g</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="14">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>h</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>i</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>dotted</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>j</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>(B)
+dot-dash</p></td>
+</tr>
+<tr class="row-even"><td><p>k</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>(B) short
+dash</p></td>
+</tr>
+<tr class="row-odd"><td><p>l</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>(B) long
+dash</p></td>
+</tr>
+<tr class="row-even"><td><p>m</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>n</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>o</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>solid</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>p</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>q</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>r</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>s</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>t</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>u</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>v</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>w</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>x</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>y</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>z</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>{</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>|</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>}</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>~</p></td>
+<td><p>Print
+character</p></td>
+<td><p>Low Y</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL</p></td>
+<td><p>–</p></td>
+<td><p>Low Y or
+no-op§</p></td>
+<td><p>–</p></td>
+<td><p>Set LCE.</p></td>
+</tr>
+<tr class="row-odd"><td><p>* The
+ASCII
+character
+performs
+the
+function
+listed when
+used as
+part of an
+escape
+sequence.
+The LCE
+flag is an
+escape
+sequence
+introducer
+condition.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>† Filler
+CRs and
+filler LFs
+have no
+effect.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>‡ ESC 0,
+ESC 1, ESC
+2, and ESC
+3 are not
+r
+ecommended.
+These
+sequences
+may not be
+supported
+in future
+terminals.
+Use ESC 8,
+ESC 9, ESC
+:, or ESC ;
+for
+character
+size
+selection.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>§ In graph
+mode, you
+can disable
+the effect
+of DEL as a
+low Y
+character
+by
+selecting
+the “DEL
+implies low
+Y” field in
+the
+Graphics
+Set-Up
+screen. If
+DEL cannot
+be used,
+the program
+can
+substitute
+ESC ?,
+which
+performs
+the same
+function as
+DEL.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>(N) =
+normal, (B)
+= bold.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="locator-device-mouse-or-graphics-tablet">
+<span id="s13-6"></span><h2>Locator Device (Mouse or Graphics Tablet)<a class="headerlink" href="#locator-device-mouse-or-graphics-tablet" title="Link to this heading">¶</a></h2>
+<p>You can use a mouse or graphics tablet in 4010/4014 mode. You can use
+the mouse, tablet, or keyboard arrow keys to move the cursor and send
+reports in 4010/4014 graphics input (GIN) mode. <a class="reference external" href="chapter15.html">Chapter
+15</a> describes how to use a mouse or tablet in GIN
+mode.</p>
+</section>
+<section id="control-characters">
+<span id="s13-7"></span><h2>Control Characters<a class="headerlink" href="#control-characters" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="#T13-2">Table 13-2</a> describes the ASCII control characters that the
+VT300 recognizes in 4010/4014 mode. The terminal ignores other ASCII
+control characters in this mode. These characters can come from the host
+or the VT300 keyboard.</p>
+<p>NOTE: Tables <a class="reference external" href="#T13-2">13-2</a> and <a class="reference external" href="#T13-3">13-3</a> list the location
+(column and row) of each control character in the ASCII character set
+(<a class="reference external" href="#F13-1">Figure 13-1</a>). The character set provides the octal,
+decimal, and hex values for each ASCII code.</p>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Table 13-2 Valid ASCII Control Characters in 4010/4014 Mode</span><a class="headerlink" href="#id8" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mnemonic</p></th>
+<th class="head"><p>Column/ Row</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BEL</p></td>
+<td><p>0/7</p></td>
+<td><p>Bell</p></td>
+<td><p>Rings the bell
+tone (if the bell
+is enabled),
+clears the bypass
+condition, and
+clears the
+condition that
+prevents the
+terminal from
+responding to
+carriage returns.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BS</p></td>
+<td><p>0/8</p></td>
+<td><p>Backspace</p></td>
+<td><p>Moves the cursor
+left one position.
+If the current
+position is at the
+left margin, no
+action occurs.</p></td>
+</tr>
+<tr class="row-even"><td><p>HT</p></td>
+<td><p>0/9</p></td>
+<td><p>Horizontal tab</p></td>
+<td><p>Moves the cursor
+one tab space to
+the right. If the
+current position
+is already at the
+end of the line,
+HT causes an
+automatic line
+feed and carriage
+return.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LF</p></td>
+<td><p>0/10</p></td>
+<td><p>Line feed</p></td>
+<td><p>Moves the cursor
+down one line. If
+the cursor is
+already on the
+bottom row of the
+screen, LF moves
+the cursor to the
+top of the screen
+and switches
+margins. Clears
+the bypass
+condition.</p></td>
+</tr>
+<tr class="row-even"><td><p>VT</p></td>
+<td><p>0/11</p></td>
+<td><p>Vertical tab</p></td>
+<td><p>Moves the cursor
+up one line. The
+cursor stops at
+the top line.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CR</p></td>
+<td><p>0/13</p></td>
+<td><p>Carriage return</p></td>
+<td><p>Moves the cursor
+to the current
+left margin.
+Resets the
+terminal from
+graph mode to
+alpha mode.
+Cancels the
+crosshair cursor
+when setting alpha
+mode, but leaves
+the terminal with
+an undefined
+margin and page
+full status.
+Clears the bypass
+condition.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC</p></td>
+<td><p>1/11</p></td>
+<td><p>Escape</p></td>
+<td><p>Escape sequence
+introducer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FS</p></td>
+<td><p>1/12</p></td>
+<td><p>File separator</p></td>
+<td><p>Selects point plot
+mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>GS</p></td>
+<td><p>1/13</p></td>
+<td><p>Group separator</p></td>
+<td><p>Selects graph
+mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RS</p></td>
+<td><p>1/14</p></td>
+<td><p>Record separator</p></td>
+<td><p>Selects
+incremental plot
+mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>US</p></td>
+<td><p>1/15</p></td>
+<td><p>Unit separator</p></td>
+<td><p>Resets terminal
+from graph mode to
+alpha mode. Clears
+the bypass
+condition.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To send control characters from the keyboard, you hold down the <strong>Ctrl</strong>
+key and press another key. <a class="reference external" href="#T13-3">Table 13-3</a> lists the keys you
+use to send ASCII control characters from the keyboard.</p>
+<p>The terminal buffers and stores control characters received in GIN mode,
+until the terminal leaves GIN mode.</p>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Table 13-3 Keys Used to Send ASCII Control Characters</span><a class="headerlink" href="#id9" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mnemonic</p></th>
+<th class="head"><p>Column/ Row</p></th>
+<th class="head"><p>Key Pressed with Ctrl</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ENQ</p></td>
+<td><p>0/5</p></td>
+<td><p>E</p></td>
+</tr>
+<tr class="row-odd"><td><p>BEL</p></td>
+<td><p>0/7</p></td>
+<td><p>G</p></td>
+</tr>
+<tr class="row-even"><td><p>BS</p></td>
+<td><p>0/8</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>HT</p></td>
+<td><p>0/9</p></td>
+<td><p>I</p></td>
+</tr>
+<tr class="row-even"><td><p>LF</p></td>
+<td><p>0/10</p></td>
+<td><p>J</p></td>
+</tr>
+<tr class="row-odd"><td><p>VT</p></td>
+<td><p>0/11</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-even"><td><p>FF</p></td>
+<td><p>0/12</p></td>
+<td><p>L</p></td>
+</tr>
+<tr class="row-odd"><td><p>CR</p></td>
+<td><p>0/13</p></td>
+<td><p>M</p></td>
+</tr>
+<tr class="row-even"><td><p>ETB</p></td>
+<td><p>1/7</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAN</p></td>
+<td><p>1/8</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-even"><td><p>SUB</p></td>
+<td><p>1/10</p></td>
+<td><p>Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>1/11</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>FS</p></td>
+<td><p>1/12</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>GS</p></td>
+<td><p>1/13</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>RS</p></td>
+<td><p>1/14</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>US</p></td>
+<td><p>1/15</p></td>
+<td><p>7</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="escape-sequences">
+<span id="s13-8"></span><h2>Escape Sequences<a class="headerlink" href="#escape-sequences" title="Link to this heading">¶</a></h2>
+<p>The following sections describe the escape sequences you can use in
+4010/4014 mode. The terminal ignores any other escape sequences received
+in this mode. The valid escape sequences can come from the host or the
+VT300 keyboard.</p>
+<p>The sequences contain control characters. To send the control character
+codes from the keyboard, you hold down the <strong>Ctrl</strong> key and press
+another key. <a class="reference external" href="#T13-3">Table 13-3</a> lists the keys to press for each
+control character.</p>
+<p>In GIN mode, the terminal buffers and stores escape sequences, until the
+terminal exits GIN mode. After exiting GIN mode, the terminal performs
+the buffered escape sequences.</p>
+<section id="available-functions">
+<span id="s13-8-1"></span><h3>Available Functions<a class="headerlink" href="#available-functions" title="Link to this heading">¶</a></h3>
+<p>You can perform the following functions with escape sequences in
+4010/4014 mode.</p>
+<ul class="simple">
+<li><p>Request terminal status.</p></li>
+<li><p>Print hard copy of the bitmap.</p></li>
+<li><p>Set bypass condition.</p></li>
+<li><p>Set alpha mode.</p></li>
+<li><p>Set GIN mode.</p></li>
+<li><p>Set point plot mode.</p></li>
+<li><p>Select raster writing mode features.</p></li>
+<li><p>Select character sizes.</p></li>
+<li><p>Select vector patterns.</p></li>
+<li><p>Prevent response to carriage returns (CRs) or line feeds (LFs).</p></li>
+<li><p>Set LCE flag. (Indicates an escape sequence introduction condition.)</p></li>
+<li><p>Delete character.</p></li>
+</ul>
+</section>
+<section id="request-terminal-status">
+<span id="s13-8-2"></span><h3>Request Terminal Status<a class="headerlink" href="#request-terminal-status" title="Link to this heading">¶</a></h3>
+<p>This sequence sets the terminal to the bypass condition and requests the
+status of the terminal.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>ENQ</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The response of the terminal depends on the current operating mode. In
+alpha mode, the terminal sends status information and the address of the
+lower-left corner of the alpha cursor. In graph mode, the terminal sends
+status information and the address of the current cursor position.</p>
+</section>
+<section id="print-hard-copy-of-the-bitmap">
+<span id="s13-8-3"></span><h3>Print Hard Copy of the Bitmap<a class="headerlink" href="#print-hard-copy-of-the-bitmap" title="Link to this heading">¶</a></h3>
+<p>This sequence prints a hard copy of the terminal’s bitmap by using the
+sixel protocol (<a class="reference external" href="chapter16.html">Chapter 16</a>). The sequence also
+clears the bypass condition. The sequence only works when a printer is
+connected to the terminal’s printer port.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>ETB</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>1/7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="set-bypass-condition">
+<span id="s13-8-4"></span><h3>Set Bypass Condition<a class="headerlink" href="#set-bypass-condition" title="Link to this heading">¶</a></h3>
+<p>This sequence selects the bypass condition. In the bypass condition, the
+VT300 ignores any data received from the host.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>CAN</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>1/8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="set-alpha-mode">
+<span id="s13-8-5"></span><h3>Set Alpha Mode<a class="headerlink" href="#set-alpha-mode" title="Link to this heading">¶</a></h3>
+<p>This sequence selects alpha mode. Selecting alpha mode erases the
+screen, moves the current position to the upper-left corner, activates
+margin 1, and clears the bypass condition.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>FF</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="set-gin-mode">
+<span id="s13-8-6"></span><h3>Set GIN Mode<a class="headerlink" href="#set-gin-mode" title="Link to this heading">¶</a></h3>
+<p>This sequence selects graphics input mode.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>SUB</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>1/10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="set-point-plot-mode">
+<span id="s13-8-7"></span><h3>Set Point Plot Mode<a class="headerlink" href="#set-point-plot-mode" title="Link to this heading">¶</a></h3>
+<p>This sequence selects point plot mode and sets the pattern register to
+solid.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>FS</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>1/12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="select-raster-writing-mode-features">
+<span id="s13-8-8"></span><h3>Select Raster Writing Mode Features<a class="headerlink" href="#select-raster-writing-mode-features" title="Link to this heading">¶</a></h3>
+<p>These sequences let you use raster writing features in alpha and graph
+modes.</p>
+<p>NOTE: These sequences are not part of the 4010/4014 protocol.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Overlay mode</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>/</p></td>
+<td><p>0</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>2/15</p></td>
+<td><p>3/0</p></td>
+<td><p>6/4</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Set dots on.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Erase mode</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>/</p></td>
+<td><p>1</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>2/15</p></td>
+<td><p>3/1</p></td>
+<td><p>6/4</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sets dots off.</p></td>
+</tr>
+<tr class="row-even"><td><p>Complement mode</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>/</p></td>
+<td><p>2</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>2/15</p></td>
+<td><p>3/2</p></td>
+<td><p>6/4</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Complements dots.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="select-character-size">
+<span id="s13-8-9"></span><h3>Select Character Size<a class="headerlink" href="#select-character-size" title="Link to this heading">¶</a></h3>
+<p>These sequences select character sizes, depending on whether aligned or
+enlarged characters are selected in Graphics Set-Up. There are four
+sizes of aligned characters and two sizes of enlarged characters.</p>
+<p>NOTE: Digital does not recommend using <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">2</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">3</span></code>. These sequences are not standard Tektronix sequences, and
+may not be supported in future terminals. Use <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">9</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">:</span></code>, or <code class="docutils literal notranslate"><span class="pre">ESC</span> <span class="pre">;</span></code> for character size selection.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Aligned Mode</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><strong>Selects 35 lines of 74
+characters each (default).</strong></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/9</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 38 lines of 81 characters
+each.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>:</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/10</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 58 lines of 121
+characters each.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>;</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/11</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 64 lines of 133
+characters each.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/0</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 64 lines of 133
+characters each.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/1</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 35 lines of 74 characters
+each.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/2</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 35 lines of 74 characters
+each.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/3</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 35 lines of 74 characters
+each.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enlarged Mode</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><strong>Selects 24 lines of 69
+characters each (default).</strong></p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/9</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 24 lines of 69 characters
+each.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>:</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/10</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 47 lines of 125
+characters each.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>;</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/11</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 47 lines of 125
+characters each.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/0</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 47 lines of 125
+characters each.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/1</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 24 lines of 69 characters
+each.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/2</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 24 lines of 69 characters
+each.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/3</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects 24 lines of 69 characters
+each.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="select-vector-patterns">
+<span id="s13-8-10"></span><h3>Select Vector Patterns<a class="headerlink" href="#select-vector-patterns" title="Link to this heading">¶</a></h3>
+<p>These sequences select the type of pattern the terminal uses for vector
+drawing.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>Pattern</p></th>
+<th class="head"><p>Intensity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>`</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/0</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>a</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/1</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Dotted</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>b</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/2</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Dot-dash</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>c</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/3</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Short dash</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/4</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Long dash</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>e</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/5</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>f</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/6</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>g</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/7</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Normal</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>i</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/9</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Dotted</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>j</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/10</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Dot-dash</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>k</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/11</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Short dash</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Long dash</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/13</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>n</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/14</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Bold</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>o</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>6/15</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Solid</p></td>
+<td><p>Bold</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prevent-response-to-crs-or-lfs">
+<span id="s13-8-11"></span><h3>Prevent Response to CRs or LFs<a class="headerlink" href="#prevent-response-to-crs-or-lfs" title="Link to this heading">¶</a></h3>
+<p>These sequences prevent the terminal from responding to carriage returns
+(CRs) or line feeds (LFs).</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>CR</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/13</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Prevents the terminal from
+responding to carriage returns.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>LF</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/10</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Prevents the terminal from
+responding to line feeds.</p></td>
+</tr>
+</tbody>
+</table>
+<p>After you send these sequences, the terminal does not process any CRs or
+LFs until it receives a BEL (or some other no-operation control code).
+Your application can use these escape sequences, if your operating
+system environment prefers shorter lines and tends to insert CR and LF
+as fillers.</p>
+</section>
+<section id="set-lce-flag">
+<span id="s13-8-12"></span><h3>Set LCE Flag<a class="headerlink" href="#set-lce-flag" title="Link to this heading">¶</a></h3>
+<p>You can use any of these sequences to set the LCE flag. The LCE flag is
+an escape sequence introducer condition.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>DEL</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>7/15</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sets the LCE flag.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>NUL</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/0</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sets the LCE flag.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>ESC</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>1/11</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sets the LCE flag.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>CR</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/13</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sets the LCE flag and prevents
+the terminal from responding to
+CRs.</p></td>
+</tr>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>LF</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>0/10</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sets the LCE flag and prevents
+the terminal from responding to
+LFs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="delete-character">
+<span id="s13-8-13"></span><h3>Delete Character<a class="headerlink" href="#delete-character" title="Link to this heading">¶</a></h3>
+<p>The 4010/4014 terminals have a “DEL implies low Y” strap option, that
+you can turn on or off in the Graphics Set-Up screen of the VT300. (See
+Installing and Using the VT330/VT340 Video Terminal.) This option lets
+the terminal interpret the ASCII DEL control character as a possible low
+Y value in 4010-series coordinate specifications.</p>
+<p>Using DEL as a low Y value may cause problems if your operating system
+uses DEL for synchronization. In such cases, you can use the following
+sequence as a substitute for the low Y coordinate value of DEL.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>3/15</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions-the-terminal-ignores">
+<span id="s13-8-14"></span><h3>4010/4014 Functions the Terminal Ignores<a class="headerlink" href="#functions-the-terminal-ignores" title="Link to this heading">¶</a></h3>
+<p>The VT300 ignores the following control functions in 4010/4014 mode.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESC SO</p></td>
+<td><p>Selects alternate character set.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC SI</p></td>
+<td><p>Selects ASCII character set.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC p</p></td>
+<td><p>Sets solid vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC q</p></td>
+<td><p>Sets dotted vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC r</p></td>
+<td><p>Sets dot-dashed vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC s</p></td>
+<td><p>Sets short dashed vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC t</p></td>
+<td><p>Sets long dashed vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC u</p></td>
+<td><p>Sets solid vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC v</p></td>
+<td><p>Sets solid vector pattern with write-through.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC w</p></td>
+<td><p>Sets solid vector pattern with write-through.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="escape-sequences-for-control-characters">
+<span id="s13-8-15"></span><h3>Escape Sequences for Control Characters<a class="headerlink" href="#escape-sequences-for-control-characters" title="Link to this heading">¶</a></h3>
+<p>The following escape sequences have the same function as the control
+character listed.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>Control Character</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESC BEL</p></td>
+<td><p>BEL</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC BS</p></td>
+<td><p>BS</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC HT</p></td>
+<td><p>HT</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC VT</p></td>
+<td><p>VT</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC GS</p></td>
+<td><p>GS</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC RS</p></td>
+<td><p>RS</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC US</p></td>
+<td><p>US</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="entering-and-exiting-4010-4014-mode">
+<span id="s13-9"></span><h2>Entering and Exiting 4010/4014 Mode<a class="headerlink" href="#entering-and-exiting-4010-4014-mode" title="Link to this heading">¶</a></h2>
+<p>The VT300 enters 4010/4014 in alpha mode. The terminal exits 4010/4014
+mode to VT300 mode with 7-bit controls. There are two ways to enter and
+exit 4010/4014 mode.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>Use the Graphics Set-Up screen.</strong></div>
+<div class="line">See Installing and Using the VT330/VT340 Video Terminal for
+details.</div>
+</div>
+</li>
+<li><p><strong>Use the following escape sequences.</strong></p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>[</p></td>
+<td><p>?</p></td>
+<td><p>3</p></td>
+<td><p>8</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>5/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/3</p></td>
+<td><p>3/8</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Enter 4010/4014 mode.</p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC</p></td>
+<td><p>[</p></td>
+<td><p>?</p></td>
+<td><p>3</p></td>
+<td><p>8</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>1/11</p></td>
+<td><p>5/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/3</p></td>
+<td><p>3/8</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Exit 4010/4014 mode.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>You can mix the two methods of entering and exiting 4010/4014 mode. That
+is, you can enter 4010/4014 mode via set-up and exit via escape
+sequences, or enter via escape sequences and exit via set-up.</p>
+<p>When you enter 4010/4014 mode, the VT300 erases the screen to black and
+sets the output map according to the Global Set-Up screen.</p>
+<ul class="simple">
+<li><p>The gray selection sets the output map to a gray scale.</p></li>
+<li><p>The color selection sets the output map to a gray scale for the VT330
+and green scale for the VT340.</p></li>
+</ul>
+<p>The terminal then displays images in normal intensity (for normal beam
+focus) or in bold (for defocused beam).</p>
+<p>When you leave 4010/4014 mode, the terminal erases the screen and sets
+the output map to the factory-default state, or the state specified in
+set-up. The factory-default state is VT300 mode, 7-bit controls.</p>
+</section>
+<section id="changing-operating-modes">
+<span id="s13-10"></span><h2>Changing Operating Modes<a class="headerlink" href="#changing-operating-modes" title="Link to this heading">¶</a></h2>
+<p>In 4010/4014 mode, you can use five different operating modes. You use
+control characters or escape sequences to change between these operating
+modes.</p>
+<p><a class="reference external" href="#F13-2">Figure 13-2</a> shows the five operating modes available in
+4010/4014 mode. The arrows represent possible changes between modes.
+Next to each arrow is the ASCII control character or escape sequence you
+use to make the mode change.</p>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Figure 13-2 4010/4014 Mode Transition Diagram</span><a class="headerlink" href="#id10" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image1" src="rst/ma-1177-83" /></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>NOTES</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td><p>US, CR, ESC US, ESC FF, or Next Screen key.</p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li></li>
+</ol>
+</td>
+<td><p>Next Screen key (or any other active non-arrow key entered
+from the keyboard).</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Except for GIN mode, these control characters and escape sequences can
+come from the host or the keyboard. In GIN mode, the terminal buffers
+all host input until you leave GIN mode. You can only leave GIN mode
+from the keyboard.</p>
+</section>
+<section id="clearing-the-screen">
+<span id="s13-11"></span><h2>Clearing the Screen<a class="headerlink" href="#clearing-the-screen" title="Link to this heading">¶</a></h2>
+<p>The 4010/4014 series terminals have a clear screen key on their
+keyboard. In 4010/4014 mode, you use the <strong>Next Page</strong> key instead. You
+can also clear the screen with the <strong>Clear Display</strong> feature in the
+Set-Up Directory screen.</p>
+</section>
+<section id="bypass-condition">
+<span id="s13-12"></span><h2>Bypass Condition<a class="headerlink" href="#bypass-condition" title="Link to this heading">¶</a></h2>
+<p>When you select the bypass condition, the terminal ignores any
+characters received from the host. This condition lets the terminal
+ignore its own transmissions if they are incorrectly echoed by the host.</p>
+<p>You can turn the bypass condition on from the keyboard or the host,
+using any of the following escape sequences.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ESC CAN</p></td>
+<td><p>Selects the bypass condition only.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC ENQ</p></td>
+<td><p>Selects the bypass condition and requests status
+information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESC SUB</p></td>
+<td><p>Selects the bypass condition and places the VT300
+in GIN mode.</p></td>
+</tr>
+</tbody>
+</table>
+<p>You can turn off the bypass condition with a control character, escape
+sequence, or the <strong>Next Page</strong> key.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Control
+Characters</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BEL</p></td>
+<td><p>Rings the bell tone, if the bell is enabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LF</p></td>
+<td><p>Causes a new line operation.</p></td>
+</tr>
+<tr class="row-even"><td><p>CR</p></td>
+<td><p>Moves the cursor to the left margin and resets the
+terminal to alpha mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>US</p></td>
+<td><p>Resets the terminal from graph mode to alpha mode.</p></td>
+</tr>
+<tr class="row-even"><td><p>Escape
+Sequences</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ESC ETB</p></td>
+<td><p>Prints a hard copy of the bitmap.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESC FF</p></td>
+<td><p>Selects alpha mode and clears the screen.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Next Page</p></td>
+<td><p>Selects alpha mode and clears the screen.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alpha-mode">
+<span id="s13-13"></span><h2>Alpha Mode<a class="headerlink" href="#alpha-mode" title="Link to this heading">¶</a></h2>
+<p>When you enter 4010/4014 mode, you automatically select alpha mode as
+the default operating mode. In alpha mode, the terminal displays
+received characters in the currently selected character size.</p>
+<p>The terminal does not display ASCII control characters and escape
+sequence characters. The terminal only processes the control characters
+and escape sequences listed in the previous sections.</p>
+<section id="s13-13-1">
+<span id="id3"></span><h3>Character Sizes<a class="headerlink" href="#s13-13-1" title="Link to this heading">¶</a></h3>
+<p>In alpha mode, you can select aligned or enlarged characters. You can
+select four different sizes of aligned characters and two different
+sizes of enlarged characters. You select the character size with escape
+sequences.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character Size</p></th>
+<th class="head"><p>Sequence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Aligned Mode</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>35 lines of 74 characters</p></td>
+<td><p><strong>ESC 8</strong> (default), ESC 1, ESC 2,
+or ESC 3</p></td>
+</tr>
+<tr class="row-even"><td><p>38 lines of 81 characters</p></td>
+<td><p>ESC 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>58 lines of 121 characters</p></td>
+<td><p>ESC :</p></td>
+</tr>
+<tr class="row-even"><td><p>64 lines of 133 characters</p></td>
+<td><p>ESC ; or ESC 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enlarged Mode</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>24 lines of 69 characters</p></td>
+<td><p><strong>ESC 8</strong> (default), ESC 9, ESC 1,
+ESC 2, or ESC 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>48 lines of 124 characters</p></td>
+<td><p>ESC :, ESC ;, or ESC 0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="margins-for-two-column-writing">
+<span id="s13-13-2"></span><h3>Margins for Two-Column Writing<a class="headerlink" href="#margins-for-two-column-writing" title="Link to this heading">¶</a></h3>
+<p>In alpha mode, you can use two-column writing. This form of writing uses
+two margins. Margin 1 is at the left edge of the display area. Margin 2
+is at the center of each row in the display area.</p>
+<p>Margin 1 is active when the terminal writes rows of characters from the
+left edge. Margin 2 is active when the terminal writes from the center
+of the display area.</p>
+<p>The active margin automatically switches after one of the following
+events.</p>
+<ul class="simple">
+<li><p>The terminal fills the last row for the currently active margin.</p></li>
+<li><p>The terminal receives a line feed on the last row of the display.</p></li>
+</ul>
+<p>The terminal then wraps characters around to the top row of the display,
+at the new margin.</p>
+<p>Since 4010/4014 terminals are storage tube terminals, they cannot
+scroll. In 4010/4014 mode, you cannot scroll. In alpha mode, the VT300
+writes characters as follows. (This description assumes that the
+terminal does not receive any control characters while writing.)</p>
+<ol class="arabic simple">
+<li><p>Character processing starts on the top row, from the upper-left
+corner to the upper-right corner.</p></li>
+<li><p>When the terminal reaches the right edge of a row, the terminal wraps
+the next character to the left edge of next row down.</p></li>
+<li><p>The terminal continues writing until it fills the bottom row.</p></li>
+<li><p>When the bottom row is full, the next character wraps around to the
+top row at the middle of the screen.</p></li>
+<li><p>The terminal now writes characters from the middle of the screen to
+the right edge, overstriking any characters already displayed.</p></li>
+<li><p>As each row fills, the next character wraps to the middle of the next
+row.</p></li>
+<li><p>The terminal continues writing until it fills the last row.</p></li>
+<li><p>When the last row is full, the next character wraps around to the top
+row at the left margin. Then the process starts again.</p></li>
+</ol>
+<p>You can use one-column or two-column writing. One-column writing uses
+the full width of the screen. If you want one-column writing, then you
+must clear the screen before characters wrap around to margin 2.</p>
+<p>If you want two-column writing, then you should insert CR and LF in each
+row before writing reaches margin 2. (You can insert CR alone if you set
+<strong>401X CR Processing</strong> to “CR” in the Graphics Set-Up screen.) This step
+prevents overstriking of characters.</p>
+</section>
+<section id="alpha-mode-control-characters">
+<span id="s13-13-3"></span><h3>Alpha Mode Control Characters<a class="headerlink" href="#alpha-mode-control-characters" title="Link to this heading">¶</a></h3>
+<p>In alpha mode, the VT300 recognizes any valid 4010/4014 mode escape
+sequence or control character. Some control characters, however, have
+functions specific to alpha mode.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HT</p></td>
+<td><p>Moves the cursor one space to the right.</p></td>
+</tr>
+<tr class="row-odd"><td><p>VT</p></td>
+<td><p>Moves the cursor up one line.</p></td>
+</tr>
+<tr class="row-even"><td><p>LF</p></td>
+<td><p>Causes a line feed. When used on the bottom display
+row, LF wraps the cursor to the top row and switches
+margins.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CR</p></td>
+<td><p>Moves the cursor to the left margin. Can also cause a
+line feed, if you set the <strong>New Line</strong> feature on the
+Display Set-Up screen to “new line”. When used on the
+bottom row (with the “new line” setting), CR wraps the
+cursor the same way LF does.</p></td>
+</tr>
+<tr class="row-even"><td><p>BS</p></td>
+<td><p>Moves the cursor to the left one position. Nothing
+happens if the cursor is already at the active margin.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="erasing-characters-with-spaces-and-backspaces">
+<span id="s13-13-4"></span><h3>Erasing Characters with Spaces and Backspaces<a class="headerlink" href="#erasing-characters-with-spaces-and-backspaces" title="Link to this heading">¶</a></h3>
+<p>In alpha mode, the VT300 erases a character when the terminal receives a
+space (SP) character immediately after a backspace (BS) character. The
+space character erases any character in the current character cell.</p>
+<p>NOTE: This operation is not consistent with Tektronix 4010 or 4014
+terminals.</p>
+<p>This action is similar to using the &lt;x] key for correcting typing
+errors. Most operating systems send a backspace, space, and backspace
+when they receive the delete (DEL) character.</p>
+<p>If the space character follows any character other than a backspace, the
+VT300 does not erase a character. Therefore, you can use the space
+character for positioning.</p>
+</section>
+</section>
+<section id="graph-mode">
+<span id="s13-14"></span><h2>Graph Mode<a class="headerlink" href="#graph-mode" title="Link to this heading">¶</a></h2>
+<p>In graph mode, the terminal draws vectors between the absolute
+coordinate values you select. The absolute coordinates are Tekpoint
+values, mapped to the nearest corresponding pixel on the VT300 screen.
+The terminal draws the vectors in the currently selected line pattern.
+The next section describes the line patterns available.</p>
+<p>The 4014 with the enhanced graphics module (EGM) has a 4096 × 4096
+square matrix. The top 25 percent of the Y addresses are above the top
+of the display area. If you specify coordinates in this top area, they
+are tracked accurately. However, the terminal only draws the part of the
+requested vector that appears in the display area. The rest of the
+vector is clipped.</p>
+<p>In graph mode, the VT300 recognizes any valid 4010/4014 mode escape
+sequences or control characters.</p>
+<section id="line-patterns">
+<span id="s13-14-1"></span><h3>Line Patterns<a class="headerlink" href="#line-patterns" title="Link to this heading">¶</a></h3>
+<p>There are five basic line patterns you can use. Each pattern is
+available in normal or bold intensity. You select the pattern by using
+an escape sequence.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pattern</p></th>
+<th class="head"><p>Sequence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Solid (normal)</p></td>
+<td><p>ESC `, ESC e, ESC f, or ESC g</p></td>
+</tr>
+<tr class="row-odd"><td><p>Solid (bold)</p></td>
+<td><p>ESC h, ESC m, ESC n, or ESC o</p></td>
+</tr>
+<tr class="row-even"><td><p>Dotted (normal)</p></td>
+<td><p>ESC a</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dotted (bold)</p></td>
+<td><p>ESC i</p></td>
+</tr>
+<tr class="row-even"><td><p>Dot-dash (normal)</p></td>
+<td><p>ESC b</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dot-dash (bold)</p></td>
+<td><p>ESC j</p></td>
+</tr>
+<tr class="row-even"><td><p>Short dash (normal)</p></td>
+<td><p>ESC c</p></td>
+</tr>
+<tr class="row-odd"><td><p>Short dash (bold)</p></td>
+<td><p>ESC k</p></td>
+</tr>
+<tr class="row-even"><td><p>Long dash (normal)</p></td>
+<td><p>ESC d</p></td>
+</tr>
+<tr class="row-odd"><td><p>Long dash (bold)</p></td>
+<td><p>ESC l (lowercase L)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="drawing-command">
+<span id="s13-14-2"></span><h3>Drawing Command<a class="headerlink" href="#drawing-command" title="Link to this heading">¶</a></h3>
+<p>You use the GS control character to enter graph mode from alpha mode. In
+graph mode, GS defines the start of a vector.</p>
+<p>GS does not draw vectors from the cursor position. GS draws the vector
+from the first coordinate value specified to the next value specified.
+If you specify more than two coordinates after a GS control character,
+the terminal draws a vector between every two coordinates. In the
+following example, the lowercase letters represent coordinate
+specifiers.</p>
+<p>GS a b c d</p>
+<p>The terminal draws vectors from point <strong>a</strong> to point <strong>b</strong>, from point
+<strong>b</strong> to point <strong>c</strong>, and from point <strong>c</strong> to point <strong>d</strong>. However, if
+you use the following command</p>
+<p>GS a b GS c d</p>
+<p>the terminal draws two separate vectors, one from <strong>a</strong> to <strong>b</strong>, and
+another from <strong>c</strong> to <strong>d</strong>.</p>
+</section>
+<section id="encoding-coordinates">
+<span id="s13-14-3"></span><h3>Encoding Coordinates<a class="headerlink" href="#encoding-coordinates" title="Link to this heading">¶</a></h3>
+<p>In 4010/4014 mode, you can use 10-bit or 12-bit addressing. You use
+10-bit addressing when the Tekpoint matrix of the screen is defined as
+1024 × 768. You use the 12-bit mode when the Tekpoint matrix of the
+screen is defined as 4096 × 3072.</p>
+<p>In either case, the VT300 screen remains defined as a 623 × 480 pixel
+array. The Tekpoints are always mapped to the nearest corresponding
+pixel. In graph mode, the screen is a 614 × 480 pixel array. The extra
+space is for character drawing.</p>
+<p>For 10-bit addressing, coordinates are encoded into 4 bytes. For 12-bit
+addressing, coordinates are encoded into 5 bytes. <a class="reference external" href="#T13-4">Table
+13-4</a> shows the order used to send these bytes and identifies
+their formats. The terminal does not send the extra byte for 10-bit
+addressing, but the order of the remaining bytes is the same.</p>
+<p>You can use shortened addresses when only parts of an address change.
+<a class="reference external" href="#T13-5">Table 13-5</a> shows which bytes must be sent.</p>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Table 13-4 Bytes Values for Encoding Coordinates</span><a class="headerlink" href="#id11" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Byte Name</p></th>
+<th class="head"><p>7-Bit
+ASCII
+Character</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p>Tag Bits</p></td>
+<td></td>
+<td><p>Address
+Bits</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>High Y</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>5 most
+s
+ignificant
+bits of Y
+address</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Extra</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td></td>
+<td><p>Y2</p></td>
+<td><p>Y1</p></td>
+<td><p>X2</p></td>
+<td><p>X1</p></td>
+</tr>
+<tr class="row-even"><td><p>Low Y</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>5
+in
+termediate
+bits of Y
+address</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>High X</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>5 most
+s
+ignificant
+bits of X
+address</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Low X</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>5
+in
+termediate
+bits of X
+address</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Table 13-5 Rules for Sending Short Address</span><a class="headerlink" href="#id12" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bytes Changed</p></th>
+<th class="head"><p>Bytes Sent</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>High Y</p></td>
+<td><p>Extra</p></td>
+<td><p>Low Y</p></td>
+<td><p>High X</p></td>
+<td><p>Low X</p></td>
+</tr>
+<tr class="row-odd"><td><p>High Y</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Low Y</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>High X</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Low X</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Extra</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="point-plot-mode">
+<span id="s13-15"></span><h2>Point Plot Mode<a class="headerlink" href="#point-plot-mode" title="Link to this heading">¶</a></h2>
+<p>In point plot mode, the terminal draws single pixels instead of vectors.
+Remember, 4010/4014 mode uses Tekpoints for screen addressing. Tekpoints
+are expressed as absolute coordinate values. The terminal turns on a
+pixel that most closely corresponds to the Tekpoint coordinate values.</p>
+<p>Point plot mode uses the same 10-bit and 12-bit addressing methods as
+graph mode. See the previous “<a class="reference external" href="#S13.14.3">Encoding Coordinates</a>”
+section for details. As with graph mode, you can specify a coordinate
+that is not in the actual display area. The terminal tracks these
+points, but they do not appear on the screen.</p>
+<p>You can enter point plot mode from alpha or graph mode, using the FS
+control character. Point plot mode functions do not use any other
+control characters or escape sequences. However, the terminal recognizes
+most valid 4010/4014 mode control characters and escape sequences in
+point plot mode.</p>
+</section>
+<section id="incremental-plot-mode">
+<span id="s13-16"></span><h2>Incremental Plot Mode<a class="headerlink" href="#incremental-plot-mode" title="Link to this heading">¶</a></h2>
+<p>In this mode, the terminal plots points relative to the current cursor
+position. The screen addressing area is 4096 × 3072 Tekpoints. Since
+each pixel equals several Tekpoints, you may have to send several
+characters to move the drawing point to a new pixel.</p>
+<p>You can enter incremental mode from all modes (except GIN mode) by using
+the RS control character or ESC RS sequence. When you select RS, the
+terminal uses the current cursor position for relative movement.</p>
+<p>Incremental plot mode always draws with a solid line at normal
+intensity. You can enter commands to alter the pattern register or
+intensity within incremental plot mode, but they do not affect the
+drawing until you leave incremental plot mode.</p>
+<p>In incremental plot mode, you can change the cursor position without
+drawing. A space turns the electron beam off. Then you can use other
+characters to move the cursor in different directions. The P character
+turns the beam back on. You can use the following characters to plot
+points.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Character</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Space</p></td>
+<td><p>Turns beam off/pen up.</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>Turns beam on/pen down.</p></td>
+</tr>
+<tr class="row-even"><td><p>D</p></td>
+<td><p>Up (north)</p></td>
+</tr>
+<tr class="row-odd"><td><p>E</p></td>
+<td><p>Up, right (northeast)</p></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>Right (east)</p></td>
+</tr>
+<tr class="row-odd"><td><p>I</p></td>
+<td><p>Down, right (southeast)</p></td>
+</tr>
+<tr class="row-even"><td><p>H</p></td>
+<td><p>Down (south)</p></td>
+</tr>
+<tr class="row-odd"><td><p>J</p></td>
+<td><p>Down, left (southwest)</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>Left (west)</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>Up, left (northwest)</p></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: Except for the space character, you must use uppercase characters
+in incremental plot mode.</p>
+<p>The terminal recognizes most valid 4010/4014 mode control characters and
+escape sequences in incremental plot mode.</p>
+</section>
+<section id="graphics-input-gin-mode">
+<span id="s13-17"></span><h2>Graphics Input (GIN) Mode<a class="headerlink" href="#graphics-input-gin-mode" title="Link to this heading">¶</a></h2>
+<p>You can select GIN mode by using the ESC SUB sequence. When the terminal
+enters GIN mode, the following events occur.</p>
+<ul>
+<li><p>The VT300 crosshair cursor appears, with the hairs intersecting at
+the active position.</p>
+<ul class="simple">
+<li><p>If you are using the arrow keys or a mouse to move the cursor, the
+initial cursor position is at the center of the screen.</p></li>
+<li><p>If you are using a graphics tablet, the initial cursor position is
+at the position specified by the tablet. You cannot use the arrow
+keys to move the cursor when you use a graphics tablet.</p></li>
+</ul>
+</li>
+<li><p>The bypass condition is on.</p></li>
+<li><p>The terminal buffers characters received from the host. The terminal
+does not process the characters until you leave GIN mode.</p>
+<p>When the terminal’s input buffer is nearly full, the terminal sends
+an XOFF character to the host. XOFF tells the host to stop sending
+characters. If the host ignores the XOFF, the terminal loses any
+characters received when the input buffer is full.</p>
+</li>
+</ul>
+<section id="using-arrow-keys-to-move-the-cursor">
+<span id="s13-17-1"></span><h3>Using Arrow Keys to Move the Cursor<a class="headerlink" href="#using-arrow-keys-to-move-the-cursor" title="Link to this heading">¶</a></h3>
+<p>In GIN mode, you can move the crosshair cursor by using the four arrow
+keys. The arrow keys move the cursor in the direction of their arrow, as
+follows.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Direction</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="[right]" src="rst/arrowright" /></p></td>
+<td><p>1 pixel right</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift - <img alt="[right]" src="rst/arrowright" /></p></td>
+<td><p>10 pixels right</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="[left]" src="rst/arrowleft" /></p></td>
+<td><p>1 pixel left</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift - <img alt="[left]" src="rst/arrowleft" /></p></td>
+<td><p>10 pixels left</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="[up]" src="rst/arrowup" /></p></td>
+<td><p>1 pixel up</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift - <img alt="[up]" src="rst/arrowup" /></p></td>
+<td><p>10 pixels up</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="[down]" src="rst/arrowdown" /></p></td>
+<td><p>1 pixel down</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift - <img alt="[down]" src="rst/arrowdown" /></p></td>
+<td><p>10 pixels down</p></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: The arrow keys can auto repeat. You can turn the autorepeat
+feature on or off in the Keyboard Set-Up screen.</p>
+</section>
+<section id="using-a-locator-device-mouse-or-tablet">
+<span id="s13-17-2"></span><h3>Using a Locator Device (Mouse or Tablet)<a class="headerlink" href="#using-a-locator-device-mouse-or-tablet" title="Link to this heading">¶</a></h3>
+<p>In addition to the arrow keys, you can use a mouse or graphics tablet to
+move the cursor in GIN mode. <a class="reference external" href="chapter15.html">Chapter 15</a> describes
+how to use a locator device with the VT300.</p>
+<p>If you try to move the crosshair cursor past a screen boundary, the
+cursor stops at the boundary.</p>
+<p>NOTE: Applications cannot cause the terminal to exit GIN mode.</p>
+<p>You must leave GIN mode from the keyboard, as follows.</p>
+<ol class="arabic simple">
+<li><p>Move the cursor to the desired position.</p></li>
+<li><p>Press any active key (except the arrow keys) on the keyboard. The key
+you press must be active in VT100 mode. When you press the key, the
+following events occur.</p>
+<ul class="simple">
+<li><p>The terminal sends the character code or control function of the
+key to the host.</p></li>
+<li><p>The terminal sends the current coordinates of the crosshair cursor
+to the host. These coordinates are in 10-bit addressing format.
+(The terminal never sends the extra bytes to the host.)</p></li>
+<li><p>The crosshair cursor disappears from the screen.</p></li>
+<li><p>The VT300 leaves GIN mode and enters alpha mode.</p></li>
+</ul>
+</li>
+<li><p>At this point, the VT300 is still in the bypass condition. You can
+turn this condition off by using one of the control characters and
+escape sequences listed in the “<a class="reference external" href="#S13.12">Bypass Condition</a>”
+section in this chapter.</p></li>
+</ol>
+<div class="navbar docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a href="#id4"><span class="problematic" id="id5">`</span></a>Chapter
+12</p>
+<blockquote>
+<div><p>&lt;chapter12.html&gt;`__</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="navbot docutils container">
+<p><a class="reference external" href="http://vt100.net/docs/vt3xx-gp/chapter13.html">http://vt100.net/docs/vt3xx-gp/chapter13.html</a></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ReGIS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1 Introduction to ReGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2 Screen Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3 Write Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4 Position Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5 Vector Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6 Curve Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7 Text Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8 Load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">9 Macrographs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">10 Report Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">11 Polygon Fill Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">12 Combining ReGIS Commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13 4010/4014 Mode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-features">Supported Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#screen-addressing">Screen Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-support">Set-Up Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#locator-device-mouse-or-graphics-tablet">Locator Device (Mouse or Graphics Tablet)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#control-characters">Control Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#escape-sequences">Escape Sequences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entering-and-exiting-4010-4014-mode">Entering and Exiting 4010/4014 Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-operating-modes">Changing Operating Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clearing-the-screen">Clearing the Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bypass-condition">Bypass Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alpha-mode">Alpha Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graph-mode">Graph Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#point-plot-mode">Point Plot Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incremental-plot-mode">Incremental Plot Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphics-input-gin-mode">Graphics Input (GIN) Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter14.html">14 Sixel Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter15.html">15 Using a Mouse or Tablet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter16.html">16 Printing Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixa.html">VT240 Style HLS Color Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixb.html">Differences Between the VT300 and Other Digital Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">Contents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chapter12.html" title="previous chapter">12 Combining ReGIS Commands</a></li>
+      <li>Next: <a href="chapter14.html" title="next chapter">14 Sixel Graphics</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, vt100.net.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/chapter13.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

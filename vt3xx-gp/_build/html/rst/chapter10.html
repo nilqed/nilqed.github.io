@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10 Report Command &#8212; ReGIS 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11 Polygon Fill Command" href="chapter11.html" />
+    <link rel="prev" title="9 Macrographs" href="chapter9.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="navbar docutils container">
+<p><a class="reference external" href="../../"><img alt="VT100.net" class="button" src="../vt100.net-logo" style="width: 102px; height: 16px;" /></a> VT330/VT340 Programmer Reference Manual Volume 2:
+Graphics Programming</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="chapter9.html">Chapter
+9</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="report-command">
+<span id="s10"></span><h1>10 Report Command<a class="headerlink" href="#report-command" title="Link to this heading">¶</a></h1>
+<p>You can use report commands to perform two basic functions.</p>
+<ul class="simple">
+<li><p>Request the current status of ReGIS operations.</p></li>
+<li><p>Enter graphics input mode (to use a mouse or graphics tablet).</p></li>
+</ul>
+<section id="report-options">
+<span id="s10-1"></span><h2>Report Options<a class="headerlink" href="#report-options" title="Link to this heading">¶</a></h2>
+<p>Your application can request information about the following ReGIS
+operations.</p>
+<ul class="simple">
+<li><p>Cursor position</p></li>
+<li><p>Macrograph contents</p></li>
+<li><p>Macrograph storage status</p></li>
+<li><p>Character set</p></li>
+<li><p>Error condition</p></li>
+<li><p>Input mode</p></li>
+</ul>
+<p>When your application requests information, make sure the system does
+not display the information on the screen. The data could affect your
+graphic images. There is no ReGIS control to prevent this action. All
+information returned by the VT300 ends with a carriage return (CR).</p>
+<section id="cursor-position">
+<span id="s10-1-1"></span><h3>Cursor Position<a class="headerlink" href="#cursor-position" title="Link to this heading">¶</a></h3>
+<p>This option tells ReGIS to report the absolute screen coordinates of the
+current output cursor position. The report format is as an absolute,
+bracketed extent in screen coordinates. You use the following format for
+the report cursor position option.</p>
+<p>R(P)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>R</strong> identifies a report command.</p>
+<p><strong>P</strong> identifies the report active position option.</p>
+</div>
+</section>
+<section id="macrograph-contents">
+<span id="s10-1-2"></span><h3>Macrograph Contents<a class="headerlink" href="#macrograph-contents" title="Link to this heading">¶</a></h3>
+<p>This option tells ReGIS to report the contents of a specified
+macrograph. You use the following format for the report macrograph
+contents option.</p>
+<p>NOTE: Reporting the contents of a macrograph may be a security risk in
+some environments. The VT300 has a Graphics Set-Up feature that lets the
+user disable this report command option.</p>
+<p>R(M(&lt;call letter&gt;))</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>M</strong> identifies a report macrograph option.</p>
+<p><strong>&lt;call letter&gt;</strong> is the letter of the alphabet that identifies the
+requested macrograph. The call letter is not case sensitive. For
+example, ‘a’ and ‘A’ identify the same macrograph.</p>
+</div>
+<p>The macrograph contents report starts with a macrograph report
+indicator.</p>
+<p>&#64;=&lt;call letter&gt;</p>
+<p>The <strong>&lt;call letter&gt;</strong> is the letter of the alphabet used to identify the
+requested macrograph. The report ends with a macrograph terminator and a
+carriage return.</p>
+<p>&#64;;&lt;CR&gt;</p>
+<p>The terminal also reports any control characters saved as part of the
+macrograph. If there is no macrograph defined for &lt;call letter&gt;, the
+terminal reports a null macrograph (no characters) enclosed in the
+indicator and terminator.</p>
+</section>
+<section id="macrograph-storage-status">
+<span id="s10-1-3"></span><h3>Macrograph Storage Status<a class="headerlink" href="#macrograph-storage-status" title="Link to this heading">¶</a></h3>
+<p>This option tells ReGIS to report how much storage space can be used for
+macrographs, and how much of that space is free. You use the following
+format for the report macrograph storage option.</p>
+<p>R(M(=))</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>M</strong> identifies a report macrograph option.</p>
+<p><strong>=</strong> identifies the report macrograph storage suboption.</p>
+</div>
+<p>The terminal reports this information as two integer strings, separated
+by a comma and enclosed in double quotes.</p>
+<p>“aaaa, tttt”</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>aaaa</strong> is the amount of space still available for macrographs.</p>
+<p><strong>tttt</strong> is the total amount of storage space that can be used for
+macrographs.</p>
+</div>
+<p>You can find the amount of storage space in current use by subtracting
+the available space from the total allocated.</p>
+<p>Macrograph space in use = tttt - aaaa</p>
+</section>
+<section id="character-set">
+<span id="s10-1-4"></span><h3>Character Set<a class="headerlink" href="#character-set" title="Link to this heading">¶</a></h3>
+<p>This option tells ReGIS to report the name of the character set
+currently selected for load command operations. You use the following
+format for the report character set option.</p>
+<p>R(L)</p>
+<p>where</p>
+<p><strong>L</strong> identifies the report character set option.</p>
+<p>The terminal reports the name of the character set in the following
+format.</p>
+<p>A’&lt;name&gt;’</p>
+<p>The <strong>&lt;name&gt;</strong> is the name assigned to the character set by the specify
+name option for the load command.</p>
+</section>
+<section id="error-condition">
+<span id="s10-1-5"></span><h3>Error Condition<a class="headerlink" href="#error-condition" title="Link to this heading">¶</a></h3>
+<p>This option tells ReGIS to report the last error detected by the parser.
+You can use the resynchronization character (;) to clear errors. You use
+the following format for the report error condition option.</p>
+<p>R(E)</p>
+<p>where</p>
+<p><strong>E</strong> identifies the report error option.</p>
+<p>The terminal reports the last error in the following format.</p>
+<p>“&lt;N&gt;,&lt;M&gt;”</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>&lt;N&gt;</strong> is a decimal integer error code.</p>
+<p><strong>&lt;M&gt;</strong> is the decimal ASCII code of the character flagged as the
+cause of the error or 0, as noted for each error code. <a class="reference external" href="#T10-1">Table
+10-1</a> describes the possible error codes reported by the
+error condition option.</p>
+</div>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Table 10-1 Report Command Error Codes (Error Condition Codes)</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Condition</p></th>
+<th class="head"><p>&lt;M&gt; Error
+Character</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>No error</p></td>
+<td><p>Always 0</p></td>
+<td><p>No error detected
+since the last
+resynchronization
+character (;).</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Ignore character</p></td>
+<td><p>The ignored
+character</p></td>
+<td><p>An unexpected
+character was
+found and
+ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Extra option
+coordinates</p></td>
+<td><p>Always 0</p></td>
+<td><p>The syntax
+S(H[X,Y][X,Y])
+contained more
+than two
+coordinate pairs.
+The extra pairs
+were ignored.</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Extra coordinate
+values</p></td>
+<td><p>Always 0</p></td>
+<td><p>The syntax [X,Y]
+contained more
+than two
+coordinate
+values. The extra
+values were
+ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Alphabet out of
+range</p></td>
+<td><p>Always 0</p></td>
+<td><p>The syntax L(A&lt;0
+to 3&gt;) contained
+a number less
+than 0 or greater
+than 3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Reserved</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Reserved</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Begin/start
+overflow</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>or (S)</p></li>
+</ol>
+</td>
+<td><p>The stacking
+limit of 16 (B)
+and (S) options
+for position and
+vector commands
+was exceeded.
+Extra (B) or (S)
+options were
+ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Begin/start
+underflow</p></td>
+<td><ol class="upperalpha simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>A position or
+vector command
+contained an (E)
+option without a
+corresponding (B)
+option. The (E)
+option was
+ignored.</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>Text standard
+size error</p></td>
+<td><p>Always 0</p></td>
+<td><p>A text command
+selected a
+standard
+character size
+number of less
+than 0 or greater
+than 16.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="graphics-input-modes-i">
+<span id="s10-2"></span><h2>Graphics Input Modes – I<a class="headerlink" href="#graphics-input-modes-i" title="Link to this heading">¶</a></h2>
+<p>This option lets you set ReGIS to one of two graphics input modes,
+one-shot or multiple. In a graphics input mode, you can use a locator
+device (mouse or graphics tablet) to move the graphics input cursor and
+send position reports.</p>
+<section id="one-shot-graphics-input-mode">
+<span id="s10-2-1"></span><h3>One-Shot Graphics Input Mode<a class="headerlink" href="#one-shot-graphics-input-mode" title="Link to this heading">¶</a></h3>
+<p>This is the default input mode. In one-shot mode, the terminal suspends
+processing of new data from the application until ReGIS sends a position
+report. The terminal buffers any data received from the application in
+this mode.</p>
+<section id="entering-one-shot-mode">
+<span id="s10-2-1-1"></span><h4>Entering One-Shot Mode<a class="headerlink" href="#entering-one-shot-mode" title="Link to this heading">¶</a></h4>
+<p>You use the input mode option to enter one-shot mode. You use the
+following format for this option.</p>
+<p>R(I0)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>I</strong> identifies the input mode option.</p>
+<p><strong>0</strong> identifies the input mode as one-shot.</p>
+</div>
+<p>After the terminal receives a one-shot mode option, the input cursor
+appears on the screen.</p>
+<p>NOTE: When the terminal receives R(I), it returns a carriage return
+(CR). Applications can use the CR for synchronization.</p>
+</section>
+<section id="input-cursor-movement">
+<span id="s10-2-1-2"></span><h4>Input Cursor Movement<a class="headerlink" href="#input-cursor-movement" title="Link to this heading">¶</a></h4>
+<p>When you use a mouse or graphics tablet, the input cursor moves as you
+move the locator device. See <a class="reference external" href="chapter15.html">Chapter 15</a> for details
+on using a locator device. You can also move the cursor by pressing one
+of the four arrow keys.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Press</p></th>
+<th class="head"><p>To move</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>arrow key</p></td>
+<td><p>The cursor moves one pixel in the direction of
+the arrow – up, down, left or right.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shift-arrow key</p></td>
+<td><p>The cursor moves 10 pixels in the direction of
+the arrow.</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you move the cursor past a screen boundary, the cursor wraps to the
+other side of the screen.</p>
+</section>
+<section id="requesting-a-report">
+<span id="s10-2-1-3"></span><h4>Requesting a Report<a class="headerlink" href="#requesting-a-report" title="Link to this heading">¶</a></h4>
+<p>To request a position report in one-shot mode, the application must send
+a report position interactive option to the terminal. The format of this
+option is as follows.</p>
+<p>R(P(I))</p>
+<p>where</p>
+<p><strong>P(I)</strong> identifies the report position interactive option.</p>
+<p>After the application sends the request, it must wait for the terminal
+to send the report.</p>
+</section>
+<section id="sending-a-report">
+<span id="s10-2-1-4"></span><h4>Sending a Report<a class="headerlink" href="#sending-a-report" title="Link to this heading">¶</a></h4>
+<p>The terminal sends a position report when you press any non-arrow key
+that is not dead, or a button on the locator device. After you press the
+key or button, the following occurs.</p>
+<ul class="simple">
+<li><p>The terminal sends the ASCII code of the key pressed to the host.</p></li>
+<li><p>The terminal sends the current position coordinates of the input
+cursor to the host. These position coordinates are absolute X and Y
+values, such as [X,Y].</p></li>
+<li><p>The input cursor disappears from the screen, and the terminal exits
+one-shot mode.</p></li>
+</ul>
+<p><a class="reference external" href="chapter15.html">Chapter 15</a> describes the format of the report and
+provides more information on one-shot graphics input mode.</p>
+</section>
+</section>
+<section id="multiple-graphics-input-mode">
+<span id="s10-2-2"></span><h3>Multiple Graphics Input Mode<a class="headerlink" href="#multiple-graphics-input-mode" title="Link to this heading">¶</a></h3>
+<p>This mode lets you send more than one cursor position report without
+exiting graphics input mode. The terminal immediately processes
+characters it receives from the host, instead of buffering them as in
+one-shot mode.</p>
+<section id="entering-multiple-mode">
+<span id="s10-2-2-1"></span><h4>Entering Multiple Mode<a class="headerlink" href="#entering-multiple-mode" title="Link to this heading">¶</a></h4>
+<p>You use the input mode option to enter multiple mode. You use the
+following format for this option.</p>
+<p>R(I1)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>I</strong> identifies the input mode option.</p>
+<p><strong>1</strong> identifies the input mode as multiple.</p>
+</div>
+<p>When the terminal receives the multiple graphics input mode option, the
+input cursor appears on the screen. Unlike one-shot mode, the terminal
+continues to process received data.</p>
+</section>
+<section id="s10-2-2-2">
+<span id="id1"></span><h4>Input Cursor Movement<a class="headerlink" href="#s10-2-2-2" title="Link to this heading">¶</a></h4>
+<p>When you use a mouse or graphics tablet, the cursor moves as you move
+the locator device. See <a class="reference external" href="chapter15.html">Chapter 15</a> for details on
+using a locator device. In multiple mode, you can also move the cursor
+by pressing an arrow key.</p>
+</section>
+<section id="s10-2-2-3">
+<span id="id2"></span><h4>Sending a Report<a class="headerlink" href="#s10-2-2-3" title="Link to this heading">¶</a></h4>
+<p>There are two ways to make the terminal send a position report in
+multiple mode.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>Request a report by sending R(P(I)) to the terminal.</strong></div>
+<div class="line">When the terminal receives R(P(I)) (report position interactive
+option) in multiple mode, it immediately returns a position report
+to the application. The terminal remains in multiple mode.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Press a locator button.</strong></div>
+<div class="line">When you press a locator button, the terminal immediately sends the
+cursor position in absolute [X,Y] coordinates. You can continue to
+send reports to the application without exiting multiple mode.</div>
+</div>
+</li>
+</ul>
+<p><a class="reference external" href="chapter15.html">Chapter 15</a> describes the format of a position
+report and provides more information on multiple mode.</p>
+</section>
+<section id="exiting-multiple-mode">
+<span id="s10-2-2-4"></span><h4>Exiting Multiple Mode<a class="headerlink" href="#exiting-multiple-mode" title="Link to this heading">¶</a></h4>
+<p>The terminal stays in multiple mode until the applications sends the
+R(I0) option. This option makes the terminal exit multiple mode and
+enter one-shot mode. See “<a class="reference external" href="#S10.2.1">One-Shot Graphics Input Mode</a>
+for more information.</p>
+</section>
+</section>
+<section id="report-position-interactive-p-i">
+<span id="s10-2-3"></span><h3>Report Position Interactive – P(I)<a class="headerlink" href="#report-position-interactive-p-i" title="Link to this heading">¶</a></h3>
+<p>This option lets an application request an input cursor position report
+at any time. You only use this option when the terminal is in a graphics
+input mode (one-shot or multiple). You use the following format for this
+option.</p>
+<p>R(P(I))</p>
+<p>where</p>
+<p><strong>P(I)</strong> identifies the report position interactive option.</p>
+<p>When an application sends R(P(I)), the following occurs.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>In one-shot mode</strong></div>
+<div class="line">The terminal does not return an input cursor position report until
+you press an active nonarrow key or a button on the locator device.
+The report contains this ASCII keystroke, followed by the cursor
+position in absolute [X,Y] coordinates.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>In multiple mode</strong></div>
+<div class="line">The terminal immediately returns an input cursor position report.
+The report contains only the cursor position in absolute [X,Y]
+coordinates.</div>
+</div>
+</li>
+</ul>
+<p>See <a class="reference external" href="chapter15.html">Chapter 15</a> for information on the report
+format.</p>
+</section>
+</section>
+<section id="report-command-summary">
+<span id="s10-3"></span><h2>Report Command Summary<a class="headerlink" href="#report-command-summary" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="#T10-2">Table 10-2</a> is a summary of <strong>R</strong> command options, including
+any default values.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Table 10-2 Report Command Summary</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ol class="upperalpha simple" start="16">
+<li></li>
+</ol>
+</td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Cursor position</strong></div>
+<div class="line">Reports the current active
+position.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(M(&lt;call letter&gt;))</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Macrograph contents</strong></div>
+<div class="line">Reports the contents of the
+macrograph identified by &lt;call
+letter&gt;.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(M(=))</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Macrograph storage status</strong></div>
+<div class="line">Reports how much space the
+terminal has assigned to
+macrograph storage, and how
+much of that space is currently
+free.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><ol class="upperalpha simple" start="12">
+<li></li>
+</ol>
+</td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Character set</strong></div>
+<div class="line">Reports which character set (1
+to 3) is selected for loading.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><ol class="upperalpha simple" start="5">
+<li></li>
+</ol>
+</td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Error</strong></div>
+<div class="line">Reports the last error found by
+the parser.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(In)</p></td>
+<td><p>0</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Graphics input mode</strong></div>
+<div class="line">Selects one-shot mode (0) or
+multiple mode (1).</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(P(I))</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Report position interactive</strong></div>
+<div class="line">Requests an input cursor
+position report.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="navbar docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="chapter9.html">Chapter
+9</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="navbot docutils container">
+<p><a class="reference external" href="http://vt100.net/docs/vt3xx-gp/chapter10.html">http://vt100.net/docs/vt3xx-gp/chapter10.html</a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ReGIS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1 Introduction to ReGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2 Screen Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3 Write Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4 Position Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5 Vector Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6 Curve Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7 Text Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8 Load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">9 Macrographs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10 Report Command</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#report-options">Report Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphics-input-modes-i">Graphics Input Modes – I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#report-command-summary">Report Command Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">11 Polygon Fill Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">12 Combining ReGIS Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">13 4010/4014 Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter14.html">14 Sixel Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter15.html">15 Using a Mouse or Tablet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter16.html">16 Printing Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixa.html">VT240 Style HLS Color Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixb.html">Differences Between the VT300 and Other Digital Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">Contents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chapter9.html" title="previous chapter">9 Macrographs</a></li>
+      <li>Next: <a href="chapter11.html" title="next chapter">11 Polygon Fill Command</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, vt100.net.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/chapter10.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

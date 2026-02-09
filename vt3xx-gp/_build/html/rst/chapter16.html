@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>16 Printing Graphics &#8212; ReGIS 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VT240 Style HLS Color Programming" href="appendixa.html" />
+    <link rel="prev" title="15 Using a Mouse or Tablet" href="chapter15.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="navbar docutils container">
+<p><a class="reference external" href="../../"><img alt="VT100.net" class="button" src="../vt100.net-logo" style="width: 102px; height: 16px;" /></a> VT330/VT340 Programmer Reference Manual Volume 2:
+Graphics Programming</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">`</span></a>Chapter
+15</p>
+<blockquote>
+<div><p>&lt;chapter15.html&gt;`__</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="printing-graphics">
+<span id="s16"></span><h1>16 Printing Graphics<a class="headerlink" href="#printing-graphics" title="Link to this heading">¶</a></h1>
+<p>This chapter describes the control functions you use to format and print
+graphics on a local printer connected to the VT300. You can also print
+graphics directly from the terminal, by pressing <strong>Shift-Local Print</strong>.
+See Chapter 11 of Installing and Using the VT330/VT340 Video Terminal.</p>
+<section id="selecting-a-format-for-printing">
+<span id="s16-1"></span><h2>Selecting a Format for Printing<a class="headerlink" href="#selecting-a-format-for-printing" title="Link to this heading">¶</a></h2>
+<p>This section describes the control functions you use to format graphics
+before printing them from the screen. These control functions affect
+print screen commands. If you do not have a printer connected to the
+terminal, the terminal ignores these functions.</p>
+<section id="graphics-expanded-print-mode-decgepm">
+<span id="s16-1-1"></span><h3>Graphics Expanded Print Mode (DECGEPM)<a class="headerlink" href="#graphics-expanded-print-mode-decgepm" title="Link to this heading">¶</a></h3>
+<p>This control function selects whether the terminal sends a compressed or
+expanded graphics image to the printer. The compressed image fits on A4
+or 8½ inch wide paper. The expanded image fits on 13 inch wide paper.</p>
+<p>Default: Compressed</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Set
+(Expanded)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/3</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects an expanded image
+of about 300 × 200 mm (12
+× 8 in), for a graphics
+print screen operation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset
+(
+Compressed)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/3</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects a compressed
+image of about 150 × 75
+mm (6 × 3 in) for a
+graphics print screen
+operation.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graphics-print-color-mode-decgpcm">
+<span id="s16-1-2"></span><h3>Graphics Print Color Mode (DECGPCM)<a class="headerlink" href="#graphics-print-color-mode-decgpcm" title="Link to this heading">¶</a></h3>
+<p>This control function selects whether the terminal sends a color or
+black and white image to the printer. You should only use the color
+setting with the VT340.</p>
+<p>Default: Black and white</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Set
+(Color)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/4</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sends a color image to
+the printer during a
+graphics print screen
+operation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset
+(Black and
+white)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/4</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sends a black and white
+image to the printer
+during a graphics print
+screen operation.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graphics-print-color-syntax-decgpcs">
+<span id="s16-1-3"></span><h3>Graphics Print Color Syntax (DECGPCS)<a class="headerlink" href="#graphics-print-color-syntax-decgpcs" title="Link to this heading">¶</a></h3>
+<p>This control function selects which color coordinate system the terminal
+uses in print color mode (DECGPCM). You should only use this function
+with a VT340.</p>
+<p>You can select one of two universal color coordinate systems, HLS (hue,
+lightness, and saturation) or RGB (red, green, and blue).</p>
+<p>Default: HLS</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Set
+(RGB)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/5</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects RGB color format
+for a graphics print
+screen operation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset
+(HLS)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/5</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects HLS color format
+for a graphics print
+screen operation.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graphics-print-background-mode-decgpbm">
+<span id="s16-1-4"></span><h3>Graphics Print Background Mode (DECGPBM)<a class="headerlink" href="#graphics-print-background-mode-decgpbm" title="Link to this heading">¶</a></h3>
+<p>This control function selects whether the terminal sends the background
+area to the printer during a graphics print screen operation. This
+control function only works when print color mode (DECGPCM) is set
+(color).</p>
+<p>Default: No background</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Set
+(
+Background)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/6</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sends all screen data for
+the graphic, <em>including</em>
+the background.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset
+(No
+background)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/6</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Sends all screen data for
+the graphic, <em>except</em> the
+background.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graphics-rotated-print-mode-decgrpm">
+<span id="s16-1-5"></span><h3>Graphics Rotated Print Mode (DECGRPM)<a class="headerlink" href="#graphics-rotated-print-mode-decgrpm" title="Link to this heading">¶</a></h3>
+<p>This control function selects whether the terminal sends a compressed or
+rotated graphics image to the printer.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Set
+(Rotated)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+<td><p>h</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/7</p></td>
+<td><p>6/8</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects an image of about
+200 × 300 mm (8 × 12 in),
+rotated 90 degrees.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset
+(
+Compressed)</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+<td><p>l</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/4</p></td>
+<td><p>3/7</p></td>
+<td><p>6/12</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>Selects a compressed
+image of about 150 × 75
+mm (6 × 3 in).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sending-graphics-to-the-host-or-printer">
+<span id="s16-2"></span><h2>Sending Graphics to the Host or Printer<a class="headerlink" href="#sending-graphics-to-the-host-or-printer" title="Link to this heading">¶</a></h2>
+<p>This section describes the control functions you use to send graphics to
+the host or a local printer.</p>
+<section id="graphics-to-host-mc">
+<span id="s16-2-1"></span><h3>Graphics to Host (MC)<a class="headerlink" href="#graphics-to-host-mc" title="Link to this heading">¶</a></h3>
+<p>This control function causes ReGIS hard copy commands to send screen
+images to the active host session. See Part 1 of this volume for details
+on ReGIS. The terminal ignores this function if the printer is assigned
+to the inactive session. See Volume 1, Chapter 14 of this manual for
+details on session management.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>2</p></td>
+<td><p>i</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/2</p></td>
+<td><p>6/9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>After receiving this command, the terminal sends the complete graphics
+bitmap to the host.</p>
+</section>
+<section id="graphics-to-printer-mc">
+<span id="s16-2-2"></span><h3>Graphics to Printer (MC)<a class="headerlink" href="#graphics-to-printer-mc" title="Link to this heading">¶</a></h3>
+<p>This control function causes ReGIS hard copy commands to send screen
+images to the printer. See Part 1 of this volume for details on ReGIS.
+The printer prints the ReGIS images as they appear on the screen. You
+can use either of the following sequences.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>i</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>6/9</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p>or</p></td>
+<td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>CSI</p></td>
+<td><p>?</p></td>
+<td><p>0</p></td>
+<td><p>i</p></td>
+</tr>
+<tr class="row-even"><td><p>9/11</p></td>
+<td><p>3/15</p></td>
+<td><p>3/0</p></td>
+<td><p>6/9</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>After receiving this command, the terminal sends the complete graphics
+bitmap to the printer.</p>
+</section>
+</section>
+<section id="sixel-graphics-levels-matching-your-printer">
+<span id="s16-3"></span><h2>Sixel Graphics Levels – Matching Your Printer<a class="headerlink" href="#sixel-graphics-levels-matching-your-printer" title="Link to this heading">¶</a></h2>
+<p>Different printers produce different output quality. This section
+describes the sixel graphics levels you can use to match the
+capabilities of the printer connected to your terminal.</p>
+<p>A sixel is a group of six pixels in a vertical column. A pixel is the
+smallest displayable unit on the screen. A sixel is represented by 6
+bits in a character code. Each pixel in the sixel corresponds to each
+bit in the character code. A value of 1 for a bit indicates that a pixel
+is on, a 0 value indicates a pixel is off. <a class="reference external" href="chapter14.html">Chapter
+14</a> describes sixel graphics in detail.</p>
+<p>Sixel printing is the printing of each defined sixel in left-to-right,
+top-to-bottom order.</p>
+<p>There are two ways to send sixel information to a local printer, press
+<strong>Local Print</strong> or send a media copy command.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>Local Print Key</strong></div>
+<div class="line">When you press <strong>Local Print</strong>, the VT300 sends a carriage return
+(CR) to the printer to reset the printing position to the left
+margin. Then the terminal sends the sixel device control string.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Media Copy Command</strong></div>
+<div class="line">When an application sends a media copy command to the VT300 (such
+as Graphics to Printer), the terminal does not send a carriage
+return to the printer. The terminal sends only the sixel device
+control string. Omitting the carriage return lets the application
+initialize the starting sixel position.</div>
+</div>
+</li>
+</ul>
+<p>The VT300 supports different levels of the sixel graphics protocol to
+match the capabilities of the local printer used. The user can select
+the sixel graphics level from the Printer Set-Up screen.</p>
+<p>The sixel graphics level determines how the terminal matches the
+printer’s aspect ratio, horizontal grid size, background printing, and
+color printing capabilities. The VT300 has a pixel aspect ratio of 1 to
+1.</p>
+<section id="level-1-sixel-devices">
+<span id="s16-3-1"></span><h3>Level 1 Sixel Devices<a class="headerlink" href="#level-1-sixel-devices" title="Link to this heading">¶</a></h3>
+<p>Level 1 sixel devices do not support the following sixel protocol
+commands.</p>
+<ul class="simple">
+<li><p>Set raster attributes</p></li>
+<li><p>Background select</p></li>
+<li><p>Horizontal grid size</p></li>
+<li><p>Macro parameter</p></li>
+</ul>
+<p>Level 1 devices have a fixed aspect ratio of 2 to 1 (2 horizontal pixels
+to 1 vertical pixel), and a horizontal grid size of approximately 188 ×
+0.025 mm (7.5 × 0.001 in). Level 1 is the factory-default for the VT300.</p>
+<p>At level 1, the terminal always sends sixel device control strings to
+the printer in a 7-bit format as follow.</p>
+<p>ESC P 1 q S…S ESC \</p>
+<p>where</p>
+<p><strong>S…S</strong> is the sixel data defining the image.</p>
+<p>A typical level 1 device is Digital’s LA50 printer.</p>
+</section>
+<section id="level-2-sixel-devices">
+<span id="s16-3-2"></span><h3>Level 2 Sixel Devices<a class="headerlink" href="#level-2-sixel-devices" title="Link to this heading">¶</a></h3>
+<p>Level 2 sixel devices support the following sixel protocol commands.</p>
+<ul class="simple">
+<li><p>Set raster attributes</p></li>
+<li><p>Background select</p></li>
+<li><p>Horizontal grid size</p></li>
+<li><p>Macro parameter</p></li>
+</ul>
+<p>At level 2, the VT300 sends sixel data to the printer in the following
+format.</p>
+<p>ESC P Pn1; Pn2; Pn3; q “ Pn4; Pn5; Pn6; Pn7 S…S ESC \</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>Pn1</strong> is the macro parameter. Pn1 is always 0 for level 2 print
+operations.</p>
+<div class="line-block">
+<div class="line"><strong>Pn2</strong> is the background select parameter.</div>
+<div class="line">1 = background printing disabled.</div>
+<div class="line">2 = background printing enabled.</div>
+</div>
+<p><strong>Pn3</strong> is the horizontal grid size. By default, the horizontal grid
+size is 6 for compressed images, and 9 for expanded or rotated
+images.</p>
+<p><strong>Pn4</strong> is the pixel aspect ratio numerator. By default, Pn4 is set
+to 1.</p>
+<p><strong>Pn5</strong> is the pixel aspect ratio denominator. By default, Pn5 is set
+to 1.</p>
+<p><strong>Pn6</strong> is the horizontal extent parameter. Pn6 represents the number
+of pixels in an image horizontally.</p>
+<p><strong>Pn7</strong> is the vertical extent parameter. Pn7 represents the number
+of pixels in an image vertically.</p>
+<p><strong>S…S</strong> is the sixel data defining the image.</p>
+</div>
+<p>Typical level 2 printers are Digital’s LA75 and LN03 printers.</p>
+<p>NOTE: You must use level 1 to print expanded or rotated images on an
+LA75. This selection compensates for firmware differences between the
+printer and terminal.</p>
+</section>
+<section id="la210-printer">
+<span id="s16-3-3"></span><h3>LA210 Printer<a class="headerlink" href="#la210-printer" title="Link to this heading">¶</a></h3>
+<p>Digital’s LA210 printer is a special case. The LA210 is similar to a
+level 2 device, but does not recognize the set raster attributes
+command. At the LA210 level, the VT300 uses macro parameter 9 to specify
+a 1 to 1 aspect ratio with a grid size of 338 × 0.025 mm (13.5 × 0.001
+in).</p>
+<p>For compressed print operations, the VT300 uses the same sixel device
+control string format as in level 1.</p>
+<p>For expanded and rotated print operations, the VT300 uses the following
+sixel device control string format.</p>
+<p>ESC P 9 q S…S ESC \</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>9</strong> is the macro parameter. This parameter specifies a 1 to 1
+aspect ratio with a grid size of 338 × 0.025 mm (13.5 × 0.001 in).</p>
+<p><strong>S…S</strong> is the sixel data defining the image.</p>
+</div>
+</section>
+<section id="program-example-for-printing-a-regis-image-on-the-ln03">
+<span id="s16-3-4"></span><h3>Program Example for Printing a ReGIS Image on the LN03<a class="headerlink" href="#program-example-for-printing-a-regis-image-on-the-ln03" title="Link to this heading">¶</a></h3>
+<p>The following program prints an expanded ReGIS image on an LN03 laser
+printer. To print an expanded ReGIS image from your VT300 terminal to a
+local LN03 printer, perform the following steps.</p>
+<ol class="arabic simple">
+<li><p>In the Printer Set-Up screen, set the <strong>Sixel Print Option</strong> feature
+to “expanded”.</p></li>
+<li><p>Use the following escape sequences in your program (ESC = escape
+character).</p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Enable
+Printer
+Port</p></th>
+<th class="head"><p>Initialize
+Printer
+Settings</p></th>
+<th class="head"><p>Landscape
+Format</p></th>
+<th class="head"><p>Clear
+Margins</p></th>
+<th class="head"><p>Disable
+Printer
+Port</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p>(DECSTR)</p></td>
+<td><p>(PFS)</p></td>
+<td><p>(DECSHORP)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ESC[5i</p></td>
+<td><p>ESC[!p</p></td>
+<td><p>ESC[?21 SP
+J</p></td>
+<td><p>ESC[w</p></td>
+<td><p>ESC[4i</p></td>
+</tr>
+</tbody>
+</table>
+<p>ReGIS display addressing command sets the terminal to full screen
+addressing. ReGIS hard copy command sends the image to the printer.</p>
+<p>ESCPp S(A[0,0][799,499]H) ESC\</p>
+<p>For more information, see <a class="reference external" href="chapter2.html">Chapter 2</a>.</p>
+</section>
+</section>
+<section id="summary">
+<span id="s16-4"></span><h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="#T16-1">Table 16-1</a> is a summary of the graphics printing control
+sequences in this chapter.</p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Table 16-1 Graphics Printing Control Sequences</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Mnemonic</p></th>
+<th class="head"><p>Sequence</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Printing Formats</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Graphic expanded
+print mode</p></td>
+<td><p>DECGEPM</p></td>
+<td><p><strong>CSI ? 43
+h</strong></p></td>
+<td><p>Expanded</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>CSI ? 43
+l</strong></p></td>
+<td><p>Compressed</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphic print
+color mode</p></td>
+<td><p>DECGPCM</p></td>
+<td><p><strong>CSI ? 44
+h</strong></p></td>
+<td><p>Color</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>CSI ? 44
+l</strong></p></td>
+<td><p>Black and white</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphic print
+color syntax</p></td>
+<td><p>DECGPCS</p></td>
+<td><p><strong>CSI ? 45
+h</strong></p></td>
+<td><p>RGB</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>CSI ? 45
+l</strong></p></td>
+<td><p>HLS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphic print
+background mode</p></td>
+<td><p>DECGPBM</p></td>
+<td><p><strong>CSI ? 46
+h</strong></p></td>
+<td><p>Background</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>CSI ? 46
+l</strong></p></td>
+<td><p>No background</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphic rotated
+print mode</p></td>
+<td><p>DECGRPM</p></td>
+<td><p><strong>CSI ? 47
+h</strong></p></td>
+<td><p>Rotated</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>CSI ? 47
+l</strong></p></td>
+<td><p>Compressed</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sending Graphics
+to the Host or
+Printer</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Graphics to host</p></td>
+<td><p>MC</p></td>
+<td><p><strong>CSI ? 2
+i</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Graphics to
+printer</p></td>
+<td><p>MC</p></td>
+<td><p><strong>CSI ? i</strong>
+or</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p><strong>CSI ? 0
+i</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Sixel Levels for
+Printers</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Level 1</p></td>
+<td><p>ESC P 1 q
+S…S ESC
+\</p>
+<p>where</p>
+<p><strong>S…S</strong>
+is the
+sixel data
+defining
+the image.</p>
+<p>Example:
+Digital’s
+LA50
+printer.</p>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Level 2</p></td>
+<td><p>ESC P Pn1;
+Pn2; Pn3; q
+“ Pn4; Pn5;
+Pn6; Pn7
+S…S ESC
+\</p>
+<p>where</p>
+<p><strong>Pn1</strong> is
+the macro
+parameter.
+Pn1 is
+always 0
+for level 2
+print
+operations.</p>
+<div class="line-block">
+<div class="line"><strong>Pn2</strong>
+is the</div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>background</dt><dd><p>select</p>
+</dd>
+</dl>
+<p>parameter.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">1 =</div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>background</dt><dd><p>printing
+disabled.</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="line-block">
+<div class="line">2 =</div>
+</div>
+<blockquote>
+<div><dl class="simple">
+<dt>background</dt><dd><p>printing
+enabled.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Pn3</strong> is
+the
+horizontal
+grid size.
+Default is
+6 for
+compressed
+images, and
+9 for
+expanded or
+rotated
+images.</p>
+<p><strong>Pn4</strong> is
+the pixel
+aspect
+ratio
+numerator.
+Default =
+1.</p>
+<p><strong>Pn5</strong> is
+the pixel
+aspect
+ratio
+d
+enominator.
+Default =
+1.</p>
+<p><strong>Pn6</strong> is
+the
+horizontal
+extent
+parameter.</p>
+<p><strong>Pn7</strong> is
+the
+vertical
+extent
+parameter.</p>
+<p><strong>S…S</strong>
+is the
+sixel data
+defining
+the image.</p>
+<p>Examples:
+Digital’s
+LA75 and
+LN03
+printers.</p>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>LA210 printer</p></td>
+<td><p><em>For
+compressed
+print
+operations</em></p>
+<p>Uses the
+same sixel
+device
+control
+string
+format as
+in level 1.</p>
+<p><em>For
+expanded
+and rotated
+print
+operations</em></p>
+<p>ESC P 9 q
+S…S ESC
+\</p>
+<p>where</p>
+<p><strong>9</strong> is
+the macro
+parameter.
+This
+parameter
+specifies a
+1 to 1
+aspect
+ratio with
+a grid size
+of 338 ×
+0.025 mm
+(13.5 ×
+0.001 in).</p>
+<p><strong>S…S</strong>
+is the
+sixel data
+defining
+the image.</p>
+</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="navbar docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a href="#id3"><span class="problematic" id="id4">`</span></a>Chapter
+15</p>
+<blockquote>
+<div><p>&lt;chapter15.html&gt;`__</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="navbot docutils container">
+<p><a class="reference external" href="http://vt100.net/docs/vt3xx-gp/chapter16.html">http://vt100.net/docs/vt3xx-gp/chapter16.html</a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ReGIS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1 Introduction to ReGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2 Screen Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3 Write Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4 Position Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5 Vector Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">6 Curve Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7 Text Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8 Load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">9 Macrographs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">10 Report Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">11 Polygon Fill Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">12 Combining ReGIS Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">13 4010/4014 Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter14.html">14 Sixel Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter15.html">15 Using a Mouse or Tablet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16 Printing Graphics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-a-format-for-printing">Selecting a Format for Printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-graphics-to-the-host-or-printer">Sending Graphics to the Host or Printer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sixel-graphics-levels-matching-your-printer">Sixel Graphics Levels – Matching Your Printer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendixa.html">VT240 Style HLS Color Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixb.html">Differences Between the VT300 and Other Digital Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">Contents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chapter15.html" title="previous chapter">15 Using a Mouse or Tablet</a></li>
+      <li>Next: <a href="appendixa.html" title="next chapter">VT240 Style HLS Color Programming</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, vt100.net.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/chapter16.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

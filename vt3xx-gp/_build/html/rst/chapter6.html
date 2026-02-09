@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6 Curve Command &#8212; ReGIS 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7 Text Command" href="chapter7.html" />
+    <link rel="prev" title="5 Vector Command" href="chapter5.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="navbar docutils container">
+<p><a class="reference external" href="../../"><img alt="VT100.net" class="button" src="../vt100.net-logo" style="width: 102px; height: 16px;" /></a> VT330/VT340 Programmer Reference Manual Volume 2:
+Graphics Programming</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="chapter5.html">Chapter
+5</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="curve-command">
+<span id="s6"></span><h1>6 Curve Command<a class="headerlink" href="#curve-command" title="Link to this heading">¶</a></h1>
+<p>Curve commands draw circles, arcs, and other curved images. The
+appearance of the lines used to draw curves depends on the write control
+values in effect when you use the curve command. There are four basic
+types of curve commands.</p>
+<ul class="simple">
+<li><p>Circles</p></li>
+<li><p>Arcs</p></li>
+<li><p>Curve interpolation sequence</p></li>
+<li><p>Temporary writing controls option</p></li>
+</ul>
+<section id="about-the-examples">
+<span id="s6-1"></span><h2>About the Examples<a class="headerlink" href="#about-the-examples" title="Link to this heading">¶</a></h2>
+<p>This chapter includes several examples of figures drawn with curve
+commands. These examples use the same initial write control and screen
+control values as the examples in <a class="reference external" href="chapter5.html">Chapter 5</a>. See
+“<a class="reference external" href="chapter5.html#S5.1">About the Examples</a>” at the beginning of
+<a class="reference external" href="chapter5.html">Chapter 5</a>.</p>
+</section>
+<section id="circles">
+<span id="s6-2"></span><h2>Circles<a class="headerlink" href="#circles" title="Link to this heading">¶</a></h2>
+<p>There are two options for drawing circles.</p>
+<ul>
+<li><div class="line-block">
+<div class="line">Circle with center at current cursor position,</div>
+<div class="line">circumference at specified position</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Circle with center at specified position,</div>
+<div class="line">circumference at current position</div>
+</div>
+</li>
+</ul>
+<p>For both options, the cursor position at the end of the command is the
+same as it was at the start. Both options can use the same four types of
+position arguments that you use with position (P) and vector (V)
+commands.</p>
+<ul class="simple">
+<li><p>absolute</p></li>
+<li><p>relative</p></li>
+<li><p>absolute/relative</p></li>
+<li><p>pixel vector (PV)</p></li>
+</ul>
+<p>See “<a class="reference external" href="chapter4.html#S4.1">Set Position Arguments</a>” in <a class="reference external" href="chapter4.html">Chapter
+4</a> for a description of these arguments.</p>
+<section id="circle-with-center-at-current-position">
+<span id="s6-2-1"></span><h3>Circle with Center at Current Position<a class="headerlink" href="#circle-with-center-at-current-position" title="Link to this heading">¶</a></h3>
+<p>You use the following format to draw a circle with its center at the
+current position and circumference at a specified position.</p>
+<p>C&lt;position&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>C</strong> identifies a curve command.</p>
+<p><strong>&lt;position&gt;</strong> is a point on the circumference of the circle.</p>
+</div>
+<p>You can define a specific point on the circumference. To specify a
+radius, you can use a PV value or a single relative position value. To
+pass through a specific point, you can use one of the following position
+values.</p>
+<div class="example docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>absolute</p></td>
+<td><p>if that point has specific [X,Y] coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p>relative</p></td>
+<td><p>if that point has [X,Y] coordinates relative to
+the current position</p></td>
+</tr>
+<tr class="row-odd"><td><p>absolute/relative</p></td>
+<td><p>if that point has one absolute coordinate and
+one relative coordinate</p></td>
+</tr>
+<tr class="row-even"><td><p>pixel vector</p></td>
+<td><p>to specify a radius</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference external" href="#F6-1">Figure 6-1</a> shows examples of circles drawn with their center
+at the current position. The examples use different types of position
+arguments.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Figure 6-1 Example of Circle with Center at Current Position</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[200,100]
+C[110,110]
+P[+450,100]
+C[+95]
+P[,+250]
+C[-75,+50]
+P[425,250]
+C[480,-80]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image3" src="rst/ma-0710-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only circles and final cursor
+would appear on screen.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="circle-with-center-at-specified-position">
+<span id="s6-2-2"></span><h3>Circle with Center at Specified Position<a class="headerlink" href="#circle-with-center-at-specified-position" title="Link to this heading">¶</a></h3>
+<p>You use the following format to draw circle with its center at a
+specified position and circumference at the current position.</p>
+<p>C(C)&lt;position&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>(C)</strong> identifies the option for a circle with center at the
+specified position. This option is in effect until you enter a new
+command.</p>
+<p><strong>&lt;position&gt;</strong> is the center of the circle. The current position
+becomes a point on the circumference of the circle.</p>
+</div>
+<p>This option uses the same type of position arguments as the option for a
+circle with its center at the current position. That is, you can use
+absolute, relative, absolute/relative or PV offset values to specify the
+center point of the circle. However, the results are different.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>current position option</p></td>
+<td><p>Always draws a circle around the
+current cursor position.</p></td>
+</tr>
+<tr class="row-even"><td><p>specified position option</p></td>
+<td><p>Draws a circle using the current cursor
+position as a point on the
+circumference.</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="#F6-2">Figure 6-2</a> shows two circles drawn with their centers at
+specified positions. Both circles are the same size and start from the
+same cursor position. However, they are drawn in different places,
+because they have different relative position arguments.</p>
+<p><a class="reference external" href="#F6-3">Figure 6-3</a> shows more examples of circles drawn with their
+center at a specified position. These examples use different types of
+position arguments.</p>
+<p><a class="reference external" href="#F6-4">Figure 6-4</a> shows examples that combine circle with center at
+specified position commands with circle with center at current position
+commands.</p>
+<p>Circle with Center at Specified Position</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[400,240]
+C(C)[+150]
+C(C)[-150]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image6" src="rst/ma-0712-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only circles and cursor would
+appear on screen</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Positions</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[60,60]
+C(C)[+90,+40]
+P[200,350]
+C(C)[+100]
+P[400,200]
+C(C)[500,-70]
+P[+160,+200]
+C(C)[+100,-70]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image9" src="rst/ma-0711-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only circles and final cursor
+would appear on screen</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Figure 6-4 Combining Circle Commands</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[100,100]
+C(C)[+50][+25]
+P[300,100]
+C[+50][+25]
+P[500,100]
+C(C)[+50]
+C[+25]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image12" src="rst/ma-0403-86r" /></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="arcs">
+<span id="s6-3"></span><h2>Arcs<a class="headerlink" href="#arcs" title="Link to this heading">¶</a></h2>
+<p>Arcs are sections of a circle. There are two options for drawing arcs.</p>
+<ul class="simple">
+<li><p>Arc with center at current position, circumference at specified
+position</p></li>
+<li><p>Arc with center at specified position, circumference at current
+position</p></li>
+</ul>
+<p>Both options can use the same four types of position arguments used with
+circle options.</p>
+<ul class="simple">
+<li><p>absolute</p></li>
+<li><p>relative</p></li>
+<li><p>absolute/relative</p></li>
+<li><p>pixel vector (PV)</p></li>
+</ul>
+<p>The VT300 draws arcs in 1 degree increments. If you specify an arc in
+increments other than 1 degree, ReGIS draws to the closest degree. For
+example, if you specify an arc of 27.5 degrees, the terminal uses 28
+degrees. If you specify an arc of 27.4 degrees, the terminal uses 27
+degrees.</p>
+<section id="arc-with-center-at-current-position">
+<span id="s6-3-1"></span><h3>Arc with Center at Current Position<a class="headerlink" href="#arc-with-center-at-current-position" title="Link to this heading">¶</a></h3>
+<p>You use the following format for drawing an arc with its center at the
+current cursor position and circumference at a specified position. You
+specify the starting point for the arc and the number of degrees to draw
+the arc. ReGIS uses the current cursor position as the center of the
+arc’s circle. The cursor returns to this position at the end of this
+operation.</p>
+<p>C(A&lt;degrees&gt;)&lt;position&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>A</strong> identifies the arc option. This option stays in effect until
+you enter a new command.</p>
+<p><strong>&lt;degrees&gt;</strong> are the number of degrees and the direction to draw the
+arc in. You indicate the direction with a plus (+) or minus (-) sign.
+If you use a + sign or no sign, ReGIS draws the arc counterclockwise
+from the specified position. If you use a - sign, ReGIS draws the arc
+clockwise.</p>
+<p><strong>&lt;position&gt;</strong> is the starting point for the arc. You can use
+absolute, relative, absolute/relative, or PV values for the
+coordinates. You can specify an X-coordinate, Y-coordinate, or both.</p>
+</div>
+<p><a class="reference external" href="#F6-5">Figure 6-5</a> shows two arcs drawn with the current position
+option. The figure shows how positive (+) and negative (-) degree values
+select the direction of an arc. <a class="reference external" href="#F6-6">Figure 6-6</a> shows some arcs
+drawn with different types of position arguments.</p>
+<p>at Current Position</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[200,200]
+C(A180)[+150]
+P[+400]
+C(A-180)[+150]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image15" src="rst/ma-0713-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only arcs and cursor at
+[600,200] would appear on the
+screen at end of commands.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Positions, Using Different Types of Position Values</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[150,150]
+C(A-60)[50,100]
+P[+50,+50]
+C(A-270)[,+150]
+P[600,+100]
+C(A180)[700,+100]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image18" src="rst/ma-0714-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only arcs and cursor at
+[600,300] would appear on the
+screen at end of commands.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="arc-with-center-at-specified-position">
+<span id="s6-3-2"></span><h3>Arc with Center at Specified Position<a class="headerlink" href="#arc-with-center-at-specified-position" title="Link to this heading">¶</a></h3>
+<p>You can use this option to link the end of one arc to the beginning of
+another.</p>
+<p>This option draws an arc from the current cursor position. You specify
+the center of the arc’s circle. The cursor position moves with the arc.
+At the end of the option, the cursor is at the end of the arc. You use
+the following format for drawing an arc with its center at a specified
+position.</p>
+<p>C(A&lt;degrees&gt;C)&lt;position&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>A</strong> identifies an arc option. This option stays in effect until you
+enter a new command.</p>
+<p><strong>&lt;degrees&gt;</strong> are the number of degrees and direction to draw the arc
+in. You select the direction with a plus (+) or minus (-) sign. If
+you use a + sign or no sign, ReGIS draws the arc counterclockwise
+from the specified position. If you use a - sign, ReGIS draws the arc
+clockwise.</p>
+<p>The second <strong>C</strong> identifies the arc with center at specified position
+option.</p>
+<p><strong>&lt;position&gt;</strong> is the center of the arc. You can use absolute,
+relative, absolute/relative, or PV values. You can specify an
+X-coordinate, Y-coordinate, or both.</p>
+</div>
+<p>When you draw arcs that are not on a 10 degree boundary, the end of an
+arc and the cursor position may not be where you expect. There are three
+ways you can make sure of the cursor position.</p>
+<ul class="simple">
+<li><p>Move the cursor to an absolute position.</p></li>
+<li><p>Use the position report (<a class="reference external" href="chapter10.html">Chapter 10</a>).</p></li>
+<li><p>Draw a vector to where you want the cursor to stop.</p></li>
+</ul>
+<p>You should use these methods occasionally when you draw arcs of other
+than 10 degree increments.</p>
+<p><a class="reference external" href="#F6-7">Figure 6-7</a> shows two arcs drawn with the specific position
+option. The figure shows how positive (+) and negative (-) degree values
+select the direction of an arc. <a class="reference external" href="#F6-8">Figure 6-8</a> shows some arcs
+drawn with different types of position values. The figure also shows an
+example of how to link arcs together.</p>
+<p>Center at Specified Position</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[350,200]
+C(A180C)[-150]
+P[+700]
+C(A-180C)[-150]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image21" src="rst/ma-0715-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only arcs and cursor at
+[450,200] would appear on the
+screen at end of commands.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>with Centers at Specified Positions</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[50,100]
+C(A-60C)[150,150]
+(A135C)[+160,150]
+(A-90C)[+250,+150]</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image24" src="rst/ma-0716-83r" /></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>NOTE:
+Only arcs and cursor at end of
+last arc would appear on the
+screen at end of commands.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+</section>
+<section id="curve-interpolation">
+<span id="s6-4"></span><h2>Curve Interpolation<a class="headerlink" href="#curve-interpolation" title="Link to this heading">¶</a></h2>
+<p>You can draw a curve by specifying four or more positions on the curve.
+ReGIS draws the curve by estimating where the other positions on the
+curve should fall. This method is called curve interpolation.</p>
+<p>You specify the positions in one of the following sequences.</p>
+<ul class="simple">
+<li><p>Closed curve sequence</p></li>
+<li><p>Open curve sequence</p></li>
+</ul>
+<p>The closed curve sequence uses the same format as the bounded position
+stack options for position and vector commands. The open curve sequence
+uses the same format as the unbounded position stack options for
+position and vector commands. You can use a null position argument with
+closed and open curve sequences.</p>
+<section id="how-regis-interpolates-curves">
+<span id="s6-4-1"></span><h3>How ReGIS Interpolates Curves<a class="headerlink" href="#how-regis-interpolates-curves" title="Link to this heading">¶</a></h3>
+<p>You may use a certain equation that draws curves, but ReGIS may or may
+not use the same equation you use. However, ReGIS does draw the curve
+through each point that you specify. You must use at least four
+positions to ensure that ReGIS draws a curve close to the equation you
+use. One of these positions is the cursor position at the start of the
+sequence.</p>
+<p>ReGIS draws curves according to the following guidelines.</p>
+<ul class="simple">
+<li><p>The curve passes through each point you specify.</p></li>
+<li><p>The curve has exactly the same shape, regardless if it is drawn from
+the first point to the last, or from the last to the first.</p></li>
+<li><p>The slope of the curve at a given point is parallel to a line drawn
+through two other points on each side of the given point.</p></li>
+</ul>
+<p>ReGIS uses four specified positions at a time to draw a section of the
+curve. After using the first four positions, ReGIS moves to the next
+position. Then ReGIS uses that position and the previous three positions
+to draw the next section of the curve. This action continues until ReGIS
+uses all the positions you specified.</p>
+<p>Remember that the positions you select define the curve. If you use
+positions that are too far apart, the curve on the screen may not
+reflect the function you are trying to represent.</p>
+</section>
+<section id="closed-curve-sequence">
+<span id="s6-4-2"></span><h3>Closed Curve Sequence<a class="headerlink" href="#closed-curve-sequence" title="Link to this heading">¶</a></h3>
+<p>This option lets you draw a closed curve by specifying points on the
+curve. At the end of the sequence, the cursor is at the position where
+it started the sequence. You use the following format for the closed
+curve sequence.</p>
+<p>C(B)&lt;positions&gt;(E)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>(B)</strong> indicates the start of the closed curve sequence.</p>
+<p><strong>&lt;positions&gt;</strong> are a minimum of two positions on the curve. ReGIS
+uses these positions to interpolate the rest of the curve. You can
+use absolute, relative, absolute/relative, or PV values. You can
+specify an X-coordinate, Y-coordinate, or both.</p>
+<p><strong>(E)</strong> indicates the end of the closed curve sequence.</p>
+</div>
+<p>Closed curve sequences use a format similar to the bounded position
+stack options for position and vector commands. However, you can only
+use one pair of (B) and end (E) options in closed curve sequences. You
+can use 16 pairs of (B) and (E) options in bounded position stacks for
+position and vector commands.</p>
+<p>When you use relative values (including PV values), the value is
+relative to the last specified cursor position. For example, the first
+specified value is relative to the cursor position at the start of the
+sequence; the second specified value is relative to the first specified
+value, and so on.</p>
+<p>You can use a [] null position argument to repeat the previous cursor
+position. Remember that the null position is the same as the [+0,+0]
+position. There are two reasons to use the [] null position argument in
+a closed curve sequence.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>Close the curve with a smoother line.</strong></div>
+<div class="line">You include the [] argument at the start and end of the sequence.
+ReGIS repeats the cursor position at the start of the sequence, and
+the last position you specified.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Create a sharper change in the interpolated curve form.</strong></div>
+<div class="line">You use the [] argument during the sequence. ReGIS repeats the
+position specified before the [] argument.</div>
+</div>
+</li>
+</ul>
+<p><a class="reference external" href="#F6-9">Figure 6-9</a> shows a closed curve drawn with a null position
+argument at the start and end of the sequence. <a class="reference external" href="#F6-10">Figure 6-10</a>
+shows a closed curve drawn without the [] argument.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Figure 6-9 Closed Curve Sequence with Null Position Argument</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[100,100]
+C(B)
+[]
+[75,125]
+[150,200]
+[225,125]
+[300,200]
+[375,125]
+[450,200]
+[525,125]
+[]
+(E)</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image27" src="rst/ma-0718-83" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>Argument</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[230,240]
+C(B)
+[320,160]
+[480,120]
+[570,160]
+[480,240]
+[320,280]
+(E)</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image30" src="rst/ma-0717-83" /></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="open-curve-sequence">
+<span id="s6-4-3"></span><h3>Open Curve Sequence<a class="headerlink" href="#open-curve-sequence" title="Link to this heading">¶</a></h3>
+<p>This option lets you draw an open curve by specifying points on the
+curve. At the end of the sequence, the cursor is at the last position
+you specified. You use the following format for the open curve sequence.</p>
+<p>C(S)&lt;positions&gt;(E)</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>(S)</strong> indicates the start of an open curve sequence.</p>
+<p><strong>&lt;positions&gt;</strong> are a minimum of three positions on the curve. ReGIS
+uses these positions to interpolate the rest of the curve. You can
+use absolute, relative, absolute/relative, or PV values. You can
+specify an X-coordinate, Y-coordinate, or both.</p>
+<p><strong>(E)</strong> indicates the end of the open curve sequence.</p>
+</div>
+<p>Open curve sequences use a format similar to the unbounded position
+stack options for position and vector commands. However, you can only
+use one pair of (S) and (E) options in open curve sequences. You can use
+16 pairs of (S) and (E) options in unbounded position stacks for
+position and vector commands.</p>
+<p>You can use a [] null position argument to repeat the previous cursor
+position. There are two reasons to use the [] null position argument in
+an open curve sequence.</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>To draw the curve completely to both ends.</strong></div>
+<div class="line">You use the [] argument at the beginning and end of the sequence.
+This causes ReGIS to draw the curve through two more positions.</div>
+</div>
+<ul class="simple">
+<li><p>the cursor position before the (S) option</p></li>
+<li><p>the last position you specified</p></li>
+</ul>
+<p>Without the [] argument, ReGIS only draws the curve from the first
+specified position to the next-to-last position. The [] argument
+duplicates the first and last positions, extending the drawing of the
+curve through those positions. The last two and first two positions
+control the direction of the curve, but ReGIS does not connect them.</p>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Create a sharper change in the interpolated curve form.</strong></div>
+<div class="line">You use the [] argument during the sequence. ReGIS repeats the
+position specified before the [] argument.</div>
+</div>
+</li>
+</ul>
+<p><a class="reference external" href="#F6-11">Figure 6-11</a> shows an open curve drawn without null position
+arguments. <a class="reference external" href="#F6-12">Figure 6-12</a> shows the same curve drawn with null
+position arguments at the beginning and end of the sequence.</p>
+<p>Arguments</p>
+<blockquote>
+<div><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[75,125]
+C(S)
+[150,200]
+[225,125]
+[300,200]
+[375,125]
+[450,200]
+[525,125]
+(E)</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image33" src="rst/ma-0719-83" /></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Figure 6-12 Open Curve Sequence With Null Position Arguments</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[75,125]
+C(S)
+[]
+[150,200]
+[225,125]
+[300,200]
+[375,125]
+[450,200]
+[525,125]
+[]
+(E)</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td><p><img alt="image36" src="rst/ma-0720-83" /></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="temporary-write-control">
+<span id="s6-5"></span><h2>Temporary Write Control<a class="headerlink" href="#temporary-write-control" title="Link to this heading">¶</a></h2>
+<p>The write control options in <a class="reference external" href="chapter3.html">Chapter 3</a> control the
+appearance of the images you draw. For example, these options control
+the shade/color of images. When you use curve commands, ReGIS uses the
+current settings for the write control options.</p>
+<p>You can use a temporary write control option to temporarily change one
+or more of these settings for a curve command. The temporary values
+remain in effect until you use one of the following commands.</p>
+<ul class="simple">
+<li><p>another temporary write control option</p></li>
+<li><p>any command that begins with a command key letter, such as a vector
+(V) command or another curve (C) command</p></li>
+</ul>
+<p>When you use one of the above commands, the writing control options
+return to their previous values.</p>
+<p>You include the temporary write control option in your curve command.
+You can use any write control option from <a class="reference external" href="chapter3.html">Chapter 3</a>.</p>
+<ul class="simple">
+<li><p>PV multiplication</p></li>
+<li><p>Pattern control</p></li>
+<li><p>Foreground intensity</p></li>
+<li><p>Plane select control</p></li>
+<li><p>Overlay writing</p></li>
+<li><p>Replace writing</p></li>
+<li><p>Complement writing</p></li>
+<li><p>Erase writing</p></li>
+<li><p>Negative pattern control</p></li>
+</ul>
+<p>NOTE: The W option is not recommended for drawing curves. The results
+are unpredictable.</p>
+<p>You use the following format for a temporary write control option.</p>
+<p>C(W(&lt;suboptions&gt;))&lt;arguments&gt;</p>
+<p>where</p>
+<div class="example docutils container">
+<p><strong>W</strong> identifies a temporary write control option.</p>
+<p><strong>&lt;suboptions&gt;</strong> are the temporary write control values to use.</p>
+<p><strong>&lt;arguments&gt;</strong> are the curve command arguments that will use the
+temporary write control values.</p>
+</div>
+<p><a class="reference external" href="#F6-13">Figure 6-13</a> shows a simple graph that uses temporary write
+control options to change the pattern of open curve sequences. For more
+complex examples, see “<a class="reference external" href="chapter3.html#S3.7">Shading Control</a>” in
+<a class="reference external" href="chapter3.html">Chapter 3</a>.</p>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Figure 6-13 Example of Temporary Write Control</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><img alt="image38" src="rst/ma-0721-83" /></p></td>
+</tr>
+<tr class="row-even"><td><table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>COMMANDS</p></td>
+</tr>
+<tr class="row-even"><td><p>P[100,100]
+V[,+300]
+[+400]
+P[100,-80]
+C(W(P2))
+(S)
+[]
+[+100,-30]
+[+100,-50]
+[+100,-30]
+[+100,-20]
+[]
+(E)
+P[100,300]
+C(W(P4))
+(S)
+[]
+[+100]
+[+100,-40]
+[+100,-20]
+[+100,-40][]
+(E)</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="curve-command-summary">
+<span id="s6-6"></span><h2>Curve Command Summary<a class="headerlink" href="#curve-command-summary" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="#T6-1">Table 6-1</a> is a summary of <strong>C</strong> command options, including
+any default values.</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Table 6-1 Curve Command Summary</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option*</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>[X,Y]</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Circle with center at current
+position</strong></div>
+<div class="line">[X,Y] defines a point on the
+circumference of the circle.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(C)[X,Y]</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Circle with center at
+specified position</strong></div>
+<div class="line">[X,Y] defines the center of the
+circle. The current active
+position defines a point on the
+circumference.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(A&lt;degrees&gt;)[X,Y]</p></td>
+<td><p>360</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Arc with center at current
+position</strong></div>
+<div class="line">[X,Y] defines the starting
+point for an arc.</div>
+</div>
+<p>&lt;degrees&gt; is a signed value the
+determines the size and direction
+of arc.</p>
+<div class="line-block">
+<div class="line">+ = counterclockwise&lt;</div>
+<div class="line">- = clockwise</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(A&lt;degrees&gt;C)[X,Y]</p></td>
+<td><p>360</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Arc with center at specified
+position</strong></div>
+<div class="line">[X,Y] defines the arc’s center.
+The starting point for the arc
+is the current active position.</div>
+</div>
+<p>&lt;degrees&gt; is a signed value the
+determines the size and direction
+of arc.</p>
+<div class="line-block">
+<div class="line">+ = counterclockwise</div>
+<div class="line">- = clockwise</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(B)&lt;positions&gt;(E)</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Closed curve sequence</strong></div>
+<div class="line">Defines a closed curve based on
+[X,Y] positions specified in
+the sequence.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>(S)&lt;positions&gt;(E)</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Open curve sequence</strong></div>
+<div class="line">Defines an open curve based on
+[X,Y] positions specified in
+the sequence.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>(W(&lt;suboptions&gt;))</p></td>
+<td><p>None</p></td>
+<td><div class="line-block">
+<div class="line"><strong>Temporary write control</strong></div>
+<div class="line">Lets you use temporary write
+control values with one curve
+command. Temporary values only
+remain in effect for the
+selected command, but that
+command can include several
+curves.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>* All [X,Y]
+coordinates can be
+absolute, relative, or
+absolute/relative
+values.</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="navbar docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="chapter5.html">Chapter
+5</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="navbot docutils container">
+<p><a class="reference external" href="http://vt100.net/docs/vt3xx-gp/chapter6.html">http://vt100.net/docs/vt3xx-gp/chapter6.html</a></p>
+</div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ReGIS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">1 Introduction to ReGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">2 Screen Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">3 Write Control Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">4 Position Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">5 Vector Command</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6 Curve Command</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#about-the-examples">About the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#circles">Circles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arcs">Arcs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#curve-interpolation">Curve Interpolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temporary-write-control">Temporary Write Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#curve-command-summary">Curve Command Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">7 Text Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">8 Load Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">9 Macrographs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">10 Report Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">11 Polygon Fill Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">12 Combining ReGIS Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">13 4010/4014 Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter14.html">14 Sixel Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter15.html">15 Using a Mouse or Tablet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter16.html">16 Printing Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixa.html">VT240 Style HLS Color Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendixb.html">Differences Between the VT300 and Other Digital Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contents.html">Contents</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chapter5.html" title="previous chapter">5 Vector Command</a></li>
+      <li>Next: <a href="chapter7.html" title="next chapter">7 Text Command</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, vt100.net.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/chapter6.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
