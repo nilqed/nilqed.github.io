@@ -10,8 +10,11 @@
  <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
 </head><body 
 >
-<!--l. 163--><p class="noindent" >\(\def\relax{}
+<!--l. 163--><p class="noindent" >\(%%%% mathjax needs its own macros / 12-APR-2026 
+\def\relax{}
 \def\linebreak{}
+\def\setcounter{}
+\def\ensuremath{}
 \def\FUNCTION#1#2{#1\mathopen{}\PAREN{#2}\mathclose{}}
 \def\EulerE{e}
 \def\ImaginaryI{i}
@@ -62,6 +65,12 @@
      {\setcounter{MaxMatrixCols}{#1}\begin{bmatrix}}{\end{bmatrix}}
 \newenvironment{PILE}{\begin{array}[t]{l}}{\end{array}}
 \newenvironment{VCONCAT}{\begin{array}{c}}{\end{array}}
+
+%\newenvironment{equation}{}{}
+%\newenvironment{displaymath}{}{}
+
+
+
 \) <div class="footnote-text">
 <span class="footnote-mark"><a 
  id="x28-88008x4.2"></a><a 
