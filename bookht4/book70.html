@@ -45,11 +45,6 @@
 \def\theMap#1{\FUN{theMap}(\FUN{#1})}
 \def\ALTSUPERSUB#1#2{\tensor*{#1}{*#2}}
 \def\SCRIPTS#1#2#3#4#5{\tensor*[^{#4}_{#5}]{#1}{_{#2}^{#3}}}
-\def\FUN#1{{\DefSpecialChars\DEFOPNAME#1\ENDDEFOPNAME\OPNAME{#1}}}%
-\def\DEFOPNAME#1#2\ENDDEFOPNAME{\def\arg{#2}
-   \ifx\arg\empty\def\OPNAME{}\else\def\OPNAME{\operatorname}\fi}
-\def\STRING#1{\texttt{\DefSpecialChars #1}}
-\def\SYMBOL#1{{\DefSpecialChars #1}}
 \def\PRIME#1{\begingroup% redefinitions are only local
      {#1}%
      % for the second parameter redefine \STRING and \PAREN
@@ -60,6 +55,14 @@
      \def\^{{\tiny\ensuremath{^{\wedge}}}}
      \def\\{\ensuremath{\backslash}}
      \def\~{\char`~}}
+\def\FUN#1{{\DefSpecialChars\DEFOPNAME#1\ENDDEFOPNAME\OPNAME{#1}}}%
+\def\DEFOPNAME#1#2\ENDDEFOPNAME{\def\arg{#2}
+   \ifx\arg\empty\def\OPNAME{}\else\def\OPNAME{\operatorname}\fi}
+%\def\STRING#1{\texttt{\DefSpecialChars #1}}
+%\def\SYMBOL#1{{\DefSpecialChars #1}}
+\def\STRING#1{\text{#1}}
+\def\SYMBOL#1{#1}
+
 
 \newenvironment{MATRIX}[1]
      {\setcounter{MaxMatrixCols}{#1}\begin{bmatrix}}{\end{bmatrix}}
@@ -67,10 +70,7 @@
 \newenvironment{VCONCAT}{\begin{array}{c}}{\end{array}}
 
 %\newenvironment{equation}{}{}
-%\newenvironment{displaymath}{}{}
-
-
-
+\newenvironment{displaymath}{}{}
 \) <div class="footnote-text">
 <span class="footnote-mark"><a 
  id="x70-441006x"></a><a 
