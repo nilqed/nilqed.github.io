@@ -1,11 +1,12 @@
 #!/bin/sh
+#version: 13-APR-2026 13:50
 
 # after "make book"
 # in $build/src/doc/tmp
 
 # convert the image(s).ps to png
 for a in *.VIEW; do 
-  pstoimg -type png $a/image.ps -out $(basename $a .VIEW)-.png ;
+  pstoimg -type png -crop a -scale 3 $a/image.ps -out $(basename $a .VIEW)-.png ;
 done
 
 # create 'html' dir for output
@@ -15,6 +16,14 @@ mkdir -p ./html
 # write the mathjax config file (needed by make4ht)
 cat <<'CFG' > ht_mathjax.cfg
 \Preamble{xhtml} 
+\Configure{MathJaxConfig}{{ 
+    output: {
+      displayOverflow: 'linebreak',  
+      linebreaks: {                  
+      automatic: true,                  
+      width: 'container',                  
+    }, scale: 0.7}
+}} 
 \Configure{MathJaxMacros}{mathjax_macros.tex} 
 \begin{document} 
 \EndPreamble
@@ -51,7 +60,7 @@ cat <<'MJM' > mathjax_macros.tex
 \def\QUO#1#2{{#1}\mathbin{\mathrm{quo}}{#2}}
 \def\EXQUO#1#2{{#1}\mathbin{\mathrm{exquo}}{#2}}
 \def\EQUATNUM#1#2{(#1)\qquad #2}
-\def\COMMA{,\linebreak[2]\:}
+\def\COMMA{,\linebreak\:}
 \def\SEMICOLON{;\:}
 \def\TIMES{\,}
 \def\theMap#1{\FUN{theMap}(\FUN{#1})}
