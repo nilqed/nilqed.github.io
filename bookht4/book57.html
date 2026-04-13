@@ -6,17 +6,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" /> 
 <link rel="stylesheet" type="text/css" href="book.css" /> 
 <meta name="src" content="book.tex" /> 
-<script>window.MathJax = { output: { displayOverflow: 'linebreak', linebreaks: { automatic: true, width: 'container', }, scale: 0.7} }</script> 
+<script>window.MathJax = { tex: { processEscapes: false }, chtml: { scale: 0.8 } }</script> 
  <script type="text/javascript" async="async" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>  
 </head><body 
 >
-<!--l. 163--><p class="noindent" >\(%%%% mathjax needs its own macros / Mon 13 Apr 14:15:51 CEST 2026
+<!--l. 163--><p class="noindent" >\(%%%% mathjax needs its own macros / Tue 14 Apr 00:55:12 CEST 2026
 %%%% be patient, this will go away ....
 \def\relax{}
 \def\linebreak{}
 \def\setcounter{}
 \def\ensuremath{}
-\def\FUNCTION#1#2{#1\mathopen{}\PAREN{#2}\mathclose{}}
 \def\EulerE{e}
 \def\ImaginaryI{i}
 \def\csch{\operatorname{csch}}
@@ -43,6 +42,7 @@
 \def\COMMA{,\linebreak\:}
 \def\SEMICOLON{;\:}
 \def\TIMES{\,}
+\def\FUNCTION#1#2{#1\mathopen{}\PAREN{#2}\mathclose{}}
 \def\theMap#1{\FUN{theMap}(\FUN{#1})}
 \def\ALTSUPERSUB#1#2{\tensor*{#1}{*#2}}
 \def\SCRIPTS#1#2#3#4#5{\tensor*[^{#4}_{#5}]{#1}{_{#2}^{#3}}}
@@ -54,23 +54,16 @@
      ^\PRIMEx}
 \def\DefSpecialChars{
      \def\^{{\tiny\ensuremath{^{\wedge}}}}
-     \def\\{\ensuremath{\backslash}}
      \def\~{\char`~}}
 \def\FUN#1{{\DefSpecialChars\DEFOPNAME#1\ENDDEFOPNAME\OPNAME{#1}}}%
 \def\DEFOPNAME#1#2\ENDDEFOPNAME{\def\arg{#2}
    \ifx\arg\empty\def\OPNAME{}\else\def\OPNAME{\operatorname}\fi}
-%\def\STRING#1{\texttt{\DefSpecialChars #1}}
-%\def\SYMBOL#1{{\DefSpecialChars #1}}
 \def\STRING#1{\text{#1}}
 \def\SYMBOL#1{#1}
 
-
-\newenvironment{MATRIX}[1]
-     {\setcounter{MaxMatrixCols}{#1}\begin{bmatrix}}{\end{bmatrix}}
+\newenvironment{MATRIX}[1] {\begin{bmatrix}}{\end{bmatrix}}
 \newenvironment{PILE}{\begin{array}[t]{l}}{\end{array}}
 \newenvironment{VCONCAT}{\begin{array}{c}}{\end{array}}
-
-%\newenvironment{equation}{}{}
 \newenvironment{displaymath}{}{}
 \) <div class="footnote-text">
 <span class="footnote-mark"><a 

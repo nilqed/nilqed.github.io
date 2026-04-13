@@ -14,15 +14,14 @@ mkdir -p ./html
 
 
 # write the mathjax config file (needed by make4ht)
+# Note: processEscapes: false ! 
+# https://github.com/mathjax/MathJax/issues/2532
+# \def\\{\ensuremath{\backslash}} removed from DefSpecialChars / matrix ok
 cat <<'CFG' > ht_mathjax.cfg
 \Preamble{xhtml} 
 \Configure{MathJaxConfig}{{ 
-    output: {
-      displayOverflow: 'linebreak',  
-      linebreaks: {                  
-      automatic: true,                  
-      width: 'container',                  
-    }, scale: 0.7}
+    tex: { processEscapes: false },
+    chtml: { scale: 0.8 }
 }} 
 \Configure{MathJaxMacros}{mathjax_macros.tex} 
 \begin{document} 
@@ -31,13 +30,12 @@ CFG
 
 # write the mathjax macros file
 cat <<'MJM' > mathjax_macros.tex
-%%%% mathjax needs its own macros / Mon 13 Apr 14:15:51 CEST 2026
+%%%% mathjax needs its own macros / Tue 14 Apr 00:55:12 CEST 2026
 %%%% be patient, this will go away ....
 \def\relax{}
 \def\linebreak{}
 \def\setcounter{}
 \def\ensuremath{}
-\def\FUNCTION#1#2{#1\mathopen{}\PAREN{#2}\mathclose{}}
 \def\EulerE{e}
 \def\ImaginaryI{i}
 \def\csch{\operatorname{csch}}
@@ -64,6 +62,7 @@ cat <<'MJM' > mathjax_macros.tex
 \def\COMMA{,\linebreak\:}
 \def\SEMICOLON{;\:}
 \def\TIMES{\,}
+\def\FUNCTION#1#2{#1\mathopen{}\PAREN{#2}\mathclose{}}
 \def\theMap#1{\FUN{theMap}(\FUN{#1})}
 \def\ALTSUPERSUB#1#2{\tensor*{#1}{*#2}}
 \def\SCRIPTS#1#2#3#4#5{\tensor*[^{#4}_{#5}]{#1}{_{#2}^{#3}}}
@@ -75,23 +74,16 @@ cat <<'MJM' > mathjax_macros.tex
      ^\PRIMEx}
 \def\DefSpecialChars{
      \def\^{{\tiny\ensuremath{^{\wedge}}}}
-     \def\\{\ensuremath{\backslash}}
      \def\~{\char`~}}
 \def\FUN#1{{\DefSpecialChars\DEFOPNAME#1\ENDDEFOPNAME\OPNAME{#1}}}%
 \def\DEFOPNAME#1#2\ENDDEFOPNAME{\def\arg{#2}
    \ifx\arg\empty\def\OPNAME{}\else\def\OPNAME{\operatorname}\fi}
-%\def\STRING#1{\texttt{\DefSpecialChars #1}}
-%\def\SYMBOL#1{{\DefSpecialChars #1}}
 \def\STRING#1{\text{#1}}
 \def\SYMBOL#1{#1}
 
-
-\newenvironment{MATRIX}[1]
-     {\setcounter{MaxMatrixCols}{#1}\begin{bmatrix}}{\end{bmatrix}}
+\newenvironment{MATRIX}[1] {\begin{bmatrix}}{\end{bmatrix}}
 \newenvironment{PILE}{\begin{array}[t]{l}}{\end{array}}
 \newenvironment{VCONCAT}{\begin{array}{c}}{\end{array}}
-
-%\newenvironment{equation}{}{}
 \newenvironment{displaymath}{}{}
 MJM
 
