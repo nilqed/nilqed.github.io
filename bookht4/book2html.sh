@@ -31,7 +31,8 @@ CFG
 
 # write the mathjax macros file
 cat <<'MJM' > mathjax_macros.tex
-%%%% mathjax needs its own macros / 12-APR-2026 
+%%%% mathjax needs its own macros / Mon 13 Apr 14:15:51 CEST 2026
+%%%% be patient, this will go away ....
 \def\relax{}
 \def\linebreak{}
 \def\setcounter{}
