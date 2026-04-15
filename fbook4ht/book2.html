@@ -1,0 +1,514 @@
+<?xml version='1.0' encoding='utf-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!-- http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd -->  
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>table of contents</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='book.css' rel='stylesheet' type='text/css' /> 
+<meta content='book.tex' name='src' /> 
+</head><body id='tex4ht-menu'>
+<!-- l. 5 --><p class='noindent'><a id='tex4ht-toc'></a> </p><div class='tableofcontents'>
+<span class='chapterToc'>0 <a href='book3.html#introduction-to-fricas' id='QQ2-3-5' target='tex4ht-main'>Introduction to FriCAS</a></span>
+<br /><span class='sectionToc'>0.1 <a href='book3.html#symbolic-computation' id='QQ2-3-6' target='tex4ht-main'>Symbolic computation</a></span>
+<br /><span class='sectionToc'>0.2 <a href='book3.html#numeric-computation' id='QQ2-3-7' target='tex4ht-main'>Numeric computation</a></span>
+<br /><span class='sectionToc'>0.3 <a href='book3.html#graphics' id='QQ2-3-8' target='tex4ht-main'>Graphics</a></span>
+<br /><span class='sectionToc'>0.4 <a href='book3.html#hyperdoc' id='QQ2-3-9' target='tex4ht-main'>HyperDoc</a></span>
+<br /><span class='sectionToc'>0.5 <a href='book3.html#interactive-programming' id='QQ2-3-10' target='tex4ht-main'>Interactive Programming</a></span>
+<br /><span class='sectionToc'>0.6 <a href='book3.html#data-structures' id='QQ2-3-11' target='tex4ht-main'>Data Structures</a></span>
+<br /><span class='sectionToc'>0.7 <a href='book3.html#mathematical-structures' id='QQ2-3-12' target='tex4ht-main'>Mathematical Structures</a></span>
+<br /><span class='sectionToc'>0.8 <a href='book3.html#pattern-matching' id='QQ2-3-13' target='tex4ht-main'>Pattern Matching</a></span>
+<br /><span class='sectionToc'>0.9 <a href='book3.html#polymorphic-algorithms' id='QQ2-3-14' target='tex4ht-main'>Polymorphic Algorithms</a></span>
+<br /><span class='sectionToc'>0.10 <a href='book3.html#extensibility' id='QQ2-3-15' target='tex4ht-main'>Extensibility</a></span>
+<br /><span class='partToc'>I  <a href='book3.html#basic-features-of-fricas' id='QQ2-3-27' target='tex4ht-main'>Basic Features of FriCAS</a></span>
+<br /><span class='chapterToc'>1 <a href='book3.html#an-overview-of-fricas' id='QQ2-3-28' target='tex4ht-main'>An Overview of FriCAS</a></span>
+<br /><span class='sectionToc'>1.1 <a href='book3.html#starting-up-and-winding-down' id='QQ2-3-29' target='tex4ht-main'>Starting Up and Winding Down</a></span>
+<br /><span class='subsectionToc'>1.1.1 <a href='book3.html#clef' id='QQ2-3-30' target='tex4ht-main'>Clef</a></span>
+<br /><span class='sectionToc'>1.2 <a href='book3.html#typographic-conventions' id='QQ2-3-31' target='tex4ht-main'>Typographic Conventions</a></span>
+<br /><span class='sectionToc'>1.3 <a href='book3.html#the-fricas-language' id='QQ2-3-32' target='tex4ht-main'>The FriCAS Language</a></span>
+<br /><span class='subsectionToc'>1.3.1 <a href='book3.html#arithmetic-expressions' id='QQ2-3-33' target='tex4ht-main'>Arithmetic Expressions</a></span>
+<br /><span class='subsectionToc'>1.3.2 <a href='book3.html#previous-results' id='QQ2-3-34' target='tex4ht-main'>Previous Results</a></span>
+<br /><span class='subsectionToc'>1.3.3 <a href='book3.html#some-types' id='QQ2-3-35' target='tex4ht-main'>Some Types</a></span>
+<br /><span class='subsectionToc'>1.3.4 <a href='book3.html#symbols-variables-assignments-and-declarations' id='QQ2-3-36' target='tex4ht-main'>Symbols, Variables, Assignments, and Declarations</a></span>
+<br /><span class='subsectionToc'>1.3.5 <a href='book3.html#conversion' id='QQ2-3-37' target='tex4ht-main'>Conversion</a></span>
+<br /><span class='subsectionToc'>1.3.6 <a href='book3.html#calling-functions' id='QQ2-3-38' target='tex4ht-main'>Calling Functions</a></span>
+<br /><span class='subsectionToc'>1.3.7 <a href='book3.html#some-predefined-macros' id='QQ2-3-39' target='tex4ht-main'>Some Predefined Macros</a></span>
+<br /><span class='subsectionToc'>1.3.8 <a href='book3.html#long-lines' id='QQ2-3-40' target='tex4ht-main'>Long Lines</a></span>
+<br /><span class='subsectionToc'>1.3.9 <a href='book3.html#comments' id='QQ2-3-41' target='tex4ht-main'>Comments</a></span>
+<br /><span class='sectionToc'>1.4 <a href='book3.html#graphics1' id='QQ2-3-42' target='tex4ht-main'>Graphics</a></span>
+<br /><span class='sectionToc'>1.5 <a href='book3.html#numbers' id='QQ2-3-43' target='tex4ht-main'>Numbers</a></span>
+<br /><span class='sectionToc'>1.6 <a href='book3.html#data-structures1' id='QQ2-3-44' target='tex4ht-main'>Data Structures</a></span>
+<br /><span class='sectionToc'>1.7 <a href='book3.html#expanding-to-higher-dimensions' id='QQ2-3-45' target='tex4ht-main'>Expanding to Higher Dimensions</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>1.8 <a href='book3.html#writing-your-own-functions' id='QQ2-3-46' target='tex4ht-main'>Writing Your Own Functions</a></span>
+<br /><span class='sectionToc'>1.9 <a href='book3.html#polynomials' id='QQ2-3-47' target='tex4ht-main'>Polynomials</a></span>
+<br /><span class='sectionToc'>1.10 <a href='book3.html#limits' id='QQ2-3-48' target='tex4ht-main'>Limits</a></span>
+<br /><span class='sectionToc'>1.11 <a href='book3.html#series' id='QQ2-3-49' target='tex4ht-main'>Series</a></span>
+<br /><span class='sectionToc'>1.12 <a href='book3.html#derivatives' id='QQ2-3-50' target='tex4ht-main'>Derivatives</a></span>
+<br /><span class='sectionToc'>1.13 <a href='book3.html#integration' id='QQ2-3-51' target='tex4ht-main'>Integration</a></span>
+<br /><span class='sectionToc'>1.14 <a href='book3.html#differential-equations' id='QQ2-3-52' target='tex4ht-main'>Differential Equations</a></span>
+<br /><span class='sectionToc'>1.15 <a href='book3.html#solution-of-equations' id='QQ2-3-53' target='tex4ht-main'>Solution of Equations</a></span>
+<br /><span class='sectionToc'>1.16 <a href='book3.html#system-commands' id='QQ2-3-54' target='tex4ht-main'>System Commands</a></span>
+<br /><span class='chapterToc'>2 <a href='book3.html#using-types-and-modes' id='QQ2-3-55' target='tex4ht-main'>Using Types and Modes</a></span>
+<br /><span class='sectionToc'>2.1 <a href='book3.html#the-basic-idea' id='QQ2-3-56' target='tex4ht-main'>The Basic Idea</a></span>
+<br /><span class='subsectionToc'>2.1.1 <a href='book3.html#domain-constructors' id='QQ2-3-57' target='tex4ht-main'>Domain Constructors</a></span>
+<br /><span class='sectionToc'>2.2 <a href='book3.html#writing-types-and-modes' id='QQ2-3-58' target='tex4ht-main'>Writing Types and Modes</a></span>
+<br /><span class='subsectionToc'>2.2.1 <a href='book3.html#types-with-no-arguments' id='QQ2-3-59' target='tex4ht-main'>Types with No Arguments</a></span>
+<br /><span class='subsectionToc'>2.2.2 <a href='book3.html#types-with-one-argument' id='QQ2-3-60' target='tex4ht-main'>Types with One Argument</a></span>
+<br /><span class='subsectionToc'>2.2.3 <a href='book3.html#types-with-more-than-one-argument' id='QQ2-3-61' target='tex4ht-main'>Types with More Than One Argument</a></span>
+<br /><span class='subsectionToc'>2.2.4 <a href='book3.html#modes' id='QQ2-3-62' target='tex4ht-main'>Modes</a></span>
+<br /><span class='subsectionToc'>2.2.5 <a href='book3.html#abbreviations' id='QQ2-3-63' target='tex4ht-main'>Abbreviations</a></span>
+<br /><span class='sectionToc'>2.3 <a href='book3.html#declarations' id='QQ2-3-64' target='tex4ht-main'>Declarations</a></span>
+<br /><span class='sectionToc'>2.4 <a href='book3.html#records' id='QQ2-3-65' target='tex4ht-main'>Records</a></span>
+<br /><span class='sectionToc'>2.5 <a href='book3.html#unions' id='QQ2-3-66' target='tex4ht-main'>Unions</a></span>
+<br /><span class='subsectionToc'>2.5.1 <a href='book3.html#unions-without-selectors' id='QQ2-3-67' target='tex4ht-main'>Unions Without Selectors</a></span>
+<br /><span class='subsectionToc'>2.5.2 <a href='book3.html#unions-with-selectors' id='QQ2-3-68' target='tex4ht-main'>Unions With Selectors</a></span>
+<br /><span class='sectionToc'>2.6 <a href='book3.html#the-any-domain' id='QQ2-3-69' target='tex4ht-main'>The “Any” Domain</a></span>
+<br /><span class='sectionToc'>2.7 <a href='book3.html#conversion1' id='QQ2-3-70' target='tex4ht-main'>Conversion</a></span>
+<br /><span class='sectionToc'>2.8 <a href='book3.html#subdomains-again' id='QQ2-3-71' target='tex4ht-main'>Subdomains Again</a></span>
+<br /><span class='sectionToc'>2.9 <a href='book3.html#package-calling-and-target-types' id='QQ2-3-72' target='tex4ht-main'>Package Calling and Target Types</a></span>
+<br /><span class='sectionToc'>2.10 <a href='book3.html#resolving-types' id='QQ2-3-73' target='tex4ht-main'>Resolving Types</a></span>
+<br /><span class='sectionToc'>2.11 <a href='book3.html#exposing-domains-and-packages' id='QQ2-3-74' target='tex4ht-main'>Exposing Domains and Packages</a></span>
+<br /><span class='sectionToc'>2.12 <a href='book3.html#commands-for-snooping' id='QQ2-3-75' target='tex4ht-main'>Commands for Snooping</a></span>
+<br /><span class='chapterToc'>3 <a href='book3.html#using-hyperdoc' id='QQ2-3-76' target='tex4ht-main'>Using HyperDoc</a></span>
+<br /><span class='sectionToc'>3.1 <a href='book3.html#headings' id='QQ2-3-77' target='tex4ht-main'>Headings</a></span>
+<br /><span class='sectionToc'>3.2 <a href='book3.html#key-definitions' id='QQ2-3-78' target='tex4ht-main'>Key Definitions</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>3.3 <a href='book3.html#scroll-bars' id='QQ2-3-79' target='tex4ht-main'>Scroll Bars</a></span>
+<br /><span class='sectionToc'>3.4 <a href='book3.html#input-areas' id='QQ2-3-80' target='tex4ht-main'>Input Areas</a></span>
+<br /><span class='sectionToc'>3.5 <a href='book3.html#radio-buttons-and-toggles' id='QQ2-3-81' target='tex4ht-main'>Radio Buttons and Toggles</a></span>
+<br /><span class='sectionToc'>3.6 <a href='book3.html#search-strings' id='QQ2-3-82' target='tex4ht-main'>Search Strings</a></span>
+<br /><span class='subsectionToc'>3.6.1 <a href='book3.html#logical-searches' id='QQ2-3-83' target='tex4ht-main'>Logical Searches</a></span>
+<br /><span class='sectionToc'>3.7 <a href='book3.html#example-pages' id='QQ2-3-84' target='tex4ht-main'>Example Pages</a></span>
+<br /><span class='sectionToc'>3.8 <a href='book3.html#x-window-resources-for-hyperdoc' id='QQ2-3-85' target='tex4ht-main'>X Window Resources for HyperDoc</a></span>
+<br /><span class='chapterToc'>4 <a href='book3.html#input-files-and-output-styles' id='QQ2-3-86' target='tex4ht-main'>Input Files and Output Styles</a></span>
+<br /><span class='sectionToc'>4.1 <a href='book3.html#input-files' id='QQ2-3-87' target='tex4ht-main'>Input Files</a></span>
+<br /><span class='sectionToc'>4.2 <a href='book3.html#the-fricasinput-file' id='QQ2-3-88' target='tex4ht-main'>The .fricas.input File</a></span>
+<br /><span class='sectionToc'>4.3 <a href='book3.html#common-features-of-using-output-formats' id='QQ2-3-89' target='tex4ht-main'>Common Features of Using Output Formats</a></span>
+<br /><span class='sectionToc'>4.4 <a href='book3.html#monospace-twodimensional-mathematical-format' id='QQ2-3-90' target='tex4ht-main'>Monospace Two-Dimensional Mathematical Format</a></span>
+<br /><span class='sectionToc'>4.5 <a href='book3.html#tex-format' id='QQ2-3-91' target='tex4ht-main'>TeX Format</a></span>
+<br /><span class='sectionToc'>4.6 <a href='book3.html#mathml-format' id='QQ2-3-92' target='tex4ht-main'>MathML Format</a></span>
+<br /><span class='sectionToc'>4.7 <a href='book3.html#texmacs-format' id='QQ2-3-93' target='tex4ht-main'>TeXmacs Format</a></span>
+<br /><span class='sectionToc'>4.8 <a href='book3.html#fortran-format' id='QQ2-3-94' target='tex4ht-main'>FORTRAN Format</a></span>
+<br /><span class='sectionToc'>4.9 <a href='book3.html#general-fortrangeneration-utilities-in-fricas' id='QQ2-3-95' target='tex4ht-main'>General Fortran-generation utilities in FriCAS</a></span>
+<br /><span class='subsectionToc'>4.9.1 <a href='book3.html#template-manipulation' id='QQ2-3-96' target='tex4ht-main'>Template Manipulation</a></span>
+<br /><span class='subsectionToc'>4.9.2 <a href='book3.html#manipulating-the-fortran-output-stream' id='QQ2-3-97' target='tex4ht-main'>Manipulating the Fortran Output Stream</a></span>
+<br /><span class='subsectionToc'>4.9.3 <a href='book3.html#fortran-types' id='QQ2-3-98' target='tex4ht-main'>Fortran Types</a></span>
+<br /><span class='subsectionToc'>4.9.4 <a href='book3.html#fortranscalartype' id='QQ2-3-99' target='tex4ht-main'>FortranScalarType</a></span>
+<br /><span class='subsectionToc'>4.9.5 <a href='book3.html#fortrantype' id='QQ2-3-100' target='tex4ht-main'>FortranType</a></span>
+<br /><span class='subsectionToc'>4.9.6 <a href='book3.html#symboltable' id='QQ2-3-101' target='tex4ht-main'>SymbolTable</a></span>
+<br /><span class='subsectionToc'>4.9.7 <a href='book3.html#thesymboltable' id='QQ2-3-102' target='tex4ht-main'>TheSymbolTable</a></span>
+<br /><span class='subsectionToc'>4.9.8 <a href='book3.html#advanced-fortran-code-generation' id='QQ2-3-103' target='tex4ht-main'>Advanced Fortran Code Generation</a></span>
+<br /><span class='subsectionToc'>4.9.9 <a href='book3.html#switch' id='QQ2-3-104' target='tex4ht-main'>Switch</a></span>
+<br /><span class='subsectionToc'>4.9.10 <a href='book3.html#fortrancode' id='QQ2-3-105' target='tex4ht-main'>FortranCode</a></span>
+<br /><span class='subsectionToc'>4.9.11 <a href='book3.html#fortranprogram' id='QQ2-3-106' target='tex4ht-main'>FortranProgram</a></span>
+<br /><span class='chapterToc'>5 <a href='book3.html#introduction-to-the-fricas-interactive-language' id='QQ2-3-107' target='tex4ht-main'>Introduction to the FriCAS Interactive Language</a></span>
+<br /><span class='sectionToc'>5.1 <a href='book3.html#immediate-and-delayed-assignments' id='QQ2-3-108' target='tex4ht-main'>Immediate and Delayed Assignments</a></span>
+<br /><span class='sectionToc'>5.2 <a href='book3.html#blocks' id='QQ2-3-109' target='tex4ht-main'>Blocks</a></span>
+<br /><span class='sectionToc'>5.3 <a href='book3.html#ifthenelse' id='QQ2-3-110' target='tex4ht-main'>if-then-else</a></span>
+<br /><span class='sectionToc'>5.4 <a href='book3.html#loops' id='QQ2-3-111' target='tex4ht-main'>Loops</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='subsectionToc'>5.4.1 <a href='book3.html#compiling-vs-interpreting-loops' id='QQ2-3-112' target='tex4ht-main'>Compiling vs. Interpreting Loops</a></span>
+<br /><span class='subsectionToc'>5.4.2 <a href='book3.html#return-in-loops' id='QQ2-3-113' target='tex4ht-main'>return in Loops</a></span>
+<br /><span class='subsectionToc'>5.4.3 <a href='book3.html#break-in-loops' id='QQ2-3-114' target='tex4ht-main'>break in Loops</a></span>
+<br /><span class='subsectionToc'>5.4.4 <a href='book3.html#break-vs-in-loop-bodies' id='QQ2-3-115' target='tex4ht-main'>break vs. <span class='cmtt-10'>=&gt; </span>in Loop Bodies</a></span>
+<br /><span class='subsectionToc'>5.4.5 <a href='book3.html#more-examples-of-break' id='QQ2-3-116' target='tex4ht-main'>More Examples of break</a></span>
+<br /><span class='subsectionToc'>5.4.6 <a href='book3.html#iterate-in-loops' id='QQ2-3-117' target='tex4ht-main'>iterate in Loops</a></span>
+<br /><span class='subsectionToc'>5.4.7 <a href='book3.html#while-loops' id='QQ2-3-118' target='tex4ht-main'>while Loops</a></span>
+<br /><span class='subsectionToc'>5.4.8 <a href='book3.html#for-loops' id='QQ2-3-119' target='tex4ht-main'>for Loops</a></span>
+<br /><span class='subsectionToc'>5.4.9 <a href='book3.html#for-i-in-nm-repeat' id='QQ2-3-120' target='tex4ht-main'>for i in n..m repeat</a></span>
+<br /><span class='subsectionToc'>5.4.10 <a href='book3.html#for-i-in-nm-by-s-repeat' id='QQ2-3-121' target='tex4ht-main'>for i in n..m by s repeat</a></span>
+<br /><span class='subsectionToc'>5.4.11 <a href='book3.html#for-i-in-n-repeat' id='QQ2-3-122' target='tex4ht-main'>for i in n.. repeat</a></span>
+<br /><span class='subsectionToc'>5.4.12 <a href='book3.html#for-x-in-l-repeat' id='QQ2-3-123' target='tex4ht-main'>for x in l repeat</a></span>
+<br /><span class='subsectionToc'>5.4.13 <a href='book3.html#such-that-predicates' id='QQ2-3-124' target='tex4ht-main'>“Such that” Predicates</a></span>
+<br /><span class='subsectionToc'>5.4.14 <a href='book3.html#parallel-iteration' id='QQ2-3-125' target='tex4ht-main'>Parallel Iteration</a></span>
+<br /><span class='sectionToc'>5.5 <a href='book3.html#creating-lists-and-streams-with-iterators' id='QQ2-3-126' target='tex4ht-main'>Creating Lists and Streams with Iterators</a></span>
+<br /><span class='sectionToc'>5.6 <a href='book3.html#an-example-streams-of-primes' id='QQ2-3-127' target='tex4ht-main'>An Example: Streams of Primes</a></span>
+<br /><span class='chapterToc'>6 <a href='book3.html#userdefined-functions-macros-and-rules' id='QQ2-3-128' target='tex4ht-main'>User-Defined Functions, Macros and Rules</a></span>
+<br /><span class='sectionToc'>6.1 <a href='book3.html#functions-vs-macros' id='QQ2-3-129' target='tex4ht-main'>Functions vs. Macros</a></span>
+<br /><span class='sectionToc'>6.2 <a href='book3.html#macros' id='QQ2-3-130' target='tex4ht-main'>Macros</a></span>
+<br /><span class='sectionToc'>6.3 <a href='book3.html#introduction-to-functions' id='QQ2-3-131' target='tex4ht-main'>Introduction to Functions</a></span>
+<br /><span class='sectionToc'>6.4 <a href='book3.html#declaring-the-type-of-functions' id='QQ2-3-132' target='tex4ht-main'>Declaring the Type of Functions</a></span>
+<br /><span class='sectionToc'>6.5 <a href='book3.html#oneline-functions' id='QQ2-3-133' target='tex4ht-main'>One-Line Functions</a></span>
+<br /><span class='sectionToc'>6.6 <a href='book3.html#declared-vs-undeclared-functions' id='QQ2-3-134' target='tex4ht-main'>Declared vs. Undeclared Functions</a></span>
+<br /><span class='sectionToc'>6.7 <a href='book3.html#functions-vs-operations' id='QQ2-3-135' target='tex4ht-main'>Functions vs. Operations</a></span>
+<br /><span class='sectionToc'>6.8 <a href='book3.html#delayed-assignments-vs-functions-with-no-arguments' id='QQ2-3-136' target='tex4ht-main'>Delayed Assignments vs. Functions with No Arguments</a></span>
+<br /><span class='sectionToc'>6.9 <a href='book3.html#how-fricas-determines-what-function-to-use' id='QQ2-3-137' target='tex4ht-main'>How FriCAS Determines What Function to Use</a></span>
+<br /><span class='sectionToc'>6.10 <a href='book3.html#compiling-vs-interpreting' id='QQ2-3-138' target='tex4ht-main'>Compiling vs. Interpreting</a></span>
+<br /><span class='sectionToc'>6.11 <a href='book3.html#piecewise-function-definitions' id='QQ2-3-139' target='tex4ht-main'>Piece-Wise Function Definitions</a></span>
+<br /><span class='subsectionToc'>6.11.1 <a href='book3.html#a-basic-example' id='QQ2-3-140' target='tex4ht-main'>A Basic Example</a></span>
+<br /><span class='subsectionToc'>6.11.2 <a href='book3.html#picking-up-the-pieces' id='QQ2-3-141' target='tex4ht-main'>Picking Up the Pieces</a></span>
+<br /><span class='subsectionToc'>6.11.3 <a href='book3.html#predicates' id='QQ2-3-142' target='tex4ht-main'>Predicates</a></span>
+<br /><span class='sectionToc'>6.12 <a href='book3.html#caching-previously-computed-results' id='QQ2-3-143' target='tex4ht-main'>Caching Previously Computed Results</a></span>
+<br /><span class='sectionToc'>6.13 <a href='book3.html#recurrence-relations' id='QQ2-3-144' target='tex4ht-main'>Recurrence Relations</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>6.14 <a href='book3.html#making-functions-from-objects' id='QQ2-3-145' target='tex4ht-main'>Making Functions from Objects</a></span>
+<br /><span class='sectionToc'>6.15 <a href='book3.html#functions-defined-with-blocks' id='QQ2-3-146' target='tex4ht-main'>Functions Defined with Blocks</a></span>
+<br /><span class='sectionToc'>6.16 <a href='book3.html#free-and-local-variables' id='QQ2-3-147' target='tex4ht-main'>Free and Local Variables</a></span>
+<br /><span class='sectionToc'>6.17 <a href='book3.html#anonymous-functions' id='QQ2-3-148' target='tex4ht-main'>Anonymous Functions</a></span>
+<br /><span class='subsectionToc'>6.17.1 <a href='book3.html#some-examples' id='QQ2-3-149' target='tex4ht-main'>Some Examples</a></span>
+<br /><span class='subsectionToc'>6.17.2 <a href='book3.html#declaring-anonymous-functions' id='QQ2-3-150' target='tex4ht-main'>Declaring Anonymous Functions</a></span>
+<br /><span class='sectionToc'>6.18 <a href='book3.html#example-a-database' id='QQ2-3-151' target='tex4ht-main'>Example: A Database</a></span>
+<br /><span class='sectionToc'>6.19 <a href='book3.html#example-a-famous-triangle' id='QQ2-3-152' target='tex4ht-main'>Example: A Famous Triangle</a></span>
+<br /><span class='sectionToc'>6.20 <a href='book3.html#example-testing-for-palindromes' id='QQ2-3-153' target='tex4ht-main'>Example: Testing for Palindromes</a></span>
+<br /><span class='sectionToc'>6.21 <a href='book3.html#rules-and-pattern-matching' id='QQ2-3-154' target='tex4ht-main'>Rules and Pattern Matching</a></span>
+<br /><span class='chapterToc'>7 <a href='book3.html#graphics2' id='QQ2-3-155' target='tex4ht-main'>Graphics</a></span>
+<br /><span class='sectionToc'>7.1 <a href='book3.html#twodimensional-graphics' id='QQ2-3-156' target='tex4ht-main'>Two-Dimensional Graphics</a></span>
+<br /><span class='subsectionToc'>7.1.1 <a href='book3.html#plotting-twodimensional-functions-of-one-variable' id='QQ2-3-157' target='tex4ht-main'>Plotting Two-Dimensional Functions of One Variable</a></span>
+<br /><span class='subsectionToc'>7.1.2 <a href='book3.html#plotting-twodimensional-parametric-plane-curves' id='QQ2-3-158' target='tex4ht-main'>Plotting Two-Dimensional Parametric Plane Curves</a></span>
+<br /><span class='subsectionToc'>7.1.3 <a href='book3.html#plotting-plane-algebraic-curves' id='QQ2-3-159' target='tex4ht-main'>Plotting Plane Algebraic Curves</a></span>
+<br /><span class='subsectionToc'>7.1.4 <a href='book3.html#twodimensional-options' id='QQ2-3-160' target='tex4ht-main'>Two-Dimensional Options</a></span>
+<br /><span class='subsectionToc'>7.1.5 <a href='book3.html#color' id='QQ2-3-161' target='tex4ht-main'>Color</a></span>
+<br /><span class='subsectionToc'>7.1.6 <a href='book3.html#palette' id='QQ2-3-162' target='tex4ht-main'>Palette</a></span>
+<br /><span class='subsectionToc'>7.1.7 <a href='book3.html#twodimensional-controlpanel' id='QQ2-3-163' target='tex4ht-main'>Two-Dimensional Control-Panel</a></span>
+<br /><span class='subsectionToc'>7.1.8 <a href='book3.html#operations-for-twodimensional-graphics' id='QQ2-3-168' target='tex4ht-main'>Operations for Two-Dimensional Graphics</a></span>
+<br /><span class='subsectionToc'>7.1.9 <a href='book3.html#addendum-building-twodimensional-graphs' id='QQ2-3-169' target='tex4ht-main'>Addendum: Building Two-Dimensional Graphs</a></span>
+<br /><span class='subsectionToc'>7.1.10 <a href='book3.html#addendum-appending-a-graph-to-a-viewport-window-containing-a-graph' id='QQ2-3-172' target='tex4ht-main'>Addendum: Appending a Graph to a Viewport Window Containing a Graph</a></span>
+<br /><span class='sectionToc'>7.2 <a href='book3.html#threedimensional-graphics' id='QQ2-3-173' target='tex4ht-main'>Three-Dimensional Graphics</a></span>
+<br /><span class='subsectionToc'>7.2.1 <a href='book3.html#plotting-threedimensional-functions-of-two-variables' id='QQ2-3-174' target='tex4ht-main'>Plotting Three-Dimensional Functions of Two Variables</a></span>
+<br /><span class='subsectionToc'>7.2.2 <a href='book3.html#plotting-threedimensional-parametric-space-curves' id='QQ2-3-175' target='tex4ht-main'>Plotting Three-Dimensional Parametric Space Curves</a></span>
+<br /><span class='subsectionToc'>7.2.3 <a href='book3.html#plotting-threedimensional-parametric-surfaces' id='QQ2-3-176' target='tex4ht-main'>Plotting Three-Dimensional Parametric Surfaces</a></span>
+<br /><span class='subsectionToc'>7.2.4 <a href='book3.html#threedimensional-options' id='QQ2-3-177' target='tex4ht-main'>Three-Dimensional Options</a></span>
+<br /><span class='subsectionToc'>7.2.5 <a href='book3.html#the-makeobject-command' id='QQ2-3-178' target='tex4ht-main'>The makeObject Command</a></span>
+<br /><span class='subsectionToc'>7.2.6 <a href='book3.html#building-threedimensional-objects-from-primitives' id='QQ2-3-179' target='tex4ht-main'>Building Three-Dimensional Objects From Primitives</a></span>
+<br /><span class='subsectionToc'>7.2.7 <a href='book3.html#coordinate-system-transformations' id='QQ2-3-181' target='tex4ht-main'>Coordinate System Transformations</a></span>
+<br /><span class='subsectionToc'>7.2.8 <a href='book3.html#threedimensional-clipping' id='QQ2-3-182' target='tex4ht-main'>Three-Dimensional Clipping</a></span>
+<br /><span class='subsectionToc'>7.2.9 <a href='book3.html#threedimensional-controlpanel' id='QQ2-3-183' target='tex4ht-main'>Three-Dimensional Control-Panel</a></span>
+<br /><span class='subsectionToc'>7.2.10 <a href='book3.html#operations-for-threedimensional-graphics' id='QQ2-3-190' target='tex4ht-main'>Operations for Three-Dimensional Graphics</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='subsectionToc'>7.2.11 <a href='book3.html#customization-using-xdefaults' id='QQ2-3-191' target='tex4ht-main'>Customization using .Xdefaults</a></span>
+<br /><span class='partToc'>II  <a href='book3.html#advanced-problem-solving-and-examples' id='QQ2-3-192' target='tex4ht-main'>Advanced Problem Solving and Examples</a></span>
+<br /><span class='chapterToc'>8 <a href='book3.html#advanced-problem-solving' id='QQ2-3-193' target='tex4ht-main'>Advanced Problem Solving</a></span>
+<br /><span class='sectionToc'>8.1 <a href='book3.html#numeric-functions' id='QQ2-3-194' target='tex4ht-main'>Numeric Functions</a></span>
+<br /><span class='sectionToc'>8.2 <a href='book3.html#polynomial-factorization' id='QQ2-3-195' target='tex4ht-main'>Polynomial Factorization</a></span>
+<br /><span class='subsectionToc'>8.2.1 <a href='book3.html#integer-and-rational-number-coefficients' id='QQ2-3-196' target='tex4ht-main'>Integer and Rational Number Coefficients</a></span>
+<br /><span class='subsectionToc'>8.2.2 <a href='book3.html#finite-field-coefficients' id='QQ2-3-197' target='tex4ht-main'>Finite Field Coefficients</a></span>
+<br /><span class='subsectionToc'>8.2.3 <a href='book3.html#simple-algebraic-extension-field-coefficients' id='QQ2-3-198' target='tex4ht-main'>Simple Algebraic Extension Field Coefficients</a></span>
+<br /><span class='subsectionToc'>8.2.4 <a href='book3.html#factoring-rational-functions' id='QQ2-3-199' target='tex4ht-main'>Factoring Rational Functions</a></span>
+<br /><span class='sectionToc'>8.3 <a href='book3.html#manipulating-symbolic-roots-of-a-polynomial' id='QQ2-3-200' target='tex4ht-main'>Manipulating Symbolic Roots of a Polynomial</a></span>
+<br /><span class='subsectionToc'>8.3.1 <a href='book3.html#using-a-single-root-of-a-polynomial' id='QQ2-3-201' target='tex4ht-main'>Using a Single Root of a Polynomial</a></span>
+<br /><span class='subsectionToc'>8.3.2 <a href='book3.html#using-all-roots-of-a-polynomial' id='QQ2-3-202' target='tex4ht-main'>Using All Roots of a Polynomial</a></span>
+<br /><span class='sectionToc'>8.4 <a href='book3.html#computation-of-eigenvalues-and-eigenvectors' id='QQ2-3-203' target='tex4ht-main'>Computation of Eigenvalues and Eigenvectors</a></span>
+<br /><span class='sectionToc'>8.5 <a href='book3.html#solution-of-linear-and-polynomial-equations' id='QQ2-3-204' target='tex4ht-main'>Solution of Linear and Polynomial Equations</a></span>
+<br /><span class='subsectionToc'>8.5.1 <a href='book3.html#solution-of-systems-of-linear-equations' id='QQ2-3-205' target='tex4ht-main'>Solution of Systems of Linear Equations</a></span>
+<br /><span class='subsectionToc'>8.5.2 <a href='book3.html#solution-of-a-single-polynomial-equation' id='QQ2-3-206' target='tex4ht-main'>Solution of a Single Polynomial Equation</a></span>
+<br /><span class='subsectionToc'>8.5.3 <a href='book3.html#solution-of-systems-of-polynomial-equations' id='QQ2-3-207' target='tex4ht-main'>Solution of Systems of Polynomial Equations</a></span>
+<br /><span class='sectionToc'>8.6 <a href='book3.html#limits1' id='QQ2-3-208' target='tex4ht-main'>Limits</a></span>
+<br /><span class='sectionToc'>8.7 <a href='book3.html#laplace-transforms' id='QQ2-3-209' target='tex4ht-main'>Laplace Transforms</a></span>
+<br /><span class='sectionToc'>8.8 <a href='book3.html#integration1' id='QQ2-3-210' target='tex4ht-main'>Integration</a></span>
+<br /><span class='sectionToc'>8.9 <a href='book3.html#working-with-power-series' id='QQ2-3-211' target='tex4ht-main'>Working with Power Series</a></span>
+<br /><span class='subsectionToc'>8.9.1 <a href='book3.html#creation-of-power-series' id='QQ2-3-212' target='tex4ht-main'>Creation of Power Series</a></span>
+<br /><span class='subsectionToc'>8.9.2 <a href='book3.html#coefficients-of-power-series' id='QQ2-3-213' target='tex4ht-main'>Coefficients of Power Series</a></span>
+<br /><span class='subsectionToc'>8.9.3 <a href='book3.html#power-series-arithmetic' id='QQ2-3-214' target='tex4ht-main'>Power Series Arithmetic</a></span>
+<br /><span class='subsectionToc'>8.9.4 <a href='book3.html#functions-on-power-series' id='QQ2-3-215' target='tex4ht-main'>Functions on Power Series</a></span>
+<br /><span class='subsectionToc'>8.9.5 <a href='book3.html#converting-to-power-series' id='QQ2-3-216' target='tex4ht-main'>Converting to Power Series</a></span>
+<br /><span class='subsectionToc'>8.9.6 <a href='book3.html#power-series-from-formulas' id='QQ2-3-217' target='tex4ht-main'>Power Series from Formulas</a></span>
+<br /><span class='subsectionToc'>8.9.7 <a href='book3.html#substituting-numerical-values-in-power-series' id='QQ2-3-218' target='tex4ht-main'>Substituting Numerical Values in Power Series</a></span>
+<br /><span class='subsectionToc'>8.9.8 <a href='book3.html#example-bernoulli-polynomials-and-sums-of-powers' id='QQ2-3-219' target='tex4ht-main'>Example: Bernoulli Polynomials and Sums of Powers</a></span>
+<br /><span class='sectionToc'>8.10 <a href='book3.html#solution-of-differential-equations' id='QQ2-3-220' target='tex4ht-main'>Solution of Differential Equations</a></span>
+<br /><span class='subsectionToc'>8.10.1 <a href='book3.html#closedform-solutions-of-linear-differential-equations' id='QQ2-3-221' target='tex4ht-main'>Closed-Form Solutions of Linear Differential Equations</a></span>
+<br /><span class='subsectionToc'>8.10.2 <a href='book3.html#closedform-solutions-of-nonlinear-differential-equations' id='QQ2-3-222' target='tex4ht-main'>Closed-Form Solutions of Non-Linear Differential Equations</a></span>
+<br /><span class='subsectionToc'>8.10.3 <a href='book3.html#power-series-solutions-of-differential-equations' id='QQ2-3-223' target='tex4ht-main'>Power Series Solutions of Differential Equations</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>8.11 <a href='book3.html#finite-fields' id='QQ2-3-224' target='tex4ht-main'>Finite Fields</a></span>
+<br /><span class='subsectionToc'>8.11.1 <a href='book3.html#modular-arithmetic-and-prime-fields' id='QQ2-3-225' target='tex4ht-main'>Modular Arithmetic and Prime Fields</a></span>
+<br /><span class='subsectionToc'>8.11.2 <a href='book3.html#extensions-of-finite-fields' id='QQ2-3-226' target='tex4ht-main'>Extensions of Finite Fields</a></span>
+<br /><span class='subsectionToc'>8.11.3 <a href='book3.html#irreducible-modulus-polynomial-representations' id='QQ2-3-227' target='tex4ht-main'>Irreducible Modulus Polynomial Representations</a></span>
+<br /><span class='subsectionToc'>8.11.4 <a href='book3.html#cyclic-group-representations' id='QQ2-3-228' target='tex4ht-main'>Cyclic Group Representations</a></span>
+<br /><span class='subsectionToc'>8.11.5 <a href='book3.html#normal-basis-representations' id='QQ2-3-229' target='tex4ht-main'>Normal Basis Representations</a></span>
+<br /><span class='subsectionToc'>8.11.6 <a href='book3.html#conversion-operations-for-finite-fields' id='QQ2-3-230' target='tex4ht-main'>Conversion Operations for Finite Fields</a></span>
+<br /><span class='subsectionToc'>8.11.7 <a href='book3.html#utility-operations-for-finite-fields' id='QQ2-3-231' target='tex4ht-main'>Utility Operations for Finite Fields</a></span>
+<br /><span class='sectionToc'>8.12 <a href='book3.html#primary-decomposition-of-ideals' id='QQ2-3-232' target='tex4ht-main'>Primary Decomposition of Ideals</a></span>
+<br /><span class='sectionToc'>8.13 <a href='book3.html#computation-of-galois-groups' id='QQ2-3-233' target='tex4ht-main'>Computation of Galois Groups</a></span>
+<br /><span class='sectionToc'>8.14 <a href='book3.html#nonassociative-algebras-and-modelling-genetic-laws' id='QQ2-3-234' target='tex4ht-main'>Non-Associative Algebras and Modelling Genetic Laws</a></span>
+<br /><span class='sectionToc'>8.15 <a href='book3.html#matrix-manipulation' id='QQ2-3-235' target='tex4ht-main'>Matrix Manipulation</a></span>
+<br /><span class='chapterToc'>9 <a href='book3.html#some-examples-of-domains-and-packages' id='QQ2-3-236' target='tex4ht-main'>Some Examples of Domains and Packages</a></span>
+<br /><span class='sectionToc'>9.1 <a href='book3.html#associationlist' id='QQ2-3-237' target='tex4ht-main'>AssociationList</a></span>
+<br /><span class='sectionToc'>9.2 <a href='book3.html#balancedbinarytree' id='QQ2-3-238' target='tex4ht-main'>BalancedBinaryTree</a></span>
+<br /><span class='sectionToc'>9.3 <a href='book3.html#basicoperator' id='QQ2-3-239' target='tex4ht-main'>BasicOperator</a></span>
+<br /><span class='sectionToc'>9.4 <a href='book3.html#binaryexpansion' id='QQ2-3-240' target='tex4ht-main'>BinaryExpansion</a></span>
+<br /><span class='sectionToc'>9.5 <a href='book3.html#binarysearchtree' id='QQ2-3-241' target='tex4ht-main'>BinarySearchTree</a></span>
+<br /><span class='sectionToc'>9.6 <a href='book3.html#cardinalnumber' id='QQ2-3-242' target='tex4ht-main'>CardinalNumber</a></span>
+<br /><span class='sectionToc'>9.7 <a href='book3.html#cartesiantensor' id='QQ2-3-243' target='tex4ht-main'>CartesianTensor</a></span>
+<br /><span class='sectionToc'>9.8 <a href='book3.html#character' id='QQ2-3-253' target='tex4ht-main'>Character</a></span>
+<br /><span class='sectionToc'>9.9 <a href='book3.html#characterclass' id='QQ2-3-254' target='tex4ht-main'>CharacterClass</a></span>
+<br /><span class='sectionToc'>9.10 <a href='book3.html#cliffordalgebra' id='QQ2-3-255' target='tex4ht-main'>CliffordAlgebra</a></span>
+<br /><span class='subsectionToc'>9.10.1 <a href='book3.html#the-complex-numbers-as-a-clifford-algebra' id='QQ2-3-256' target='tex4ht-main'>The Complex Numbers as a Clifford Algebra</a></span>
+<br /><span class='subsectionToc'>9.10.2 <a href='book3.html#the-quaternion-numbers-as-a-clifford-algebra' id='QQ2-3-257' target='tex4ht-main'>The Quaternion Numbers as a Clifford Algebra</a></span>
+<br /><span class='subsectionToc'>9.10.3 <a href='book3.html#the-exterior-algebra-on-a-three-space' id='QQ2-3-258' target='tex4ht-main'>The Exterior Algebra on a Three Space</a></span>
+<br /><span class='subsectionToc'>9.10.4 <a href='book3.html#the-dirac-spin-algebra' id='QQ2-3-259' target='tex4ht-main'>The Dirac Spin Algebra</a></span>
+<br /><span class='sectionToc'>9.11 <a href='book3.html#complex' id='QQ2-3-260' target='tex4ht-main'>Complex</a></span>
+<br /><span class='sectionToc'>9.12 <a href='book3.html#continuedfraction' id='QQ2-3-261' target='tex4ht-main'>ContinuedFraction</a></span>
+<br /><span class='sectionToc'>9.13 <a href='book3.html#cycleindicators' id='QQ2-3-262' target='tex4ht-main'>CycleIndicators</a></span>
+<br /><span class='sectionToc'>9.14 <a href='book3.html#decimalexpansion' id='QQ2-3-263' target='tex4ht-main'>DecimalExpansion</a></span>
+<br /><span class='sectionToc'>9.15 <a href='book3.html#derhamcomplex' id='QQ2-3-264' target='tex4ht-main'>DeRhamComplex</a></span>
+<br /><span class='sectionToc'>9.16 <a href='book3.html#distributedmultivariatepolynomial' id='QQ2-3-265' target='tex4ht-main'>DistributedMultivariatePolynomial</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>9.17 <a href='book3.html#doublefloat' id='QQ2-3-266' target='tex4ht-main'>DoubleFloat</a></span>
+<br /><span class='sectionToc'>9.18 <a href='book3.html#eqtable' id='QQ2-3-267' target='tex4ht-main'>EqTable</a></span>
+<br /><span class='sectionToc'>9.19 <a href='book3.html#equation' id='QQ2-3-268' target='tex4ht-main'>Equation</a></span>
+<br /><span class='sectionToc'>9.20 <a href='book3.html#exit' id='QQ2-3-269' target='tex4ht-main'>Exit</a></span>
+<br /><span class='sectionToc'>9.21 <a href='book3.html#expression' id='QQ2-3-270' target='tex4ht-main'>Expression</a></span>
+<br /><span class='sectionToc'>9.22 <a href='book3.html#factored' id='QQ2-3-271' target='tex4ht-main'>Factored</a></span>
+<br /><span class='subsectionToc'>9.22.1 <a href='book3.html#decomposing-factored-objects' id='QQ2-3-272' target='tex4ht-main'>Decomposing Factored Objects</a></span>
+<br /><span class='subsectionToc'>9.22.2 <a href='book3.html#expanding-factored-objects' id='QQ2-3-273' target='tex4ht-main'>Expanding Factored Objects</a></span>
+<br /><span class='subsectionToc'>9.22.3 <a href='book3.html#arithmetic-with-factored-objects' id='QQ2-3-274' target='tex4ht-main'>Arithmetic with Factored Objects</a></span>
+<br /><span class='subsectionToc'>9.22.4 <a href='book3.html#creating-new-factored-objects' id='QQ2-3-275' target='tex4ht-main'>Creating New Factored Objects</a></span>
+<br /><span class='subsectionToc'>9.22.5 <a href='book3.html#factored-objects-with-variables' id='QQ2-3-276' target='tex4ht-main'>Factored Objects with Variables</a></span>
+<br /><span class='sectionToc'>9.23 <a href='book3.html#factoredfunctions' id='QQ2-3-277' target='tex4ht-main'>FactoredFunctions2</a></span>
+<br /><span class='sectionToc'>9.24 <a href='book3.html#file' id='QQ2-3-278' target='tex4ht-main'>File</a></span>
+<br /><span class='sectionToc'>9.25 <a href='book3.html#filename' id='QQ2-3-279' target='tex4ht-main'>FileName</a></span>
+<br /><span class='sectionToc'>9.26 <a href='book3.html#flexiblearray' id='QQ2-3-280' target='tex4ht-main'>FlexibleArray</a></span>
+<br /><span class='sectionToc'>9.27 <a href='book3.html#float' id='QQ2-3-281' target='tex4ht-main'>Float</a></span>
+<br /><span class='subsectionToc'>9.27.1 <a href='book3.html#introduction-to-float' id='QQ2-3-282' target='tex4ht-main'>Introduction to Float</a></span>
+<br /><span class='subsectionToc'>9.27.2 <a href='book3.html#conversion-functions' id='QQ2-3-283' target='tex4ht-main'>Conversion Functions</a></span>
+<br /><span class='subsectionToc'>9.27.3 <a href='book3.html#output-functions' id='QQ2-3-284' target='tex4ht-main'>Output Functions</a></span>
+<br /><span class='subsectionToc'>9.27.4 <a href='book3.html#an-example-determinant-of-a-hilbert-matrix' id='QQ2-3-285' target='tex4ht-main'>An Example: Determinant of a Hilbert Matrix</a></span>
+<br /><span class='sectionToc'>9.28 <a href='book3.html#fraction' id='QQ2-3-286' target='tex4ht-main'>Fraction</a></span>
+<br /><span class='sectionToc'>9.29 <a href='book3.html#freemagma' id='QQ2-3-287' target='tex4ht-main'>FreeMagma</a></span>
+<br /><span class='sectionToc'>9.30 <a href='book3.html#fullpartialfractionexpansion' id='QQ2-3-288' target='tex4ht-main'>FullPartialFractionExpansion</a></span>
+<br /><span class='sectionToc'>9.31 <a href='book3.html#generalquaternion' id='QQ2-3-289' target='tex4ht-main'>GeneralQuaternion</a></span>
+<br /><span class='sectionToc'>9.32 <a href='book3.html#generalsparsetable' id='QQ2-3-290' target='tex4ht-main'>GeneralSparseTable</a></span>
+<br /><span class='sectionToc'>9.33 <a href='book3.html#groebnerfactorizationpackage' id='QQ2-3-291' target='tex4ht-main'>GroebnerFactorizationPackage</a></span>
+<br /><span class='sectionToc'>9.34 <a href='book3.html#grouppresentation' id='QQ2-3-292' target='tex4ht-main'>GroupPresentation</a></span>
+<br /><span class='sectionToc'>9.35 <a href='book3.html#guesspolynomialinteger' id='QQ2-3-293' target='tex4ht-main'>GuessPolynomialInteger</a></span>
+<br /><span class='sectionToc'>9.36 <a href='book3.html#heap' id='QQ2-3-294' target='tex4ht-main'>Heap</a></span>
+<br /><span class='sectionToc'>9.37 <a href='book3.html#hexadecimalexpansion' id='QQ2-3-295' target='tex4ht-main'>HexadecimalExpansion</a></span>
+<br /><span class='sectionToc'>9.38 <a href='book3.html#integer' id='QQ2-3-296' target='tex4ht-main'>Integer</a></span>
+<br /><span class='subsectionToc'>9.38.1 <a href='book3.html#basic-functions' id='QQ2-3-297' target='tex4ht-main'>Basic Functions</a></span>
+<br /><span class='subsectionToc'>9.38.2 <a href='book3.html#primes-and-factorization' id='QQ2-3-298' target='tex4ht-main'>Primes and Factorization</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='subsectionToc'>9.38.3 <a href='book3.html#some-number-theoretic-functions' id='QQ2-3-299' target='tex4ht-main'>Some Number Theoretic Functions</a></span>
+<br /><span class='sectionToc'>9.39 <a href='book3.html#integerlineardependence' id='QQ2-3-300' target='tex4ht-main'>IntegerLinearDependence</a></span>
+<br /><span class='sectionToc'>9.40 <a href='book3.html#integernumbertheoryfunctions' id='QQ2-3-301' target='tex4ht-main'>IntegerNumberTheoryFunctions</a></span>
+<br /><span class='sectionToc'>9.41 <a href='book3.html#kernel' id='QQ2-3-302' target='tex4ht-main'>Kernel</a></span>
+<br /><span class='sectionToc'>9.42 <a href='book3.html#keyedaccessfile' id='QQ2-3-303' target='tex4ht-main'>KeyedAccessFile</a></span>
+<br /><span class='sectionToc'>9.43 <a href='book3.html#lazardsetsolvingpackage' id='QQ2-3-304' target='tex4ht-main'>LazardSetSolvingPackage</a></span>
+<br /><span class='sectionToc'>9.44 <a href='book3.html#lextriangularpackage' id='QQ2-3-305' target='tex4ht-main'>LexTriangularPackage</a></span>
+<br /><span class='sectionToc'>9.45 <a href='book3.html#library' id='QQ2-3-306' target='tex4ht-main'>Library</a></span>
+<br /><span class='sectionToc'>9.46 <a href='book3.html#lieexponentials' id='QQ2-3-307' target='tex4ht-main'>LieExponentials</a></span>
+<br /><span class='sectionToc'>9.47 <a href='book3.html#liepolynomial' id='QQ2-3-308' target='tex4ht-main'>LiePolynomial</a></span>
+<br /><span class='sectionToc'>9.48 <a href='book3.html#linearordinarydifferentialoperator' id='QQ2-3-309' target='tex4ht-main'>LinearOrdinaryDifferentialOperator</a></span>
+<br /><span class='subsectionToc'>9.48.1 <a href='book3.html#differential-operators-with-series-coefficients' id='QQ2-3-310' target='tex4ht-main'>Differential Operators with Series Coefficients</a></span>
+<br /><span class='sectionToc'>9.49 <a href='book3.html#linearordinarydifferentialoperator1' id='QQ2-3-311' target='tex4ht-main'>LinearOrdinaryDifferentialOperator1</a></span>
+<br /><span class='subsectionToc'>9.49.1 <a href='book3.html#differential-operators-with-rational-function-coefficients' id='QQ2-3-312' target='tex4ht-main'>Differential Operators with Rational Function Coefficients</a></span>
+<br /><span class='sectionToc'>9.50 <a href='book3.html#linearordinarydifferentialoperator2' id='QQ2-3-313' target='tex4ht-main'>LinearOrdinaryDifferentialOperator2</a></span>
+<br /><span class='subsectionToc'>9.50.1 <a href='book3.html#differential-operators-with-constant-coefficients' id='QQ2-3-314' target='tex4ht-main'>Differential Operators with Constant Coefficients</a></span>
+<br /><span class='subsectionToc'>9.50.2 <a href='book3.html#differential-operators-with-matrix-coefficients-operating-on-vectors' id='QQ2-3-315' target='tex4ht-main'>Differential Operators with Matrix Coefficients Operating on Vectors</a></span>
+<br /><span class='sectionToc'>9.51 <a href='book3.html#list' id='QQ2-3-316' target='tex4ht-main'>List</a></span>
+<br /><span class='subsectionToc'>9.51.1 <a href='book3.html#creating-lists' id='QQ2-3-317' target='tex4ht-main'>Creating Lists</a></span>
+<br /><span class='subsectionToc'>9.51.2 <a href='book3.html#accessing-list-elements' id='QQ2-3-318' target='tex4ht-main'>Accessing List Elements</a></span>
+<br /><span class='subsectionToc'>9.51.3 <a href='book3.html#changing-list-elements' id='QQ2-3-319' target='tex4ht-main'>Changing List Elements</a></span>
+<br /><span class='subsectionToc'>9.51.4 <a href='book3.html#other-functions' id='QQ2-3-320' target='tex4ht-main'>Other Functions</a></span>
+<br /><span class='subsectionToc'>9.51.5 <a href='book3.html#dot-dot' id='QQ2-3-321' target='tex4ht-main'>Dot, Dot</a></span>
+<br /><span class='sectionToc'>9.52 <a href='book3.html#lllreduction' id='QQ2-3-322' target='tex4ht-main'>LLLReduction</a></span>
+<br /><span class='sectionToc'>9.53 <a href='book3.html#lyndonword' id='QQ2-3-323' target='tex4ht-main'>LyndonWord</a></span>
+<br /><span class='sectionToc'>9.54 <a href='book3.html#makefunction' id='QQ2-3-324' target='tex4ht-main'>MakeFunction</a></span>
+<br /><span class='sectionToc'>9.55 <a href='book3.html#mappingpackage' id='QQ2-3-325' target='tex4ht-main'>MappingPackage1</a></span>
+<br /><span class='sectionToc'>9.56 <a href='book3.html#matrix' id='QQ2-3-326' target='tex4ht-main'>Matrix</a></span>
+<br /><span class='subsectionToc'>9.56.1 <a href='book3.html#creating-matrices' id='QQ2-3-327' target='tex4ht-main'>Creating Matrices</a></span>
+<br /><span class='subsectionToc'>9.56.2 <a href='book3.html#operations-on-matrices' id='QQ2-3-328' target='tex4ht-main'>Operations on Matrices</a></span>
+<br /><span class='sectionToc'>9.57 <a href='book3.html#multiset' id='QQ2-3-329' target='tex4ht-main'>Multiset</a></span>
+<br /><span class='sectionToc'>9.58 <a href='book3.html#multivariatepolynomial' id='QQ2-3-330' target='tex4ht-main'>MultivariatePolynomial</a></span>
+<br /><span class='sectionToc'>9.59 <a href='book3.html#none' id='QQ2-3-331' target='tex4ht-main'>None</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>9.60 <a href='book3.html#octonion' id='QQ2-3-332' target='tex4ht-main'>Octonion</a></span>
+<br /><span class='sectionToc'>9.61 <a href='book3.html#onedimensionalarray' id='QQ2-3-333' target='tex4ht-main'>OneDimensionalArray</a></span>
+<br /><span class='sectionToc'>9.62 <a href='book3.html#operator' id='QQ2-3-334' target='tex4ht-main'>Operator</a></span>
+<br /><span class='sectionToc'>9.63 <a href='book3.html#orderedvariablelist' id='QQ2-3-335' target='tex4ht-main'>OrderedVariableList</a></span>
+<br /><span class='sectionToc'>9.64 <a href='book3.html#orderlydifferentialpolynomial' id='QQ2-3-336' target='tex4ht-main'>OrderlyDifferentialPolynomial</a></span>
+<br /><span class='sectionToc'>9.65 <a href='book3.html#partialfraction' id='QQ2-3-337' target='tex4ht-main'>PartialFraction</a></span>
+<br /><span class='sectionToc'>9.66 <a href='book3.html#permanent' id='QQ2-3-338' target='tex4ht-main'>Permanent</a></span>
+<br /><span class='sectionToc'>9.67 <a href='book3.html#polynomial' id='QQ2-3-339' target='tex4ht-main'>Polynomial</a></span>
+<br /><span class='sectionToc'>9.68 <a href='book3.html#quaternion' id='QQ2-3-340' target='tex4ht-main'>Quaternion</a></span>
+<br /><span class='sectionToc'>9.69 <a href='book3.html#radixexpansion' id='QQ2-3-341' target='tex4ht-main'>RadixExpansion</a></span>
+<br /><span class='sectionToc'>9.70 <a href='book3.html#realclosure' id='QQ2-3-342' target='tex4ht-main'>RealClosure</a></span>
+<br /><span class='sectionToc'>9.71 <a href='book3.html#regulartriangularset' id='QQ2-3-343' target='tex4ht-main'>RegularTriangularSet</a></span>
+<br /><span class='sectionToc'>9.72 <a href='book3.html#romannumeral' id='QQ2-3-344' target='tex4ht-main'>RomanNumeral</a></span>
+<br /><span class='sectionToc'>9.73 <a href='book3.html#segment' id='QQ2-3-345' target='tex4ht-main'>Segment</a></span>
+<br /><span class='sectionToc'>9.74 <a href='book3.html#segmentbinding' id='QQ2-3-346' target='tex4ht-main'>SegmentBinding</a></span>
+<br /><span class='sectionToc'>9.75 <a href='book3.html#set' id='QQ2-3-347' target='tex4ht-main'>Set</a></span>
+<br /><span class='sectionToc'>9.76 <a href='book3.html#singleinteger' id='QQ2-3-348' target='tex4ht-main'>SingleInteger</a></span>
+<br /><span class='sectionToc'>9.77 <a href='book3.html#sparsetable' id='QQ2-3-349' target='tex4ht-main'>SparseTable</a></span>
+<br /><span class='sectionToc'>9.78 <a href='book3.html#squarefreeregulartriangularset' id='QQ2-3-350' target='tex4ht-main'>SquareFreeRegularTriangularSet</a></span>
+<br /><span class='sectionToc'>9.79 <a href='book3.html#squarematrix' id='QQ2-3-351' target='tex4ht-main'>SquareMatrix</a></span>
+<br /><span class='sectionToc'>9.80 <a href='book3.html#stream' id='QQ2-3-352' target='tex4ht-main'>Stream</a></span>
+<br /><span class='sectionToc'>9.81 <a href='book3.html#string' id='QQ2-3-353' target='tex4ht-main'>String</a></span>
+<br /><span class='sectionToc'>9.82 <a href='book3.html#stringtable' id='QQ2-3-354' target='tex4ht-main'>StringTable</a></span>
+<br /><span class='sectionToc'>9.83 <a href='book3.html#symbol' id='QQ2-3-355' target='tex4ht-main'>Symbol</a></span>
+<br /><span class='sectionToc'>9.84 <a href='book3.html#table' id='QQ2-3-356' target='tex4ht-main'>Table</a></span>
+<br /><span class='sectionToc'>9.85 <a href='book3.html#textfile' id='QQ2-3-357' target='tex4ht-main'>TextFile</a></span>
+<br /><span class='sectionToc'>9.86 <a href='book3.html#twodimensionalarray' id='QQ2-3-358' target='tex4ht-main'>TwoDimensionalArray</a></span>
+<br /><span class='sectionToc'>9.87 <a href='book3.html#univariatepolynomial' id='QQ2-3-359' target='tex4ht-main'>UnivariatePolynomial</a></span>
+<br /><span class='sectionToc'>9.88 <a href='book3.html#universalsegment' id='QQ2-3-360' target='tex4ht-main'>UniversalSegment</a></span>
+<br /><span class='sectionToc'>9.89 <a href='book3.html#vector' id='QQ2-3-361' target='tex4ht-main'>Vector</a></span>
+<br /><span class='sectionToc'>9.90 <a href='book3.html#void' id='QQ2-3-362' target='tex4ht-main'>Void</a></span>
+<br /><span class='sectionToc'>9.91 <a href='book3.html#wuwentsuntriangularset' id='QQ2-3-363' target='tex4ht-main'>WuWenTsunTriangularSet</a></span>
+<br /><span class='sectionToc'>9.92 <a href='book3.html#xpbwpolynomial' id='QQ2-3-364' target='tex4ht-main'>XPBWPolynomial</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>9.93 <a href='book3.html#xpolynomial' id='QQ2-3-365' target='tex4ht-main'>XPolynomial</a></span>
+<br /><span class='sectionToc'>9.94 <a href='book3.html#xpolynomialring' id='QQ2-3-366' target='tex4ht-main'>XPolynomialRing</a></span>
+<br /><span class='sectionToc'>9.95 <a href='book3.html#zerodimensionalsolvepackage' id='QQ2-3-367' target='tex4ht-main'>ZeroDimensionalSolvePackage</a></span>
+<br /><span class='partToc'>III  <a href='book3.html#advanced-programming-in-fricas' id='QQ2-3-368' target='tex4ht-main'>Advanced Programming in FriCAS</a></span>
+<br /><span class='chapterToc'>10 <a href='book3.html#interactive-programming1' id='QQ2-3-369' target='tex4ht-main'>Interactive Programming</a></span>
+<br /><span class='sectionToc'>10.1 <a href='book3.html#drawing-ribbons-interactively' id='QQ2-3-370' target='tex4ht-main'>Drawing Ribbons Interactively</a></span>
+<br /><span class='sectionToc'>10.2 <a href='book3.html#a-ribbon-program' id='QQ2-3-371' target='tex4ht-main'>A Ribbon Program</a></span>
+<br /><span class='sectionToc'>10.3 <a href='book3.html#coloring-and-positioning-ribbons' id='QQ2-3-373' target='tex4ht-main'>Coloring and Positioning Ribbons</a></span>
+<br /><span class='sectionToc'>10.4 <a href='book3.html#points-lines-and-curves' id='QQ2-3-375' target='tex4ht-main'>Points, Lines, and Curves</a></span>
+<br /><span class='sectionToc'>10.5 <a href='book3.html#a-bouquet-of-arrows' id='QQ2-3-376' target='tex4ht-main'>A Bouquet of Arrows</a></span>
+<br /><span class='sectionToc'>10.6 <a href='book3.html#drawing-complex-vector-fields' id='QQ2-3-377' target='tex4ht-main'>Drawing Complex Vector Fields</a></span>
+<br /><span class='sectionToc'>10.7 <a href='book3.html#drawing-complex-functions' id='QQ2-3-378' target='tex4ht-main'>Drawing Complex Functions</a></span>
+<br /><span class='sectionToc'>10.8 <a href='book3.html#functions-producing-functions' id='QQ2-3-379' target='tex4ht-main'>Functions Producing Functions</a></span>
+<br /><span class='sectionToc'>10.9 <a href='book3.html#automatic-newton-iteration-formulas' id='QQ2-3-380' target='tex4ht-main'>Automatic Newton Iteration Formulas</a></span>
+<br /><span class='chapterToc'>11 <a href='book3.html#packages' id='QQ2-3-381' target='tex4ht-main'>Packages</a></span>
+<br /><span class='sectionToc'>11.1 <a href='book3.html#names-abbreviations-and-file-structure' id='QQ2-3-383' target='tex4ht-main'>Names, Abbreviations, and File Structure</a></span>
+<br /><span class='sectionToc'>11.2 <a href='book3.html#syntax' id='QQ2-3-384' target='tex4ht-main'>Syntax</a></span>
+<br /><span class='sectionToc'>11.3 <a href='book3.html#abstract-datatypes' id='QQ2-3-385' target='tex4ht-main'>Abstract Datatypes</a></span>
+<br /><span class='sectionToc'>11.4 <a href='book3.html#capsules' id='QQ2-3-386' target='tex4ht-main'>Capsules</a></span>
+<br /><span class='sectionToc'>11.5 <a href='book3.html#input-files-vs-packages' id='QQ2-3-387' target='tex4ht-main'>Input Files vs. Packages</a></span>
+<br /><span class='sectionToc'>11.6 <a href='book3.html#compiling-packages' id='QQ2-3-388' target='tex4ht-main'>Compiling Packages</a></span>
+<br /><span class='sectionToc'>11.7 <a href='book3.html#parameters' id='QQ2-3-389' target='tex4ht-main'>Parameters</a></span>
+<br /><span class='sectionToc'>11.8 <a href='book3.html#conditionals' id='QQ2-3-390' target='tex4ht-main'>Conditionals</a></span>
+<br /><span class='sectionToc'>11.9 <a href='book3.html#testing' id='QQ2-3-391' target='tex4ht-main'>Testing</a></span>
+<br /><span class='sectionToc'>11.10 <a href='book3.html#how-packages-work' id='QQ2-3-392' target='tex4ht-main'>How Packages Work</a></span>
+<br /><span class='chapterToc'>12 <a href='book3.html#categories' id='QQ2-3-393' target='tex4ht-main'>Categories</a></span>
+<br /><span class='sectionToc'>12.1 <a href='book3.html#definitions' id='QQ2-3-394' target='tex4ht-main'>Definitions</a></span>
+<br /><span class='sectionToc'>12.2 <a href='book3.html#exports' id='QQ2-3-395' target='tex4ht-main'>Exports</a></span>
+<br /><span class='sectionToc'>12.3 <a href='book3.html#documentation' id='QQ2-3-396' target='tex4ht-main'>Documentation</a></span>
+<br /><span class='sectionToc'>12.4 <a href='book3.html#hierarchies' id='QQ2-3-397' target='tex4ht-main'>Hierarchies</a></span>
+<br /><span class='sectionToc'>12.5 <a href='book3.html#membership' id='QQ2-3-398' target='tex4ht-main'>Membership</a></span>
+<br /><span class='sectionToc'>12.6 <a href='book3.html#defaults' id='QQ2-3-399' target='tex4ht-main'>Defaults</a></span>
+<br /><span class='sectionToc'>12.7 <a href='book3.html#axioms' id='QQ2-3-400' target='tex4ht-main'>Axioms</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>12.8 <a href='book3.html#correctness' id='QQ2-3-401' target='tex4ht-main'>Correctness</a></span>
+<br /><span class='sectionToc'>12.9 <a href='book3.html#categories-as-attributes' id='QQ2-3-402' target='tex4ht-main'>Categories as attributes</a></span>
+<br /><span class='sectionToc'>12.10 <a href='book3.html#parameters1' id='QQ2-3-403' target='tex4ht-main'>Parameters</a></span>
+<br /><span class='sectionToc'>12.11 <a href='book3.html#conditionals1' id='QQ2-3-404' target='tex4ht-main'>Conditionals</a></span>
+<br /><span class='sectionToc'>12.12 <a href='book3.html#anonymous-categories' id='QQ2-3-405' target='tex4ht-main'>Anonymous Categories</a></span>
+<br /><span class='chapterToc'>13 <a href='book3.html#domains' id='QQ2-3-406' target='tex4ht-main'>Domains</a></span>
+<br /><span class='sectionToc'>13.1 <a href='book3.html#domains-vs-packages' id='QQ2-3-407' target='tex4ht-main'>Domains vs. Packages</a></span>
+<br /><span class='sectionToc'>13.2 <a href='book3.html#definitions1' id='QQ2-3-408' target='tex4ht-main'>Definitions</a></span>
+<br /><span class='sectionToc'>13.3 <a href='book3.html#category-assertions' id='QQ2-3-410' target='tex4ht-main'>Category Assertions</a></span>
+<br /><span class='sectionToc'>13.4 <a href='book3.html#a-demo' id='QQ2-3-411' target='tex4ht-main'>A Demo</a></span>
+<br /><span class='sectionToc'>13.5 <a href='book3.html#browse' id='QQ2-3-412' target='tex4ht-main'>Browse</a></span>
+<br /><span class='sectionToc'>13.6 <a href='book3.html#representation' id='QQ2-3-413' target='tex4ht-main'>Representation</a></span>
+<br /><span class='sectionToc'>13.7 <a href='book3.html#multiple-representations' id='QQ2-3-414' target='tex4ht-main'>Multiple Representations</a></span>
+<br /><span class='sectionToc'>13.8 <a href='book3.html#add-domain' id='QQ2-3-415' target='tex4ht-main'>Add Domain</a></span>
+<br /><span class='sectionToc'>13.9 <a href='book3.html#defaults1' id='QQ2-3-416' target='tex4ht-main'>Defaults</a></span>
+<br /><span class='sectionToc'>13.10 <a href='book3.html#origins' id='QQ2-3-417' target='tex4ht-main'>Origins</a></span>
+<br /><span class='sectionToc'>13.11 <a href='book3.html#short-forms' id='QQ2-3-418' target='tex4ht-main'>Short Forms</a></span>
+<br /><span class='sectionToc'>13.12 <a href='book3.html#example-clifford-algebra' id='QQ2-3-419' target='tex4ht-main'>Example 1: Clifford Algebra</a></span>
+<br /><span class='sectionToc'>13.13 <a href='book3.html#example-building-a-query-facility' id='QQ2-3-421' target='tex4ht-main'>Example 2: Building A Query Facility</a></span>
+<br /><span class='subsectionToc'>13.13.1 <a href='book3.html#a-little-query-language' id='QQ2-3-422' target='tex4ht-main'>A Little Query Language</a></span>
+<br /><span class='subsectionToc'>13.13.2 <a href='book3.html#the-database-constructor' id='QQ2-3-423' target='tex4ht-main'>The Database Constructor</a></span>
+<br /><span class='subsectionToc'>13.13.3 <a href='book3.html#query-equations' id='QQ2-3-424' target='tex4ht-main'>Query Equations</a></span>
+<br /><span class='subsectionToc'>13.13.4 <a href='book3.html#datalists' id='QQ2-3-425' target='tex4ht-main'>DataLists</a></span>
+<br /><span class='subsectionToc'>13.13.5 <a href='book3.html#index-cards' id='QQ2-3-426' target='tex4ht-main'>Index Cards</a></span>
+<br /><span class='subsectionToc'>13.13.6 <a href='book3.html#creating-a-database' id='QQ2-3-427' target='tex4ht-main'>Creating a Database</a></span>
+<br /><span class='subsectionToc'>13.13.7 <a href='book3.html#putting-it-all-together' id='QQ2-3-428' target='tex4ht-main'>Putting It All Together</a></span>
+<br /><span class='subsectionToc'>13.13.8 <a href='book3.html#example-queries' id='QQ2-3-429' target='tex4ht-main'>Example Queries</a></span>
+<br /><span class='chapterToc'>14 <a href='book3.html#browse1' id='QQ2-3-430' target='tex4ht-main'>Browse</a></span>
+<br /><span class='sectionToc'>14.1 <a href='book3.html#the-front-page-searching-the-library' id='QQ2-3-431' target='tex4ht-main'>The Front Page: Searching the Library</a></span>
+<br /><span class='sectionToc'>14.2 <a href='book3.html#the-constructor-page' id='QQ2-3-437' target='tex4ht-main'>The Constructor Page</a></span>
+<br /><span class='subsectionToc'>14.2.1 <a href='book3.html#constructor-page-buttons' id='QQ2-3-438' target='tex4ht-main'>Constructor Page Buttons</a></span>
+<br /><span class='subsectionToc'>14.2.2 <a href='book3.html#views-of-constructors' id='QQ2-3-451' target='tex4ht-main'>Views Of Constructors</a></span>
+<br /><span class='subsectionToc'>14.2.3 <a href='book3.html#giving-parameters-to-constructors' id='QQ2-3-459' target='tex4ht-main'>Giving Parameters to Constructors</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>14.3 <a href='book3.html#miscellaneous-features-of-browse' id='QQ2-3-460' target='tex4ht-main'>Miscellaneous Features of Browse</a></span>
+<br /><span class='subsectionToc'>14.3.1 <a href='book3.html#the-description-page-for-operations' id='QQ2-3-461' target='tex4ht-main'>The Description Page for Operations</a></span>
+<br /><span class='subsectionToc'>14.3.2 <a href='book3.html#views-of-operations' id='QQ2-3-468' target='tex4ht-main'>Views of Operations</a></span>
+<br /><span class='subsectionToc'>14.3.3 <a href='book3.html#capitalization-convention' id='QQ2-3-478' target='tex4ht-main'>Capitalization Convention</a></span>
+<br /><span class='chapterToc'>15 <a href='book3.html#whats-new-in-fricas' id='QQ2-3-479' target='tex4ht-main'>What’s New in FriCAS</a></span>
+<br /><span class='sectionToc'>15.1 <a href='book3.html#release-notes' id='QQ2-3-480' target='tex4ht-main'>Release Notes</a></span>
+<br /><span class='sectionToc'>15.2 <a href='book3.html#changes-to-spad-language' id='QQ2-3-522' target='tex4ht-main'>Changes to Spad language</a></span>
+<br /><span class='sectionToc'>15.3 <a href='book3.html#online-information' id='QQ2-3-523' target='tex4ht-main'>Online Information</a></span>
+<br /><span class='sectionToc'>15.4 <a href='book3.html#old-news-about-axiom-version-x' id='QQ2-3-524' target='tex4ht-main'>Old News about AXIOM Version 2.x</a></span>
+<br /><span class='subsectionToc'>15.4.1 <a href='book3.html#the-nag-library-link' id='QQ2-3-525' target='tex4ht-main'>The NAG Library Link</a></span>
+<br /><span class='subsectionToc'>15.4.2 <a href='book3.html#interactive-frontend-and-language' id='QQ2-3-526' target='tex4ht-main'>Interactive Front-end and Language</a></span>
+<br /><span class='subsectionToc'>15.4.3 <a href='book3.html#library1' id='QQ2-3-527' target='tex4ht-main'>Library</a></span>
+<br /><span class='subsectionToc'>15.4.4 <a href='book3.html#hyperdoc1' id='QQ2-3-528' target='tex4ht-main'>HyperDoc</a></span>
+<br /><span class='subsectionToc'>15.4.5 <a href='book3.html#documentation2' id='QQ2-3-529' target='tex4ht-main'>Documentation</a></span>
+<br /><span class='subsectionToc'>15.4.6 <a href='book3.html#axiomxl-compiler-enhancements-and-additions' id='QQ2-3-530' target='tex4ht-main'>AXIOM-XL compiler - Enhancements and Additions</a></span>
+<br /><span class='subsectionToc'>15.4.7 <a href='book3.html#new-polynomial-domains-and-algorithms' id='QQ2-3-531' target='tex4ht-main'>New polynomial domains and algorithms</a></span>
+<br /><span class='subsectionToc'>15.4.8 <a href='book3.html#enhancements-to-hyperdoc-and-graphics' id='QQ2-3-532' target='tex4ht-main'>Enhancements to HyperDoc and Graphics</a></span>
+<br /><span class='subsectionToc'>15.4.9 <a href='book3.html#enhancements-to-naglink' id='QQ2-3-533' target='tex4ht-main'>Enhancements to NAGLink</a></span>
+<br /><span class='subsectionToc'>15.4.10 <a href='book3.html#enhancements-to-the-lisp-system' id='QQ2-3-534' target='tex4ht-main'>Enhancements to the Lisp system</a></span>
+<br /><span class='appendixToc'>A <a href='book3.html#fricas-system-commands' id='QQ2-3-535' target='tex4ht-main'>FriCAS System Commands</a></span>
+<br /><span class='sectionToc'>A.1 <a href='book3.html#introduction' id='QQ2-3-536' target='tex4ht-main'>Introduction</a></span>
+<br /><span class='sectionToc'>A.2 <a href='book3.html#abbreviation' id='QQ2-3-537' target='tex4ht-main'>)abbreviation</a></span>
+<br /><span class='sectionToc'>A.3 <a href='book3.html#boot' id='QQ2-3-538' target='tex4ht-main'>)boot</a></span>
+<br /><span class='sectionToc'>A.4 <a href='book3.html#cd' id='QQ2-3-539' target='tex4ht-main'>)cd</a></span>
+<br /><span class='sectionToc'>A.5 <a href='book3.html#close' id='QQ2-3-540' target='tex4ht-main'>)close</a></span>
+<br /><span class='sectionToc'>A.6 <a href='book3.html#clear' id='QQ2-3-541' target='tex4ht-main'>)clear</a></span>
+<br /><span class='sectionToc'>A.7 <a href='book3.html#compile' id='QQ2-3-542' target='tex4ht-main'>)compile</a></span>
+<br /><span class='sectionToc'>A.8 <a href='book3.html#display' id='QQ2-3-543' target='tex4ht-main'>)display</a></span>
+<br /><span class='sectionToc'>A.9 <a href='book3.html#edit' id='QQ2-3-544' target='tex4ht-main'>)edit</a></span>
+<br /><span class='sectionToc'>A.10 <a href='book3.html#fin' id='QQ2-3-545' target='tex4ht-main'>)fin</a></span>
+<br /><span class='sectionToc'>A.11 <a href='book3.html#frame' id='QQ2-3-546' target='tex4ht-main'>)frame</a></span>
+<br /><span class='sectionToc'>A.12 <a href='book3.html#help' id='QQ2-3-547' target='tex4ht-main'>)help</a></span>
+<br /><span class='sectionToc'>A.13 <a href='book3.html#history' id='QQ2-3-548' target='tex4ht-main'>)history</a></span>
+                                                                                     
+
+                                                                                     
+<br /><span class='sectionToc'>A.14 <a href='book3.html#library2' id='QQ2-3-549' target='tex4ht-main'>)library</a></span>
+<br /><span class='sectionToc'>A.15 <a href='book3.html#lisp' id='QQ2-3-550' target='tex4ht-main'>)lisp</a></span>
+<br /><span class='sectionToc'>A.16 <a href='book3.html#load' id='QQ2-3-551' target='tex4ht-main'>)load</a></span>
+<br /><span class='sectionToc'>A.17 <a href='book3.html#ltrace' id='QQ2-3-552' target='tex4ht-main'>)ltrace</a></span>
+<br /><span class='sectionToc'>A.18 <a href='book3.html#pquit' id='QQ2-3-553' target='tex4ht-main'>)pquit</a></span>
+<br /><span class='sectionToc'>A.19 <a href='book3.html#quit' id='QQ2-3-554' target='tex4ht-main'>)quit</a></span>
+<br /><span class='sectionToc'>A.20 <a href='book3.html#read' id='QQ2-3-555' target='tex4ht-main'>)read</a></span>
+<br /><span class='sectionToc'>A.21 <a href='book3.html#set1' id='QQ2-3-556' target='tex4ht-main'>)set</a></span>
+<br /><span class='sectionToc'>A.22 <a href='book3.html#show' id='QQ2-3-557' target='tex4ht-main'>)show</a></span>
+<br /><span class='sectionToc'>A.23 <a href='book3.html#spool' id='QQ2-3-558' target='tex4ht-main'>)spool</a></span>
+<br /><span class='sectionToc'>A.24 <a href='book3.html#synonym' id='QQ2-3-559' target='tex4ht-main'>)synonym</a></span>
+<br /><span class='sectionToc'>A.25 <a href='book3.html#system' id='QQ2-3-560' target='tex4ht-main'>)system</a></span>
+<br /><span class='sectionToc'>A.26 <a href='book3.html#trace' id='QQ2-3-561' target='tex4ht-main'>)trace</a></span>
+<br /><span class='sectionToc'>A.27 <a href='book3.html#undo' id='QQ2-3-562' target='tex4ht-main'>)undo</a></span>
+<br /><span class='sectionToc'>A.28 <a href='book3.html#what' id='QQ2-3-563' target='tex4ht-main'>)what</a></span>
+<br /><span class='appendixToc'>B <a href='book3.html#programs-for-fricas-images' id='QQ2-3-564' target='tex4ht-main'>Programs for FriCAS Images</a></span>
+<br /><span class='sectionToc'>B.1 <a href='book3.html#imagesinput' id='QQ2-3-565' target='tex4ht-main'>images1.input</a></span>
+<br /><span class='sectionToc'>B.2 <a href='book3.html#imagesinput1' id='QQ2-3-566' target='tex4ht-main'>images2.input</a></span>
+<br /><span class='sectionToc'>B.3 <a href='book3.html#imagesinput2' id='QQ2-3-567' target='tex4ht-main'>images3.input</a></span>
+<br /><span class='sectionToc'>B.4 <a href='book3.html#imagesinput3' id='QQ2-3-568' target='tex4ht-main'>images5.input</a></span>
+<br /><span class='sectionToc'>B.5 <a href='book3.html#imagesinput4' id='QQ2-3-569' target='tex4ht-main'>images6.input</a></span>
+<br /><span class='sectionToc'>B.6 <a href='book3.html#imagesinput5' id='QQ2-3-570' target='tex4ht-main'>images7.input</a></span>
+<br /><span class='sectionToc'>B.7 <a href='book3.html#imagesinput6' id='QQ2-3-571' target='tex4ht-main'>images8.input</a></span>
+<br /><span class='sectionToc'>B.8 <a href='book3.html#conformalinput' id='QQ2-3-572' target='tex4ht-main'>conformal.input</a></span>
+<br /><span class='sectionToc'>B.9 <a href='book3.html#tknotinput' id='QQ2-3-573' target='tex4ht-main'>tknot.input</a></span>
+<br /><span class='sectionToc'>B.10 <a href='book3.html#ntubeinput' id='QQ2-3-574' target='tex4ht-main'>ntube.input</a></span>
+<br /><span class='sectionToc'>B.11 <a href='book3.html#dhtriinput' id='QQ2-3-575' target='tex4ht-main'>dhtri.input</a></span>
+<br /><span class='sectionToc'>B.12 <a href='book3.html#tetrainput' id='QQ2-3-576' target='tex4ht-main'>tetra.input</a></span>
+<br /><span class='sectionToc'>B.13 <a href='book3.html#antoineinput' id='QQ2-3-577' target='tex4ht-main'>antoine.input</a></span>
+<br /><span class='sectionToc'>B.14 <a href='book3.html#scherkinput' id='QQ2-3-578' target='tex4ht-main'>scherk.input</a></span>
+</div>
+                                                                                     
+
+                                                                                     
+ 
+</body> 
+</html>
