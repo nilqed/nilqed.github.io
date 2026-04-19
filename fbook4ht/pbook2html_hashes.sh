@@ -25,7 +25,7 @@
 mkdir -p ./phtml
 
 # make the html files from book.tex
-make4ht -f html5+dvisvgm_hashes -d ./phtml book.tex "pic-m,pic-equation,svg,frames,section+,Gin-percent" 
+make4ht -f html5+dvisvgm_hashes -c fbook.cfg -d ./phtml book.tex "pic-m,pic-equation,svg,frames,section+,Gin-percent" 
 
 
 # save this script to ./phtml where book.html is.
