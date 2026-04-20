@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Slidebars Plugin Theme Demo</title>
+		
+		<!-- Slidebars CSS -->
+		<link rel="stylesheet" href="slidebars.css">
+		
+		<!-- Slidebars Theme -->
+		<link rel="stylesheet" href="slidebars-theme.css">
+        
+        <!--link href='book.css' rel='stylesheet' type='text/css' /--link> 
+        
+		<!-- jQuery -->
+		<script src="jquery.js"></script>
+
+        <script> 
+          $(function(){
+          $("#thebook").load("https://nilqed.github.io/fbook4ht/book3.html#tex4ht-body"); 
+          });
+        </script> 
+       <script> 
+          $(function(){
+          $("#toc-left").load("https://nilqed.github.io/fbook4ht/slide_toc.html#tex4ht-toc"); 
+          });
+        </script>  
+	</head>
+	
+	<body>
+		<!-- Top Navigation Bar -->
+		<div class="sb-navbar sb-slide">
+		
+			<!-- Left Slidebar control -->
+			<div class="sb-toggle-left">
+			    <div class="navicon-line"></div>
+				<div class="navicon-line"></div>
+				<div class="navicon-line"></div>
+			</div>		
+
+			<!-- Right Slidebar control -->
+			<div class="sb-toggle-right">
+				<div class="navicon-line"></div>
+				<div class="navicon-line"></div>
+				<div class="navicon-line"></div>
+			</div>
+			
+			<!-- Menu Items -->
+			<ul class="sb-navbar-menu">
+				<li><a href="#">Menu Item A</a></li>
+				<li><a href="#">Menu Item B</a></li>
+				<li><a href="#">Menu Item C</a></li>
+				<li><a href="#">Menu Item D</a></li>
+				<li><a href="#">Menu Item E</a></li>
+			</ul>
+		
+		</div>
+		
+		
+		<!-- Your main site content in here -->
+		<div id="sb-site">
+           <div id="thebook"></div>
+        </div>
+		
+		<!-- Left Slidebar -->
+		<div class="sb-slidebar sb-left">	
+			<div id="toc-left"></div>
+		</div><!-- /.sb-slidebar .sb-left -->
+        
+        <!-- Right Slidebars -->
+		<div class="sb-slidebar sb-right">	
+        </div><!-- /.sb-slidebar .sb-right -->
+        </div><!-- /.sb-slidebar .sb-right -->
+        
+        <!-- Slidebars -->
+		<script src="slidebars.js"></script>
+         <!-- Slidebars Theme JS
+        This should be included after you have initiated Slidebars. -->
+		<!--script src="slidebars-theme.js"></script--> 
+        <script>
+			(function($) {
+				$(document).ready(function() {
+					$.slidebars();
+				});
+			}) (jQuery);
+		</script>
+              
+	</body>
+</html>
